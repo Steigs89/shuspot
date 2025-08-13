@@ -1429,15 +1429,13 @@ function AppContent() {
 
       {/* Hero Section with Background that bleeds up into header */}
       <div
-        className={`relative py-16 -mt-20 pt-36 ${selectedContentType === 'All Book'
-          ? "bg-cover bg-center"
-          : (selectedContentType === 'Video Books' || selectedContentType === 'Audiobooks')
-            ? "bg-cover bg-center"
-            : (selectedContentType === 'Read to Me' || selectedContentType === 'Voice Coach')
-              ? "bg-cover bg-center"
-              : sectionInfo.bgClass
-          }`}
-        style={selectedContentType === 'Video Books' ? {
+        className={`relative py-16 -mt-20 pt-36 bg-cover bg-center`}
+        style={selectedContentType === 'All Book' ? {
+          backgroundImage: `url(${volcanoBookBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        } : selectedContentType === 'Video Books' ? {
           backgroundImage: `url(${stargazingBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -1449,6 +1447,11 @@ function AppContent() {
           backgroundRepeat: 'no-repeat'
         } : selectedContentType === 'Books' ? {
           backgroundImage: `url(${booksBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        } : (selectedContentType === 'Read to Me' || selectedContentType === 'Voice Coach') ? {
+          backgroundImage: `url(${hippoWaterBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
