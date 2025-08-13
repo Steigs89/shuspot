@@ -2006,17 +2006,20 @@ function AppContent() {
                         </button>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                      {(uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books').length > 0 ? uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books') : filteredBooks.filter(book => book.category === 'books')).slice(carouselIndices.books, carouselIndices.books + getBooksPerPage()).map((book) => (
-                        <BookCardWithHover
-                          key={`books-${book.id}`}
-                          book={book}
-                          onClick={() => handlePdfBookSelect(book as PdfBookData)}
-                          onToggleFavorite={() => toggleFavorite(book, 'books')}
-                          isFavorited={isFavorited(book.id, 'books')}
-                          category="books"
-                        />
-                      ))}
+                    <div className="overflow-hidden">
+                      <div className="flex gap-6 transition-transform duration-300">
+                        {(uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books').length > 0 ? uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books') : filteredBooks.filter(book => book.category === 'books')).slice(carouselIndices.books, carouselIndices.books + getBooksPerPage()).map((book) => (
+                          <div key={`books-${book.id}`} className="flex-shrink-0 w-48">
+                            <BookCardWithHover
+                              book={book}
+                              onClick={() => handlePdfBookSelect(book as PdfBookData)}
+                              onToggleFavorite={() => toggleFavorite(book, 'books')}
+                              isFavorited={isFavorited(book.id, 'books')}
+                              category="books"
+                            />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -2044,55 +2047,60 @@ function AppContent() {
                       </button>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                    {/* Show uploaded videos with "Video Books" or "Videos" media type first */}
-                    {uploadedVideoBooks.filter(video => video.mediaType === 'Video Books' || video.mediaType === 'Videos').slice(carouselIndices.videos, carouselIndices.videos + getBooksPerPage()).map((videoBook) => (
-                      <BookCardWithHover
-                        key={`video-uploaded-${videoBook.id}`}
-                        book={videoBook}
-                        onClick={() => {
-                          setSelectedBookId(videoBook.id);
-                          setCurrentView('video-book');
-                        }}
-                        onToggleFavorite={() => toggleFavorite(videoBook, 'videoBooks')}
-                        isFavorited={isFavorited(videoBook.id, 'videoBooks')}
-                        category="videoBooks"
-                      />
-                    ))}
-                    {/* Show uploaded PDFs with "Video Books" or "Videos" media type */}
-                    {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Video Books' || pdf.mediaType === 'Videos').slice(carouselIndices.videos, carouselIndices.videos + getBooksPerPage()).map((pdfBook) => (
-                      <BookCardWithHover
-                        key={`video-pdf-${pdfBook.id}`}
-                        book={pdfBook}
-                        onClick={() => handlePdfBookSelect(pdfBook)}
-                        onToggleFavorite={() => toggleFavorite(pdfBook, 'videoBooks')}
-                        isFavorited={isFavorited(pdfBook.id, 'videoBooks')}
-                        category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
-                                 pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
-                                 pdfBook.mediaType === 'Video Books' ? 'Video Book' :
-                                 pdfBook.mediaType === 'Videos' ? 'Video' :
-                                 pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
-                                 pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
-                      />
-                    ))}
-                    {/* Then show sample videos if no uploaded content */}
-                    {(uploadedVideoBooks.filter(video => video.mediaType === 'Video Books' || video.mediaType === 'Videos').length === 0 &&
-                      uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Video Books' || pdf.mediaType === 'Videos').length === 0) &&
-                      [
-                        { id: 'v1', title: 'Sample Video Book 1', author: 'Video Creator', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1', totalPages: 0, gradeLevel: 'K1' },
-                        { id: 'v2', title: 'Sample Video Book 2', author: 'Video Creator', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1', totalPages: 0, gradeLevel: 'K2' },
-                        { id: 'v3', title: 'Sample Video Book 3', author: 'Video Creator', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1', totalPages: 0, gradeLevel: '1A' }
-                      ].slice(carouselIndices.videos, carouselIndices.videos + getBooksPerPage()).map((book) => (
-                        <BookCardWithHover
-                          key={`video-${book.id}`}
-                          book={book}
-                          onClick={() => setCurrentView('video-book')}
-                          onToggleFavorite={() => toggleFavorite(book, 'videoBooks')}
-                          isFavorited={isFavorited(book.id, 'videoBooks')}
-                          category="videoBooks"
-                        />
-                      ))
-                    }
+                  <div className="overflow-hidden">
+                    <div className="flex gap-6 transition-transform duration-300">
+                      {/* Show uploaded videos with "Video Books" or "Videos" media type first */}
+                      {uploadedVideoBooks.filter(video => video.mediaType === 'Video Books' || video.mediaType === 'Videos').slice(carouselIndices.videos, carouselIndices.videos + getBooksPerPage()).map((videoBook) => (
+                        <div key={`video-uploaded-${videoBook.id}`} className="flex-shrink-0 w-48">
+                          <BookCardWithHover
+                            book={videoBook}
+                            onClick={() => {
+                              setSelectedBookId(videoBook.id);
+                              setCurrentView('video-book');
+                            }}
+                            onToggleFavorite={() => toggleFavorite(videoBook, 'videoBooks')}
+                            isFavorited={isFavorited(videoBook.id, 'videoBooks')}
+                            category="videoBooks"
+                          />
+                        </div>
+                      ))}
+                      {/* Show uploaded PDFs with "Video Books" or "Videos" media type */}
+                      {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Video Books' || pdf.mediaType === 'Videos').slice(carouselIndices.videos, carouselIndices.videos + getBooksPerPage()).map((pdfBook) => (
+                        <div key={`video-pdf-${pdfBook.id}`} className="flex-shrink-0 w-48">
+                          <BookCardWithHover
+                            book={pdfBook}
+                            onClick={() => handlePdfBookSelect(pdfBook)}
+                            onToggleFavorite={() => toggleFavorite(pdfBook, 'videoBooks')}
+                            isFavorited={isFavorited(pdfBook.id, 'videoBooks')}
+                            category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
+                                     pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
+                                     pdfBook.mediaType === 'Video Books' ? 'Video Book' :
+                                     pdfBook.mediaType === 'Videos' ? 'Video' :
+                                     pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
+                                     pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
+                          />
+                        </div>
+                      ))}
+                      {/* Then show sample videos if no uploaded content */}
+                      {(uploadedVideoBooks.filter(video => video.mediaType === 'Video Books' || video.mediaType === 'Videos').length === 0 &&
+                        uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Video Books' || pdf.mediaType === 'Videos').length === 0) &&
+                        [
+                          { id: 'v1', title: 'Sample Video Book 1', author: 'Video Creator', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1', totalPages: 0, gradeLevel: 'K1' },
+                          { id: 'v2', title: 'Sample Video Book 2', author: 'Video Creator', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1', totalPages: 0, gradeLevel: 'K2' },
+                          { id: 'v3', title: 'Sample Video Book 3', author: 'Video Creator', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1', totalPages: 0, gradeLevel: '1A' }
+                        ].slice(carouselIndices.videos, carouselIndices.videos + getBooksPerPage()).map((book) => (
+                          <div key={`video-${book.id}`} className="flex-shrink-0 w-48">
+                            <BookCardWithHover
+                              book={book}
+                              onClick={() => setCurrentView('video-book')}
+                              onToggleFavorite={() => toggleFavorite(book, 'videoBooks')}
+                              isFavorited={isFavorited(book.id, 'videoBooks')}
+                              category="videoBooks"
+                            />
+                          </div>
+                        ))
+                      }
+                    </div>
                   </div>
                 </div>
 
@@ -2120,42 +2128,46 @@ function AppContent() {
                         </button>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                      {/* Show uploaded PDFs with "Voice Coach" media type first */}
-                      {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Voice Coach').slice(carouselIndices.voiceCoach, carouselIndices.voiceCoach + getBooksPerPage()).map((pdfBook) => (
-                        <BookCardWithHover
-                          key={`voice-pdf-${pdfBook.id}`}
-                          book={pdfBook}
-                          onClick={() => handlePdfBookSelect(pdfBook)}
-                          onToggleFavorite={() => toggleFavorite(pdfBook, 'voiceCoach')}
-                          isFavorited={isFavorited(pdfBook.id, 'voiceCoach')}
-                          category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
-                                   pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
-                                   pdfBook.mediaType === 'Video Books' ? 'Video Book' :
-                                   pdfBook.mediaType === 'Videos' ? 'Video' :
-                                   pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
-                                   pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
-                          showProgress={true}
-                        />
-                      ))}
-                      {/* Then show hardcoded Voice Coach books */}
-                      {voiceCoachBooks.slice(carouselIndices.voiceCoach, carouselIndices.voiceCoach + getBooksPerPage()).map((book) => (
-                        <BookCardWithHover
-                          key={`voice-${book.id}`}
-                          book={{
-                            ...book,
-                            gradeLevel: book.difficulty,
-                            totalPages: book.totalSessions * 5 // Estimate pages based on sessions
-                          }}
-                          onClick={() => {
-                            setSelectedBookId(book.id);
-                            setCurrentView('voice-practice');
-                          }}
-                          onToggleFavorite={() => toggleFavorite(book, 'voiceCoach')}
-                          isFavorited={isFavorited(book.id, 'voiceCoach')}
-                          category="voiceCoach"
-                        />
-                      ))}
+                    <div className="overflow-hidden">
+                      <div className="flex gap-6 transition-transform duration-300">
+                        {/* Show uploaded PDFs with "Voice Coach" media type first */}
+                        {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Voice Coach').slice(carouselIndices.voiceCoach, carouselIndices.voiceCoach + getBooksPerPage()).map((pdfBook) => (
+                          <div key={`voice-pdf-${pdfBook.id}`} className="flex-shrink-0 w-48">
+                            <BookCardWithHover
+                              book={pdfBook}
+                              onClick={() => handlePdfBookSelect(pdfBook)}
+                              onToggleFavorite={() => toggleFavorite(pdfBook, 'voiceCoach')}
+                              isFavorited={isFavorited(pdfBook.id, 'voiceCoach')}
+                              category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
+                                       pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
+                                       pdfBook.mediaType === 'Video Books' ? 'Video Book' :
+                                       pdfBook.mediaType === 'Videos' ? 'Video' :
+                                       pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
+                                       pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
+                              showProgress={true}
+                            />
+                          </div>
+                        ))}
+                        {/* Then show hardcoded Voice Coach books */}
+                        {voiceCoachBooks.slice(carouselIndices.voiceCoach, carouselIndices.voiceCoach + getBooksPerPage()).map((book) => (
+                          <div key={`voice-${book.id}`} className="flex-shrink-0 w-48">
+                            <BookCardWithHover
+                              book={{
+                                ...book,
+                                gradeLevel: book.difficulty,
+                                totalPages: book.totalSessions * 5 // Estimate pages based on sessions
+                              }}
+                              onClick={() => {
+                                setSelectedBookId(book.id);
+                                setCurrentView('voice-practice');
+                              }}
+                              onToggleFavorite={() => toggleFavorite(book, 'voiceCoach')}
+                              isFavorited={isFavorited(book.id, 'voiceCoach')}
+                              category="voiceCoach"
+                            />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -2184,44 +2196,48 @@ function AppContent() {
                         </button>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                      {/* Show uploaded PDFs with "Read to me" media type first */}
-                      {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Read to me').slice(carouselIndices.readToMe, carouselIndices.readToMe + getBooksPerPage()).map((pdfBook) => (
-                        <BookCardWithHover
-                          key={`readtome-pdf-${pdfBook.id}`}
-                          book={pdfBook}
-                          onClick={() => handlePdfReadAlongSelect(pdfBook)}
-                          onToggleFavorite={() => toggleFavorite(pdfBook, 'readToMe')}
-                          isFavorited={isFavorited(pdfBook.id, 'readToMe')}
-                          category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
-                                   pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
-                                   pdfBook.mediaType === 'Video Books' ? 'Video Book' :
-                                   pdfBook.mediaType === 'Videos' ? 'Video' :
-                                   pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
-                                   pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
-                          showProgress={true}
-                        />
-                      ))}
-                      {/* Then show regular Read to Me books */}
-                      {readToMeBooks.slice(carouselIndices.readToMe, carouselIndices.readToMe + getBooksPerPage()).map((book) => (
-                        <BookCardWithHover
-                          key={`readtome-${book.id}`}
-                          book={{
-                            ...book,
-                            gradeLevel: 'D - E',
-                            totalPages: book.readingTime * 2 // Estimate pages based on reading time
-                          }}
-                          onClick={() => {
-                            console.log('📚 Read to Me book selected:', book.title);
-                            setSelectedBookId(book.id);
-                            setCurrentView('read-to-me-book');
-                          }}
-                          onToggleFavorite={() => toggleFavorite(book, 'readToMe')}
-                          isFavorited={isFavorited(book.id, 'readToMe')}
-                          category="readToMe"
-                          showProgress={book.progress !== undefined}
-                        />
-                      ))}
+                    <div className="overflow-hidden">
+                      <div className="flex gap-6 transition-transform duration-300">
+                        {/* Show uploaded PDFs with "Read to me" media type first */}
+                        {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Read to me').slice(carouselIndices.readToMe, carouselIndices.readToMe + getBooksPerPage()).map((pdfBook) => (
+                          <div key={`readtome-pdf-${pdfBook.id}`} className="flex-shrink-0 w-48">
+                            <BookCardWithHover
+                              book={pdfBook}
+                              onClick={() => handlePdfReadAlongSelect(pdfBook)}
+                              onToggleFavorite={() => toggleFavorite(pdfBook, 'readToMe')}
+                              isFavorited={isFavorited(pdfBook.id, 'readToMe')}
+                              category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
+                                       pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
+                                       pdfBook.mediaType === 'Video Books' ? 'Video Book' :
+                                       pdfBook.mediaType === 'Videos' ? 'Video' :
+                                       pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
+                                       pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
+                              showProgress={true}
+                            />
+                          </div>
+                        ))}
+                        {/* Then show regular Read to Me books */}
+                        {readToMeBooks.slice(carouselIndices.readToMe, carouselIndices.readToMe + getBooksPerPage()).map((book) => (
+                          <div key={`readtome-${book.id}`} className="flex-shrink-0 w-48">
+                            <BookCardWithHover
+                              book={{
+                                ...book,
+                                gradeLevel: 'D - E',
+                                totalPages: book.readingTime * 2 // Estimate pages based on reading time
+                              }}
+                              onClick={() => {
+                                console.log('📚 Read to Me book selected:', book.title);
+                                setSelectedBookId(book.id);
+                                setCurrentView('read-to-me-book');
+                              }}
+                              onToggleFavorite={() => toggleFavorite(book, 'readToMe')}
+                              isFavorited={isFavorited(book.id, 'readToMe')}
+                              category="readToMe"
+                              showProgress={book.progress !== undefined}
+                            />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -2249,43 +2265,48 @@ function AppContent() {
                       </button>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                    {/* Show uploaded PDFs with "Audiobooks" media type first */}
-                    {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Audiobooks').slice(carouselIndices.audiobooks, carouselIndices.audiobooks + getBooksPerPage()).map((pdfBook) => (
-                      <BookCardWithHover
-                        key={`audiobook-pdf-${pdfBook.id}`}
-                        book={pdfBook}
-                        onClick={() => handlePdfBookSelect(pdfBook)}
-                        onToggleFavorite={() => toggleFavorite(pdfBook, 'audiobooks')}
-                        isFavorited={isFavorited(pdfBook.id, 'audiobooks')}
-                        category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
-                                 pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
-                                 pdfBook.mediaType === 'Video Books' ? 'Video Book' :
-                                 pdfBook.mediaType === 'Videos' ? 'Video' :
-                                 pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
-                                 pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
-                        showProgress={true}
-                      />
-                    ))}
-                    {/* Then show hardcoded audiobooks */}
-                    {readToMeBooks.slice(carouselIndices.audiobooks, carouselIndices.audiobooks + getBooksPerPage()).map((book) => (
-                      <BookCardWithHover
-                        key={`audiobook-${book.id}`}
-                        book={{
-                          ...book,
-                          gradeLevel: 'D - E',
-                          totalPages: book.readingTime * 3 // Estimate pages based on reading time
-                        }}
-                        onClick={() => {
-                          setSelectedBookId(book.id);
-                          setCurrentView('audiobook');
-                        }}
-                        onToggleFavorite={() => toggleFavorite(book, 'audiobooks')}
-                        isFavorited={isFavorited(book.id, 'audiobooks')}
-                        category="audiobooks"
-                        showProgress={book.progress !== undefined}
-                      />
-                    ))}
+                  <div className="overflow-hidden">
+                    <div className="flex gap-6 transition-transform duration-300">
+                      {/* Show uploaded PDFs with "Audiobooks" media type first */}
+                      {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Audiobooks').slice(carouselIndices.audiobooks, carouselIndices.audiobooks + getBooksPerPage()).map((pdfBook) => (
+                        <div key={`audiobook-pdf-${pdfBook.id}`} className="flex-shrink-0 w-48">
+                          <BookCardWithHover
+                            book={pdfBook}
+                            onClick={() => handlePdfBookSelect(pdfBook)}
+                            onToggleFavorite={() => toggleFavorite(pdfBook, 'audiobooks')}
+                            isFavorited={isFavorited(pdfBook.id, 'audiobooks')}
+                            category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
+                                     pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
+                                     pdfBook.mediaType === 'Video Books' ? 'Video Book' :
+                                     pdfBook.mediaType === 'Videos' ? 'Video' :
+                                     pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
+                                     pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
+                            showProgress={true}
+                          />
+                        </div>
+                      ))}
+                      {/* Then show hardcoded audiobooks */}
+                      {readToMeBooks.slice(carouselIndices.audiobooks, carouselIndices.audiobooks + getBooksPerPage()).map((book) => (
+                        <div key={`audiobook-${book.id}`} className="flex-shrink-0 w-48">
+                          <BookCardWithHover
+                            book={{
+                              ...book,
+                              gradeLevel: 'D - E',
+                              totalPages: book.readingTime * 3 // Estimate pages based on reading time
+                            }}
+                            onClick={() => {
+                              setSelectedBookId(book.id);
+                              setCurrentView('audiobook');
+                            }}
+                            onToggleFavorite={() => toggleFavorite(book, 'audiobooks')}
+                            isFavorited={isFavorited(book.id, 'audiobooks')}
+                            category="audiobooks"
+                            showProgress={book.progress !== undefined}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
