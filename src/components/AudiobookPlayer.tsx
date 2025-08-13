@@ -87,10 +87,10 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
   const progressPercentage = (currentTime / duration) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-100 via-blue-50 to-teal-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-400 via-cyan-500 to-blue-600">
       {/* Header */}
       <div className="bg-blue-500 text-white p-4">
-        <div className="flex items-center justify-between max-w-4xl mx-auto">
+        <div className="flex items-center justify-between max-w-6xl mx-auto">
           <div className="flex items-center space-x-4">
             <button className="text-white hover:text-blue-200 transition-colors">
               <div className="w-6 h-6 flex items-center justify-center">
@@ -108,7 +108,7 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
           </div>
 
           <h1 className="text-xl font-superclarendon-bold text-center flex-1">
-            Miss Nelson Has a Field Day
+            They All Saw a Cat
           </h1>
 
           <button 
@@ -120,178 +120,166 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto p-6">
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
-          {/* Left Side - Book Cover and Info */}
-          <div className="text-center">
-            {/* Main Book Cover */}
-            <div className="relative inline-block mb-6">
-              <div className="w-64 h-80 bg-gradient-to-br from-teal-400 via-cyan-500 to-blue-500 rounded-2xl shadow-2xl overflow-hidden relative">
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                  <div className="text-6xl mb-4">🏫📚</div>
-                  <div className="text-white text-lg font-superclarendon-bold leading-tight text-center">
-                    MISS NELSON HAS A FIELD DAY
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto p-6">
+        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+          {/* Top Section - Book Info */}
+          <div className="p-8">
+            <div className="flex flex-col lg:flex-row gap-8">
+              {/* Left - Book Cover */}
+              <div className="flex-shrink-0">
+                <div className="w-48 h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl shadow-lg overflow-hidden relative">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                    <div className="text-4xl mb-2">🐱</div>
+                    <div className="text-gray-800 text-sm font-bold text-center leading-tight">
+                      THEY ALL SAW A CAT
+                    </div>
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <div className="bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-medium flex items-center justify-center space-x-1">
+                      <span>Audiobook</span>
+                      <Volume2 className="w-3 h-3" />
+                    </div>
                   </div>
                 </div>
-                <div className="absolute bottom-4 right-4 bg-teal-600 text-white text-sm px-3 py-1 rounded-full font-medium flex items-center space-x-1">
-                  <span>Audiobook</span>
-                  <Volume2 className="w-4 h-4" />
+              </div>
+
+              {/* Right - Book Details */}
+              <div className="flex-1">
+                <div className="mb-4">
+                  <p className="text-gray-600 text-sm mb-1">
+                    <span className="font-medium">By</span> Brendan Wenzel
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    <span className="font-medium">Narrated by</span> John Lithgow
+                  </p>
                 </div>
-              </div>
-            </div>
 
-            {/* Book Info */}
-            <div className="space-y-2 mb-6">
-              <p className="text-gray-600 text-sm">
-                <span className="font-medium">By:</span> Harry Allard
-              </p>
-              <p className="text-gray-600 text-sm">
-                <span className="font-medium">Narrated by:</span> Diana Canova
-              </p>
-              <p className="text-gray-700 text-sm leading-relaxed max-w-md mx-auto mt-4">
-                The notorious Miss Swamp reappears at the Horace B. Smedley School, this time to shape up the football team and help them win one game.
-              </p>
-            </div>
+                <p className="text-gray-700 text-sm leading-relaxed mb-6 max-w-lg">
+                  In this celebration of observation, curiosity, and imagination, we see the many lives of one cat, and how perspective shapes what we see.
+                </p>
 
-            {/* Age and Duration Info */}
-            <div className="flex justify-center space-x-8 mb-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-800">5 - 7</div>
-                <div className="text-sm text-gray-500">Age Range</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-800">10m</div>
-                <div className="text-sm text-gray-500">Length</div>
-              </div>
-            </div>
-
-            {/* Audio Progress */}
-            <div className="mb-6">
-              <div className="text-center mb-2">
-                <h3 className="font-superclarendon-black text-gray-800">
-                  Miss Nelson Has a Field Day
-                </h3>
-              </div>
-              
-              {/* Progress Bar */}
-              <div className="relative mb-4">
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className="bg-blue-500 h-2 rounded-full transition-all duration-300"
-                    style={{ width: `${progressPercentage}%` }}
-                  ></div>
-                </div>
-                <div className="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>{formatTime(currentTime)}</span>
-                  <span>{formatTime(duration)}</span>
-                </div>
-              </div>
-
-              {/* Audio Controls */}
-              <div className="flex items-center justify-center space-x-6">
-                <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                  <Volume2 className="w-6 h-6" />
-                </button>
-                
-                <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                  <RotateCcw className="w-6 h-6" />
-                </button>
-
-                <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                  <div className="w-8 h-8 border-2 border-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-bold">15</span>
+                {/* Age and Duration */}
+                <div className="flex space-x-8 mb-6">
+                  <div>
+                    <div className="text-2xl font-bold text-gray-800">5 - 6</div>
+                    <div className="text-sm text-gray-500">Age Range</div>
                   </div>
-                </button>
-
-                <button
-                  onClick={togglePlay}
-                  className="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors shadow-lg"
-                >
-                  {isPlaying ? (
-                    <Pause className="w-8 h-8 text-white" />
-                  ) : (
-                    <Play className="w-8 h-8 text-white ml-1" />
-                  )}
-                </button>
-
-                <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                  <div className="w-8 h-8 border-2 border-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-bold">30</span>
+                  <div>
+                    <div className="text-2xl font-bold text-gray-800">4m</div>
+                    <div className="text-sm text-gray-500">Length</div>
                   </div>
-                </button>
-
-                <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                  <SkipForward className="w-6 h-6" />
-                </button>
-
-                <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                  <Volume2 className="w-6 h-6" />
-                </button>
-              </div>
-
-              {/* Bottom Control Labels */}
-              <div className="flex items-center justify-center space-x-12 mt-3">
-                <div className="text-center">
-                  <div className="text-blue-500 text-xs font-medium">Text listen</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-blue-500 text-xs font-medium">Read</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Related Books */}
-          <div className="space-y-6">
-            {/* Tab Navigation */}
-            <div className="flex border-b border-gray-200">
-              <button
-                onClick={() => setActiveTab('MISS NELSON')}
-                className={`px-6 py-3 font-superclarendon-black transition-colors ${
-                  activeTab === 'MISS NELSON'
-                    ? 'text-blue-500 border-b-2 border-blue-500'
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                MISS NELSON
-              </button>
-              <button
-                onClick={() => setActiveTab('MORE LIKE THIS')}
-                className={`px-6 py-3 font-superclarendon-black transition-colors ${
-                  activeTab === 'MORE LIKE THIS'
-                    ? 'text-blue-500 border-b-2 border-blue-500'
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                MORE LIKE THIS
-              </button>
+          {/* Audio Player Section */}
+          <div className="bg-gray-50 p-6">
+            <div className="text-center mb-4">
+              <h3 className="font-medium text-gray-800 text-lg">
+                They All Saw a Cat
+              </h3>
+            </div>
+            
+            {/* Progress Bar */}
+            <div className="relative mb-6 max-w-2xl mx-auto">
+              <div className="w-full bg-gray-300 rounded-full h-2">
+                <div 
+                  className="bg-blue-500 h-2 rounded-full transition-all duration-300 relative"
+                  style={{ width: `${progressPercentage}%` }}
+                >
+                  <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full border-2 border-white shadow-md"></div>
+                </div>
+              </div>
+              <div className="flex justify-between text-sm text-gray-500 mt-2">
+                <span>{formatTime(currentTime)}</span>
+                <span>{formatTime(duration)}</span>
+              </div>
             </div>
 
-            {/* Book Grid */}
-            <div className="grid grid-cols-3 gap-4">
-              {(activeTab === 'MISS NELSON' ? missNelsonBooks : moreLikeThisBooks).map((book) => (
-                <div key={book.id} className="relative group cursor-pointer">
-                  <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
-                    <img
-                      src={book.cover}
-                      alt={book.title}
-                      className="w-full h-full object-cover"
-                    />
-                    {book.status === 'now-playing' && (
-                      <div className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium">
-                        NOW PLAYING
+            {/* Audio Controls */}
+            <div className="flex items-center justify-center space-x-6">
+              <button className="text-blue-500 hover:text-blue-600 transition-colors">
+                <Volume2 className="w-6 h-6" />
+              </button>
+              
+              <button className="text-blue-500 hover:text-blue-600 transition-colors">
+                <RotateCcw className="w-6 h-6" />
+              </button>
+
+              <button className="text-blue-500 hover:text-blue-600 transition-colors">
+                <div className="w-10 h-10 border-2 border-blue-500 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-bold">15</span>
+                </div>
+              </button>
+
+              <button
+                onClick={togglePlay}
+                className="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors shadow-lg"
+              >
+                {isPlaying ? (
+                  <Pause className="w-8 h-8 text-white" />
+                ) : (
+                  <Play className="w-8 h-8 text-white ml-1" />
+                )}
+              </button>
+
+              <button className="text-blue-500 hover:text-blue-600 transition-colors">
+                <div className="w-10 h-10 border-2 border-blue-500 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-bold">30</span>
+                </div>
+              </button>
+
+              <button className="text-blue-500 hover:text-blue-600 transition-colors">
+                <SkipForward className="w-6 h-6" />
+              </button>
+
+              <button className="text-blue-500 hover:text-blue-600 transition-colors">
+                <Volume2 className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+
+          {/* More Like This Section */}
+          <div className="p-6">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-bold text-blue-500 border-b-2 border-blue-500 inline-block pb-2">
+                MORE LIKE THIS
+              </h3>
+            </div>
+
+            {/* Horizontal Scrolling Book List */}
+            <div className="overflow-x-auto">
+              <div className="flex space-x-4 pb-4" style={{ width: 'max-content' }}>
+                {[
+                  { title: 'Creepy Carrots!', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
+                  { title: 'Dragons Love Tacos', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
+                  { title: 'Fiesta Fiasco', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
+                  { title: 'Three Wise Cats', cover: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
+                  { title: 'The Vast Wonder', cover: 'https://images.pexels.com/photos/1181276/pexels-photo-1181276.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
+                  { title: 'The Bossy Gallito', cover: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
+                  { title: 'Strega Nona', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
+                  { title: 'In the Red Canoe', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
+                  { title: 'Kitten\'s First', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' }
+                ].map((book, index) => (
+                  <div key={index} className="flex-shrink-0 w-24 cursor-pointer group">
+                    <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow relative">
+                      <img
+                        src={book.cover}
+                        alt={book.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-1 left-1 right-1">
+                        <div className="bg-purple-600 text-white text-xs px-1 py-0.5 rounded font-medium flex items-center justify-center space-x-1">
+                          <span className="text-xs">Audiobook</span>
+                          <Volume2 className="w-2 h-2" />
+                        </div>
                       </div>
-                    )}
-                    <div className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded-full font-medium flex items-center space-x-1">
-                      <span>Audiobook</span>
-                      <Volume2 className="w-3 h-3" />
                     </div>
                   </div>
-                  <h4 className="text-sm font-superclarendon-black text-gray-800 mt-2 text-center leading-tight">
-                    {book.title}
-                  </h4>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
