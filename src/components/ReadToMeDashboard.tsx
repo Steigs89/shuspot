@@ -100,7 +100,7 @@ export default function ReadToMeDashboard({ onBack, onBookSelect }: ReadToMeDash
       </div>
 
       {/* Hero Section */}
-     <div className="bg-[url('/src/assets/vecteezy_funny-cartoon-hippo-lying-in-water-vector_16265457.jpg')] bg-cover bg-center py-20">
+     <div className="bg-gradient-to-br from-purple-100 via-pink-100 to-blue-100 py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="inline-block bg-white/60 backdrop-blur-md rounded-2xl px-8 py-6 shadow-lg border border-white/50">
             <div className="flex items-center justify-center space-x-3 mb-4">
