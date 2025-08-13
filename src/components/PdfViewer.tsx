@@ -39,12 +39,24 @@ export default function PdfViewer({ onBack, pdfBook, onProgressUpdate, isFavorit
   const [readingTime, setReadingTime] = useState(0); // Reading time in minutes
   const [lastActivityTime, setLastActivityTime] = useState(Date.now());
   const [startTime] = useState(Date.now());
+  const [isMobile, setIsMobile] = useState(false);
 
   const leftCanvasRef = useRef<HTMLCanvasElement>(null);
   const rightCanvasRef = useRef<HTMLCanvasElement>(null);
   const leftRenderTaskRef = useRef<any>(null);
   const rightRenderTaskRef = useRef<any>(null);
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Check for mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Load PDF document
   useEffect(() => {
@@ -398,14 +410,14 @@ export default function PdfViewer({ onBack, pdfBook, onProgressUpdate, isFavorit
       </div>
 
       {/* Main Book Container */}
-      <div className="flex items-center justify-center min-h-screen p-4 md:p-8">
+      <div className="flex items-center justify-center min-h-screen p-2 sm:p-4 md:p-8">
         <div className="relative max-w-7xl w-full">
           {/* Book Spread Container */}
           <div
-            className="relative bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-700 ease-out border border-gray-200 cursor-pointer"
+            className="relative bg-white rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden transition-all duration-700 ease-out border border-gray-200 cursor-pointer"
             style={{
-              aspectRatio: '16/10',
-              minHeight: '600px',
+              aspectRatio: isMobile ? '4/5' : '16/10', // Taller aspect ratio on mobile
+              minHeight: isMobile ? '400px' : '600px', // Shorter on mobile
               transform: isPageTurning ? 'perspective(1200px) rotateY(2deg)' : 'perspective(1200px) rotateY(0deg)',
               transformStyle: 'preserve-3d'
             }}
@@ -428,9 +440,10 @@ export default function PdfViewer({ onBack, pdfBook, onProgressUpdate, isFavorit
             {/* Book Spine */}
             <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2 z-5"></div>
 
+            {/* Mobile: Single page view, Desktop: Two page spread */}
             <div className="flex h-full">
-              {/* Left Page */}
-              <div className="w-1/2 p-4 flex items-center justify-center border-r border-gray-200">
+              {/* Mobile: Show only current page, Desktop: Left page */}
+              <div className={`${isMobile ? 'w-full' : 'w-1/2'} p-2 sm:p-4 flex items-center justify-center ${!isMobile ? 'border-r border-gray-200' : ''}`}>
                 <canvas
                   ref={leftCanvasRef}
                   className="max-w-full max-h-full object-contain"
@@ -441,17 +454,19 @@ export default function PdfViewer({ onBack, pdfBook, onProgressUpdate, isFavorit
                 />
               </div>
 
-              {/* Right Page */}
-              <div className="w-1/2 p-4 flex items-center justify-center">
-                <canvas
-                  ref={rightCanvasRef}
-                  className="max-w-full max-h-full object-contain"
-                  style={{
-                    transform: isPageTurning ? 'transform translate-x-2' : '',
-                    transition: 'transform 0.6s ease-out'
-                  }}
-                />
-              </div>
+              {/* Desktop only: Right page */}
+              {!isMobile && (
+                <div className="w-1/2 p-2 sm:p-4 flex items-center justify-center">
+                  <canvas
+                    ref={rightCanvasRef}
+                    className="max-w-full max-h-full object-contain"
+                    style={{
+                      transform: isPageTurning ? 'transform translate-x-2' : '',
+                      transition: 'transform 0.6s ease-out'
+                    }}
+                  />
+                </div>
+              )}
             </div>
 
           </div>

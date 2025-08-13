@@ -506,9 +506,9 @@ By making small changes in their stances, surfers can alter how boards travel on
         </div>
       )}
 
-      {/* Main Content - Even Taller */}
-      <div className={`${pdfBook ? 'pt-32' : 'pt-14'} pb-16 px-6 h-screen flex items-center`}>
-        <div className="w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
+      {/* Main Content - Mobile Optimized */}
+      <div className={`${pdfBook ? 'pt-32' : 'pt-14'} pb-16 px-3 sm:px-6 min-h-screen flex items-center`}>
+        <div className="w-full max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-8 items-center">
           {/* Left Side - Reading Content */}
           <div className="relative h-[650px]">
             {pdfBook ? (
@@ -642,7 +642,7 @@ By making small changes in their stances, surfers can alter how boards travel on
           </div>
 
           {/* Right Side - Practice Interface */}
-          <div className="space-y-6 h-[650px] flex flex-col">
+          <div className="space-y-4 lg:space-y-6 h-auto lg:h-[650px] flex flex-col w-full">
             {/* Text Reading Section */}
             <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl flex-1">
               <h3 className="text-xl font-superclarendon-black text-gray-700 mb-4">

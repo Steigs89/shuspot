@@ -41,8 +41,8 @@ export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenP
       </div>
 
       {/* Avatar Selection */}
-      <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg">
-        <h1 className="text-4xl font-bold text-gray-800 text-center mb-8">Pick an avatar</h1>
+      <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 w-full max-w-lg mx-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-6 sm:mb-8">Pick an avatar</h1>
         
         <div className="grid grid-cols-3 gap-6 mb-8 justify-items-center">
           {avatars.map((avatar, index) => (
