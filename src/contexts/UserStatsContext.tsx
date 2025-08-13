@@ -270,6 +270,9 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
           return acc;
         }, {} as Record<string, number>));
 
+        // Check for locally stored completions that need to be synced
+        await syncLocalCompletions(user.id);
+
         // Calculate stats
         const calculatedStats = recalculateStats(readingSessions, quizResults, achievements);
         console.log('✅ UserStatsContext - Stats calculated and set');
@@ -333,6 +336,102 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
       timeSpent: recentSessions.reduce((sum, s) => sum + s.timeSpent, 0),
       quizzesCompleted: recentQuizzes.length,
     };
+  };
+
+  // Function to sync locally stored completions to Supabase
+  const syncLocalCompletions = async (userId: string) => {
+    try {
+      console.log('🔄 UserStatsContext - Checking for local completions to sync...');
+      
+      const backupKey = `completedBooks_${userId}`;
+      const localCompletions = localStorage.getItem(backupKey);
+      
+      if (!localCompletions) {
+        console.log('💾 UserStatsContext - No local completions found');
+        return;
+      }
+
+      const completions = JSON.parse(localCompletions);
+      const unsynced = completions.filter((completion: any) => !completion.supabaseSuccess);
+      
+      if (unsynced.length === 0) {
+        console.log('✅ UserStatsContext - All local completions already synced');
+        return;
+      }
+
+      console.log(`🔄 UserStatsContext - Found ${unsynced.length} unsynced completions, attempting to sync...`);
+
+      for (const completion of unsynced) {
+        try {
+          // Save to reading_sessions table
+          const sessionData = {
+            user_id: userId,
+            book_id: completion.bookId,
+            session_type: completion.bookType,
+            start_time: completion.completedAt,
+            duration_seconds: completion.timeSpent * 60,
+            pages_read: completion.pagesRead,
+            current_page: completion.totalPages,
+            progress_percentage: 100,
+            is_completed: true,
+            metadata: {
+              bookTitle: completion.bookTitle,
+              totalPages: completion.totalPages
+            }
+          };
+
+          const { error: sessionError } = await supabase
+            .from('reading_sessions')
+            .insert(sessionData);
+
+          if (sessionError) {
+            console.error('❌ UserStatsContext - Failed to sync session:', completion.bookTitle, sessionError);
+            continue;
+          }
+
+          // Also save to user_book_progress
+          const progressData = {
+            user_id: userId,
+            book_id: completion.bookId,
+            status: 'completed',
+            progress_percentage: 100,
+            current_page: completion.totalPages,
+            total_pages_read: completion.pagesRead,
+            total_time_spent: completion.timeSpent * 60,
+            completed_at: completion.completedAt,
+            last_read_at: completion.completedAt,
+            times_read: 1
+          };
+
+          const { error: progressError } = await supabase
+            .from('user_book_progress')
+            .upsert(progressData, { 
+              onConflict: 'user_id,book_id',
+              ignoreDuplicates: false 
+            });
+
+          if (progressError) {
+            console.error('❌ UserStatsContext - Failed to sync progress:', completion.bookTitle, progressError);
+          }
+
+          console.log('✅ UserStatsContext - Successfully synced completion:', completion.bookTitle);
+          
+          // Mark as synced
+          completion.supabaseSuccess = true;
+          completion.syncedAt = new Date().toISOString();
+
+        } catch (error) {
+          console.error('❌ UserStatsContext - Error syncing completion:', completion.bookTitle, error);
+        }
+      }
+
+      // Update localStorage with synced status
+      localStorage.setItem(backupKey, JSON.stringify(completions));
+      console.log('✅ UserStatsContext - Local completions sync completed');
+
+    } catch (error) {
+      console.error('❌ UserStatsContext - Error in syncLocalCompletions:', error);
+    }
   };
 
   const recalculateStats = (sessions: ReadingSession[], quizResults: QuizResult[], achievements: Achievement[]) => {
@@ -490,10 +589,25 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
 
     console.log('✨ UserStatsContext - Creating new session:', newSession);
 
-    // Save to Supabase if user is authenticated
+    // CRITICAL: Save to multiple places to ensure data persistence
+    let supabaseSuccess = false;
+    let localStorageSuccess = false;
+
+    // 1. Save to Supabase (primary storage)
     if (currentUserId) {
       try {
         console.log('💾 UserStatsContext - Saving to Supabase with user ID:', currentUserId);
+        
+        // First, get current user to ensure authentication
+        const { data: { user }, error: authError } = await supabase.auth.getUser();
+        if (authError || !user) {
+          console.error('❌ UserStatsContext - Authentication error:', authError);
+          throw new Error('User not authenticated');
+        }
+
+        console.log('✅ UserStatsContext - User authenticated:', user.id);
+
+        // Save to reading_sessions table
         const sessionData = {
           user_id: currentUserId,
           book_id: bookId,
@@ -512,22 +626,81 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
         
         console.log('📊 UserStatsContext - Session data to save:', sessionData);
         
-        const { data, error } = await supabase.from('reading_sessions').insert(sessionData);
+        const { data: sessionResult, error: sessionError } = await supabase
+          .from('reading_sessions')
+          .insert(sessionData)
+          .select();
 
-        if (error) {
-          console.error('❌ UserStatsContext - Supabase error:', error);
-          console.error('❌ UserStatsContext - Error details:', error.message, error.code, error.details);
-        } else {
-          console.log('✅ UserStatsContext - Successfully saved to Supabase:', data);
+        if (sessionError) {
+          console.error('❌ UserStatsContext - Reading session error:', sessionError);
+          throw sessionError;
         }
+
+        console.log('✅ UserStatsContext - Reading session saved:', sessionResult);
+
+        // Also save/update user_book_progress for permanent completion tracking
+        const progressData = {
+          user_id: currentUserId,
+          book_id: bookId,
+          status: 'completed',
+          progress_percentage: 100,
+          current_page: totalPages,
+          total_pages_read: totalPages,
+          total_time_spent: totalTimeSpent * 60, // Convert to seconds
+          completed_at: newSession.completedAt,
+          last_read_at: newSession.completedAt,
+          times_read: 1
+        };
+
+        const { data: progressResult, error: progressError } = await supabase
+          .from('user_book_progress')
+          .upsert(progressData, { 
+            onConflict: 'user_id,book_id',
+            ignoreDuplicates: false 
+          })
+          .select();
+
+        if (progressError) {
+          console.error('❌ UserStatsContext - Progress update error:', progressError);
+          // Don't throw here - session was saved successfully
+        } else {
+          console.log('✅ UserStatsContext - Book progress saved:', progressResult);
+        }
+
+        supabaseSuccess = true;
+        console.log('🎯 UserStatsContext - Supabase save SUCCESSFUL');
+
       } catch (error) {
-        console.error('❌ UserStatsContext - Error saving to Supabase:', error);
+        console.error('❌ UserStatsContext - Supabase save FAILED:', error);
+        supabaseSuccess = false;
       }
     } else {
-      console.log('⚠️ UserStatsContext - No user ID, saving locally only');
+      console.log('⚠️ UserStatsContext - No user ID, skipping Supabase save');
     }
 
-    // Update local state
+    // 2. Save to localStorage as backup (ALWAYS do this)
+    try {
+      const backupKey = `completedBooks_${currentUserId || 'anonymous'}`;
+      const existingCompletions = JSON.parse(localStorage.getItem(backupKey) || '[]');
+      
+      // Add this completion with timestamp
+      const completionRecord = {
+        ...newSession,
+        savedAt: new Date().toISOString(),
+        supabaseSuccess
+      };
+      
+      existingCompletions.push(completionRecord);
+      localStorage.setItem(backupKey, JSON.stringify(existingCompletions));
+      
+      console.log('💾 UserStatsContext - Completion saved to localStorage backup');
+      localStorageSuccess = true;
+    } catch (error) {
+      console.error('❌ UserStatsContext - localStorage backup FAILED:', error);
+      localStorageSuccess = false;
+    }
+
+    // 3. Update local state (ALWAYS do this)
     setUserStats(prevStats => {
       const existingSessionIndex = prevStats.readingSessions.findIndex(s => s.bookId === bookId);
       
@@ -551,17 +724,31 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
 
       console.log('📊 UserStatsContext - All sessions after update:', updatedSessions.length, 'total sessions');
       
-      // Save to localStorage as backup (user-specific key)
+      // Save all sessions to localStorage as additional backup
       try {
-        const backupKey = `readingSessions_${currentUserId}`;
-        localStorage.setItem(backupKey, JSON.stringify(updatedSessions));
-        console.log('💾 UserStatsContext - Saved reading sessions to localStorage backup');
+        const sessionsBackupKey = `readingSessions_${currentUserId || 'anonymous'}`;
+        localStorage.setItem(sessionsBackupKey, JSON.stringify(updatedSessions));
+        console.log('💾 UserStatsContext - All sessions saved to localStorage backup');
       } catch (error) {
-        console.error('❌ UserStatsContext - Error saving to localStorage backup:', error);
+        console.error('❌ UserStatsContext - Sessions backup failed:', error);
       }
       
       return recalculateStats(updatedSessions, prevStats.quizResults, prevStats.achievements);
     });
+
+    // 4. Log final status
+    console.log('🏁 UserStatsContext - Book completion summary:', {
+      bookTitle,
+      supabaseSuccess,
+      localStorageSuccess,
+      localStateUpdated: true
+    });
+
+    // 5. If Supabase failed but we have the data locally, try to sync later
+    if (!supabaseSuccess && localStorageSuccess) {
+      console.log('⚠️ UserStatsContext - Supabase failed, data saved locally for later sync');
+      // TODO: Implement retry mechanism or sync on next app load
+    }
 
     // Check for completion achievements
     checkCompletionAchievements(bookType);
