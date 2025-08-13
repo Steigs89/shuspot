@@ -120,166 +120,164 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto p-6">
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-          {/* Top Section - Book Info */}
-          <div className="p-8">
-            <div className="flex flex-col lg:flex-row gap-8">
-              {/* Left - Book Cover */}
-              <div className="flex-shrink-0">
-                <div className="w-48 h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl shadow-lg overflow-hidden relative">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-                    <div className="text-4xl mb-2">🐱</div>
-                    <div className="text-gray-800 text-sm font-bold text-center leading-tight">
-                      THEY ALL SAW A CAT
-                    </div>
+      {/* Main Content - Full Width */}
+      <div className="px-6 py-8">
+        {/* Top Section - Book Info */}
+        <div className="max-w-6xl mx-auto mb-8">
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+            {/* Left - Book Cover */}
+            <div className="flex-shrink-0">
+              <div className="w-64 h-80 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl shadow-lg overflow-hidden relative">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                  <div className="text-6xl mb-4">🐱</div>
+                  <div className="text-gray-800 text-lg font-bold text-center leading-tight">
+                    THEY ALL SAW A CAT
                   </div>
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <div className="bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-medium flex items-center justify-center space-x-1">
-                      <span>Audiobook</span>
-                      <Volume2 className="w-3 h-3" />
-                    </div>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-purple-600 text-white text-sm px-3 py-2 rounded-full font-medium flex items-center justify-center space-x-2">
+                    <span>Audiobook</span>
+                    <Volume2 className="w-4 h-4" />
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Right - Book Details */}
-              <div className="flex-1">
-                <div className="mb-4">
-                  <p className="text-gray-600 text-sm mb-1">
-                    <span className="font-medium">By</span> Brendan Wenzel
-                  </p>
-                  <p className="text-gray-600 text-sm">
-                    <span className="font-medium">Narrated by</span> John Lithgow
-                  </p>
-                </div>
-
-                <p className="text-gray-700 text-sm leading-relaxed mb-6 max-w-lg">
-                  In this celebration of observation, curiosity, and imagination, we see the many lives of one cat, and how perspective shapes what we see.
+            {/* Right - Book Details */}
+            <div className="flex-1 text-white">
+              <div className="mb-6">
+                <p className="text-white/80 text-base mb-2">
+                  <span className="font-medium">By</span> Brendan Wenzel
                 </p>
+                <p className="text-white/80 text-base">
+                  <span className="font-medium">Narrated by</span> John Lithgow
+                </p>
+              </div>
 
-                {/* Age and Duration */}
-                <div className="flex space-x-8 mb-6">
-                  <div>
-                    <div className="text-2xl font-bold text-gray-800">5 - 6</div>
-                    <div className="text-sm text-gray-500">Age Range</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-gray-800">4m</div>
-                    <div className="text-sm text-gray-500">Length</div>
-                  </div>
+              <p className="text-white/90 text-base leading-relaxed mb-8 max-w-2xl">
+                In this celebration of observation, curiosity, and imagination, we see the many lives of one cat, and how perspective shapes what we see.
+              </p>
+
+              {/* Age and Duration */}
+              <div className="flex space-x-12 mb-8">
+                <div>
+                  <div className="text-3xl font-bold text-white">5 - 6</div>
+                  <div className="text-base text-white/70">Age Range</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white">4m</div>
+                  <div className="text-base text-white/70">Length</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Audio Player Section */}
-          <div className="bg-gray-50 p-6">
-            <div className="text-center mb-4">
-              <h3 className="font-medium text-gray-800 text-lg">
-                They All Saw a Cat
-              </h3>
-            </div>
-            
-            {/* Progress Bar */}
-            <div className="relative mb-6 max-w-2xl mx-auto">
-              <div className="w-full bg-gray-300 rounded-full h-2">
-                <div 
-                  className="bg-blue-500 h-2 rounded-full transition-all duration-300 relative"
-                  style={{ width: `${progressPercentage}%` }}
-                >
-                  <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full border-2 border-white shadow-md"></div>
-                </div>
-              </div>
-              <div className="flex justify-between text-sm text-gray-500 mt-2">
-                <span>{formatTime(currentTime)}</span>
-                <span>{formatTime(duration)}</span>
-              </div>
-            </div>
-
-            {/* Audio Controls */}
-            <div className="flex items-center justify-center space-x-6">
-              <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                <Volume2 className="w-6 h-6" />
-              </button>
-              
-              <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                <RotateCcw className="w-6 h-6" />
-              </button>
-
-              <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                <div className="w-10 h-10 border-2 border-blue-500 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-bold">15</span>
-                </div>
-              </button>
-
-              <button
-                onClick={togglePlay}
-                className="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors shadow-lg"
+        {/* Audio Player Section */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="text-center mb-6">
+            <h3 className="font-medium text-white text-xl">
+              They All Saw a Cat
+            </h3>
+          </div>
+          
+          {/* Progress Bar */}
+          <div className="relative mb-8">
+            <div className="w-full bg-white/30 rounded-full h-3">
+              <div 
+                className="bg-white h-3 rounded-full transition-all duration-300 relative"
+                style={{ width: `${progressPercentage}%` }}
               >
-                {isPlaying ? (
-                  <Pause className="w-8 h-8 text-white" />
-                ) : (
-                  <Play className="w-8 h-8 text-white ml-1" />
-                )}
-              </button>
-
-              <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                <div className="w-10 h-10 border-2 border-blue-500 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-bold">30</span>
-                </div>
-              </button>
-
-              <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                <SkipForward className="w-6 h-6" />
-              </button>
-
-              <button className="text-blue-500 hover:text-blue-600 transition-colors">
-                <Volume2 className="w-6 h-6" />
-              </button>
+                <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-white rounded-full shadow-lg"></div>
+              </div>
+            </div>
+            <div className="flex justify-between text-sm text-white/80 mt-3">
+              <span>{formatTime(currentTime)}</span>
+              <span>{formatTime(duration)}</span>
             </div>
           </div>
 
-          {/* More Like This Section */}
-          <div className="p-6">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-blue-500 border-b-2 border-blue-500 inline-block pb-2">
-                MORE LIKE THIS
-              </h3>
-            </div>
+          {/* Audio Controls */}
+          <div className="flex items-center justify-center space-x-8">
+            <button className="text-white hover:text-white/80 transition-colors">
+              <Volume2 className="w-7 h-7" />
+            </button>
+            
+            <button className="text-white hover:text-white/80 transition-colors">
+              <RotateCcw className="w-7 h-7" />
+            </button>
 
-            {/* Horizontal Scrolling Book List */}
-            <div className="overflow-x-auto">
-              <div className="flex space-x-4 pb-4" style={{ width: 'max-content' }}>
-                {[
-                  { title: 'Creepy Carrots!', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
-                  { title: 'Dragons Love Tacos', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
-                  { title: 'Fiesta Fiasco', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
-                  { title: 'Three Wise Cats', cover: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
-                  { title: 'The Vast Wonder', cover: 'https://images.pexels.com/photos/1181276/pexels-photo-1181276.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
-                  { title: 'The Bossy Gallito', cover: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
-                  { title: 'Strega Nona', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
-                  { title: 'In the Red Canoe', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' },
-                  { title: 'Kitten\'s First', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1' }
-                ].map((book, index) => (
-                  <div key={index} className="flex-shrink-0 w-24 cursor-pointer group">
-                    <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow relative">
-                      <img
-                        src={book.cover}
-                        alt={book.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute bottom-1 left-1 right-1">
-                        <div className="bg-purple-600 text-white text-xs px-1 py-0.5 rounded font-medium flex items-center justify-center space-x-1">
-                          <span className="text-xs">Audiobook</span>
-                          <Volume2 className="w-2 h-2" />
-                        </div>
+            <button className="text-white hover:text-white/80 transition-colors">
+              <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center">
+                <span className="text-sm font-bold">15</span>
+              </div>
+            </button>
+
+            <button
+              onClick={togglePlay}
+              className="w-20 h-20 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors shadow-xl"
+            >
+              {isPlaying ? (
+                <Pause className="w-10 h-10 text-white" />
+              ) : (
+                <Play className="w-10 h-10 text-white ml-1" />
+              )}
+            </button>
+
+            <button className="text-white hover:text-white/80 transition-colors">
+              <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center">
+                <span className="text-sm font-bold">30</span>
+              </div>
+            </button>
+
+            <button className="text-white hover:text-white/80 transition-colors">
+              <SkipForward className="w-7 h-7" />
+            </button>
+
+            <button className="text-white hover:text-white/80 transition-colors">
+              <Volume2 className="w-7 h-7" />
+            </button>
+          </div>
+        </div>
+
+        {/* More Like This Section - Full Width */}
+        <div className="w-full">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white border-b-3 border-white inline-block pb-3">
+              MORE LIKE THIS
+            </h3>
+          </div>
+
+          {/* Full Width Horizontal Scrolling Book List */}
+          <div className="overflow-x-auto">
+            <div className="flex space-x-6 pb-6 px-6" style={{ width: 'max-content' }}>
+              {[
+                { title: 'Creepy Carrots!', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
+                { title: 'Dragons Love Tacos', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
+                { title: 'Fiesta Fiasco', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
+                { title: 'Three Wise Cats', cover: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
+                { title: 'The Vast Wonder', cover: 'https://images.pexels.com/photos/1181276/pexels-photo-1181276.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
+                { title: 'The Bossy Gallito', cover: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
+                { title: 'Strega Nona', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
+                { title: 'In the Red Canoe', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
+                { title: 'Kitten\'s First', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' }
+              ].map((book, index) => (
+                <div key={index} className="flex-shrink-0 w-36 cursor-pointer group">
+                  <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow relative">
+                    <img
+                      src={book.cover}
+                      alt={book.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-2 left-2 right-2">
+                      <div className="bg-purple-600 text-white text-xs px-2 py-1 rounded font-medium flex items-center justify-center space-x-1">
+                        <span>Audiobook</span>
+                        <Volume2 className="w-3 h-3" />
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
