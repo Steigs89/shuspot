@@ -1445,7 +1445,7 @@ function AppContent() {
 
             {/* Genre Categories Slider */}
             <div className="mb-8">
-              <h3 className="text-xl font-superclarendon-black text-gray-800 mb-4 text-center">Genres</h3>
+              <h3 className="text-2xl font-superclarendon-bold text-blue-800 mb-6 text-center">Genres</h3>
               <div className="flex items-center space-x-4">
                 {/* Left Arrow */}
                 <button
@@ -1562,13 +1562,13 @@ function AppContent() {
                           // Update the filter system when genre is selected
                           updateFilters({ genre: genre.name });
                         }}
-                        className={`p-3 rounded-lg border-2 transition-all duration-300 hover:scale-105 hover:shadow-md flex flex-col items-center justify-center flex-shrink-0 w-24 h-24 ${selectedCategory === genre.name
+                        className={`p-4 rounded-lg border-2 transition-all duration-300 hover:scale-105 hover:shadow-md flex flex-col items-center justify-center flex-shrink-0 w-32 h-32 ${selectedCategory === genre.name
                           ? 'bg-brand-pink border-brand-pink text-white shadow-lg'
                           : genre.color
                           }`}
                       >
-                        <span className="text-xl mb-1">{genre.icon}</span>
-                        <span className="text-xs font-medium text-center leading-tight">{genre.name}</span>
+                        <span className="text-2xl mb-2">{genre.icon}</span>
+                        <span className="text-sm font-medium text-center leading-tight">{genre.name}</span>
                       </button>
                     ))}
                   </div>
