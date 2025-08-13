@@ -170,91 +170,7 @@ function AppContent() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState<{ id: string; name: string; email: string; readingLevelSystem?: string; avatar?: string } | null>(null);
 
-  // 🔍 DEBUG SESSION: Log all reading sessions to see book types
-  useEffect(() => {
-    console.log('🔍 DEBUG SESSION - App.tsx - All reading sessions:', userStats.readingSessions);
-    console.log('📊 DEBUG SESSION - Sessions by book type:');
-    const sessionsByType = userStats.readingSessions.reduce((acc, session) => {
-      acc[session.bookType] = (acc[session.bookType] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
-    console.log(sessionsByType);
 
-    // Show recent sessions with details
-    console.log('📚 DEBUG SESSION - Recent sessions (last 5):');
-    userStats.readingSessions.slice(-5).forEach((session, index) => {
-      console.log(`  ${index + 1}. "${session.bookTitle}" - Type: ${session.bookType} - Completed: ${session.isCompleted}`);
-    });
-  }, [userStats.readingSessions]);
-
-  // 🔧 DEBUG SESSION: Manual debug trigger
-  const triggerDebugSession = () => {
-    console.log('🚀 DEBUG SESSION STARTED - Manual Trigger');
-    console.log('='.repeat(50));
-
-    // Test getProgressBySection for all sections
-    const { getProgressBySection } = {
-      getProgressBySection: (section: string, timeframe: 'weekly' | 'monthly') => {
-        console.log('🔍 DEBUG SESSION - getProgressBySection called with:', { section, timeframe });
-
-        const cutoffDate = new Date();
-        if (timeframe === 'weekly') {
-          cutoffDate.setDate(cutoffDate.getDate() - 7);
-        } else {
-          cutoffDate.setMonth(cutoffDate.getMonth() - 1);
-        }
-
-        console.log('📅 DEBUG SESSION - Cutoff date:', cutoffDate);
-        console.log('📚 DEBUG SESSION - Total reading sessions:', userStats.readingSessions.length);
-
-        // Map section names to book types
-        const sectionToBookType: { [key: string]: ReadingSession['bookType'][] } = {
-          'Voice Coach': ['voiceCoach'],
-          'Books': ['pdf'],
-          'Video Books': ['video'],
-          'Read to Me': ['readToMe'],
-          'Audiobooks': ['audiobook'],
-          'All': ['pdf', 'audiobook', 'video', 'readToMe', 'voiceCoach']
-        };
-
-        const bookTypes = sectionToBookType[section] || sectionToBookType['All'];
-        console.log('📖 DEBUG SESSION - Book types for section "' + section + '":', bookTypes);
-
-        // Filter sessions by section and timeframe
-        const filteredSessions = userStats.readingSessions.filter(session => {
-          const matchesBookType = bookTypes.includes(session.bookType);
-          const withinTimeframe = new Date(session.completedAt) >= cutoffDate;
-          console.log('📊 DEBUG SESSION - Session: "' + session.bookTitle + '" | Type: ' + session.bookType + ' | Matches: ' + matchesBookType + ' | Within timeframe: ' + withinTimeframe);
-          return matchesBookType && withinTimeframe;
-        });
-
-        console.log('✅ DEBUG SESSION - Filtered sessions for "' + section + '":', filteredSessions.length);
-
-        const filteredQuizzes = userStats.quizResults.filter(quiz =>
-          new Date(quiz.completedAt) >= cutoffDate
-        );
-
-        const result = {
-          booksCompleted: filteredSessions.filter(s => s.isCompleted).length,
-          pagesRead: filteredSessions.reduce((sum, s) => sum + s.pagesRead, 0),
-          timeSpent: filteredSessions.reduce((sum, s) => sum + s.timeSpent, 0),
-          quizzesCompleted: filteredQuizzes.length,
-        };
-
-        console.log('📈 DEBUG SESSION - Final result for "' + section + '":', result);
-        return result;
-      }
-    };
-
-    const sections = ['All', 'Voice Coach', 'Books', 'Video Books', 'Read to Me', 'Audiobooks'];
-    sections.forEach(section => {
-      console.log(`\n🔍 Testing section: ${section}`);
-      getProgressBySection(section, 'weekly');
-    });
-
-    console.log('='.repeat(50));
-    console.log('🏁 DEBUG SESSION COMPLETED');
-  };
 
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
@@ -1371,16 +1287,6 @@ function AppContent() {
                   <Settings className="w-5 h-5 text-gray-400" />
                 </button>
               </div>
-
-              {/* 🔧 DEBUG SESSION BUTTON */}
-              <button
-                onClick={triggerDebugSession}
-                className="flex items-center space-x-2 px-3 py-2 bg-red-500 text-white hover:bg-red-600 rounded-lg transition-colors text-sm"
-                title="Debug Session - Check Console"
-              >
-                <span>🔍</span>
-                <span>Debug</span>
-              </button>
 
               <button
                 onClick={() => setShowFileUpload(true)}
