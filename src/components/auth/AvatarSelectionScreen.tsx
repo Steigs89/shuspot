@@ -8,9 +8,10 @@ export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenP
   const [selectedAvatar, setSelectedAvatar] = useState<number | null>(null);
 
   const avatars = [
-    '🐱', '🐱', '🐱',
-    '🐱', '🐱', '🐱',
-    '🐱', '🐱', '🐱'
+    '🐶', '🐱', '🐰', 
+    '🦊', '🐻', '🐼',
+    '🐸', '🐙', '🦄',
+    '🐯', '🦁', '🐨'
   ];
 
   const handleSubmit = () => {
@@ -43,7 +44,7 @@ export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenP
       <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-lg">
         <h1 className="text-4xl font-bold text-gray-800 text-center mb-8">Pick an avatar</h1>
         
-        <div className="grid grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-3 gap-6 mb-8 justify-items-center">
           {avatars.map((avatar, index) => (
             <button
               key={index}
