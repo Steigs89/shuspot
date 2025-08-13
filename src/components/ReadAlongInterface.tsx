@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, RotateCcw } from 'lucide-react';
+import dogFace from '../assets/adorable-cartoon-dog-face.png';
 
 interface ReadAlongInterfaceProps {
   onBack: () => void;
@@ -295,7 +296,7 @@ export default function ReadAlongInterface({ onBack }: ReadAlongInterfaceProps) 
         <div className={`w-40 h-40 rounded-full flex items-center justify-center shadow-lg transition-all duration-500 ${avatarAnimating ? 'animate-bounce scale-110' : 'scale-100'
           }`}>
           <img
-            src="src/assets/adorable-cartoon-dog-face.png"
+            src={dogFace}
             alt="Dog"
             className="w-full h-full object-cover rounded-ful
   l"

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, Heart, Settings, ChevronUp, Volume2, Mic, ChevronLeft, ChevronRight, CheckCircle, AlertCircle } from 'lucide-react';
 import { pdfjs as pdfjsLib } from 'react-pdf';
+import dogCompanion from '../assets/cartoon-dog-cute-drawing-printable-free-style-volumetric-lighting_921860-112557-removebg-preview.png';
 
 // Configure PDF.js worker
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@5.3.31/build/pdf.worker.min.mjs';
@@ -806,7 +807,7 @@ By making small changes in their stances, surfers can alter how boards travel on
             dogAnimating ? 'animate-pulse' : ''
           }`}>
             <img
-              src="/src/assets/cartoon-dog-cute-drawing-printable-free-style-volumetric-lighting_921860-112557-removebg-preview.png"
+              src={dogCompanion}
               alt="Voice Coach dog companion"
               className={`w-full h-full object-contain drop-shadow-2xl transition-all duration-500 ${
                 dogAnimating 

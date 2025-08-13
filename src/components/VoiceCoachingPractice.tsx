@@ -66,8 +66,8 @@ Balance is crucial in surfing. Surfers must maintain their center of gravity whi
   };
 
   const stopRecording = () => {
-    setSession(prev => ({ 
-      ...prev, 
+    setSession(prev => ({
+      ...prev,
       isRecording: false,
       pronunciationScore: Math.floor(Math.random() * 20) + 80, // Mock score 80-100
       fluencyScore: Math.floor(Math.random() * 15) + 85, // Mock score 85-100
@@ -127,14 +127,14 @@ Balance is crucial in surfing. Surfers must maintain their center of gravity whi
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <button 
+            <button
               onClick={onBack}
               className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
               <span className="font-medium">BACK</span>
             </button>
-            
+
             <div className="flex items-center space-x-4">
               <div className="text-sm text-gray-600">
                 Page {session.currentPage} of {session.totalPages}
@@ -159,7 +159,7 @@ Balance is crucial in surfing. Surfers must maintain their center of gravity whi
               {/* Page Content */}
               <div className="flex-1 p-6 overflow-y-auto">
                 <div className="prose prose-lg max-w-none">
-                  <div 
+                  <div
                     className="text-gray-800 leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: highlightText(currentPageData.content) }}
                   />
@@ -168,14 +168,13 @@ Balance is crucial in surfing. Surfers must maintain their center of gravity whi
 
               {/* Page Navigation */}
               <div className="p-4 border-t border-gray-200 flex items-center justify-between">
-                <button 
+                <button
                   onClick={prevPage}
                   disabled={session.currentPage === 1}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
-                    session.currentPage === 1 
-                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
-                      : 'bg-blue-100 text-blue-600 hover:bg-blue-200'
-                  }`}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${session.currentPage === 1
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-blue-100 text-blue-600 hover:bg-blue-200'
+                    }`}
                 >
                   <ChevronLeft className="w-4 h-4" />
                   <span>Previous</span>
@@ -185,14 +184,13 @@ Balance is crucial in surfing. Surfers must maintain their center of gravity whi
                   {session.currentPage} / {session.totalPages}
                 </div>
 
-                <button 
+                <button
                   onClick={nextPage}
                   disabled={session.currentPage === session.totalPages}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
-                    session.currentPage === session.totalPages 
-                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
-                      : 'bg-blue-100 text-blue-600 hover:bg-blue-200'
-                  }`}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${session.currentPage === session.totalPages
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-blue-100 text-blue-600 hover:bg-blue-200'
+                    }`}
                 >
                   <span>Next</span>
                   <ChevronRight className="w-4 h-4" />
@@ -206,17 +204,16 @@ Balance is crucial in surfing. Surfers must maintain their center of gravity whi
             {/* Text Reading Section */}
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Text reading</h3>
-              
+
               {/* Audio Controls */}
               <div className="flex items-center justify-center space-x-4 mb-6">
                 <button
                   onClick={playReferenceAudio}
                   disabled={session.isPlaying}
-                  className={`w-16 h-16 rounded-full flex items-center justify-center transition-colors ${
-                    session.isPlaying 
-                      ? 'bg-gray-300 text-gray-500' 
-                      : 'bg-blue-500 hover:bg-blue-600 text-white'
-                  }`}
+                  className={`w-16 h-16 rounded-full flex items-center justify-center transition-colors ${session.isPlaying
+                    ? 'bg-gray-300 text-gray-500'
+                    : 'bg-blue-500 hover:bg-blue-600 text-white'
+                    }`}
                 >
                   {session.isPlaying ? (
                     <div className="w-6 h-6 border-2 border-gray-500 border-t-transparent rounded-full animate-spin"></div>
@@ -227,11 +224,10 @@ Balance is crucial in surfing. Surfers must maintain their center of gravity whi
 
                 <button
                   onClick={session.isRecording ? stopRecording : startRecording}
-                  className={`w-16 h-16 rounded-full flex items-center justify-center transition-colors ${
-                    session.isRecording 
-                      ? 'bg-red-500 hover:bg-red-600 text-white animate-pulse' 
-                      : 'bg-blue-500 hover:bg-blue-600 text-white'
-                  }`}
+                  className={`w-16 h-16 rounded-full flex items-center justify-center transition-colors ${session.isRecording
+                    ? 'bg-red-500 hover:bg-red-600 text-white animate-pulse'
+                    : 'bg-blue-500 hover:bg-blue-600 text-white'
+                    }`}
                 >
                   <Mic className="w-6 h-6" />
                 </button>
@@ -259,11 +255,10 @@ Balance is crucial in surfing. Surfers must maintain their center of gravity whi
                   <button
                     key={index}
                     onClick={() => setSelectedWord(word)}
-                    className={`w-full text-left p-3 rounded-lg border transition-colors ${
-                      selectedWord === word 
-                        ? 'border-blue-500 bg-blue-50 text-blue-700' 
-                        : 'border-gray-200 hover:border-gray-300 text-gray-700'
-                    }`}
+                    className={`w-full text-left p-3 rounded-lg border transition-colors ${selectedWord === word
+                      ? 'border-blue-500 bg-blue-50 text-blue-700'
+                      : 'border-gray-200 hover:border-gray-300 text-gray-700'
+                      }`}
                   >
                     <div className="font-medium">{word}</div>
                     <div className="text-sm text-gray-500 capitalize">/{word.toLowerCase()}/</div>
@@ -287,7 +282,7 @@ Balance is crucial in surfing. Surfers must maintain their center of gravity whi
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       <Clock className="w-4 h-4 text-green-500" />

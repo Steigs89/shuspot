@@ -38,6 +38,9 @@ import stargazingBg from './assets/vecteezy_a-father-and-son-stargazing-together
 import cozyBedroomBg from './assets/vecteezy_a-cozy-bedroom-at-night-with-a-full-moon-bookshelf-lamp_47783104.jpg';
 import booksBg from './assets/kldo_4atl_220426.jpg';
 import mainContentBg from './assets/5922295.jpg';
+import appLogo from './assets/SS Logo Final Black With Color Spots HR.png';
+import volcanoBookBg from './assets/vecteezy_book-with-scene-of-volcano-eruption_7092921.jpg';
+import hippoWaterBg from './assets/vecteezy_funny-cartoon-hippo-lying-in-water-vector_16265457.jpg';
 
 
 
@@ -1415,7 +1418,7 @@ function AppContent() {
             {/* App Logo */}
             <div className="flex items-center">
               <img
-                src="src/assets/SS Logo Final Black With Color Spots HR.png"
+                src={appLogo}
                 alt="App Logo"
                 className="h-10 object-contain"
               />
@@ -1427,11 +1430,11 @@ function AppContent() {
       {/* Hero Section with Background that bleeds up into header */}
       <div
         className={`relative py-16 -mt-20 pt-36 ${selectedContentType === 'All Book'
-          ? "bg-[url('/src/assets/vecteezy_book-with-scene-of-volcano-eruption_7092921.jpg')] bg-cover bg-center"
+          ? "bg-cover bg-center"
           : (selectedContentType === 'Video Books' || selectedContentType === 'Audiobooks')
             ? "bg-cover bg-center"
             : (selectedContentType === 'Read to Me' || selectedContentType === 'Voice Coach')
-              ? "bg-[url('/src/assets/vecteezy_funny-cartoon-hippo-lying-in-water-vector_16265457.jpg')] bg-cover bg-center"
+              ? "bg-cover bg-center"
               : sectionInfo.bgClass
           }`}
         style={selectedContentType === 'Video Books' ? {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSubscription } from '../../contexts/SubscriptionContext';
+import loginIllustration from '../../assets/image-from-rawpixel-id-6484055-png.png';
 
 interface LoginScreenProps {
   onLogin: () => void;
@@ -77,7 +78,7 @@ export default function LoginScreen({ onLogin, onSwitchToSignup }: LoginScreenPr
         <div className="w-48 h-48 bg-gray-500 rounded-full relative">
           {/* Rabbit character placeholder */}
           <div className="absolute inset-0 flex items-center justify-center text-6xl">
-         <img src="src/assets/image-from-rawpixel-id-6484055-png.png" alt="Login illustration" width="1200" />
+         <img src={loginIllustration} alt="Login illustration" width="1200" />
           </div>
         </div>
       </div>
