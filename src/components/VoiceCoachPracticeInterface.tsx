@@ -63,7 +63,7 @@ export default function VoiceCoachPracticeInterface({ onBack, bookId, isFavorite
 
   // Practice words from the surfing text
   const practiceWords = [
-    'momentum', 'cutback', 'gravity', 'surfers', 'waves', 'boards', 'control', 'strength'
+    'momentum', 'cutback', 'gravity', 'surfers', 'waves', 'boards'
   ];
 
   const practiceText = `In Control
