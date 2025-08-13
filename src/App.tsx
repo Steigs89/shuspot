@@ -1567,7 +1567,7 @@ function AppContent() {
                           : genre.color
                           }`}
                       >
-                        <span className="text-2xl mb-2">{genre.icon}</span>
+                        <span className="text-4xl mb-2">{genre.icon}</span>
                         <span className="text-sm font-medium text-center leading-tight">{genre.name}</span>
                       </button>
                     ))}
