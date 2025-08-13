@@ -1377,7 +1377,7 @@ function AppContent() {
         </div>
       </div>
 
-      <main className="relative z-10 max-w-7xl mx-auto px-6 py-8">
+      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-8">
         <div
           className="relative rounded-2xl p-6 shadow-lg overflow-hidden"
           style={{
@@ -1396,7 +1396,7 @@ function AppContent() {
 
             {/* Content Type Tabs */}
             <div className="mb-8">
-              <div className="flex justify-evenly items-center gap-2 py-6 px-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:justify-evenly items-center gap-3 sm:gap-4 lg:gap-2 py-6 px-2 sm:px-4">
                 {contentTypes.map((type) => (
                   <button
                     key={type.id}
@@ -1404,7 +1404,7 @@ function AppContent() {
                       setSelectedContentType(type.name);
                       // Both Voice Coach and Read to Me content will show inline, no view change needed
                     }}
-                    className={`group w-36 h-36 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl flex flex-col items-center justify-center relative ${selectedContentType === type.name
+                    className={`group w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 rounded-full transition-all duration-300 hover:scale-105 lg:hover:scale-110 hover:shadow-2xl flex flex-col items-center justify-center relative ${selectedContentType === type.name
                       ? 'text-white shadow-2xl shadow-pink-500/30'
                       : 'text-blue-700 shadow-lg shadow-pink-200/50'
                       }`}
