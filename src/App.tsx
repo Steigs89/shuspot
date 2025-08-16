@@ -77,31 +77,72 @@ const DB_VERSION = 1;
 const PDF_STORE = 'pdfBooks';
 const VIDEO_STORE = 'videoBooks';
 
-const openDB = (): Promise<IDBDatabase> => {
+// Helper function to get user-specific store names
+const getUserSpecificStoreName = (baseStoreName: string, userId: string | null) => {
+  return userId ? `${baseStoreName}_${userId}` : baseStoreName;
+};
+
+const openDB = async (userSpecificStores: string[] = []): Promise<IDBDatabase> => {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
 
     request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(request.result);
+    request.onsuccess = () => {
+      const db = request.result;
+      
+      // Check if we need to create user-specific stores
+      const missingStores = userSpecificStores.filter(storeName => !db.objectStoreNames.contains(storeName));
+      
+      if (missingStores.length > 0) {
+        // Close current connection and reopen with version upgrade
+        db.close();
+        const upgradeRequest = indexedDB.open(DB_NAME, DB_VERSION + 1);
+        
+        upgradeRequest.onerror = () => reject(upgradeRequest.error);
+        upgradeRequest.onsuccess = () => resolve(upgradeRequest.result);
+        
+        upgradeRequest.onupgradeneeded = (event) => {
+          const upgradeDb = (event.target as IDBOpenDBRequest).result;
+          
+          // Create missing user-specific stores
+          missingStores.forEach(storeName => {
+            if (!upgradeDb.objectStoreNames.contains(storeName)) {
+              upgradeDb.createObjectStore(storeName, { keyPath: 'id' });
+              console.log('Created user-specific store:', storeName);
+            }
+          });
+        };
+      } else {
+        resolve(db);
+      }
+    };
 
     request.onupgradeneeded = (event) => {
       const db = (event.target as IDBOpenDBRequest).result;
 
-      // Create PDF books store
+      // Create base PDF books store (for backward compatibility)
       if (!db.objectStoreNames.contains(PDF_STORE)) {
         db.createObjectStore(PDF_STORE, { keyPath: 'id' });
       }
 
-      // Create video books store
+      // Create base video books store (for backward compatibility)
       if (!db.objectStoreNames.contains(VIDEO_STORE)) {
         db.createObjectStore(VIDEO_STORE, { keyPath: 'id' });
       }
+
+      // Create user-specific stores if provided
+      userSpecificStores.forEach(storeName => {
+        if (!db.objectStoreNames.contains(storeName)) {
+          db.createObjectStore(storeName, { keyPath: 'id' });
+          console.log('Created user-specific store during upgrade:', storeName);
+        }
+      });
     };
   });
 };
 
 const saveToIndexedDB = async (storeName: string, data: any): Promise<void> => {
-  const db = await openDB();
+  const db = await openDB([storeName]); // Pass the store name to ensure it exists
   const transaction = db.transaction([storeName], 'readwrite');
   const store = transaction.objectStore(storeName);
 
@@ -113,15 +154,27 @@ const saveToIndexedDB = async (storeName: string, data: any): Promise<void> => {
 };
 
 const getAllFromIndexedDB = async (storeName: string): Promise<any[]> => {
-  const db = await openDB();
-  const transaction = db.transaction([storeName], 'readonly');
-  const store = transaction.objectStore(storeName);
+  try {
+    const db = await openDB([storeName]); // Pass the store name to ensure it exists
+    
+    // Check if the store exists
+    if (!db.objectStoreNames.contains(storeName)) {
+      console.log('Store does not exist:', storeName, 'returning empty array');
+      return [];
+    }
+    
+    const transaction = db.transaction([storeName], 'readonly');
+    const store = transaction.objectStore(storeName);
 
-  return new Promise((resolve, reject) => {
-    const request = store.getAll();
-    request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(request.result);
-  });
+    return new Promise((resolve, reject) => {
+      const request = store.getAll();
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => resolve(request.result);
+    });
+  } catch (error) {
+    console.error('Error accessing IndexedDB store:', storeName, error);
+    return [];
+  }
 };
 
 const clearIndexedDBStore = async (storeName: string): Promise<void> => {
@@ -240,11 +293,22 @@ function AppContent() {
   useEffect(() => {
     const loadStoredBooks = async () => {
       try {
-        console.log('Loading books from IndexedDB...');
+        console.log('Loading books from IndexedDB for user:', currentUser?.id || 'anonymous');
 
-        // Load PDF books
-        const storedPdfBooks = await getAllFromIndexedDB(PDF_STORE);
-        console.log('Stored PDF books from IndexedDB:', storedPdfBooks.length);
+        // Only load books if user is authenticated
+        if (!currentUser?.id) {
+          console.log('No authenticated user, skipping book loading');
+          setHasLoadedFromStorage(true);
+          return;
+        }
+
+        // Get user-specific store names
+        const userPdfStore = getUserSpecificStoreName(PDF_STORE, currentUser.id);
+        const userVideoStore = getUserSpecificStoreName(VIDEO_STORE, currentUser.id);
+
+        // Load PDF books for this specific user
+        const storedPdfBooks = await getAllFromIndexedDB(userPdfStore);
+        console.log('Stored PDF books from IndexedDB for user:', storedPdfBooks.length);
         if (storedPdfBooks.length > 0) {
           console.log('First stored PDF:', storedPdfBooks[0]);
           console.log('First PDF file data size:', storedPdfBooks[0].fileData?.byteLength || 'No file data');
@@ -288,9 +352,9 @@ function AppContent() {
           setUploadedPdfBooks(restoredPdfBooks);
         }
 
-        // Load Video books
-        const storedVideoBooks = await getAllFromIndexedDB(VIDEO_STORE);
-        console.log('Stored video books:', storedVideoBooks.length);
+        // Load Video books for this specific user
+        const storedVideoBooks = await getAllFromIndexedDB(userVideoStore);
+        console.log('Stored video books for user:', storedVideoBooks.length);
         if (storedVideoBooks.length > 0) {
           const restoredVideoBooks: VideoBookData[] = storedVideoBooks.map((stored: StoredVideoBook) => {
             const file = new File([stored.fileData], stored.fileName, { type: stored.fileType });
@@ -311,10 +375,20 @@ function AppContent() {
           setUploadedVideoBooks(restoredVideoBooks);
         }
 
-        // Load favorites from localStorage (keep this simple)
-        const storedFavorites = localStorage.getItem('favorites');
+        // Load user-specific favorites from localStorage
+        const userFavoritesKey = `favorites_${currentUser.id}`;
+        const storedFavorites = localStorage.getItem(userFavoritesKey);
         if (storedFavorites) {
           setFavorites(JSON.parse(storedFavorites));
+        } else {
+          // Reset to default empty favorites for new user
+          setFavorites({
+            books: [],
+            videoBooks: [],
+            voiceCoach: [],
+            audiobooks: [],
+            readToMe: []
+          });
         }
 
         // Mark that we've completed loading from storage
@@ -341,15 +415,19 @@ function AppContent() {
     };
 
     loadStoredBooks();
-  }, []);
+  }, [currentUser?.id]); // Re-run when user changes
 
   // Save uploaded books to IndexedDB whenever they change (but only after initial load)
   useEffect(() => {
-    if (!hasLoadedFromStorage) return; // Don't save until we've loaded from storage first
+    if (!hasLoadedFromStorage || !currentUser?.id) return; // Don't save until we've loaded from storage first and user is authenticated
 
     const saveBooks = async () => {
       try {
-        console.log('Saving PDF books to IndexedDB:', uploadedPdfBooks.length);
+        console.log('Saving PDF books to IndexedDB for user:', currentUser.id, 'Books:', uploadedPdfBooks.length);
+        
+        // Get user-specific store name
+        const userPdfStore = getUserSpecificStoreName(PDF_STORE, currentUser.id);
+        
         for (const book of uploadedPdfBooks) {
           try {
             // Check file size - if too large, skip IndexedDB storage
@@ -389,8 +467,8 @@ function AppContent() {
               fileData: fileBuffer
             };
 
-            await saveToIndexedDB(PDF_STORE, bookToStore);
-            console.log('Successfully saved PDF to IndexedDB:', book.title, 'Size:', fileBuffer.byteLength);
+            await saveToIndexedDB(userPdfStore, bookToStore);
+            console.log('Successfully saved PDF to user-specific IndexedDB:', book.title, 'Size:', fileBuffer.byteLength);
           } catch (bookError) {
             console.error('Error saving individual PDF book:', book.title, bookError);
             // If it's a size-related error, inform the user
@@ -399,7 +477,7 @@ function AppContent() {
             }
           }
         }
-        console.log('PDF books saving process completed');
+        console.log('PDF books saving process completed for user:', currentUser.id);
       } catch (error) {
         console.error('Error in PDF books saving process:', error);
       }
@@ -411,14 +489,18 @@ function AppContent() {
     } else {
       console.log('No PDF books to save to IndexedDB');
     }
-  }, [uploadedPdfBooks, hasLoadedFromStorage]);
+  }, [uploadedPdfBooks, hasLoadedFromStorage, currentUser?.id]);
 
   useEffect(() => {
-    if (!hasLoadedFromStorage) return; // Don't save until we've loaded from storage first
+    if (!hasLoadedFromStorage || !currentUser?.id) return; // Don't save until we've loaded from storage first and user is authenticated
 
     const saveVideos = async () => {
       try {
-        console.log('Saving video books to IndexedDB:', uploadedVideoBooks.length);
+        console.log('Saving video books to IndexedDB for user:', currentUser.id, 'Videos:', uploadedVideoBooks.length);
+        
+        // Get user-specific store name
+        const userVideoStore = getUserSpecificStoreName(VIDEO_STORE, currentUser.id);
+        
         for (const video of uploadedVideoBooks) {
           const fileBuffer = await video.file.arrayBuffer();
           const videoToStore: StoredVideoBook = {
@@ -434,9 +516,9 @@ function AppContent() {
             fileType: video.file.type,
             fileData: fileBuffer
           };
-          await saveToIndexedDB(VIDEO_STORE, videoToStore);
+          await saveToIndexedDB(userVideoStore, videoToStore);
         }
-        console.log('Video books saved successfully to IndexedDB');
+        console.log('Video books saved successfully to user-specific IndexedDB for user:', currentUser.id);
       } catch (error) {
         console.error('Error saving video books:', error);
       }
@@ -445,12 +527,15 @@ function AppContent() {
     if (uploadedVideoBooks.length > 0) {
       saveVideos();
     }
-  }, [uploadedVideoBooks, hasLoadedFromStorage]);
+  }, [uploadedVideoBooks, hasLoadedFromStorage, currentUser?.id]);
 
-  // Save favorites to localStorage whenever they change
+  // Save favorites to localStorage whenever they change (user-specific)
   useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }, [favorites]);
+    if (currentUser?.id) {
+      const userFavoritesKey = `favorites_${currentUser.id}`;
+      localStorage.setItem(userFavoritesKey, JSON.stringify(favorites));
+    }
+  }, [favorites, currentUser?.id]);
 
   // Voice Coach books data
   const voiceCoachBooks = [
