@@ -371,8 +371,7 @@ function AppContent() {
         const userVideoStore = getUserSpecificStoreName(VIDEO_STORE, currentUser.id);
 
         // MIGRATION: Only migrate for the original user (you), not new users
-        // Replace 'YOUR_USER_ID_HERE' with your actual Supabase user ID
-        const ORIGINAL_USER_ID = 'YOUR_USER_ID_HERE'; // TODO: Replace with your actual user ID
+        const ORIGINAL_USER_ID = 'fa375aab-6cdb-4133-a1da-9360cc7e4109'; // Your specific user ID
         
         if (currentUser.id === ORIGINAL_USER_ID) {
           console.log('🔄 Original user detected, checking for books to migrate from global storage...');
