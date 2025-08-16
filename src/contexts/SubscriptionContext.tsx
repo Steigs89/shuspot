@@ -43,7 +43,7 @@ interface SubscriptionContextType {
   isLoading: boolean;
   
   // Auth functions
-  signUp: (email: string, password: string, name: string, readingLevelSystem?: string) => Promise<{ success: boolean; error?: string }>;
+  signUp: (email: string, password: string, name: string, readingLevelSystem?: string, avatar?: string) => Promise<{ success: boolean; error?: string }>;
   signIn: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
   signOut: () => Promise<void>;
   resetPassword: (email: string) => Promise<{ success: boolean; error?: string }>;
@@ -229,10 +229,11 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
     }
   }, [subscription]);
 
-  const signUp = async (email: string, password: string, name: string, readingLevelSystem?: string): Promise<{ success: boolean; error?: string }> => {
+  const signUp = async (email: string, password: string, name: string, readingLevelSystem?: string, avatar?: string): Promise<{ success: boolean; error?: string }> => {
     try {
       setIsLoading(true);
       console.log('🔐 Starting signup process for:', email);
+      console.log('🎭 Avatar to save:', avatar);
       
       // Sign up with Supabase Auth
       const { data: authData, error: authError } = await supabase.auth.signUp({
@@ -242,7 +243,8 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
           data: {
             full_name: name,
             reading_level_system: readingLevelSystem || 'US-RAZ',
-            name: name // Also save as 'name' for compatibility
+            name: name, // Also save as 'name' for compatibility
+            avatar: avatar || '🐶' // Save the selected avatar
           }
         }
       });

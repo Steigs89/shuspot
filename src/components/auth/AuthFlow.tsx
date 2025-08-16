@@ -17,6 +17,7 @@ interface UserData {
   email: string;
   password: string;
   readingLevelSystem?: string;
+  avatar?: string;
 }
 
 function AuthFlowContent({ onAuthComplete }: AuthFlowProps) {
@@ -33,7 +34,14 @@ function AuthFlowContent({ onAuthComplete }: AuthFlowProps) {
     setCurrentStep('avatar');
   };
 
-  const handleAvatarNext = () => {
+  const handleAvatarNext = (selectedAvatar: string) => {
+    console.log('🎭 Avatar selected in AuthFlow:', selectedAvatar);
+    if (userData) {
+      setUserData({
+        ...userData,
+        avatar: selectedAvatar
+      });
+    }
     setCurrentStep('plan');
   };
 

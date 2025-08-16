@@ -3,7 +3,7 @@ import { useSubscription } from '../../contexts/SubscriptionContext';
 
 interface PlanSelectionScreenProps {
   onNext: () => void;
-  userData: { fullName: string; email: string; password: string };
+  userData: { fullName: string; email: string; password: string; avatar?: string };
 }
 
 export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionScreenProps) {
@@ -20,8 +20,9 @@ export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionS
     try {
       console.log('🚀 Starting plan selection process...');
       
-      // First, create the user account
-      const signUpResult = await signUp(userData.email, userData.password, userData.fullName);
+      // First, create the user account with avatar
+      console.log('🎭 Creating user account with avatar:', userData.avatar);
+      const signUpResult = await signUp(userData.email, userData.password, userData.fullName, undefined, userData.avatar);
       
       if (!signUpResult.success) {
         alert(signUpResult.error || 'Failed to create account');

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface AvatarSelectionScreenProps {
-  onNext: () => void;
+  onNext: (selectedAvatar: string) => void;
 }
 
 export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenProps) {
@@ -16,7 +16,9 @@ export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenP
 
   const handleSubmit = () => {
     if (selectedAvatar !== null) {
-      onNext();
+      const avatar = avatars[selectedAvatar];
+      console.log('🎭 Selected avatar:', avatar);
+      onNext(avatar);
     }
   };
 
