@@ -458,27 +458,47 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
   };
 
   const startFreeTrial = async (tierId: string): Promise<{ success: boolean; error?: string }> => {
-    // Check if user is set, if not try to get from Supabase auth
+    console.log('🎯 startFreeTrial called with tierId:', tierId);
+    console.log('🔍 Current user state:', user);
+    
+    // Check if user is set, if not try to get from Supabase auth with retries
     let currentUser = user;
     if (!currentUser) {
       console.log('🔄 User not in state, checking Supabase auth...');
-      const { data: { user: authUser } } = await supabase.auth.getUser();
-      if (authUser) {
-        currentUser = {
-          id: authUser.id,
-          email: authUser.email || '',
-          name: authUser.user_metadata?.full_name || 'User',
-          hasCompletedTrial: false,
-          createdAt: authUser.created_at
-        };
-        setUser(currentUser);
-        console.log('✅ Retrieved user from Supabase auth:', currentUser);
+      
+      // Try multiple times with delays to handle timing issues
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        console.log(`🔄 Auth check attempt ${attempt}/3`);
+        
+        const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+        
+        if (authError) {
+          console.log(`❌ Auth error on attempt ${attempt}:`, authError.message);
+        }
+        
+        if (authUser) {
+          currentUser = {
+            id: authUser.id,
+            email: authUser.email || '',
+            name: authUser.user_metadata?.full_name || 'User',
+            hasCompletedTrial: false,
+            createdAt: authUser.created_at
+          };
+          setUser(currentUser);
+          console.log('✅ Retrieved user from Supabase auth:', currentUser);
+          break;
+        }
+        
+        if (attempt < 3) {
+          console.log(`⏳ Waiting 500ms before retry...`);
+          await new Promise(resolve => setTimeout(resolve, 500));
+        }
       }
     }
 
     if (!currentUser) {
-      console.error('❌ No user found in state or Supabase auth');
-      return { success: false, error: 'User not authenticated' };
+      console.error('❌ No user found after all attempts');
+      return { success: false, error: 'User not authenticated. Please try refreshing the page.' };
     }
 
     if (currentUser.hasCompletedTrial) {

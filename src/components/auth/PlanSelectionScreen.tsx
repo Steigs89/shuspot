@@ -18,6 +18,8 @@ export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionS
     setIsProcessing(true);
 
     try {
+      console.log('🚀 Starting plan selection process...');
+      
       // First, create the user account
       const signUpResult = await signUp(userData.email, userData.password, userData.fullName);
       
@@ -27,6 +29,11 @@ export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionS
         return;
       }
 
+      console.log('✅ User account created, waiting for auth session...');
+      
+      // Wait a moment for the auth session to be established
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
       // Find the selected pricing tier
       const selectedTier = pricingTiers.find(tier => tier.id === selectedPlan);
       if (!selectedTier) {
@@ -35,13 +42,17 @@ export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionS
         return;
       }
 
+      console.log('🎯 Starting free trial for plan:', selectedPlan);
+      
       // Start free trial first
       const trialResult = await startFreeTrial(selectedPlan);
       
       if (trialResult.success) {
+        console.log('✅ Trial started successfully, proceeding to next step');
         // Trial started successfully, proceed to next step
         onNext();
       } else {
+        console.log('❌ Trial failed, trying Stripe checkout:', trialResult.error);
         // If trial fails (user already used trial), go directly to Stripe checkout
         const checkoutResult = await createStripeCheckout(selectedPlan);
         
