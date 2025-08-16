@@ -232,6 +232,7 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
   const signUp = async (email: string, password: string, name: string, readingLevelSystem?: string): Promise<{ success: boolean; error?: string }> => {
     try {
       setIsLoading(true);
+      console.log('🔐 Starting signup process for:', email);
       
       // Sign up with Supabase Auth
       const { data: authData, error: authError } = await supabase.auth.signUp({
@@ -245,27 +246,39 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
         }
       });
 
+      console.log('🔐 Supabase auth response:', { authData, authError });
+
       if (authError) {
+        console.error('❌ Auth error:', authError.message);
         return { success: false, error: authError.message };
       }
 
       if (!authData.user) {
+        console.error('❌ No user returned from auth');
         return { success: false, error: 'Failed to create user account' };
       }
 
-      // Create user profile in our database
-      const { error: profileError } = await supabase
-        .from('user_profiles')
-        .insert({
-          id: authData.user.id,
-          email: email,
-          full_name: name,
-          onboarding_completed: false
-        });
+      console.log('✅ User created successfully:', authData.user.id);
 
-      if (profileError) {
-        console.error('Error creating user profile:', profileError);
-        // Don't fail the signup if profile creation fails, we can retry later
+      // Try to create user profile in our database (optional - don't fail if it doesn't work)
+      try {
+        const { error: profileError } = await supabase
+          .from('user_profiles')
+          .insert({
+            id: authData.user.id,
+            email: email,
+            full_name: name,
+            onboarding_completed: false
+          });
+
+        if (profileError) {
+          console.warn('⚠️ Could not create user profile (table may not exist yet):', profileError.message);
+          // This is OK - we can create the profile later or use auth metadata
+        } else {
+          console.log('✅ User profile created successfully');
+        }
+      } catch (profileError) {
+        console.warn('⚠️ Profile creation failed (continuing anyway):', profileError);
       }
 
       const newUser: User = {
@@ -273,14 +286,16 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
         email,
         name,
         hasCompletedTrial: false,
-        createdAt: new Date().toISOString()
+        createdAt: authData.user.created_at || new Date().toISOString()
       };
       
+      console.log('✅ Setting user state:', newUser);
       setUser(newUser);
+      
       return { success: true };
     } catch (error) {
-      console.error('Signup error:', error);
-      return { success: false, error: 'Failed to create account' };
+      console.error('❌ Signup error:', error);
+      return { success: false, error: error instanceof Error ? error.message : 'Failed to create account' };
     } finally {
       setIsLoading(false);
     }
