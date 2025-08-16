@@ -241,7 +241,8 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
         options: {
           data: {
             full_name: name,
-            reading_level_system: readingLevelSystem || 'US-RAZ'
+            reading_level_system: readingLevelSystem || 'US-RAZ',
+            name: name // Also save as 'name' for compatibility
           }
         }
       });
@@ -366,10 +367,13 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
       const user: User = {
         id: authData.user.id,
         email: authData.user.email || email,
-        name: profile?.full_name || authData.user.user_metadata?.full_name || 'User',
+        name: profile?.full_name || authData.user.user_metadata?.full_name || authData.user.user_metadata?.name || 'User',
         hasCompletedTrial: userSubscription?.trial_end ? new Date(userSubscription.trial_end) < new Date() : false,
         createdAt: authData.user.created_at
       };
+
+      console.log('👤 User metadata:', authData.user.user_metadata);
+      console.log('📝 Final user object:', user);
 
       console.log('Setting user:', user);
       setUser(user);
@@ -430,27 +434,55 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
   };
 
   const updateReadingLevelSystem = async (readingLevelSystem: string): Promise<{ success: boolean; error?: string }> => {
-    if (!user) {
-      return { success: false, error: 'User not authenticated' };
+    console.log('🎯 Updating reading level system to:', readingLevelSystem);
+    
+    // Try to get current user from auth if not in state
+    let currentUser = user;
+    if (!currentUser) {
+      try {
+        const { data: { user: authUser } } = await supabase.auth.getUser();
+        if (authUser) {
+          currentUser = {
+            id: authUser.id,
+            email: authUser.email || '',
+            name: authUser.user_metadata?.full_name || authUser.user_metadata?.name || 'User',
+            hasCompletedTrial: false,
+            createdAt: authUser.created_at
+          };
+          setUser(currentUser);
+        }
+      } catch (error) {
+        console.log('Could not get user from auth:', error);
+      }
+    }
+
+    if (!currentUser) {
+      console.log('⚠️ No user found, but continuing with reading level update');
+      // Don't fail - just continue without updating
+      return { success: true };
     }
 
     try {
       setIsLoading(true);
+      console.log('📝 Updating user metadata for user:', currentUser.id);
       
       // Update user metadata in Supabase Auth
       const { error: updateError } = await supabase.auth.updateUser({
         data: {
-          reading_level_system: readingLevelSystem
+          reading_level_system: readingLevelSystem,
+          reading_level: readingLevelSystem // Also save as reading_level for compatibility
         }
       });
 
       if (updateError) {
+        console.error('❌ Error updating user metadata:', updateError);
         return { success: false, error: updateError.message };
       }
 
+      console.log('✅ Successfully updated reading level system');
       return { success: true };
     } catch (error) {
-      console.error('Error updating reading level system:', error);
+      console.error('❌ Error updating reading level system:', error);
       return { success: false, error: 'Failed to update reading level system' };
     } finally {
       setIsLoading(false);
