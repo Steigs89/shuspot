@@ -458,16 +458,36 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
   };
 
   const startFreeTrial = async (tierId: string): Promise<{ success: boolean; error?: string }> => {
-    if (!user) {
+    // Check if user is set, if not try to get from Supabase auth
+    let currentUser = user;
+    if (!currentUser) {
+      console.log('🔄 User not in state, checking Supabase auth...');
+      const { data: { user: authUser } } = await supabase.auth.getUser();
+      if (authUser) {
+        currentUser = {
+          id: authUser.id,
+          email: authUser.email || '',
+          name: authUser.user_metadata?.full_name || 'User',
+          hasCompletedTrial: false,
+          createdAt: authUser.created_at
+        };
+        setUser(currentUser);
+        console.log('✅ Retrieved user from Supabase auth:', currentUser);
+      }
+    }
+
+    if (!currentUser) {
+      console.error('❌ No user found in state or Supabase auth');
       return { success: false, error: 'User not authenticated' };
     }
 
-    if (user.hasCompletedTrial) {
+    if (currentUser.hasCompletedTrial) {
       return { success: false, error: 'Free trial already used' };
     }
 
     try {
       setIsLoading(true);
+      console.log('🎯 Starting free trial for user:', currentUser.id, 'with tier:', tierId);
       
       const tier = pricingTiers.find(t => t.id === tierId);
       if (!tier) {
@@ -480,7 +500,7 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
 
       const newSubscription: Subscription = {
         id: Date.now().toString(),
-        userId: user.id,
+        userId: currentUser.id,
         tierId: tierId,
         status: 'trialing',
         currentPeriodStart: trialStart.toISOString(),
@@ -490,14 +510,16 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
         cancelAtPeriodEnd: false
       };
 
+      console.log('✅ Created subscription:', newSubscription);
       setSubscription(newSubscription);
       
       // Update user to mark trial as used
-      const updatedUser = { ...user, hasCompletedTrial: true };
+      const updatedUser = { ...currentUser, hasCompletedTrial: true };
       setUser(updatedUser);
+      console.log('✅ Updated user with trial completion:', updatedUser);
       
       // Save to localStorage
-      localStorage.setItem(`subscription_${user.id}`, JSON.stringify(newSubscription));
+      localStorage.setItem(`subscription_${currentUser.id}`, JSON.stringify(newSubscription));
       
       return { success: true };
     } catch (error) {
