@@ -257,23 +257,87 @@ function AppContent() {
   // Track if we've loaded from localStorage to prevent overwriting on initial render
   const [hasLoadedFromStorage, setHasLoadedFromStorage] = useState(false);
 
-  // Simple authentication - only respond to explicit sign-in/sign-out events
+  // Function to refresh user data from Supabase
+  const refreshUserData = async () => {
+    try {
+      console.log('🔄 Manually refreshing user data...');
+      const { data: { user }, error } = await supabase.auth.getUser();
+      
+      if (error) {
+        console.error('❌ Error getting user:', error);
+        return;
+      }
+      
+      if (user) {
+        console.log('✅ Refreshed user data:', user);
+        console.log('👤 Refreshed user metadata:', user.user_metadata);
+        console.log('📧 Email confirmed:', user.email_confirmed_at);
+        
+        setCurrentUser({
+          id: user.id,
+          name: user.user_metadata?.full_name || user.user_metadata?.name || 'User',
+          email: user.email || '',
+          readingLevelSystem: user.user_metadata?.reading_level_system || user.user_metadata?.reading_level || 'US-RAZ',
+          avatar: user.user_metadata?.avatar || '🐶'
+        });
+        
+        console.log('🎯 Updated current user after refresh:', {
+          name: user.user_metadata?.full_name || user.user_metadata?.name || 'User',
+          readingLevelSystem: user.user_metadata?.reading_level_system || user.user_metadata?.reading_level || 'US-RAZ'
+        });
+      }
+    } catch (error) {
+      console.error('❌ Error refreshing user data:', error);
+    }
+  };
+
+  // Authentication state listener with detailed logging
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      console.log('🔐 Auth state change:', event, session?.user?.id);
+      
       if (event === 'SIGNED_IN' && session?.user) {
-        console.log('User signed in successfully');
+        console.log('✅ User signed in successfully');
+        console.log('👤 User metadata:', session.user.user_metadata);
+        console.log('📧 Email confirmed:', session.user.email_confirmed_at);
+        console.log('🔍 Full user object:', session.user);
+        
+        // Check if user metadata is empty and try to refresh
+        if (!session.user.user_metadata?.full_name && !session.user.user_metadata?.name) {
+          console.log('⚠️ User metadata appears empty, waiting and refreshing...');
+          // Wait a moment and try to refresh user data
+          setTimeout(refreshUserData, 2000);
+        }
+        
         setIsAuthenticated(true);
         setCurrentUser({
           id: session.user.id,
           name: session.user.user_metadata?.full_name || session.user.user_metadata?.name || 'User',
           email: session.user.email || '',
-          readingLevelSystem: session.user.user_metadata?.reading_level_system || 'US-RAZ', // Default to US-RAZ
-          avatar: session.user.user_metadata?.avatar || '🐶' // Default to dog
+          readingLevelSystem: session.user.user_metadata?.reading_level_system || session.user.user_metadata?.reading_level || 'US-RAZ',
+          avatar: session.user.user_metadata?.avatar || '🐶'
+        });
+        
+        console.log('🎯 Set current user:', {
+          name: session.user.user_metadata?.full_name || session.user.user_metadata?.name || 'User',
+          readingLevelSystem: session.user.user_metadata?.reading_level_system || session.user.user_metadata?.reading_level || 'US-RAZ'
         });
       } else if (event === 'SIGNED_OUT') {
-        console.log('User signed out');
+        console.log('🚪 User signed out');
         setIsAuthenticated(false);
         setCurrentUser(null);
+      } else if (event === 'TOKEN_REFRESHED' && session?.user) {
+        console.log('🔄 Token refreshed, updating user data');
+        console.log('👤 Updated user metadata:', session.user.user_metadata);
+        
+        // Update user data when token is refreshed (this might have updated metadata)
+        setCurrentUser({
+          id: session.user.id,
+          name: session.user.user_metadata?.full_name || session.user.user_metadata?.name || 'User',
+          email: session.user.email || '',
+          readingLevelSystem: session.user.user_metadata?.reading_level_system || session.user.user_metadata?.reading_level || 'US-RAZ',
+          avatar: session.user.user_metadata?.avatar || '🐶'
+        });
       }
     });
 
