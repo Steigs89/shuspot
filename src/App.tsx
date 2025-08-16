@@ -73,7 +73,7 @@ interface VideoBookData {
 
 // IndexedDB utilities for better file storage
 const DB_NAME = 'ReadToMeApp';
-const DB_VERSION = 1;
+const DB_VERSION = 3; // Increased version to handle existing databases
 const PDF_STORE = 'pdfBooks';
 const VIDEO_STORE = 'videoBooks';
 
@@ -84,7 +84,8 @@ const getUserSpecificStoreName = (baseStoreName: string, userId: string | null) 
 
 const openDB = async (userSpecificStores: string[] = []): Promise<IDBDatabase> => {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
+    // Simple approach: just open the database without version conflicts
+    const request = indexedDB.open(DB_NAME);
 
     request.onerror = () => reject(request.error);
     request.onsuccess = () => {
@@ -95,8 +96,9 @@ const openDB = async (userSpecificStores: string[] = []): Promise<IDBDatabase> =
       
       if (missingStores.length > 0) {
         // Close current connection and reopen with version upgrade
+        const currentVersion = db.version;
         db.close();
-        const upgradeRequest = indexedDB.open(DB_NAME, DB_VERSION + 1);
+        const upgradeRequest = indexedDB.open(DB_NAME, currentVersion + 1);
         
         upgradeRequest.onerror = () => reject(upgradeRequest.error);
         upgradeRequest.onsuccess = () => resolve(upgradeRequest.result);
@@ -108,7 +110,7 @@ const openDB = async (userSpecificStores: string[] = []): Promise<IDBDatabase> =
           missingStores.forEach(storeName => {
             if (!upgradeDb.objectStoreNames.contains(storeName)) {
               upgradeDb.createObjectStore(storeName, { keyPath: 'id' });
-              console.log('Created user-specific store:', storeName);
+              console.log('✅ Created user-specific store:', storeName);
             }
           });
         };
@@ -120,21 +122,22 @@ const openDB = async (userSpecificStores: string[] = []): Promise<IDBDatabase> =
     request.onupgradeneeded = (event) => {
       const db = (event.target as IDBOpenDBRequest).result;
 
-      // Create base PDF books store (for backward compatibility)
+      // Create base stores if they don't exist
       if (!db.objectStoreNames.contains(PDF_STORE)) {
         db.createObjectStore(PDF_STORE, { keyPath: 'id' });
+        console.log('✅ Created base PDF store');
       }
 
-      // Create base video books store (for backward compatibility)
       if (!db.objectStoreNames.contains(VIDEO_STORE)) {
         db.createObjectStore(VIDEO_STORE, { keyPath: 'id' });
+        console.log('✅ Created base video store');
       }
 
       // Create user-specific stores if provided
       userSpecificStores.forEach(storeName => {
         if (!db.objectStoreNames.contains(storeName)) {
           db.createObjectStore(storeName, { keyPath: 'id' });
-          console.log('Created user-specific store during upgrade:', storeName);
+          console.log('✅ Created user-specific store during upgrade:', storeName);
         }
       });
     };
