@@ -52,16 +52,11 @@ export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionS
         // Trial started successfully, proceed to next step
         onNext();
       } else {
-        console.log('❌ Trial failed, trying Stripe checkout:', trialResult.error);
-        // If trial fails (user already used trial), go directly to Stripe checkout
-        const checkoutResult = await createStripeCheckout(selectedPlan);
-        
-        if (checkoutResult.success && checkoutResult.checkoutUrl) {
-          // In production, redirect to Stripe checkout
-          window.location.href = checkoutResult.checkoutUrl;
-        } else {
-          alert(checkoutResult.error || 'Failed to create checkout session');
-        }
+        console.log('❌ Trial failed:', trialResult.error);
+        // For now, skip Stripe and just proceed with the signup
+        // The user can still use the app without a subscription
+        console.log('⚠️ Skipping Stripe checkout, proceeding with free access');
+        onNext();
       }
     } catch (error) {
       console.error('Error during signup process:', error);
