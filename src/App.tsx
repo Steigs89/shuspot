@@ -370,6 +370,37 @@ function AppContent() {
         const userPdfStore = getUserSpecificStoreName(PDF_STORE, currentUser.id);
         const userVideoStore = getUserSpecificStoreName(VIDEO_STORE, currentUser.id);
 
+        // MIGRATION: Check if user has books in old global stores and migrate them
+        console.log('🔄 Checking for books to migrate from global storage...');
+        try {
+          const globalPdfBooks = await getAllFromIndexedDB(PDF_STORE);
+          const globalVideoBooks = await getAllFromIndexedDB(VIDEO_STORE);
+          
+          if (globalPdfBooks.length > 0) {
+            console.log('📦 Found', globalPdfBooks.length, 'PDF books in global storage, migrating to user-specific storage...');
+            for (const book of globalPdfBooks) {
+              await saveToIndexedDB(userPdfStore, book);
+              console.log('✅ Migrated PDF:', book.title);
+            }
+            // Clear global storage after migration
+            await clearIndexedDBStore(PDF_STORE);
+            console.log('🧹 Cleared global PDF storage after migration');
+          }
+          
+          if (globalVideoBooks.length > 0) {
+            console.log('📦 Found', globalVideoBooks.length, 'video books in global storage, migrating to user-specific storage...');
+            for (const book of globalVideoBooks) {
+              await saveToIndexedDB(userVideoStore, book);
+              console.log('✅ Migrated video:', book.title);
+            }
+            // Clear global storage after migration
+            await clearIndexedDBStore(VIDEO_STORE);
+            console.log('🧹 Cleared global video storage after migration');
+          }
+        } catch (migrationError) {
+          console.log('⚠️ Migration check failed (this is OK for new users):', migrationError);
+        }
+
         // Load PDF books for this specific user
         const storedPdfBooks = await getAllFromIndexedDB(userPdfStore);
         console.log('Stored PDF books from IndexedDB for user:', storedPdfBooks.length);
