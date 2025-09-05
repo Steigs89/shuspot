@@ -260,6 +260,20 @@ class MetadataParser:
     @staticmethod
     def parse_file_metadata(file_path: str, filename: str, folder_path: str = None) -> dict:
         """Enhanced method to extract all available metadata from a file"""
+        
+        # First try custom parsers (highest priority)
+        custom_metadata = {}
+        try:
+            from custom_parsers import parse_with_custom_parsers
+            custom_metadata = parse_with_custom_parsers(file_path, filename, folder_path)
+            if custom_metadata:
+                print(f"Custom parser used: {custom_metadata.get('_parser_used', 'Unknown')}")
+        except ImportError:
+            # Custom parsers not available
+            pass
+        except Exception as e:
+            print(f"Error in custom parsers: {e}")
+        
         # Start with filename parsing
         metadata = MetadataParser.parse_filename(filename)
         
@@ -288,22 +302,34 @@ class MetadataParser:
         # Find cover image
         cover_image_url = MetadataParser.find_cover_image(file_path)
         
-        # Merge metadata with priority: folder_metadata > embedded > filename
+        # Merge metadata with priority: custom > folder_metadata > embedded > filename
         final_metadata = {
-            "title": (folder_metadata.get("title") or 
+            "title": (custom_metadata.get("title") or
+                     folder_metadata.get("title") or 
                      embedded_metadata.get("title") or 
                      metadata.get("title", "Unknown")),
-            "author": (folder_metadata.get("author") or 
+            "author": (custom_metadata.get("author") or
+                      folder_metadata.get("author") or 
                       embedded_metadata.get("author") or 
                       metadata.get("author", "Unknown")),
-            "genre": folder_metadata.get("genre", "Unknown"),
-            "book_type": folder_metadata.get("book_type", book_type),
-            "reading_level": folder_metadata.get("reading_level", reading_level),
-            "cover_image_url": folder_metadata.get("cover_image_url", cover_image_url),
+            "genre": (custom_metadata.get("genre") or
+                     folder_metadata.get("genre", "Unknown")),
+            "book_type": (custom_metadata.get("book_type") or
+                         folder_metadata.get("book_type", book_type)),
+            "reading_level": (custom_metadata.get("reading_level") or
+                             folder_metadata.get("reading_level", reading_level)),
+            "cover_image_url": (custom_metadata.get("cover_image_url") or
+                               folder_metadata.get("cover_image_url", cover_image_url)),
             "file_type": file_type,
-            "subject": (folder_metadata.get("subject") or 
+            "subject": (custom_metadata.get("subject") or
+                       folder_metadata.get("subject") or 
                        embedded_metadata.get("subject"))
         }
+        
+        # Add any additional fields from custom parser
+        for key, value in custom_metadata.items():
+            if key not in final_metadata and not key.startswith('_'):
+                final_metadata[key] = value
         
         # Clean up metadata
         for key, value in final_metadata.items():

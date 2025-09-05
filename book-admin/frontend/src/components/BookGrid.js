@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
-import { Edit2, Trash2, Save, X } from 'lucide-react';
+import { Edit2, Trash2, Save, X, Play } from 'lucide-react';
 
-const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBooks, setSelectedBooks }) => {
+const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBooks, setSelectedBooks, onLaunchBook }) => {
   const [gridApi, setGridApi] = useState(null);
   const [editingRows, setEditingRows] = useState(new Set());
 
@@ -107,8 +107,34 @@ const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBoo
       }
     };
 
+    const handleLaunch = () => {
+      if (onLaunchBook) {
+        onLaunchBook(data);
+      }
+    };
+
+    // All books should be launchable
+    const isShuSpotBook = true;
+
     return (
       <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+        {onLaunchBook && (
+          <button
+            onClick={handleLaunch}
+            style={{
+              padding: '4px',
+              border: 'none',
+              background: 'none',
+              cursor: 'pointer',
+              color: '#007bff',
+              opacity: 1
+            }}
+            title="Launch book in reader"
+            disabled={false}
+          >
+            <Play size={14} />
+          </button>
+        )}
         <button
           onClick={handleDelete}
           style={{
@@ -167,6 +193,12 @@ const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBoo
       cellRenderer: EditableCellRenderer
     },
     {
+      headerName: 'Fiction Type',
+      field: 'fiction_type',
+      width: 130,
+      cellRenderer: EditableCellRenderer
+    },
+    {
       headerName: 'Reading Level',
       field: 'reading_level',
       width: 130,
@@ -222,7 +254,7 @@ const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBoo
     },
     {
       headerName: 'Actions',
-      width: 80,
+      width: 100,
       cellRenderer: ActionCellRenderer,
       pinned: 'right'
     }

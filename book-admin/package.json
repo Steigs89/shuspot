@@ -1,0 +1,22 @@
+{
+  "name": "book-admin-tool",
+  "version": "1.0.0",
+  "description": "ShuSpot Book Administration Tool",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "cd backend && python main.py",
+    "dev:frontend": "cd frontend && npm start",
+    "deploy": "./deploy.sh",
+    "vercel": "vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "your-repository-url"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  }
+}

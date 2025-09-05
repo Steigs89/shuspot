@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000';
-
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: '/',  // This will use the proxy configuration from package.json
   headers: {
     'Content-Type': 'application/json',
   },
@@ -64,6 +62,12 @@ export const bookAPI = {
   // Delete book
   deleteBook: async (bookId) => {
     const response = await api.delete(`/books/${bookId}`);
+    return response.data;
+  },
+
+  // Clear all books from database
+  clearDatabase: async () => {
+    const response = await api.delete('/books/clear/all');
     return response.data;
   },
 
