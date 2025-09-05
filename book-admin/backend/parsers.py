@@ -1,13 +1,39 @@
 import os
 import re
 from pathlib import Path
-import PyPDF2
-import docx
-import ebooklib
-from ebooklib import epub
-import magic
 import json
 from typing import Dict, List, Optional
+
+# Optional heavy dependencies
+try:
+    import PyPDF2
+    PDF_AVAILABLE = True
+except ImportError:
+    PDF_AVAILABLE = False
+    PyPDF2 = None
+
+try:
+    import docx
+    DOCX_AVAILABLE = True
+except ImportError:
+    DOCX_AVAILABLE = False
+    docx = None
+
+try:
+    import ebooklib
+    from ebooklib import epub
+    EPUB_AVAILABLE = True
+except ImportError:
+    EPUB_AVAILABLE = False
+    ebooklib = None
+    epub = None
+
+try:
+    import magic
+    MAGIC_AVAILABLE = True
+except ImportError:
+    MAGIC_AVAILABLE = False
+    magic = None
 
 class MetadataParser:
     """Extract metadata from various file types and filenames"""
@@ -77,6 +103,9 @@ class MetadataParser:
     @staticmethod
     def parse_pdf_metadata(file_path: str) -> dict:
         """Extract metadata from PDF files"""
+        if not PDF_AVAILABLE:
+            return {}
+            
         try:
             with open(file_path, 'rb') as file:
                 reader = PyPDF2.PdfReader(file)
@@ -96,6 +125,9 @@ class MetadataParser:
     @staticmethod
     def parse_docx_metadata(file_path: str) -> dict:
         """Extract metadata from DOCX files"""
+        if not DOCX_AVAILABLE:
+            return {}
+            
         try:
             doc = docx.Document(file_path)
             props = doc.core_properties
@@ -113,6 +145,9 @@ class MetadataParser:
     @staticmethod
     def parse_epub_metadata(file_path: str) -> dict:
         """Extract metadata from EPUB files"""
+        if not EPUB_AVAILABLE:
+            return {}
+            
         try:
             book = epub.read_epub(file_path)
             
@@ -134,10 +169,13 @@ class MetadataParser:
     def get_file_type(file_path: str) -> str:
         """Determine file type using python-magic"""
         try:
-            mime = magic.from_file(file_path, mime=True)
-            return mime
+            if MAGIC_AVAILABLE:
+                mime = magic.from_file(file_path, mime=True)
+                return mime
         except:
-            # Fallback to extension
+            pass
+            
+        # Fallback to extension
             ext = Path(file_path).suffix.lower()
             type_map = {
                 '.pdf': 'application/pdf',

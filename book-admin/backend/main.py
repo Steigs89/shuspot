@@ -8,10 +8,17 @@ import os
 import shutil
 import asyncio
 from datetime import datetime
-import pandas as pd
 from io import BytesIO
 import logging
 import json
+
+# Optional heavy dependencies
+try:
+    import pandas as pd
+    PANDAS_AVAILABLE = True
+except ImportError:
+    PANDAS_AVAILABLE = False
+    pd = None
 
 from database import get_db, Book, UPLOAD_DIR
 from parsers import MetadataParser
@@ -366,6 +373,9 @@ async def get_stats(db: Session = Depends(get_db)):
 @app.get("/export/csv")
 async def export_csv(db: Session = Depends(get_db)):
     """Export all books to CSV"""
+    
+    if not PANDAS_AVAILABLE:
+        raise HTTPException(status_code=501, detail="CSV export not available - pandas not installed")
     
     books = db.query(Book).all()
     
@@ -880,7 +890,6 @@ async def execute_python_script(
             },
             'os': os,
             'json': json,
-            'pandas': pd,
             'TxtMetadataParser': TxtMetadataParser,
             'sheets_manager': sheets_manager,
             'root_directory': root_directory,

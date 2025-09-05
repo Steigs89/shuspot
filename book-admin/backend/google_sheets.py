@@ -1,10 +1,17 @@
 import gspread
 from google.oauth2.service_account import Credentials
-import pandas as pd
 from typing import List, Dict, Optional
 import os
 import json
 from datetime import datetime
+
+# Optional pandas dependency
+try:
+    import pandas as pd
+    PANDAS_AVAILABLE = True
+except ImportError:
+    PANDAS_AVAILABLE = False
+    pd = None
 
 class GoogleSheetsManager:
     def __init__(self, credentials_path: str, spreadsheet_name: str = "ShuSpot Books Master", worksheet_name: str = None):
