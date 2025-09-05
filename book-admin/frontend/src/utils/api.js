@@ -11,19 +11,7 @@ export const getApiUrl = (endpoint) => {
   return `${API_BASE_URL}/${cleanEndpoint}`;
 };
 
-// For production builds, also support relative URLs
-export const getFullApiUrl = (endpoint) => {
-  if (isDevelopment) {
-    return getApiUrl(endpoint);
-  }
-  
-  // In production, use the current domain
-  const cleanEndpoint = endpoint.startsWith('/') ? endpoint.slice(1) : endpoint;
-  return `${window.location.origin}/api/${cleanEndpoint}`;
-};
-
 export default {
   API_BASE_URL,
-  getApiUrl,
-  getFullApiUrl
+  getApiUrl
 };
