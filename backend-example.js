@@ -28,7 +28,7 @@ app.post('/api/stripe/create-checkout-session', async (req, res) => {
         email: email,
         limit: 1
       });
-      
+
       if (customers.data.length > 0) {
         customer = customers.data[0];
       } else {
@@ -145,7 +145,7 @@ app.get('/api/stripe/verify-subscription/:subscriptionId', async (req, res) => {
 });
 
 // Stripe Webhook Handler
-app.post('/api/stripe/webhook', express.raw({type: 'application/json'}), (req, res) => {
+app.post('/api/stripe/webhook', express.raw({ type: 'application/json' }), (req, res) => {
   const sig = req.headers['stripe-signature'];
   let event;
 
@@ -163,36 +163,36 @@ app.post('/api/stripe/webhook', express.raw({type: 'application/json'}), (req, r
       // Update your database with the new subscription
       handleSubscriptionCreated(event.data.object);
       break;
-      
+
     case 'customer.subscription.updated':
       console.log('Subscription updated:', event.data.object);
       // Update subscription status in your database
       handleSubscriptionUpdated(event.data.object);
       break;
-      
+
     case 'customer.subscription.deleted':
       console.log('Subscription deleted:', event.data.object);
       // Handle subscription cancellation
       handleSubscriptionDeleted(event.data.object);
       break;
-      
+
     case 'invoice.payment_succeeded':
       console.log('Payment succeeded:', event.data.object);
       // Handle successful payment
       handlePaymentSucceeded(event.data.object);
       break;
-      
+
     case 'invoice.payment_failed':
       console.log('Payment failed:', event.data.object);
       // Handle failed payment
       handlePaymentFailed(event.data.object);
       break;
-      
+
     default:
       console.log('Unhandled event type:', event.type);
   }
 
-  res.json({received: true});
+  res.json({ received: true });
 });
 
 // Helper functions to update your database

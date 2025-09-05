@@ -685,6 +685,20 @@
           e = d.pagePlace[a],
           h = this.turn("view"),
           i = this.turn("view", a);
+        // Safety guard injected: prevent crashes when internal structures are missing
+        if (!d || !d.pages || d.destroying) {
+          return;
+        }
+        // If base page view page undefined (b later) we still can force set page without animation
+        // also guard pagePlaces
+        if (typeof e === 'undefined') {
+          // Fallback: directly set page if exists within range
+          if (a > 0 && a <= d.totalPages) {
+            d.page = a;
+            this.turn('update');
+          }
+          return;
+        }
         if (d.page != a) {
           var j = d.page;
           if ("prevented" == s("turning", this, [a, i])) {
@@ -701,6 +715,14 @@
           : h[1] && a > h[1]
           ? ((b = h[1]), (c = i[0]))
           : h[0] && a < h[0] && ((b = h[0]), (c = i[1]));
+        if (typeof b === 'undefined' || !d.pages[b]) {
+          // Missing base page object; force update and exit
+            if (a > 0 && a <= d.totalPages) {
+              d.page = a;
+              this.turn('update');
+            }
+            return;
+        }
         e = d.opts.turnCorners.split(",");
         h = d.pages[b].data().f;
         i = h.opts;
