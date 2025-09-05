@@ -5,7 +5,10 @@
   "builds": [
     {
       "src": "backend/main.py",
-      "use": "@vercel/python@4.0.0"
+      "use": "@vercel/python@4.0.0",
+      "config": {
+        "pythonVersion": "3.11"
+      }
     },
     {
       "src": "frontend/package.json",
