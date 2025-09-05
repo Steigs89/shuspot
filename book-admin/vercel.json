@@ -2,30 +2,19 @@
   "version": 2,
   "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/build",
-  "builds": [
-    {
-      "src": "backend/main.py",
-      "use": "@vercel/python@4.0.0",
-      "config": {
-        "pythonVersion": "3.11"
-      }
-    },
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
+  "functions": {
+    "backend/main.py": {
+      "runtime": "python3.11"
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend/main.py"
+      "source": "/api/(.*)",
+      "destination": "/backend/main.py"
     },
     {
-      "src": "/(.*)",
-      "dest": "frontend/build/$1"
+      "source": "/(.*)",
+      "destination": "/frontend/build/index.html"
     }
   ]
 }
