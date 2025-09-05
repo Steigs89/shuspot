@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
@@ -6,7 +6,6 @@ import { Edit2, Trash2, Save, X, Play } from 'lucide-react';
 
 const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBooks, setSelectedBooks, onLaunchBook }) => {
   const [gridApi, setGridApi] = useState(null);
-  const [editingRows, setEditingRows] = useState(new Set());
 
   // Custom cell renderer for editable cells
   const EditableCellRenderer = ({ value, data, colDef, api, node }) => {
@@ -112,9 +111,6 @@ const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBoo
         onLaunchBook(data);
       }
     };
-
-    // All books should be launchable
-    const isShuSpotBook = true;
 
     return (
       <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>

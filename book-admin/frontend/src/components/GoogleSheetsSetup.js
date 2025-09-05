@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { toast } from 'react-toastify';
 import { Cloud, CheckCircle, XCircle, Upload, RefreshCw } from 'lucide-react';
 import { getApiUrl } from '../utils/api';
@@ -13,9 +13,9 @@ const GoogleSheetsSetup = ({ onStatusChange }) => {
 
   useEffect(() => {
     checkConnectionStatus();
-  }, []);
+  }, [checkConnectionStatus]);
 
-  const checkConnectionStatus = async () => {
+  const checkConnectionStatus = useCallback(async () => {
     try {
       const response = await fetch(`${getApiUrl()}/google-sheets/status`);
       const data = await response.json();
@@ -33,7 +33,7 @@ const GoogleSheetsSetup = ({ onStatusChange }) => {
       console.error('Error checking connection:', error);
       setIsConnected(false);
     }
-  };
+  }, []);
 
   const handleSetup = async () => {
     if (!credentialsFile) {

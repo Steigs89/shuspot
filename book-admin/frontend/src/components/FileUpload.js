@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Upload, FileText, AlertCircle } from 'lucide-react';
+import { Upload, FileText } from 'lucide-react';
 
 const FileUpload = ({ onUpload, isUploading }) => {
   const [selectedFiles, setSelectedFiles] = useState([]);

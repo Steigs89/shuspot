@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { toast } from 'react-toastify';
 import { 
   RefreshCw, 
@@ -49,9 +49,9 @@ const GoogleSheetsManager = ({ isConnected }) => {
     if (isConnected) {
       loadGoogleSheetsBooks();
     }
-  }, [isConnected]);
+  }, [isConnected, loadGoogleSheetsBooks]);
 
-  const loadGoogleSheetsBooks = async () => {
+  const loadGoogleSheetsBooks = useCallback(async () => {
     if (!isConnected) return;
     
     setLoading(true);
@@ -65,12 +65,12 @@ const GoogleSheetsManager = ({ isConnected }) => {
         setBooks(data.books);
       }
     } catch (error) {
-      console.error('Error loading Google Sheets books:', error);
-      toast.error('Failed to load books from Google Sheets');
+      console.error('Error loading books:', error);
+      setError('Failed to load books from Google Sheets');
     } finally {
       setLoading(false);
     }
-  };
+  }, [isConnected]);
 
   const syncFromDatabase = async () => {
     setLoading(true);

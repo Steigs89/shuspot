@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   Search,
-  Filter,
   Download,
   Edit,
   Upload as UploadIcon,
@@ -40,7 +39,6 @@ function App() {
   const [bookTypeFilter, setBookTypeFilter] = useState('All');
 
   // Bulk edit
-  const [showBulkEdit, setShowBulkEdit] = useState(false);
   const [bulkField, setBulkField] = useState('genre');
   const [bulkValue, setBulkValue] = useState('');
 
@@ -51,14 +49,14 @@ function App() {
   useEffect(() => {
     loadBooks();
     loadStats();
-  }, []);
+  }, [loadBooks]);
 
   // Reload books when filters change
   useEffect(() => {
     loadBooks();
-  }, [searchTerm, genreFilter, authorFilter, bookTypeFilter]);
+  }, [loadBooks]);
 
-  const loadBooks = async () => {
+  const loadBooks = useCallback(async () => {
     try {
       setLoading(true);
       const params = {};
@@ -75,7 +73,7 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [searchTerm, genreFilter, authorFilter, bookTypeFilter]);
 
   const loadStats = async () => {
     try {
