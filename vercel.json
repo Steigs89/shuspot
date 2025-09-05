@@ -2,33 +2,21 @@
   "version": 2,
   "builds": [
     {
-      "src": "book-admin/frontend/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "public"
+        "distDir": "build"
       }
-    },
-    {
-      "src": "book-admin/backend/main.py",
-      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/book-admin/backend/main.py"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/book-admin/frontend/public/static/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
-      "dest": "/book-admin/frontend/public/$1"
+      "dest": "/api/index.py"
     },
     {
       "src": "/(.*)",
-      "dest": "/book-admin/frontend/public/index.html"
+      "dest": "/build/index.html"
     }
   ]
 }
