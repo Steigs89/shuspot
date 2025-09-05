@@ -5,8 +5,7 @@
       "src": "book-admin/frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build",
-        "buildCommand": "npm run build"
+        "distDir": "public"
       }
     },
     {
@@ -21,15 +20,15 @@
     },
     {
       "src": "/static/(.*)",
-      "dest": "/book-admin/frontend/build/static/$1"
+      "dest": "/book-admin/frontend/public/static/$1"
     },
     {
       "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
-      "dest": "/book-admin/frontend/build/$1"
+      "dest": "/book-admin/frontend/public/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/book-admin/frontend/build/index.html"
+      "dest": "/book-admin/frontend/public/index.html"
     }
   ]
 }
