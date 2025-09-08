@@ -5,8 +5,8 @@
     { "src": "book-admin/api/**/*.py", "use": "@vercel/python" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/book-admin/api/$1" },
+    { "src": "/api/(.*)", "dest": "/book-admin/api/index.py" },
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/(.*)", "dest": "/book-admin/build/index.html" }
   ]
 }
