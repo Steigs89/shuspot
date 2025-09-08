@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile, Depends, HTTPException, Form, Body
+from fastapi import FastAPI, File, UploadFile, Depends, HTTPException, Form, Body, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -806,6 +806,7 @@ async def parse_shuspot_zip_from_url(
 @app.post("/shuspot-ingestion/ingest-manifest")
 async def ingest_manifest(
     payload: dict = Body(...),
+    safe: bool = Query(False),
     db: Session = Depends(get_db)
 ):
     """Ingest parsed book metadata from a client-side agent.
@@ -818,10 +819,13 @@ async def ingest_manifest(
     Each book may include extra fields like '_files', which will be ignored for DB fields.
     """
     try:
+        print("[ingest-manifest] payload keys:", list(payload.keys()) if isinstance(payload, dict) else type(payload))
         books = payload.get("books")
         if books is None and isinstance(payload, list):
             books = payload
         if not books:
+            if safe:
+                return {"success": False, "db_imported": 0, "errors": ["No books provided in manifest"]}
             raise HTTPException(status_code=400, detail="No books provided in manifest")
 
         import_to_db = bool(payload.get("import_to_db", True))
@@ -854,6 +858,7 @@ async def ingest_manifest(
                     'Video': 'VIDEO'
                 }
 
+                print(f"[ingest-manifest] Importing {len(books)} books. to_sheets={import_to_sheets}")
                 for b in books:
                     try:
                         # Compute a safe, unique file_path (unique constraint in DB)
@@ -909,26 +914,37 @@ async def ingest_manifest(
                     except Exception as e:
                         errors.append(f"Import error for {b.get('Name','Unknown')}: {str(e)}")
                 db.commit()
+                print(f"[ingest-manifest] Commit OK. imported={imported_count} errors={len(errors)}")
             except Exception as e:
                 # Don't nuke the whole batch; report partial
                 db.rollback()
-                return {
+                msg = str(e)
+                print("[ingest-manifest] Import exception:", msg)
+                result = {
                     "message": "Manifest processed with partial failures",
                     "db_imported": imported_count,
                     "sheets": sheets_result or None,
-                    "errors": errors + [str(e)]
+                    "errors": errors + [msg]
                 }
+                if safe:
+                    return result
+                raise HTTPException(status_code=500, detail=msg)
 
-        return {
+        result = {
             "message": "Manifest processed",
             "db_imported": imported_count if import_to_db else 0,
             "sheets": sheets_result or None,
             "errors": errors
         }
+        return result
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Manifest ingestion failed: {str(e)}")
+        msg = f"Manifest ingestion failed: {str(e)}"
+        print("[ingest-manifest] Top-level exception:", msg)
+        if safe:
+            return {"success": False, "db_imported": 0, "errors": [msg]}
+        raise HTTPException(status_code=500, detail=msg)
 
 @app.post("/shuspot-ingestion/parse-and-upload-to-sheets")
 async def parse_and_upload_to_sheets(
