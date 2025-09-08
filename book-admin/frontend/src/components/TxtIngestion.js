@@ -16,6 +16,7 @@ import {
   Play
 } from 'lucide-react';
 import ScriptEditorSection from './ScriptEditorSection.tsx';
+import axios from 'axios';
 import { getApiUrl } from '../utils/api';
 
 const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
@@ -25,6 +26,7 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
   const [parseResults, setParseResults] = useState(null);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [zipFile, setZipFile] = useState(null);
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const checkFolderStats = async () => {
   if (!folderPath || !folderPath.trim()) {
@@ -92,28 +94,35 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
     }
 
     setIsLoading(true);
+    setUploadProgress(0);
     try {
       const formData = new FormData();
       formData.append('zip_file', zipFile);
 
-      const response = await fetch(getApiUrl('shuspot-ingestion/parse-zip'), {
-        method: 'POST',
-        body: formData
-      });
+      const response = await axios.post(
+        getApiUrl('shuspot-ingestion/parse-zip'),
+        formData,
+        {
+          headers: { 'Content-Type': 'multipart/form-data' },
+          onUploadProgress: (evt) => {
+            if (evt.total) {
+              const pct = Math.round((evt.loaded / evt.total) * 100);
+              setUploadProgress(pct);
+            }
+          }
+        }
+      );
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setParseResults(data);
-        toast.success(data.message || `Parsed ${data.total_books} books from ZIP`);
-      } else {
-        toast.error(data.detail || 'Failed to parse ZIP');
-      }
+      const data = response.data;
+      setParseResults(data);
+      toast.success(data.message || `Parsed ${data.total_books} books from ZIP`);
     } catch (error) {
       console.error('Error parsing ZIP:', error);
-      toast.error('Failed to parse ZIP');
+      const msg = error?.response?.data?.detail || error?.message || 'Failed to parse ZIP';
+      toast.error(msg);
     } finally {
       setIsLoading(false);
+      // Let the bar linger at 100 briefly on success; reset on next upload start
     }
   };
 
@@ -296,6 +305,12 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
           >
             Upload ZIP & Parse
           </button>
+          {isLoading && uploadProgress > 0 && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 220 }}>
+              <progress value={uploadProgress} max="100" style={{ width: 160 }} />
+              <span style={{ fontSize: 12 }}>{uploadProgress}%</span>
+            </div>
+          )}
         </div>
         <button
           onClick={parseFolder}
