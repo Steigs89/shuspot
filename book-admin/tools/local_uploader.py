@@ -86,7 +86,8 @@ def main():
     parser.add_argument("--supabase-url", default=os.getenv("SUPABASE_URL"), help="Supabase URL")
     parser.add_argument("--supabase-key", default=os.getenv("SUPABASE_SERVICE_KEY") or os.getenv("SUPABASE_ANON_KEY"), help="Supabase service or anon key")
     parser.add_argument("--bucket", default=os.getenv("SUPABASE_BUCKET", "books"), help="Supabase Storage bucket name")
-    parser.add_argument("--batch-size", type=int, default=300, help="Books per manifest POST")
+    parser.add_argument("--batch-size", type=int, default=25, help="Books per manifest POST")
+    parser.add_argument("--no-lean", action="store_true", help="Send full data (includes heavy fields like _files and _page_sequence)")
 
     args = parser.parse_args()
 
@@ -105,10 +106,24 @@ def main():
     supabase_client = ensure_supabase_client(args.supabase_url, args.supabase_key)
     uploaded = 0
 
-    # Prepare books with optional cover uploads
+    # Prepare books with optional cover uploads (lean by default to keep payloads small)
     prepared: List[Dict] = []
     for b in books:
-        b2 = dict(b)
+        if args.no_lean:
+            b2 = dict(b)
+        else:
+            # Keep only essential fields
+            keep_keys = {
+                'Name','Author','Category','Media','URL','Age','Read time','AR Level','Lexile','GRL','Pages','Status','Notes','description'
+            }
+            b2 = {k: v for k, v in b.items() if k in keep_keys}
+            # Preserve minimal private fields the backend leverages
+            b2['_folder_path'] = b.get('_folder_path', '')
+            b2['_cover_image_path'] = b.get('_cover_image_path', '')
+            b2['_total_pages'] = b.get('_total_pages', 0)
+            # Trim very long Notes
+            if isinstance(b2.get('Notes'), str) and len(b2['Notes']) > 2000:
+                b2['Notes'] = b2['Notes'][:2000] + '...'
         # Upload cover if possible
         cover_local = b.get('_cover_image_path')
         if cover_local and supabase_client:
@@ -128,7 +143,10 @@ def main():
             "import_to_sheets": bool(args.to_sheets),
         }
         try:
-            resp = requests.post(endpoint, json=payload, timeout=120)
+            # Log payload size estimate
+            size_bytes = len(json.dumps(payload).encode('utf-8'))
+            print(f"Posting batch of {len(chunk)} books (~{size_bytes/1024:.1f} KB)")
+            resp = requests.post(endpoint, json=payload, timeout=180)
             if resp.status_code >= 400:
                 print(f"Batch failed: {resp.status_code} {resp.text[:200]}")
                 errors.append(f"HTTP {resp.status_code}: {resp.text}")

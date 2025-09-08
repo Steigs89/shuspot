@@ -910,8 +910,14 @@ async def ingest_manifest(
                         errors.append(f"Import error for {b.get('Name','Unknown')}: {str(e)}")
                 db.commit()
             except Exception as e:
+                # Don't nuke the whole batch; report partial
                 db.rollback()
-                raise HTTPException(status_code=500, detail=f"DB import failed: {str(e)}")
+                return {
+                    "message": "Manifest processed with partial failures",
+                    "db_imported": imported_count,
+                    "sheets": sheets_result or None,
+                    "errors": errors + [str(e)]
+                }
 
         return {
             "message": "Manifest processed",
