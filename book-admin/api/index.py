@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile, Depends, HTTPException, Form
+from fastapi import FastAPI, File, UploadFile, Depends, HTTPException, Form, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -801,6 +801,109 @@ async def parse_shuspot_zip_from_url(
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"ZIP-from-URL parsing failed: {str(e)}")
+
+@app.post("/shuspot-ingestion/ingest-manifest")
+async def ingest_manifest(
+    payload: dict = Body(...),
+    db: Session = Depends(get_db)
+):
+    """Ingest parsed book metadata from a client-side agent.
+    Expected payload structure:
+    {
+      "books": [ { Name, Author, Category, Media, cover_image_url, URL, Notes, ... } ],
+      "import_to_db": true,
+      "import_to_sheets": false
+    }
+    Each book may include extra fields like '_files', which will be ignored for DB fields.
+    """
+    try:
+        books = payload.get("books")
+        if books is None and isinstance(payload, list):
+            books = payload
+        if not books:
+            raise HTTPException(status_code=400, detail="No books provided in manifest")
+
+        import_to_db = bool(payload.get("import_to_db", True))
+        import_to_sheets = bool(payload.get("import_to_sheets", False))
+
+        # Optionally upload to Google Sheets
+        sheets_result = None
+        if import_to_sheets:
+            if not sheets_manager:
+                raise HTTPException(status_code=400, detail="Google Sheets not configured")
+            try:
+                # Convert to clean sheets format (drop private keys)
+                clean_books = []
+                for b in books:
+                    clean = {k: v for k, v in b.items() if not k.startswith('_')}
+                    clean_books.append(clean)
+                sheets_result = sheets_manager.bulk_add_books(clean_books)
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=f"Sheets upload failed: {str(e)}")
+
+        imported_count = 0
+        errors = []
+        if import_to_db:
+            try:
+                file_type_mapping = {
+                    'Read to Me': 'AUDIO',
+                    'Video Book': 'VIDEO',
+                    'Audiobook': 'AUDIO',
+                    'Book': 'PDF',
+                    'Video': 'VIDEO'
+                }
+
+                for b in books:
+                    try:
+                        # Dedup by title + author
+                        existing = db.query(Book).filter(
+                            Book.title == b.get('Name', ''),
+                            Book.author == b.get('Author', '')
+                        ).first()
+                        if existing:
+                            continue
+
+                        book = Book(
+                            title=b.get('Name', 'Unknown Title'),
+                            author=b.get('Author', 'Unknown Author'),
+                            genre=b.get('Category', 'Unknown'),
+                            book_type=b.get('Media', 'Book'),
+                            fiction_type=b.get('Fiction Type', 'Fiction'),
+                            reading_level=b.get('Age', ''),
+                            cover_image_url=b.get('cover_image_url', b.get('_cover_image_path', '')),
+                            file_path=b.get('URL', ''),
+                            file_name=f"{b.get('Name', 'unknown')}.remote",
+                            file_size=0,
+                            file_type=file_type_mapping.get(b.get('Media', 'Book'), 'REMOTE'),
+                            description=b.get('description', b.get('Notes', '')),
+                            notes=json.dumps({
+                                'url': b.get('URL', ''),
+                                'folder_path': b.get('_folder_path', ''),
+                                'cover_image_path': b.get('_cover_image_path', ''),
+                                'files': b.get('_files', {}),
+                                'page_sequence': b.get('_page_sequence', []),
+                                'total_pages': b.get('_total_pages', 0)
+                            })
+                        )
+                        db.add(book)
+                        imported_count += 1
+                    except Exception as e:
+                        errors.append(f"Import error for {b.get('Name','Unknown')}: {str(e)}")
+                db.commit()
+            except Exception as e:
+                db.rollback()
+                raise HTTPException(status_code=500, detail=f"DB import failed: {str(e)}")
+
+        return {
+            "message": "Manifest processed",
+            "db_imported": imported_count if import_to_db else 0,
+            "sheets": sheets_result or None,
+            "errors": errors
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Manifest ingestion failed: {str(e)}")
 
 @app.post("/shuspot-ingestion/parse-and-upload-to-sheets")
 async def parse_and_upload_to_sheets(
