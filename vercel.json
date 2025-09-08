@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "book-admin/frontend/package.json", "use": "@vercel/static-build", "config": { "distDir": "build" } },
+    { "src": "book-admin/api/**/*.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/book-admin/api/$1" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
