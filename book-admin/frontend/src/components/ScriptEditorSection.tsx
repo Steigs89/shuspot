@@ -35,7 +35,7 @@ const ScriptEditorSection: React.FC = () => {
 
   const fetchSampleScripts = async () => {
     try {
-      const response = await fetch(getApiUrl('txt-ingestion/sample-scripts'));
+  const response = await fetch(getApiUrl('txt-ingestion/sample-scripts'));
       const data = await response.json();
       setSampleScripts(data);
     } catch (error) {

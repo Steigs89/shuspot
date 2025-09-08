@@ -264,7 +264,7 @@ const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBoo
     sortable: true,
     filter: true,
     resizable: true,
-    tooltipShowDelay: 500
+  tooltipComponentParams: { showDelay: 500 }
   };
 
   const onGridReady = (params) => {

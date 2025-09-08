@@ -19,6 +19,7 @@ const GoogleSheetsManager = ({ isConnected }) => {
   const [selectedBooks, setSelectedBooks] = useState([]);
   const [bulkUpdateField, setBulkUpdateField] = useState('Status');
   const [bulkUpdateValue, setBulkUpdateValue] = useState('');
+  const [error, setError] = useState('');
 
   // Helper function to get field value (handles both clean and dash-prefixed field names)
   const getFieldValue = (book, fieldName) => {
@@ -45,12 +46,6 @@ const GoogleSheetsManager = ({ isConnected }) => {
     return cleaned;
   };
 
-  useEffect(() => {
-    if (isConnected) {
-      loadGoogleSheetsBooks();
-    }
-  }, [isConnected, loadGoogleSheetsBooks]);
-
   const loadGoogleSheetsBooks = useCallback(async () => {
     if (!isConnected) return;
     
@@ -61,16 +56,24 @@ const GoogleSheetsManager = ({ isConnected }) => {
       
       if (data.error) {
         toast.error(data.error);
+        setError(data.error);
       } else {
-        setBooks(data.books);
+        setBooks(data.books || []);
+        setError('');
       }
     } catch (error) {
-      console.error('Error loading books:', error);
-      setError('Failed to load books from Google Sheets');
+  console.error('Error loading books:', error);
+  setError('Failed to load books from Google Sheets');
     } finally {
       setLoading(false);
     }
   }, [isConnected]);
+
+  useEffect(() => {
+    if (isConnected) {
+      loadGoogleSheetsBooks();
+    }
+  }, [isConnected, loadGoogleSheetsBooks]);
 
   const syncFromDatabase = async () => {
     setLoading(true);
@@ -172,7 +175,19 @@ const GoogleSheetsManager = ({ isConnected }) => {
     }
   };
 
-  const filteredBooks = books.filter(book => {
+  if (error) {
+    return (
+      <div className="sheets-manager-error">
+        <p>Error loading Google Sheets data.</p>
+        <pre style={{ whiteSpace: 'pre-wrap' }}>{error}</pre>
+        <button onClick={loadGoogleSheetsBooks} className="btn btn-secondary" disabled={loading}>
+          Retry
+        </button>
+      </div>
+    );
+  }
+
+  const filteredBooks = (books || []).filter(book => {
     const name = getFieldValue(book, 'Name');
     const author = cleanValue(getFieldValue(book, 'Author'));
     const category = cleanValue(getFieldValue(book, 'Category'));

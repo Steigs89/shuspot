@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.bc8fb201.css",
-    "main.js": "/static/js/main.54044151.js",
+    "main.js": "/static/js/main.1cfc2657.js",
     "static/media/superclarendon-rg-bold-587272c8dce6b (1).ttf": "/static/media/superclarendon-rg-bold-587272c8dce6b (1).80c69d59a0ae774be0c2.ttf",
     "static/media/superclarendon-bl-587272f656611 (1).ttf": "/static/media/superclarendon-bl-587272f656611 (1).01dfe4fbdc390dc3d549.ttf",
     "index.html": "/index.html"
   },
   "entrypoints": [
     "static/css/main.bc8fb201.css",
-    "static/js/main.54044151.js"
+    "static/js/main.1cfc2657.js"
   ]
 }
