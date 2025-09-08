@@ -47,12 +47,6 @@ function App() {
   // Book launcher
   const [launchedBook, setLaunchedBook] = useState(null);
 
-  // Load data on component mount
-  useEffect(() => {
-    loadBooks();
-    loadStats();
-  }, [loadBooks]);
-
   const loadBooks = useCallback(async () => {
     try {
       setLoading(true);
@@ -71,6 +65,12 @@ function App() {
       setLoading(false);
     }
   }, [searchTerm, genreFilter, authorFilter, bookTypeFilter]);
+
+  // Load data on component mount
+  useEffect(() => {
+    loadBooks();
+    loadStats();
+  }, [loadBooks]);
 
   const loadStats = async () => {
     try {
