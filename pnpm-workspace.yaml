@@ -1,5 +1,6 @@
 packages:
   - 'book-admin'
+  - 'book-admin/frontend'
 
 ignoredBuiltDependencies:
   - esbuild
