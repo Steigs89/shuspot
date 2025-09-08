@@ -28,4 +28,10 @@
     { "handle": "filesystem" },
   { "src": "/(.*)", "dest": "/frontend/index.html" }
   ]
+  ,
+  "functions": {
+    "api/**/*.py": {
+      "runtime": "python3.11"
+    }
+  }
 }
