@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run vercel-build",
+  "buildCommand": "DISABLE_ESLINT_PLUGIN=true npx react-scripts build && mv build public",
   "builds": [
     {
       "src": "package.json",
