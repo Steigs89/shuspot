@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from typing import List, Optional
+from sqlalchemy.exc import IntegrityError
 import os
 import shutil
 import asyncio
@@ -855,11 +856,16 @@ async def ingest_manifest(
 
                 for b in books:
                     try:
+                        # Compute a safe, unique file_path (unique constraint in DB)
+                        from uuid import uuid4
+                        safe_fp = b.get('URL') or b.get('_folder_path') or f"remote://{uuid4()}"
+                        # Deduplicate against existing entries by title+author OR file_path
                         # Dedup by title + author
                         existing = db.query(Book).filter(
-                            Book.title == b.get('Name', ''),
-                            Book.author == b.get('Author', '')
+                            (Book.title == b.get('Name', '')) & (Book.author == b.get('Author', ''))
                         ).first()
+                        if not existing:
+                            existing = db.query(Book).filter(Book.file_path == safe_fp).first()
                         if existing:
                             continue
 
@@ -871,7 +877,7 @@ async def ingest_manifest(
                             fiction_type=b.get('Fiction Type', 'Fiction'),
                             reading_level=b.get('Age', ''),
                             cover_image_url=b.get('cover_image_url', b.get('_cover_image_path', '')),
-                            file_path=b.get('URL', ''),
+                            file_path=safe_fp,
                             file_name=f"{b.get('Name', 'unknown')}.remote",
                             file_size=0,
                             file_type=file_type_mapping.get(b.get('Media', 'Book'), 'REMOTE'),
@@ -886,7 +892,20 @@ async def ingest_manifest(
                             })
                         )
                         db.add(book)
-                        imported_count += 1
+                        try:
+                            db.flush()  # catch unique constraint issues per row
+                            imported_count += 1
+                        except IntegrityError:
+                            db.rollback()
+                            # Retry with a guaranteed-unique file_path
+                            book.file_path = f"{safe_fp}#{uuid4().hex[:8]}"
+                            try:
+                                db.add(book)
+                                db.flush()
+                                imported_count += 1
+                            except Exception as e2:
+                                db.rollback()
+                                errors.append(f"Import error for {b.get('Name','Unknown')}: {str(e2)}")
                     except Exception as e:
                         errors.append(f"Import error for {b.get('Name','Unknown')}: {str(e)}")
                 db.commit()
