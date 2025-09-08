@@ -1153,6 +1153,10 @@ async def execute_txt_script(
             "processed_count": 0
         }
 
+@app.get("/health")
+async def health():
+    return {"ok": True}
+
 @app.get("/txt-ingestion/sample-scripts")
 async def get_sample_scripts():
     """Get sample ChatGPT instruction scripts"""
@@ -1320,7 +1324,7 @@ print(f"✅ Found {len(results)} books across grade levels")'''
         }
     }
     
-    return samples
+    return JSONResponse(content=samples)
 
 if __name__ == "__main__":
     import uvicorn

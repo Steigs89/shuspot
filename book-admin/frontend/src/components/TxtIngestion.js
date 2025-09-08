@@ -26,7 +26,7 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
   const [showAdvanced, setShowAdvanced] = useState(false);
 
   const checkFolderStats = async () => {
-    if (!folderPath.trim()) {
+  if (!folderPath || !folderPath.trim()) {
       toast.error('Please enter a folder path');
       return;
     }
@@ -53,7 +53,7 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
   };
 
   const parseFolder = async () => {
-    if (!folderPath.trim()) {
+  if (!folderPath || !folderPath.trim()) {
       toast.error('Please enter a folder path');
       return;
     }
@@ -90,7 +90,7 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
       return;
     }
 
-    if (!folderPath.trim()) {
+  if (!folderPath || !folderPath.trim()) {
       toast.error('Please enter a folder path');
       return;
     }

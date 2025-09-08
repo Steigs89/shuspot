@@ -4,12 +4,14 @@ from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 import os
 
-# Create uploads directory if it doesn't exist
-UPLOAD_DIR = "../uploads"
+# Resolve writable paths (Vercel serverless allows writing to /tmp only)
+RUNTIME_TMP = os.environ.get("TMPDIR", "/tmp")
+UPLOAD_DIR = os.path.join(RUNTIME_TMP, "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-# SQLite database setup
-SQLALCHEMY_DATABASE_URL = "sqlite:///./books.db"
+# SQLite database setup (store DB in /tmp for serverless)
+DB_PATH = os.path.join(RUNTIME_TMP, "books.db")
+SQLALCHEMY_DATABASE_URL = f"sqlite:///{DB_PATH}"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
