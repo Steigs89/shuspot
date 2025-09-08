@@ -27,6 +27,7 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [zipFile, setZipFile] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
+  const [zipUrl, setZipUrl] = useState('');
 
   const checkFolderStats = async () => {
   if (!folderPath || !folderPath.trim()) {
@@ -123,6 +124,26 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
     } finally {
       setIsLoading(false);
       // Let the bar linger at 100 briefly on success; reset on next upload start
+    }
+  };
+
+  const parseZipFromUrl = async () => {
+    if (!zipUrl) {
+      toast.error('Enter a ZIP URL');
+      return;
+    }
+    setIsLoading(true);
+    try {
+      const form = new FormData();
+      form.append('zip_url', zipUrl);
+      const res = await axios.post(getApiUrl('shuspot-ingestion/parse-zip-from-url'), form);
+      setParseResults(res.data);
+      toast.success(res.data.message || 'Parsed ZIP from URL');
+    } catch (error) {
+      const msg = error?.response?.data?.detail || error?.message || 'Failed to parse ZIP from URL';
+      toast.error(msg);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -311,6 +332,21 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
               <span style={{ fontSize: 12 }}>{uploadProgress}%</span>
             </div>
           )}
+          <span style={{ margin: '0 8px' }}>or</span>
+          <input
+            type="url"
+            placeholder="https://.../your.zip"
+            value={zipUrl}
+            onChange={(e) => setZipUrl(e.target.value)}
+            style={{ minWidth: 260 }}
+          />
+          <button
+            onClick={parseZipFromUrl}
+            disabled={isLoading || !zipUrl}
+            className="btn btn-outline"
+          >
+            Parse from URL
+          </button>
         </div>
         <button
           onClick={parseFolder}

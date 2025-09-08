@@ -11,6 +11,10 @@ from datetime import datetime
 from io import BytesIO
 import logging
 import json
+import zipfile
+import tempfile
+from urllib.parse import urlparse
+from urllib.request import urlopen
 
 # Optional heavy dependencies
 try:
@@ -692,6 +696,112 @@ async def parse_shuspot_folder(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Folder parsing failed: {str(e)}")
 
+@app.post("/shuspot-ingestion/parse-zip")
+async def parse_shuspot_zip(
+    zip_file: UploadFile = File(...)
+):
+    """Upload a ZIP of a ShuSpot folder structure, extract, and parse it."""
+    try:
+        # Ensure it's a zip
+        filename = zip_file.filename or "upload.zip"
+        if not filename.lower().endswith(".zip"):
+            raise HTTPException(status_code=400, detail="Please upload a .zip file")
+
+        # Create a temp extraction folder in /tmp
+        extract_root = tempfile.mkdtemp(prefix="shuspot_zip_", dir=os.environ.get("TMPDIR", "/tmp"))
+        zip_path = os.path.join(extract_root, filename)
+
+        # Save uploaded zip to disk first
+        with open(zip_path, "wb") as f:
+            shutil.copyfileobj(zip_file.file, f)
+
+        # Extract
+        with zipfile.ZipFile(zip_path, 'r') as zf:
+            zf.extractall(extract_root)
+
+        # Find the top-level folder to parse (if the zip contains a single folder, use it)
+        # Otherwise parse the extraction root
+        entries = [os.path.join(extract_root, e) for e in os.listdir(extract_root) if not e.startswith('.')]
+        folder_to_parse = extract_root
+        if len(entries) == 1 and os.path.isdir(entries[0]):
+            folder_to_parse = entries[0]
+
+        from shuspot_folder_parser import ShuSpotFolderParser
+        parser = ShuSpotFolderParser(folder_to_parse)
+        books = parser.parse_all_books()
+        stats = parser.get_summary_stats()
+
+        return {
+            "success": True,
+            "message": f"Parsed {stats.get('total_books', len(books))} books from ZIP",
+            "stats": stats,
+            "sample_books": books[:5],
+            "total_books": len(books),
+            "_parsed_path": folder_to_parse
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"ZIP parsing failed: {str(e)}")
+
+@app.post("/shuspot-ingestion/parse-zip-from-url")
+async def parse_shuspot_zip_from_url(
+    zip_url: str = Form(...)
+):
+    """Download a ZIP from a URL, extract, and parse it. Useful when direct uploads hit size limits."""
+    try:
+        # Validate URL
+        parsed = urlparse(zip_url)
+        if parsed.scheme not in ("http", "https"):
+            raise HTTPException(status_code=400, detail="zip_url must be http(s)")
+
+        # Prepare temp paths
+        extract_root = tempfile.mkdtemp(prefix="shuspot_zip_", dir=os.environ.get("TMPDIR", "/tmp"))
+        zip_filename = os.path.basename(parsed.path) or "remote.zip"
+        if not zip_filename.lower().endswith(".zip"):
+            zip_filename += ".zip"
+        zip_path = os.path.join(extract_root, zip_filename)
+
+        # Stream download with a basic size guard (~500MB)
+        max_bytes = 500 * 1024 * 1024
+        read_bytes = 0
+        with urlopen(zip_url) as resp, open(zip_path, "wb") as out:
+            chunk = resp.read(1024 * 1024)
+            while chunk:
+                read_bytes += len(chunk)
+                if read_bytes > max_bytes:
+                    raise HTTPException(status_code=413, detail="Remote ZIP too large (over 500MB)")
+                out.write(chunk)
+                chunk = resp.read(1024 * 1024)
+
+        # Extract
+        with zipfile.ZipFile(zip_path, 'r') as zf:
+            zf.extractall(extract_root)
+
+        # Choose folder to parse
+        entries = [os.path.join(extract_root, e) for e in os.listdir(extract_root) if not e.startswith('.')]
+        folder_to_parse = extract_root
+        if len(entries) == 1 and os.path.isdir(entries[0]):
+            folder_to_parse = entries[0]
+
+        from shuspot_folder_parser import ShuSpotFolderParser
+        parser = ShuSpotFolderParser(folder_to_parse)
+        books = parser.parse_all_books()
+        stats = parser.get_summary_stats()
+
+        return {
+            "success": True,
+            "message": f"Parsed {stats.get('total_books', len(books))} books from URL ZIP",
+            "stats": stats,
+            "sample_books": books[:5],
+            "total_books": len(books),
+            "_parsed_path": folder_to_parse
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"ZIP-from-URL parsing failed: {str(e)}")
+
 @app.post("/shuspot-ingestion/parse-and-upload-to-sheets")
 async def parse_and_upload_to_sheets(
     folder_path: str = Form(...)
@@ -1160,7 +1270,8 @@ async def health():
 @app.get("/txt-ingestion/sample-scripts")
 async def get_sample_scripts():
     """Get sample ChatGPT instruction scripts"""
-    samples = {
+    try:
+        samples = {
         "basic_folder_parser": {
             "name": "Basic Folder Parser",
             "description": "Parse folders with PDF + metadata.txt files",
@@ -1323,8 +1434,10 @@ for root, dirs, files in os.walk(root_directory):
 print(f"✅ Found {len(results)} books across grade levels")'''
         }
     }
-    
-    return JSONResponse(content=samples)
+        return JSONResponse(content=samples)
+    except Exception as e:
+        # Never return HTML here; always JSON so the frontend parser doesn't break
+        return JSONResponse(status_code=500, content={"error": f"Failed to load sample scripts: {str(e)}"})
 
 if __name__ == "__main__":
     import uvicorn
