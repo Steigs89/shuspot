@@ -24,6 +24,7 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
   const [folderStats, setFolderStats] = useState(null);
   const [parseResults, setParseResults] = useState(null);
   const [showAdvanced, setShowAdvanced] = useState(false);
+  const [zipFile, setZipFile] = useState(null);
 
   const checkFolderStats = async () => {
   if (!folderPath || !folderPath.trim()) {
@@ -79,6 +80,38 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
     } catch (error) {
       console.error('Error parsing folder:', error);
       toast.error('Failed to parse folder');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const parseZip = async () => {
+    if (!zipFile) {
+      toast.error('Please choose a ZIP file first');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const formData = new FormData();
+      formData.append('zip_file', zipFile);
+
+      const response = await fetch(getApiUrl('shuspot-ingestion/parse-zip'), {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setParseResults(data);
+        toast.success(data.message || `Parsed ${data.total_books} books from ZIP`);
+      } else {
+        toast.error(data.detail || 'Failed to parse ZIP');
+      }
+    } catch (error) {
+      console.error('Error parsing ZIP:', error);
+      toast.error('Failed to parse ZIP');
     } finally {
       setIsLoading(false);
     }
@@ -250,6 +283,20 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
 
       {/* Action Buttons */}
       <div className="action-buttons">
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+          <input
+            type="file"
+            accept=".zip,application/zip"
+            onChange={(e) => setZipFile(e.target.files?.[0] || null)}
+          />
+          <button
+            onClick={parseZip}
+            disabled={isLoading || !zipFile}
+            className="btn btn-primary"
+          >
+            Upload ZIP & Parse
+          </button>
+        </div>
         <button
           onClick={parseFolder}
           disabled={isLoading}
