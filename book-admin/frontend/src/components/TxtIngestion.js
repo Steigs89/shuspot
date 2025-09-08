@@ -119,8 +119,12 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
       toast.success(data.message || `Parsed ${data.total_books} books from ZIP`);
     } catch (error) {
       console.error('Error parsing ZIP:', error);
-      const msg = error?.response?.data?.detail || error?.message || 'Failed to parse ZIP';
-      toast.error(msg);
+      if (error?.response?.status === 413) {
+        toast.error('ZIP too large for direct upload. Use "Parse from URL" or run locally to parse your folder.');
+      } else {
+        const msg = error?.response?.data?.detail || error?.message || 'Failed to parse ZIP';
+        toast.error(msg);
+      }
     } finally {
       setIsLoading(false);
       // Let the bar linger at 100 briefly on success; reset on next upload start
