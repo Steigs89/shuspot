@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "DISABLE_ESLINT_PLUGIN=true npx react-scripts build && mv build public",
   "builds": [
     {
       "src": "package.json",
@@ -8,6 +7,10 @@
       "config": {
         "distDir": "public"
       }
+    },
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
