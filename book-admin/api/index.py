@@ -27,9 +27,28 @@ except ImportError:
 
 from database import get_db, Book, UPLOAD_DIR
 from parsers import MetadataParser
-from google_sheets import GoogleSheetsManager
-from txt_ingestion import TxtIngestionPipeline, TxtMetadataParser
-from custom_parsers import get_custom_parsers, parse_with_custom_parsers, add_custom_parser, create_regex_parser
+# Optional modules that may not be needed in all environments
+try:
+    from google_sheets import GoogleSheetsManager  # type: ignore
+except Exception as e:
+    GoogleSheetsManager = None  # type: ignore
+    print("[import] google_sheets unavailable:", e)
+try:
+    from txt_ingestion import TxtIngestionPipeline, TxtMetadataParser  # type: ignore
+except Exception as e:
+    TxtIngestionPipeline = None  # type: ignore
+    TxtMetadataParser = None  # type: ignore
+    print("[import] txt_ingestion unavailable:", e)
+try:
+    from custom_parsers import (
+        get_custom_parsers, parse_with_custom_parsers, add_custom_parser, create_regex_parser  # type: ignore
+    )
+except Exception as e:
+    get_custom_parsers = None  # type: ignore
+    parse_with_custom_parsers = None  # type: ignore
+    add_custom_parser = None  # type: ignore
+    create_regex_parser = None  # type: ignore
+    print("[import] custom_parsers unavailable:", e)
 
 app = FastAPI(title="Book Admin API", version="1.0.0")
 
@@ -426,6 +445,8 @@ async def setup_google_sheets(
             shutil.copyfileobj(credentials_file.file, buffer)
         
         # Initialize Google Sheets manager
+        if not GoogleSheetsManager:
+            return {"error": "Google Sheets module unavailable in this environment"}
         sheets_manager = GoogleSheetsManager(credentials_path, spreadsheet_name, worksheet_name)
         
         if sheets_manager.connect():
@@ -618,6 +639,8 @@ async def parse_txt_folder(
     """Parse TXT files from a single folder"""
     
     try:
+        if not TxtMetadataParser:
+            raise HTTPException(status_code=501, detail="TXT ingestion unavailable in this environment")
         parser = TxtMetadataParser()
         metadata = parser.parse_folder(folder_path)
         
@@ -639,6 +662,8 @@ async def batch_parse_txt_folders(
     """Parse TXT files from multiple folders"""
     
     try:
+        if not TxtMetadataParser:
+            raise HTTPException(status_code=501, detail="TXT ingestion unavailable in this environment")
         parser = TxtMetadataParser()
         metadata_list = parser.batch_parse_folders(root_directory, max_folders)
         
@@ -662,7 +687,7 @@ async def ingest_txt_to_sheets(
     """Complete TXT ingestion pipeline to Google Sheets"""
     global txt_pipeline
     
-    if not txt_pipeline:
+    if not txt_pipeline or not GoogleSheetsManager:
         raise HTTPException(status_code=400, detail="Google Sheets not configured")
     
     try:
@@ -807,6 +832,7 @@ async def parse_shuspot_zip_from_url(
 async def ingest_manifest(
     payload: dict = Body(...),
     safe: bool = Query(False),
+    dry_run: bool = Query(False),
     db: Session = Depends(get_db)
 ):
     """Ingest parsed book metadata from a client-side agent.
@@ -830,6 +856,27 @@ async def ingest_manifest(
 
         import_to_db = bool(payload.get("import_to_db", True))
         import_to_sheets = bool(payload.get("import_to_sheets", False))
+
+        # Early exit for diagnostics: dry run returns quickly without DB writes
+        if dry_run:
+            try:
+                sample = books[0] if isinstance(books, list) and books else {}
+                # Avoid returning large/private fields in sample
+                if isinstance(sample, dict):
+                    sample = {k: v for k, v in sample.items() if not str(k).startswith('_')}
+                return {
+                    "message": "Dry run OK",
+                    "received": len(books) if isinstance(books, list) else 0,
+                    "import_to_db": import_to_db,
+                    "import_to_sheets": import_to_sheets,
+                    "sample": sample
+                }
+            except Exception as e:
+                msg = f"Dry run failed: {str(e)}"
+                print("[ingest-manifest]", msg)
+                if safe:
+                    return {"success": False, "db_imported": 0, "errors": [msg]}
+                raise HTTPException(status_code=500, detail=msg)
 
         # Optionally upload to Google Sheets
         sheets_result = None
@@ -1144,13 +1191,13 @@ async def execute_python_script(
             },
             'os': os,
             'json': json,
-            'TxtMetadataParser': TxtMetadataParser,
+            'TxtMetadataParser': TxtMetadataParser if TxtMetadataParser else None,
             'sheets_manager': sheets_manager,
             'root_directory': root_directory,
-            'get_custom_parsers': get_custom_parsers,
-            'parse_with_custom_parsers': parse_with_custom_parsers,
-            'add_custom_parser': add_custom_parser,
-            'create_regex_parser': create_regex_parser
+            'get_custom_parsers': get_custom_parsers if get_custom_parsers else None,
+            'parse_with_custom_parsers': parse_with_custom_parsers if parse_with_custom_parsers else None,
+            'add_custom_parser': add_custom_parser if add_custom_parser else None,
+            'create_regex_parser': create_regex_parser if create_regex_parser else None
         }
         
         # Capture output
@@ -1188,6 +1235,8 @@ async def get_custom_parsers_list():
     """Get list of all registered custom parsers"""
     
     try:
+        if not get_custom_parsers:
+            return {"parsers": [], "total": 0}
         parsers = get_custom_parsers()
         parser_info = []
         
@@ -1216,6 +1265,8 @@ async def test_custom_parser(
     
     try:
         # Test with custom parsers first
+        if not parse_with_custom_parsers:
+            raise HTTPException(status_code=501, detail="Custom parsers unavailable in this environment")
         custom_metadata = parse_with_custom_parsers(file_path, filename, folder_path)
         
         # Also test with standard parser for comparison
@@ -1241,6 +1292,8 @@ async def create_regex_parser_endpoint(
     """Create a new regex-based parser dynamically"""
     
     try:
+        if not create_regex_parser or not add_custom_parser:
+            raise HTTPException(status_code=501, detail="Custom parsers unavailable in this environment")
         # Parse field mapping JSON
         field_mapping_dict = json.loads(field_mapping)
         
@@ -1275,6 +1328,8 @@ async def parse_with_custom_parsers_endpoint(
     """Parse a file using custom parsers"""
     
     try:
+        if not parse_with_custom_parsers:
+            raise HTTPException(status_code=501, detail="Custom parsers unavailable in this environment")
         metadata = parse_with_custom_parsers(file_path, filename, folder_path)
         
         return {
@@ -1307,7 +1362,7 @@ async def execute_txt_script(
         script_globals = {
             'root_directory': UPLOAD_DIR,
             'sheets_manager': sheets_manager,
-            'TxtMetadataParser': TxtMetadataParser,
+            'TxtMetadataParser': TxtMetadataParser if TxtMetadataParser else None,
             'parser': None,
             'os': __import__('os'),
             'json': __import__('json'),

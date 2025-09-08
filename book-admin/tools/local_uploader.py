@@ -88,6 +88,7 @@ def main():
     parser.add_argument("--bucket", default=os.getenv("SUPABASE_BUCKET", "books"), help="Supabase Storage bucket name")
     parser.add_argument("--batch-size", type=int, default=25, help="Books per manifest POST")
     parser.add_argument("--no-lean", action="store_true", help="Send full data (includes heavy fields like _files and _page_sequence)")
+    parser.add_argument("--unsafe", action="store_true", help="Disable safe mode on server (returns 500s instead of JSON errors)")
 
     args = parser.parse_args()
 
@@ -146,10 +147,19 @@ def main():
             # Log payload size estimate
             size_bytes = len(json.dumps(payload).encode('utf-8'))
             print(f"Posting batch of {len(chunk)} books (~{size_bytes/1024:.1f} KB)")
-            resp = requests.post(endpoint, json=payload, timeout=180)
+            # Use safe mode by default so server returns structured JSON even on errors
+            params = None if args.unsafe else {"safe": "true"}
+            resp = requests.post(endpoint, json=payload, params=params, timeout=180)
             if resp.status_code >= 400:
-                print(f"Batch failed: {resp.status_code} {resp.text[:200]}")
-                errors.append(f"HTTP {resp.status_code}: {resp.text}")
+                # Try to surface JSON error payload if available
+                try:
+                    data = resp.json()
+                    preview = json.dumps(data)[:500]
+                    print(f"Batch failed: {resp.status_code} {preview}")
+                    errors.append(f"HTTP {resp.status_code}: {preview}")
+                except Exception:
+                    print(f"Batch failed: {resp.status_code} {resp.text[:200]}")
+                    errors.append(f"HTTP {resp.status_code}: {resp.text}")
             else:
                 data = resp.json()
                 uploaded += data.get("db_imported", 0)
