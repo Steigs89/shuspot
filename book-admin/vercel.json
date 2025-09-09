@@ -8,24 +8,18 @@
         "distDir": "build"
       }
     },
-    { "src": "api/**/*.py", "use": "@vercel/python" }
+    { 
+      "src": "api/**/*.py", 
+      "use": "@vercel/python" 
+    }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/index.py" },
-    { "src": "/static/(.*)", "dest": "/frontend/static/$1" },
-    { "src": "/favicon\\.svg", "dest": "/frontend/favicon.svg" },
-    { "src": "/favicon\\.ico", "dest": "/frontend/favicon.svg" },
-    { "src": "/asset-manifest\\.json", "dest": "/frontend/asset-manifest.json" },
-    { "src": "/js/(.*)", "dest": "/frontend/js/$1" },
+    { "src": "/static/(.*)", "dest": "/frontend/build/static/$1" },
+    { "src": "/favicon\\.svg", "dest": "/frontend/build/favicon.svg" },
+    { "src": "/asset-manifest\\.json", "dest": "/frontend/build/asset-manifest.json" },
+    { "src": "/js/(.*)", "dest": "/frontend/build/js/$1" },
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/frontend/index.html" }
-  ],
-  "functions": {
-    "api/**/*.py": {
-      "runtime": "python3.11",
-      "includeFiles": "requirements.txt",
-      "maxDuration": 60,
-      "memory": 1024
-    }
-  }
+    { "src": "/(.*)", "dest": "/frontend/build/index.html" }
+  ]
 }
