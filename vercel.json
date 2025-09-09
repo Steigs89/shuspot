@@ -6,12 +6,15 @@
       "use": "@vercel/python",
       "config": {
         "runtime": "python3.11",
-        "includeFiles": "book-admin/api/requirements.txt",
+        "includeFiles": "book-admin/api/**",
         "maxDuration": 60
       }
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/book-admin/api/index.py" }
+    { "src": "/api/(.*)", "dest": "/book-admin/api/index.py" },
+    { "src": "/health", "dest": "/book-admin/api/index.py" },
+    { "src": "/ping", "dest": "/book-admin/api/index.py" },
+    { "src": "/", "status": 200, "dest": "https://shuspot.vercel.app" }
   ]
 }
