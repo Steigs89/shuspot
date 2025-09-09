@@ -1,39 +1,36 @@
-from http.server import BaseHTTPRequestHandler
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from datetime import datetime
-import json
+import os
 
-def handler(request, context):
+app = FastAPI()
+
+@app.get("/{path:path}")
+async def catch_all(request: Request, path: str = ""):
     """
-    Vercel Python HTTP handler function
+    Catch-all endpoint that handles all requests
     """
-    # Determine path from request
-    path = request.get("path", "/")
+    # Get the full path including query parameters
+    full_path = request.url.path
     
-    # Create response based on path
-    if path == "/api/health" or path == "/health":
-        response = {
-            "ok": True,
-            "service": "book-admin-api",
-            "version": "1.0.1"
-        }
-    elif path == "/api/ping" or path == "/ping":
-        response = {
-            "timestamp": datetime.now().isoformat(),
-            "service": "book-admin-api",
-            "version": "1.0.1"
-        }
-    else:
-        response = {
-            "message": "API is running from api/index.py handler",
-            "timestamp": datetime.now().isoformat(),
-            "path": path
-        }
+    if path == "" or path == "index" or path == "api" or path == "api/index":
+        return JSONResponse(content={"message": "API is running", "path": full_path})
     
-    # Return the response
-    return {
-        "statusCode": 200,
-        "body": json.dumps(response),
-        "headers": {
-            "Content-Type": "application/json"
-        }
-    }
+    elif path == "health" or path == "api/health":
+        return JSONResponse(content={"ok": True, "service": "book-admin-api", "version": "1.0.1"})
+    
+    elif path == "ping" or path == "api/ping":
+        return JSONResponse(content={"timestamp": datetime.now().isoformat(), "service": "book-admin-api", "version": "1.0.1"})
+    
+    elif "shuspot-ingestion/ingest-manifest" in path or "api/shuspot-ingestion/ingest-manifest" in path:
+        return JSONResponse(content={
+            "message": "Manifest endpoint (POST only)",
+            "success": False,
+            "error": "POST method required"
+        })
+    
+    # Default 404 response for other paths
+    return JSONResponse(
+        status_code=404,
+        content={"detail": f"Path not found: {full_path}"}
+    )
