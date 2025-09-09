@@ -1,0 +1,12 @@
+{
+  "name": "shuspot-admin-panel",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cd book-admin/frontend && npm run start",
+    "build": "cd book-admin/frontend && npm install && npm run build && mkdir -p ../../public && cp -r build/* ../../public/",
+    "vercel-build": "cd book-admin/frontend && npm install && npm run build && mkdir -p ../../public && cp -r build/* ../../public/"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
