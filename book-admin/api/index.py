@@ -1474,12 +1474,12 @@ async def execute_txt_script(
 @app.get("/health")
 @app.get("/api/health")
 async def health():
-    return {"ok": True}
+    return {"ok": True, "service": "book-admin-api"}
 
 @app.get("/ping")
 @app.get("/api/ping")
 async def ping():
-    return {"timestamp": datetime.now().isoformat()}
+    return {"timestamp": datetime.now().isoformat(), "service": "book-admin-api"}
 
 @app.get("/txt-ingestion/sample-scripts")
 async def get_sample_scripts():
