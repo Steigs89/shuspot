@@ -86,7 +86,7 @@ def main():
     parser.add_argument("--supabase-url", default=os.getenv("SUPABASE_URL"), help="Supabase URL")
     parser.add_argument("--supabase-key", default=os.getenv("SUPABASE_SERVICE_KEY") or os.getenv("SUPABASE_ANON_KEY"), help="Supabase service or anon key")
     parser.add_argument("--bucket", default=os.getenv("SUPABASE_BUCKET", "books"), help="Supabase Storage bucket name")
-    parser.add_argument("--batch-size", type=int, default=25, help="Books per manifest POST")
+    parser.add_argument("--batch-size", type=int, default=100, help="Books per manifest POST")
     parser.add_argument("--no-lean", action="store_true", help="Send full data (includes heavy fields like _files and _page_sequence)")
     parser.add_argument("--unsafe", action="store_true", help="Disable safe mode on server (returns 500s instead of JSON errors)")
     parser.add_argument("--dry-run", action="store_true", help="Send dry_run=true to server to validate manifest without DB writes")
