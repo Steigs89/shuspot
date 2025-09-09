@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    { 
+      "src": "book-admin/api/index.py", 
+      "use": "@vercel/python" 
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/book-admin/api/index.py" }
+  ],
+  "functions": {
+    "book-admin/api/index.py": {
+      "runtime": "python3.11",
+      "includeFiles": "book-admin/api/requirements.txt",
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  }
+}
