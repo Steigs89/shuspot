@@ -1481,16 +1481,6 @@ async def health():
 async def ping():
     return {"timestamp": datetime.now().isoformat()}
 
-@app.get("/health")
-@app.get("/api/health")
-async def health():
-    return {"ok": True}
-
-@app.get("/ping")
-@app.get("/api/ping")
-async def ping():
-    return {"timestamp": datetime.now().isoformat()}
-
 @app.get("/txt-ingestion/sample-scripts")
 async def get_sample_scripts():
     """Get sample ChatGPT instruction scripts"""
