@@ -5,25 +5,20 @@
       "src": "book-admin/frontend/package.json", 
       "use": "@vercel/static-build", 
       "config": { 
-        "distDir": "build",
-        "buildCommand": "cd book-admin/frontend && npm install && npm run build"
+        "distDir": "build"
       }
     },
     { 
       "src": "book-admin/api/**/*.py", 
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb",
-        "includeFiles": "book-admin/api/requirements.txt"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
+    { "src": "/api/(.*)", "dest": "/book-admin/api/index.py" },
     { "src": "/static/(.*)", "dest": "/book-admin/frontend/build/static/$1" },
     { "src": "/favicon\\.svg", "dest": "/book-admin/frontend/build/favicon.svg" },
     { "src": "/asset-manifest\\.json", "dest": "/book-admin/frontend/build/asset-manifest.json" },
     { "src": "/js/(.*)", "dest": "/book-admin/frontend/build/js/$1" },
-    { "src": "/api/(.*)", "dest": "/book-admin/api/index.py" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/book-admin/frontend/build/index.html" }
   ]
