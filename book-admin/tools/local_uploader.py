@@ -89,6 +89,7 @@ def main():
     parser.add_argument("--batch-size", type=int, default=25, help="Books per manifest POST")
     parser.add_argument("--no-lean", action="store_true", help="Send full data (includes heavy fields like _files and _page_sequence)")
     parser.add_argument("--unsafe", action="store_true", help="Disable safe mode on server (returns 500s instead of JSON errors)")
+    parser.add_argument("--dry-run", action="store_true", help="Send dry_run=true to server to validate manifest without DB writes")
 
     args = parser.parse_args()
 
@@ -149,6 +150,9 @@ def main():
             print(f"Posting batch of {len(chunk)} books (~{size_bytes/1024:.1f} KB)")
             # Use safe mode by default so server returns structured JSON even on errors
             params = None if args.unsafe else {"safe": "true"}
+            if args.dry_run:
+                params = params or {}
+                params["dry_run"] = "true"
             resp = requests.post(endpoint, json=payload, params=params, timeout=180)
             if resp.status_code >= 400:
                 # Try to surface JSON error payload if available
