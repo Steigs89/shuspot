@@ -11,10 +11,6 @@ const GoogleSheetsSetup = ({ onStatusChange }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [sheetStats, setSheetStats] = useState(null);
 
-  useEffect(() => {
-    checkConnectionStatus();
-  }, [checkConnectionStatus]);
-
   const checkConnectionStatus = useCallback(async () => {
     try {
       const response = await fetch(`${getApiUrl()}/google-sheets/status`);
@@ -34,6 +30,10 @@ const GoogleSheetsSetup = ({ onStatusChange }) => {
       setIsConnected(false);
     }
   }, []);
+
+  useEffect(() => {
+    checkConnectionStatus();
+  }, [checkConnectionStatus]);
 
   const handleSetup = async () => {
     if (!credentialsFile) {
