@@ -1,19 +1,17 @@
 import json
 
-def handler(request, context):
+def handler(request):
     """
-    Vercel Python HTTP handler for health check
+    Health check endpoint for the API
     """
-    response = {
-        "ok": True,
-        "service": "book-admin-api",
-        "version": "1.0.1"
-    }
-    
     return {
-        "statusCode": 200,
-        "body": json.dumps(response),
-        "headers": {
-            "Content-Type": "application/json"
-        }
+        'statusCode': 200,
+        'headers': {
+            'Content-Type': 'application/json',
+        },
+        'body': json.dumps({
+            'ok': True,
+            'service': 'book-admin-api',
+            'version': '1.0.1'
+        })
     }

@@ -1,36 +1,19 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+# api/index.py
 from datetime import datetime
-import os
+import json
 
-app = FastAPI()
-
-@app.get("/{path:path}")
-async def catch_all(request: Request, path: str = ""):
+def handler(request):
     """
-    Catch-all endpoint that handles all requests
+    Simple Vercel Python serverless function
     """
-    # Get the full path including query parameters
-    full_path = request.url.path
-    
-    if path == "" or path == "index" or path == "api" or path == "api/index":
-        return JSONResponse(content={"message": "API is running", "path": full_path})
-    
-    elif path == "health" or path == "api/health":
-        return JSONResponse(content={"ok": True, "service": "book-admin-api", "version": "1.0.1"})
-    
-    elif path == "ping" or path == "api/ping":
-        return JSONResponse(content={"timestamp": datetime.now().isoformat(), "service": "book-admin-api", "version": "1.0.1"})
-    
-    elif "shuspot-ingestion/ingest-manifest" in path or "api/shuspot-ingestion/ingest-manifest" in path:
-        return JSONResponse(content={
-            "message": "Manifest endpoint (POST only)",
-            "success": False,
-            "error": "POST method required"
+    return {
+        'statusCode': 200,
+        'headers': {
+            'Content-Type': 'application/json',
+        },
+        'body': json.dumps({
+            'message': 'API is running',
+            'timestamp': datetime.now().isoformat(),
+            'service': 'book-admin-api'
         })
-    
-    # Default 404 response for other paths
-    return JSONResponse(
-        status_code=404,
-        content={"detail": f"Path not found: {full_path}"}
-    )
+    }

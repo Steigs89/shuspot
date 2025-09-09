@@ -1,20 +1,18 @@
 import json
 from datetime import datetime
 
-def handler(request, context):
+def handler(request):
     """
-    Vercel Python HTTP handler for ping
+    Ping endpoint for the API
     """
-    response = {
-        "timestamp": datetime.now().isoformat(),
-        "service": "book-admin-api",
-        "version": "1.0.1"
-    }
-    
     return {
-        "statusCode": 200,
-        "body": json.dumps(response),
-        "headers": {
-            "Content-Type": "application/json"
-        }
+        'statusCode': 200,
+        'headers': {
+            'Content-Type': 'application/json',
+        },
+        'body': json.dumps({
+            'timestamp': datetime.now().isoformat(),
+            'service': 'book-admin-api',
+            'version': '1.0.1'
+        })
     }
