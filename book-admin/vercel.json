@@ -1,31 +1,25 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    },
-    {
-      "src": "api/simplified_index.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/simplified_index.py": {
+      "runtime": "python3.11"
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/simplified_index.py"
+      "source": "/api/(.*)",
+      "destination": "/api/simplified_index.py"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "source": "/static/(.*)",
+      "destination": "/static/$1"
     },
     {
-      "src": "/favicon.svg",
-      "dest": "/favicon.svg"
+      "source": "/favicon.svg",
+      "destination": "/favicon.svg"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

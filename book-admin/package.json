@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "cd frontend && npm start",
-    "build": "cd frontend && DISABLE_ESLINT_PLUGIN=true npm run build",
+    "build": "cd frontend && npm install && DISABLE_ESLINT_PLUGIN=true npm run build && cd .. && cp -r frontend/build/* .",
     "vercel-build": "cd frontend && npm install && DISABLE_ESLINT_PLUGIN=true npm run build && cd .. && cp -r frontend/build/* .",
     "test": "cd frontend && npm test"
   }
