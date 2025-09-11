@@ -3,11 +3,5 @@
     "api/simplified_index.py": {
       "runtime": "python3.11"
     }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/simplified_index.py"
-    }
-  ]
+  }
 }

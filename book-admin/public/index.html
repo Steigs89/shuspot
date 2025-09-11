@@ -1,15 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Book Admin Tool - Bulk upload and manage book metadata" />
-    <title>Book Admin Tool</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Admin Tool - Working!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .api-test {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #apiResult {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Book Admin Tool is Working! (Updated)</h1>
+        
+        <div class="success">
+            ✅ Frontend deployment successful!<br>
+            ✅ Static files loading correctly<br>
+            ✅ Vercel deployment active
+        </div>
+
+        <div class="api-test">
+            <h3>API Test</h3>
+            <button onclick="testAPI()">Test API Connection</button>
+            <div id="apiResult">Click the button to test the API...</div>
+        </div>
+
+        <h3>Next Steps:</h3>
+        <ul>
+            <li>✅ Basic deployment working</li>
+            <li>🔄 Now we can add the React frontend back</li>
+            <li>🔄 Verify API endpoints are accessible</li>
+            <li>🔄 Test file uploads and database operations</li>
+        </ul>
+    </div>
+
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('apiResult');
+            resultDiv.innerHTML = 'Testing API...';
+            
+            try {
+                const response = await fetch('/api/health');
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `✅ API Working! Response: ${JSON.stringify(data)}`;
+                } else {
+                    resultDiv.innerHTML = `❌ API Error: ${response.status} ${response.statusText}`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `❌ API Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
 </html>

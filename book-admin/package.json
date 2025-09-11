@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "echo 'Static deployment - no dev server needed'"
+    "build": "mkdir -p dist && cp -r public/* dist/ && cp index.html dist/",
+    "start": "echo 'Static deployment'"
   }
 }
