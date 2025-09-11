@@ -8,18 +8,6 @@
     {
       "source": "/api/(.*)",
       "destination": "/api/simplified_index.py"
-    },
-    {
-      "source": "/static/(.*)",
-      "destination": "/static/$1"
-    },
-    {
-      "source": "/favicon.svg",
-      "destination": "/favicon.svg"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }

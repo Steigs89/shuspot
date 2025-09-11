@@ -2,13 +2,7 @@
   "name": "book-admin",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "cross-env": "^7.0.3"
-  },
   "scripts": {
-    "start": "cd frontend && npm start",
-    "build": "cd frontend && npm install && DISABLE_ESLINT_PLUGIN=true npm run build && cd .. && cp -r frontend/build/* .",
-    "vercel-build": "cd frontend && npm install && DISABLE_ESLINT_PLUGIN=true npm run build && cd .. && cp -r frontend/build/* .",
-    "test": "cd frontend && npm test"
+    "start": "echo 'Static deployment - no dev server needed'"
   }
 }
