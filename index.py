@@ -18,14 +18,14 @@ def catch_all(path):
         return jsonify({
             "ok": True,
             "service": "book-admin-api",
-            "version": "1.0.2"
+            "version": "1.0.3"
         })
     
     elif path == "ping" or path == "api/ping":
         return jsonify({
             "timestamp": datetime.now().isoformat(),
             "service": "book-admin-api",
-            "version": "1.0.2"
+            "version": "1.0.3"
         })
     
     else:
@@ -60,26 +60,3 @@ def ingest_manifest():
 # Add this for local testing
 if __name__ == "__main__":
     app.run(debug=True, port=3000)
-
-@app.route('/api/shuspot-ingestion/ingest-manifest', methods=['POST'])
-def ingest_manifest():
-    """Handle book manifest uploads"""
-    if request.method == 'POST':
-        try:
-            payload = request.json
-            books = payload.get("books", [])
-            return jsonify({
-                "message": f"Received {len(books)} books",
-                "db_imported": len(books),
-                "success": True
-            })
-        except Exception as e:
-            return jsonify({
-                "success": False,
-                "error": str(e)
-            }), 400
-    else:
-        return jsonify({
-            "success": False,
-            "error": "Method not allowed"
-        }), 405

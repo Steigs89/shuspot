@@ -1,9 +1,5 @@
 {
-  "name": "book-admin",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "build": "mkdir -p dist && cp -r public/* dist/ && cp index.html dist/",
-    "start": "echo 'Static deployment'"
-  }
+  "name": "book-admin-static-site",
+  "version": "1.0.0",
+  "homepage": "."
 }

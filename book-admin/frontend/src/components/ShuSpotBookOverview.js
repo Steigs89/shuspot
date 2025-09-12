@@ -27,7 +27,7 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
         if (cropMatch) {
           const [, relativePath] = cropMatch;
           const cleanPath = relativePath.replace(/\\/g, '/');
-          const correctedUrl = `http://localhost:8000/CROP-ShuSpot/${cleanPath}`;
+          const correctedUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}`;
           console.log('🔧 CONVERTED absolute path to backend URL:', correctedUrl);
           return correctedUrl;
         }
@@ -49,22 +49,16 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
     
     // Use the correct path structure that matches backend serving
     // Backend serves from /CROP-ShuSpot, and we need to construct the path relative to the backend
-    if (book.folder_path) {
-      console.log('Using folder_path:', book.folder_path);
-      // Extract the path after CROP-ShuSpot (handle both absolute and relative paths)
-      const cropMatch = book.folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-      if (cropMatch) {
-        const [, relativePath] = cropMatch;
-        // Clean up the path and use forward slashes
+    if (book._folder_path) {
+      const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      if (folderPathMatch) {
+        const [, relativePath] = folderPathMatch;
         const cleanPath = relativePath.replace(/\\/g, '/');
-        // Try cover.jpg first (as shown in the user's example)
-        const coverUrl = `http://localhost:8000/CROP-ShuSpot/${cleanPath}/cover.jpg`;
-        console.log('Generated cover URL:', coverUrl);
+        const coverUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}/cover.jpg`;
+        console.log('Using derived cover URL from _folder_path:', coverUrl);
         return coverUrl;
       }
-    }
-    
-    // Check notes for folder_path
+    }    // Check notes for folder_path
     if (book.notes) {
       try {
         const parsedNotes = typeof book.notes === 'string' ? JSON.parse(book.notes) : book.notes;
@@ -74,7 +68,7 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
           if (cropMatch) {
             const [, relativePath] = cropMatch;
             const cleanPath = relativePath.replace(/\\/g, '/');
-            const coverUrl = `http://localhost:8000/CROP-ShuSpot/${cleanPath}/cover.jpg`;
+            const coverUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}/cover.jpg`;
             console.log('Generated cover URL from notes:', coverUrl);
             return coverUrl;
           }
@@ -93,7 +87,7 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
         if (cropMatch) {
           const [, relativePath] = cropMatch;
           const cleanPath = relativePath.replace(/\\/g, '/');
-          const fallbackUrl = `http://localhost:8000/CROP-ShuSpot/${cleanPath}`;
+          const fallbackUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}`;
           console.log('Generated fallback URL:', fallbackUrl);
           return fallbackUrl;
         }

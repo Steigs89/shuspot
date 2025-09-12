@@ -75,10 +75,11 @@ const GoogleSheetsManager = ({ isConnected }) => {
     }
   }, [isConnected, loadGoogleSheetsBooks]);
 
-  const syncFromDatabase = async () => {
+    const syncFromDb = async () => {
     setLoading(true);
+    setStatusMessage('Syncing from database...');
     try {
-      const response = await fetch('http://localhost:8000/google-sheets/sync-from-db', {
+      const response = await fetch(`${getApiUrl()}/google-sheets/sync-from-db`, {
         method: 'POST',
       });
       
@@ -101,10 +102,11 @@ const GoogleSheetsManager = ({ isConnected }) => {
     }
   };
 
-  const findDuplicates = async () => {
+    const findDuplicates = async () => {
     setLoading(true);
+    setStatusMessage('Finding duplicates...');
     try {
-      const response = await fetch('http://localhost:8000/google-sheets/duplicates');
+      const response = await fetch(`${getApiUrl()}/google-sheets/duplicates`);
       const data = await response.json();
       
       if (data.error) {
@@ -124,7 +126,7 @@ const GoogleSheetsManager = ({ isConnected }) => {
 
   const updateBook = async (bookId, updates) => {
     try {
-      const response = await fetch(`http://localhost:8000/google-sheets/books/${bookId}`, {
+      const response = await fetch(`${getApiUrl()}/google-sheets/books/${bookId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

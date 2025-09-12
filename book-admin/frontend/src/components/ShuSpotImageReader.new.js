@@ -98,10 +98,10 @@ const ShuSpotImageReader = ({ book, onBack }) => {
 
       if (materialMatch) {
         const [, relativePath] = materialMatch;
-        return `http://localhost:8000/shuspot-images/MaterialsShuspotI/${relativePath}`;
+        return `${getApiUrl()}/shuspot-images/MaterialsShuspotI/${relativePath}`;
       } else if (cropMatch) {
         const bookPath = cropMatch[1].replace(/\/[^/]+$/, '');
-        return `http://localhost:8000/shuspot-images/WEEK 70 CROP-SHuSpot/${bookPath}/resized/crop-${pageNumber}.png`;
+        return `${getApiUrl()}/shuspot-images/WEEK 70 CROP-SHuSpot/${bookPath}/resized/crop-${pageNumber}.png`;
       }
     }
 
@@ -117,9 +117,9 @@ const ShuSpotImageReader = ({ book, onBack }) => {
           if (materialMatch) {
             const [, relativePath] = materialMatch;
             const imageFile = `screenshot ${pageNumber}.png`;
-            return `http://localhost:8000/shuspot-images/MaterialsShuspotI/${relativePath}/${imageFile}`;
+            return `${getApiUrl()}/shuspot-images/MaterialsShuspotI/${relativePath}/${imageFile}`;
           } else if (cropMatch) {
-            return `http://localhost:8000/shuspot-images/WEEK 70 CROP-SHuSpot/${cropMatch[1]}/resized/crop-${pageNumber}.png`;
+            return `${getApiUrl()}/shuspot-images/WEEK 70 CROP-SHuSpot/${cropMatch[1]}/resized/crop-${pageNumber}.png`;
           }
         }
       } catch (e) {

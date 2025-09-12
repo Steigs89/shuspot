@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
+import { getApiUrl } from '../utils/api';
 
 const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,7 +52,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       if (cropMatch) {
         const [, relativePath] = cropMatch;
         const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-        const url = `http://localhost:8000/CROP-ShuSpot/${encodePath(cleanPath)}`;
+        const url = `${getApiUrl()}/CROP-ShuSpot/${encodePath(cleanPath)}`;
         console.log('🎯 Generated pageData URL:', url);
         return url;
       }
@@ -67,8 +68,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
           if (cropMatch) {
             const [, relativePath] = cropMatch;
             const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-            const url = `http://localhost:8000/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
-            console.log('🎯 Generated notes URL:', url);
+            const url = `${getApiUrl()}/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
+            console.log('🎯 Generated book notes URL for page', pageNumber, ':', url);
             return url;
           }
         }
@@ -83,13 +84,13 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       if (cropMatch) {
         const [, relativePath] = cropMatch;
         const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-        const url = `http://localhost:8000/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
+        const url = `${getApiUrl()}/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
         console.log('🎯 Generated folder_path URL:', url);
         return url;
       }
     }
     
-    const fallbackUrl = `http://localhost:8000/CROP-ShuSpot/page-${pageNumber}.png`;
+    const fallbackUrl = `${getApiUrl()}/CROP-ShuSpot/page-${pageNumber}.png`;
     console.log('🎯 Generated fallback URL:', fallbackUrl);
     return fallbackUrl;
   }, [book?.notes, book?.folder_path]);

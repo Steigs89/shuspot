@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/simplified_index.py": {
-      "runtime": "python3.11"
-    }
-  }
-}
