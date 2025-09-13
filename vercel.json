@@ -14,12 +14,12 @@
 		}
 	],
 	"routes": [
-		{ "src": "/api/(.*)", "dest": "/api/$1" },
-		{ "src": "/static/(.*)", "dest": "/book-admin/static/$1" },
-		{ "src": "/asset-manifest.json", "dest": "/book-admin/asset-manifest.json" },
-		{ "src": "/favicon.svg", "dest": "/book-admin/favicon.svg" },
-		{ "src": "/(.*\\..*)", "dest": "/book-admin/$1" },
-		{ "src": "/", "dest": "/book-admin/index.html" },
-		{ "src": "/(.*)", "dest": "/book-admin/index.html" }
+	{ "src": "^/api/(.*)$", "dest": "/api/$1" },
+	{ "src": "^/static/(.*)$", "dest": "/book-admin/static/$1" },
+	{ "src": "^/asset-manifest\\.json$", "dest": "/book-admin/asset-manifest.json" },
+	{ "src": "^/favicon\\.svg$", "dest": "/book-admin/favicon.svg" },
+	{ "src": "^/index\\.html$", "dest": "/book-admin/index.html" },
+	{ "src": "^/$", "dest": "/book-admin/index.html" },
+	{ "src": "^(?!/(api|static|asset-manifest\\.json|favicon\\.svg|book-admin)/).*$", "dest": "/book-admin/index.html" }
 	]
 }
