@@ -320,3 +320,4 @@ Books managed through any workflow (local upload, Google Sheets, or TXT ingestio
 ## License
 
 This tool is part of the ShuSpot platform and follows the same licensing terms.# Force deploy Fri Sep  5 14:17:11 EDT 2025
+# React App Deployment Fri Sep 12 20:15:44 EDT 2025
