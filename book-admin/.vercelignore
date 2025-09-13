@@ -1,6 +1,12 @@
 node_modules/
 frontend/
-backend/__pycache__
+backend/
+tools/
+uploads/
+build/
+dist/
+*.pyc
+__pycache__
 backend/*.pyc
 backend/.env
 uploads/*
