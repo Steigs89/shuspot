@@ -8,6 +8,8 @@
 		{ "source": "/book-admin/index.html", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] }
 	],
 		"rewrites": [
+			{ "source": "/api", "destination": "/api/index" },
+			{ "source": "/api/(.*)", "destination": "/api/index/$1" },
 			{ "source": "/upload-books", "destination": "/api/upload-books" },
 			{ "source": "/books/bulk-update", "destination": "/api/books/bulk-update" },
 			{ "source": "/books/clear/all", "destination": "/api/books/clear/all" },
