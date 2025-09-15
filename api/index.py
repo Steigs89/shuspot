@@ -154,6 +154,8 @@ def export_csv():
         writer.writerow([b.get("id"), b.get("title"), b.get("author"), b.get("genre")])
     return PlainTextResponse(buf.getvalue(), media_type="text/csv")
 
-# Mount router at root and at /index to support Vercel path /api and /api/index
-app.include_router(router)
-app.include_router(router, prefix="/index")
+# Mount router at multiple prefixes to handle Vercel path forwarding
+app.include_router(router)  # '/'
+app.include_router(router, prefix="/index")  # '/index'
+app.include_router(router, prefix="/api")  # '/api/*'
+app.include_router(router, prefix="/api/index")  # '/api/index/*'
