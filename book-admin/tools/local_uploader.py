@@ -30,10 +30,21 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict, Optional, Any, Tuple, Set
 
-ROOT = Path(__file__).resolve().parents[1] / "api"
-sys.path.insert(0, str(ROOT))
+API_DIR = Path(__file__).resolve().parents[1] / "api"
+BACKEND_DIR = Path(__file__).resolve().parents[1] / "backend"
+for p in (API_DIR, BACKEND_DIR):
+    if str(p) not in sys.path:
+        sys.path.insert(0, str(p))
 
-from shuspot_folder_parser import ShuSpotFolderParser  # noqa: E402
+try:
+    from shuspot_folder_parser import ShuSpotFolderParser  # noqa: E402
+except Exception:
+    try:
+        from backend.shuspot_folder_parser import ShuSpotFolderParser  # type: ignore # noqa: E402
+    except Exception as e:
+        print(f"Failed to import ShuSpotFolderParser: {e}")
+        print("Ensure shuspot_folder_parser.py exists in book-admin/api or book-admin/backend.")
+        sys.exit(1)
 
 try:
     import requests  # type: ignore
