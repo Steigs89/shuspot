@@ -1,5 +1,5 @@
 # api/index.py
-from fastapi import FastAPI, UploadFile, File, Form, Query, HTTPException, Request
+from fastapi import FastAPI, APIRouter, UploadFile, File, Form, Query, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, PlainTextResponse
 from pydantic import BaseModel
@@ -27,6 +27,7 @@ def save_db(data: Dict[str, Any]):
         pass
 
 app = FastAPI(title="Book Admin API")
+router = APIRouter()
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,18 +37,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
+@router.get("/")
 def root():
     return {"message": "Book Admin API is running", "timestamp": datetime.now().isoformat()}
 
-@app.get("/ping")
-@app.get("/health")
-@app.get("/healthz")
+@router.get("/ping")
+@router.get("/health")
+@router.get("/healthz")
 def health():
     return {"ok": True, "service": "book-admin-api", "timestamp": datetime.now().isoformat()}
 
 # Local uploader manifest endpoint (safe by default)
-@app.post("/shuspot-ingestion/ingest-manifest")
+@router.post("/shuspot-ingestion/ingest-manifest")
 async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: bool = Query(False)):
     try:
         payload = await request.json()
@@ -83,17 +84,17 @@ class BookUpdate(BaseModel):
     genre: Optional[str] = None
     description: Optional[str] = None
 
-@app.post("/upload-books")
+@router.post("/upload-books")
 async def upload_books(files: List[UploadFile] = File(...)):
     filenames = [f.filename for f in files]
     return {"uploaded": len(files), "files": filenames}
 
-@app.get("/books")
+@router.get("/books")
 def get_books():
     db = load_db()
     return {"books": db.get("books", [])}
 
-@app.put("/books/{book_id}")
+@router.put("/books/{book_id}")
 async def update_book(book_id: int, request: Request):
     form = await request.form()
     db = load_db()
@@ -106,7 +107,7 @@ async def update_book(book_id: int, request: Request):
             return {"ok": True, "book": b}
     raise HTTPException(status_code=404, detail="Book not found")
 
-@app.put("/books/bulk-update")
+@router.put("/books/bulk-update")
 async def bulk_update_books(request: Request):
     form = await request.form()
     ids = [int(v) for k, v in form.multi_items() if k == "book_ids"]
@@ -123,7 +124,7 @@ async def bulk_update_books(request: Request):
     save_db(db)
     return {"ok": True, "updated": count}
 
-@app.delete("/books/{book_id}")
+@router.delete("/books/{book_id}")
 def delete_book(book_id: int):
     db = load_db()
     before = len(db.get("books", []))
@@ -131,18 +132,18 @@ def delete_book(book_id: int):
     save_db(db)
     return {"ok": True, "deleted": before - len(db["books"]) }
 
-@app.delete("/books/clear/all")
+@router.delete("/books/clear/all")
 def clear_all():
     save_db({"books": []})
     return {"ok": True, "cleared": True}
 
-@app.get("/stats")
+@router.get("/stats")
 def stats():
     db = load_db()
     total = len(db.get("books", []))
     return {"total_books": total, "generated_at": datetime.now().isoformat()}
 
-@app.get("/export/csv")
+@router.get("/export/csv")
 def export_csv():
     db = load_db()
     import io, csv
@@ -152,3 +153,7 @@ def export_csv():
     for b in db.get("books", []):
         writer.writerow([b.get("id"), b.get("title"), b.get("author"), b.get("genre")])
     return PlainTextResponse(buf.getvalue(), media_type="text/csv")
+
+# Mount router at root and at /index to support Vercel path /api and /api/index
+app.include_router(router)
+app.include_router(router, prefix="/index")
