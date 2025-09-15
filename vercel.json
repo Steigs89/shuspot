@@ -1,26 +1,16 @@
 {
 	"version": 2,
 	"headers": [
-		{
-			"source": "/",
-			"headers": [
-				{ "key": "Cache-Control", "value": "no-store" }
-			]
-		},
-		{
-			"source": "/book-admin/index.html",
-			"headers": [
-				{ "key": "Cache-Control", "value": "no-store" }
-			]
-		}
+		{ "source": "/", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] },
+		{ "source": "/book-admin/index.html", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] }
 	],
-	"routes": [
-		{ "src": "^/api/(.*)$", "dest": "/api/$1" },
-		{ "src": "^/static/(.*)$", "dest": "/book-admin/static/$1" },
-		{ "src": "^/asset-manifest\\.json$", "dest": "/book-admin/asset-manifest.json" },
-		{ "src": "^/favicon\\.svg$", "dest": "/book-admin/favicon.svg" },
-		{ "src": "^/index\\.html$", "dest": "/book-admin/index.html" },
-		{ "src": "^/$", "dest": "/book-admin/index.html" },
-		{ "src": "^(?!/(api|static|asset-manifest\\.json|favicon\\.svg|book-admin)/).*$", "dest": "/book-admin/index.html" }
+	"rewrites": [
+		{ "source": "/api/(.*)", "destination": "/api/$1" },
+		{ "source": "/static/(.*)", "destination": "/book-admin/static/$1" },
+		{ "source": "/asset-manifest.json", "destination": "/book-admin/asset-manifest.json" },
+		{ "source": "/favicon.svg", "destination": "/book-admin/favicon.svg" },
+		{ "source": "/index.html", "destination": "/book-admin/index.html" },
+		{ "source": "/", "destination": "/book-admin/index.html" },
+		{ "source": "/(.*)", "destination": "/book-admin/index.html" }
 	]
 }
