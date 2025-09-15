@@ -26,7 +26,8 @@ def save_db(data: Dict[str, Any]):
     except Exception:
         pass
 
-app = FastAPI(title="Book Admin API")
+# Mount the app at /api so deployed path /api/* maps to defined routes
+app = FastAPI(title="Book Admin API", root_path="/api")
 
 app.add_middleware(
     CORSMiddleware,
