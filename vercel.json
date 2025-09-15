@@ -5,6 +5,7 @@
 		{ "source": "/book-admin/index.html", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] }
 	],
 		"rewrites": [
+			{ "source": "/api", "destination": "/api/index.py" },
 			{ "source": "/api/(.*)", "destination": "/api/index.py" },
 			{ "source": "/upload-books", "destination": "/api/index.py" },
 			{ "source": "/books/bulk-update", "destination": "/api/index.py" },
