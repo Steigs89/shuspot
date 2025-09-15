@@ -47,6 +47,14 @@ def root():
 def health():
     return {"ok": True, "service": "book-admin-api", "timestamp": datetime.now().isoformat()}
 
+@router.get("/whoami")
+async def whoami(request: Request):
+    return {
+        "scope_path": request.scope.get("path"),
+        "root_path": request.scope.get("root_path"),
+        "headers": {k.decode(): v.decode() for k, v in request.scope.get("headers", []) if k.decode() in ("host", "x-forwarded-host", "x-forwarded-uri", "x-vercel-id")},
+    }
+
 # Local uploader manifest endpoint (safe by default)
 @router.post("/shuspot-ingestion/ingest-manifest")
 async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: bool = Query(False)):
