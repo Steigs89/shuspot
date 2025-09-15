@@ -1,5 +1,8 @@
 {
 	"version": 2,
+	"functions": {
+		"api/**/*": { "runtime": "python3.12" }
+	},
 	"headers": [
 		{ "source": "/", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] },
 		{ "source": "/book-admin/index.html", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] }
