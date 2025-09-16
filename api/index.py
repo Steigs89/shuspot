@@ -88,6 +88,24 @@ def debug_state():
         "time": datetime.now().isoformat(),
     }
 
+# --- Helpers ---
+def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
+    """Return a book dict with normalized keys expected by the frontend.
+    Preserves original fields and adds: title, author, genre, reading_level, url, notes.
+    """
+    n: Dict[str, Any] = dict(b)
+    # Title
+    n.setdefault("title", b.get("title") or b.get("Name") or b.get("name"))
+    # Author
+    n.setdefault("author", b.get("author") or b.get("Author"))
+    # Genre/category
+    n.setdefault("genre", b.get("genre") or b.get("Category") or b.get("Subject"))
+    # Optional fields commonly used
+    n.setdefault("reading_level", b.get("reading_level") or b.get("Age"))
+    n.setdefault("url", b.get("url") or b.get("URL"))
+    n.setdefault("notes", b.get("notes") or b.get("Notes"))
+    return n
+
 # Local uploader manifest endpoint (safe by default)
 @router.post("/shuspot-ingestion/ingest-manifest")
 async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: bool = Query(False)):
@@ -107,7 +125,7 @@ async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: b
         # Assign simple incremental ids
         base_id = len(existing)
         for i, b in enumerate(books):
-            b2 = dict(b)
+            b2 = normalize_book(dict(b))
             b2["id"] = base_id + i + 1
             existing.append(b2)
         db["books"] = existing
@@ -139,7 +157,9 @@ async def upload_books(files: List[UploadFile] = File(...)):
 @router.get("/books")
 def get_books():
     db = load_db()
-    return {"books": db.get("books", [])}
+    raw = db.get("books", [])
+    normalized = [normalize_book(b) for b in raw]
+    return {"books": normalized}
 
 @router.put("/books/{book_id}")
 async def update_book(book_id: int, request: Request):
@@ -150,6 +170,13 @@ async def update_book(book_id: int, request: Request):
         if b.get("id") == book_id:
             for k, v in form.items():
                 b[k] = v
+                # Keep legacy fields in sync for key fields
+                if k == "title":
+                    b["Name"] = v
+                elif k == "author":
+                    b["Author"] = v
+                elif k == "genre":
+                    b["Category"] = v
             save_db(db)
             return {"ok": True, "book": b}
     raise HTTPException(status_code=404, detail="Book not found")
@@ -168,6 +195,13 @@ async def bulk_update_books(request: Request):
         if b.get("id") in ids:
             b[field] = value
             count += 1
+            # Sync legacy for known fields
+            if field == "title":
+                b["Name"] = value
+            elif field == "author":
+                b["Author"] = value
+            elif field == "genre":
+                b["Category"] = value
     save_db(db)
     return {"ok": True, "updated": count}
 
@@ -187,8 +221,18 @@ def clear_all():
 @router.get("/stats")
 def stats():
     db = load_db()
-    total = len(db.get("books", []))
-    return {"total_books": total, "generated_at": datetime.now().isoformat()}
+    raw = db.get("books", [])
+    books = [normalize_book(b) for b in raw]
+    authors = sorted({b.get("author") for b in books if b.get("author")})
+    genres = sorted({b.get("genre") for b in books if b.get("genre")})
+    return {
+        "total_books": len(books),
+        "unique_authors": len(authors),
+        "unique_genres": len(genres),
+        "authors": authors,
+        "genres": genres,
+        "generated_at": datetime.now().isoformat(),
+    }
 
 @router.get("/export/csv")
 def export_csv():
@@ -198,8 +242,9 @@ def export_csv():
     writer = csv.writer(buf)
     writer.writerow(["id", "title", "author", "genre"])
     for b in db.get("books", []):
-        writer.writerow([b.get("id"), b.get("title"), b.get("author"), b.get("genre")])
-    return PlainTextResponse(buf.getvalue(), media_type="text/csv")
+        n = normalize_book(b)
+        writer.writerow([n.get("id"), n.get("title"), n.get("author"), n.get("genre")])
+    return {"csv_data": buf.getvalue()}
 
 # Mount router at multiple prefixes to handle Vercel path forwarding
 app.include_router(router)  # '/'
