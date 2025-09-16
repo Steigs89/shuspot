@@ -2,14 +2,16 @@
 	"version": 2,
 	"headers": [
 	{ "source": "/", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] },
-	{ "source": "/build/index.html", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] }
+	{ "source": "/index.html", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] }
 	],
 	"rewrites": [
-	{ "source": "/static/(.*)", "destination": "/build/static/$1" },
-	{ "source": "/js/(.*)", "destination": "/build/js/$1" },
-	{ "source": "/asset-manifest.json", "destination": "/build/asset-manifest.json" },
-	{ "source": "/index.html", "destination": "/build/index.html" },
-	{ "source": "/", "destination": "/build/index.html" },
-	{ "source": "/:path((?!api).*)", "destination": "/build/index.html" }
+		{ "source": "/api", "destination": "/api" },
+		{ "source": "/api/(.*)", "destination": "/api/$1" },
+		{ "source": "/static/(.*)", "destination": "/static/$1" },
+		{ "source": "/js/(.*)", "destination": "/js/$1" },
+		{ "source": "/asset-manifest.json", "destination": "/asset-manifest.json" },
+		{ "source": "/index.html", "destination": "/index.html" },
+		{ "source": "/", "destination": "/index.html" },
+		{ "source": "/(.*)", "destination": "/index.html" }
 	]
 }
