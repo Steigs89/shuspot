@@ -86,13 +86,19 @@ def debug_state():
 
 # --- Helpers ---
 def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
+    def first_non_empty(*vals):
+        for v in vals:
+            if v is not None and (not isinstance(v, str) or v.strip() != ""):
+                return v
+        return None
+
     n: Dict[str, Any] = dict(b)
-    n.setdefault("title", b.get("title") or b.get("Name") or b.get("name"))
-    n.setdefault("author", b.get("author") or b.get("Author"))
-    n.setdefault("genre", b.get("genre") or b.get("Category") or b.get("Subject"))
-    n.setdefault("reading_level", b.get("reading_level") or b.get("Age"))
-    n.setdefault("url", b.get("url") or b.get("URL"))
-    n.setdefault("notes", b.get("notes") or b.get("Notes"))
+    n["title"] = first_non_empty(n.get("title"), b.get("Name"), b.get("name"))
+    n["author"] = first_non_empty(n.get("author"), b.get("Author"))
+    n["genre"] = first_non_empty(n.get("genre"), b.get("Category"), b.get("Subject"))
+    n["reading_level"] = first_non_empty(n.get("reading_level"), b.get("Age"))
+    n["url"] = first_non_empty(n.get("url"), b.get("URL"))
+    n["notes"] = first_non_empty(n.get("notes"), b.get("Notes"))
     return n
 
 @router.post("/shuspot-ingestion/ingest-manifest")

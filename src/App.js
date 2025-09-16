@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -63,7 +63,27 @@ function App() {
       if (bookTypeFilter !== 'All') params.book_type = bookTypeFilter;
 
       const response = await bookAPI.getBooks(params);
-      setBooks(response.books);
+      const normalize = (b) => ({
+        ...b,
+        title: b.title || b.Name || b.name || '',
+        author: b.author || b.Author || '',
+        genre: b.genre || b.Category || b.Subject || '',
+        reading_level: b.reading_level || b.Age || b['AR Level'] || '',
+        url: b.url || b.URL || '',
+        notes: b.notes || b.Notes || ''
+      });
+      const normalizedBooks = Array.isArray(response.books) ? response.books.map(normalize) : [];
+      setBooks(normalizedBooks);
+      // Derive authors/genres for filters if backend stats don't provide them
+      const authors = Array.from(new Set(normalizedBooks.map(b => (b.author || '').trim()).filter(Boolean))).sort();
+      const genres = Array.from(new Set(normalizedBooks.map(b => (b.genre || '').trim()).filter(Boolean))).sort();
+      setStats(prev => ({
+        ...prev,
+        unique_authors: authors.length,
+        unique_genres: genres.length,
+        authors,
+        genres,
+      }));
     } catch (error) {
       console.error('Error loading books:', error);
       toast.error('Error loading books');
