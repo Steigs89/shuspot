@@ -7,7 +7,20 @@ from typing import List, Optional, Dict, Any
 import os, json
 from datetime import datetime
 
-TMP_DIR = os.environ.get("TMPDIR", "/tmp")
+"""
+Storage notes:
+- On platforms like Render/Netlify Functions, only /tmp is writable at runtime.
+- Previously we honored TMPDIR, but if that points to a non-writable/missing path, writes could fail silently.
+- We now default to /tmp and only use TMPDIR if it points to an existing, writable directory.
+"""
+
+def _resolve_tmp_dir() -> str:
+    candidate = os.environ.get("TMPDIR")
+    if candidate and os.path.isdir(candidate) and os.access(candidate, os.W_OK):
+        return candidate
+    return "/tmp"
+
+TMP_DIR = _resolve_tmp_dir()
 DB_PATH = os.path.join(TMP_DIR, "books.json")
 
 def load_db() -> Dict[str, Any]:
@@ -15,16 +28,22 @@ def load_db() -> Dict[str, Any]:
         try:
             with open(DB_PATH, 'r') as f:
                 return json.load(f)
-        except Exception:
+        except Exception as e:
+            # Corrupt or unreadable file; reset to empty and try to salvage by rewriting
+            try:
+                with open(DB_PATH, 'w') as f:
+                    json.dump({"books": []}, f)
+            except Exception:
+                pass
             return {"books": []}
     return {"books": []}
 
 def save_db(data: Dict[str, Any]):
-    try:
-        with open(DB_PATH, 'w') as f:
-            json.dump(data, f)
-    except Exception:
-        pass
+    # Ensure parent dir exists
+    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+    # Do not swallow errors; let caller handle and report
+    with open(DB_PATH, 'w') as f:
+        json.dump(data, f)
 
 app = FastAPI(title="Book Admin API")
 router = APIRouter()
@@ -55,6 +74,20 @@ async def whoami(request: Request):
         "headers": {k.decode(): v.decode() for k, v in request.scope.get("headers", []) if k.decode() in ("host", "x-forwarded-host", "x-forwarded-uri", "x-vercel-id")},
     }
 
+@router.get("/admin/debug")
+def debug_state():
+    exists = os.path.exists(DB_PATH)
+    size = os.path.getsize(DB_PATH) if exists else 0
+    writable = os.access(os.path.dirname(DB_PATH), os.W_OK)
+    return {
+        "db_path": DB_PATH,
+        "tmp_dir": TMP_DIR,
+        "exists": exists,
+        "size": size,
+        "writable": writable,
+        "time": datetime.now().isoformat(),
+    }
+
 # Local uploader manifest endpoint (safe by default)
 @router.post("/shuspot-ingestion/ingest-manifest")
 async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: bool = Query(False)):
@@ -78,7 +111,13 @@ async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: b
             b2["id"] = base_id + i + 1
             existing.append(b2)
         db["books"] = existing
-        save_db(db)
+        # Persist; if this fails we report back with error
+        try:
+            save_db(db)
+        except Exception as e:
+            if safe:
+                return {"success": False, "db_imported": 0, "errors": [f"Failed to save DB: {e}"]}
+            raise
         return {"message": f"Imported {len(books)} books", "db_imported": len(books), "success": True, "errors": []}
     except Exception as e:
         if safe:

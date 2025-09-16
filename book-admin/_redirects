@@ -3,5 +3,7 @@
 # Proxy API to your backend on Render
 /api/* https://shuspot.onrender.com/api/:splat 200
 
-# SPA fallback
-/* /index.html 200
+# Serve compiled SPA when deploying whole book-admin folder
+/ /build/index.html 200
+/index.html /build/index.html 200
+/* /build/index.html 200
