@@ -5,8 +5,6 @@
 		{ "source": "/book-admin/index.html", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] }
 	],
 		"rewrites": [
-			{ "source": "/api", "destination": "/api/index" },
-			{ "source": "/api/(.*)", "destination": "/api/index/$1" },
 			{ "source": "/static/(.*)", "destination": "/book-admin/static/$1" },
 			{ "source": "/asset-manifest.json", "destination": "/book-admin/asset-manifest.json" },
 			{ "source": "/favicon.svg", "destination": "/book-admin/favicon.svg" },
