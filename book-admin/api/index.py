@@ -119,9 +119,16 @@ def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
         return None
 
     n: Dict[str, Any] = dict(b)
+    TOP_LEVEL = {"read to me", "video books", "video book", "audiobooks", "audiobook", "books", "videos", "read to me stories"}
     n["title"] = first_non_empty(n.get("title"), b.get("Name"), b.get("name"))
     n["author"] = first_non_empty(n.get("author"), b.get("Author"))
-    n["genre"] = first_non_empty(n.get("genre"), b.get("Category"), b.get("Subject"))
+    n["book_type"] = first_non_empty(n.get("book_type"), b.get("book_type"), b.get("Media"), b.get("media"))
+    candidate_genre = first_non_empty(n.get("genre"), b.get("Genre"), b.get("Category"), b.get("Subject"))
+    if isinstance(candidate_genre, str) and candidate_genre.strip().lower() in TOP_LEVEL:
+        candidate_genre = None
+    if candidate_genre and n.get("book_type") and str(candidate_genre).strip().lower() == str(n.get("book_type")).strip().lower():
+        candidate_genre = None
+    n["genre"] = candidate_genre
     n["reading_level"] = first_non_empty(n.get("reading_level"), b.get("Age"))
     n["url"] = first_non_empty(n.get("url"), b.get("URL"))
     n["notes"] = first_non_empty(n.get("notes"), b.get("Notes"))
@@ -236,7 +243,7 @@ def get_books(
     books = [normalize_book(b) for b in raw]
     for b in books:
         if not b.get("book_type"):
-            b["book_type"] = b.get("Media") or b.get("media") or ("Read to Me" if (b.get("Category") == "Books") else b.get("Category")) or ""
+            b["book_type"] = b.get("Media") or b.get("media") or ""
     def match(b):
         if search:
             q = search.lower()
@@ -275,10 +282,10 @@ def export_csv():
     import io, csv
     buf = io.StringIO()
     writer = csv.writer(buf)
-    writer.writerow(["id", "title", "author", "genre"])
+    writer.writerow(["id", "title", "author", "genre", "book_type"])
     for b in db.get("books", []):
         n = normalize_book(b)
-        writer.writerow([n.get("id"), n.get("title"), n.get("author"), n.get("genre")])
+        writer.writerow([n.get("id"), n.get("title"), n.get("author"), n.get("genre"), n.get("book_type")])
     return PlainTextResponse(buf.getvalue(), media_type="text/csv")
 
 app.include_router(router)  # '/'

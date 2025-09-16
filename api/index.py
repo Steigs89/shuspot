@@ -129,12 +129,21 @@ def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
         return None
 
     n: Dict[str, Any] = dict(b)
+    TOP_LEVEL = {"read to me", "video books", "video book", "audiobooks", "audiobook", "books", "videos", "read to me stories"}
     # Title
     n["title"] = first_non_empty(n.get("title"), b.get("Name"), b.get("name"))
     # Author
     n["author"] = first_non_empty(n.get("author"), b.get("Author"))
-    # Genre/category
-    n["genre"] = first_non_empty(n.get("genre"), b.get("Category"), b.get("Subject"))
+    # Book type strictly from Media when available
+    n["book_type"] = first_non_empty(n.get("book_type"), b.get("book_type"), b.get("Media"), b.get("media"))
+    # Genre/category (avoid top-level media values)
+    candidate_genre = first_non_empty(n.get("genre"), b.get("Genre"), b.get("Category"), b.get("Subject"))
+    if isinstance(candidate_genre, str) and candidate_genre.strip().lower() in TOP_LEVEL:
+        candidate_genre = None
+    # Also avoid genre duplicating book_type
+    if candidate_genre and n.get("book_type") and str(candidate_genre).strip().lower() == str(n.get("book_type")).strip().lower():
+        candidate_genre = None
+    n["genre"] = candidate_genre
     # Optional fields commonly used
     n["reading_level"] = first_non_empty(n.get("reading_level"), b.get("Age"))
     n["url"] = first_non_empty(n.get("url"), b.get("URL"))
@@ -208,10 +217,11 @@ def get_books(
     db = load_db()
     raw = db.get("books", [])
     books = [normalize_book(b) for b in raw]
-    # Derive book_type from Media/Category if missing
+    # Derive book_type strictly from Media if missing
     for b in books:
         if not b.get("book_type"):
-            b["book_type"] = b.get("Media") or b.get("media") or ("Read to Me" if (b.get("Category") == "Books") else b.get("Category")) or ""
+            bt = b.get("Media") or b.get("media") or ""
+            b["book_type"] = bt
     def match(b):
         if search:
             q = search.lower()
@@ -309,10 +319,10 @@ def export_csv():
     import io, csv
     buf = io.StringIO()
     writer = csv.writer(buf)
-    writer.writerow(["id", "title", "author", "genre"])
+    writer.writerow(["id", "title", "author", "genre", "book_type"])
     for b in db.get("books", []):
         n = normalize_book(b)
-        writer.writerow([n.get("id"), n.get("title"), n.get("author"), n.get("genre")])
+        writer.writerow([n.get("id"), n.get("title"), n.get("author"), n.get("genre"), n.get("book_type")])
     return {"csv_data": buf.getvalue()}
 
 # Mount router at multiple prefixes to handle Vercel path forwarding

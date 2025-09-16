@@ -137,6 +137,61 @@ def upload_cover_if_possible(client, bucket: str, local_path: str, dest_prefix: 
         return None
 
 
+def upload_pages_if_possible(client, bucket: str, page_sequence: List[Dict], folder_path: str, dest_prefix: str = "pages", max_pages: int = 10000) -> Optional[List[Dict]]:
+    """Upload page images to Supabase and return a URL-only sequence for production reader.
+    Input page dict: expects file_path/path, page_number, is_cover, is_left_page, display_name.
+    Output page dict: page_number, url, is_cover, is_left_page, display_name.
+    """
+    try:
+        if not client or not page_sequence:
+            return None
+        storage = client.storage.from_(bucket)
+        out: List[Dict] = []
+        folder_hash = abs(hash(folder_path)) % (10**10)
+        count = 0
+        for p in page_sequence:
+            if count >= max_pages:
+                break
+            local_path = p.get("file_path") or p.get("path") or ""
+            if not local_path:
+                continue
+            local_path = local_path.replace("%20", " ")
+            f = Path(local_path)
+            if not f.exists():
+                f = Path(folder_path) / Path(local_path)
+            if not f.exists():
+                continue
+            ext = f.suffix.lower() or ".png"
+            try:
+                page_no = int(p.get("page_number") or (len(out) + 1))
+            except Exception:
+                page_no = len(out) + 1
+            storage_path = f"{dest_prefix}/{folder_hash}/page-{page_no:04d}{ext}"
+            try:
+                data = f.read_bytes()
+                try:
+                    storage.upload(storage_path, data)
+                except Exception:
+                    # Likely exists; proceed to get URL
+                    pass
+                public = storage.get_public_url(storage_path)
+                out.append({
+                    "page_number": page_no,
+                    "url": public,
+                    "is_cover": bool(p.get("is_cover")),
+                    "is_left_page": bool(p.get("is_left_page")),
+                    "display_name": p.get("display_name") or ("Cover" if p.get("is_cover") else f"Page {page_no}")
+                })
+                count += 1
+            except Exception as e:
+                print(f"Page upload failed for {f}: {e}")
+                continue
+        return out if out else None
+    except Exception as e:
+        print(f"Unexpected error uploading pages: {e}")
+        return None
+
+
 def chunked(iterable, size):
     """Split an iterable into chunks of the specified size."""
     for i in range(0, len(iterable), size):
@@ -426,6 +481,9 @@ def main():
     parser.add_argument("--resume-from", type=str, help="Resume from the progress saved in this file")
     parser.add_argument("--save-progress", type=str, help="Save progress to this file to allow resuming later")
     parser.add_argument("--retries", type=int, default=3, help="Number of retries for failed requests")
+    parser.add_argument("--upload-pages", action="store_true", help="Upload page images and include URL sequence for reader")
+    parser.add_argument("--max-pages", type=int, default=10000, help="Max pages per book to upload/include")
+    parser.add_argument("--pages-prefix", type=str, default="pages", help="Storage prefix for page uploads")
 
     args = parser.parse_args()
     
@@ -492,6 +550,23 @@ def main():
             url = upload_cover_if_possible(supabase_client, args.bucket, cover_local, dest_prefix="covers")
             if url:
                 b2['cover_image_url'] = url
+        # Derive book_type from Media when present
+        if b.get('Media') and not b2.get('book_type'):
+            b2['book_type'] = b.get('Media')
+        # Optionally upload page images and include URL sequence for reader
+        seq = b.get('_page_sequence') or []
+        if getattr(args, 'upload_pages', False) and supabase_client and seq:
+            uploaded_seq = upload_pages_if_possible(
+                supabase_client, args.bucket, seq, folder_path,
+                dest_prefix=getattr(args, 'pages_prefix', 'pages'),
+                max_pages=getattr(args, 'max_pages', 10000)
+            )
+            if uploaded_seq:
+                b2['_page_sequence'] = uploaded_seq
+                if not b2.get('cover_image_url'):
+                    first = next((p for p in uploaded_seq if p.get('is_cover')), uploaded_seq[0] if uploaded_seq else None)
+                    if first and first.get('url'):
+                        b2['cover_image_url'] = first['url']
         prepared.append(b2)
 
     # Create chunks for batch uploading
@@ -555,226 +630,6 @@ def main():
         "elapsed_time": format_time(elapsed_time),
         "books_per_second": f"{books_per_second:.2f} books/second" if books_per_second > 0 else "N/A (no books uploaded)",
         "mode": f"parallel ({args.concurrency} workers)" if use_parallel else "sequential"
-    }
-    
-    # If there are errors, include them in the summary
-    if errors:
-        summary["error_details"] = errors[:10]  # Show first 10 errors
-        if len(errors) > 10:
-            summary["error_details"].append(f"... and {len(errors) - 10} more errors")
-    
-    print("\nSummary:")
-    print(json.dumps(summary, indent=2))
-
-
-if __name__ == "__main__":
-    main()
-
-
-def ensure_supabase_client(url: Optional[str], key: Optional[str]):
-    if not url or not key:
-        return None
-    try:
-        from supabase import create_client  # type: ignore
-        return create_client(url, key)
-    except Exception as e:
-        print(f"Warning: Supabase client not available ({e}). Skipping uploads.")
-        return None
-
-
-def upload_cover_if_possible(client, bucket: str, local_path: str, dest_prefix: str = "covers") -> Optional[str]:
-    try:
-        file_path = Path(local_path)
-        if not file_path.exists():
-            return None
-        # Create a safe storage path
-        name = file_path.name
-        # Prefix with hashable folder name for uniqueness
-        folder_hash = abs(hash(str(file_path.parent))) % (10**10)
-        storage_path = f"{dest_prefix}/{folder_hash}/{name}"
-
-        # Upload (skip if exists)
-        data = file_path.read_bytes()
-        storage = client.storage.from_(bucket)
-        try:
-            storage.upload(storage_path, data)
-        except Exception:
-            # Might already exist; continue
-            pass
-        public = storage.get_public_url(storage_path)
-        return public
-    except Exception as e:
-        print(f"Cover upload failed for {local_path}: {e}")
-        return None
-
-
-def chunked(iterable, size):
-    for i in range(0, len(iterable), size):
-        yield iterable[i:i+size]
-
-
-def format_time(seconds):
-    """Format seconds into a human-readable time string."""
-    if seconds < 60:
-        return f"{seconds:.2f} seconds"
-    elif seconds < 3600:
-        minutes = seconds // 60
-        remaining_seconds = seconds % 60
-        return f"{int(minutes)} minutes {int(remaining_seconds)} seconds"
-    else:
-        hours = seconds // 3600
-        minutes = (seconds % 3600) // 60
-        remaining_seconds = seconds % 60
-        return f"{int(hours)} hours {int(minutes)} minutes {int(remaining_seconds)} seconds"
-
-
-def main():
-    parser = argparse.ArgumentParser(description="Local ShuSpot uploader")
-    parser.add_argument("--folder", required=True, help="Path to local ShuSpot root folder")
-    parser.add_argument("--api-base", default="http://localhost:8000", help="API base URL (no trailing slash)")
-    parser.add_argument("--to-db", action="store_true", help="Import into cloud DB")
-    parser.add_argument("--to-sheets", action="store_true", help="Upload to Google Sheets (requires server to be configured)")
-    parser.add_argument("--supabase-url", default=os.getenv("SUPABASE_URL"), help="Supabase URL")
-    parser.add_argument("--supabase-key", default=os.getenv("SUPABASE_SERVICE_KEY") or os.getenv("SUPABASE_ANON_KEY"), help="Supabase service or anon key")
-    parser.add_argument("--bucket", default=os.getenv("SUPABASE_BUCKET", "books"), help="Supabase Storage bucket name")
-    parser.add_argument("--batch-size", type=int, default=25, help="Books per manifest POST")
-    parser.add_argument("--no-lean", action="store_true", help="Send full data (includes heavy fields like _files and _page_sequence)")
-    parser.add_argument("--unsafe", action="store_true", help="Disable safe mode on server (returns 500s instead of JSON errors)")
-    parser.add_argument("--dry-run", action="store_true", help="Send dry_run=true to server to validate manifest without DB writes")
-
-    args = parser.parse_args()
-
-    # Start timing the entire process
-    start_time = time.time()
-
-    root = Path(args.folder).expanduser()
-    if not root.exists():
-        print(f"Folder not found: {root}")
-        sys.exit(1)
-
-    print(f"Parsing local folder: {root}")
-    parser_obj = ShuSpotFolderParser(str(root))
-    books = parser_obj.parse_all_books()
-    stats = parser_obj.get_summary_stats()
-    print(f"Found {stats.get('total_books', len(books))} books. Preparing manifest…")
-
-    # Optional Supabase client
-    supabase_client = ensure_supabase_client(args.supabase_url, args.supabase_key)
-    uploaded = 0
-
-    # Prepare books with optional cover uploads (lean by default to keep payloads small)
-    prepared: List[Dict] = []
-    
-    # Use tqdm if available
-    book_iter = tqdm(books, desc="Preparing books", unit="book") if HAS_TQDM else books
-    
-    for b in book_iter:
-        if args.no_lean:
-            b2 = dict(b)
-        else:
-            # Keep only essential fields
-            keep_keys = {
-                'Name','Author','Category','Media','URL','Age','Read time','AR Level','Lexile','GRL','Pages','Status','Notes','description'
-            }
-            b2 = {k: v for k, v in b.items() if k in keep_keys}
-            # Preserve minimal private fields the backend leverages
-            b2['_folder_path'] = b.get('_folder_path', '')
-            b2['_cover_image_path'] = b.get('_cover_image_path', '')
-            b2['_total_pages'] = b.get('_total_pages', 0)
-            # Trim very long Notes
-            if isinstance(b2.get('Notes'), str) and len(b2['Notes']) > 2000:
-                b2['Notes'] = b2['Notes'][:2000] + '...'
-        # Upload cover if possible
-        cover_local = b.get('_cover_image_path')
-        if cover_local and supabase_client:
-            url = upload_cover_if_possible(supabase_client, args.bucket, cover_local, dest_prefix="covers")
-            if url:
-                b2['cover_image_url'] = url
-        prepared.append(b2)
-
-    # Send manifest in chunks
-    endpoint = args.api_base.rstrip('/') + "/shuspot-ingestion/ingest-manifest"
-    total = len(prepared)
-    errors: List[str] = []
-    batch_times = []
-    
-    # Calculate number of batches for progress display
-    chunks = list(chunked(prepared, args.batch_size))
-    total_batches = len(chunks)
-    
-    print(f"Starting upload of {total} books ({total_batches} batches)...")
-    
-    # Use tqdm if available for batch progress
-    batch_iter = tqdm(chunks, desc="Uploading batches", unit="batch") if HAS_TQDM else chunks
-    
-    for i, chunk in enumerate(batch_iter):
-        batch_start_time = time.time()
-        payload = {
-            "books": chunk,
-            "import_to_db": bool(args.to_db),
-            "import_to_sheets": bool(args.to_sheets),
-        }
-        try:
-            # Log payload size estimate
-            size_bytes = len(json.dumps(payload).encode('utf-8'))
-            if not HAS_TQDM:  # Only print if we don't have progress bars
-                print(f"Posting batch {i+1}/{total_batches} of {len(chunk)} books (~{size_bytes/1024:.1f} KB)")
-            
-            # Use safe mode by default so server returns structured JSON even on errors
-            params = None if args.unsafe else {"safe": "true"}
-            if args.dry_run:
-                params = params or {}
-                params["dry_run"] = "true"
-            
-            resp = requests.post(endpoint, json=payload, params=params, timeout=180)
-            batch_end_time = time.time()
-            batch_duration = batch_end_time - batch_start_time
-            batch_times.append(batch_duration)
-            
-            if resp.status_code >= 400:
-                # Try to surface JSON error payload if available
-                try:
-                    data = resp.json()
-                    preview = json.dumps(data)[:500]
-                    print(f"Batch {i+1} failed ({format_time(batch_duration)}): {resp.status_code} {preview}")
-                    errors.append(f"HTTP {resp.status_code}: {preview}")
-                except Exception:
-                    print(f"Batch {i+1} failed ({format_time(batch_duration)}): {resp.status_code} {resp.text[:200]}")
-                    errors.append(f"HTTP {resp.status_code}: {resp.text}")
-            else:
-                data = resp.json()
-                uploaded += data.get("db_imported", 0)
-                if not HAS_TQDM:  # Only print if we don't have progress bars
-                    print(f"Uploaded batch {i+1} ({format_time(batch_duration)}): +{data.get('db_imported', 0)} books (errors: {len(data.get('errors', []))})")
-                elif data.get('errors', []):
-                    print(f"Batch {i+1} completed with {len(data.get('errors', []))} errors")
-                
-        except Exception as e:
-            batch_end_time = time.time()
-            batch_duration = batch_end_time - batch_start_time
-            print(f"Batch {i+1} error ({format_time(batch_duration)}): {e}")
-            errors.append(str(e))
-
-    # Calculate total elapsed time
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-    
-    # Calculate average batch time
-    avg_batch_time = sum(batch_times) / len(batch_times) if batch_times else 0
-    
-    # Calculate books per second
-    books_per_second = total / elapsed_time if elapsed_time > 0 and total > 0 else 0
-    
-    print(f"Upload completed in {format_time(elapsed_time)}.")
-    
-    # Print summary
-    summary = {
-        "total_books": total,
-        "db_imported": uploaded,
-        "errors": len(errors),
-        "elapsed_time": format_time(elapsed_time),
-        "books_per_second": f"{books_per_second:.2f} books/second" if books_per_second > 0 else "N/A (no books uploaded)",
-        "avg_batch_time": format_time(avg_batch_time) if avg_batch_time > 0 else "N/A"
     }
     
     # If there are errors, include them in the summary
