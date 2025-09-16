@@ -46,6 +46,14 @@ def root():
 def health():
     return {"ok": True, "service": "book-admin-api", "timestamp": datetime.now().isoformat()}
 
+@router.get("/whoami")
+async def whoami(request: Request):
+    return {
+        "scope_path": request.scope.get("path"),
+        "root_path": request.scope.get("root_path"),
+        "headers": {k.decode(): v.decode() for k, v in request.scope.get("headers", []) if k.decode() in ("host", "x-forwarded-host", "x-forwarded-uri", "x-vercel-id")},
+    }
+
 @router.post("/shuspot-ingestion/ingest-manifest")
 async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: bool = Query(False)):
     try:
@@ -107,5 +115,7 @@ def export_csv():
         writer.writerow([b.get("id"), b.get("title"), b.get("author"), b.get("genre")])
     return PlainTextResponse(buf.getvalue(), media_type="text/csv")
 
-app.include_router(router)
-app.include_router(router, prefix="/index")
+app.include_router(router)  # '/'
+app.include_router(router, prefix="/index")  # '/index'
+app.include_router(router, prefix="/api")  # '/api/*' (in case full path is forwarded)
+app.include_router(router, prefix="/api/index")  # '/api/index/*'
