@@ -125,6 +125,14 @@ def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
     n["reading_level"] = first_non_empty(n.get("reading_level"), b.get("Age"))
     n["url"] = first_non_empty(n.get("url"), b.get("URL"))
     n["notes"] = first_non_empty(n.get("notes"), b.get("Notes"))
+    if b.get("_folder_path") and not n.get("_folder_path"):
+        n["_folder_path"] = b.get("_folder_path")
+    if b.get("_page_sequence") and not n.get("_page_sequence"):
+        n["_page_sequence"] = b.get("_page_sequence")
+    if b.get("_total_pages") and not n.get("_total_pages"):
+        n["_total_pages"] = b.get("_total_pages")
+    if b.get("cover_image_url") and not n.get("cover_image_url"):
+        n["cover_image_url"] = b.get("cover_image_url")
     return n
 
 @router.post("/shuspot-ingestion/ingest-manifest")
@@ -165,6 +173,51 @@ class BookUpdate(BaseModel):
     author: Optional[str] = None
     genre: Optional[str] = None
     description: Optional[str] = None
+@router.put("/books/{book_id}")
+async def update_book(book_id: int, request: Request):
+    form = await request.form()
+    db = load_db()
+    books = db.get("books", [])
+    for b in books:
+        if b.get("id") == book_id:
+            for k, v in form.items():
+                b[k] = v
+                if k == "title":
+                    b["Name"] = v
+                elif k == "author":
+                    b["Author"] = v
+                elif k == "genre":
+                    b["Category"] = v
+                elif k == "book_type":
+                    b["Media"] = v
+            save_db(db)
+            return {"ok": True, "book": b}
+    raise HTTPException(status_code=404, detail="Book not found")
+
+@router.put("/books/bulk-update")
+async def bulk_update_books(request: Request):
+    form = await request.form()
+    ids = [int(v) for k, v in form.multi_items() if k == "book_ids"]
+    field = form.get("field")
+    value = form.get("value")
+    if not field:
+        raise HTTPException(status_code=400, detail="Missing 'field'")
+    db = load_db()
+    count = 0
+    for b in db.get("books", []):
+        if b.get("id") in ids:
+            b[field] = value
+            count += 1
+            if field == "title":
+                b["Name"] = value
+            elif field == "author":
+                b["Author"] = value
+            elif field == "genre":
+                b["Category"] = value
+            elif field == "book_type":
+                b["Media"] = value
+    save_db(db)
+    return {"ok": True, "updated": count}
 
 @router.post("/upload-books")
 async def upload_books(files: List[UploadFile] = File(...)):
@@ -172,11 +225,33 @@ async def upload_books(files: List[UploadFile] = File(...)):
     return {"uploaded": len(files), "files": filenames}
 
 @router.get("/books")
-def get_books():
+def get_books(
+    search: Optional[str] = None,
+    author: Optional[str] = None,
+    genre: Optional[str] = None,
+    book_type: Optional[str] = None,
+):
     db = load_db()
     raw = db.get("books", [])
-    normalized = [normalize_book(b) for b in raw]
-    return {"books": normalized}
+    books = [normalize_book(b) for b in raw]
+    for b in books:
+        if not b.get("book_type"):
+            b["book_type"] = b.get("Media") or b.get("media") or ("Read to Me" if (b.get("Category") == "Books") else b.get("Category")) or ""
+    def match(b):
+        if search:
+            q = search.lower()
+            hay = f"{b.get('title','')} {b.get('author','')} {b.get('genre','')} {b.get('notes','')}".lower()
+            if q not in hay:
+                return False
+        if author and (b.get("author") or "").lower() != author.lower():
+            return False
+        if genre and (b.get("genre") or "").lower() != genre.lower():
+            return False
+        if book_type and (b.get("book_type") or "").lower() != book_type.lower():
+            return False
+        return True
+    filtered = [b for b in books if match(b)]
+    return {"books": filtered}
 
 @router.get("/stats")
 def stats():

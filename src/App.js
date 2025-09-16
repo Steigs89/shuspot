@@ -70,7 +70,11 @@ function App() {
         genre: b.genre || b.Category || b.Subject || '',
         reading_level: b.reading_level || b.Age || b['AR Level'] || '',
         url: b.url || b.URL || '',
-        notes: b.notes || b.Notes || ''
+        notes: b.notes || b.Notes || '',
+        cover_image_url: b.cover_image_url || b._cover_image_path || '',
+        _folder_path: b._folder_path || b.folder_path || '',
+        _page_sequence: b._page_sequence || b.page_sequence || undefined,
+        _total_pages: b._total_pages || b.total_pages || undefined,
       });
       const normalizedBooks = Array.isArray(response.books) ? response.books.map(normalize) : [];
       setBooks(normalizedBooks);

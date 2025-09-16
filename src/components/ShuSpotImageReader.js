@@ -36,6 +36,11 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     // UPDATED VERSION - New timestamp: 2024-01-09 - If you see old URL patterns, clear browser cache completely
     console.log('🔥 UPDATED getImageUrl VERSION - 2024-01-09 - If you see absolute paths, browser cache needs clearing');
     
+    // Prefer explicit URL if provided (e.g., uploaded to Supabase)
+    if (pageData && pageData.url) {
+      return pageData.url;
+    }
+
     // Don't encode path segments - let the browser handle URL encoding
     const encodePath = (path) => {
       return path; // Return path as-is, browser will encode when needed
