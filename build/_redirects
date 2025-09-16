@@ -3,5 +3,14 @@
 # Proxy API to your backend on Render
 /api/* https://shuspot.onrender.com/api/:splat 200
 
+# Direct endpoint proxies for SPA that calls root-relative paths
+/books https://shuspot.onrender.com/api/books 200
+/books/* https://shuspot.onrender.com/api/books/:splat 200
+/stats https://shuspot.onrender.com/api/stats 200
+/upload-books https://shuspot.onrender.com/api/upload-books 200
+/export/csv https://shuspot.onrender.com/api/export/csv 200
+/books/bulk-update https://shuspot.onrender.com/api/books/bulk-update 200
+/books/clear/all https://shuspot.onrender.com/api/books/clear/all 200
+
 # SPA fallback
 /* /index.html 200
