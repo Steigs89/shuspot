@@ -4,14 +4,18 @@
 		{ "source": "/", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] },
 		{ "source": "/book-admin/index.html", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] }
 	],
-		"rewrites": [
-			{ "source": "/api", "destination": "/api" },
-			{ "source": "/api/(.*)", "destination": "/api/$1" },
-			{ "source": "/static/(.*)", "destination": "/book-admin/static/$1" },
-			{ "source": "/asset-manifest.json", "destination": "/book-admin/asset-manifest.json" },
-			{ "source": "/favicon.svg", "destination": "/book-admin/favicon.svg" },
-			{ "source": "/index.html", "destination": "/book-admin/index.html" },
-			{ "source": "/", "destination": "/book-admin/index.html" },
-			{ "source": "/((?!api/).*)", "destination": "/book-admin/index.html" }
+		"routes": [
+			{ "handle": "headers" },
+			{ "source": "/", "headers": { "Cache-Control": "no-store" } },
+			{ "source": "/book-admin/index.html", "headers": { "Cache-Control": "no-store" } },
+
+			{ "handle": "filesystem" },
+
+			{ "src": "/static/(.*)", "dest": "/book-admin/static/$1" },
+			{ "src": "/asset-manifest.json", "dest": "/book-admin/asset-manifest.json" },
+			{ "src": "/favicon.svg", "dest": "/book-admin/favicon.svg" },
+			{ "src": "/index.html", "dest": "/book-admin/index.html" },
+			{ "src": "/", "dest": "/book-admin/index.html" },
+			{ "src": "/(?!api/).*", "dest": "/book-admin/index.html" }
 		]
 }
