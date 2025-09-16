@@ -22,6 +22,24 @@ def _resolve_tmp_dir() -> str:
 
 TMP_DIR = _resolve_tmp_dir()
 DB_PATH = os.path.join(TMP_DIR, "books.json")
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+DEFAULT_SEED = os.environ.get(
+    "BOOKS_SEED_PATH",
+    os.path.join(REPO_ROOT, "book-admin", "backend", "parsed_books.json"),
+)
+
+def _load_seed_books() -> list:
+    try:
+        path = DEFAULT_SEED
+        if not os.path.exists(path):
+            return []
+        with open(path, "r") as f:
+            data = json.load(f)
+            # Accept either {books: [...]} or a list
+            raw = data.get("books", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+            return [normalize_book(b) for b in raw]
+    except Exception:
+        return []
 
 def load_db() -> Dict[str, Any]:
     if os.path.exists(DB_PATH):
@@ -36,6 +54,16 @@ def load_db() -> Dict[str, Any]:
             except Exception:
                 pass
             return {"books": []}
+    # Cold start: try to auto-seed from repo manifest so UI isn't empty
+    seeded = _load_seed_books()
+    if seeded:
+        try:
+            save_db({"books": [
+                {**b, "id": i + 1} if "id" not in b else b for i, b in enumerate(seeded)
+            ]})
+            return {"books": load_db().get("books", [])}
+        except Exception:
+            pass
     return {"books": []}
 
 def save_db(data: Dict[str, Any]):
