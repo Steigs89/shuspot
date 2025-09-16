@@ -263,8 +263,7 @@ const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBoo
   const defaultColDef = {
     sortable: true,
     filter: true,
-    resizable: true,
-    tooltipShowDelay: 500
+  resizable: true
   };
 
   const onGridReady = (params) => {
@@ -284,6 +283,7 @@ const BookGrid = ({ books, onUpdateBook, onDeleteBook, onBulkUpdate, selectedBoo
         rowData={books}
         columnDefs={columnDefs}
         defaultColDef={defaultColDef}
+  tooltipShowDelay={500}
         onGridReady={onGridReady}
         onSelectionChanged={onSelectionChanged}
         rowSelection="multiple"

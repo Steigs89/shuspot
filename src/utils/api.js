@@ -5,10 +5,11 @@ export const API_BASE_URL = isDevelopment
   ? 'http://localhost:8000'  // Development - direct to backend
   : '/api';                  // Production - Vercel API routes
 
-export const getApiUrl = (endpoint) => {
-  // Remove leading slash if present
-  const cleanEndpoint = endpoint.startsWith('/') ? endpoint.slice(1) : endpoint;
-  return `${API_BASE_URL}/${cleanEndpoint}`;
+export const getApiUrl = (endpoint = '') => {
+  // Normalize: handle undefined/null and leading slashes
+  const ep = typeof endpoint === 'string' ? endpoint : '';
+  const cleanEndpoint = ep.startsWith('/') ? ep.slice(1) : ep;
+  return cleanEndpoint ? `${API_BASE_URL}/${cleanEndpoint}` : API_BASE_URL;
 };
 
 export default {
