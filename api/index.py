@@ -167,3 +167,14 @@ app.include_router(router)  # '/'
 app.include_router(router, prefix="/index")  # '/index'
 app.include_router(router, prefix="/api")  # '/api/*'
 app.include_router(router, prefix="/api/index")  # '/api/index/*'
+
+# Diagnostic catch-all (last) to inspect path mapping in Vercel
+from fastapi import Request
+@app.api_route("/{rest_of_path:path}", methods=["GET","POST","PUT","DELETE","PATCH"])
+async def _catch_all(rest_of_path: str, request: Request):
+    return {
+        "catch_all": True,
+        "path": request.url.path,
+        "root_path": request.scope.get("root_path"),
+        "routes": [getattr(r, "path", str(r)) for r in app.routes][:50],
+    }
