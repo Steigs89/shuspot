@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug React Loading</title>
+</head>
+<body>
+    <h1>Debug React Loading</h1>
+    <p>Testing if React files load...</p>
+    
+    <div id="root">React should load here...</div>
+    
+    <script>
+        console.log('Debug script loaded');
+        
+        // Test if CSS loaded
+        const cssLink = document.createElement('link');
+        cssLink.rel = 'stylesheet';
+        cssLink.href = '/static/css/main.ca37f795.css';
+        cssLink.onload = () => console.log('CSS loaded successfully');
+        cssLink.onerror = () => console.error('CSS failed to load');
+        document.head.appendChild(cssLink);
+        
+        // Test if JS exists
+        fetch('/static/js/main.c9e39237.js')
+            .then(response => {
+                console.log('JS file response:', response.status);
+                if (response.ok) {
+                    const script = document.createElement('script');
+                    script.src = '/static/js/main.c9e39237.js';
+                    script.onload = () => console.log('React JS loaded successfully');
+                    script.onerror = () => console.error('React JS failed to load');
+                    document.head.appendChild(script);
+                } else {
+                    console.error('JS file not found');
+                }
+            })
+            .catch(err => console.error('Error fetching JS:', err));
+    </script>
+</body>
+</html>
