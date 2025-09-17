@@ -177,26 +177,179 @@ class ShuSpotFolderParser:
             else:
                 with open(desc_file, 'r', encoding='utf-8') as f:
                     content = f.read()
-            
-            # Extract metadata using regex patterns
-            description_data.update(self._extract_metadata_from_text(content))
-            
-            # Extract description from between "Start Reading" and "Book Info"
-            desc_match = re.search(r'Start Reading\s*(.*?)\s*Book Info', content, re.DOTALL | re.IGNORECASE)
-            if desc_match:
-                description = desc_match.group(1).strip()
-                description_data['description'] = description
-            else:
-                # Fallback: use full content if no markers found
-                description_data['description'] = content[:500] + '...' if len(content) > 500 else content
-            
-            # Store full content in notes for reference
+
+            # First try: parse our dashed-format structure if present
+            dashed_meta = self._extract_structured_from_dashed(content)
+            if dashed_meta:
+                description_data.update(dashed_meta)
+
+            # Extract metadata using regex patterns (Epic/legacy) to fill any gaps
+            epic_meta = self._extract_metadata_from_text(content)
+            for k, v in epic_meta.items():
+                if k not in description_data or not description_data.get(k):
+                    description_data[k] = v
+
+            # Extract description from between markers if not already set
+            if not description_data.get('description'):
+                desc_match = re.search(r'Start Reading\s*(.*?)\s*Book Info', content, re.DOTALL | re.IGNORECASE)
+                if desc_match:
+                    description = desc_match.group(1).strip()
+                    description_data['description'] = description
+                else:
+                    # Fallback: use trimmed content snippet
+                    snippet = content.strip()
+                    description_data['description'] = snippet[:500] + '...' if len(snippet) > 500 else snippet
+
+            # Store truncated full content in notes for reference (non-destructive)
             description_data['Notes'] = content[:500] + '...' if len(content) > 500 else content
             
         except Exception as e:
             print(f"      Error reading description file {desc_file}: {e}")
         
         return description_data
+
+    def _extract_structured_from_dashed(self, content: str) -> Dict:
+        """Parse a simple dashed/sectioned text format like:
+        Title - Title
+        Description text - Description
+        BAKING - Genre
+        BIRTHDAYS
+        Find These Spotlight Words
+        gift\n...\n
+        About This Book
+        By: Name - Author
+        Illustrated by: Name
+        5-6 - Age
+        Age Range
+        G\nGR Level - Reading Level
+        Yes - Means there is a quiz\nQuiz
+        """
+        if not content:
+            return {}
+        lines = [ln.strip() for ln in content.splitlines()]
+        # remove blank lines but keep index context by scanning with indexes
+        nonempty = [ln for ln in lines if ln]
+        if not nonempty:
+            return {}
+
+        meta: Dict[str, any] = {}
+        i = 0
+
+        def is_header(s: str) -> bool:
+            l = s.lower()
+            return l in (
+                'find these spotlight words',
+                'spotlight words',
+                'about this book',
+                'age range',
+                'gr level - reading level',
+                'gr level',
+                'quiz',
+                'reading level',
+            ) or l.endswith(' - genre') or l.endswith(' - title') or l.endswith(' - description') or l.endswith(' - desciption') or l.endswith(' - age')
+
+        while i < len(nonempty):
+            line = nonempty[i]
+            lower = line.lower()
+            # Title
+            if lower.endswith('- title'):
+                title = line.rsplit('-', 1)[0].strip()
+                if title:
+                    meta['Name'] = title
+            # Description (handle misspelling too)
+            elif lower.endswith('- description') or lower.endswith('- desciption'):
+                desc = line.rsplit('-', 1)[0].strip()
+                if desc:
+                    meta['description'] = desc
+            # Genre and trailing tags/extra lines until next header
+            elif lower.endswith('- genre'):
+                genre_val = line.rsplit('-', 1)[0].strip()
+                if genre_val:
+                    meta['Genre'] = genre_val
+                # collect subsequent tag-ish lines until next header
+                tags: List[str] = []
+                j = i + 1
+                while j < len(nonempty) and not is_header(nonempty[j]):
+                    candidate = nonempty[j].strip()
+                    if candidate:
+                        tags.append(candidate)
+                    j += 1
+                if tags:
+                    meta['tags'] = tags
+            # Spotlight words block
+            elif lower in ('find these spotlight words', 'spotlight words', 'find these spotlight words:'):
+                words: List[str] = []
+                j = i + 1
+                while j < len(nonempty) and not is_header(nonempty[j]):
+                    w = nonempty[j].strip()
+                    if w:
+                        words.append(w)
+                    j += 1
+                if words:
+                    meta['spotlight_words'] = words
+            # About This Book block entries
+            elif lower.startswith('by:') or ' - author' in lower or lower.startswith('author:'):
+                # Extract after ':' and before optional '-'
+                val = line
+                if ':' in line:
+                    val = line.split(':', 1)[1]
+                val = val.split('-', 1)[0].strip()
+                val = re.sub(r'^(author|by)\s*', '', val, flags=re.IGNORECASE).strip()
+                if val:
+                    meta['Author'] = val
+            elif lower.startswith('illustrated by:') or lower.startswith('illustrated by'):
+                val = line
+                if ':' in line:
+                    val = line.split(':', 1)[1]
+                else:
+                    # split by 'by'
+                    parts = line.split('by', 1)
+                    val = parts[1] if len(parts) > 1 else ''
+                val = val.strip()
+                if val:
+                    meta['Illustrator'] = val
+            elif lower.endswith(' - age') or lower == 'age range':
+                # Value may be on same line or adjacent line
+                val = None
+                if '-' in line:
+                    val = line.rsplit('-', 1)[0].strip()
+                else:
+                    if i > 0 and re.search(r'\d+\s*-\s*\d+', nonempty[i-1]):
+                        val = re.search(r'(\d+\s*-\s*\d+)', nonempty[i-1]).group(1)
+                    elif i + 1 < len(nonempty) and re.search(r'\d+\s*-\s*\d+', nonempty[i+1]):
+                        val = re.search(r'(\d+\s*-\s*\d+)', nonempty[i+1]).group(1)
+                if val:
+                    meta['Age'] = val.replace(' ', '')
+                    meta['age_range'] = meta['Age']
+            elif 'gr level' in lower or lower == 'reading level' or 'reading level' in lower:
+                token = None
+                if '-' in line:
+                    left = line.split('-', 1)[0].strip()
+                    if left and len(left) <= 6:
+                        token = left
+                if not token:
+                    if i > 0 and 0 < len(nonempty[i-1]) <= 6:
+                        token = nonempty[i-1].strip()
+                    elif i + 1 < len(nonempty) and 0 < len(nonempty[i+1]) <= 6:
+                        token = nonempty[i+1].strip()
+                if token:
+                    meta['GR Level'] = token
+                    meta['gr_level'] = token
+            elif 'quiz' in lower:
+                # Determine quiz availability
+                if 'yes' in lower:
+                    meta['quiz_available'] = True
+                elif 'no' in lower:
+                    meta['quiz_available'] = False
+                else:
+                    prev = nonempty[i-1].lower().strip() if i > 0 else ''
+                    if prev == 'yes':
+                        meta['quiz_available'] = True
+                    elif prev == 'no':
+                        meta['quiz_available'] = False
+            i += 1
+
+        return meta
     
     def _is_collection_folder(self, folder_path: Path) -> bool:
         """Check if a folder is a collection containing multiple books"""

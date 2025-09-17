@@ -174,6 +174,21 @@ def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
         candidate_genre = _clean_str(derived)
     n["genre"] = candidate_genre
     n["reading_level"] = first_non_empty(n.get("reading_level"), b.get("Age"))
+    # Additional dashed-format fields
+    if not n.get("description") and b.get("description"):
+        n["description"] = b.get("description")
+    if not n.get("illustrator") and b.get("Illustrator"):
+        n["illustrator"] = b.get("Illustrator")
+    if not n.get("tags") and isinstance(b.get("tags"), list):
+        n["tags"] = b.get("tags")
+    if not n.get("spotlight_words") and isinstance(b.get("spotlight_words"), list):
+        n["spotlight_words"] = b.get("spotlight_words")
+    if not n.get("age_range") and b.get("age_range"):
+        n["age_range"] = b.get("age_range")
+    if not n.get("gr_level") and (b.get("gr_level") or b.get("GR Level") or b.get("GRL")):
+        n["gr_level"] = first_non_empty(b.get("gr_level"), b.get("GR Level"), b.get("GRL"))
+    if "quiz_available" in b and n.get("quiz_available") is None:
+        n["quiz_available"] = bool(b.get("quiz_available"))
     n["url"] = first_non_empty(n.get("url"), b.get("URL"))
     n["notes"] = first_non_empty(n.get("notes"), b.get("Notes"))
     if b.get("_folder_path") and not n.get("_folder_path"):

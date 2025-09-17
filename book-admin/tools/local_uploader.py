@@ -37,7 +37,7 @@ for p in (API_DIR, BACKEND_DIR):
         sys.path.insert(0, str(p))
 
 try:
-    from shuspot_folder_parser import ShuSpotFolderParser  # noqa: E402
+    from shuspot_folder_parser import ShuSpotFolderParser  # type: ignore  # noqa: E402
 except Exception:
     try:
         from backend.shuspot_folder_parser import ShuSpotFolderParser  # type: ignore # noqa: E402
@@ -532,9 +532,12 @@ def main():
         if args.no_lean:
             b2 = dict(b)
         else:
-            # Keep only essential fields
+            # Keep only essential fields (lean) plus new parsed metadata fields
             keep_keys = {
-                'Name','Author','Category','Media','URL','Age','Read time','AR Level','Lexile','GRL','Pages','Status','Notes','description'
+                'Name', 'Author', 'Category', 'Genre', 'Media', 'URL', 'Age', 'age_range',
+                'Read time', 'AR Level', 'Lexile', 'GRL', 'GR Level', 'gr_level', 'Pages',
+                'Status', 'Notes', 'description', 'Illustrator', 'tags', 'spotlight_words',
+                'quiz_available'
             }
             b2 = {k: v for k, v in b.items() if k in keep_keys}
             # Preserve minimal private fields the backend leverages
