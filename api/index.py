@@ -3,7 +3,7 @@ from fastapi import FastAPI, APIRouter, UploadFile, File, Form, Query, HTTPExcep
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, PlainTextResponse
 from pydantic import BaseModel
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Tuple
 import os, json
 from datetime import datetime
 
@@ -117,6 +117,45 @@ def debug_state():
     }
 
 # --- Helpers ---
+def _clean_str(v: Any) -> Any:
+    if isinstance(v, str):
+        return v.strip() or None
+    return v
+
+def _canon_book_type(v: Optional[str]) -> Optional[str]:
+    if not v:
+        return None
+    s = v.strip().lower()
+    mapping = {
+        "read to me": "Read to Me",
+        "read to me stories": "Read to Me",
+        "video books": "Video Book",
+        "video book": "Video Book",
+        "video": "Video",
+        "audiobooks": "Audiobook",
+        "audiobook": "Audiobook",
+        "books": "Book",
+        "book": "Book",
+    }
+    return mapping.get(s, v.strip())
+
+def _derive_genre_from_path(path: Optional[str], book_type: Optional[str]) -> Optional[str]:
+    if not path or not isinstance(path, str):
+        return None
+    # Normalize path separators
+    parts = [p for p in path.split("/") if p]
+    lowered = [p.lower() for p in parts]
+    # Heuristic: For Read to Me, use the folder after "Read to Me Stories" as genre
+    if book_type == "Read to Me":
+        for key in ("read to me stories", "read to me"):
+            if key in lowered:
+                idx = lowered.index(key)
+                # Next segment (if exists) is the subject bucket
+                if idx + 1 < len(parts):
+                    return parts[idx + 1].strip()
+    # For Books and Video Book often no category folder; avoid guessing from title folder
+    return None
+
 def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
     """Return a book dict with normalized keys expected by the frontend.
     Preserves original fields and ensures: title, author, genre, reading_level, url, notes.
@@ -129,20 +168,31 @@ def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
         return None
 
     n: Dict[str, Any] = dict(b)
+    # Trim common string fields up front
+    for k in list(n.keys()):
+        n[k] = _clean_str(n[k])
+
     TOP_LEVEL = {"read to me", "video books", "video book", "audiobooks", "audiobook", "books", "videos", "read to me stories"}
     # Title
     n["title"] = first_non_empty(n.get("title"), b.get("Name"), b.get("name"))
     # Author
     n["author"] = first_non_empty(n.get("author"), b.get("Author"))
     # Book type strictly from Media when available
-    n["book_type"] = first_non_empty(n.get("book_type"), b.get("book_type"), b.get("Media"), b.get("media"))
+    bt_in = first_non_empty(n.get("book_type"), b.get("book_type"), b.get("Media"), b.get("media"))
+    n["book_type"] = _canon_book_type(bt_in)
     # Genre/category (avoid top-level media values)
     candidate_genre = first_non_empty(n.get("genre"), b.get("Genre"), b.get("Category"), b.get("Subject"))
+    if isinstance(candidate_genre, str):
+        candidate_genre = candidate_genre.strip()
     if isinstance(candidate_genre, str) and candidate_genre.strip().lower() in TOP_LEVEL:
         candidate_genre = None
     # Also avoid genre duplicating book_type
     if candidate_genre and n.get("book_type") and str(candidate_genre).strip().lower() == str(n.get("book_type")).strip().lower():
         candidate_genre = None
+    # Derive from folder path if still missing and we can infer safely
+    if not candidate_genre:
+        derived = _derive_genre_from_path(b.get("_folder_path"), n.get("book_type"))
+        candidate_genre = _clean_str(derived)
     n["genre"] = candidate_genre
     # Optional fields commonly used
     n["reading_level"] = first_non_empty(n.get("reading_level"), b.get("Age"))
@@ -221,7 +271,7 @@ def get_books(
     for b in books:
         if not b.get("book_type"):
             bt = b.get("Media") or b.get("media") or ""
-            b["book_type"] = bt
+            b["book_type"] = _canon_book_type(bt)
     def match(b):
         if search:
             q = search.lower()
@@ -305,7 +355,8 @@ def stats():
     authors = sorted({b.get("author") for b in books if b.get("author")})
     genres = sorted({b.get("genre") for b in books if b.get("genre")})
     return {
-        "total_books": len(books),
+    "total": len(books),
+    "total_books": len(books),
         "unique_authors": len(authors),
         "unique_genres": len(genres),
         "authors": authors,

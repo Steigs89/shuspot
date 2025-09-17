@@ -111,6 +111,41 @@ def debug_state():
     }
 
 # --- Helpers ---
+def _clean_str(v: Any) -> Any:
+    if isinstance(v, str):
+        return v.strip() or None
+    return v
+
+def _canon_book_type(v: Optional[str]) -> Optional[str]:
+    if not v:
+        return None
+    s = v.strip().lower()
+    mapping = {
+        "read to me": "Read to Me",
+        "read to me stories": "Read to Me",
+        "video books": "Video Book",
+        "video book": "Video Book",
+        "video": "Video",
+        "audiobooks": "Audiobook",
+        "audiobook": "Audiobook",
+        "books": "Book",
+        "book": "Book",
+    }
+    return mapping.get(s, v.strip())
+
+def _derive_genre_from_path(path: Optional[str], book_type: Optional[str]) -> Optional[str]:
+    if not path or not isinstance(path, str):
+        return None
+    parts = [p for p in path.split("/") if p]
+    lowered = [p.lower() for p in parts]
+    if book_type == "Read to Me":
+        for key in ("read to me stories", "read to me"):
+            if key in lowered:
+                idx = lowered.index(key)
+                if idx + 1 < len(parts):
+                    return parts[idx + 1].strip()
+    return None
+
 def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
     def first_non_empty(*vals):
         for v in vals:
@@ -119,15 +154,24 @@ def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
         return None
 
     n: Dict[str, Any] = dict(b)
+    # trim all string fields
+    for k in list(n.keys()):
+        n[k] = _clean_str(n[k])
     TOP_LEVEL = {"read to me", "video books", "video book", "audiobooks", "audiobook", "books", "videos", "read to me stories"}
     n["title"] = first_non_empty(n.get("title"), b.get("Name"), b.get("name"))
     n["author"] = first_non_empty(n.get("author"), b.get("Author"))
-    n["book_type"] = first_non_empty(n.get("book_type"), b.get("book_type"), b.get("Media"), b.get("media"))
+    bt_in = first_non_empty(n.get("book_type"), b.get("book_type"), b.get("Media"), b.get("media"))
+    n["book_type"] = _canon_book_type(bt_in)
     candidate_genre = first_non_empty(n.get("genre"), b.get("Genre"), b.get("Category"), b.get("Subject"))
+    if isinstance(candidate_genre, str):
+        candidate_genre = candidate_genre.strip()
     if isinstance(candidate_genre, str) and candidate_genre.strip().lower() in TOP_LEVEL:
         candidate_genre = None
     if candidate_genre and n.get("book_type") and str(candidate_genre).strip().lower() == str(n.get("book_type")).strip().lower():
         candidate_genre = None
+    if not candidate_genre:
+        derived = _derive_genre_from_path(b.get("_folder_path"), n.get("book_type"))
+        candidate_genre = _clean_str(derived)
     n["genre"] = candidate_genre
     n["reading_level"] = first_non_empty(n.get("reading_level"), b.get("Age"))
     n["url"] = first_non_empty(n.get("url"), b.get("URL"))
@@ -243,7 +287,9 @@ def get_books(
     books = [normalize_book(b) for b in raw]
     for b in books:
         if not b.get("book_type"):
-            b["book_type"] = b.get("Media") or b.get("media") or ""
+            b["book_type"] = _canon_book_type(b.get("Media") or b.get("media") or "")
+        else:
+            b["book_type"] = _canon_book_type(b.get("book_type"))
     def match(b):
         if search:
             q = search.lower()
@@ -268,7 +314,8 @@ def stats():
     authors = sorted({b.get("author") for b in books if b.get("author")})
     genres = sorted({b.get("genre") for b in books if b.get("genre")})
     return {
-        "total_books": len(books),
+    "total": len(books),
+    "total_books": len(books),
         "unique_authors": len(authors),
         "unique_genres": len(genres),
         "authors": authors,
