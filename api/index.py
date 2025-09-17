@@ -374,7 +374,7 @@ def export_csv():
     for b in db.get("books", []):
         n = normalize_book(b)
         writer.writerow([n.get("id"), n.get("title"), n.get("author"), n.get("genre"), n.get("book_type")])
-    return {"csv_data": buf.getvalue()}
+    return PlainTextResponse(buf.getvalue(), media_type="text/csv")
 
 # Mount router at multiple prefixes to handle Vercel path forwarding
 app.include_router(router)  # '/'
