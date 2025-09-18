@@ -226,7 +226,12 @@ def normalize_book(b: Dict[str, Any]) -> Dict[str, Any]:
 
 # Local uploader manifest endpoint (safe by default)
 @router.post("/shuspot-ingestion/ingest-manifest")
-async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: bool = Query(False)):
+async def ingest_manifest(
+    request: Request,
+    safe: bool = Query(True),
+    dry_run: bool = Query(False),
+    upsert: bool = Query(True),
+):
     try:
         payload = await request.json()
         books = payload.get("books", []) if isinstance(payload, dict) else (payload if isinstance(payload, list) else [])
@@ -240,12 +245,43 @@ async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: b
 
         db = load_db()
         existing = db.get("books", [])
-        # Assign simple incremental ids
-        base_id = len(existing)
-        for i, b in enumerate(books):
-            b2 = normalize_book(dict(b))
-            b2["id"] = base_id + i + 1
-            existing.append(b2)
+        # Build an index for idempotent upsert by (title, author) normalized
+        def key_of(x: Dict[str, Any]) -> Tuple[str, str]:
+            n = normalize_book(x)
+            t = (n.get("title") or "").strip().lower()
+            a = (n.get("author") or "").strip().lower()
+            return (t, a)
+
+        index: Dict[Tuple[str, str], int] = {}
+        for idx, rec in enumerate(existing):
+            index[key_of(rec)] = idx
+
+        next_id = max([b.get("id", 0) for b in existing] or [0]) + 1
+        imported = 0
+        for raw in books:
+            b2 = normalize_book(dict(raw))
+            k = key_of(b2)
+            if upsert and k in index:
+                # Merge fields into existing record, preserving id
+                tgt_idx = index[k]
+                current = existing[tgt_idx]
+                preserved_id = current.get("id")
+                # Prefer non-empty new fields over old; keep old if new is empty
+                for field, value in b2.items():
+                    if field == "id":
+                        continue
+                    if value is None or (isinstance(value, str) and value.strip() == ""):
+                        continue
+                    current[field] = value
+                if preserved_id is not None:
+                    current["id"] = preserved_id
+                existing[tgt_idx] = current
+            else:
+                # Insert new record with incremental id
+                b2["id"] = next_id
+                next_id += 1
+                existing.append(b2)
+                imported += 1
         db["books"] = existing
         # Persist; if this fails we report back with error
         try:
@@ -254,7 +290,7 @@ async def ingest_manifest(request: Request, safe: bool = Query(True), dry_run: b
             if safe:
                 return {"success": False, "db_imported": 0, "errors": [f"Failed to save DB: {e}"]}
             raise
-        return {"message": f"Imported {len(books)} books", "db_imported": len(books), "success": True, "errors": []}
+        return {"message": f"Imported {imported} books (upserted {len(books) - imported})", "db_imported": imported, "success": True, "errors": []}
     except Exception as e:
         if safe:
             return {"success": False, "db_imported": 0, "errors": [str(e)]}

@@ -1,0 +1,11 @@
+# SPA fallback
+/*    /index.html   200
+
+# API proxy (production)
+/api/*  /.netlify/functions/api/:splat  200
+
+# Image proxy to backend (optional, when using Netlify dev)
+/shuspot-images/*  http://localhost:8000/shuspot-images/:splat  200
+
+# Static js for reader
+/js/*   /book-admin/js/:splat   200

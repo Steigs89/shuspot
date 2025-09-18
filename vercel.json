@@ -7,6 +7,7 @@
 	"rewrites": [
 		{ "source": "/api", "destination": "/api" },
 		{ "source": "/api/(.*)", "destination": "/api/$1" },
+		{ "source": "/CROP-ShuSpot/(.*)", "destination": "/uploads/CROP-ShuSpot/$1" },
 		{ "source": "/static/(.*)", "destination": "/book-admin/static/$1" },
 		{ "source": "/js/(.*)", "destination": "/book-admin/js/$1" },
 		{ "source": "/asset-manifest.json", "destination": "/book-admin/asset-manifest.json" },

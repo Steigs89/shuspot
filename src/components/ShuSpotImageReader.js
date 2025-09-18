@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { getApiUrl } from '../utils/api';
 import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
 
 const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
@@ -32,6 +33,10 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const bookId = book?.id;
 
   // Memoize the image URL function to prevent infinite re-renders
+  const apiBase = getApiUrl();
+  // In production API base is '/api' for JSON endpoints. Images are served outside '/api',
+  // so use site root when apiBase is '/api'. In dev, keep 'http://localhost:8000'.
+  const imageBase = apiBase === '/api' ? '' : apiBase;
   const getImageUrl = useCallback((pageData, pageNumber) => {
     // UPDATED VERSION - New timestamp: 2024-01-09 - If you see old URL patterns, clear browser cache completely
     console.log('🔥 UPDATED getImageUrl VERSION - 2024-01-09 - If you see absolute paths, browser cache needs clearing');
@@ -56,7 +61,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       if (cropMatch) {
         const [, relativePath] = cropMatch;
         const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-        const url = `http://localhost:8000/CROP-ShuSpot/${encodePath(cleanPath)}`;
+  const url = `${imageBase}/CROP-ShuSpot/${encodePath(cleanPath)}`;
         console.log('🎯 Generated pageData URL:', url);
         return url;
       }
@@ -72,7 +77,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
           if (cropMatch) {
             const [, relativePath] = cropMatch;
             const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-            const url = `http://localhost:8000/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
+            const url = `${imageBase}/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
             console.log('🎯 Generated notes URL:', url);
             return url;
           }
@@ -88,50 +93,64 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       if (cropMatch) {
         const [, relativePath] = cropMatch;
         const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-        const url = `http://localhost:8000/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
+  const url = `${imageBase}/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
         console.log('🎯 Generated folder_path URL:', url);
         return url;
       }
     }
     
-    const fallbackUrl = `http://localhost:8000/CROP-ShuSpot/page-${pageNumber}.png`;
+    const fallbackUrl = `${imageBase}/CROP-ShuSpot/page-${pageNumber}.png`;
     console.log('🎯 Generated fallback URL:', fallbackUrl);
     return fallbackUrl;
-  }, [book?.notes, book?.folder_path]);
+  }, [book?.notes, book?.folder_path, apiBase, imageBase]);
 
   // Load jQuery and Turn.js from the working files (book-effect style)
   useEffect(() => {
-    console.log('🔄 BOOK-EFFECT STYLE: Loading jQuery and Turn.js from public files');
-    
+    console.log('🔄 BOOK-EFFECT STYLE: Loading jQuery and Turn.js from public files with CDN fallback');
+
+    const loadScript = (srcs) => new Promise((resolve, reject) => {
+      const tryLoad = (i) => {
+        if (i >= srcs.length) {
+          reject(new Error('All sources failed'));
+          return;
+        }
+        const script = document.createElement('script');
+        script.src = srcs[i];
+        script.async = true;
+        script.onload = () => resolve(srcs[i]);
+        script.onerror = () => {
+          console.warn(`⚠️ Failed loading ${srcs[i]}, trying next`);
+          script.remove();
+          tryLoad(i + 1);
+        };
+        document.head.appendChild(script);
+      };
+      tryLoad(0);
+    });
+
     const loadScripts = async () => {
       try {
-        // Load jQuery first
+        // Load jQuery first with fallbacks
         if (!window.jQuery) {
-          await new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = '/js/jquery.js';
-            script.onload = resolve;
-            script.onerror = reject;
-            document.head.appendChild(script);
-          });
-          console.log('✅ jQuery loaded from public/js/jquery.js');
+          const jqueryLoadedFrom = await loadScript([
+            '/js/jquery.js',
+            'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js',
+          ]);
+          console.log(`✅ jQuery loaded from ${jqueryLoadedFrom}`);
         }
 
-        // Then load Turn.js
-        if (!window.jQuery.fn.turn) {
-          await new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = '/js/turn.js';
-            script.onload = resolve;
-            script.onerror = reject;
-            document.head.appendChild(script);
-          });
-          console.log('✅ Turn.js loaded from public/js/turn.js');
+        // Then load Turn.js with fallbacks
+        if (!window.jQuery.fn || !window.jQuery.fn.turn) {
+          const turnLoadedFrom = await loadScript([
+            '/js/turn.js',
+            '/book-admin/js/turn.js', // for certain hosting setups
+            'https://cdn.jsdelivr.net/gh/blasten/turn.js/turn.min.js',
+          ]);
+          console.log(`✅ Turn.js loaded from ${turnLoadedFrom}`);
         }
 
-        // Check if Turn.js is available
         if (window.jQuery && window.jQuery.fn && window.jQuery.fn.turn) {
-          console.log('✅ BOOK-EFFECT STYLE: jQuery and Turn.js loaded successfully');
+          console.log('✅ BOOK-EFFECT STYLE: jQuery and Turn.js ready');
           setTurnJsLoaded(true);
         } else {
           console.error('❌ BOOK-EFFECT STYLE: Turn.js not available after loading');

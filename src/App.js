@@ -19,6 +19,7 @@ import GoogleSheetsSetup from './components/GoogleSheetsSetup';
 import GoogleSheetsManager from './components/GoogleSheetsManager';
 import TxtIngestion from './components/TxtIngestion';
 import ShuSpotBookLauncher from './components/ShuSpotBookLauncher';
+import ErrorBoundary from './components/ErrorBoundary';
 import { bookAPI } from './services/api';
 
 function App() {
@@ -234,10 +235,16 @@ function App() {
     return (
       <div className="app">
         <ToastContainer position="top-right" autoClose={3000} />
-        <ShuSpotBookLauncher 
-          book={launchedBook} 
-          onBack={() => setLaunchedBook(null)} 
-        />
+        <ErrorBoundary fallback={(
+          <button className="btn btn-secondary" onClick={() => setLaunchedBook(null)}>
+            Back to Library
+          </button>
+        )}>
+          <ShuSpotBookLauncher 
+            book={launchedBook} 
+            onBack={() => setLaunchedBook(null)} 
+          />
+        </ErrorBoundary>
       </div>
     );
   }
