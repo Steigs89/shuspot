@@ -351,6 +351,107 @@ async def import_books_json(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Import failed: {str(e)}")
 
+@app.post("/books/import-csv")
+async def import_books_csv(
+    file: UploadFile = File(...),
+    delimiter: str = Form(","),
+    db: Session = Depends(get_db)
+):
+    """Import books from a CSV file. Accepts common headers from our export or sheet format."""
+    try:
+        raw = await file.read()
+        try:
+            text = raw.decode("utf-8")
+        except Exception:
+            text = raw.decode("latin-1")
+
+        rows = []
+        # Prefer pandas if available
+        if PANDAS_AVAILABLE:
+            try:
+                import pandas as pd  # type: ignore
+                df = pd.read_csv(BytesIO(raw), sep=delimiter)
+                rows = df.to_dict(orient="records")
+            except Exception:
+                rows = []
+        if not rows:
+            import csv, io
+            reader = csv.DictReader(io.StringIO(text), delimiter=delimiter)
+            rows = list(reader)
+
+        if not rows:
+            raise HTTPException(status_code=400, detail="CSV file contained no rows")
+
+        imported = 0
+        skipped = 0
+        errors = []
+
+        for item in rows:
+            try:
+                title = (item.get("title") or item.get("Title") or "").strip() or "Untitled"
+                author = (item.get("author") or item.get("Author") or "").strip() or "Unknown"
+
+                # Skip duplicates by title+author
+                existing = db.query(Book).filter(Book.title == title, Book.author == author).first()
+                if existing:
+                    skipped += 1
+                    continue
+
+                book = Book(
+                    title=title,
+                    author=author,
+                    genre=(item.get("genre") or item.get("Category") or item.get("Genre") or "Unknown").strip(),
+                    book_type=(item.get("book_type") or item.get("Media") or "Books").strip(),
+                    fiction_type=(item.get("fiction_type") or item.get("Fiction Type") or "Fiction").strip(),
+                    reading_level=(item.get("reading_level") or item.get("Age") or item.get("Reading Level") or "Unknown").strip(),
+                    cover_image_url=item.get("cover_image_url") or item.get("_cover_image_path") or item.get("Cover") or None,
+                    file_path=item.get("file_path") or item.get("URL") or None,
+                    file_name=item.get("file_name") or item.get("File Name") or f"{title}.csv",
+                    file_size=int(item.get("file_size") or 0),
+                    file_type=item.get("file_type") or item.get("File Type") or "CSV",
+                    description=item.get("description") or item.get("Notes", ""),
+                )
+
+                db.add(book)
+                imported += 1
+            except Exception as e:
+                errors.append(f"Error importing {item.get('title', item.get('Title', 'Unknown'))}: {str(e)}")
+
+        db.commit()
+        return {
+            "message": f"Imported {imported} books ({skipped} skipped)",
+            "imported": imported,
+            "skipped": skipped,
+            "errors": errors,
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Import failed: {str(e)}")
+
+@app.post("/books/replace-json")
+async def replace_books_json(
+    payload: dict = Body(...),
+    db: Session = Depends(get_db)
+):
+    """Wipe all books and import from JSON in a single operation."""
+    # Delete all existing rows
+    db.query(Book).delete()
+    db.commit()
+    # Reuse import logic
+    return await import_books_json(payload=payload, db=db)  # type: ignore
+
+@app.post("/books/replace-csv")
+async def replace_books_csv(
+    file: UploadFile = File(...),
+    delimiter: str = Form(","),
+    db: Session = Depends(get_db)
+):
+    """Wipe all books and import from CSV in a single operation."""
+    db.query(Book).delete()
+    db.commit()
+    return await import_books_csv(file=file, delimiter=delimiter, db=db)  # type: ignore
+
 @app.put("/books/bulk-update")
 async def bulk_update_books(
     book_ids: List[int] = Form(...),

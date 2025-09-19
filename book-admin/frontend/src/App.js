@@ -214,6 +214,60 @@ function App() {
     }
   };
 
+  const handleImportCsv = async (file) => {
+    try {
+      const form = new FormData();
+      form.append('file', file);
+      const res = await fetch('/api/books/import-csv', { method: 'POST', body: form });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.detail || 'Import failed');
+      toast.success(json.message || 'Imported CSV');
+      await loadBooks();
+      await loadStats();
+    } catch (e) {
+      console.error('Import CSV error:', e);
+      toast.error(`Import failed: ${e.message}`);
+    }
+  };
+
+  const handleReplaceJson = async (file) => {
+    try {
+      if (!window.confirm('This will wipe all existing books and replace with the uploaded JSON. Continue?')) return;
+      const text = await file.text();
+      const data = JSON.parse(text);
+      const res = await fetch('/api/books/replace-json', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.detail || 'Replace failed');
+      toast.success(json.message || 'Replaced from JSON');
+      await loadBooks();
+      await loadStats();
+    } catch (e) {
+      console.error('Replace JSON error:', e);
+      toast.error(`Replace failed: ${e.message}`);
+    }
+  };
+
+  const handleReplaceCsv = async (file) => {
+    try {
+      if (!window.confirm('This will wipe all existing books and replace with the uploaded CSV. Continue?')) return;
+      const form = new FormData();
+      form.append('file', file);
+      const res = await fetch('/api/books/replace-csv', { method: 'POST', body: form });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.detail || 'Replace failed');
+      toast.success(json.message || 'Replaced from CSV');
+      await loadBooks();
+      await loadStats();
+    } catch (e) {
+      console.error('Replace CSV error:', e);
+      toast.error(`Replace failed: ${e.message}`);
+    }
+  };
+
   const handleLaunchBook = (book) => {
     console.log('Launching book:', book);
     // Check book data
@@ -382,6 +436,51 @@ function App() {
                     onChange={(e) => {
                       const f = e.target.files?.[0];
                       if (f) handleImportJson(f);
+                      e.target.value = '';
+                    }}
+                  />
+                </label>
+
+                <label className="btn btn-secondary" style={{ cursor: 'pointer' }}>
+                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
+                  Import CSV
+                  <input
+                    type="file"
+                    accept=".csv,text/csv"
+                    style={{ display: 'none' }}
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) handleImportCsv(f);
+                      e.target.value = '';
+                    }}
+                  />
+                </label>
+
+                <label className="btn btn-danger" style={{ cursor: 'pointer' }}>
+                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
+                  Replace (JSON)
+                  <input
+                    type="file"
+                    accept="application/json"
+                    style={{ display: 'none' }}
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) handleReplaceJson(f);
+                      e.target.value = '';
+                    }}
+                  />
+                </label>
+
+                <label className="btn btn-danger" style={{ cursor: 'pointer' }}>
+                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
+                  Replace (CSV)
+                  <input
+                    type="file"
+                    accept=".csv,text/csv"
+                    style={{ display: 'none' }}
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) handleReplaceCsv(f);
                       e.target.value = '';
                     }}
                   />
