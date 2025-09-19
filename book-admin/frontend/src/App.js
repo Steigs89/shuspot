@@ -222,7 +222,7 @@ function App() {
       form.append('zip_file', file);
 
       const res = await axios.post('/api/shuspot-ingestion/upload-zip-and-import', form, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+        // Do NOT set Content-Type manually; let the browser add the boundary
         onUploadProgress: (evt) => {
           if (evt.total) {
             const pct = Math.round((evt.loaded / evt.total) * 100);
@@ -237,7 +237,7 @@ function App() {
       await loadStats();
     } catch (e) {
       console.error('Quick ZIP upload error:', e);
-      const msg = e?.response?.data?.detail || e.message || 'Upload failed';
+  const msg = e?.response?.data?.detail || e.message || 'Upload failed';
       toast.error(`Upload failed: ${msg}`);
     } finally {
       setZipUploading(false);
