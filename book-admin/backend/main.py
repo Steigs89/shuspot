@@ -1486,6 +1486,33 @@ async def txt_ingestion_upload_zip(zip_file: UploadFile = File(...)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"ZIP upload failed: {str(e)}")
 
+# Mirror endpoints under /api/* for hosts that mount root differently
+@app.post("/api/txt-ingestion/upload-zip")
+async def api_txt_ingestion_upload_zip(zip_file: UploadFile = File(...)):
+    return await txt_ingestion_upload_zip(zip_file)
+
+@app.post("/api/txt-ingestion/execute-script")
+async def api_execute_txt_script(
+    script: str = Form(...),
+    preview_mode: bool = Form(True),
+    upload_to_sheets: bool = Form(False),
+    upload_to_database: bool = Form(False),
+    root_directory: Optional[str] = Form(None),
+    db: Session = Depends(get_db)
+):
+    return await execute_txt_script(
+        script=script,
+        preview_mode=preview_mode,
+        upload_to_sheets=upload_to_sheets,
+        upload_to_database=upload_to_database,
+        root_directory=root_directory,
+        db=db
+    )
+
+@app.get("/api/txt-ingestion/sample-scripts")
+async def api_get_sample_scripts():
+    return await get_sample_scripts()
+
 @app.get("/txt-ingestion/sample-scripts")
 async def get_sample_scripts():
     """Get sample ChatGPT instruction scripts"""
