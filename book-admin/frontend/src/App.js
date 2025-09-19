@@ -231,10 +231,13 @@ function App() {
         }
       });
 
-      const json = res.data;
-      toast.success(json.message || 'Uploaded and imported');
-      await loadBooks();
-      await loadStats();
+  const json = res.data;
+  const imported = json.imported ?? 0;
+  const updated = json.updated ?? 0;
+  toast.success(json.message || `ZIP processed: ${imported} imported, ${updated} updated`);
+  // After upload completes, the server parses/imports which can take time; then refresh
+  await loadBooks();
+  await loadStats();
     } catch (e) {
       console.error('Quick ZIP upload error:', e);
   const msg = e?.response?.data?.detail || e.message || 'Upload failed';

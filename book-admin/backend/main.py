@@ -1077,9 +1077,16 @@ async def upload_zip_and_import(
             parser = ShuSpotFolderParser(folder_path)
             books = parser.parse_all_books()
             if not books:
-                return {"message": "No books found in ZIP", "imported": 0}
+                return {
+                    "message": "No books found in ZIP",
+                    "imported": 0,
+                    "updated": 0,
+                    "zip_root": os.path.basename(zip_file.filename),
+                    "selected_folder": folder_path,
+                }
 
             imported_count = 0
+            updated_count = 0
             for book_data in books:
                 # Upsert by title+author
                 title = book_data.get('Name', 'Unknown Title')
@@ -1092,6 +1099,7 @@ async def upload_zip_and_import(
                     existing_book.reading_level = book_data.get('Age', existing_book.reading_level)
                     existing_book.cover_image_url = book_data.get('_cover_image_path', existing_book.cover_image_url)
                     existing_book.description = book_data.get('Notes', existing_book.description)
+                    updated_count += 1
                 else:
                     db.add(Book(
                         title=title,
@@ -1118,9 +1126,12 @@ async def upload_zip_and_import(
             db.commit()
             stats = parser.get_summary_stats()
             return {
-                "message": f"Imported {imported_count} books from ZIP",
+                "message": f"ZIP processed: {imported_count} imported, {updated_count} updated",
                 "imported": imported_count,
+                "updated": updated_count,
+                "total_parsed": len(books),
                 "parsing_stats": stats,
+                "selected_folder": folder_path,
                 "sample": books[:3]
             }
     except HTTPException:
