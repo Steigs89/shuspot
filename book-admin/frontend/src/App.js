@@ -194,6 +194,20 @@ function App() {
     }
   };
 
+  const handleSyncFromSheets = async () => {
+    try {
+      const res = await fetch('/api/google-sheets/sync-to-db', { method: 'POST' });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.detail || 'Sync failed');
+      toast.success(json.message || 'Synced from Sheets');
+      await loadBooks();
+      await loadStats();
+    } catch (e) {
+      console.error('Sync from Sheets error:', e);
+      toast.error(`Sync failed: ${e.message}`);
+    }
+  };
+
   const handleImportJson = async (file) => {
     try {
       const text = await file.text();
@@ -492,6 +506,14 @@ function App() {
                 >
                   <Settings size={16} style={{ marginRight: '8px' }} />
                   Clear Database
+                </button>
+
+                <button
+                  onClick={handleSyncFromSheets}
+                  className="btn btn-primary"
+                >
+                  <Cloud size={16} style={{ marginRight: '8px' }} />
+                  Sync from Sheets
                 </button>
               </div>
             </div>

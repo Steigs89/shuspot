@@ -742,6 +742,50 @@ async def sync_db_to_sheets(db: Session = Depends(get_db)):
         print(f"Sync error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Sync failed: {str(e)}")
 
+@app.post("/google-sheets/sync-to-db")
+async def sync_sheets_to_db(db: Session = Depends(get_db)):
+    """Fetch all rows from Google Sheets and upsert into local DB by (title+author)."""
+    global sheets_manager
+    if not sheets_manager:
+        raise HTTPException(status_code=400, detail="Google Sheets not configured")
+
+    try:
+        rows = sheets_manager.get_all_books() or []
+        if not rows:
+            return {"message": "No rows found in Google Sheets", "imported": 0, "updated": 0}
+
+        imported = 0
+        updated = 0
+        for r in rows:
+            title = r.get('Name') or r.get('Title') or 'Untitled'
+            author = r.get('Author') or 'Unknown'
+
+            book = db.query(Book).filter(Book.title == title, Book.author == author).first()
+            if not book:
+                book = Book(title=title, author=author)
+                db.add(book)
+                imported += 1
+
+            # Map fields
+            book.genre = r.get('Category') or book.genre
+            book.book_type = r.get('Media') or book.book_type
+            book.fiction_type = r.get('Fiction Type') or book.fiction_type
+            book.reading_level = r.get('Age') or book.reading_level
+            # Preserve notes/description if present in sheet
+            desc = r.get('Notes') or ''
+            if desc:
+                book.description = desc
+            url = r.get('URL') or ''
+            if url:
+                book.file_path = url
+                book.file_name = url.split('/')[-1]
+            updated += 1
+
+        db.commit()
+        return {"message": f"Sheets synced to DB: {imported} imported, {updated} updated", "imported": imported, "updated": updated}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Sync to DB failed: {str(e)}")
+
 @app.put("/google-sheets/books/{book_id}")
 async def update_google_sheets_book(
     book_id: int,
