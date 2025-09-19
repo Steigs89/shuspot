@@ -13,6 +13,7 @@ import logging
 import json
 import tempfile
 import zipfile
+import uuid
 
 # Optional heavy dependencies
 try:
@@ -102,6 +103,10 @@ logging.basicConfig(level=logging.INFO)
 @app.get("/")
 async def root():
     return {"message": "Book Admin API is running"}
+
+# Temporary workspace for TXT script ZIP uploads
+TXTRUN_ROOT = os.path.join(tempfile.gettempdir(), "txtrun")
+os.makedirs(TXTRUN_ROOT, exist_ok=True)
 
 @app.get("/test-static")
 async def test_static():
@@ -1169,6 +1174,7 @@ async def get_folder_stats(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to get folder stats: {str(e)}")
 
+# Legacy endpoint (kept for compatibility)
 @app.post("/execute-python-script")
 async def execute_python_script(
     script_code: str = Form(...),
@@ -1341,6 +1347,7 @@ async def execute_txt_script(
     preview_mode: bool = Form(True),
     upload_to_sheets: bool = Form(False),
     upload_to_database: bool = Form(False),
+    root_directory: Optional[str] = Form(None),
     db: Session = Depends(get_db)
 ):
     """Execute custom Python script for TXT file ingestion with preview"""
@@ -1353,7 +1360,7 @@ async def execute_txt_script(
         
         # Available variables for the script
         script_globals = {
-            'root_directory': UPLOAD_DIR,
+            'root_directory': root_directory or UPLOAD_DIR,
             'sheets_manager': sheets_manager,
             'TxtMetadataParser': TxtMetadataParser,
             'parser': None,
@@ -1454,6 +1461,30 @@ async def execute_txt_script(
             "preview_data": [],
             "processed_count": 0
         }
+
+@app.post("/txt-ingestion/upload-zip")
+async def txt_ingestion_upload_zip(zip_file: UploadFile = File(...)):
+    """Upload a ZIP of folders/files to a temporary server path and return a root_directory to use in scripts."""
+    try:
+        token = uuid.uuid4().hex
+        target_dir = os.path.join(TXTRUN_ROOT, token)
+        os.makedirs(target_dir, exist_ok=True)
+
+        content = await zip_file.read()
+        with zipfile.ZipFile(BytesIO(content)) as zf:
+            zf.extractall(target_dir)
+
+        # If there is a single top-level folder, prefer that as root
+        entries = [os.path.join(target_dir, name) for name in os.listdir(target_dir)]
+        dirs = [p for p in entries if os.path.isdir(p)]
+        files = [p for p in entries if os.path.isfile(p)]
+        root_dir = target_dir
+        if len(dirs) == 1 and not files:
+            root_dir = dirs[0]
+
+        return {"ok": True, "token": token, "root_directory": root_dir}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"ZIP upload failed: {str(e)}")
 
 @app.get("/txt-ingestion/sample-scripts")
 async def get_sample_scripts():

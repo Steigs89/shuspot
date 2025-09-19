@@ -28,6 +28,11 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
   const [zipFile, setZipFile] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [zipUrl, setZipUrl] = useState('');
+  const [pyZipToken, setPyZipToken] = useState(null);
+  const [pyRootDir, setPyRootDir] = useState('');
+  const [pyCode, setPyCode] = useState('');
+  const [pyPreview, setPyPreview] = useState([]);
+  const [pyRunning, setPyRunning] = useState(false);
 
   const checkFolderStats = async () => {
   if (!folderPath || !folderPath.trim()) {
@@ -236,6 +241,57 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
       toast.error('Failed to import to local database');
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const uploadScriptZip = async (file) => {
+    try {
+      const fd = new FormData();
+      fd.append('zip_file', file);
+      const res = await fetch(getApiUrl('txt-ingestion/upload-zip'), { method: 'POST', body: fd });
+      const data = await res.json();
+      if (data.ok) {
+        setPyZipToken(data.token);
+        setPyRootDir(data.root_directory);
+        toast.success('ZIP uploaded. Root set for script running.');
+      } else {
+        toast.error(data.detail || 'ZIP upload failed');
+      }
+    } catch (e) {
+      toast.error(`ZIP upload error: ${e.message || e}`);
+    }
+  };
+
+  const runPastedPython = async ({ toDb = false, replace = false } = {}) => {
+    if (!pyCode.trim()) {
+      toast.error('Paste a Python script first');
+      return;
+    }
+    setPyRunning(true);
+    try {
+      const fd = new FormData();
+      fd.append('script', pyCode);
+      fd.append('preview_mode', (!toDb && !replace).toString());
+      fd.append('upload_to_database', (!!toDb).toString());
+      fd.append('root_directory', pyRootDir || '');
+
+      const res = await fetch(getApiUrl('txt-ingestion/execute-script'), { method: 'POST', body: fd });
+      const data = await res.json();
+      if (data.success) {
+        setPyPreview(data.preview_data || []);
+        toast.success(`Script ran. ${data.processed_count} items processed.`);
+        if (toDb || replace) {
+          // If replace desired, we can provide a separate server flag later; for now upsert path
+          // Trigger a grid refresh via a custom event if available
+          // window.dispatchEvent(new CustomEvent('refreshBooks'));
+        }
+      } else {
+        toast.error(data.error || 'Script failed');
+      }
+    } catch (e) {
+      toast.error(`Run error: ${e.message || e}`);
+    } finally {
+      setPyRunning(false);
     }
   };
 
@@ -520,6 +576,34 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
             <li><strong>Epic URLs:</strong> Links to original Epic Books content</li>
           </ul>
         </div>
+      </div>
+
+      <div className="parse-results">
+        <h4>Run Python on Uploaded ZIP (TXT Ingestion)</h4>
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginBottom: 8 }}>
+          <input type="file" accept=".zip" onChange={(e) => e.target.files?.[0] && uploadScriptZip(e.target.files[0])} />
+          {pyRootDir && <span style={{ fontSize: 12, color: '#555' }}>Root: {pyRootDir}</span>}
+        </div>
+        <textarea
+          value={pyCode}
+          onChange={(e) => setPyCode(e.target.value)}
+          placeholder="# Paste your GPT-generated Python here. Use variables: root_directory, results, preview_data."
+          style={{ width: '100%', minHeight: 140, fontFamily: 'monospace', padding: 8 }}
+        />
+        <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+          <button className="btn btn-outline" disabled={pyRunning} onClick={() => runPastedPython({})}>Plan (Preview)</button>
+          <button className="btn btn-primary" disabled={pyRunning} onClick={() => runPastedPython({ toDb: true })}>Import (Upsert)</button>
+        </div>
+        {pyPreview?.length > 0 && (
+          <div style={{ marginTop: 12 }}>
+            <strong>Preview (first {pyPreview.length} rows)</strong>
+            <ul>
+              {pyPreview.map((p, i) => (
+                <li key={i}>{p.folder} — {p.title} — {p.author} — {p.file} — {p.status}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       <ScriptEditorSection />
