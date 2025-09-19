@@ -5,20 +5,7 @@
 /* Import other styles */
 @import './styles/progressStyles.css';
 
-/* Superclarendon Font Declarations */
-@font-face {
-  font-family: 'Superclarendon';
-  src: url('../../../src/assets/superclarendon-rg-bold-587272c8dce6b (1).ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Superclarendon';
-  src: url('../../../src/assets/superclarendon-bl-587272f656611 (1).ttf') format('truetype');
-  font-weight: 900; /* Black weight */
-  font-style: normal;
-}
+/* Superclarendon Font Declarations - removed to avoid importing assets outside CRA app scope */
 
 /* Superclarendon Font Utility Classes */
 .font-superclarendon-bold {

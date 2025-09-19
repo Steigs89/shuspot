@@ -1,0 +1,9 @@
+{
+  "name": "book-admin-static",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Book Admin static deploy holder",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'"
+  }
+}

@@ -261,6 +261,7 @@ async def update_book(
     fiction_type: str = Form(...),
     reading_level: str = Form(...),
     cover_image_url: Optional[str] = Form(None),
+    notes: Optional[str] = Form(None),
     db: Session = Depends(get_db)
 ):
     """Update a single book's metadata"""
@@ -276,6 +277,14 @@ async def update_book(
     book.fiction_type = fiction_type
     book.reading_level = reading_level
     book.cover_image_url = cover_image_url
+    if notes is not None:
+        book.notes = notes
+
+    # Persist changes
+    db.commit()
+    db.refresh(book)
+
+    return {"message": "Book updated successfully", "book": book.to_dict()}
 
 @app.put("/books/bulk-update")
 async def bulk_update_books(
@@ -286,7 +295,7 @@ async def bulk_update_books(
 ):
     """Bulk update multiple books"""
     
-    if field not in ["title", "author", "genre", "book_type", "fiction_type", "reading_level", "cover_image_url"]:
+    if field not in ["title", "author", "genre", "book_type", "fiction_type", "reading_level", "cover_image_url", "notes"]:
         raise HTTPException(status_code=400, detail="Invalid field")
     
     books = db.query(Book).filter(Book.id.in_(book_ids)).all()

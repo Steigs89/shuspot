@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+const isDev = process.env.NODE_ENV !== 'production';
+const API_BASE = isDev ? '/api' : (process.env.REACT_APP_API_URL || '/api');
+
 const api = axios.create({
-  baseURL: '/',  // This will use the proxy configuration from package.json
+  baseURL: API_BASE,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -32,11 +35,13 @@ export const bookAPI = {
   // Update single book
   updateBook: async (bookId, bookData) => {
     const formData = new FormData();
-    Object.keys(bookData).forEach(key => {
-      formData.append(key, bookData[key] || '');
+    // Only send fields the backend expects
+    const fields = ['title','author','genre','book_type','fiction_type','reading_level','cover_image_url','notes'];
+    fields.forEach(key => {
+      if (key in bookData) formData.append(key, bookData[key] ?? '');
     });
-    
-    const response = await api.put(`/books/${bookId}`, formData, {
+
+    const response = await api.post(`/books/${bookId}/update`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },

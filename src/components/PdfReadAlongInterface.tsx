@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, RotateCcw } from 'lucide-react';
-import { pdfjs as pdfjsLib } from 'react-pdf';
+import * as pdfjsLib from 'pdfjs-dist';
 import dogCompanion from '../assets/cartoon-dog-cute-drawing-printable-free-style-volumetric-lighting_921860-112557-removebg-preview.png';
 import BookCompletionScreen from './BookCompletionScreen';
 import QuizModal from './QuizModal';

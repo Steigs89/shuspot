@@ -1,16 +1,11 @@
-# Netlify redirects and proxies
-
-# Proxy API to your backend on Render
-/api/* https://shuspot.onrender.com/api/:splat 200
-
-# Direct endpoint proxies for SPA that calls root-relative paths
-/books https://shuspot.onrender.com/api/books 200
-/books/* https://shuspot.onrender.com/api/books/:splat 200
-/stats https://shuspot.onrender.com/api/stats 200
-/upload-books https://shuspot.onrender.com/api/upload-books 200
-/export/csv https://shuspot.onrender.com/api/export/csv 200
-/books/bulk-update https://shuspot.onrender.com/api/books/bulk-update 200
-/books/clear/all https://shuspot.onrender.com/api/books/clear/all 200
-
 # SPA fallback
-/* /index.html 200
+/*    /index.html   200
+
+# API proxy (production)
+/api/*  /.netlify/functions/api/:splat  200
+
+# Image proxy to backend (optional, when using Netlify dev)
+/shuspot-images/*  http://localhost:8000/shuspot-images/:splat  200
+
+# Static js for reader
+/js/*   /book-admin/js/:splat   200

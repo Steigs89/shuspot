@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Upload, X, File, Image, FileText, Check, AlertCircle, Trash2, Edit3, Search, Filter, Plus } from 'lucide-react';
-import { pdfjs } from 'react-pdf';
+import * as pdfjs from 'pdfjs-dist';
 
 // Unique ID generator to prevent duplicate keys
 let idCounter = 0;

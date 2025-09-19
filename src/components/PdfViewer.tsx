@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ChevronLeft, ChevronRight, Minus, Plus, RotateCcw, Volume2 } from 'lucide-react';
-import { pdfjs as pdfjsLib } from 'react-pdf';
+import * as pdfjsLib from 'pdfjs-dist';
 import { useUserStats } from '../contexts/UserStatsContext';
 
 // This MUST be before you call pdfjsLib.getDocument()

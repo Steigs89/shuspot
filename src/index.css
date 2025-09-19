@@ -1,9 +1,9 @@
+/* Import other styles */
+@import './styles/progressStyles.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import other styles */
-@import './styles/progressStyles.css';
 
 /* Superclarendon Font Declarations */
 @font-face {

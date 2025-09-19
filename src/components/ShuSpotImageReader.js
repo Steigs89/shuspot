@@ -133,8 +133,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         // Load jQuery first with fallbacks
         if (!window.jQuery) {
           const jqueryLoadedFrom = await loadScript([
-            '/js/jquery.js',
             'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js',
+            '/js/jquery.js',
           ]);
           console.log(`✅ jQuery loaded from ${jqueryLoadedFrom}`);
         }
@@ -142,9 +142,9 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         // Then load Turn.js with fallbacks
         if (!window.jQuery.fn || !window.jQuery.fn.turn) {
           const turnLoadedFrom = await loadScript([
+            'https://cdn.jsdelivr.net/gh/blasten/turn.js/turn.min.js',
             '/js/turn.js',
             '/book-admin/js/turn.js', // for certain hosting setups
-            'https://cdn.jsdelivr.net/gh/blasten/turn.js/turn.min.js',
           ]);
           console.log(`✅ Turn.js loaded from ${turnLoadedFrom}`);
         }
