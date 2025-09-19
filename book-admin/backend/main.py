@@ -1128,6 +1128,14 @@ async def upload_zip_and_import(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Upload ZIP import failed: {str(e)}")
 
+# Mirror under /api for hosting setups that mount API at /api
+@app.post("/api/shuspot-ingestion/upload-zip-and-import")
+async def api_upload_zip_and_import(
+    zip_file: UploadFile = File(...),
+    db: Session = Depends(get_db)
+):
+    return await upload_zip_and_import(zip_file=zip_file, db=db)
+
 @app.get("/shuspot-ingestion/get-folder-stats")
 async def get_folder_stats(
     folder_path: str

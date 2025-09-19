@@ -12,6 +12,7 @@ import {
   Database,
   Settings
 } from 'lucide-react';
+import axios from 'axios';
 
 import FileUpload from './components/FileUpload';
 import BookGrid from './components/BookGrid';
@@ -46,6 +47,10 @@ function App() {
 
   // Book launcher
   const [launchedBook, setLaunchedBook] = useState(null);
+
+  // ZIP upload progress
+  const [zipUploading, setZipUploading] = useState(false);
+  const [zipProgress, setZipProgress] = useState(0);
 
   const loadBooks = useCallback(async () => {
     try {
@@ -211,17 +216,32 @@ function App() {
   // Fast path: upload a ShuSpot ZIP (folder) -> parse -> import to DB
   const handleQuickZipUpload = async (file) => {
     try {
+      setZipUploading(true);
+      setZipProgress(0);
       const form = new FormData();
       form.append('zip_file', file);
-      const res = await fetch('/api/shuspot-ingestion/upload-zip-and-import', { method: 'POST', body: form });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.detail || 'Upload failed');
+
+      const res = await axios.post('/api/shuspot-ingestion/upload-zip-and-import', form, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+        onUploadProgress: (evt) => {
+          if (evt.total) {
+            const pct = Math.round((evt.loaded / evt.total) * 100);
+            setZipProgress(pct);
+          }
+        }
+      });
+
+      const json = res.data;
       toast.success(json.message || 'Uploaded and imported');
       await loadBooks();
       await loadStats();
     } catch (e) {
       console.error('Quick ZIP upload error:', e);
-      toast.error(`Upload failed: ${e.message}`);
+      const msg = e?.response?.data?.detail || e.message || 'Upload failed';
+      toast.error(`Upload failed: ${msg}`);
+    } finally {
+      setZipUploading(false);
+      setTimeout(() => setZipProgress(0), 800);
     }
   };
 
@@ -442,19 +462,25 @@ function App() {
                 </select>
 
                 {/* Fast: Upload a ShuSpot ZIP */}
-                <label className="btn btn-primary" style={{ cursor: 'pointer' }}>
+                <label className={`btn btn-primary ${zipUploading ? 'disabled' : ''}`} style={{ cursor: zipUploading ? 'not-allowed' : 'pointer', position: 'relative' }}>
                   <UploadIcon size={16} style={{ marginRight: '8px' }} />
-                  Upload ShuSpot ZIP
+                  {zipUploading ? `Uploading ZIP… ${zipProgress}%` : 'Upload ShuSpot ZIP'}
                   <input
                     type="file"
                     accept=".zip,application/zip"
                     style={{ display: 'none' }}
+                    disabled={zipUploading}
                     onChange={(e) => {
                       const f = e.target.files?.[0];
                       if (f) handleQuickZipUpload(f);
                       e.target.value = '';
                     }}
                   />
+                  {zipUploading && (
+                    <div style={{ position: 'absolute', left: 0, bottom: -6, width: '100%', height: 3, background: '#e9ecef' }}>
+                      <div style={{ width: `${zipProgress}%`, height: '100%', background: '#0d6efd', transition: 'width 0.2s ease' }} />
+                    </div>
+                  )}
                 </label>
 
                 <button
