@@ -61,7 +61,12 @@ export default function PdfReadAlongInterface({ onBack, pdfBook, onProgressUpdat
   const [selectedGoogleVoice, setSelectedGoogleVoice] = useState<string>('');
   const [voiceEngine] = useState<'google'>('google');
 
-  const GOOGLE_API_KEY = 'AIzaSyCO3KGws-7lAIyzjphIMJ0RHEg6iqpCASM';
+  // Google Cloud TTS API key must be provided via environment variables at build/runtime.
+  // Prefer Vite's VITE_GOOGLE_API_KEY, fallback to CRA's REACT_APP_GOOGLE_API_KEY, else empty to disable TTS calls.
+  const GOOGLE_API_KEY =
+    (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.VITE_GOOGLE_API_KEY) ||
+    (typeof process !== 'undefined' && (process as any).env && (process as any).env.REACT_APP_GOOGLE_API_KEY) ||
+    '';
 
   const progressRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -403,6 +408,10 @@ export default function PdfReadAlongInterface({ onBack, pdfBook, onProgressUpdat
   // Generate Google Cloud TTS audio
   const generateGoogleAudio = async (text: string, voiceName: string): Promise<string> => {
     try {
+      if (!GOOGLE_API_KEY) {
+        console.warn('Google TTS disabled: missing GOOGLE_API_KEY (set REACT_APP_GOOGLE_API_KEY or VITE_GOOGLE_API_KEY).');
+        throw new Error('Missing GOOGLE_API_KEY');
+      }
       console.log('Making Google TTS request with:', { text: text.substring(0, 50) + '...', voiceName });
       
       // Find the voice configuration to get custom settings
@@ -410,7 +419,7 @@ export default function PdfReadAlongInterface({ onBack, pdfBook, onProgressUpdat
       const pitch = voiceConfig?.pitch || 2.0;
       const speakingRate = voiceConfig?.speakingRate || 0.9;
       
-      const response = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${GOOGLE_API_KEY}`, {
+  const response = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${GOOGLE_API_KEY}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
