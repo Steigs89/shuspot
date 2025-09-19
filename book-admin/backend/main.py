@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile, Depends, HTTPException, Form
+from fastapi import FastAPI, File, UploadFile, Depends, HTTPException, Form, Body
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -285,6 +285,71 @@ async def update_book(
     db.refresh(book)
 
     return {"message": "Book updated successfully", "book": book.to_dict()}
+
+@app.post("/books/import-json")
+async def import_books_json(
+    payload: dict = Body(...),
+    db: Session = Depends(get_db)
+):
+    """Import books from a JSON payload. Accepts either {"books": [...]} or a list in the root."""
+    try:
+        # Support both array or object with books key
+        if isinstance(payload, list):
+            books_in = payload
+        else:
+            books_in = payload.get("books", [])
+
+        if not isinstance(books_in, list) or not books_in:
+            raise HTTPException(status_code=400, detail="No books provided")
+
+        imported = 0
+        skipped = 0
+        errors = []
+
+        for item in books_in:
+            try:
+                title = item.get("title") or item.get("Name") or "Untitled"
+                author = item.get("author") or item.get("Author") or "Unknown"
+
+                # Skip duplicates by title+author
+                existing = db.query(Book).filter(Book.title == title, Book.author == author).first()
+                if existing:
+                    skipped += 1
+                    continue
+
+                book = Book(
+                    title=title,
+                    author=author,
+                    genre=item.get("genre") or item.get("Category") or "Unknown",
+                    book_type=item.get("book_type") or item.get("Media") or "Books",
+                    fiction_type=item.get("fiction_type") or item.get("Fiction Type") or "Fiction",
+                    reading_level=item.get("reading_level") or item.get("Age") or "Unknown",
+                    cover_image_url=item.get("cover_image_url") or item.get("_cover_image_path"),
+                    file_path=item.get("file_path") or item.get("URL"),
+                    file_name=item.get("file_name") or f"{title}.json",
+                    file_size=item.get("file_size") or 0,
+                    file_type=item.get("file_type") or "JSON",
+                    description=item.get("description") or item.get("Notes", ""),
+                    notes=item.get("notes") if isinstance(item.get("notes"), str) else None
+                )
+
+                db.add(book)
+                imported += 1
+            except Exception as e:
+                errors.append(f"Error importing {item.get('title', 'Unknown')}: {str(e)}")
+
+        db.commit()
+
+        return {
+            "message": f"Imported {imported} books ({skipped} skipped)",
+            "imported": imported,
+            "skipped": skipped,
+            "errors": errors
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Import failed: {str(e)}")
 
 @app.put("/books/bulk-update")
 async def bulk_update_books(

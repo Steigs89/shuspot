@@ -194,6 +194,26 @@ function App() {
     }
   };
 
+  const handleImportJson = async (file) => {
+    try {
+      const text = await file.text();
+      const data = JSON.parse(text);
+      const res = await fetch('/api/books/import-json', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.detail || 'Import failed');
+      toast.success(json.message || 'Imported JSON');
+      await loadBooks();
+      await loadStats();
+    } catch (e) {
+      console.error('Import JSON error:', e);
+      toast.error(`Import failed: ${e.message}`);
+    }
+  };
+
   const handleLaunchBook = (book) => {
     console.log('Launching book:', book);
     // Check book data
@@ -351,6 +371,21 @@ function App() {
                   <Download size={16} style={{ marginRight: '8px' }} />
                   Export CSV
                 </button>
+
+                <label className="btn btn-secondary" style={{ cursor: 'pointer' }}>
+                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
+                  Import JSON
+                  <input
+                    type="file"
+                    accept="application/json"
+                    style={{ display: 'none' }}
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) handleImportJson(f);
+                      e.target.value = '';
+                    }}
+                  />
+                </label>
 
                 <button
                   onClick={handleClearDatabase}
