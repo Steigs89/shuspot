@@ -1,4 +1,23 @@
 [build]
+  command = "cd book-admin/frontend && npm ci && npm run build"
+  publish = "book-admin/build"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://shuspot.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/build/*"
+  to = "/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+[build]
   publish = "build"
   # We ship prebuilt assets in the repo. No build needed on Netlify.
   command = "echo Using prebuilt build/ folder"

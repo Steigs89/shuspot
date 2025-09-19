@@ -1,9 +1,4 @@
 # Netlify redirects and proxies
 
-# Proxy API to your backend on Render
+# When publishing book-admin/build via netlify.toml, only keep API proxy here for local serve
 /api/* https://shuspot.onrender.com/api/:splat 200
-
-# Serve compiled SPA when deploying whole book-admin folder
-/ /build/index.html 200
-/index.html /build/index.html 200
-/* /build/index.html 200
