@@ -208,6 +208,23 @@ function App() {
     }
   };
 
+  // Fast path: upload a ShuSpot ZIP (folder) -> parse -> import to DB
+  const handleQuickZipUpload = async (file) => {
+    try {
+      const form = new FormData();
+      form.append('zip_file', file);
+      const res = await fetch('/api/shuspot-ingestion/upload-zip-and-import', { method: 'POST', body: form });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.detail || 'Upload failed');
+      toast.success(json.message || 'Uploaded and imported');
+      await loadBooks();
+      await loadStats();
+    } catch (e) {
+      console.error('Quick ZIP upload error:', e);
+      toast.error(`Upload failed: ${e.message}`);
+    }
+  };
+
   const handleImportJson = async (file) => {
     try {
       const text = await file.text();
@@ -423,6 +440,22 @@ function App() {
                   <option value="Audiobooks">Audiobooks</option>
                   <option value="Video Books">Video Books</option>
                 </select>
+
+                {/* Fast: Upload a ShuSpot ZIP */}
+                <label className="btn btn-primary" style={{ cursor: 'pointer' }}>
+                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
+                  Upload ShuSpot ZIP
+                  <input
+                    type="file"
+                    accept=".zip,application/zip"
+                    style={{ display: 'none' }}
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) handleQuickZipUpload(f);
+                      e.target.value = '';
+                    }}
+                  />
+                </label>
 
                 <button
                   onClick={() => setShowUpload(!showUpload)}

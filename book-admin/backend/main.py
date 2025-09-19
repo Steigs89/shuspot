@@ -11,6 +11,8 @@ from datetime import datetime
 from io import BytesIO
 import logging
 import json
+import tempfile
+import zipfile
 
 # Optional heavy dependencies
 try:
@@ -1039,6 +1041,87 @@ async def parse_and_import_to_db(
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Parse and import failed: {str(e)}")
+
+@app.post("/shuspot-ingestion/upload-zip-and-import")
+async def upload_zip_and_import(
+    zip_file: UploadFile = File(...),
+    db: Session = Depends(get_db)
+):
+    """Upload a ShuSpot ZIP, extract, parse, and import into local DB (fast path)."""
+    try:
+        # Save ZIP to temp and extract
+        with tempfile.TemporaryDirectory() as tmpdir:
+            zip_path = os.path.join(tmpdir, zip_file.filename)
+            content = await zip_file.read()
+            with open(zip_path, 'wb') as f:
+                f.write(content)
+            extract_dir = os.path.join(tmpdir, 'extracted')
+            os.makedirs(extract_dir, exist_ok=True)
+            with zipfile.ZipFile(zip_path, 'r') as zf:
+                zf.extractall(extract_dir)
+
+            # Find top-level folder containing expected structure
+            root_candidates = [os.path.join(extract_dir, d) for d in os.listdir(extract_dir)]
+            root_candidates = [d for d in root_candidates if os.path.isdir(d)]
+            if not root_candidates:
+                raise HTTPException(status_code=400, detail="ZIP did not contain a folder")
+            folder_path = root_candidates[0]
+
+            # Parse and import
+            from shuspot_folder_parser import ShuSpotFolderParser
+            parser = ShuSpotFolderParser(folder_path)
+            books = parser.parse_all_books()
+            if not books:
+                return {"message": "No books found in ZIP", "imported": 0}
+
+            imported_count = 0
+            for book_data in books:
+                # Upsert by title+author
+                title = book_data.get('Name', 'Unknown Title')
+                author = book_data.get('Author', 'Unknown Author')
+                existing_book = db.query(Book).filter(Book.title == title, Book.author == author).first()
+                if existing_book:
+                    # Update selective fields
+                    existing_book.genre = book_data.get('Category', existing_book.genre)
+                    existing_book.book_type = book_data.get('Media', existing_book.book_type)
+                    existing_book.reading_level = book_data.get('Age', existing_book.reading_level)
+                    existing_book.cover_image_url = book_data.get('_cover_image_path', existing_book.cover_image_url)
+                    existing_book.description = book_data.get('Notes', existing_book.description)
+                else:
+                    db.add(Book(
+                        title=title,
+                        author=author,
+                        genre=book_data.get('Category', 'Unknown'),
+                        book_type=book_data.get('Media', 'Book'),
+                        fiction_type=book_data.get('Fiction Type', 'Fiction'),
+                        reading_level=book_data.get('Age', ''),
+                        cover_image_url=book_data.get('_cover_image_path', ''),
+                        file_path=book_data.get('_folder_path', ''),
+                        file_name=f"{title}.shuspot",
+                        file_size=0,
+                        file_type='FOLDER',
+                        description=book_data.get('Notes', ''),
+                        notes=json.dumps({
+                            'page_sequence': book_data.get('_page_sequence', []),
+                            'total_pages': book_data.get('_total_pages', 0),
+                            'folder_path': book_data.get('_folder_path', ''),
+                            'cover_image_path': book_data.get('_cover_image_path', ''),
+                        })
+                    ))
+                    imported_count += 1
+
+            db.commit()
+            stats = parser.get_summary_stats()
+            return {
+                "message": f"Imported {imported_count} books from ZIP",
+                "imported": imported_count,
+                "parsing_stats": stats,
+                "sample": books[:3]
+            }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Upload ZIP import failed: {str(e)}")
 
 @app.get("/shuspot-ingestion/get-folder-stats")
 async def get_folder_stats(
