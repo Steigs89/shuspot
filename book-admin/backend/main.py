@@ -14,6 +14,7 @@ import json
 import tempfile
 import zipfile
 import uuid
+from pathlib import Path
 
 # Optional heavy dependencies
 try:
@@ -1072,6 +1073,53 @@ async def upload_zip_and_import(
                 raise HTTPException(status_code=400, detail="ZIP did not contain a folder")
             folder_path = root_candidates[0]
 
+            # Locate CROP-ShuSpot folder within the extracted content
+            crop_src = None
+            for root, dirs, files in os.walk(folder_path):
+                for d in dirs:
+                    if d == 'CROP-ShuSpot':
+                        crop_src = os.path.join(root, d)
+                        break
+                if crop_src:
+                    break
+
+            # Determine destination uploads path where backend serves static files
+            backend_dir = os.path.dirname(os.path.abspath(__file__))
+            dest_root = os.path.abspath(os.path.join(backend_dir, '..', 'uploads', 'CROP-ShuSpot'))
+            os.makedirs(dest_root, exist_ok=True)
+
+            # If we found a source CROP-ShuSpot, copy its contents into served uploads path
+            if crop_src and os.path.exists(crop_src):
+                for src_dir, dirs, files in os.walk(crop_src):
+                    rel = os.path.relpath(src_dir, crop_src)
+                    target_dir = os.path.join(dest_root, rel)
+                    os.makedirs(target_dir, exist_ok=True)
+                    for fname in files:
+                        src_file = os.path.join(src_dir, fname)
+                        dest_file = os.path.join(target_dir, fname)
+                        try:
+                            shutil.copy2(src_file, dest_file)
+                        except Exception as e:
+                            logging.warning(f"Failed to copy {src_file} -> {dest_file}: {e}")
+
+            def rewrite_to_served_path(p: str) -> str:
+                """Rewrite any extracted absolute path under crop_src to served uploads path dest_root."""
+                try:
+                    if crop_src and p and isinstance(p, str) and 'CROP-ShuSpot' in p:
+                        # Normalize paths
+                        src_norm = os.path.normpath(crop_src)
+                        if p.startswith(src_norm):
+                            relp = os.path.relpath(p, src_norm)
+                            return os.path.join(dest_root, relp)
+                        # If path contains CROP-ShuSpot later in the string
+                        idx = p.rfind('CROP-ShuSpot')
+                        if idx != -1:
+                            relp = p[idx + len('CROP-ShuSpot') + 1:]
+                            return os.path.join(dest_root, relp)
+                except Exception:
+                    pass
+                return p
+
             # Parse and import
             from shuspot_folder_parser import ShuSpotFolderParser
             parser = ShuSpotFolderParser(folder_path)
@@ -1091,6 +1139,17 @@ async def upload_zip_and_import(
                 # Upsert by title+author
                 title = book_data.get('Name', 'Unknown Title')
                 author = book_data.get('Author', 'Unknown Author')
+
+                # Rewrite paths to the backend-served uploads location so frontend URLs work
+                if book_data.get('_folder_path'):
+                    book_data['_folder_path'] = rewrite_to_served_path(book_data['_folder_path'])
+                if book_data.get('_cover_image_path'):
+                    book_data['_cover_image_path'] = rewrite_to_served_path(book_data['_cover_image_path'])
+                if book_data.get('_page_sequence'):
+                    for pg in book_data['_page_sequence']:
+                        if isinstance(pg, dict) and pg.get('file_path'):
+                            pg['file_path'] = rewrite_to_served_path(pg['file_path'])
+
                 existing_book = db.query(Book).filter(Book.title == title, Book.author == author).first()
                 if existing_book:
                     # Update selective fields
@@ -1099,6 +1158,22 @@ async def upload_zip_and_import(
                     existing_book.reading_level = book_data.get('Age', existing_book.reading_level)
                     existing_book.cover_image_url = book_data.get('_cover_image_path', existing_book.cover_image_url)
                     existing_book.description = book_data.get('Notes', existing_book.description)
+
+                    # Merge page/asset metadata into notes so reader can load pages
+                    try:
+                        existing_notes = json.loads(existing_book.notes) if existing_book.notes else {}
+                    except Exception:
+                        existing_notes = {}
+                    merged_notes = {
+                        **existing_notes,
+                        'page_sequence': book_data.get('_page_sequence', existing_notes.get('page_sequence', [])),
+                        'total_pages': book_data.get('_total_pages', existing_notes.get('total_pages', 0)),
+                        'folder_path': book_data.get('_folder_path', existing_notes.get('folder_path')),
+                        'cover_image_path': book_data.get('_cover_image_path', existing_notes.get('cover_image_path')),
+                    }
+                    existing_book.notes = json.dumps(merged_notes)
+                    existing_book.file_path = book_data.get('_folder_path', existing_book.file_path)
+                    existing_book.file_name = f"{title}.shuspot"
                     updated_count += 1
                 else:
                     db.add(Book(
@@ -1259,23 +1334,19 @@ async def execute_python_script(
 @app.get("/custom-parsers")
 async def get_custom_parsers_list():
     """Get list of all registered custom parsers"""
-    
     try:
         parsers = get_custom_parsers()
         parser_info = []
-        
         for parser in parsers:
             parser_info.append({
                 "name": parser.__class__.__name__,
                 "priority": parser.get_priority(),
                 "description": parser.__doc__ or "No description available"
             })
-        
         return {
             "parsers": parser_info,
             "total": len(parser_info)
         }
-        
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error getting parsers: {str(e)}")
 
@@ -1286,21 +1357,17 @@ async def test_custom_parser(
     folder_path: Optional[str] = Form(None)
 ):
     """Test custom parsers against a specific file"""
-    
     try:
         # Test with custom parsers first
         custom_metadata = parse_with_custom_parsers(file_path, filename, folder_path)
-        
         # Also test with standard parser for comparison
         standard_metadata = MetadataParser.parse_file_metadata(file_path, filename, folder_path)
-        
         return {
             "custom_parser_result": custom_metadata,
             "standard_parser_result": standard_metadata,
             "custom_parser_used": custom_metadata.get('_parser_used', 'None'),
             "file_tested": filename
         }
-        
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Parser test failed: {str(e)}")
 
@@ -1312,20 +1379,15 @@ async def create_regex_parser_endpoint(
     priority: int = Form(5)
 ):
     """Create a new regex-based parser dynamically"""
-    
     try:
         # Parse field mapping JSON
         field_mapping_dict = json.loads(field_mapping)
-        
         # Convert string keys to integers
         field_mapping_int = {int(k): v for k, v in field_mapping_dict.items()}
-        
         # Create the parser
         new_parser = create_regex_parser(name, pattern, field_mapping_int, priority)
-        
         # Add to registry
         add_custom_parser(new_parser)
-        
         return {
             "message": f"Created regex parser: {name}",
             "parser_name": name,
@@ -1333,7 +1395,6 @@ async def create_regex_parser_endpoint(
             "field_mapping": field_mapping_int,
             "priority": priority
         }
-        
     except json.JSONDecodeError:
         raise HTTPException(status_code=400, detail="Invalid JSON in field_mapping")
     except Exception as e:
@@ -1346,16 +1407,13 @@ async def parse_with_custom_parsers_endpoint(
     folder_path: Optional[str] = Form(None)
 ):
     """Parse a file using custom parsers"""
-    
     try:
         metadata = parse_with_custom_parsers(file_path, filename, folder_path)
-        
         return {
             "metadata": metadata,
             "parser_used": metadata.get('_parser_used', 'None'),
             "success": bool(metadata)
         }
-        
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Custom parsing failed: {str(e)}")
 
