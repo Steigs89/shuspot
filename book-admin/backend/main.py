@@ -85,14 +85,16 @@ class CustomStaticFiles(StaticFiles):
 
 # Mount each folder that exists
 for folder in SHUSPOT_FOLDERS:
-    if os.path.exists(folder):
-        print(f"Checking ShuSpot folder: {folder}")
-        folder_name = os.path.basename(folder)
-        # Mount directly at the folder name since proxy strips /shuspot-images prefix
-        app.mount(f"/{folder_name}", CustomStaticFiles(directory=folder), name=f"shuspot-{folder_name}")
-        print(f"Static files mounted successfully for {folder} at /{folder_name}")
-    else:
-        print(f"ShuSpot folder not found - static files not mounted for {folder}")
+    # Ensure folder exists so we can mount now; files may arrive later
+    try:
+        os.makedirs(folder, exist_ok=True)
+    except Exception:
+        pass
+    print(f"Checking ShuSpot folder: {folder}")
+    folder_name = os.path.basename(folder)
+    # Mount directly at the folder name since proxy strips /shuspot-images prefix
+    app.mount(f"/{folder_name}", CustomStaticFiles(directory=folder), name=f"shuspot-{folder_name}")
+    print(f"Static files mounted successfully for {folder} at /{folder_name}")
 
 # Global Google Sheets manager (will be initialized when credentials are provided)
 sheets_manager = None
@@ -108,6 +110,10 @@ async def root():
 # Temporary workspace for TXT script ZIP uploads
 TXTRUN_ROOT = os.path.join(tempfile.gettempdir(), "txtrun")
 os.makedirs(TXTRUN_ROOT, exist_ok=True)
+
+# Chunked upload workspace
+CHUNK_ROOT = os.path.join(TXTRUN_ROOT, "chunks")
+os.makedirs(CHUNK_ROOT, exist_ok=True)
 
 @app.get("/test-static")
 async def test_static():
@@ -1213,6 +1219,414 @@ async def upload_zip_and_import(
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Upload ZIP import failed: {str(e)}")
+
+# New: Two-step preview/import for ZIP ingestion
+@app.post("/shuspot-ingestion/upload-zip-preview")
+async def upload_zip_preview(zip_file: UploadFile = File(...)):
+    """Upload a ShuSpot ZIP, extract to a temporary token dir, copy CROP-ShuSpot assets,
+    rewrite parsed paths to served uploads, and return a token with preview data (no DB writes)."""
+    try:
+        token = uuid.uuid4().hex
+        with tempfile.TemporaryDirectory() as tmpdir:
+            zip_path = os.path.join(tmpdir, zip_file.filename)
+            content = await zip_file.read()
+            with open(zip_path, 'wb') as f:
+                f.write(content)
+            extract_dir = os.path.join(tmpdir, 'extracted')
+            os.makedirs(extract_dir, exist_ok=True)
+            with zipfile.ZipFile(zip_path, 'r') as zf:
+                zf.extractall(extract_dir)
+
+            # Promote extracted folder to a persistent temp area keyed by token
+            token_dir = os.path.join(TXTRUN_ROOT, f"zip-{token}")
+            os.makedirs(token_dir, exist_ok=True)
+            # Move contents
+            for name in os.listdir(extract_dir):
+                src = os.path.join(extract_dir, name)
+                dst = os.path.join(token_dir, name)
+                if os.path.isdir(src):
+                    shutil.copytree(src, dst, dirs_exist_ok=True)
+                else:
+                    shutil.copy2(src, dst)
+
+        # Locate root folder and CROP-ShuSpot
+        root_candidates = [os.path.join(token_dir, d) for d in os.listdir(token_dir) if os.path.isdir(os.path.join(token_dir, d))]
+        folder_path = root_candidates[0] if root_candidates else token_dir
+
+        crop_src = None
+        for root, dirs, files in os.walk(folder_path):
+            if 'CROP-ShuSpot' in dirs:
+                crop_src = os.path.join(root, 'CROP-ShuSpot')
+                break
+
+        backend_dir = os.path.dirname(os.path.abspath(__file__))
+        dest_root = os.path.abspath(os.path.join(backend_dir, '..', 'uploads', 'CROP-ShuSpot'))
+        os.makedirs(dest_root, exist_ok=True)
+
+        if crop_src and os.path.exists(crop_src):
+            for src_dir, dirs, files in os.walk(crop_src):
+                rel = os.path.relpath(src_dir, crop_src)
+                target_dir = os.path.join(dest_root, rel)
+                os.makedirs(target_dir, exist_ok=True)
+                for fname in files:
+                    shutil.copy2(os.path.join(src_dir, fname), os.path.join(target_dir, fname))
+
+        def rewrite_to_served_path(p: str) -> str:
+            try:
+                if crop_src and p and isinstance(p, str) and 'CROP-ShuSpot' in p:
+                    src_norm = os.path.normpath(crop_src)
+                    if p.startswith(src_norm):
+                        relp = os.path.relpath(p, src_norm)
+                        return os.path.join(dest_root, relp)
+                    idx = p.rfind('CROP-ShuSpot')
+                    if idx != -1:
+                        relp = p[idx + len('CROP-ShuSpot') + 1:]
+                        return os.path.join(dest_root, relp)
+            except Exception:
+                pass
+            return p
+
+        from shuspot_folder_parser import ShuSpotFolderParser
+        parser = ShuSpotFolderParser(folder_path)
+        books = parser.parse_all_books()
+        for b in books:
+            if b.get('_folder_path'):
+                b['_folder_path'] = rewrite_to_served_path(b['_folder_path'])
+            if b.get('_cover_image_path'):
+                b['_cover_image_path'] = rewrite_to_served_path(b['_cover_image_path'])
+            if b.get('_page_sequence'):
+                for pg in b['_page_sequence']:
+                    if isinstance(pg, dict) and pg.get('file_path'):
+                        pg['file_path'] = rewrite_to_served_path(pg['file_path'])
+
+        stats = parser.get_summary_stats()
+        return {
+            "token": token,
+            "selected_folder": folder_path,
+            "parsing_stats": stats,
+            "sample_books": books[:5],
+            "total_parsed": len(books)
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"ZIP preview failed: {str(e)}")
+
+@app.post("/api/shuspot-ingestion/upload-zip-preview")
+async def api_upload_zip_preview(zip_file: UploadFile = File(...)):
+    return await upload_zip_preview(zip_file)
+
+@app.post("/shuspot-ingestion/confirm-import")
+async def confirm_import(token: str = Form(...), db: Session = Depends(get_db)):
+    """Finish import using a previously uploaded ZIP (by token)."""
+    try:
+        token_dir = os.path.join(TXTRUN_ROOT, f"zip-{token}")
+        if not os.path.exists(token_dir):
+            raise HTTPException(status_code=404, detail="Token not found")
+
+        # Determine folder and crop paths again
+        root_candidates = [os.path.join(token_dir, d) for d in os.listdir(token_dir) if os.path.isdir(os.path.join(token_dir, d))]
+        folder_path = root_candidates[0] if root_candidates else token_dir
+        crop_src = None
+        for root, dirs, files in os.walk(folder_path):
+            if 'CROP-ShuSpot' in dirs:
+                crop_src = os.path.join(root, 'CROP-ShuSpot')
+                break
+
+        backend_dir = os.path.dirname(os.path.abspath(__file__))
+        dest_root = os.path.abspath(os.path.join(backend_dir, '..', 'uploads', 'CROP-ShuSpot'))
+        os.makedirs(dest_root, exist_ok=True)
+
+        def rewrite_to_served_path(p: str) -> str:
+            try:
+                if crop_src and p and isinstance(p, str) and 'CROP-ShuSpot' in p:
+                    src_norm = os.path.normpath(crop_src)
+                    if p.startswith(src_norm):
+                        relp = os.path.relpath(p, src_norm)
+                        return os.path.join(dest_root, relp)
+                    idx = p.rfind('CROP-ShuSpot')
+                    if idx != -1:
+                        relp = p[idx + len('CROP-ShuSpot') + 1:]
+                        return os.path.join(dest_root, relp)
+            except Exception:
+                pass
+            return p
+
+        from shuspot_folder_parser import ShuSpotFolderParser
+        parser = ShuSpotFolderParser(folder_path)
+        books = parser.parse_all_books()
+
+        imported_count = 0
+        updated_count = 0
+        for book_data in books:
+            title = book_data.get('Name', 'Unknown Title')
+            author = book_data.get('Author', 'Unknown Author')
+            if book_data.get('_folder_path'):
+                book_data['_folder_path'] = rewrite_to_served_path(book_data['_folder_path'])
+            if book_data.get('_cover_image_path'):
+                book_data['_cover_image_path'] = rewrite_to_served_path(book_data['_cover_image_path'])
+            if book_data.get('_page_sequence'):
+                for pg in book_data['_page_sequence']:
+                    if isinstance(pg, dict) and pg.get('file_path'):
+                        pg['file_path'] = rewrite_to_served_path(pg['file_path'])
+
+            existing_book = db.query(Book).filter(Book.title == title, Book.author == author).first()
+            if existing_book:
+                existing_book.genre = book_data.get('Category', existing_book.genre)
+                existing_book.book_type = book_data.get('Media', existing_book.book_type)
+                existing_book.reading_level = book_data.get('Age', existing_book.reading_level)
+                existing_book.cover_image_url = book_data.get('_cover_image_path', existing_book.cover_image_url)
+                existing_book.description = book_data.get('Notes', existing_book.description)
+                try:
+                    existing_notes = json.loads(existing_book.notes) if existing_book.notes else {}
+                except Exception:
+                    existing_notes = {}
+                merged_notes = {
+                    **existing_notes,
+                    'page_sequence': book_data.get('_page_sequence', existing_notes.get('page_sequence', [])),
+                    'total_pages': book_data.get('_total_pages', existing_notes.get('total_pages', 0)),
+                    'folder_path': book_data.get('_folder_path', existing_notes.get('folder_path')),
+                    'cover_image_path': book_data.get('_cover_image_path', existing_notes.get('cover_image_path')),
+                }
+                existing_book.notes = json.dumps(merged_notes)
+                existing_book.file_path = book_data.get('_folder_path', existing_book.file_path)
+                existing_book.file_name = f"{title}.shuspot"
+                updated_count += 1
+            else:
+                db.add(Book(
+                    title=title,
+                    author=author,
+                    genre=book_data.get('Category', 'Unknown'),
+                    book_type=book_data.get('Media', 'Book'),
+                    fiction_type=book_data.get('Fiction Type', 'Fiction'),
+                    reading_level=book_data.get('Age', ''),
+                    cover_image_url=book_data.get('_cover_image_path', ''),
+                    file_path=book_data.get('_folder_path', ''),
+                    file_name=f"{title}.shuspot",
+                    file_size=0,
+                    file_type='FOLDER',
+                    description=book_data.get('Notes', ''),
+                    notes=json.dumps({
+                        'page_sequence': book_data.get('_page_sequence', []),
+                        'total_pages': book_data.get('_total_pages', 0),
+                        'folder_path': book_data.get('_folder_path', ''),
+                        'cover_image_path': book_data.get('_cover_image_path', ''),
+                    })
+                ))
+                imported_count += 1
+
+        db.commit()
+        stats = parser.get_summary_stats()
+        # Cleanup is optional; keep for debugging. Comment out removal for now.
+        # shutil.rmtree(token_dir, ignore_errors=True)
+        return {
+            "message": f"ZIP import complete: {imported_count} imported, {updated_count} updated",
+            "imported": imported_count,
+            "updated": updated_count,
+            "parsing_stats": stats,
+            "token": token
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Confirm import failed: {str(e)}")
+
+@app.post("/api/shuspot-ingestion/confirm-import")
+async def api_confirm_import(token: str = Form(...), db: Session = Depends(get_db)):
+    return await confirm_import(token=token, db=db)
+
+# Chunked upload endpoints to bypass reverse-proxy body limits
+@app.post("/shuspot-ingestion/chunked/start")
+async def chunked_start(filename: str = Form(...), size: Optional[int] = Form(None)):
+    upload_id = uuid.uuid4().hex
+    upload_dir = os.path.join(CHUNK_ROOT, f"upload-{upload_id}")
+    os.makedirs(upload_dir, exist_ok=True)
+    meta = {"filename": filename, "size": size, "created_at": datetime.utcnow().isoformat()}
+    with open(os.path.join(upload_dir, "meta.json"), "w") as f:
+        json.dump(meta, f)
+    return {"upload_id": upload_id}
+
+@app.post("/shuspot-ingestion/chunked/upload")
+async def chunked_upload(upload_id: str = Form(...), chunk_index: int = Form(...), total_chunks: int = Form(...), chunk: UploadFile = File(...)):
+    upload_dir = os.path.join(CHUNK_ROOT, f"upload-{upload_id}")
+    if not os.path.exists(upload_dir):
+        raise HTTPException(status_code=404, detail="Upload ID not found")
+    part_path = os.path.join(upload_dir, f"{chunk_index:06d}.part")
+    with open(part_path, "wb") as f:
+        shutil.copyfileobj(chunk.file, f)
+    return {"received": True, "chunk_index": chunk_index, "total_chunks": total_chunks}
+
+def _assemble_chunks(upload_id: str) -> str:
+    upload_dir = os.path.join(CHUNK_ROOT, f"upload-{upload_id}")
+    if not os.path.exists(upload_dir):
+        raise HTTPException(status_code=404, detail="Upload ID not found")
+    parts = sorted([p for p in os.listdir(upload_dir) if p.endswith('.part')])
+    if not parts:
+        raise HTTPException(status_code=400, detail="No chunks uploaded")
+    assembled = os.path.join(upload_dir, "assembled.zip")
+    with open(assembled, "wb") as out:
+        for name in parts:
+            with open(os.path.join(upload_dir, name), "rb") as inp:
+                shutil.copyfileobj(inp, out)
+    return assembled
+
+def _extract_and_copy_for_token(zip_path: str):
+    token = uuid.uuid4().hex
+    with tempfile.TemporaryDirectory() as tmpdir:
+        extract_dir = os.path.join(tmpdir, 'extracted')
+        os.makedirs(extract_dir, exist_ok=True)
+        with zipfile.ZipFile(zip_path, 'r') as zf:
+            zf.extractall(extract_dir)
+        token_dir = os.path.join(TXTRUN_ROOT, f"zip-{token}")
+        os.makedirs(token_dir, exist_ok=True)
+        for name in os.listdir(extract_dir):
+            src = os.path.join(extract_dir, name)
+            dst = os.path.join(token_dir, name)
+            if os.path.isdir(src):
+                shutil.copytree(src, dst, dirs_exist_ok=True)
+            else:
+                shutil.copy2(src, dst)
+    # find folder_path and crop_src
+    root_candidates = [os.path.join(token_dir, d) for d in os.listdir(token_dir) if os.path.isdir(os.path.join(token_dir, d))]
+    folder_path = root_candidates[0] if root_candidates else token_dir
+    crop_src = None
+    for root, dirs, files in os.walk(folder_path):
+        if 'CROP-ShuSpot' in dirs:
+            crop_src = os.path.join(root, 'CROP-ShuSpot')
+            break
+    backend_dir = os.path.dirname(os.path.abspath(__file__))
+    dest_root = os.path.abspath(os.path.join(backend_dir, '..', 'uploads', 'CROP-ShuSpot'))
+    os.makedirs(dest_root, exist_ok=True)
+    if crop_src and os.path.exists(crop_src):
+        for src_dir, dirs, files in os.walk(crop_src):
+            rel = os.path.relpath(src_dir, crop_src)
+            target_dir = os.path.join(dest_root, rel)
+            os.makedirs(target_dir, exist_ok=True)
+            for fname in files:
+                shutil.copy2(os.path.join(src_dir, fname), os.path.join(target_dir, fname))
+    return token, folder_path, crop_src, dest_root
+
+def _rewrite_path_factory(crop_src: Optional[str], dest_root: str):
+    def rewrite_to_served_path(p: str) -> str:
+        try:
+            if crop_src and p and isinstance(p, str) and 'CROP-ShuSpot' in p:
+                src_norm = os.path.normpath(crop_src)
+                if p.startswith(src_norm):
+                    relp = os.path.relpath(p, src_norm)
+                    return os.path.join(dest_root, relp)
+                idx = p.rfind('CROP-ShuSpot')
+                if idx != -1:
+                    relp = p[idx + len('CROP-ShuSpot') + 1:]
+                    return os.path.join(dest_root, relp)
+        except Exception:
+            pass
+        return p
+    return rewrite_to_served_path
+
+@app.post("/shuspot-ingestion/chunked/finish")
+async def chunked_finish(upload_id: str = Form(...), mode: str = Form("preview"), db: Session = Depends(get_db)):
+    try:
+        assembled = _assemble_chunks(upload_id)
+        token, folder_path, crop_src, dest_root = _extract_and_copy_for_token(assembled)
+        rewrite_to_served_path = _rewrite_path_factory(crop_src, dest_root)
+
+        from shuspot_folder_parser import ShuSpotFolderParser
+        parser = ShuSpotFolderParser(folder_path)
+        books = parser.parse_all_books()
+        for b in books:
+            if b.get('_folder_path'):
+                b['_folder_path'] = rewrite_to_served_path(b['_folder_path'])
+            if b.get('_cover_image_path'):
+                b['_cover_image_path'] = rewrite_to_served_path(b['_cover_image_path'])
+            if b.get('_page_sequence'):
+                for pg in b['_page_sequence']:
+                    if isinstance(pg, dict) and pg.get('file_path'):
+                        pg['file_path'] = rewrite_to_served_path(pg['file_path'])
+
+        if mode == 'preview':
+            stats = parser.get_summary_stats()
+            return {
+                "token": token,
+                "selected_folder": folder_path,
+                "parsing_stats": stats,
+                "sample_books": books[:5],
+                "total_parsed": len(books)
+            }
+        elif mode == 'import':
+            imported_count = 0
+            updated_count = 0
+            for book_data in books:
+                title = book_data.get('Name', 'Unknown Title')
+                author = book_data.get('Author', 'Unknown Author')
+                existing_book = db.query(Book).filter(Book.title == title, Book.author == author).first()
+                if existing_book:
+                    existing_book.genre = book_data.get('Category', existing_book.genre)
+                    existing_book.book_type = book_data.get('Media', existing_book.book_type)
+                    existing_book.reading_level = book_data.get('Age', existing_book.reading_level)
+                    existing_book.cover_image_url = book_data.get('_cover_image_path', existing_book.cover_image_url)
+                    existing_book.description = book_data.get('Notes', existing_book.description)
+                    try:
+                        existing_notes = json.loads(existing_book.notes) if existing_book.notes else {}
+                    except Exception:
+                        existing_notes = {}
+                    merged_notes = {
+                        **existing_notes,
+                        'page_sequence': book_data.get('_page_sequence', existing_notes.get('page_sequence', [])),
+                        'total_pages': book_data.get('_total_pages', existing_notes.get('total_pages', 0)),
+                        'folder_path': book_data.get('_folder_path', existing_notes.get('folder_path')),
+                        'cover_image_path': book_data.get('_cover_image_path', existing_notes.get('cover_image_path')),
+                    }
+                    existing_book.notes = json.dumps(merged_notes)
+                    existing_book.file_path = book_data.get('_folder_path', existing_book.file_path)
+                    existing_book.file_name = f"{title}.shuspot"
+                    updated_count += 1
+                else:
+                    db.add(Book(
+                        title=title,
+                        author=author,
+                        genre=book_data.get('Category', 'Unknown'),
+                        book_type=book_data.get('Media', 'Book'),
+                        fiction_type=book_data.get('Fiction Type', 'Fiction'),
+                        reading_level=book_data.get('Age', ''),
+                        cover_image_url=book_data.get('_cover_image_path', ''),
+                        file_path=book_data.get('_folder_path', ''),
+                        file_name=f"{title}.shuspot",
+                        file_size=0,
+                        file_type='FOLDER',
+                        description=book_data.get('Notes', ''),
+                        notes=json.dumps({
+                            'page_sequence': book_data.get('_page_sequence', []),
+                            'total_pages': book_data.get('_total_pages', 0),
+                            'folder_path': book_data.get('_folder_path', ''),
+                            'cover_image_path': book_data.get('_cover_image_path', ''),
+                        })
+                    ))
+                    imported_count += 1
+            db.commit()
+            stats = parser.get_summary_stats()
+            return {
+                "message": f"ZIP import complete: {imported_count} imported, {updated_count} updated",
+                "imported": imported_count,
+                "updated": updated_count,
+                "parsing_stats": stats,
+                "token": token
+            }
+        else:
+            raise HTTPException(status_code=400, detail="Invalid mode")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Chunked finish failed: {str(e)}")
+
+@app.post("/api/shuspot-ingestion/chunked/start")
+async def api_chunked_start(filename: str = Form(...), size: Optional[int] = Form(None)):
+    return await chunked_start(filename, size)
+
+@app.post("/api/shuspot-ingestion/chunked/upload")
+async def api_chunked_upload(upload_id: str = Form(...), chunk_index: int = Form(...), total_chunks: int = Form(...), chunk: UploadFile = File(...)):
+    return await chunked_upload(upload_id, chunk_index, total_chunks, chunk)
+
+@app.post("/api/shuspot-ingestion/chunked/finish")
+async def api_chunked_finish(upload_id: str = Form(...), mode: str = Form("preview"), db: Session = Depends(get_db)):
+    return await chunked_finish(upload_id=upload_id, mode=mode, db=db)
 
 # Mirror under /api for hosting setups that mount API at /api
 @app.post("/api/shuspot-ingestion/upload-zip-and-import")

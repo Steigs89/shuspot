@@ -21,6 +21,7 @@ import GoogleSheetsManager from './components/GoogleSheetsManager';
 import TxtIngestion from './components/TxtIngestion';
 import ShuSpotBookLauncher from './components/ShuSpotBookLauncher';
 import { bookAPI } from './services/api';
+import ZipPreviewModal from './components/ZipPreviewModal';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -51,6 +52,10 @@ function App() {
   // ZIP upload progress
   const [zipUploading, setZipUploading] = useState(false);
   const [zipProgress, setZipProgress] = useState(0);
+  // Preview ZIP state
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewData, setPreviewData] = useState(null);
+  const [previewLoading, setPreviewLoading] = useState(false);
 
   const loadBooks = useCallback(async () => {
     try {
@@ -221,7 +226,7 @@ function App() {
       const form = new FormData();
       form.append('zip_file', file);
 
-      const res = await axios.post('/api/shuspot-ingestion/upload-zip-and-import', form, {
+  const res = await axios.post('/api/shuspot-ingestion/upload-zip-and-import', form, {
         // Do NOT set Content-Type manually; let the browser add the boundary
         onUploadProgress: (evt) => {
           if (evt.total) {
@@ -240,8 +245,49 @@ function App() {
   await loadStats();
     } catch (e) {
       console.error('Quick ZIP upload error:', e);
-  const msg = e?.response?.data?.detail || e.message || 'Upload failed';
-      toast.error(`Upload failed: ${msg}`);
+      // Fallback to chunked upload if 413
+      if (e?.response?.status === 413) {
+        try {
+          const CHUNK_SIZE = 5 * 1024 * 1024; // 5MB
+          const startForm = new FormData();
+          startForm.append('filename', file.name);
+          startForm.append('size', String(file.size));
+          const startRes = await axios.post('/api/shuspot-ingestion/chunked/start', startForm);
+          const { upload_id } = startRes.data;
+          const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
+          for (let i = 0; i < totalChunks; i++) {
+            const chunk = file.slice(i * CHUNK_SIZE, Math.min(file.size, (i + 1) * CHUNK_SIZE));
+            const partForm = new FormData();
+            partForm.append('upload_id', upload_id);
+            partForm.append('chunk_index', String(i));
+            partForm.append('total_chunks', String(totalChunks));
+            partForm.append('chunk', new File([chunk], `${file.name}.part`));
+            await axios.post('/api/shuspot-ingestion/chunked/upload', partForm, {
+              onUploadProgress: (evt) => {
+                if (evt.total) {
+                  const base = Math.round(((i + (evt.loaded / evt.total)) / totalChunks) * 100);
+                  setZipProgress(base);
+                }
+              }
+            });
+          }
+          const finishForm = new FormData();
+          finishForm.append('upload_id', upload_id);
+          finishForm.append('mode', 'import');
+          const finRes = await axios.post('/api/shuspot-ingestion/chunked/finish', finishForm);
+          const json = finRes.data;
+          toast.success(json.message || `ZIP processed: ${json.imported ?? 0} imported, ${json.updated ?? 0} updated`);
+          await loadBooks();
+          await loadStats();
+        } catch (ce) {
+          console.error('Chunked import failed:', ce);
+          const msg2 = ce?.response?.data?.detail || ce.message || 'Chunked upload failed';
+          toast.error(`Upload failed: ${msg2}`);
+        }
+      } else {
+        const msg = e?.response?.data?.detail || e.message || 'Upload failed';
+        toast.error(`Upload failed: ${msg}`);
+      }
     } finally {
       setZipUploading(false);
       setTimeout(() => setZipProgress(0), 800);
@@ -281,6 +327,88 @@ function App() {
     } catch (e) {
       console.error('Import CSV error:', e);
       toast.error(`Import failed: ${e.message}`);
+    }
+  };
+
+  // Preview ZIP -> show modal -> confirm import
+  const handlePreviewZip = async (file) => {
+    try {
+      setPreviewLoading(true);
+      const form = new FormData();
+      form.append('zip_file', file);
+      const res = await axios.post('/api/shuspot-ingestion/upload-zip-preview', form, {
+        onUploadProgress: (evt) => {
+          if (evt.total) {
+            const pct = Math.round((evt.loaded / evt.total) * 100);
+            setZipProgress(pct);
+          }
+        }
+      });
+      setPreviewData(res.data);
+      setPreviewOpen(true);
+    } catch (e) {
+      console.error('ZIP preview error:', e);
+      if (e?.response?.status === 413) {
+        // Fallback to chunked preview
+        try {
+          const CHUNK_SIZE = 5 * 1024 * 1024; // 5MB
+          const startForm = new FormData();
+          startForm.append('filename', file.name);
+          startForm.append('size', String(file.size));
+          const startRes = await axios.post('/api/shuspot-ingestion/chunked/start', startForm);
+          const { upload_id } = startRes.data;
+          const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
+          for (let i = 0; i < totalChunks; i++) {
+            const chunk = file.slice(i * CHUNK_SIZE, Math.min(file.size, (i + 1) * CHUNK_SIZE));
+            const partForm = new FormData();
+            partForm.append('upload_id', upload_id);
+            partForm.append('chunk_index', String(i));
+            partForm.append('total_chunks', String(totalChunks));
+            partForm.append('chunk', new File([chunk], `${file.name}.part`));
+            await axios.post('/api/shuspot-ingestion/chunked/upload', partForm, {
+              onUploadProgress: (evt) => {
+                if (evt.total) {
+                  const base = Math.round(((i + (evt.loaded / evt.total)) / totalChunks) * 100);
+                  setZipProgress(base);
+                }
+              }
+            });
+          }
+          const finishForm = new FormData();
+          finishForm.append('upload_id', upload_id);
+          finishForm.append('mode', 'preview');
+          const finRes = await axios.post('/api/shuspot-ingestion/chunked/finish', finishForm);
+          setPreviewData(finRes.data);
+          setPreviewOpen(true);
+        } catch (ce) {
+          console.error('Chunked preview failed:', ce);
+          const msg2 = ce?.response?.data?.detail || ce.message || 'Preview failed';
+          toast.error(`Preview failed: ${msg2}`);
+        }
+      } else {
+        const msg = e?.response?.data?.detail || e.message || 'Preview failed';
+        toast.error(`Preview failed: ${msg}`);
+      }
+    } finally {
+      setPreviewLoading(false);
+      setTimeout(() => setZipProgress(0), 800);
+    }
+  };
+
+  const handleConfirmImport = async (token) => {
+    try {
+      setPreviewOpen(false);
+      const form = new FormData();
+      form.append('token', token);
+      const res = await axios.post('/api/shuspot-ingestion/confirm-import', form);
+      const json = res.data;
+      toast.success(json.message || 'Import complete');
+      await loadBooks();
+      await loadStats();
+    } catch (e) {
+      console.error('Confirm import error:', e);
+      const msg = e?.response?.data?.detail || e.message || 'Import failed';
+      toast.error(`Import failed: ${msg}`);
     }
   };
 
@@ -464,7 +592,7 @@ function App() {
                   <option value="Video Books">Video Books</option>
                 </select>
 
-                {/* Fast: Upload a ShuSpot ZIP */}
+                {/* Fast: Upload a ShuSpot ZIP (direct import) */}
                 <label className={`btn btn-primary ${zipUploading ? 'disabled' : ''}`} style={{ cursor: zipUploading ? 'not-allowed' : 'pointer', position: 'relative' }}>
                   <UploadIcon size={16} style={{ marginRight: '8px' }} />
                   {zipUploading ? `Uploading ZIP… ${zipProgress}%` : 'Upload ShuSpot ZIP'}
@@ -482,6 +610,28 @@ function App() {
                   {zipUploading && (
                     <div style={{ position: 'absolute', left: 0, bottom: -6, width: '100%', height: 3, background: '#e9ecef' }}>
                       <div style={{ width: `${zipProgress}%`, height: '100%', background: '#0d6efd', transition: 'width 0.2s ease' }} />
+                    </div>
+                  )}
+                </label>
+
+                {/* Preview ZIP before import */}
+                <label className={`btn btn-secondary ${previewLoading ? 'disabled' : ''}`} style={{ cursor: previewLoading ? 'not-allowed' : 'pointer', position: 'relative' }}>
+                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
+                  {previewLoading ? `Previewing… ${zipProgress}%` : 'Preview ZIP'}
+                  <input
+                    type="file"
+                    accept=".zip,application/zip"
+                    style={{ display: 'none' }}
+                    disabled={previewLoading}
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) handlePreviewZip(f);
+                      e.target.value = '';
+                    }}
+                  />
+                  {previewLoading && (
+                    <div style={{ position: 'absolute', left: 0, bottom: -6, width: '100%', height: 3, background: '#e9ecef' }}>
+                      <div style={{ width: `${zipProgress}%`, height: '100%', background: '#6c757d', transition: 'width 0.2s ease' }} />
                     </div>
                   )}
                 </label>
@@ -685,6 +835,12 @@ function App() {
           </div>
         )}
       </div>
+      <ZipPreviewModal
+        isOpen={previewOpen}
+        onClose={() => setPreviewOpen(false)}
+        data={previewData}
+        onConfirm={handleConfirmImport}
+      />
     </div>
   );
 }
