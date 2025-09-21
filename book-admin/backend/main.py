@@ -1263,13 +1263,29 @@ async def upload_zip_preview(zip_file: UploadFile = File(...)):
         dest_root = os.path.abspath(os.path.join(backend_dir, '..', 'uploads', 'CROP-ShuSpot'))
         os.makedirs(dest_root, exist_ok=True)
 
+        def _fast_copy(src_file: str, dst_file: str):
+            try:
+                if os.path.exists(dst_file):
+                    s1 = os.stat(src_file)
+                    s2 = os.stat(dst_file)
+                    if s1.st_size == s2.st_size and int(s1.st_mtime) == int(s2.st_mtime):
+                        return
+            except Exception:
+                pass
+            try:
+                if os.path.exists(dst_file):
+                    os.remove(dst_file)
+                os.link(src_file, dst_file)
+            except Exception:
+                shutil.copy2(src_file, dst_file)
+
         if crop_src and os.path.exists(crop_src):
             for src_dir, dirs, files in os.walk(crop_src):
                 rel = os.path.relpath(src_dir, crop_src)
                 target_dir = os.path.join(dest_root, rel)
                 os.makedirs(target_dir, exist_ok=True)
                 for fname in files:
-                    shutil.copy2(os.path.join(src_dir, fname), os.path.join(target_dir, fname))
+                    _fast_copy(os.path.join(src_dir, fname), os.path.join(target_dir, fname))
 
         def rewrite_to_served_path(p: str) -> str:
             try:
@@ -1495,13 +1511,31 @@ def _extract_and_copy_for_token(zip_path: str):
     backend_dir = os.path.dirname(os.path.abspath(__file__))
     dest_root = os.path.abspath(os.path.join(backend_dir, '..', 'uploads', 'CROP-ShuSpot'))
     os.makedirs(dest_root, exist_ok=True)
+    def _fast_copy(src_file: str, dst_file: str):
+        # Skip if exists with same size and mtime
+        try:
+            if os.path.exists(dst_file):
+                s1 = os.stat(src_file)
+                s2 = os.stat(dst_file)
+                if s1.st_size == s2.st_size and int(s1.st_mtime) == int(s2.st_mtime):
+                    return
+        except Exception:
+            pass
+        # Try hardlink for speed; fallback to copy2
+        try:
+            if os.path.exists(dst_file):
+                os.remove(dst_file)
+            os.link(src_file, dst_file)
+        except Exception:
+            shutil.copy2(src_file, dst_file)
+
     if crop_src and os.path.exists(crop_src):
         for src_dir, dirs, files in os.walk(crop_src):
             rel = os.path.relpath(src_dir, crop_src)
             target_dir = os.path.join(dest_root, rel)
             os.makedirs(target_dir, exist_ok=True)
             for fname in files:
-                shutil.copy2(os.path.join(src_dir, fname), os.path.join(target_dir, fname))
+                _fast_copy(os.path.join(src_dir, fname), os.path.join(target_dir, fname))
     return token, folder_path, crop_src, dest_root
 
 def _rewrite_path_factory(crop_src: Optional[str], dest_root: str):

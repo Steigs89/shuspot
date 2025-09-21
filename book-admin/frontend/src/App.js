@@ -248,29 +248,34 @@ function App() {
       // Fallback to chunked upload if 413
       if (e?.response?.status === 413) {
         try {
-          const CHUNK_SIZE = 5 * 1024 * 1024; // 5MB
+          const CHUNK_SIZE = 8 * 1024 * 1024; // 8MB
+          const CONCURRENCY = 4;
           const startForm = new FormData();
           startForm.append('filename', file.name);
           startForm.append('size', String(file.size));
           const startRes = await axios.post('/api/shuspot-ingestion/chunked/start', startForm);
           const { upload_id } = startRes.data;
           const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
-          for (let i = 0; i < totalChunks; i++) {
+          let completed = 0;
+          const uploadChunk = async (i) => {
             const chunk = file.slice(i * CHUNK_SIZE, Math.min(file.size, (i + 1) * CHUNK_SIZE));
             const partForm = new FormData();
             partForm.append('upload_id', upload_id);
             partForm.append('chunk_index', String(i));
             partForm.append('total_chunks', String(totalChunks));
             partForm.append('chunk', new File([chunk], `${file.name}.part`));
-            await axios.post('/api/shuspot-ingestion/chunked/upload', partForm, {
-              onUploadProgress: (evt) => {
-                if (evt.total) {
-                  const base = Math.round(((i + (evt.loaded / evt.total)) / totalChunks) * 100);
-                  setZipProgress(base);
-                }
-              }
-            });
-          }
+            await axios.post('/api/shuspot-ingestion/chunked/upload', partForm);
+            completed += 1;
+            setZipProgress(Math.round((completed / totalChunks) * 100));
+          };
+          const queue = Array.from({ length: totalChunks }, (_, i) => i);
+          const workers = Array.from({ length: Math.min(CONCURRENCY, totalChunks) }, async () => {
+            while (queue.length) {
+              const idx = queue.shift();
+              if (idx !== undefined) await uploadChunk(idx);
+            }
+          });
+          await Promise.all(workers);
           const finishForm = new FormData();
           finishForm.append('upload_id', upload_id);
           finishForm.append('mode', 'import');
@@ -351,29 +356,34 @@ function App() {
       if (e?.response?.status === 413) {
         // Fallback to chunked preview
         try {
-          const CHUNK_SIZE = 5 * 1024 * 1024; // 5MB
+          const CHUNK_SIZE = 8 * 1024 * 1024; // 8MB
+          const CONCURRENCY = 4;
           const startForm = new FormData();
           startForm.append('filename', file.name);
           startForm.append('size', String(file.size));
           const startRes = await axios.post('/api/shuspot-ingestion/chunked/start', startForm);
           const { upload_id } = startRes.data;
           const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
-          for (let i = 0; i < totalChunks; i++) {
+          let completed = 0;
+          const uploadChunk = async (i) => {
             const chunk = file.slice(i * CHUNK_SIZE, Math.min(file.size, (i + 1) * CHUNK_SIZE));
             const partForm = new FormData();
             partForm.append('upload_id', upload_id);
             partForm.append('chunk_index', String(i));
             partForm.append('total_chunks', String(totalChunks));
             partForm.append('chunk', new File([chunk], `${file.name}.part`));
-            await axios.post('/api/shuspot-ingestion/chunked/upload', partForm, {
-              onUploadProgress: (evt) => {
-                if (evt.total) {
-                  const base = Math.round(((i + (evt.loaded / evt.total)) / totalChunks) * 100);
-                  setZipProgress(base);
-                }
-              }
-            });
-          }
+            await axios.post('/api/shuspot-ingestion/chunked/upload', partForm);
+            completed += 1;
+            setZipProgress(Math.round((completed / totalChunks) * 100));
+          };
+          const queue = Array.from({ length: totalChunks }, (_, i) => i);
+          const workers = Array.from({ length: Math.min(CONCURRENCY, totalChunks) }, async () => {
+            while (queue.length) {
+              const idx = queue.shift();
+              if (idx !== undefined) await uploadChunk(idx);
+            }
+          });
+          await Promise.all(workers);
           const finishForm = new FormData();
           finishForm.append('upload_id', upload_id);
           finishForm.append('mode', 'preview');
