@@ -15,6 +15,8 @@ import tempfile
 import zipfile
 import uuid
 from pathlib import Path
+import threading
+import time
 
 # Optional heavy dependencies
 try:
@@ -114,6 +116,9 @@ os.makedirs(TXTRUN_ROOT, exist_ok=True)
 # Chunked upload workspace
 CHUNK_ROOT = os.path.join(TXTRUN_ROOT, "chunks")
 os.makedirs(CHUNK_ROOT, exist_ok=True)
+
+# Simple in-memory job store for background imports
+JOBS = {}
 
 @app.get("/test-static")
 async def test_static():
@@ -1449,6 +1454,148 @@ async def confirm_import(token: str = Form(...), db: Session = Depends(get_db)):
 async def api_confirm_import(token: str = Form(...), db: Session = Depends(get_db)):
     return await confirm_import(token=token, db=db)
 
+def _do_import_for_token(token: str, job_id: str):
+    """Background job: parse token folder, rewrite paths, upsert into DB, update JOBS."""
+    JOBS[job_id] = {"status": "running", "progress": 0, "imported": 0, "updated": 0, "error": None, "started_at": time.time()}
+    # Open a new DB session for this thread
+    from database import SessionLocal, Book
+    db_sess = SessionLocal()
+    try:
+        token_dir = os.path.join(TXTRUN_ROOT, f"zip-{token}")
+        if not os.path.exists(token_dir):
+            raise RuntimeError("Token not found")
+        root_candidates = [os.path.join(token_dir, d) for d in os.listdir(token_dir) if os.path.isdir(os.path.join(token_dir, d))]
+        folder_path = root_candidates[0] if root_candidates else token_dir
+        crop_src = None
+        for root, dirs, files in os.walk(folder_path):
+            if 'CROP-ShuSpot' in dirs:
+                crop_src = os.path.join(root, 'CROP-ShuSpot')
+                break
+        backend_dir = os.path.dirname(os.path.abspath(__file__))
+        dest_root = os.path.abspath(os.path.join(backend_dir, '..', 'uploads', 'CROP-ShuSpot'))
+        os.makedirs(dest_root, exist_ok=True)
+
+        def rewrite_to_served_path(p: str) -> str:
+            try:
+                if crop_src and p and isinstance(p, str) and 'CROP-ShuSpot' in p:
+                    src_norm = os.path.normpath(crop_src)
+                    if p.startswith(src_norm):
+                        relp = os.path.relpath(p, src_norm)
+                        return os.path.join(dest_root, relp)
+                    idx = p.rfind('CROP-ShuSpot')
+                    if idx != -1:
+                        relp = p[idx + len('CROP-ShuSpot') + 1:]
+                        return os.path.join(dest_root, relp)
+            except Exception:
+                pass
+            return p
+
+        from shuspot_folder_parser import ShuSpotFolderParser
+        parser = ShuSpotFolderParser(folder_path)
+        books = parser.parse_all_books()
+        total = max(1, len(books))
+        imported_count = 0
+        updated_count = 0
+        for idx, book_data in enumerate(books, start=1):
+            try:
+                title = book_data.get('Name', 'Unknown Title')
+                author = book_data.get('Author', 'Unknown Author')
+                if book_data.get('_folder_path'):
+                    book_data['_folder_path'] = rewrite_to_served_path(book_data['_folder_path'])
+                if book_data.get('_cover_image_path'):
+                    book_data['_cover_image_path'] = rewrite_to_served_path(book_data['_cover_image_path'])
+                if book_data.get('_page_sequence'):
+                    for pg in book_data['_page_sequence']:
+                        if isinstance(pg, dict) and pg.get('file_path'):
+                            pg['file_path'] = rewrite_to_served_path(pg['file_path'])
+
+                existing_book = db_sess.query(Book).filter(Book.title == title, Book.author == author).first()
+                if existing_book:
+                    existing_book.genre = book_data.get('Category', existing_book.genre)
+                    existing_book.book_type = book_data.get('Media', existing_book.book_type)
+                    existing_book.reading_level = book_data.get('Age', existing_book.reading_level)
+                    existing_book.cover_image_url = book_data.get('_cover_image_path', existing_book.cover_image_url)
+                    existing_book.description = book_data.get('Notes', existing_book.description)
+                    try:
+                        existing_notes = json.loads(existing_book.notes) if existing_book.notes else {}
+                    except Exception:
+                        existing_notes = {}
+                    merged_notes = {
+                        **existing_notes,
+                        'page_sequence': book_data.get('_page_sequence', existing_notes.get('page_sequence', [])),
+                        'total_pages': book_data.get('_total_pages', existing_notes.get('total_pages', 0)),
+                        'folder_path': book_data.get('_folder_path', existing_notes.get('folder_path')),
+                        'cover_image_path': book_data.get('_cover_image_path', existing_notes.get('cover_image_path')),
+                    }
+                    existing_book.notes = json.dumps(merged_notes)
+                    existing_book.file_path = book_data.get('_folder_path', existing_book.file_path)
+                    existing_book.file_name = f"{title}.shuspot"
+                    updated_count += 1
+                else:
+                    db_sess.add(Book(
+                        title=title,
+                        author=author,
+                        genre=book_data.get('Category', 'Unknown'),
+                        book_type=book_data.get('Media', 'Book'),
+                        fiction_type=book_data.get('Fiction Type', 'Fiction'),
+                        reading_level=book_data.get('Age', ''),
+                        cover_image_url=book_data.get('_cover_image_path', ''),
+                        file_path=book_data.get('_folder_path', ''),
+                        file_name=f"{title}.shuspot",
+                        file_size=0,
+                        file_type='FOLDER',
+                        description=book_data.get('Notes', ''),
+                        notes=json.dumps({
+                            'page_sequence': book_data.get('_page_sequence', []),
+                            'total_pages': book_data.get('_total_pages', 0),
+                            'folder_path': book_data.get('_folder_path', ''),
+                            'cover_image_path': book_data.get('_cover_image_path', ''),
+                        })
+                    ))
+                    imported_count += 1
+                db_sess.commit()
+            except Exception as ie:
+                # Continue but log
+                logging.exception(f"Import item failed: {ie}")
+            finally:
+                JOBS[job_id].update({"progress": round((idx/total)*100)})
+        JOBS[job_id].update({
+            "status": "completed",
+            "imported": imported_count,
+            "updated": updated_count,
+            "finished_at": time.time(),
+            "message": f"Import complete: {imported_count} imported, {updated_count} updated"
+        })
+    except Exception as e:
+        JOBS[job_id].update({"status": "failed", "error": str(e), "finished_at": time.time()})
+    finally:
+        try:
+            db_sess.close()
+        except Exception:
+            pass
+
+@app.post("/shuspot-ingestion/confirm-import-async")
+async def confirm_import_async(token: str = Form(...)):
+    job_id = uuid.uuid4().hex
+    t = threading.Thread(target=_do_import_for_token, args=(token, job_id), daemon=True)
+    t.start()
+    return {"job_id": job_id, "status": "queued"}
+
+@app.post("/api/shuspot-ingestion/confirm-import-async")
+async def api_confirm_import_async(token: str = Form(...)):
+    return await confirm_import_async(token)
+
+@app.get("/shuspot-ingestion/import-status")
+async def import_status(job_id: str):
+    job = JOBS.get(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return job
+
+@app.get("/api/shuspot-ingestion/import-status")
+async def api_import_status(job_id: str):
+    return await import_status(job_id)
+
 # Chunked upload endpoints to bypass reverse-proxy body limits
 @app.post("/shuspot-ingestion/chunked/start")
 async def chunked_start(filename: str = Form(...), size: Optional[int] = Form(None)):
@@ -1643,6 +1790,11 @@ async def chunked_finish(upload_id: str = Form(...), mode: str = Form("preview")
                 "parsing_stats": stats,
                 "token": token
             }
+        elif mode == 'import_async':
+            job_id = uuid.uuid4().hex
+            t = threading.Thread(target=_do_import_for_token, args=(token, job_id), daemon=True)
+            t.start()
+            return {"job_id": job_id, "status": "queued", "token": token}
         else:
             raise HTTPException(status_code=400, detail="Invalid mode")
     except HTTPException:

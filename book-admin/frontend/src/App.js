@@ -278,12 +278,28 @@ function App() {
           await Promise.all(workers);
           const finishForm = new FormData();
           finishForm.append('upload_id', upload_id);
-          finishForm.append('mode', 'import');
+          finishForm.append('mode', 'import_async');
           const finRes = await axios.post('/api/shuspot-ingestion/chunked/finish', finishForm);
-          const json = finRes.data;
-          toast.success(json.message || `ZIP processed: ${json.imported ?? 0} imported, ${json.updated ?? 0} updated`);
-          await loadBooks();
-          await loadStats();
+          const { job_id } = finRes.data;
+          toast.info('Import started in background');
+          const poll = async () => {
+            try {
+              const st = await axios.get('/api/shuspot-ingestion/import-status', { params: { job_id } });
+              if (st.data.status === 'completed') {
+                toast.success(st.data.message || 'Import complete');
+                await loadBooks();
+                await loadStats();
+              } else if (st.data.status === 'failed') {
+                toast.error(st.data.error || 'Import failed');
+              } else {
+                setTimeout(poll, 1500);
+              }
+            } catch (se) {
+              console.warn('Polling error', se);
+              setTimeout(poll, 2500);
+            }
+          };
+          setTimeout(poll, 1000);
         } catch (ce) {
           console.error('Chunked import failed:', ce);
           const msg2 = ce?.response?.data?.detail || ce.message || 'Chunked upload failed';
@@ -410,11 +426,27 @@ function App() {
       setPreviewOpen(false);
       const form = new FormData();
       form.append('token', token);
-      const res = await axios.post('/api/shuspot-ingestion/confirm-import', form);
-      const json = res.data;
-      toast.success(json.message || 'Import complete');
-      await loadBooks();
-      await loadStats();
+      const res = await axios.post('/api/shuspot-ingestion/confirm-import-async', form);
+      const { job_id } = res.data;
+      toast.info('Import started in background');
+      const poll = async () => {
+        try {
+          const st = await axios.get('/api/shuspot-ingestion/import-status', { params: { job_id } });
+          if (st.data.status === 'completed') {
+            toast.success(st.data.message || 'Import complete');
+            await loadBooks();
+            await loadStats();
+          } else if (st.data.status === 'failed') {
+            toast.error(st.data.error || 'Import failed');
+          } else {
+            setTimeout(poll, 1500);
+          }
+        } catch (se) {
+          console.warn('Polling error', se);
+          setTimeout(poll, 2500);
+        }
+      };
+      setTimeout(poll, 1000);
     } catch (e) {
       console.error('Confirm import error:', e);
       const msg = e?.response?.data?.detail || e.message || 'Import failed';
