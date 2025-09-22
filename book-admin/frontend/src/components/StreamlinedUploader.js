@@ -13,23 +13,74 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
     if (!manifestFile) return;
 
     setIsUploading(true);
-    setUploadStatus('Processing Rclone manifest...');
+    setUploadStatus('Reading manifest file...');
     setUploadProgress(10);
 
     try {
-      const formData = new FormData();
-      formData.append('manifest', manifestFile);
-      formData.append('bucket', 'books');
-      formData.append('prefix', '');
-      formData.append('public_base_url', 'https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books');
+      // Read the manifest file content
+      const fileContent = await manifestFile.text();
+      const manifestData = JSON.parse(fileContent);
+      
+      setUploadProgress(30);
+      setUploadStatus('Processing book structure...');
 
-      const response = await fetch('/api/supabase/preview-manifest', {
-        method: 'POST',
-        body: formData,
+      // Convert manifest to books format expected by the API
+      const books = [];
+      const cropFiles = {};
+      
+      // Group files by book folder
+      manifestData.forEach(entry => {
+        const path = entry.Path || entry.path;
+        if (!path || entry.IsDir) return;
+        
+        // Look for crop files: folder/resized/crop-N.png
+        const cropMatch = path.match(/^(.+)\/resized\/crop-(\d+)\.(png|jpg|jpeg|webp)$/i);
+        if (cropMatch) {
+          const folder = cropMatch[1];
+          const pageNum = parseInt(cropMatch[2]);
+          
+          if (!cropFiles[folder]) {
+            cropFiles[folder] = [];
+          }
+          
+          cropFiles[folder].push({
+            page_number: pageNum,
+            url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/${encodeURIComponent(path)}`,
+            display_name: `Page ${pageNum}`
+          });
+        }
       });
 
-      setUploadProgress(50);
-      setUploadStatus('Parsing book structure...');
+      // Create book objects
+      Object.keys(cropFiles).forEach(folder => {
+        const pages = cropFiles[folder].sort((a, b) => a.page_number - b.page_number);
+        const folderParts = folder.split('/');
+        const bookName = folderParts[folderParts.length - 1];
+        const category = folderParts.length > 1 ? folderParts[folderParts.length - 2] : 'Unknown';
+        
+        books.push({
+          title: bookName,
+          author: 'Unknown',
+          genre: category,
+          book_type: 'Read to Me',
+          _page_sequence: pages,
+          _total_pages: pages.length,
+          _folder_path: folder,
+          cover_image_url: pages[0]?.url
+        });
+      });
+
+      setUploadProgress(60);
+      setUploadStatus('Importing books to database...');
+
+      // Send books to the API
+      const response = await fetch('/api/shuspot-ingestion/ingest-manifest', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ books }),
+      });
 
       if (!response.ok) {
         throw new Error(`Upload failed: ${response.statusText}`);
@@ -37,29 +88,13 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
 
       const result = await response.json();
       
-      setUploadProgress(80);
-      setUploadStatus('Importing books to database...');
-
-      // Import the parsed books using the token from preview
-      const importResponse = await fetch('/api/supabase/confirm-import', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `token=${result.token}`,
-      });
-
-      if (!importResponse.ok) {
-        throw new Error('Failed to import books to database');
-      }
-
-      const importResult = await importResponse.json();
-      
       setUploadProgress(100);
       setUploadStatus('Upload complete!');
       
-      toast.success(`Successfully uploaded ${importResult.imported_count} books via Rclone!`);
+      toast.success(`Successfully uploaded ${result.db_imported || books.length} books via Rclone!`);
       
       if (onUploadComplete) {
-        onUploadComplete(importResult);
+        onUploadComplete(result);
       }
 
     } catch (error) {
