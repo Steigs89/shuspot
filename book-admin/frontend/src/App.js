@@ -20,8 +20,10 @@ import GoogleSheetsSetup from './components/GoogleSheetsSetup';
 import GoogleSheetsManager from './components/GoogleSheetsManager';
 import TxtIngestion from './components/TxtIngestion';
 import ShuSpotBookLauncher from './components/ShuSpotBookLauncher';
+import StreamlinedUploader from './components/StreamlinedUploader';
 import { bookAPI } from './services/api';
 import ZipPreviewModal from './components/ZipPreviewModal';
+import './styles/StreamlinedUploader.css';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -633,7 +635,16 @@ function App() {
               </div>
             )}
 
-            {/* Local Database Controls - only show for local tab */}
+            {/* Streamlined Upload System */}
+            <StreamlinedUploader 
+              onUploadComplete={(result) => {
+                // Refresh the books list after successful upload
+                fetchBooks();
+                toast.success(`Successfully processed ${result.imported_count || result.books?.length || 0} books!`);
+              }}
+            />
+
+            {/* Search and Filter Controls */}
             <div className="controls">
               <div className="controls-row">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -682,132 +693,13 @@ function App() {
                   <option value="Video Books">Video Books</option>
                 </select>
 
-                {/* Fast: Upload a ShuSpot ZIP (direct import) */}
-                <label className={`btn btn-primary ${zipUploading ? 'disabled' : ''}`} style={{ cursor: zipUploading ? 'not-allowed' : 'pointer', position: 'relative' }}>
-                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
-                  {zipUploading ? `Uploading ZIP… ${zipProgress}%` : 'Upload ShuSpot ZIP'}
-                  <input
-                    type="file"
-                    accept=".zip,application/zip"
-                    style={{ display: 'none' }}
-                    disabled={zipUploading}
-                    onChange={(e) => {
-                      const f = e.target.files?.[0];
-                      if (f) handleQuickZipUpload(f);
-                      e.target.value = '';
-                    }}
-                  />
-                  {zipUploading && (
-                    <div style={{ position: 'absolute', left: 0, bottom: -6, width: '100%', height: 3, background: '#e9ecef' }}>
-                      <div style={{ width: `${zipProgress}%`, height: '100%', background: '#0d6efd', transition: 'width 0.2s ease' }} />
-                    </div>
-                  )}
-                </label>
-
-                {/* Preview ZIP before import */}
-                <label className={`btn btn-secondary ${previewLoading ? 'disabled' : ''}`} style={{ cursor: previewLoading ? 'not-allowed' : 'pointer', position: 'relative' }}>
-                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
-                  {previewLoading ? `Previewing… ${zipProgress}%` : 'Preview ZIP'}
-                  <input
-                    type="file"
-                    accept=".zip,application/zip"
-                    style={{ display: 'none' }}
-                    disabled={previewLoading}
-                    onChange={(e) => {
-                      const f = e.target.files?.[0];
-                      if (f) handlePreviewZip(f);
-                      e.target.value = '';
-                    }}
-                  />
-                  {previewLoading && (
-                    <div style={{ position: 'absolute', left: 0, bottom: -6, width: '100%', height: 3, background: '#e9ecef' }}>
-                      <div style={{ width: `${zipProgress}%`, height: '100%', background: '#6c757d', transition: 'width 0.2s ease' }} />
-                    </div>
-                  )}
-                </label>
-
-                <button
-                  onClick={() => setShowUpload(!showUpload)}
-                  className="btn btn-primary"
-                >
-                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
-                  {showUpload ? 'Hide Upload' : 'Upload Books'}
-                </button>
-
+                {/* Essential Actions Only */}
                 <button
                   onClick={handleExportCSV}
                   className="btn btn-secondary"
                 >
                   <Download size={16} style={{ marginRight: '8px' }} />
                   Export CSV
-                </button>
-
-                <label className="btn btn-secondary" style={{ cursor: 'pointer' }}>
-                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
-                  Import JSON
-                  <input
-                    type="file"
-                    accept="application/json"
-                    style={{ display: 'none' }}
-                    onChange={(e) => {
-                      const f = e.target.files?.[0];
-                      if (f) handleImportJson(f);
-                      e.target.value = '';
-                    }}
-                  />
-                </label>
-
-                <label className="btn btn-secondary" style={{ cursor: 'pointer' }}>
-                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
-                  Import CSV
-                  <input
-                    type="file"
-                    accept=".csv,text/csv"
-                    style={{ display: 'none' }}
-                    onChange={(e) => {
-                      const f = e.target.files?.[0];
-                      if (f) handleImportCsv(f);
-                      e.target.value = '';
-                    }}
-                  />
-                </label>
-
-                <label className="btn btn-danger" style={{ cursor: 'pointer' }}>
-                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
-                  Replace (JSON)
-                  <input
-                    type="file"
-                    accept="application/json"
-                    style={{ display: 'none' }}
-                    onChange={(e) => {
-                      const f = e.target.files?.[0];
-                      if (f) handleReplaceJson(f);
-                      e.target.value = '';
-                    }}
-                  />
-                </label>
-
-                <label className="btn btn-danger" style={{ cursor: 'pointer' }}>
-                  <UploadIcon size={16} style={{ marginRight: '8px' }} />
-                  Replace (CSV)
-                  <input
-                    type="file"
-                    accept=".csv,text/csv"
-                    style={{ display: 'none' }}
-                    onChange={(e) => {
-                      const f = e.target.files?.[0];
-                      if (f) handleReplaceCsv(f);
-                      e.target.value = '';
-                    }}
-                  />
-                </label>
-
-                <button
-                  onClick={handleClearDatabase}
-                  className="btn btn-danger"
-                >
-                  <Settings size={16} style={{ marginRight: '8px' }} />
-                  Clear Database
                 </button>
 
                 <button
@@ -817,46 +709,6 @@ function App() {
                   <Cloud size={16} style={{ marginRight: '8px' }} />
                   Sync from Sheets
                 </button>
-
-                {/* Supabase Import (rclone manifest) */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 16 }}>
-                  <input
-                    placeholder="bucket"
-                    value={supaBucket}
-                    onChange={(e) => setSupaBucket(e.target.value)}
-                    className="search-input"
-                    style={{ width: 140 }}
-                  />
-                  <input
-                    placeholder="prefix (optional)"
-                    value={supaPrefix}
-                    onChange={(e) => setSupaPrefix(e.target.value)}
-                    className="search-input"
-                    style={{ width: 200 }}
-                  />
-                  <input
-                    placeholder="public base URL (optional)"
-                    value={supaBaseUrl}
-                    onChange={(e) => setSupaBaseUrl(e.target.value)}
-                    className="search-input"
-                    style={{ width: 260 }}
-                  />
-                  <label className={`btn btn-secondary ${supaBusy ? 'disabled' : ''}`} style={{ cursor: supaBusy ? 'not-allowed' : 'pointer' }}>
-                    <UploadIcon size={16} style={{ marginRight: 8 }} />
-                    {supaBusy ? 'Parsing…' : 'Supabase Import (lsjson)'}
-                    <input
-                      type="file"
-                      accept="application/json,.json"
-                      style={{ display: 'none' }}
-                      disabled={supaBusy}
-                      onChange={(e) => {
-                        const f = e.target.files?.[0];
-                        if (f) handleSupabasePreview(f);
-                        e.target.value = '';
-                      }}
-                    />
-                  </label>
-                </div>
               </div>
             </div>
 
