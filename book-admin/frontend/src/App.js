@@ -639,7 +639,7 @@ function App() {
             <StreamlinedUploader 
               onUploadComplete={(result) => {
                 // Refresh the books list after successful upload
-                fetchBooks();
+                loadBooks();
                 toast.success(`Successfully processed ${result.imported_count || result.books?.length || 0} books!`);
               }}
             />
