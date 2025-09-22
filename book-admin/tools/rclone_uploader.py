@@ -28,7 +28,7 @@ from pathlib import Path
 from datetime import datetime
 
 class RcloneUploader:
-    def __init__(self, supabase_remote="supabase", bucket="shuspot-books"):
+    def __init__(self, supabase_remote="supa", bucket="books"):
         self.supabase_remote = supabase_remote
         self.bucket = bucket
         self.base_path = f"{supabase_remote}:{bucket}"
@@ -62,9 +62,9 @@ class RcloneUploader:
                 print("\nTo configure Supabase remote:")
                 print(f"   rclone config create {self.supabase_remote} s3 \\")
                 print("     provider=Other \\")
-                print("     endpoint=https://your-project.supabase.co/storage/v1/s3 \\")
-                print("     access_key_id=your-access-key \\")
-                print("     secret_access_key=your-secret-key")
+                print("     endpoint=https://xzwdtcczndgglqikmlwj.storage.supabase.co/storage/v1/s3 \\")
+                print("     access_key_id=45ac9af4e1e039c4e79fe332833d31e1 \\")
+                print("     secret_access_key=fae79bf3e12cb133b4ceced13c506f5c205544cad11ea4083e449deac1ca7d54")
                 return False
         except subprocess.CalledProcessError:
             print("❌ Failed to check Rclone remotes")
@@ -195,10 +195,10 @@ Examples:
                        help='Local folder path to upload')
     parser.add_argument('--remote-path', 
                        help='Remote path in Supabase (default: folder name)')
-    parser.add_argument('--remote', default='supabase',
-                       help='Rclone remote name (default: supabase)')
-    parser.add_argument('--bucket', default='shuspot-books',
-                       help='Supabase bucket name (default: shuspot-books)')
+    parser.add_argument('--remote', default='supa',
+                       help='Rclone remote name (default: supa)')
+    parser.add_argument('--bucket', default='books',
+                       help='Supabase bucket name (default: books)')
     parser.add_argument('--manifest-only', action='store_true',
                        help='Only generate manifest, skip upload')
     parser.add_argument('--output', 

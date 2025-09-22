@@ -52,16 +52,16 @@ fi
 echo "✓ Rclone is installed"
 
 # Check if Supabase remote exists
-if ! rclone listremotes | grep -q "supabase:"; then
+if ! rclone listremotes | grep -q "supa:"; then
     echo "Error: Supabase remote not configured."
     echo "Please configure Rclone with your Supabase credentials first."
     echo ""
     echo "Example:"
-    echo "  rclone config create supabase s3 \\"
+    echo "  rclone config create supa s3 \\"
     echo "    provider=Other \\"
-    echo "    endpoint=https://your-project.supabase.co/storage/v1/s3 \\"
-    echo "    access_key_id=your-access-key \\"
-    echo "    secret_access_key=your-secret-key"
+    echo "    endpoint=https://xzwdtcczndgglqikmlwj.storage.supabase.co/storage/v1/s3 \\"
+    echo "    access_key_id=45ac9af4e1e039c4e79fe332833d31e1 \\"
+    echo "    secret_access_key=fae79bf3e12cb133b4ceced13c506f5c205544cad11ea4083e449deac1ca7d54"
     exit 1
 fi
 
@@ -73,7 +73,7 @@ echo "Uploading to Supabase..."
 echo "This may take a while for large folders..."
 echo ""
 
-if rclone sync "$BOOK_FOLDER" "supabase:shuspot-books/$FOLDER_NAME" --progress --transfers=4; then
+if rclone sync "$BOOK_FOLDER" "supa:books/$FOLDER_NAME" --progress --transfers=4; then
     echo ""
     echo "✅ Upload completed successfully!"
     echo ""
@@ -88,7 +88,7 @@ echo "Generating manifest file..."
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 MANIFEST_FILE="manifest_${FOLDER_NAME}_${TIMESTAMP}.json"
 
-if rclone lsjson --recursive "supabase:shuspot-books/$FOLDER_NAME" > "$MANIFEST_FILE"; then
+if rclone lsjson --recursive "supa:books/$FOLDER_NAME" > "$MANIFEST_FILE"; then
     echo "✅ Manifest saved to: $MANIFEST_FILE"
     echo ""
 else

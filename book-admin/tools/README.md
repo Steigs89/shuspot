@@ -13,11 +13,12 @@ This folder contains tools to help you upload large book collections to your liv
 
 2. **Configure Supabase Remote** (one-time setup):
    ```bash
-   rclone config create supabase s3 \
+   rclone config create supa s3 \
      provider=Other \
-     endpoint=https://your-project.supabase.co/storage/v1/s3 \
-     access_key_id=your-access-key \
-     secret_access_key=your-secret-key
+     endpoint=https://xzwdtcczndgglqikmlwj.storage.supabase.co/storage/v1/s3 \
+     access_key_id=45ac9af4e1e039c4e79fe332833d31e1 \
+     secret_access_key=fae79bf3e12cb133b4ceced13c506f5c205544cad11ea4083e449deac1ca7d54 \
+     region=us-east-1
    ```
 
 3. **Upload Your Books**:
@@ -69,8 +70,8 @@ python rclone_uploader.py /path/to/books
 # Upload to specific remote path
 python rclone_uploader.py /path/to/books --remote-path "CROP-ShuSpot/Baking"
 
-# Use custom remote name
-python rclone_uploader.py /path/to/books --remote "my-supabase"
+# Use custom remote name (default is 'supa')
+python rclone_uploader.py /path/to/books --remote "supa"
 
 # Generate manifest only (no upload)
 python rclone_uploader.py --manifest-only --remote-path "existing/path"
@@ -78,8 +79,8 @@ python rclone_uploader.py --manifest-only --remote-path "existing/path"
 
 **Options**:
 - `--remote-path`: Custom path in Supabase bucket
-- `--remote`: Custom Rclone remote name (default: "supabase")
-- `--bucket`: Custom bucket name (default: "shuspot-books")
+- `--remote`: Custom Rclone remote name (default: "supa")
+- `--bucket`: Custom bucket name (default: "books")
 - `--manifest-only`: Generate manifest without uploading
 - `--output`: Custom manifest filename
 
@@ -122,11 +123,12 @@ curl https://rclone.org/install.sh | sudo bash
 
 ### Supabase Remote Not Configured
 ```bash
-rclone config create supabase s3 \
+rclone config create supa s3 \
   provider=Other \
-  endpoint=https://YOUR-PROJECT.supabase.co/storage/v1/s3 \
-  access_key_id=YOUR-ACCESS-KEY \
-  secret_access_key=YOUR-SECRET-KEY
+  endpoint=https://xzwdtcczndgglqikmlwj.storage.supabase.co/storage/v1/s3 \
+  access_key_id=45ac9af4e1e039c4e79fe332833d31e1 \
+  secret_access_key=fae79bf3e12cb133b4ceced13c506f5c205544cad11ea4083e449deac1ca7d54 \
+  region=us-east-1
 ```
 
 ### Upload Fails
@@ -153,7 +155,7 @@ If you encounter issues:
 
 1. Check the error messages carefully
 2. Verify your Rclone configuration: `rclone config show`
-3. Test basic Rclone functionality: `rclone ls supabase:shuspot-books`
+3. Test basic Rclone functionality: `rclone ls supa:books`
 4. Check Supabase dashboard for upload status
 
 ## 🎯 Workflow Summary

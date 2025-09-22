@@ -59,17 +59,17 @@ if errorlevel 1 (
 echo ✓ Rclone is installed
 
 REM Check if Supabase remote exists
-rclone listremotes | findstr "supabase:" >nul
+rclone listremotes | findstr "supa:" >nul
 if errorlevel 1 (
     echo Error: Supabase remote not configured.
     echo Please configure Rclone with your Supabase credentials first.
     echo.
     echo Example:
-    echo   rclone config create supabase s3 ^
+    echo   rclone config create supa s3 ^
     echo     provider=Other ^
-    echo     endpoint=https://your-project.supabase.co/storage/v1/s3 ^
-    echo     access_key_id=your-access-key ^
-    echo     secret_access_key=your-secret-key
+    echo     endpoint=https://xzwdtcczndgglqikmlwj.storage.supabase.co/storage/v1/s3 ^
+    echo     access_key_id=45ac9af4e1e039c4e79fe332833d31e1 ^
+    echo     secret_access_key=fae79bf3e12cb133b4ceced13c506f5c205544cad11ea4083e449deac1ca7d54
     pause
     exit /b 1
 )
@@ -82,7 +82,7 @@ echo Uploading to Supabase...
 echo This may take a while for large folders...
 echo.
 
-rclone sync "%BOOK_FOLDER%" "supabase:shuspot-books/%FOLDER_NAME%" --progress --transfers=4
+rclone sync "%BOOK_FOLDER%" "supa:books/%FOLDER_NAME%" --progress --transfers=4
 
 if errorlevel 1 (
     echo.
@@ -100,7 +100,7 @@ echo Generating manifest file...
 set "MANIFEST_FILE=manifest_%FOLDER_NAME%_%date:~-4,4%%date:~-10,2%%date:~-7,2%_%time:~0,2%%time:~3,2%%time:~6,2%.json"
 set "MANIFEST_FILE=%MANIFEST_FILE: =0%"
 
-rclone lsjson --recursive "supabase:shuspot-books/%FOLDER_NAME%" > "%MANIFEST_FILE%"
+rclone lsjson --recursive "supa:books/%FOLDER_NAME%" > "%MANIFEST_FILE%"
 
 if errorlevel 1 (
     echo ❌ Failed to generate manifest
