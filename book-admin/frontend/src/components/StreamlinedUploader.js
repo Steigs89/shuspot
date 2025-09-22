@@ -19,8 +19,11 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
     try {
       const formData = new FormData();
       formData.append('manifest', manifestFile);
+      formData.append('bucket', 'books');
+      formData.append('prefix', '');
+      formData.append('public_base_url', 'https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books');
 
-      const response = await fetch('/api/preview-supabase-import', {
+      const response = await fetch('/api/supabase/preview-manifest', {
         method: 'POST',
         body: formData,
       });
@@ -37,11 +40,11 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       setUploadProgress(80);
       setUploadStatus('Importing books to database...');
 
-      // Import the parsed books
-      const importResponse = await fetch('/api/import-parsed-books', {
+      // Import the parsed books using the token from preview
+      const importResponse = await fetch('/api/supabase/confirm-import', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ books: result.books }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `token=${result.token}`,
       });
 
       if (!importResponse.ok) {
