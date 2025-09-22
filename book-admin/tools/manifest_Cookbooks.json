@@ -1,0 +1,288 @@
+[
+  {
+    "Path": "ABCs/audio2.mp3",
+    "Name": "audio2.mp3",
+    "Size": 224431,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/audio3.mp3",
+    "Name": "audio3.mp3",
+    "Size": 142882,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/audio4.mp3",
+    "Name": "audio4.mp3",
+    "Size": 106314,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/audio5.mp3",
+    "Name": "audio5.mp3",
+    "Size": 146474,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/audio6.mp3",
+    "Name": "audio6.mp3",
+    "Size": 102977,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/audio7.mp3",
+    "Name": "audio7.mp3",
+    "Size": 99724,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/audio8.mp3",
+    "Name": "audio8.mp3",
+    "Size": 1557278,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 25888,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/description.txt",
+    "Name": "description.txt",
+    "Size": 213,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 58007,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3672185,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 2331267,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 2526809,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3099716,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 1560528,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 2487208,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2828065,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 2603319,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 2360515,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 2590123,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 2613353,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 2646093,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 2674299,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 2282625,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 3067132,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 2814264,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 2945656,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3111883,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2706094,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2654611,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "ABCs",
+    "Name": "ABCs",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:07:49.155792000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "ABCs/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:07:49.155792000-04:00",
+    "IsDir": true
+  }
+]

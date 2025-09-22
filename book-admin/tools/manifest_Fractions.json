@@ -1,0 +1,961 @@
+[
+  {
+    "Path": ".DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.521660502-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 29359,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/description.txt",
+    "Name": "description.txt",
+    "Size": 274,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 190136,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 68868,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 149306,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 54035,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 64649,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 67665,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 182130,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 22-23.mp3",
+    "Name": "page 22-23.mp3",
+    "Size": 56015,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 48673,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 62672,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 50226,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 61267,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 4853871,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5260577,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 4719368,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3673063,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4010515,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 977124,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 5459836,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 1977293,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 2775366,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4619247,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 3176963,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 45547,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 2210677,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 2926422,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2604514,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 6407738,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 3352988,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2549729,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 2425827,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 1889951,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 975137,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6955505,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3324645,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3613561,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1912673,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 2702740,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 1889494,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 3792209,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 1355585,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 1088970,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 1690687,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 3251093,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 2871839,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4104201,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3140260,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 2388588,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 1800482,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 14905,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/description.txt",
+    "Name": "description.txt",
+    "Size": 291,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 187603,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 48010,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 144297,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 70233,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 73733,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 125954,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 102422,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 65071,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 63691,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 57713,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 107326,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 66792,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6378122,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5132691,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7489214,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 7203870,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3793198,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 2788273,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7444945,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 2734598,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 7706200,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 2682310,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 3140534,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 45547,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4519986,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 7962664,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 3086074,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4995422,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 3008650,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7267070,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3620699,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 8679910,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3473667,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7554707,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 8945110,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3266774,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2665316,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 2171160,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 5414735,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 3254424,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 1214621,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 2923117,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 5600456,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 4542245,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 5406761,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 5365014,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4513649,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 4329027,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's a Fraction?/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 4598066,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Half or Whole?",
+    "Name": "Half or Whole?",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:09:04.148965000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Half or Whole?/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:09:04.148965000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "What's a Fraction?",
+    "Name": "What's a Fraction?",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:09:04.148965000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "What's a Fraction?/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:09:04.148965000-04:00",
+    "IsDir": true
+  }
+]

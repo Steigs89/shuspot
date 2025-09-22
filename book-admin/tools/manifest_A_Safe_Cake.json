@@ -1,0 +1,451 @@
+[
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/.DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.514170726-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 22624,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/description.txt",
+    "Name": "description.txt",
+    "Size": 356,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 143949,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 55693,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 105993,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 57572,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 95569,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 123870,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 76620,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 146435,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 78929,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 60938,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 67128,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 5419688,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5961208,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3664067,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5125915,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3777383,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4034461,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 4365535,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 5106678,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6506652,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4107002,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 3228280,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6536023,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3966159,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4241826,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2726353,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4210102,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2022660,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6181517,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5227407,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5290093,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6332900,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 5403577,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 2994071,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 2038481,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 2364657,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 2579411,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 1861496,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2646411,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3220696,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3614351,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 2862868,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2785005,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2859684,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 2665633,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 3369999,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Baking/A Safe Cake/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:36.340933000-04:00",
+    "IsDir": true
+  }
+]

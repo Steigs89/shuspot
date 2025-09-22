@@ -17,14 +17,16 @@ import subprocess
 from pathlib import Path
 
 def create_targeted_manifest(base_path, book_folder=None):
-    """Create manifest for specific path"""
+    """Create manifest for specific path with full paths"""
     
     if book_folder:
         full_path = f"supa:books/{base_path}/{book_folder}"
         output_name = f"manifest_{book_folder.replace(' ', '_')}.json"
+        prefix_path = f"{base_path}/{book_folder}"
     else:
         full_path = f"supa:books/{base_path}"
         output_name = f"manifest_{Path(base_path).name}.json"
+        prefix_path = base_path
     
     print(f"Creating manifest for: {full_path}")
     print(f"Output file: {output_name}")
@@ -35,6 +37,12 @@ def create_targeted_manifest(base_path, book_folder=None):
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)
         
         manifest_data = json.loads(result.stdout)
+        
+        # Fix the paths to include the full path from bucket root
+        for entry in manifest_data:
+            if 'Path' in entry:
+                # Convert relative path to full path
+                entry['Path'] = f"{prefix_path}/{entry['Path']}"
         
         with open(output_name, 'w') as f:
             json.dump(manifest_data, f, indent=2)
