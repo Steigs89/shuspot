@@ -34,6 +34,10 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
 
   // Memoize the image URL function to prevent infinite re-renders
   const getImageUrl = useCallback((pageData, pageNumber) => {
+    // First, honor direct URL if provided (e.g., Supabase public URL)
+    if (pageData?.url) {
+      return pageData.url;
+    }
     // UPDATED VERSION - New timestamp: 2024-01-09 - If you see old URL patterns, clear browser cache completely
     console.log('🔥 UPDATED getImageUrl VERSION - 2024-01-09 - If you see absolute paths, browser cache needs clearing');
     

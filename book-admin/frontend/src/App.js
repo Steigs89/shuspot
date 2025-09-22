@@ -57,6 +57,12 @@ function App() {
   const [previewData, setPreviewData] = useState(null);
   const [previewLoading, setPreviewLoading] = useState(false);
 
+  // Supabase import state
+  const [supaBucket, setSupaBucket] = useState('');
+  const [supaPrefix, setSupaPrefix] = useState('');
+  const [supaBaseUrl, setSupaBaseUrl] = useState('');
+  const [supaBusy, setSupaBusy] = useState(false);
+
   const loadBooks = useCallback(async () => {
     try {
       setLoading(true);
@@ -492,6 +498,48 @@ function App() {
     }
   };
 
+  // Supabase: preview manifest
+  const handleSupabasePreview = async (manifestFile) => {
+    try {
+      if (!supaBucket) {
+        toast.warning('Enter bucket');
+        return;
+      }
+      setSupaBusy(true);
+      const form = new FormData();
+      form.append('bucket', supaBucket);
+      form.append('prefix', supaPrefix || '');
+      if (supaBaseUrl) form.append('public_base_url', supaBaseUrl);
+      form.append('manifest', manifestFile);
+      const res = await axios.post('/api/supabase/preview-manifest', form);
+      setPreviewData(res.data);
+      setPreviewOpen(true);
+    } catch (e) {
+      console.error('Supabase preview error:', e);
+      const msg = e?.response?.data?.detail || e.message || 'Preview failed';
+      toast.error(msg);
+    } finally {
+      setSupaBusy(false);
+    }
+  };
+
+  // Supabase: confirm import
+  const handleSupabaseConfirm = async (token) => {
+    try {
+      setPreviewOpen(false);
+      const form = new FormData();
+      form.append('token', token);
+      const res = await axios.post('/api/supabase/confirm-import', form);
+      toast.success(res.data.message || 'Imported from Supabase');
+      await loadBooks();
+      await loadStats();
+    } catch (e) {
+      console.error('Supabase confirm error:', e);
+      const msg = e?.response?.data?.detail || e.message || 'Import failed';
+      toast.error(msg);
+    }
+  };
+
   const handleLaunchBook = (book) => {
     console.log('Launching book:', book);
     // Check book data
@@ -769,6 +817,46 @@ function App() {
                   <Cloud size={16} style={{ marginRight: '8px' }} />
                   Sync from Sheets
                 </button>
+
+                {/* Supabase Import (rclone manifest) */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 16 }}>
+                  <input
+                    placeholder="bucket"
+                    value={supaBucket}
+                    onChange={(e) => setSupaBucket(e.target.value)}
+                    className="search-input"
+                    style={{ width: 140 }}
+                  />
+                  <input
+                    placeholder="prefix (optional)"
+                    value={supaPrefix}
+                    onChange={(e) => setSupaPrefix(e.target.value)}
+                    className="search-input"
+                    style={{ width: 200 }}
+                  />
+                  <input
+                    placeholder="public base URL (optional)"
+                    value={supaBaseUrl}
+                    onChange={(e) => setSupaBaseUrl(e.target.value)}
+                    className="search-input"
+                    style={{ width: 260 }}
+                  />
+                  <label className={`btn btn-secondary ${supaBusy ? 'disabled' : ''}`} style={{ cursor: supaBusy ? 'not-allowed' : 'pointer' }}>
+                    <UploadIcon size={16} style={{ marginRight: 8 }} />
+                    {supaBusy ? 'Parsing…' : 'Supabase Import (lsjson)'}
+                    <input
+                      type="file"
+                      accept="application/json,.json"
+                      style={{ display: 'none' }}
+                      disabled={supaBusy}
+                      onChange={(e) => {
+                        const f = e.target.files?.[0];
+                        if (f) handleSupabasePreview(f);
+                        e.target.value = '';
+                      }}
+                    />
+                  </label>
+                </div>
               </div>
             </div>
 
@@ -881,7 +969,12 @@ function App() {
         isOpen={previewOpen}
         onClose={() => setPreviewOpen(false)}
         data={previewData}
-        onConfirm={handleConfirmImport}
+        onConfirm={(token) => {
+          // If data is from Supabase preview, detect by presence of page URL field in sample
+          const isSupa = !!(previewData && previewData.sample_books && previewData.sample_books[0]?._page_sequence?.[0]?.url);
+          if (isSupa) handleSupabaseConfirm(token);
+          else handleConfirmImport(token);
+        }}
       />
     </div>
   );

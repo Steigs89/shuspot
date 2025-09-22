@@ -17,6 +17,7 @@ import uuid
 from pathlib import Path
 import threading
 import time
+import re
 
 # Optional heavy dependencies
 try:
@@ -1813,6 +1814,186 @@ async def api_chunked_upload(upload_id: str = Form(...), chunk_index: int = Form
 @app.post("/api/shuspot-ingestion/chunked/finish")
 async def api_chunked_finish(upload_id: str = Form(...), mode: str = Form("preview"), db: Session = Depends(get_db)):
     return await chunked_finish(upload_id=upload_id, mode=mode, db=db)
+
+# ========================= Supabase manifest-based import =========================
+def _public_url_for(bucket: str, path: str) -> str:
+    base = os.getenv("SUPABASE_URL")
+    if not base:
+        # Fallback to require full path provided by caller
+        raise RuntimeError("SUPABASE_URL env not set; provide public_base_url in request")
+    base = base.rstrip('/')
+    # Supabase public object URL form
+    return f"{base}/storage/v1/object/public/{bucket}/{path.lstrip('/')}"
+
+@app.post("/supabase/preview-manifest")
+async def supabase_preview_manifest(
+    bucket: str = Form(...),
+    prefix: str = Form(""),
+    public_base_url: Optional[str] = Form(None),
+    manifest: UploadFile = File(...),
+):
+    """Preview import from a Supabase Storage listing manifest produced by `rclone lsjson --recursive`.
+    Groups books by folders containing resized/crop-*.png and builds page_sequence with public URLs.
+    """
+    try:
+        content = await manifest.read()
+        try:
+            data = json.loads(content)
+        except Exception:
+            text = content.decode("utf-8", errors="ignore")
+            data = json.loads(text)
+
+        # Normalize entries to paths
+        paths: list[str] = []
+        for entry in data:
+            p = entry.get('Path') or entry.get('path') or entry.get('Name') or entry.get('name')
+            if not p or entry.get('IsDir') or entry.get('isDir'):
+                continue
+            p = p.replace('\\', '/')
+            if prefix and not p.startswith(prefix.rstrip('/') + '/'):
+                continue
+            paths.append(p)
+
+        crop_re = re.compile(r"^(.*)/resized/crop-(\d+)\.(png|jpg|jpeg|webp)$", re.IGNORECASE)
+        groups: dict[str, list[tuple[int, str]]] = {}
+        for p in paths:
+            m = crop_re.match(p)
+            if not m:
+                continue
+            folder = m.group(1)
+            page_no = int(m.group(2))
+            groups.setdefault(folder, []).append((page_no, p))
+
+        # Build books
+        books = []
+        for folder, items in groups.items():
+            items.sort(key=lambda t: t[0])
+            folder_name = os.path.basename(folder.rstrip('/'))
+            page_sequence = []
+            for page_no, file_path in items:
+                if public_base_url:
+                    url = f"{public_base_url.rstrip('/')}/{file_path.lstrip('/')}"
+                else:
+                    url = _public_url_for(bucket, file_path)
+                page_sequence.append({
+                    "page_number": page_no,
+                    "url": url,
+                    "display_name": f"Page {page_no}",
+                })
+            cover_url = page_sequence[0]["url"] if page_sequence else None
+            book = {
+                "Name": folder_name,
+                "Author": "Unknown",
+                "Media": "Read to Me",
+                "Category": os.path.basename(os.path.dirname(folder.rstrip('/'))),
+                "_page_sequence": page_sequence,
+                "_total_pages": len(page_sequence),
+                "_folder_path": folder,
+                "_cover_image_path": cover_url,
+            }
+            books.append(book)
+
+        token = uuid.uuid4().hex
+        preview_path = os.path.join(TXTRUN_ROOT, f"supa-preview-{token}.json")
+        with open(preview_path, 'w') as f:
+            json.dump({
+                "bucket": bucket,
+                "prefix": prefix,
+                "public_base_url": public_base_url,
+                "books": books
+            }, f)
+
+        return {
+            "token": token,
+            "total_parsed": len(books),
+            "sample_books": books[:5],
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Supabase preview failed: {str(e)}")
+
+@app.post("/api/supabase/preview-manifest")
+async def api_supabase_preview_manifest(
+    bucket: str = Form(...),
+    prefix: str = Form(""),
+    public_base_url: Optional[str] = Form(None),
+    manifest: UploadFile = File(...),
+):
+    return await supabase_preview_manifest(bucket=bucket, prefix=prefix, public_base_url=public_base_url, manifest=manifest)
+
+@app.post("/supabase/confirm-import")
+async def supabase_confirm_import(token: str = Form(...), db: Session = Depends(get_db)):
+    try:
+        path = os.path.join(TXTRUN_ROOT, f"supa-preview-{token}.json")
+        if not os.path.exists(path):
+            raise HTTPException(status_code=404, detail="Token not found")
+        with open(path, 'r') as f:
+            payload = json.load(f)
+        books = payload.get("books", [])
+
+        imported_count = 0
+        updated_count = 0
+        for book_data in books:
+            title = book_data.get('Name', 'Unknown Title')
+            author = book_data.get('Author', 'Unknown Author')
+            existing_book = db.query(Book).filter(Book.title == title, Book.author == author).first()
+            if existing_book:
+                existing_book.genre = book_data.get('Category', existing_book.genre)
+                existing_book.book_type = book_data.get('Media', existing_book.book_type)
+                existing_book.reading_level = book_data.get('Age', existing_book.reading_level)
+                existing_book.cover_image_url = book_data.get('_cover_image_path', existing_book.cover_image_url)
+                existing_book.description = book_data.get('Notes', existing_book.description)
+                try:
+                    existing_notes = json.loads(existing_book.notes) if existing_book.notes else {}
+                except Exception:
+                    existing_notes = {}
+                merged_notes = {
+                    **existing_notes,
+                    'page_sequence': book_data.get('_page_sequence', existing_notes.get('page_sequence', [])),
+                    'total_pages': book_data.get('_total_pages', existing_notes.get('total_pages', 0)),
+                    'folder_path': book_data.get('_folder_path', existing_notes.get('folder_path')),
+                    'cover_image_path': book_data.get('_cover_image_path', existing_notes.get('cover_image_path')),
+                }
+                existing_book.notes = json.dumps(merged_notes)
+                existing_book.file_path = book_data.get('_folder_path', existing_book.file_path)
+                existing_book.file_name = f"{title}.supabase"
+                updated_count += 1
+            else:
+                db.add(Book(
+                    title=title,
+                    author=author,
+                    genre=book_data.get('Category', 'Unknown'),
+                    book_type=book_data.get('Media', 'Book'),
+                    fiction_type=book_data.get('Fiction Type', 'Fiction'),
+                    reading_level=book_data.get('Age', ''),
+                    cover_image_url=book_data.get('_cover_image_path', ''),
+                    file_path=book_data.get('_folder_path', ''),
+                    file_name=f"{title}.supabase",
+                    file_size=0,
+                    file_type='URLS',
+                    description=book_data.get('Notes', ''),
+                    notes=json.dumps({
+                        'page_sequence': book_data.get('_page_sequence', []),
+                        'total_pages': book_data.get('_total_pages', 0),
+                        'folder_path': book_data.get('_folder_path', ''),
+                        'cover_image_path': book_data.get('_cover_image_path', ''),
+                    })
+                ))
+                imported_count += 1
+        db.commit()
+        return {
+            "message": f"Supabase import complete: {imported_count} imported, {updated_count} updated",
+            "imported": imported_count,
+            "updated": updated_count,
+            "token": token
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Supabase confirm failed: {str(e)}")
+
+@app.post("/api/supabase/confirm-import")
+async def api_supabase_confirm_import(token: str = Form(...), db: Session = Depends(get_db)):
+    return await supabase_confirm_import(token=token, db=db)
 
 # Mirror under /api for hosting setups that mount API at /api
 @app.post("/api/shuspot-ingestion/upload-zip-and-import")
