@@ -177,8 +177,21 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     return null; // Only use pre-mapped audio files to prevent loops
   }, [audioFiles]);
 
-  // Audio control functions - simplified and debugged
-  const playAudio = useCallback((audioUrl, pageNumber = currentPage) => {
+  // Test if audio URL is accessible
+  const testAudioUrl = useCallback(async (url) => {
+    try {
+      console.log('🎵 Testing audio URL accessibility:', url);
+      const response = await fetch(url, { method: 'HEAD' });
+      console.log('🎵 Audio URL test response:', response.status, response.statusText);
+      return response.ok;
+    } catch (error) {
+      console.error('🎵 Audio URL test failed:', error);
+      return false;
+    }
+  }, []);
+
+  // Audio control functions - fixed for reliable playback
+  const playAudio = useCallback(async (audioUrl, pageNumber = currentPage) => {
     if (!audioUrl) {
       console.log('🎵 No audio URL provided');
       return;
@@ -187,73 +200,171 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     console.log('🎵 Playing audio:', audioUrl);
     console.log('🎵 Current volume:', volume, 'Muted:', isMuted);
     
+    // Test URL accessibility first
+    const isAccessible = await testAudioUrl(audioUrl);
+    if (!isAccessible) {
+      console.error('🎵 ❌ Audio URL is not accessible:', audioUrl);
+      setIsPlaying(false);
+      return;
+    }
+    
     // Stop and cleanup any existing audio
     if (audioRef.current) {
       console.log('🎵 Stopping existing audio');
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
+      // Remove all event listeners to prevent memory leaks
+      audioRef.current.removeEventListener('loadedmetadata', () => {});
+      audioRef.current.removeEventListener('timeupdate', () => {});
+      audioRef.current.removeEventListener('ended', () => {});
+      audioRef.current.removeEventListener('error', () => {});
       audioRef.current = null;
     }
     
-    // Create new audio element
-    const audio = new Audio(audioUrl);
-    audioRef.current = audio;
+    // Create new audio element with better configuration
+    const audio = new Audio();
+    
+    // Set audio properties for better compatibility
+    audio.preload = 'auto';
+    audio.crossOrigin = 'anonymous';
     
     // Set volume immediately
     audio.volume = isMuted ? 0 : volume;
     console.log('🎵 Audio element volume set to:', audio.volume);
     
-    // Add event listeners
-    audio.addEventListener('loadedmetadata', () => {
+    // Add event listeners with proper cleanup
+    const handleLoadedMetadata = () => {
       setAudioDuration(audio.duration);
       console.log('🎵 Audio metadata loaded. Duration:', audio.duration);
-    });
+    };
     
-    audio.addEventListener('timeupdate', () => {
+    const handleTimeUpdate = () => {
       setAudioProgress(audio.currentTime);
-    });
+    };
     
-    audio.addEventListener('ended', () => {
+    const handleEnded = () => {
       console.log('🎵 Audio ended');
       setIsPlaying(false);
       setAudioProgress(0);
-    });
+      setCurrentAudio(null);
+    };
     
-    audio.addEventListener('error', (e) => {
+    const handleError = (e) => {
       console.error('🎵 Audio error:', e);
+      console.error('🎵 Audio error details:', audio.error);
       setIsPlaying(false);
-    });
+      setCurrentAudio(null);
+    };
     
-    // Attempt to play
-    console.log('🎵 Attempting to play audio...');
-    audio.play()
-      .then(() => {
-        setCurrentAudio(audioUrl);
-        setIsPlaying(true);
-        console.log('🎵 ✅ Audio is now playing! Volume:', audio.volume);
-        
-        // Double-check audio is actually playing
-        setTimeout(() => {
-          if (audio.currentTime > 0) {
-            console.log('🎵 ✅ Confirmed: Audio is playing at', audio.currentTime, 'seconds');
+    const handleCanPlay = () => {
+      console.log('🎵 Audio can play - ready for playback');
+    };
+    
+    const handleLoadStart = () => {
+      console.log('🎵 Audio load started');
+    };
+    
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('error', handleError);
+    audio.addEventListener('canplay', handleCanPlay);
+    audio.addEventListener('loadstart', handleLoadStart);
+    
+    // Store reference
+    audioRef.current = audio;
+    
+    // Check browser audio capabilities
+    console.log('🎵 Browser audio capabilities:');
+    console.log('  - Audio constructor available:', typeof Audio !== 'undefined');
+    console.log('  - AudioContext available:', typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined');
+    
+    // Set source and load
+    audio.src = audioUrl;
+    audio.load();
+    
+    // Set playing state immediately to prevent multiple clicks
+    setIsPlaying(true);
+    setCurrentAudio(audioUrl);
+    
+    // Wait for audio to be ready, then play
+    const attemptPlay = () => {
+      console.log('🎵 Attempting to play audio...');
+      console.log('🎵 Audio ready state:', audio.readyState);
+      console.log('🎵 Audio network state:', audio.networkState);
+      console.log('🎵 Audio src:', audio.src);
+      console.log('🎵 Audio volume before play:', audio.volume);
+      console.log('🎵 Audio muted before play:', audio.muted);
+      
+      audio.play()
+        .then(() => {
+          console.log('🎵 ✅ Audio play() promise resolved! Volume:', audio.volume);
+          console.log('🎵 Audio element properties after play():');
+          console.log('  - paused:', audio.paused);
+          console.log('  - ended:', audio.ended);
+          console.log('  - currentTime:', audio.currentTime);
+          console.log('  - duration:', audio.duration);
+          console.log('  - volume:', audio.volume);
+          console.log('  - muted:', audio.muted);
+          console.log('  - readyState:', audio.readyState);
+          
+          // Multiple verification checks
+          const verifyPlayback = (attempt) => {
+            setTimeout(() => {
+              if (audio && audioRef.current === audio) {
+                console.log(`🎵 Verification attempt ${attempt}:`);
+                console.log('  - currentTime:', audio.currentTime);
+                console.log('  - paused:', audio.paused);
+                console.log('  - ended:', audio.ended);
+                console.log('  - volume:', audio.volume);
+                
+                if (audio.currentTime > 0 && !audio.paused) {
+                  console.log('🎵 ✅ Audio is definitely playing!');
+                } else if (attempt < 3) {
+                  console.log(`🎵 ⚠️ Audio not progressing, attempt ${attempt + 1}...`);
+                  verifyPlayback(attempt + 1);
+                } else {
+                  console.log('🎵 ❌ Audio failed to start after multiple attempts');
+                  // Try one more manual restart
+                  if (!audio.paused) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    audio.play().catch(e => console.log('🎵 Final restart failed:', e));
+                  }
+                }
+              }
+            }, attempt * 500);
+          };
+          
+          verifyPlayback(1);
+        })
+        .catch(error => {
+          console.error('🎵 ❌ Audio play failed:', error);
+          setIsPlaying(false);
+          setCurrentAudio(null);
+          
+          // Provide specific error feedback
+          if (error.name === 'NotAllowedError') {
+            console.log('🎵 Browser blocked autoplay. User interaction required.');
+          } else if (error.name === 'NotSupportedError') {
+            console.log('🎵 Audio format not supported by browser.');
           } else {
-            console.log('🎵 ⚠️ Warning: Audio may not be playing (currentTime is 0)');
+            console.log('🎵 Unknown audio error:', error.message);
           }
-        }, 1000);
-      })
-      .catch(error => {
-        console.error('🎵 ❌ Audio play failed:', error);
-        setIsPlaying(false);
-        
-        // Try to give user feedback about why it failed
-        if (error.name === 'NotAllowedError') {
-          console.log('🎵 Browser blocked autoplay. User interaction required.');
-        }
-      });
-  }, [isMuted, volume, currentPage]);
+        });
+    };
+    
+    // Try to play immediately if ready, otherwise wait for canplay event
+    if (audio.readyState >= 3) { // HAVE_FUTURE_DATA
+      attemptPlay();
+    } else {
+      audio.addEventListener('canplay', attemptPlay, { once: true });
+    }
+  }, [isMuted, volume, currentPage, testAudioUrl]);
 
   const pauseAudio = useCallback(() => {
     if (audioRef.current) {
+      console.log('🎵 Pausing audio at time:', audioRef.current.currentTime);
       audioRef.current.pause();
       setIsPlaying(false);
     }
@@ -315,6 +426,10 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       const newVolume = newMutedState ? 0 : volume;
       audioRef.current.volume = newVolume;
       console.log(`🎵 Audio volume changed to: ${newVolume}`);
+      console.log(`🎵 Audio muted property: ${audioRef.current.muted}`);
+      
+      // Also set the muted property for better browser compatibility
+      audioRef.current.muted = newMutedState;
     }
   }, [isMuted, volume]);
 
@@ -322,9 +437,18 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     console.log(`🎵 🔊 Volume slider changed to: ${newVolume}`);
     setVolume(newVolume);
     
-    if (audioRef.current && !isMuted) {
-      audioRef.current.volume = newVolume;
-      console.log(`🎵 Audio element volume updated to: ${newVolume}`);
+    if (audioRef.current) {
+      if (!isMuted) {
+        audioRef.current.volume = newVolume;
+        console.log(`🎵 Audio element volume updated to: ${newVolume}`);
+      }
+      // If volume is changed while muted, unmute automatically
+      if (isMuted && newVolume > 0) {
+        setIsMuted(false);
+        audioRef.current.muted = false;
+        audioRef.current.volume = newVolume;
+        console.log(`🎵 Auto-unmuted due to volume change`);
+      }
     }
   }, [isMuted]);
 
@@ -1093,6 +1217,25 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                         className="volume-slider"
                         title="Volume"
                       />
+                      
+                      <button 
+                        onClick={() => {
+                          const audioUrl = getAudioUrl(audioPage);
+                          if (audioUrl) {
+                            console.log('🎵 🧪 Testing direct audio playback...');
+                            const testAudio = new Audio(audioUrl);
+                            testAudio.volume = 0.8;
+                            testAudio.play()
+                              .then(() => console.log('🎵 ✅ Direct test successful'))
+                              .catch(e => console.error('🎵 ❌ Direct test failed:', e));
+                          }
+                        }}
+                        className="nav-btn audio-test-btn"
+                        title="Test Direct Audio"
+                        style={{ fontSize: '12px', padding: '4px 8px' }}
+                      >
+                        Test
+                      </button>
                       
                       <div className="audio-page-indicator">
                         Page {audioPage}
