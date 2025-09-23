@@ -256,7 +256,8 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
                   onClick={() => setShowHelp(true)}
                   title="Setup Instructions"
                 >
-                  <HelpCircle size={16} />
+                  <HelpCircle size={18} />
+                  <span>Instructions</span>
                 </button>
               </div>
             </div>
