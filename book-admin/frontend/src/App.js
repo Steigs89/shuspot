@@ -163,6 +163,8 @@ function App() {
 
     try {
       const bookIds = selectedBooks.map(book => book.id);
+      console.log('Bulk updating:', { bookIds, field: bulkField, value: bulkValue });
+      
       await bookAPI.bulkUpdateBooks(bookIds, bulkField, bulkValue);
 
       toast.success(`Updated ${selectedBooks.length} books`);
@@ -173,7 +175,7 @@ function App() {
 
     } catch (error) {
       console.error('Error bulk updating:', error);
-      toast.error('Error updating books');
+      toast.error(`Error updating books: ${error.message}`);
     }
   };
 
