@@ -86,10 +86,26 @@ def parse_audio_filename(audio_file):
 
 def test_book_folder(book_path):
     """Test audio matching for a book folder"""
-    book_folder = Path(book_path)
+    # Clean up path - remove extra quotes if present
+    clean_path = book_path.strip().strip("'\"")
+    book_folder = Path(clean_path)
+    
+    print(f"🔍 Looking for folder: {clean_path}")
     
     if not book_folder.exists():
-        print(f"❌ Folder not found: {book_path}")
+        print(f"❌ Folder not found: {clean_path}")
+        print(f"📁 Current directory: {Path.cwd()}")
+        
+        # Try to find similar folders
+        parent_dir = book_folder.parent
+        if parent_dir.exists():
+            print(f"📂 Contents of parent directory ({parent_dir}):")
+            try:
+                for item in sorted(parent_dir.iterdir()):
+                    if item.is_dir():
+                        print(f"   📁 {item.name}")
+            except PermissionError:
+                print("   ❌ Permission denied")
         return
     
     print(f"📁 Testing: {book_folder.name}")

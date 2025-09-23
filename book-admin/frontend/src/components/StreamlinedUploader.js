@@ -22,6 +22,11 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       const fileContent = await manifestFile.text();
       const manifestData = JSON.parse(fileContent);
       
+      console.log('📋 Manifest data type:', typeof manifestData);
+      console.log('📋 Is array:', Array.isArray(manifestData));
+      console.log('📋 Manifest keys:', Object.keys(manifestData));
+      console.log('📋 First few entries:', manifestData.slice ? manifestData.slice(0, 3) : 'Not an array');
+      
       setUploadProgress(30);
       setUploadStatus('Processing book structure...');
 
@@ -29,8 +34,19 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       const books = [];
       const cropFiles = {};
       
+      // Handle both array format (original Rclone) and object format (enhanced)
+      let entries = manifestData;
+      if (!Array.isArray(manifestData)) {
+        if (manifestData.books) {
+          // Enhanced manifest format - not supported yet, use original
+          throw new Error('Enhanced manifest format detected. Please use the original Rclone manifest format.');
+        } else {
+          throw new Error('Invalid manifest format. Expected an array of file entries.');
+        }
+      }
+      
       // Group files by book folder
-      manifestData.forEach(entry => {
+      entries.forEach(entry => {
         const path = entry.Path || entry.path;
         if (!path || entry.IsDir) return;
         
