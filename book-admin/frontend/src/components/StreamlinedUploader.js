@@ -43,9 +43,12 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
             cropFiles[folder] = [];
           }
           
+          // Encode each path segment separately to preserve slashes
+          const encodedPath = path.split('/').map(segment => encodeURIComponent(segment)).join('/');
+          
           cropFiles[folder].push({
             page_number: pageNum,
-            url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/${encodeURIComponent(path)}`,
+            url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/${encodedPath}`,
             display_name: `Page ${pageNum}`
           });
         }
