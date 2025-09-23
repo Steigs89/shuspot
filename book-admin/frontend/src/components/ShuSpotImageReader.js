@@ -129,7 +129,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       console.log('📝 Loading OCR data for book:', book.id);
       loadOCRData(book.id);
     }
-  }, [book?.id, pageTextData, loadOCRData]);
+  }, [book?.id, pageTextData]); // Removed loadOCRData to prevent circular dependency
 
   // Extract audio files from book data
   const extractAudioFiles = useCallback(() => {
@@ -329,7 +329,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       console.error('📝 Text extraction failed:', error);
       return null;
     }
-  }, [pageTextData, getAudioUrl, audioDuration, loadOCRData, book?.id]);
+  }, [pageTextData, getAudioUrl, audioDuration, book?.id]); // Removed loadOCRData to prevent circular dependency
 
   const startTextHighlighting = useCallback(async (pageNumber, duration) => {
     if (!textHighlightEnabled || highlightStartedRef.current) return;
