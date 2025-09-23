@@ -26,6 +26,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [isLoadingAudio, setIsLoadingAudio] = useState(false);
   const [audioPlaylist, setAudioPlaylist] = useState([]);
   const [currentPlaylistIndex, setCurrentPlaylistIndex] = useState(0);
+  const [autoPlayEnabled, setAutoPlayEnabled] = useState(false);
+  const [autoTurnEnabled, setAutoTurnEnabled] = useState(false);
   const audioRef = useRef(null);
   const playlistRef = useRef([]);
   const playlistIndexRef = useRef(0);
@@ -302,12 +304,38 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         setTimeout(() => {
           playAudio(nextAudio.url, nextAudio.pageNumber, true);
         }, 200);
+      } else if (autoTurnEnabled && currentPage < totalPages) {
+        // Auto-turn to next page and continue playing
+        console.log('🎵 📖 Auto-turning to next page and continuing audio');
+        setIsPlaying(false);
+        setCurrentAudio(null);
+        setCurrentPlaylistIndex(0);
+        setAudioPlaylist([]);
+        
+        // Turn to next page
+        setTimeout(() => {
+          if (currentPage < totalPages) {
+            const nextPage = currentPage + 2; // Turn by spread (2 pages)
+            if (nextPage <= totalPages) {
+              console.log(`🎵 📖 Turning to page ${nextPage}`);
+              goToPage(nextPage);
+            } else {
+              console.log('🎵 📖 Reached end of book');
+              setAutoTurnEnabled(false);
+            }
+          }
+        }, 1000); // 1 second delay before turning page
       } else {
         console.log('🎵 🏁 Playlist finished');
         setIsPlaying(false);
         setCurrentAudio(null);
         setCurrentPlaylistIndex(0);
         setAudioPlaylist([]);
+        
+        if (autoTurnEnabled) {
+          console.log('🎵 📖 Auto-turn disabled - reached end');
+          setAutoTurnEnabled(false);
+        }
       }
     };
     
@@ -931,21 +959,21 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   // Track previous page to detect actual page changes
   const prevPageRef = useRef(currentPage);
   
-  // Handle page changes for audio - MANUAL ONLY (no autoplay)
+  // Handle page changes for audio with optional auto-play
   useEffect(() => {
     // Only act on actual page changes
     if (prevPageRef.current !== currentPage) {
       console.log(`🎵 📄 Page changed from ${prevPageRef.current} to ${currentPage}`);
       
-      // Stop current audio when page changes
-      if (audioRef.current && isPlaying) {
+      // Stop current audio when page changes (unless auto-turn is active)
+      if (audioRef.current && isPlaying && !autoTurnEnabled) {
         console.log('🎵 Stopping audio due to page change');
         audioRef.current.pause();
         setIsPlaying(false);
       }
       
-      // Reset playlist when page changes
-      if (audioPlaylist.length > 0) {
+      // Reset playlist when page changes (unless auto-turn is active)
+      if (audioPlaylist.length > 0 && !autoTurnEnabled) {
         console.log('🎵 📄 Resetting audio playlist due to page change');
         setAudioPlaylist([]);
         setCurrentPlaylistIndex(0);
@@ -953,9 +981,43 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       
       // Update previous page reference
       prevPageRef.current = currentPage;
+      
+      // Auto-play audio if enabled
+      if (autoPlayEnabled && !autoTurnEnabled) {
+        console.log('🎵 🚀 Auto-play enabled, starting audio for new page');
+        setTimeout(() => {
+          const pagesToTry = [currentPage];
+          if (currentPage % 2 === 0) {
+            pagesToTry.push(currentPage + 1);
+          } else {
+            pagesToTry.unshift(currentPage - 1);
+          }
+          
+          const playlist = [];
+          for (const pageNum of pagesToTry) {
+            if (pageNum > 0 && pageNum <= totalPages) {
+              const url = getAudioUrl(pageNum);
+              if (url && audioFiles[pageNum]) {
+                playlist.push({
+                  pageNumber: pageNum,
+                  url: url,
+                  title: `Page ${pageNum}`
+                });
+              }
+            }
+          }
+          
+          if (playlist.length > 0) {
+            console.log(`🎵 🚀 Auto-starting playlist with ${playlist.length} audio files`);
+            setAudioPlaylist(playlist);
+            setCurrentPlaylistIndex(0);
+            playAudio(playlist[0].url, playlist[0].pageNumber);
+          }
+        }, 500); // Small delay to ensure page is fully loaded
+      }
     }
     
-    // Just log what audio is available, don't auto-play
+    // Log what audio is available
     const pagesToTry = [currentPage];
     if (currentPage % 2 === 0) {
       pagesToTry.push(currentPage + 1);
@@ -963,14 +1025,15 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       pagesToTry.unshift(currentPage - 1);
     }
     
-    // Find available audio but don't play it
+    // Find available audio
     for (const pageNum of pagesToTry) {
       if (pageNum > 0 && pageNum <= totalPages && audioFiles[pageNum]) {
-        console.log(`🎵 Audio available for page ${pageNum} (click play button to hear)`);
+        const status = autoPlayEnabled ? "(auto-playing)" : "(click play button to hear)";
+        console.log(`🎵 Audio available for page ${pageNum} ${status}`);
         break;
       }
     }
-  }, [currentPage, totalPages, audioFiles]);
+  }, [currentPage, totalPages, audioFiles, autoPlayEnabled, autoTurnEnabled, getAudioUrl, playAudio]);
 
   // Initialize Turn.js when ready
   useEffect(() => {
@@ -1323,6 +1386,39 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                         className="volume-slider"
                         title="Volume"
                       />
+                      
+                      <button 
+                        onClick={() => setAutoPlayEnabled(!autoPlayEnabled)}
+                        className={`nav-btn audio-autoplay-btn ${autoPlayEnabled ? 'active' : ''}`}
+                        title={autoPlayEnabled ? "Disable Auto-play" : "Enable Auto-play"}
+                        style={{ 
+                          fontSize: '12px', 
+                          padding: '4px 8px',
+                          backgroundColor: autoPlayEnabled ? '#4CAF50' : '#666',
+                          color: 'white'
+                        }}
+                      >
+                        Auto▶️
+                      </button>
+                      
+                      <button 
+                        onClick={() => {
+                          setAutoTurnEnabled(!autoTurnEnabled);
+                          if (!autoTurnEnabled) {
+                            setAutoPlayEnabled(true); // Auto-turn requires auto-play
+                          }
+                        }}
+                        className={`nav-btn audio-autoturn-btn ${autoTurnEnabled ? 'active' : ''}`}
+                        title={autoTurnEnabled ? "Disable Auto-turn Pages" : "Enable Auto-turn Pages"}
+                        style={{ 
+                          fontSize: '12px', 
+                          padding: '4px 8px',
+                          backgroundColor: autoTurnEnabled ? '#FF9800' : '#666',
+                          color: 'white'
+                        }}
+                      >
+                        Auto📖
+                      </button>
                       
                       <button 
                         onClick={() => {
