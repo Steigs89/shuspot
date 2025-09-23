@@ -1,6 +1,6 @@
 /* Book Data Processor Styles */
 .book-data-processor {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 24px;
   background: white;
@@ -109,13 +109,13 @@
 
 .python-editor {
   width: 100%;
-  min-height: 400px;
-  padding: 16px;
+  min-height: 500px;
+  padding: 20px;
   border: 2px solid #e5e7eb;
   border-radius: 8px;
   font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.6;
   background: #1f2937;
   color: #f9fafb;
   resize: vertical;
