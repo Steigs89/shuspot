@@ -49,19 +49,28 @@ export const bookAPI = {
     return response.data;
   },
 
-  // Bulk update books
+  // Bulk update books - using individual updates as workaround for routing issue
   bulkUpdateBooks: async (bookIds, field, value) => {
-    const formData = new FormData();
-    bookIds.forEach(id => formData.append('book_ids', id));
-    formData.append('field', field);
-    formData.append('value', value);
+    const results = [];
+    const errors = [];
     
-    const response = await api.put('/books/bulk-update', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
-    return response.data;
+    // Update each book individually since bulk endpoint has routing conflicts
+    for (const bookId of bookIds) {
+      try {
+        const updateData = { [field]: value };
+        const result = await bookAPI.updateBook(bookId, updateData);
+        results.push(result);
+      } catch (error) {
+        console.error(`Failed to update book ${bookId}:`, error);
+        errors.push({ bookId, error: error.message });
+      }
+    }
+    
+    if (errors.length > 0) {
+      throw new Error(`Failed to update ${errors.length} books: ${errors.map(e => e.error).join(', ')}`);
+    }
+    
+    return { updated_count: results.length, results };
   },
 
   // Delete book
