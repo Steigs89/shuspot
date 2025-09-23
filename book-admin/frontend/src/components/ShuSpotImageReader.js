@@ -27,6 +27,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [audioPlaylist, setAudioPlaylist] = useState([]);
   const [currentPlaylistIndex, setCurrentPlaylistIndex] = useState(0);
   const audioRef = useRef(null);
+  const playlistRef = useRef([]);
+  const playlistIndexRef = useRef(0);
   // Dynamic flipbook height (based on single page aspect ratio, not full spread)
   const BOOK_WIDTH = 1400; // full spread width - balanced size for good visibility
   const SINGLE_PAGE_WIDTH = BOOK_WIDTH / 2;
@@ -206,6 +208,12 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     return playlist;
   }, [currentPage, totalPages, audioFiles, getAudioUrl]);
 
+  // Update refs when state changes
+  useEffect(() => {
+    playlistRef.current = audioPlaylist;
+    playlistIndexRef.current = currentPlaylistIndex;
+  }, [audioPlaylist, currentPlaylistIndex]);
+
   // Test if audio URL is accessible
   const testAudioUrl = useCallback(async (url) => {
     try {
@@ -220,7 +228,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   }, []);
 
   // Audio control functions - fixed for reliable playback
-  const playAudio = useCallback(async (audioUrl, pageNumber = currentPage) => {
+  const playAudio = useCallback(async (audioUrl, pageNumber = currentPage, isAutoContinue = false) => {
     if (!audioUrl) {
       console.log('🎵 No audio URL provided');
       return;
@@ -275,22 +283,30 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       console.log('🎵 Audio ended');
       setAudioProgress(0);
       
+      // Use refs to get current values
+      const currentPlaylist = playlistRef.current;
+      const currentIndex = playlistIndexRef.current;
+      
+      console.log('🎵 Current playlist:', currentPlaylist);
+      console.log('🎵 Current index:', currentIndex);
+      
       // Check if there's a next audio in the playlist
-      if (audioPlaylist.length > 0 && currentPlaylistIndex < audioPlaylist.length - 1) {
-        const nextIndex = currentPlaylistIndex + 1;
-        const nextAudio = audioPlaylist[nextIndex];
-        console.log(`🎵 🎬 Auto-playing next audio: ${nextAudio.title} (${nextIndex + 1}/${audioPlaylist.length})`);
+      if (currentPlaylist.length > 0 && currentIndex < currentPlaylist.length - 1) {
+        const nextIndex = currentIndex + 1;
+        const nextAudio = currentPlaylist[nextIndex];
+        console.log(`🎵 🎬 Auto-playing next audio: ${nextAudio.title} (${nextIndex + 1}/${currentPlaylist.length})`);
         
         setCurrentPlaylistIndex(nextIndex);
         // Small delay to ensure clean transition
         setTimeout(() => {
-          playAudio(nextAudio.url, nextAudio.pageNumber);
-        }, 100);
+          playAudio(nextAudio.url, nextAudio.pageNumber, true);
+        }, 200);
       } else {
         console.log('🎵 🏁 Playlist finished');
         setIsPlaying(false);
         setCurrentAudio(null);
         setCurrentPlaylistIndex(0);
+        setAudioPlaylist([]);
       }
     };
     
@@ -405,7 +421,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     } else {
       audio.addEventListener('canplay', attemptPlay, { once: true });
     }
-  }, [isMuted, volume, currentPage, testAudioUrl, audioPlaylist, currentPlaylistIndex]);
+  }, [isMuted, volume, currentPage, testAudioUrl]);
 
   const pauseAudio = useCallback(() => {
     if (audioRef.current) {
@@ -426,6 +442,10 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       
       // Get the audio playlist for current spread
       const playlist = getAudioPlaylist();
+      
+      console.log('🎵 🔍 Debug - Current page:', currentPage);
+      console.log('🎵 🔍 Debug - Audio files:', audioFiles);
+      console.log('🎵 🔍 Debug - Generated playlist:', playlist);
       
       if (playlist.length > 0) {
         console.log(`🎵 📋 Starting playlist with ${playlist.length} audio files`);
