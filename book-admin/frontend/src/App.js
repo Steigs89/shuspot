@@ -165,13 +165,22 @@ function App() {
       const bookIds = selectedBooks.map(book => book.id);
       console.log('Bulk updating:', { bookIds, field: bulkField, value: bulkValue });
       
-      await bookAPI.bulkUpdateBooks(bookIds, bulkField, bulkValue);
+      const result = await bookAPI.bulkUpdateBooks(bookIds, bulkField, bulkValue);
+      console.log('Bulk update result:', result);
 
       toast.success(`Updated ${selectedBooks.length} books`);
       setShowBulkEdit(false);
       setBulkValue('');
       setSelectedBooks([]);
+      
+      // Force reload books and stats
       await loadBooks();
+      await loadStats();
+      
+      // Force a small delay to ensure backend has processed the updates
+      setTimeout(() => {
+        loadBooks();
+      }, 1000);
 
     } catch (error) {
       console.error('Error bulk updating:', error);
