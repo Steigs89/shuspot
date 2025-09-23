@@ -254,7 +254,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const loadOCRData = useCallback(async (bookId) => {
     try {
       // Try to load OCR data for this book
-      const response = await fetch(`${getApiUrl()}/ocr-data/${bookId}.json`);
+      const response = await fetch(`${getApiUrl()}/ocr-data/${bookId}`);
       if (response.ok) {
         const ocrData = await response.json();
         console.log('📝 Loaded OCR data for book:', bookId, ocrData);
@@ -1279,19 +1279,35 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   }, [turnJsLoaded, currentPage]);
 
   const goToPage = useCallback((pageNumber) => {
+    console.log(`🔄 goToPage called with: ${pageNumber}, turnJsLoaded: ${turnJsLoaded}, totalPages: ${totalPages}`);
+    
+    if (pageNumber < 1 || pageNumber > totalPages) {
+      console.log(`🔄 Invalid page number: ${pageNumber} (valid range: 1-${totalPages})`);
+      return;
+    }
+
+    let turnJsWorked = false;
+    
     if (turnJsLoaded && flipBookRef.current && window.jQuery) {
       try {
         const $flipbook = window.jQuery(flipBookRef.current);
-        if ($flipbook.data('turn') && pageNumber >= 1 && pageNumber <= totalPages) {
+        if ($flipbook.data('turn')) {
+          console.log(`🔄 Using Turn.js to go to page ${pageNumber}`);
           $flipbook.turn('page', pageNumber);
+          turnJsWorked = true;
+        } else {
+          console.log('🔄 Turn.js not initialized on flipbook');
         }
       } catch (error) {
-        console.log('Turn.js goToPage error:', error);
-        if (pageNumber >= 1 && pageNumber <= totalPages) {
-          setCurrentPage(pageNumber);
-        }
+        console.log('🔄 Turn.js goToPage error:', error);
       }
-    } else if (pageNumber >= 1 && pageNumber <= totalPages) {
+    } else {
+      console.log('🔄 Turn.js not available, using fallback');
+    }
+    
+    // Always use fallback to ensure page changes
+    if (!turnJsWorked) {
+      console.log(`🔄 Using fallback setCurrentPage(${pageNumber})`);
       setCurrentPage(pageNumber);
     }
   }, [turnJsLoaded, totalPages]);
