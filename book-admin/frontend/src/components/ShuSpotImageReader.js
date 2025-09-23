@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, BookOpen, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { getApiUrl } from '../utils/api';
+import '../styles/AudioControls.css';
 
 const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,6 +14,16 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [startTime] = useState(Date.now());
   const [totalPages, setTotalPages] = useState(0);
   const [error, setError] = useState(null);
+  
+  // Audio state
+  const [audioFiles, setAudioFiles] = useState({});
+  const [currentAudio, setCurrentAudio] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [volume, setVolume] = useState(0.8);
+  const [audioProgress, setAudioProgress] = useState(0);
+  const [audioDuration, setAudioDuration] = useState(0);
+  const audioRef = useRef(null);
   // Dynamic flipbook height (based on single page aspect ratio, not full spread)
   const BOOK_WIDTH = 1400; // full spread width - balanced size for good visibility
   const SINGLE_PAGE_WIDTH = BOOK_WIDTH / 2;
@@ -98,6 +109,145 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     console.log('🎯 Generated fallback URL:', fallbackUrl);
     return fallbackUrl;
   }, [book?.notes, book?.folder_path]);
+
+  // Extract audio files from book data
+  const extractAudioFiles = useCallback(() => {
+    console.log('🎵 Extracting audio files from book data...');
+    const audioMap = {};
+    
+    // Check if book has page sequence with audio files
+    if (book?._page_sequence) {
+      book._page_sequence.forEach((page, index) => {
+        const pageNumber = page.page_number || index + 1;
+        if (page.audio_files && page.audio_files.length > 0) {
+          audioMap[pageNumber] = page.audio_files.map(audio => ({
+            filename: audio.filename,
+            url: audio.url,
+            type: audio.type || 'page_audio'
+          }));
+        }
+      });
+    }
+    
+    // Also check for audio files in the book folder (from manifest processing)
+    if (book?._folder_path) {
+      // This would be populated by the manifest processing
+      // For now, we'll rely on the page sequence audio files
+    }
+    
+    console.log('🎵 Audio files extracted:', audioMap);
+    setAudioFiles(audioMap);
+    
+    return audioMap;
+  }, [book]);
+
+  // Get audio URL for a specific page
+  const getAudioUrl = useCallback((pageNumber) => {
+    const pageAudio = audioFiles[pageNumber];
+    if (pageAudio && pageAudio.length > 0) {
+      // Return the first audio file for the page
+      return pageAudio[0].url;
+    }
+    
+    // Fallback: try to construct audio URL based on common patterns
+    if (book?._folder_path) {
+      const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      if (folderPathMatch) {
+        const [, relativePath] = folderPathMatch;
+        const cleanPath = relativePath.replace(/\\/g, '/');
+        
+        // Try common audio file patterns
+        const patterns = [
+          `page ${pageNumber}.mp3`,
+          `page${pageNumber}.mp3`,
+          `page-${pageNumber}.mp3`
+        ];
+        
+        for (const pattern of patterns) {
+          const audioUrl = `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`;
+          return audioUrl;
+        }
+      }
+    }
+    
+    return null;
+  }, [audioFiles, book?._folder_path]);
+
+  // Audio control functions
+  const playAudio = useCallback((audioUrl) => {
+    if (!audioUrl) return;
+    
+    console.log('🎵 Playing audio:', audioUrl);
+    
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+    
+    const audio = new Audio(audioUrl);
+    audioRef.current = audio;
+    
+    audio.volume = isMuted ? 0 : volume;
+    
+    audio.addEventListener('loadedmetadata', () => {
+      setAudioDuration(audio.duration);
+    });
+    
+    audio.addEventListener('timeupdate', () => {
+      setAudioProgress(audio.currentTime);
+    });
+    
+    audio.addEventListener('ended', () => {
+      setIsPlaying(false);
+      setAudioProgress(0);
+    });
+    
+    audio.addEventListener('error', (e) => {
+      console.error('🎵 Audio error:', e);
+      setIsPlaying(false);
+    });
+    
+    audio.play()
+      .then(() => {
+        setCurrentAudio(audioUrl);
+        setIsPlaying(true);
+      })
+      .catch(error => {
+        console.error('🎵 Audio play error:', error);
+        setIsPlaying(false);
+      });
+  }, [isMuted, volume]);
+
+  const pauseAudio = useCallback(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, []);
+
+  const toggleAudio = useCallback(() => {
+    if (isPlaying) {
+      pauseAudio();
+    } else {
+      const audioUrl = getAudioUrl(currentPage);
+      if (audioUrl) {
+        playAudio(audioUrl);
+      }
+    }
+  }, [isPlaying, currentPage, pauseAudio, playAudio, getAudioUrl]);
+
+  const toggleMute = useCallback(() => {
+    setIsMuted(!isMuted);
+    if (audioRef.current) {
+      audioRef.current.volume = isMuted ? volume : 0;
+    }
+  }, [isMuted, volume]);
+
+  const handleVolumeChange = useCallback((newVolume) => {
+    setVolume(newVolume);
+    if (audioRef.current && !isMuted) {
+      audioRef.current.volume = newVolume;
+    }
+  }, [isMuted]);
 
   // Load jQuery and Turn.js from the working files (book-effect style)
   useEffect(() => {
@@ -521,6 +671,29 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     fetchBookData();
   }, [fetchBookData]);
 
+  // Extract audio files when book data is loaded
+  useEffect(() => {
+    if (book && pages.length > 0) {
+      extractAudioFiles();
+    }
+  }, [book, pages, extractAudioFiles]);
+
+  // Handle page changes for audio
+  useEffect(() => {
+    // Stop current audio when page changes
+    if (audioRef.current && isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+    
+    // Auto-play audio for new page if available
+    const audioUrl = getAudioUrl(currentPage);
+    if (audioUrl) {
+      console.log(`🎵 Page ${currentPage} has audio available:`, audioUrl);
+      // Don't auto-play, just make it available
+    }
+  }, [currentPage, getAudioUrl, isPlaying]);
+
   // Initialize Turn.js when ready
   useEffect(() => {
     if (turnJsLoaded && images.length > 0 && flipBookRef.current) {
@@ -690,6 +863,16 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     return () => clearInterval(interval);
   }, [startTime]);
 
+  // Cleanup audio on unmount
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
   if (loading) {
     return (
       <div className="reader-loading">
@@ -756,6 +939,59 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                 <div className="page-indicator">
                   Page {currentPage} of {totalPages}
                 </div>
+              </div>
+
+              {/* Audio Controls */}
+              <div className="enhanced-nav-audio">
+                {getAudioUrl(currentPage) && (
+                  <div className="audio-controls">
+                    <button 
+                      onClick={toggleAudio} 
+                      className="nav-btn audio-play-btn" 
+                      title={isPlaying ? "Pause Audio" : "Play Audio"}
+                    >
+                      {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+                    </button>
+                    
+                    <button 
+                      onClick={toggleMute} 
+                      className="nav-btn audio-mute-btn" 
+                      title={isMuted ? "Unmute" : "Mute"}
+                    >
+                      {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                    </button>
+                    
+                    <div className="audio-progress-container">
+                      <div className="audio-progress-bar">
+                        <div 
+                          className="audio-progress-fill" 
+                          style={{ 
+                            width: audioDuration > 0 ? `${(audioProgress / audioDuration) * 100}%` : '0%' 
+                          }}
+                        />
+                      </div>
+                      <div className="audio-time">
+                        {Math.floor(audioProgress)}s / {Math.floor(audioDuration)}s
+                      </div>
+                    </div>
+                    
+                    <input
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.1"
+                      value={volume}
+                      onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
+                      className="volume-slider"
+                      title="Volume"
+                    />
+                  </div>
+                )}
+                {!getAudioUrl(currentPage) && (
+                  <div className="no-audio-indicator">
+                    <span className="text-gray-400">No audio for this page</span>
+                  </div>
+                )}
               </div>
 
               <div className="enhanced-nav-right">
