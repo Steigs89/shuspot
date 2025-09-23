@@ -277,6 +277,64 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
         </div>
       )}
 
+      {/* Database Management */}
+      <div className="database-management">
+        <h5>🗄️ Database Management:</h5>
+        <div className="management-buttons">
+          <button 
+            className="clear-db-button"
+            onClick={async () => {
+              if (window.confirm('⚠️ This will delete ALL books from the database. Are you sure?')) {
+                try {
+                  const response = await fetch('/api/books/clear/all', {
+                    method: 'DELETE'
+                  });
+                  if (response.ok) {
+                    toast.success('Database cleared successfully!');
+                    if (onUploadComplete) {
+                      onUploadComplete({ db_imported: 0 });
+                    }
+                  } else {
+                    throw new Error('Failed to clear database');
+                  }
+                } catch (error) {
+                  toast.error(`Failed to clear database: ${error.message}`);
+                }
+              }
+            }}
+          >
+            🗑️ Clear All Books
+          </button>
+          
+          <button 
+            className="export-button"
+            onClick={async () => {
+              try {
+                const response = await fetch('/api/export/csv');
+                if (response.ok) {
+                  const blob = await response.blob();
+                  const url = window.URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = `books_export_${new Date().toISOString().split('T')[0]}.csv`;
+                  document.body.appendChild(a);
+                  a.click();
+                  document.body.removeChild(a);
+                  window.URL.revokeObjectURL(url);
+                  toast.success('Books exported successfully!');
+                } else {
+                  throw new Error('Failed to export books');
+                }
+              } catch (error) {
+                toast.error(`Failed to export books: ${error.message}`);
+              }
+            }}
+          >
+            📥 Export CSV
+          </button>
+        </div>
+      </div>
+
       {/* Quick Tips */}
       <div className="upload-tips">
         <h5>💡 Pro Tips:</h5>
