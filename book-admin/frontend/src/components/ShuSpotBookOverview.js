@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Heart, MapPin, Play, ChevronUp, ChevronDown, Book } from 'lucide-react';
 import { getApiUrl } from '../utils/api';
 
@@ -6,12 +6,42 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
   const [isFavorited, setIsFavorited] = useState(false);
   const [isTopBarExpanded, setIsTopBarExpanded] = useState(true);
   const [isBottomBarExpanded, setIsBottomBarExpanded] = useState(true);
+  const [loadedDescription, setLoadedDescription] = useState(null);
   const currentDate = new Date().toLocaleDateString();
 
   // Extract book information
   const title = book.Name || book.title || 'Unknown Title';
   const author = book.Author || book.author || 'Unknown Author';
   const apiUrl = getApiUrl(); // Store API URL at component level for use in event handlers
+  
+  // Load description from description.txt if not in book data
+  useEffect(() => {
+    const loadDescriptionFromFile = async () => {
+      // Only try to load if we don't have a description and have a folder path
+      if (!book.description && !book.Description && book._folder_path) {
+        try {
+          const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+          if (folderPathMatch) {
+            const [, relativePath] = folderPathMatch;
+            const cleanPath = relativePath.replace(/\\/g, '/');
+            const descriptionUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}/description.txt`;
+            
+            console.log('Trying to load description from:', descriptionUrl);
+            const response = await fetch(descriptionUrl);
+            if (response.ok) {
+              const descriptionText = await response.text();
+              setLoadedDescription(descriptionText.trim());
+              console.log('Loaded description:', descriptionText.trim());
+            }
+          }
+        } catch (error) {
+          console.log('Could not load description.txt:', error);
+        }
+      }
+    };
+    
+    loadDescriptionFromFile();
+  }, [book._folder_path, book.description, book.Description, apiUrl]);
   
   // Better cover image logic - check multiple possible sources
   const getCoverImageUrl = () => {
@@ -20,18 +50,26 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
     
     // First check if there's a direct cover_image_url
     if (book.cover_image_url) {
-      console.log('🚨 FOUND EXISTING cover_image_url (may be absolute path):', book.cover_image_url);
-      // Check if it's an absolute path and convert it
-      if (book.cover_image_url.includes('CROP-ShuSpot')) {
+      console.log('🚨 FOUND EXISTING cover_image_url:', book.cover_image_url);
+      
+      // If it's already a working Supabase URL, use it directly
+      if (book.cover_image_url.startsWith('https://') && book.cover_image_url.includes('supabase.co')) {
+        console.log('✅ Using working Supabase URL directly:', book.cover_image_url);
+        return book.cover_image_url;
+      }
+      
+      // Only convert if it's a local file path
+      if (book.cover_image_url.includes('CROP-ShuSpot') && !book.cover_image_url.startsWith('http')) {
         const cropMatch = book.cover_image_url.match(/.*CROP-ShuSpot[\/\\](.+)$/);
         if (cropMatch) {
           const [, relativePath] = cropMatch;
           const cleanPath = relativePath.replace(/\\/g, '/');
           const correctedUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}`;
-          console.log('🔧 CONVERTED absolute path to backend URL:', correctedUrl);
+          console.log('🔧 CONVERTED local path to backend URL:', correctedUrl);
           return correctedUrl;
         }
       }
+      
       return book.cover_image_url;
     }
     
@@ -104,7 +142,39 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
   const gradeLevel = book['Grade Level'] || book.grade_level || 'K2';
   const genre = book.Genre || book.genre || 'Animals & Their Habitats';
   const pagesRead = 0;
-  const description = book.description || "No description available.";
+  // Get description from multiple possible sources
+  const getDescription = () => {
+    // Check loaded description first
+    if (loadedDescription) {
+      return loadedDescription;
+    }
+    
+    // Check direct description field
+    if (book.description) {
+      return book.description;
+    }
+    
+    // Check notes for description
+    if (book.notes) {
+      try {
+        const parsedNotes = typeof book.notes === 'string' ? JSON.parse(book.notes) : book.notes;
+        if (parsedNotes.description) {
+          return parsedNotes.description;
+        }
+      } catch (e) {
+        console.log('Error parsing notes for description:', e);
+      }
+    }
+    
+    // Check other possible fields
+    if (book.Description) {
+      return book.Description;
+    }
+    
+    return "No description available.";
+  };
+  
+  const description = getDescription();
   const readingProgress = (pagesRead / totalPages) * 100;
 
   const handleStartReading = () => {
