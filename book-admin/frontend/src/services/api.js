@@ -5,6 +5,7 @@ const API_BASE = isDev ? '/api' : (process.env.REACT_APP_API_URL || '/api');
 
 const api = axios.create({
   baseURL: API_BASE,
+  timeout: 60000, // 60 second timeout for Render cold starts
   headers: {
     'Content-Type': 'application/json',
   },
