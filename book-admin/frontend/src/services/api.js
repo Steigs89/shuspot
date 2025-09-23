@@ -51,28 +51,17 @@ export const bookAPI = {
 
   // Bulk update books
   bulkUpdateBooks: async (bookIds, field, value) => {
-    // Try JSON format first, then fall back to form data
-    try {
-      const response = await api.put('/books/bulk-update', {
-        book_ids: bookIds,
-        field: field,
-        value: value
-      });
-      return response.data;
-    } catch (error) {
-      // Fallback to form data if JSON doesn't work
-      const formData = new FormData();
-      bookIds.forEach(id => formData.append('book_ids', id));
-      formData.append('field', field);
-      formData.append('value', value);
-      
-      const response = await api.put('/books/bulk-update', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      return response.data;
-    }
+    const formData = new FormData();
+    bookIds.forEach(id => formData.append('book_ids', id));
+    formData.append('field', field);
+    formData.append('value', value);
+    
+    const response = await api.put('/books/bulk-update', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
   },
 
   // Delete book
