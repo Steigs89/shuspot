@@ -982,8 +982,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       // Update previous page reference
       prevPageRef.current = currentPage;
       
-      // Auto-play audio if enabled
-      if (autoPlayEnabled && !autoTurnEnabled) {
+      // Auto-play audio if enabled (works for both manual navigation and auto-turn)
+      if (autoPlayEnabled) {
         console.log('🎵 🚀 Auto-play enabled, starting audio for new page');
         setTimeout(() => {
           const pagesToTry = [currentPage];
@@ -1033,7 +1033,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         break;
       }
     }
-  }, [currentPage, totalPages, audioFiles, autoPlayEnabled, autoTurnEnabled, getAudioUrl, playAudio]);
+  }, [currentPage, totalPages, audioFiles, autoPlayEnabled, autoTurnEnabled, getAudioUrl]);
 
   // Initialize Turn.js when ready
   useEffect(() => {
