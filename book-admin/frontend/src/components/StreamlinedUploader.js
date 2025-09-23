@@ -61,11 +61,42 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
         const bookName = folderParts[folderParts.length - 1];
         const category = folderParts.length > 1 ? folderParts[folderParts.length - 2] : 'Unknown';
         
+        // Extract better metadata from folder structure
+        const extractAuthor = (bookTitle) => {
+          // Common patterns for extracting authors from titles
+          if (bookTitle.includes("'s ")) {
+            const parts = bookTitle.split("'s ");
+            return parts[0];
+          }
+          return 'Unknown Author';
+        };
+        
+        const getReadingLevel = (category) => {
+          // Map categories to reading levels
+          const levelMap = {
+            'Baking': 'Elementary',
+            'Our Solar System': 'Middle School',
+            'Life Cycles': 'Elementary',
+            'Fractions': 'Elementary',
+            'Light & Sound': 'Middle School',
+            'Figurative Language': 'Middle School'
+          };
+          return levelMap[category] || 'Elementary';
+        };
+        
+        const getFictionType = (category) => {
+          // Most educational books are non-fiction
+          const fictionCategories = ['Stories', 'Tales', 'Adventures'];
+          return fictionCategories.some(cat => category.includes(cat)) ? 'Fiction' : 'Non-Fiction';
+        };
+
         books.push({
           title: bookName,
-          author: 'Unknown',
+          author: extractAuthor(bookName),
           genre: category,
           book_type: 'Read to Me',
+          reading_level: getReadingLevel(category),
+          fiction_type: getFictionType(category),
           _page_sequence: pages,
           _total_pages: pages.length,
           _folder_path: folder,
@@ -99,6 +130,11 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       if (onUploadComplete) {
         onUploadComplete(result);
       }
+      
+      // Force refresh the page to update stats
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
 
     } catch (error) {
       console.error('Rclone upload error:', error);
@@ -297,6 +333,10 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
                     if (onUploadComplete) {
                       onUploadComplete({ db_imported: 0 });
                     }
+                    // Refresh page to update stats
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 1000);
                   } else {
                     throw new Error('Failed to clear database');
                   }
