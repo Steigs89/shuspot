@@ -123,13 +123,13 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     return fallbackUrl;
   }, [book?.notes, book?.folder_path]);
 
-  // Load OCR data when book changes
+  // Load OCR data when book changes (only once per book)
   useEffect(() => {
-    if (book?.id && Object.keys(pageTextData).length === 0) {
+    if (book?.id) {
       console.log('📝 Loading OCR data for book:', book.id);
       loadOCRData(book.id);
     }
-  }, [book?.id, pageTextData]); // Removed loadOCRData to prevent circular dependency
+  }, [book?.id]); // Only depend on book ID, load once per book
 
   // Extract audio files from book data
   const extractAudioFiles = useCallback(() => {
@@ -502,7 +502,13 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
             
             if (nextPage > currentPage && nextPage <= totalPages) {
               console.log(`🎵 📖 Auto-turning from page ${currentPage} to page ${nextPage}`);
-              goToPage(nextPage);
+              try {
+                goToPage(nextPage);
+                console.log(`🎵 📖 ✅ Successfully called goToPage(${nextPage})`);
+              } catch (error) {
+                console.error(`🎵 📖 ❌ Error calling goToPage:`, error);
+                setAutoTurnEnabled(false);
+              }
             } else {
               console.log('🎵 📖 Reached end of book, disabling auto-turn');
               setAutoTurnEnabled(false);
