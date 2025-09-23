@@ -470,3 +470,85 @@
   border-radius: 3px;
   transition: width 0.3s ease;
 }
+/* 
+Text Highlighting Styles */
+.text-highlight-overlay {
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.highlight-word {
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.highlight-word.active {
+  background: rgba(255, 255, 0, 0.4) !important;
+  border: 2px solid #FFD700 !important;
+  animation: highlight-pulse 0.5s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes highlight-pulse {
+  0% {
+    transform: scale(1);
+    background: rgba(255, 255, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    background: rgba(255, 255, 0, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    background: rgba(255, 255, 0, 0.4);
+  }
+}
+
+/* Highlight button styling */
+.kid-audio-btn.highlight-btn.active {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+  }
+}
+
+/* Demo text overlay for testing */
+.demo-text-overlay {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  pointer-events: none;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.demo-word {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.demo-word.highlighted {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}

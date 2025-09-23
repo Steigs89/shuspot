@@ -28,9 +28,13 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [currentPlaylistIndex, setCurrentPlaylistIndex] = useState(0);
   const [autoPlayEnabled, setAutoPlayEnabled] = useState(false);
   const [autoTurnEnabled, setAutoTurnEnabled] = useState(false);
+  const [textHighlightEnabled, setTextHighlightEnabled] = useState(true);
+  const [currentHighlightedWords, setCurrentHighlightedWords] = useState([]);
+  const [pageTextData, setPageTextData] = useState({});
   const audioRef = useRef(null);
   const playlistRef = useRef([]);
   const playlistIndexRef = useRef(0);
+  const highlightIntervalRef = useRef(null);
   // Dynamic flipbook height (based on single page aspect ratio, not full spread)
   const BOOK_WIDTH = 1400; // full spread width - balanced size for good visibility
   const SINGLE_PAGE_WIDTH = BOOK_WIDTH / 2;
@@ -230,6 +234,90 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     }
   }, []);
 
+  // Text highlighting functions
+  const extractTextFromPage = useCallback(async (pageNumber) => {
+    if (pageTextData[pageNumber]) {
+      return pageTextData[pageNumber];
+    }
+
+    // For now, we'll use a simple word estimation based on audio duration
+    // In a real implementation, you'd use OCR or have pre-processed text data
+    const audioUrl = getAudioUrl(pageNumber);
+    if (!audioUrl) return null;
+
+    try {
+      // Simulate text extraction - in reality you'd use OCR or stored text data
+      const estimatedWords = Math.floor(audioDuration * 2.5); // ~2.5 words per second
+      const mockText = {
+        pageNumber,
+        words: Array.from({ length: estimatedWords }, (_, i) => ({
+          id: `word-${pageNumber}-${i}`,
+          text: `word${i + 1}`,
+          startTime: (audioDuration / estimatedWords) * i,
+          endTime: (audioDuration / estimatedWords) * (i + 1),
+          x: Math.random() * 800 + 100, // Random positions for demo
+          y: Math.random() * 600 + 100,
+          width: 60,
+          height: 20
+        })),
+        totalDuration: audioDuration
+      };
+
+      setPageTextData(prev => ({ ...prev, [pageNumber]: mockText }));
+      return mockText;
+    } catch (error) {
+      console.error('📝 Text extraction failed:', error);
+      return null;
+    }
+  }, [pageTextData, getAudioUrl, audioDuration]);
+
+  const startTextHighlighting = useCallback((pageNumber, duration) => {
+    if (!textHighlightEnabled) return;
+
+    console.log('📝 Starting text highlighting for page', pageNumber, 'duration:', duration);
+    
+    // Clear any existing highlighting
+    if (highlightIntervalRef.current) {
+      clearInterval(highlightIntervalRef.current);
+    }
+    setCurrentHighlightedWords([]);
+
+    // Demo text highlighting - highlight words sequentially
+    const demoText = `Our Sun is a star that gives us light and warmth every day!`.split(' ');
+    const wordsPerSecond = demoText.length / duration; // Calculate words per second
+    const startTime = Date.now();
+    
+    highlightIntervalRef.current = setInterval(() => {
+      const elapsed = (Date.now() - startTime) / 1000; // seconds
+      const currentWordIndex = Math.floor(elapsed * wordsPerSecond);
+      
+      if (currentWordIndex < demoText.length) {
+        // Highlight current word and previous word for smoother effect
+        const wordsToHighlight = [];
+        if (currentWordIndex >= 0) wordsToHighlight.push(`demo-word-${currentWordIndex}`);
+        if (currentWordIndex > 0) wordsToHighlight.push(`demo-word-${currentWordIndex - 1}`);
+        
+        setCurrentHighlightedWords(wordsToHighlight);
+        console.log('📝 Highlighting words:', wordsToHighlight);
+      }
+      
+      // Stop when audio ends
+      if (elapsed >= duration) {
+        clearInterval(highlightIntervalRef.current);
+        setCurrentHighlightedWords([]);
+        console.log('📝 Text highlighting finished');
+      }
+    }, 200); // Update every 200ms for smooth highlighting
+  }, [textHighlightEnabled]);
+
+  const stopTextHighlighting = useCallback(() => {
+    if (highlightIntervalRef.current) {
+      clearInterval(highlightIntervalRef.current);
+      highlightIntervalRef.current = null;
+    }
+    setCurrentHighlightedWords([]);
+  }, []);
+
   // Audio control functions - fixed for reliable playback
   const playAudio = useCallback(async (audioUrl, pageNumber = currentPage, isAutoContinue = false) => {
     if (!audioUrl) {
@@ -285,6 +373,9 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     const handleEnded = () => {
       console.log('🎵 Audio ended');
       setAudioProgress(0);
+      
+      // Stop text highlighting
+      stopTextHighlighting();
       
       // Use refs to get current values
       const currentPlaylist = playlistRef.current;
@@ -429,6 +520,10 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                 
                 if (audio.currentTime > 0 && !audio.paused) {
                   console.log('🎵 ✅ Audio is definitely playing!');
+                  // Start text highlighting
+                  if (attempt === 1) { // Only start on first successful verification
+                    startTextHighlighting(pageNumber, audio.duration);
+                  }
                 } else if (attempt < 3) {
                   console.log(`🎵 ⚠️ Audio not progressing, attempt ${attempt + 1}...`);
                   verifyPlayback(attempt + 1);
@@ -1391,6 +1486,21 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                   <div ref={flipBookRef} className="flipbook">
                     {/* Turn.js will populate this with pages */}
                   </div>
+
+                  {/* Text Highlighting Demo Overlay */}
+                  {textHighlightEnabled && isPlaying && (
+                    <div className="demo-text-overlay">
+                      {`Our Sun is a star that gives us light and warmth every day!`.split(' ').map((word, index) => (
+                        <span
+                          key={`demo-word-${index}`}
+                          className={`demo-word ${currentHighlightedWords.includes(`demo-word-${index}`) ? 'highlighted' : ''}`}
+                        >
+                          {word}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
                   {/* External wide click zones overlayed ABOVE flipbook to avoid interfering with internal DOM */}
                   <div
                     onClick={(e) => { 
@@ -1564,6 +1674,18 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                       <span className="btn-content">
                         <span className="emoji">📖</span>
                         <span className="btn-text">Auto-Turn</span>
+                      </span>
+                    </button>
+
+                    {/* Text Highlighting Toggle */}
+                    <button 
+                      onClick={() => setTextHighlightEnabled(!textHighlightEnabled)}
+                      className={`kid-audio-btn highlight-btn ${textHighlightEnabled ? 'active' : ''}`}
+                      title={textHighlightEnabled ? "Turn off Word Highlighting" : "Turn on Word Highlighting"}
+                    >
+                      <span className="btn-content">
+                        <span className="emoji">✨</span>
+                        <span className="btn-text">Highlight</span>
                       </span>
                     </button>
 
