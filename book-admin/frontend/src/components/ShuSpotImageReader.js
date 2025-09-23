@@ -210,6 +210,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
 
   // Update refs when state changes
   useEffect(() => {
+    console.log('🎵 🔄 Updating playlist refs:', audioPlaylist, currentPlaylistIndex);
     playlistRef.current = audioPlaylist;
     playlistIndexRef.current = currentPlaylistIndex;
   }, [audioPlaylist, currentPlaylistIndex]);
@@ -927,19 +928,31 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     }
   }, [book, pages, extractAudioFiles]);
 
+  // Track previous page to detect actual page changes
+  const prevPageRef = useRef(currentPage);
+  
   // Handle page changes for audio - MANUAL ONLY (no autoplay)
   useEffect(() => {
-    // Stop current audio when page changes
-    if (audioRef.current && isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
-    }
-    
-    // Reset playlist when page changes
-    if (audioPlaylist.length > 0) {
-      console.log('🎵 📄 Page changed, resetting audio playlist');
-      setAudioPlaylist([]);
-      setCurrentPlaylistIndex(0);
+    // Only act on actual page changes
+    if (prevPageRef.current !== currentPage) {
+      console.log(`🎵 📄 Page changed from ${prevPageRef.current} to ${currentPage}`);
+      
+      // Stop current audio when page changes
+      if (audioRef.current && isPlaying) {
+        console.log('🎵 Stopping audio due to page change');
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+      
+      // Reset playlist when page changes
+      if (audioPlaylist.length > 0) {
+        console.log('🎵 📄 Resetting audio playlist due to page change');
+        setAudioPlaylist([]);
+        setCurrentPlaylistIndex(0);
+      }
+      
+      // Update previous page reference
+      prevPageRef.current = currentPage;
     }
     
     // Just log what audio is available, don't auto-play
@@ -957,7 +970,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         break;
       }
     }
-  }, [currentPage, totalPages, audioFiles, isPlaying, audioPlaylist.length]);
+  }, [currentPage, totalPages, audioFiles]);
 
   // Initialize Turn.js when ready
   useEffect(() => {
