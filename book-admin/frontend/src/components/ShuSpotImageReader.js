@@ -188,24 +188,23 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       return pageAudio[0].url;
     }
     
-    // Fallback: try to construct audio URL based on common patterns
+    // Fallback: construct audio URL based on the pattern we know works
     if (book?._folder_path) {
       const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
       if (folderPathMatch) {
         const [, relativePath] = folderPathMatch;
         const cleanPath = relativePath.replace(/\\/g, '/');
         
-        // Try common audio file patterns with proper URL encoding
-        const patterns = [
-          pageNumber === 1 ? 'intro title.mp3' : null,
-          `page ${pageNumber}.mp3`,
-          `page${pageNumber}.mp3`,
-          `page-${pageNumber}.mp3`
-        ].filter(Boolean);
+        // Use the pattern we know works from the audio test: "page N.mp3"
+        let pattern;
+        if (pageNumber === 1) {
+          pattern = 'intro title.mp3';
+        } else {
+          pattern = `page ${pageNumber}.mp3`;
+        }
         
-        // Return the first pattern as the most likely
-        const pattern = patterns[0];
-        const audioUrl = `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`;
+        // Construct URL with proper encoding
+        const audioUrl = `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`;
         console.log(`🎵 Generated audio URL for page ${pageNumber}:`, audioUrl);
         return audioUrl;
       }
@@ -220,91 +219,58 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     
     console.log('🎵 Playing audio:', audioUrl);
     
+    // Stop any existing audio
     if (audioRef.current) {
       audioRef.current.pause();
+      audioRef.current.removeEventListener('error', () => {});
+      audioRef.current.removeEventListener('ended', () => {});
+      audioRef.current.removeEventListener('timeupdate', () => {});
+      audioRef.current.removeEventListener('loadedmetadata', () => {});
     }
     
-    const tryAudioUrls = (urls, index = 0) => {
-      if (index >= urls.length) {
-        console.error('🎵 All audio URLs failed for page', pageNumber);
-        setIsPlaying(false);
-        return;
-      }
-      
-      const currentUrl = urls[index];
-      console.log(`🎵 Trying audio URL ${index + 1}/${urls.length}:`, currentUrl);
-      
-      const audio = new Audio(currentUrl);
-      audioRef.current = audio;
-      
-      audio.volume = isMuted ? 0 : volume;
-      
-      audio.addEventListener('loadedmetadata', () => {
-        setAudioDuration(audio.duration);
-        console.log('🎵 Audio loaded successfully:', currentUrl);
-      });
-      
-      audio.addEventListener('timeupdate', () => {
-        setAudioProgress(audio.currentTime);
-      });
-      
-      audio.addEventListener('ended', () => {
-        setIsPlaying(false);
-        setAudioProgress(0);
-      });
-      
-      audio.addEventListener('error', (e) => {
-        console.error(`🎵 Audio error for URL ${index + 1}:`, e);
-        // Try next URL
-        tryAudioUrls(urls, index + 1);
-      });
-      
-      audio.play()
-        .then(() => {
-          setCurrentAudio(currentUrl);
-          setIsPlaying(true);
-          console.log('🎵 Audio playing successfully:', currentUrl);
-        })
-        .catch(error => {
-          console.error(`🎵 Audio play error for URL ${index + 1}:`, error);
-          // Try next URL
-          tryAudioUrls(urls, index + 1);
-        });
+    // Simple single URL attempt for now to prevent loops
+    const audio = new Audio(audioUrl);
+    audioRef.current = audio;
+    
+    audio.volume = isMuted ? 0 : volume;
+    
+    const handleLoadedMetadata = () => {
+      setAudioDuration(audio.duration);
+      console.log('🎵 Audio loaded successfully:', audioUrl);
     };
     
-    // Generate multiple possible URLs to try
-    const possibleUrls = [];
+    const handleTimeUpdate = () => {
+      setAudioProgress(audio.currentTime);
+    };
     
-    if (book?._folder_path) {
-      const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-      if (folderPathMatch) {
-        const [, relativePath] = folderPathMatch;
-        const cleanPath = relativePath.replace(/\\/g, '/');
-        
-        // Try different audio file patterns
-        const patterns = [
-          pageNumber === 1 ? 'intro title.mp3' : null,
-          `page ${pageNumber}.mp3`,
-          `page${pageNumber}.mp3`,
-          `page-${pageNumber}.mp3`,
-          `Page ${pageNumber}.mp3`,
-          `Page${pageNumber}.mp3`
-        ].filter(Boolean);
-        
-        patterns.forEach(pattern => {
-          possibleUrls.push(`https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`);
-        });
-      }
-    }
+    const handleEnded = () => {
+      setIsPlaying(false);
+      setAudioProgress(0);
+    };
     
-    // Add the original URL as first attempt
-    if (audioUrl && !possibleUrls.includes(audioUrl)) {
-      possibleUrls.unshift(audioUrl);
-    }
+    const handleError = (e) => {
+      console.error('🎵 Audio error:', e);
+      setIsPlaying(false);
+      // Don't retry automatically to prevent loops
+    };
     
-    console.log('🎵 Attempting audio URLs:', possibleUrls);
-    tryAudioUrls(possibleUrls);
-  }, [isMuted, volume, book?._folder_path, currentPage]);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('error', handleError);
+    
+    audio.play()
+      .then(() => {
+        setCurrentAudio(audioUrl);
+        setIsPlaying(true);
+        console.log('🎵 Audio playing successfully:', audioUrl);
+      })
+      .catch(error => {
+        console.error('🎵 Audio play error:', error);
+        setIsPlaying(false);
+        // Don't retry automatically to prevent loops
+      });
+  }, [isMuted, volume, currentPage]);
 
   const pauseAudio = useCallback(() => {
     if (audioRef.current) {
@@ -775,17 +741,13 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       setIsPlaying(false);
     }
     
-    // Auto-play audio for new page if available
+    // Auto-play audio for new page if available (DISABLED for now to prevent loops)
     const audioUrl = getAudioUrl(currentPage);
     if (audioUrl) {
       console.log(`🎵 Page ${currentPage} has audio available:`, audioUrl);
-      
-      // Auto-play the audio for the new page
-      setTimeout(() => {
-        playAudio(audioUrl);
-      }, 500); // Small delay to ensure page transition is complete
+      // Don't auto-play for now - user can click play button
     }
-  }, [currentPage, getAudioUrl, isPlaying, playAudio]);
+  }, [currentPage, getAudioUrl, isPlaying]);
 
   // Initialize Turn.js when ready
   useEffect(() => {
