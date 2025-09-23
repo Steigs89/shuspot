@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Upload, FolderOpen, Cloud, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import { Upload, FolderOpen, Cloud, CheckCircle, AlertCircle, Loader, HelpCircle, X } from 'lucide-react';
 import { toast } from 'react-toastify';
 
 const StreamlinedUploader = ({ onUploadComplete }) => {
@@ -7,6 +7,7 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [uploadStatus, setUploadStatus] = useState('');
+  const [showHelp, setShowHelp] = useState(false);
 
   // Rclone + Supabase Upload (Recommended for large folders)
   const handleRcloneUpload = useCallback(async (manifestFile) => {
@@ -234,21 +235,30 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
                 </ol>
               </div>
               
-              <label className={`upload-button primary ${isUploading ? 'disabled' : ''}`}>
-                <Cloud size={20} />
-                {isUploading ? `Processing... ${uploadProgress}%` : 'Upload Rclone Manifest'}
-                <input
-                  type="file"
-                  accept=".json,application/json"
-                  style={{ display: 'none' }}
-                  disabled={isUploading}
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    if (file) handleRcloneUpload(file);
-                    e.target.value = '';
-                  }}
-                />
-              </label>
+              <div className="rclone-upload-section">
+                <label className={`upload-button primary ${isUploading ? 'disabled' : ''}`}>
+                  <Cloud size={20} />
+                  {isUploading ? `Processing... ${uploadProgress}%` : 'Upload Rclone Manifest'}
+                  <input
+                    type="file"
+                    accept=".json,application/json"
+                    style={{ display: 'none' }}
+                    disabled={isUploading}
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) handleRcloneUpload(file);
+                      e.target.value = '';
+                    }}
+                  />
+                </label>
+                <button 
+                  className="help-button"
+                  onClick={() => setShowHelp(true)}
+                  title="Setup Instructions"
+                >
+                  <HelpCircle size={16} />
+                </button>
+              </div>
             </div>
           )}
         </div>
@@ -377,6 +387,102 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
           </button>
         </div>
       </div>
+
+      {/* Help Modal */}
+      {showHelp && (
+        <div className="help-modal-overlay" onClick={() => setShowHelp(false)}>
+          <div className="help-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="help-modal-header">
+              <h3>🚀 Rclone + Supabase Setup Guide</h3>
+              <button className="close-button" onClick={() => setShowHelp(false)}>
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="help-modal-content">
+              <div className="setup-section">
+                <h4>Step 1: Install Rclone (One-time setup)</h4>
+                <div className="setup-options">
+                  <div className="setup-option">
+                    <strong>Windows:</strong>
+                    <ol>
+                      <li>Download from <a href="https://rclone.org/install/" target="_blank" rel="noopener noreferrer">rclone.org</a></li>
+                      <li>Extract to <code>C:\rclone\</code></li>
+                      <li>Add to system PATH</li>
+                    </ol>
+                  </div>
+                  <div className="setup-option">
+                    <strong>Mac:</strong>
+                    <code>brew install rclone</code>
+                  </div>
+                  <div className="setup-option">
+                    <strong>Linux:</strong>
+                    <code>curl https://rclone.org/install.sh | sudo bash</code>
+                  </div>
+                </div>
+              </div>
+
+              <div className="setup-section">
+                <h4>Step 2: Configure Supabase (One-time setup)</h4>
+                <div className="code-block">
+                  <code>
+                    rclone config create supa s3 provider=Other endpoint=https://xzwdtcczndgglqikmlwj.storage.supabase.co/storage/v1/s3 access_key_id=45ac9af4e1e039c4e79fe332833d31e1 secret_access_key=fae79bf3e12cb133b4ceced13c506f5c205544cad11ea4083e449deac1ca7d54 region=us-east-1
+                  </code>
+                </div>
+              </div>
+
+              <div className="setup-section">
+                <h4>Step 3: Upload Your Books</h4>
+                <div className="method-options">
+                  <div className="method-option">
+                    <strong>🐍 Python Script (Recommended):</strong>
+                    <code>python3 rclone_uploader.py /path/to/your/book/folder</code>
+                    <p>Automatically uploads and generates manifest</p>
+                  </div>
+                  <div className="method-option">
+                    <strong>📋 Quick Manifest (Existing books):</strong>
+                    <code>python3 quick_manifest.py "CROP-ShuSpot/Baking"</code>
+                    <p>Creates manifest for books already in Supabase</p>
+                  </div>
+                  <div className="method-option">
+                    <strong>⚡ Manual Rclone:</strong>
+                    <code>rclone sync /local/path supa:books/remote/path</code>
+                    <br />
+                    <code>rclone lsjson --recursive supa:books/remote/path > manifest.json</code>
+                  </div>
+                </div>
+              </div>
+
+              <div className="setup-section">
+                <h4>Step 4: Import Here</h4>
+                <ol>
+                  <li>Click "Upload Rclone Manifest" above</li>
+                  <li>Select your <code>manifest_*.json</code> file</li>
+                  <li>Wait for processing</li>
+                  <li>Your books will appear in the admin!</li>
+                </ol>
+              </div>
+
+              <div className="troubleshooting-section">
+                <h4>🔧 Troubleshooting</h4>
+                <div className="troubleshooting-item">
+                  <strong>❌ "rclone: command not found"</strong>
+                  <p>Install Rclone using the instructions in Step 1</p>
+                </div>
+                <div className="troubleshooting-item">
+                  <strong>❌ "0 books processed"</strong>
+                  <p>Check that your books have the correct structure:</p>
+                  <code>Book Name/resized/crop-1.png, crop-2.png, etc.</code>
+                </div>
+                <div className="troubleshooting-item">
+                  <strong>❌ Upload fails</strong>
+                  <p>Test connection: <code>rclone ls supa:books --max-items 5</code></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Quick Tips */}
       <div className="upload-tips">
