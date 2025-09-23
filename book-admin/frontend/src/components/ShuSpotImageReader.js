@@ -113,6 +113,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   // Extract audio files from book data
   const extractAudioFiles = useCallback(() => {
     console.log('🎵 Extracting audio files from book data...');
+    console.log('🎵 Book object:', book);
     const audioMap = {};
     
     // Check if book has page sequence with audio files
@@ -129,17 +130,55 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       });
     }
     
-    // Also check for audio files in the book folder (from manifest processing)
-    if (book?._folder_path) {
-      // This would be populated by the manifest processing
-      // For now, we'll rely on the page sequence audio files
+    // Since the manifest doesn't have audio files in page sequence yet,
+    // we need to scan the book folder for audio files and match them to pages
+    if (book?._folder_path && Object.keys(audioMap).length === 0) {
+      console.log('🎵 No audio in page sequence, scanning folder for audio files...');
+      
+      // Create audio mappings based on common patterns
+      for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
+        const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+        if (folderPathMatch) {
+          const [, relativePath] = folderPathMatch;
+          const cleanPath = relativePath.replace(/\\/g, '/');
+          
+          // Try multiple audio file patterns
+          const audioPatterns = [
+            `page ${pageNum}.mp3`,
+            `page${pageNum}.mp3`,
+            `page-${pageNum}.mp3`,
+            `intro title.mp3` // for page 1
+          ];
+          
+          const audioFiles = [];
+          audioPatterns.forEach(pattern => {
+            if (pageNum === 1 && pattern === 'intro title.mp3') {
+              audioFiles.push({
+                filename: pattern,
+                url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`,
+                type: 'intro'
+              });
+            } else if (pattern.includes(`${pageNum}`)) {
+              audioFiles.push({
+                filename: pattern,
+                url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`,
+                type: 'page_audio'
+              });
+            }
+          });
+          
+          if (audioFiles.length > 0) {
+            audioMap[pageNum] = audioFiles;
+          }
+        }
+      }
     }
     
     console.log('🎵 Audio files extracted:', audioMap);
     setAudioFiles(audioMap);
     
     return audioMap;
-  }, [book]);
+  }, [book, totalPages]);
 
   // Get audio URL for a specific page
   const getAudioUrl = useCallback((pageNumber) => {
@@ -156,25 +195,27 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         const [, relativePath] = folderPathMatch;
         const cleanPath = relativePath.replace(/\\/g, '/');
         
-        // Try common audio file patterns
+        // Try common audio file patterns with proper URL encoding
         const patterns = [
+          pageNumber === 1 ? 'intro title.mp3' : null,
           `page ${pageNumber}.mp3`,
           `page${pageNumber}.mp3`,
           `page-${pageNumber}.mp3`
-        ];
+        ].filter(Boolean);
         
-        for (const pattern of patterns) {
-          const audioUrl = `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`;
-          return audioUrl;
-        }
+        // Return the first pattern as the most likely
+        const pattern = patterns[0];
+        const audioUrl = `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`;
+        console.log(`🎵 Generated audio URL for page ${pageNumber}:`, audioUrl);
+        return audioUrl;
       }
     }
     
     return null;
   }, [audioFiles, book?._folder_path]);
 
-  // Audio control functions
-  const playAudio = useCallback((audioUrl) => {
+  // Audio control functions with fallback URL attempts
+  const playAudio = useCallback((audioUrl, pageNumber = currentPage) => {
     if (!audioUrl) return;
     
     console.log('🎵 Playing audio:', audioUrl);
@@ -183,39 +224,87 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       audioRef.current.pause();
     }
     
-    const audio = new Audio(audioUrl);
-    audioRef.current = audio;
-    
-    audio.volume = isMuted ? 0 : volume;
-    
-    audio.addEventListener('loadedmetadata', () => {
-      setAudioDuration(audio.duration);
-    });
-    
-    audio.addEventListener('timeupdate', () => {
-      setAudioProgress(audio.currentTime);
-    });
-    
-    audio.addEventListener('ended', () => {
-      setIsPlaying(false);
-      setAudioProgress(0);
-    });
-    
-    audio.addEventListener('error', (e) => {
-      console.error('🎵 Audio error:', e);
-      setIsPlaying(false);
-    });
-    
-    audio.play()
-      .then(() => {
-        setCurrentAudio(audioUrl);
-        setIsPlaying(true);
-      })
-      .catch(error => {
-        console.error('🎵 Audio play error:', error);
+    const tryAudioUrls = (urls, index = 0) => {
+      if (index >= urls.length) {
+        console.error('🎵 All audio URLs failed for page', pageNumber);
         setIsPlaying(false);
+        return;
+      }
+      
+      const currentUrl = urls[index];
+      console.log(`🎵 Trying audio URL ${index + 1}/${urls.length}:`, currentUrl);
+      
+      const audio = new Audio(currentUrl);
+      audioRef.current = audio;
+      
+      audio.volume = isMuted ? 0 : volume;
+      
+      audio.addEventListener('loadedmetadata', () => {
+        setAudioDuration(audio.duration);
+        console.log('🎵 Audio loaded successfully:', currentUrl);
       });
-  }, [isMuted, volume]);
+      
+      audio.addEventListener('timeupdate', () => {
+        setAudioProgress(audio.currentTime);
+      });
+      
+      audio.addEventListener('ended', () => {
+        setIsPlaying(false);
+        setAudioProgress(0);
+      });
+      
+      audio.addEventListener('error', (e) => {
+        console.error(`🎵 Audio error for URL ${index + 1}:`, e);
+        // Try next URL
+        tryAudioUrls(urls, index + 1);
+      });
+      
+      audio.play()
+        .then(() => {
+          setCurrentAudio(currentUrl);
+          setIsPlaying(true);
+          console.log('🎵 Audio playing successfully:', currentUrl);
+        })
+        .catch(error => {
+          console.error(`🎵 Audio play error for URL ${index + 1}:`, error);
+          // Try next URL
+          tryAudioUrls(urls, index + 1);
+        });
+    };
+    
+    // Generate multiple possible URLs to try
+    const possibleUrls = [];
+    
+    if (book?._folder_path) {
+      const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      if (folderPathMatch) {
+        const [, relativePath] = folderPathMatch;
+        const cleanPath = relativePath.replace(/\\/g, '/');
+        
+        // Try different audio file patterns
+        const patterns = [
+          pageNumber === 1 ? 'intro title.mp3' : null,
+          `page ${pageNumber}.mp3`,
+          `page${pageNumber}.mp3`,
+          `page-${pageNumber}.mp3`,
+          `Page ${pageNumber}.mp3`,
+          `Page${pageNumber}.mp3`
+        ].filter(Boolean);
+        
+        patterns.forEach(pattern => {
+          possibleUrls.push(`https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`);
+        });
+      }
+    }
+    
+    // Add the original URL as first attempt
+    if (audioUrl && !possibleUrls.includes(audioUrl)) {
+      possibleUrls.unshift(audioUrl);
+    }
+    
+    console.log('🎵 Attempting audio URLs:', possibleUrls);
+    tryAudioUrls(possibleUrls);
+  }, [isMuted, volume, book?._folder_path, currentPage]);
 
   const pauseAudio = useCallback(() => {
     if (audioRef.current) {
@@ -690,9 +779,13 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     const audioUrl = getAudioUrl(currentPage);
     if (audioUrl) {
       console.log(`🎵 Page ${currentPage} has audio available:`, audioUrl);
-      // Don't auto-play, just make it available
+      
+      // Auto-play the audio for the new page
+      setTimeout(() => {
+        playAudio(audioUrl);
+      }, 500); // Small delay to ensure page transition is complete
     }
-  }, [currentPage, getAudioUrl, isPlaying]);
+  }, [currentPage, getAudioUrl, isPlaying, playAudio]);
 
   // Initialize Turn.js when ready
   useEffect(() => {

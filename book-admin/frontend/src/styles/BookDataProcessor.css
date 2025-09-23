@@ -299,8 +299,13 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive Design */
@@ -308,21 +313,21 @@
   .book-data-processor {
     padding: 16px;
   }
-  
+
   .editor-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
-  
+
   .editor-actions {
     width: 100%;
   }
-  
+
   .action-buttons {
     flex-direction: column;
   }
-  
+
   .btn {
     justify-content: center;
   }
