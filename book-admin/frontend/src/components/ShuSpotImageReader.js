@@ -23,6 +23,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [volume, setVolume] = useState(0.8);
   const [audioProgress, setAudioProgress] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
+  const [isLoadingAudio, setIsLoadingAudio] = useState(false);
   const audioRef = useRef(null);
   // Dynamic flipbook height (based on single page aspect ratio, not full spread)
   const BOOK_WIDTH = 1400; // full spread width - balanced size for good visibility
@@ -165,7 +166,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     return audioMap;
   }, [book]);
 
-  // Get audio URL for a specific page
+  // Get audio URL for a specific page (simplified to prevent loops)
   const getAudioUrl = useCallback((pageNumber) => {
     const pageAudio = audioFiles[pageNumber];
     if (pageAudio && pageAudio.length > 0) {
@@ -173,30 +174,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       return pageAudio[0].url;
     }
     
-    // Fallback: construct audio URL based on the pattern we know works
-    if (book?._folder_path) {
-      const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-      if (folderPathMatch) {
-        const [, relativePath] = folderPathMatch;
-        const cleanPath = relativePath.replace(/\\/g, '/');
-        
-        // Use the pattern we know works from the audio test: "page N.mp3"
-        let pattern;
-        if (pageNumber === 1) {
-          pattern = 'intro title.mp3';
-        } else {
-          pattern = `page ${pageNumber}.mp3`;
-        }
-        
-        // Construct URL with proper encoding
-        const audioUrl = `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`;
-        console.log(`🎵 Generated audio URL for page ${pageNumber}:`, audioUrl);
-        return audioUrl;
-      }
-    }
-    
-    return null;
-  }, [audioFiles, book?._folder_path]);
+    return null; // Only use pre-mapped audio files to prevent loops
+  }, [audioFiles]);
 
   // Audio control functions with fallback URL attempts
   const playAudio = useCallback((audioUrl, pageNumber = currentPage) => {
@@ -718,27 +697,58 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     }
   }, [book, pages, extractAudioFiles]);
 
-  // Handle page changes for audio
+  // Handle page changes for audio with double-page spread support
   useEffect(() => {
+    // Prevent multiple simultaneous audio attempts
+    if (isLoadingAudio) return;
+    
     // Stop current audio when page changes
     if (audioRef.current && isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
     }
     
-    // Auto-play audio for new page if available
-    const audioUrl = getAudioUrl(currentPage);
-    if (audioUrl) {
-      console.log(`🎵 Page ${currentPage} has audio available:`, audioUrl);
-      
-      // Auto-play the audio for the new page with a small delay
-      setTimeout(() => {
-        playAudio(audioUrl, currentPage);
-      }, 800); // Slightly longer delay for page transition
+    // For double-page spreads, try both current page and next page
+    const pagesToTry = [currentPage];
+    if (currentPage % 2 === 0) {
+      // Even page (left side), also try next page (right side)
+      pagesToTry.push(currentPage + 1);
     } else {
-      console.log(`🎵 No audio available for page ${currentPage}`);
+      // Odd page (right side), also try previous page (left side)  
+      pagesToTry.unshift(currentPage - 1);
     }
-  }, [currentPage, getAudioUrl, playAudio]);
+    
+    console.log(`🎵 Checking audio for pages: ${pagesToTry.join(', ')}`);
+    
+    // Find the first page that has audio
+    let audioUrl = null;
+    let audioPage = null;
+    
+    for (const pageNum of pagesToTry) {
+      if (pageNum > 0 && pageNum <= totalPages) {
+        const url = getAudioUrl(pageNum);
+        if (url && audioFiles[pageNum]) {
+          audioUrl = url;
+          audioPage = pageNum;
+          break;
+        }
+      }
+    }
+    
+    if (audioUrl && audioPage) {
+      console.log(`🎵 Found audio for page ${audioPage}:`, audioUrl);
+      
+      // Auto-play the audio with a delay and loading flag
+      setIsLoadingAudio(true);
+      setTimeout(() => {
+        playAudio(audioUrl, audioPage);
+        setIsLoadingAudio(false);
+      }, 1000);
+    } else {
+      console.log(`🎵 No audio available for pages ${pagesToTry.join(', ')}`);
+      setIsLoadingAudio(false);
+    }
+  }, [currentPage, totalPages, audioFiles, getAudioUrl, playAudio, isPlaying, isLoadingAudio]);
 
   // Initialize Turn.js when ready
   useEffect(() => {
