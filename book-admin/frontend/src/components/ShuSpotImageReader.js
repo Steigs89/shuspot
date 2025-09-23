@@ -126,10 +126,11 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   // Load OCR data when book changes (only once per book)
   useEffect(() => {
     if (book?.id) {
-      console.log('📝 Loading OCR data for book:', book.id);
+      console.log('📝 Loading OCR data for book ID:', book.id);
+      console.log('📝 Full book object:', book);
       loadOCRData(book.id);
     }
-  }, [book?.id]); // Only depend on book ID, load once per book
+  }, [book?.id, loadOCRData]); // Include loadOCRData but it should be stable
 
   // Stop text highlighting when page changes
   useEffect(() => {
@@ -1327,9 +1328,20 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       // Force a visual update by triggering a re-render
       setTimeout(() => {
         console.log(`🔄 Forced page update to ${pageNumber}`);
-        // Trigger any page change effects
-        if (flipBookRef.current) {
-          flipBookRef.current.style.transform = 'translateX(0px)';
+        // Force a complete re-render by updating state
+        setCurrentPage(pageNumber);
+        
+        // Also try to trigger Turn.js if it becomes available
+        if (flipBookRef.current && window.jQuery) {
+          try {
+            const $flipbook = window.jQuery(flipBookRef.current);
+            if ($flipbook.data('turn')) {
+              console.log(`🔄 Retry: Turn.js now available, going to page ${pageNumber}`);
+              $flipbook.turn('page', pageNumber);
+            }
+          } catch (error) {
+            console.log('🔄 Retry Turn.js failed:', error);
+          }
         }
       }, 100);
     }
