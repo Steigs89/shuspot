@@ -415,6 +415,30 @@ def stats():
         "generated_at": datetime.now().isoformat(),
     }
 
+@router.get("/ocr-data/{book_id}")
+def get_ocr_data(book_id: str):
+    """
+    Serve OCR text highlighting data for a specific book.
+    Returns JSON with word positions and timing data for text highlighting.
+    """
+    try:
+        # Look for OCR data file in the repository
+        ocr_file_path = os.path.join(REPO_ROOT, "book-admin", "ocr-data", f"{book_id}.json")
+        
+        if os.path.exists(ocr_file_path):
+            with open(ocr_file_path, 'r', encoding='utf-8') as f:
+                ocr_data = json.load(f)
+            return ocr_data
+        else:
+            # Return empty structure if no OCR data found
+            return {
+                "book_id": book_id,
+                "pages": {},
+                "message": "No OCR data available for this book"
+            }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error loading OCR data: {str(e)}")
+
 @router.get("/export/csv")
 def export_csv():
     db = load_db()

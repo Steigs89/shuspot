@@ -35,6 +35,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const playlistRef = useRef([]);
   const playlistIndexRef = useRef(0);
   const highlightIntervalRef = useRef(null);
+  const highlightStartedRef = useRef(false);
+  const autoTurnEnabledRef = useRef(false);
   // Dynamic flipbook height (based on single page aspect ratio, not full spread)
   const BOOK_WIDTH = 1400; // full spread width - balanced size for good visibility
   const SINGLE_PAGE_WIDTH = BOOK_WIDTH / 2;
@@ -120,6 +122,14 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     console.log('🎯 Generated fallback URL:', fallbackUrl);
     return fallbackUrl;
   }, [book?.notes, book?.folder_path]);
+
+  // Load OCR data when book changes
+  useEffect(() => {
+    if (book?.id && Object.keys(pageTextData).length === 0) {
+      console.log('📝 Loading OCR data for book:', book.id);
+      loadOCRData(book.id);
+    }
+  }, [book?.id, pageTextData, loadOCRData]);
 
   // Extract audio files from book data
   const extractAudioFiles = useCallback(() => {
@@ -221,6 +231,12 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     playlistIndexRef.current = currentPlaylistIndex;
   }, [audioPlaylist, currentPlaylistIndex]);
 
+  // Update auto-turn ref
+  useEffect(() => {
+    autoTurnEnabledRef.current = autoTurnEnabled;
+    console.log('🎵 🔄 Auto-turn enabled:', autoTurnEnabled);
+  }, [autoTurnEnabled]);
+
   // Test if audio URL is accessible
   const testAudioUrl = useCallback(async (url) => {
     try {
@@ -234,33 +250,77 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     }
   }, []);
 
+  // Load OCR data for the book
+  const loadOCRData = useCallback(async (bookId) => {
+    try {
+      // Try to load OCR data for this book
+      const response = await fetch(`${getApiUrl()}/ocr-data/${bookId}.json`);
+      if (response.ok) {
+        const ocrData = await response.json();
+        console.log('📝 Loaded OCR data for book:', bookId, ocrData);
+        
+        // Convert OCR data to our format
+        const convertedData = {};
+        for (const [pageNum, pageData] of Object.entries(ocrData.pages || {})) {
+          convertedData[parseInt(pageNum)] = {
+            pageNumber: parseInt(pageNum),
+            words: pageData.words || [],
+            totalWords: pageData.totalWords || 0,
+            audioDuration: pageData.audioDuration || 0,
+            hasAudio: pageData.hasAudio || false
+          };
+        }
+        
+        setPageTextData(convertedData);
+        return convertedData;
+      } else {
+        console.log('📝 No OCR data found for book:', bookId);
+        return null;
+      }
+    } catch (error) {
+      console.error('📝 Error loading OCR data:', error);
+      return null;
+    }
+  }, []);
+
   // Text highlighting functions
   const extractTextFromPage = useCallback(async (pageNumber) => {
     if (pageTextData[pageNumber]) {
       return pageTextData[pageNumber];
     }
 
-    // For now, we'll use a simple word estimation based on audio duration
-    // In a real implementation, you'd use OCR or have pre-processed text data
+    // Try to load OCR data if not already loaded
+    if (Object.keys(pageTextData).length === 0 && book?.id) {
+      await loadOCRData(book.id);
+    }
+
+    // Check again after loading
+    if (pageTextData[pageNumber]) {
+      return pageTextData[pageNumber];
+    }
+
+    // Fallback to demo text if no OCR data available
     const audioUrl = getAudioUrl(pageNumber);
     if (!audioUrl) return null;
 
     try {
-      // Simulate text extraction - in reality you'd use OCR or stored text data
-      const estimatedWords = Math.floor(audioDuration * 2.5); // ~2.5 words per second
+      console.log('📝 Using demo text for page', pageNumber, '(no OCR data available)');
+      const demoWords = `Our Sun is a star that gives us light and warmth every day!`.split(' ');
       const mockText = {
         pageNumber,
-        words: Array.from({ length: estimatedWords }, (_, i) => ({
-          id: `word-${pageNumber}-${i}`,
-          text: `word${i + 1}`,
-          startTime: (audioDuration / estimatedWords) * i,
-          endTime: (audioDuration / estimatedWords) * (i + 1),
-          x: Math.random() * 800 + 100, // Random positions for demo
-          y: Math.random() * 600 + 100,
-          width: 60,
-          height: 20
+        words: demoWords.map((word, i) => ({
+          id: `demo-word-${i}`,
+          text: word,
+          startTime: (audioDuration / demoWords.length) * i,
+          endTime: (audioDuration / demoWords.length) * (i + 1),
+          x: 0.1 + (i % 6) * 0.12, // Arrange in rows
+          y: 0.3 + Math.floor(i / 6) * 0.1,
+          width: 0.1,
+          height: 0.05
         })),
-        totalDuration: audioDuration
+        totalWords: demoWords.length,
+        audioDuration: audioDuration,
+        hasAudio: true
       };
 
       setPageTextData(prev => ({ ...prev, [pageNumber]: mockText }));
@@ -269,12 +329,13 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       console.error('📝 Text extraction failed:', error);
       return null;
     }
-  }, [pageTextData, getAudioUrl, audioDuration]);
+  }, [pageTextData, getAudioUrl, audioDuration, loadOCRData, book?.id]);
 
-  const startTextHighlighting = useCallback((pageNumber, duration) => {
-    if (!textHighlightEnabled) return;
+  const startTextHighlighting = useCallback(async (pageNumber, duration) => {
+    if (!textHighlightEnabled || highlightStartedRef.current) return;
 
     console.log('📝 Starting text highlighting for page', pageNumber, 'duration:', duration);
+    highlightStartedRef.current = true;
     
     // Clear any existing highlighting
     if (highlightIntervalRef.current) {
@@ -282,33 +343,50 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     }
     setCurrentHighlightedWords([]);
 
-    // Demo text highlighting - highlight words sequentially
-    const demoText = `Our Sun is a star that gives us light and warmth every day!`.split(' ');
-    const wordsPerSecond = demoText.length / duration; // Calculate words per second
+    // Get text data for the page
+    const textData = await extractTextFromPage(pageNumber);
+    if (!textData || !textData.words || textData.words.length === 0) {
+      console.log('📝 No text data available for highlighting');
+      return;
+    }
+
+    const words = textData.words;
     const startTime = Date.now();
+    
+    console.log(`📝 Starting highlighting for ${words.length} words over ${duration}s`);
     
     highlightIntervalRef.current = setInterval(() => {
       const elapsed = (Date.now() - startTime) / 1000; // seconds
-      const currentWordIndex = Math.floor(elapsed * wordsPerSecond);
       
-      if (currentWordIndex < demoText.length) {
-        // Highlight current word and previous word for smoother effect
-        const wordsToHighlight = [];
-        if (currentWordIndex >= 0) wordsToHighlight.push(`demo-word-${currentWordIndex}`);
-        if (currentWordIndex > 0) wordsToHighlight.push(`demo-word-${currentWordIndex - 1}`);
-        
-        setCurrentHighlightedWords(wordsToHighlight);
-        console.log('📝 Highlighting words:', wordsToHighlight);
+      // Find words that should be highlighted at current time
+      const wordsToHighlight = words.filter(word => {
+        const wordStart = word.startTime || 0;
+        const wordEnd = word.endTime || duration;
+        return elapsed >= wordStart && elapsed <= wordEnd;
+      }).map(word => word.id);
+      
+      // Also highlight the next word for smoother transitions
+      const nextWords = words.filter(word => {
+        const wordStart = word.startTime || 0;
+        return elapsed >= (wordStart - 0.2) && elapsed < wordStart;
+      }).map(word => word.id);
+      
+      const allHighlighted = [...wordsToHighlight, ...nextWords];
+      
+      if (allHighlighted.length > 0) {
+        setCurrentHighlightedWords(allHighlighted);
+        console.log('📝 Highlighting words:', allHighlighted);
       }
       
       // Stop when audio ends
       if (elapsed >= duration) {
         clearInterval(highlightIntervalRef.current);
         setCurrentHighlightedWords([]);
+        highlightStartedRef.current = false;
         console.log('📝 Text highlighting finished');
       }
-    }, 200); // Update every 200ms for smooth highlighting
-  }, [textHighlightEnabled]);
+    }, 100); // Update every 100ms for smooth highlighting
+  }, [textHighlightEnabled, extractTextFromPage]);
 
   const stopTextHighlighting = useCallback(() => {
     if (highlightIntervalRef.current) {
@@ -316,6 +394,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       highlightIntervalRef.current = null;
     }
     setCurrentHighlightedWords([]);
+    highlightStartedRef.current = false;
   }, []);
 
   // Audio control functions - fixed for reliable playback
@@ -395,7 +474,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         setTimeout(() => {
           playAudio(nextAudio.url, nextAudio.pageNumber, true);
         }, 200);
-      } else if (autoTurnEnabled && currentPage < totalPages) {
+      } else if (autoTurnEnabledRef.current && currentPage < totalPages) {
         // Auto-turn to next page and continue playing
         console.log('🎵 📖 Auto-turning to next page and continuing audio');
         setIsPlaying(false);
@@ -1487,15 +1566,74 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                     {/* Turn.js will populate this with pages */}
                   </div>
 
-                  {/* Text Highlighting Demo Overlay */}
-                  {textHighlightEnabled && isPlaying && (
+                  {/* Text Highlighting Overlay */}
+                  {textHighlightEnabled && isPlaying && pageTextData[currentPage] && (
+                    <div className="text-highlight-overlay" style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      pointerEvents: 'none',
+                      zIndex: 1000
+                    }}>
+                      {pageTextData[currentPage].words?.map(word => {
+                        const isHighlighted = currentHighlightedWords.includes(word.id);
+                        const isDemo = word.id.startsWith('demo-word');
+                        
+                        if (isDemo) {
+                          // Demo text overlay (centered)
+                          return null; // Will be handled by demo overlay below
+                        } else {
+                          // Real OCR text overlay (positioned on image)
+                          return (
+                            <div
+                              key={word.id}
+                              className={`highlight-word ${isHighlighted ? 'active' : ''}`}
+                              style={{
+                                position: 'absolute',
+                                left: `${word.x * 100}%`,
+                                top: `${word.y * 100}%`,
+                                width: `${word.width * 100}%`,
+                                height: `${word.height * 100}%`,
+                                background: isHighlighted 
+                                  ? 'rgba(255, 255, 0, 0.4)' 
+                                  : 'transparent',
+                                border: isHighlighted 
+                                  ? '2px solid #FFD700' 
+                                  : '1px solid rgba(255, 255, 255, 0.3)',
+                                borderRadius: '4px',
+                                transition: 'all 0.2s ease',
+                                animation: isHighlighted 
+                                  ? 'highlight-pulse 0.5s ease-in-out' 
+                                  : 'none',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '12px',
+                                color: isHighlighted ? '#333' : 'transparent',
+                                fontWeight: 'bold',
+                                textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
+                              }}
+                              title={word.text}
+                            >
+                              {isHighlighted && word.text}
+                            </div>
+                          );
+                        }
+                      })}
+                    </div>
+                  )}
+
+                  {/* Demo Text Overlay (for books without OCR data) */}
+                  {textHighlightEnabled && isPlaying && pageTextData[currentPage]?.words?.[0]?.id?.startsWith('demo-word') && (
                     <div className="demo-text-overlay">
-                      {`Our Sun is a star that gives us light and warmth every day!`.split(' ').map((word, index) => (
+                      {pageTextData[currentPage].words.map(word => (
                         <span
-                          key={`demo-word-${index}`}
-                          className={`demo-word ${currentHighlightedWords.includes(`demo-word-${index}`) ? 'highlighted' : ''}`}
+                          key={word.id}
+                          className={`demo-word ${currentHighlightedWords.includes(word.id) ? 'highlighted' : ''}`}
                         >
-                          {word}
+                          {word.text}
                         </span>
                       ))}
                     </div>

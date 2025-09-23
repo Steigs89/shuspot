@@ -1,0 +1,2541 @@
+{
+  "book_id": "sample_book",
+  "pages": {
+    "1": {
+      "words": [
+        {
+          "id": "word-1-0",
+          "text": "Our",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.4,
+          "confidence": 95
+        },
+        {
+          "id": "word-1-1",
+          "text": "Sun",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.4,
+          "endTime": 0.8,
+          "confidence": 96
+        },
+        {
+          "id": "word-1-2",
+          "text": "is",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 0.8,
+          "endTime": 1.2,
+          "confidence": 97
+        },
+        {
+          "id": "word-1-3",
+          "text": "A",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.035,
+          "height": 0.05,
+          "startTime": 1.2,
+          "endTime": 1.6,
+          "confidence": 98
+        },
+        {
+          "id": "word-1-4",
+          "text": "Star",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.6,
+          "endTime": 2.0,
+          "confidence": 99
+        }
+      ],
+      "totalWords": 5,
+      "audioDuration": 2.0,
+      "hasAudio": true
+    },
+    "2": {
+      "words": [
+        {
+          "id": "word-2-0",
+          "text": "The",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.28125,
+          "confidence": 95
+        },
+        {
+          "id": "word-2-1",
+          "text": "Sun",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.28125,
+          "endTime": 0.5625,
+          "confidence": 96
+        },
+        {
+          "id": "word-2-2",
+          "text": "is",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 0.5625,
+          "endTime": 0.84375,
+          "confidence": 97
+        },
+        {
+          "id": "word-2-3",
+          "text": "the",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.84375,
+          "endTime": 1.125,
+          "confidence": 98
+        },
+        {
+          "id": "word-2-4",
+          "text": "closest",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.125,
+          "height": 0.05,
+          "startTime": 1.125,
+          "endTime": 1.40625,
+          "confidence": 99
+        },
+        {
+          "id": "word-2-5",
+          "text": "star",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.40625,
+          "endTime": 1.6875,
+          "confidence": 95
+        },
+        {
+          "id": "word-2-6",
+          "text": "to",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.6875,
+          "endTime": 1.96875,
+          "confidence": 96
+        },
+        {
+          "id": "word-2-7",
+          "text": "Earth.",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 1.96875,
+          "endTime": 2.55,
+          "confidence": 97
+        },
+        {
+          "id": "word-2-8",
+          "text": "It",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.25,
+          "endTime": 2.53125,
+          "confidence": 98
+        },
+        {
+          "id": "word-2-9",
+          "text": "gives",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 2.53125,
+          "endTime": 2.8125,
+          "confidence": 99
+        },
+        {
+          "id": "word-2-10",
+          "text": "us",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.8125,
+          "endTime": 3.09375,
+          "confidence": 95
+        },
+        {
+          "id": "word-2-11",
+          "text": "light",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.09375,
+          "endTime": 3.375,
+          "confidence": 96
+        },
+        {
+          "id": "word-2-12",
+          "text": "and",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.375,
+          "endTime": 3.65625,
+          "confidence": 97
+        },
+        {
+          "id": "word-2-13",
+          "text": "warmth",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 3.65625,
+          "endTime": 3.9375,
+          "confidence": 98
+        },
+        {
+          "id": "word-2-14",
+          "text": "every",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.9375,
+          "endTime": 4.21875,
+          "confidence": 99
+        },
+        {
+          "id": "word-2-15",
+          "text": "day.",
+          "x": 0.49,
+          "y": 0.4,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 4.21875,
+          "endTime": 4.8,
+          "confidence": 95
+        }
+      ],
+      "totalWords": 16,
+      "audioDuration": 4.5,
+      "hasAudio": true
+    },
+    "3": {
+      "words": [
+        {
+          "id": "word-3-0",
+          "text": "The",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.2777777777777778,
+          "confidence": 95
+        },
+        {
+          "id": "word-3-1",
+          "text": "Sun",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.2777777777777778,
+          "endTime": 0.5555555555555556,
+          "confidence": 96
+        },
+        {
+          "id": "word-3-2",
+          "text": "is",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 0.5555555555555556,
+          "endTime": 0.8333333333333333,
+          "confidence": 97
+        },
+        {
+          "id": "word-3-3",
+          "text": "very",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 0.8333333333333333,
+          "endTime": 1.1111111111111112,
+          "confidence": 98
+        },
+        {
+          "id": "word-3-4",
+          "text": "big.",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.1111111111111112,
+          "endTime": 1.6888888888888889,
+          "confidence": 99
+        },
+        {
+          "id": "word-3-5",
+          "text": "It",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.3888888888888888,
+          "endTime": 1.6666666666666665,
+          "confidence": 95
+        },
+        {
+          "id": "word-3-6",
+          "text": "is",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.6666666666666665,
+          "endTime": 1.9444444444444444,
+          "confidence": 96
+        },
+        {
+          "id": "word-3-7",
+          "text": "much",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.9444444444444444,
+          "endTime": 2.2222222222222223,
+          "confidence": 97
+        },
+        {
+          "id": "word-3-8",
+          "text": "bigger",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 2.2222222222222223,
+          "endTime": 2.5,
+          "confidence": 98
+        },
+        {
+          "id": "word-3-9",
+          "text": "than",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.5,
+          "endTime": 2.7777777777777777,
+          "confidence": 99
+        },
+        {
+          "id": "word-3-10",
+          "text": "Earth.",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 2.7777777777777777,
+          "endTime": 3.3555555555555556,
+          "confidence": 95
+        },
+        {
+          "id": "word-3-11",
+          "text": "Many",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.055555555555556,
+          "endTime": 3.333333333333333,
+          "confidence": 96
+        },
+        {
+          "id": "word-3-12",
+          "text": "Earths",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 3.333333333333333,
+          "endTime": 3.611111111111111,
+          "confidence": 97
+        },
+        {
+          "id": "word-3-13",
+          "text": "could",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.611111111111111,
+          "endTime": 3.888888888888889,
+          "confidence": 98
+        },
+        {
+          "id": "word-3-14",
+          "text": "fit",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.888888888888889,
+          "endTime": 4.166666666666667,
+          "confidence": 99
+        },
+        {
+          "id": "word-3-15",
+          "text": "inside",
+          "x": 0.49,
+          "y": 0.4,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 4.166666666666667,
+          "endTime": 4.444444444444445,
+          "confidence": 95
+        },
+        {
+          "id": "word-3-16",
+          "text": "the",
+          "x": 0.62,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 4.444444444444445,
+          "endTime": 4.722222222222222,
+          "confidence": 96
+        },
+        {
+          "id": "word-3-17",
+          "text": "Sun.",
+          "x": 0.75,
+          "y": 0.4,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 4.722222222222222,
+          "endTime": 5.3,
+          "confidence": 97
+        }
+      ],
+      "totalWords": 18,
+      "audioDuration": 5.0,
+      "hasAudio": true
+    },
+    "5": {
+      "words": [
+        {
+          "id": "word-5-0",
+          "text": "The",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.25,
+          "confidence": 95
+        },
+        {
+          "id": "word-5-1",
+          "text": "Sun",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.25,
+          "endTime": 0.5,
+          "confidence": 96
+        },
+        {
+          "id": "word-5-2",
+          "text": "is",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 0.5,
+          "endTime": 0.75,
+          "confidence": 97
+        },
+        {
+          "id": "word-5-3",
+          "text": "very",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 0.75,
+          "endTime": 1.0,
+          "confidence": 98
+        },
+        {
+          "id": "word-5-4",
+          "text": "hot.",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.0,
+          "endTime": 1.55,
+          "confidence": 99
+        },
+        {
+          "id": "word-5-5",
+          "text": "It",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.25,
+          "endTime": 1.5,
+          "confidence": 95
+        },
+        {
+          "id": "word-5-6",
+          "text": "is",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.5,
+          "endTime": 1.75,
+          "confidence": 96
+        },
+        {
+          "id": "word-5-7",
+          "text": "so",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.75,
+          "endTime": 2.0,
+          "confidence": 97
+        },
+        {
+          "id": "word-5-8",
+          "text": "hot",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.0,
+          "endTime": 2.25,
+          "confidence": 98
+        },
+        {
+          "id": "word-5-9",
+          "text": "that",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.25,
+          "endTime": 2.5,
+          "confidence": 99
+        },
+        {
+          "id": "word-5-10",
+          "text": "it",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.5,
+          "endTime": 2.75,
+          "confidence": 95
+        },
+        {
+          "id": "word-5-11",
+          "text": "glows",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 2.75,
+          "endTime": 3.0,
+          "confidence": 96
+        },
+        {
+          "id": "word-5-12",
+          "text": "and",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.0,
+          "endTime": 3.25,
+          "confidence": 97
+        },
+        {
+          "id": "word-5-13",
+          "text": "gives",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.25,
+          "endTime": 3.5,
+          "confidence": 98
+        },
+        {
+          "id": "word-5-14",
+          "text": "off",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.5,
+          "endTime": 3.75,
+          "confidence": 99
+        },
+        {
+          "id": "word-5-15",
+          "text": "light.",
+          "x": 0.49,
+          "y": 0.4,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 3.75,
+          "endTime": 4.3,
+          "confidence": 95
+        }
+      ],
+      "totalWords": 16,
+      "audioDuration": 4.0,
+      "hasAudio": true
+    },
+    "6": {
+      "words": [
+        {
+          "id": "word-6-0",
+          "text": "The",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.25,
+          "confidence": 95
+        },
+        {
+          "id": "word-6-1",
+          "text": "Sun",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.25,
+          "endTime": 0.5,
+          "confidence": 96
+        },
+        {
+          "id": "word-6-2",
+          "text": "is",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 0.5,
+          "endTime": 0.75,
+          "confidence": 97
+        },
+        {
+          "id": "word-6-3",
+          "text": "made",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 0.75,
+          "endTime": 1.0,
+          "confidence": 98
+        },
+        {
+          "id": "word-6-4",
+          "text": "of",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.0,
+          "endTime": 1.25,
+          "confidence": 99
+        },
+        {
+          "id": "word-6-5",
+          "text": "gas.",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.25,
+          "endTime": 1.8,
+          "confidence": 95
+        },
+        {
+          "id": "word-6-6",
+          "text": "The",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.5,
+          "endTime": 1.75,
+          "confidence": 96
+        },
+        {
+          "id": "word-6-7",
+          "text": "gas",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.75,
+          "endTime": 2.0,
+          "confidence": 97
+        },
+        {
+          "id": "word-6-8",
+          "text": "is",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.0,
+          "endTime": 2.25,
+          "confidence": 98
+        },
+        {
+          "id": "word-6-9",
+          "text": "so",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.25,
+          "endTime": 2.5,
+          "confidence": 99
+        },
+        {
+          "id": "word-6-10",
+          "text": "hot",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.5,
+          "endTime": 2.75,
+          "confidence": 95
+        },
+        {
+          "id": "word-6-11",
+          "text": "it",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.75,
+          "endTime": 3.0,
+          "confidence": 96
+        },
+        {
+          "id": "word-6-12",
+          "text": "glows",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.0,
+          "endTime": 3.25,
+          "confidence": 97
+        },
+        {
+          "id": "word-6-13",
+          "text": "like",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.25,
+          "endTime": 3.5,
+          "confidence": 98
+        },
+        {
+          "id": "word-6-14",
+          "text": "a",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.035,
+          "height": 0.05,
+          "startTime": 3.5,
+          "endTime": 3.75,
+          "confidence": 99
+        },
+        {
+          "id": "word-6-15",
+          "text": "giant",
+          "x": 0.49,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.75,
+          "endTime": 4.0,
+          "confidence": 95
+        },
+        {
+          "id": "word-6-16",
+          "text": "light",
+          "x": 0.62,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 4.0,
+          "endTime": 4.25,
+          "confidence": 96
+        },
+        {
+          "id": "word-6-17",
+          "text": "bulb.",
+          "x": 0.75,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 4.25,
+          "endTime": 4.8,
+          "confidence": 97
+        }
+      ],
+      "totalWords": 18,
+      "audioDuration": 4.5,
+      "hasAudio": true
+    },
+    "7": {
+      "words": [
+        {
+          "id": "word-7-0",
+          "text": "The",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.3,
+          "confidence": 95
+        },
+        {
+          "id": "word-7-1",
+          "text": "Sun",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.3,
+          "endTime": 0.6,
+          "confidence": 96
+        },
+        {
+          "id": "word-7-2",
+          "text": "looks",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 0.6,
+          "endTime": 0.9,
+          "confidence": 97
+        },
+        {
+          "id": "word-7-3",
+          "text": "small",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 0.9,
+          "endTime": 1.2,
+          "confidence": 98
+        },
+        {
+          "id": "word-7-4",
+          "text": "in",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.2,
+          "endTime": 1.5,
+          "confidence": 99
+        },
+        {
+          "id": "word-7-5",
+          "text": "the",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.5,
+          "endTime": 1.8,
+          "confidence": 95
+        },
+        {
+          "id": "word-7-6",
+          "text": "sky",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.8,
+          "endTime": 2.1,
+          "confidence": 96
+        },
+        {
+          "id": "word-7-7",
+          "text": "because",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.125,
+          "height": 0.05,
+          "startTime": 2.1,
+          "endTime": 2.4,
+          "confidence": 97
+        },
+        {
+          "id": "word-7-8",
+          "text": "it",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.4,
+          "endTime": 2.6999999999999997,
+          "confidence": 98
+        },
+        {
+          "id": "word-7-9",
+          "text": "is",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.6999999999999997,
+          "endTime": 3.0,
+          "confidence": 99
+        },
+        {
+          "id": "word-7-10",
+          "text": "very",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.0,
+          "endTime": 3.3,
+          "confidence": 95
+        },
+        {
+          "id": "word-7-11",
+          "text": "far",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.3,
+          "endTime": 3.6,
+          "confidence": 96
+        },
+        {
+          "id": "word-7-12",
+          "text": "away",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.6,
+          "endTime": 3.9000000000000004,
+          "confidence": 97
+        },
+        {
+          "id": "word-7-13",
+          "text": "from",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.9000000000000004,
+          "endTime": 4.2,
+          "confidence": 98
+        },
+        {
+          "id": "word-7-14",
+          "text": "Earth.",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 4.2,
+          "endTime": 4.8,
+          "confidence": 99
+        }
+      ],
+      "totalWords": 15,
+      "audioDuration": 4.5,
+      "hasAudio": true
+    },
+    "9": {
+      "words": [
+        {
+          "id": "word-9-0",
+          "text": "During",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.26666666666666666,
+          "confidence": 95
+        },
+        {
+          "id": "word-9-1",
+          "text": "the",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.26666666666666666,
+          "endTime": 0.5333333333333333,
+          "confidence": 96
+        },
+        {
+          "id": "word-9-2",
+          "text": "day,",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 0.5333333333333333,
+          "endTime": 0.9,
+          "confidence": 97
+        },
+        {
+          "id": "word-9-3",
+          "text": "the",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.8,
+          "endTime": 1.0666666666666667,
+          "confidence": 98
+        },
+        {
+          "id": "word-9-4",
+          "text": "Sun",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.0666666666666667,
+          "endTime": 1.3333333333333333,
+          "confidence": 99
+        },
+        {
+          "id": "word-9-5",
+          "text": "lights",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 1.3333333333333333,
+          "endTime": 1.6,
+          "confidence": 95
+        },
+        {
+          "id": "word-9-6",
+          "text": "up",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.6,
+          "endTime": 1.8666666666666667,
+          "confidence": 96
+        },
+        {
+          "id": "word-9-7",
+          "text": "the",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.8666666666666667,
+          "endTime": 2.1333333333333333,
+          "confidence": 97
+        },
+        {
+          "id": "word-9-8",
+          "text": "sky.",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.1333333333333333,
+          "endTime": 2.6999999999999997,
+          "confidence": 98
+        },
+        {
+          "id": "word-9-9",
+          "text": "We",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.4,
+          "endTime": 2.6666666666666665,
+          "confidence": 99
+        },
+        {
+          "id": "word-9-10",
+          "text": "can",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.6666666666666665,
+          "endTime": 2.933333333333333,
+          "confidence": 95
+        },
+        {
+          "id": "word-9-11",
+          "text": "see",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.933333333333333,
+          "endTime": 3.2,
+          "confidence": 96
+        },
+        {
+          "id": "word-9-12",
+          "text": "everything",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.15,
+          "height": 0.05,
+          "startTime": 3.2,
+          "endTime": 3.466666666666667,
+          "confidence": 97
+        },
+        {
+          "id": "word-9-13",
+          "text": "around",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 3.466666666666667,
+          "endTime": 3.7333333333333334,
+          "confidence": 98
+        },
+        {
+          "id": "word-9-14",
+          "text": "us.",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.7333333333333334,
+          "endTime": 4.3,
+          "confidence": 99
+        }
+      ],
+      "totalWords": 15,
+      "audioDuration": 4.0,
+      "hasAudio": true
+    },
+    "10": {
+      "words": [
+        {
+          "id": "word-10-0",
+          "text": "At",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.28125,
+          "confidence": 95
+        },
+        {
+          "id": "word-10-1",
+          "text": "night,",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 0.28125,
+          "endTime": 0.6625,
+          "confidence": 96
+        },
+        {
+          "id": "word-10-2",
+          "text": "the",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.5625,
+          "endTime": 0.84375,
+          "confidence": 97
+        },
+        {
+          "id": "word-10-3",
+          "text": "Sun",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.84375,
+          "endTime": 1.125,
+          "confidence": 98
+        },
+        {
+          "id": "word-10-4",
+          "text": "shines",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 1.125,
+          "endTime": 1.40625,
+          "confidence": 99
+        },
+        {
+          "id": "word-10-5",
+          "text": "on",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.40625,
+          "endTime": 1.6875,
+          "confidence": 95
+        },
+        {
+          "id": "word-10-6",
+          "text": "the",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.6875,
+          "endTime": 1.96875,
+          "confidence": 96
+        },
+        {
+          "id": "word-10-7",
+          "text": "other",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 1.96875,
+          "endTime": 2.25,
+          "confidence": 97
+        },
+        {
+          "id": "word-10-8",
+          "text": "side",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.25,
+          "endTime": 2.53125,
+          "confidence": 98
+        },
+        {
+          "id": "word-10-9",
+          "text": "of",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.53125,
+          "endTime": 2.8125,
+          "confidence": 99
+        },
+        {
+          "id": "word-10-10",
+          "text": "Earth.",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 2.8125,
+          "endTime": 3.39375,
+          "confidence": 95
+        },
+        {
+          "id": "word-10-11",
+          "text": "That's",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 3.09375,
+          "endTime": 3.375,
+          "confidence": 96
+        },
+        {
+          "id": "word-10-12",
+          "text": "why",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.375,
+          "endTime": 3.65625,
+          "confidence": 97
+        },
+        {
+          "id": "word-10-13",
+          "text": "it",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 3.65625,
+          "endTime": 3.9375,
+          "confidence": 98
+        },
+        {
+          "id": "word-10-14",
+          "text": "gets",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.9375,
+          "endTime": 4.21875,
+          "confidence": 99
+        },
+        {
+          "id": "word-10-15",
+          "text": "dark.",
+          "x": 0.49,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 4.21875,
+          "endTime": 4.8,
+          "confidence": 95
+        }
+      ],
+      "totalWords": 16,
+      "audioDuration": 4.5,
+      "hasAudio": true
+    },
+    "13": {
+      "words": [
+        {
+          "id": "word-13-0",
+          "text": "The",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.3333333333333333,
+          "confidence": 95
+        },
+        {
+          "id": "word-13-1",
+          "text": "Sun",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.3333333333333333,
+          "endTime": 0.6666666666666666,
+          "confidence": 96
+        },
+        {
+          "id": "word-13-2",
+          "text": "helps",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 0.6666666666666666,
+          "endTime": 1.0,
+          "confidence": 97
+        },
+        {
+          "id": "word-13-3",
+          "text": "plants",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 1.0,
+          "endTime": 1.3333333333333333,
+          "confidence": 98
+        },
+        {
+          "id": "word-13-4",
+          "text": "grow.",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 1.3333333333333333,
+          "endTime": 1.9666666666666668,
+          "confidence": 99
+        },
+        {
+          "id": "word-13-5",
+          "text": "Plants",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 1.6666666666666667,
+          "endTime": 2.0,
+          "confidence": 95
+        },
+        {
+          "id": "word-13-6",
+          "text": "need",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.0,
+          "endTime": 2.3333333333333335,
+          "confidence": 96
+        },
+        {
+          "id": "word-13-7",
+          "text": "sunlight",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.13999999999999999,
+          "height": 0.05,
+          "startTime": 2.3333333333333335,
+          "endTime": 2.6666666666666665,
+          "confidence": 97
+        },
+        {
+          "id": "word-13-8",
+          "text": "to",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.6666666666666665,
+          "endTime": 3.0,
+          "confidence": 98
+        },
+        {
+          "id": "word-13-9",
+          "text": "make",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.0,
+          "endTime": 3.3333333333333335,
+          "confidence": 99
+        },
+        {
+          "id": "word-13-10",
+          "text": "their",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.3333333333333335,
+          "endTime": 3.6666666666666665,
+          "confidence": 95
+        },
+        {
+          "id": "word-13-11",
+          "text": "food.",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.6666666666666665,
+          "endTime": 4.3,
+          "confidence": 96
+        }
+      ],
+      "totalWords": 12,
+      "audioDuration": 4.0,
+      "hasAudio": true
+    },
+    "14": {
+      "words": [
+        {
+          "id": "word-14-0",
+          "text": "Animals",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.125,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.3181818181818182,
+          "confidence": 95
+        },
+        {
+          "id": "word-14-1",
+          "text": "need",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 0.3181818181818182,
+          "endTime": 0.6363636363636364,
+          "confidence": 96
+        },
+        {
+          "id": "word-14-2",
+          "text": "plants",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 0.6363636363636364,
+          "endTime": 0.9545454545454545,
+          "confidence": 97
+        },
+        {
+          "id": "word-14-3",
+          "text": "for",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.9545454545454545,
+          "endTime": 1.2727272727272727,
+          "confidence": 98
+        },
+        {
+          "id": "word-14-4",
+          "text": "food.",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 1.2727272727272727,
+          "endTime": 1.8909090909090909,
+          "confidence": 99
+        },
+        {
+          "id": "word-14-5",
+          "text": "So",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.5909090909090908,
+          "endTime": 1.909090909090909,
+          "confidence": 95
+        },
+        {
+          "id": "word-14-6",
+          "text": "animals",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.125,
+          "height": 0.05,
+          "startTime": 1.909090909090909,
+          "endTime": 2.227272727272727,
+          "confidence": 96
+        },
+        {
+          "id": "word-14-7",
+          "text": "need",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.227272727272727,
+          "endTime": 2.5454545454545454,
+          "confidence": 97
+        },
+        {
+          "id": "word-14-8",
+          "text": "the",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.5454545454545454,
+          "endTime": 2.8636363636363638,
+          "confidence": 98
+        },
+        {
+          "id": "word-14-9",
+          "text": "Sun",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.8636363636363638,
+          "endTime": 3.1818181818181817,
+          "confidence": 99
+        },
+        {
+          "id": "word-14-10",
+          "text": "too.",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.1818181818181817,
+          "endTime": 3.8,
+          "confidence": 95
+        }
+      ],
+      "totalWords": 11,
+      "audioDuration": 3.5,
+      "hasAudio": true
+    },
+    "15": {
+      "words": [
+        {
+          "id": "word-15-0",
+          "text": "People",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.26666666666666666,
+          "confidence": 95
+        },
+        {
+          "id": "word-15-1",
+          "text": "need",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 0.26666666666666666,
+          "endTime": 0.5333333333333333,
+          "confidence": 96
+        },
+        {
+          "id": "word-15-2",
+          "text": "the",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.5333333333333333,
+          "endTime": 0.8,
+          "confidence": 97
+        },
+        {
+          "id": "word-15-3",
+          "text": "Sun",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.8,
+          "endTime": 1.0666666666666667,
+          "confidence": 98
+        },
+        {
+          "id": "word-15-4",
+          "text": "for",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.0666666666666667,
+          "endTime": 1.3333333333333333,
+          "confidence": 99
+        },
+        {
+          "id": "word-15-5",
+          "text": "warmth",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 1.3333333333333333,
+          "endTime": 1.6,
+          "confidence": 95
+        },
+        {
+          "id": "word-15-6",
+          "text": "and",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.6,
+          "endTime": 1.8666666666666667,
+          "confidence": 96
+        },
+        {
+          "id": "word-15-7",
+          "text": "light.",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 1.8666666666666667,
+          "endTime": 2.433333333333333,
+          "confidence": 97
+        },
+        {
+          "id": "word-15-8",
+          "text": "The",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.1333333333333333,
+          "endTime": 2.4,
+          "confidence": 98
+        },
+        {
+          "id": "word-15-9",
+          "text": "Sun",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.4,
+          "endTime": 2.6666666666666665,
+          "confidence": 99
+        },
+        {
+          "id": "word-15-10",
+          "text": "helps",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 2.6666666666666665,
+          "endTime": 2.933333333333333,
+          "confidence": 95
+        },
+        {
+          "id": "word-15-11",
+          "text": "us",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.933333333333333,
+          "endTime": 3.2,
+          "confidence": 96
+        },
+        {
+          "id": "word-15-12",
+          "text": "in",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 3.2,
+          "endTime": 3.466666666666667,
+          "confidence": 97
+        },
+        {
+          "id": "word-15-13",
+          "text": "many",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.466666666666667,
+          "endTime": 3.7333333333333334,
+          "confidence": 98
+        },
+        {
+          "id": "word-15-14",
+          "text": "ways.",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.7333333333333334,
+          "endTime": 4.3,
+          "confidence": 99
+        }
+      ],
+      "totalWords": 15,
+      "audioDuration": 4.0,
+      "hasAudio": true
+    },
+    "16": {
+      "words": [
+        {
+          "id": "word-16-0",
+          "text": "The",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.275,
+          "confidence": 95
+        },
+        {
+          "id": "word-16-1",
+          "text": "Sun",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.275,
+          "endTime": 0.55,
+          "confidence": 96
+        },
+        {
+          "id": "word-16-2",
+          "text": "is",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 0.55,
+          "endTime": 0.825,
+          "confidence": 97
+        },
+        {
+          "id": "word-16-3",
+          "text": "a",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.035,
+          "height": 0.05,
+          "startTime": 0.825,
+          "endTime": 1.1,
+          "confidence": 98
+        },
+        {
+          "id": "word-16-4",
+          "text": "star,",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 1.1,
+          "endTime": 1.475,
+          "confidence": 99
+        },
+        {
+          "id": "word-16-5",
+          "text": "just",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.375,
+          "endTime": 1.65,
+          "confidence": 95
+        },
+        {
+          "id": "word-16-6",
+          "text": "like",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.65,
+          "endTime": 1.9249999999999998,
+          "confidence": 96
+        },
+        {
+          "id": "word-16-7",
+          "text": "the",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.9249999999999998,
+          "endTime": 2.2,
+          "confidence": 97
+        },
+        {
+          "id": "word-16-8",
+          "text": "stars",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 2.2,
+          "endTime": 2.475,
+          "confidence": 98
+        },
+        {
+          "id": "word-16-9",
+          "text": "we",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.475,
+          "endTime": 2.75,
+          "confidence": 99
+        },
+        {
+          "id": "word-16-10",
+          "text": "see",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.75,
+          "endTime": 3.0250000000000004,
+          "confidence": 95
+        },
+        {
+          "id": "word-16-11",
+          "text": "at",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 3.0250000000000004,
+          "endTime": 3.3,
+          "confidence": 96
+        },
+        {
+          "id": "word-16-12",
+          "text": "night.",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 3.3,
+          "endTime": 3.875,
+          "confidence": 97
+        },
+        {
+          "id": "word-16-13",
+          "text": "But",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.575,
+          "endTime": 3.8499999999999996,
+          "confidence": 98
+        },
+        {
+          "id": "word-16-14",
+          "text": "it",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 3.8499999999999996,
+          "endTime": 4.125,
+          "confidence": 99
+        },
+        {
+          "id": "word-16-15",
+          "text": "looks",
+          "x": 0.49,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 4.125,
+          "endTime": 4.4,
+          "confidence": 95
+        },
+        {
+          "id": "word-16-16",
+          "text": "bigger",
+          "x": 0.62,
+          "y": 0.4,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 4.4,
+          "endTime": 4.675,
+          "confidence": 96
+        },
+        {
+          "id": "word-16-17",
+          "text": "because",
+          "x": 0.75,
+          "y": 0.4,
+          "width": 0.125,
+          "height": 0.05,
+          "startTime": 4.675,
+          "endTime": 4.95,
+          "confidence": 97
+        },
+        {
+          "id": "word-16-18",
+          "text": "it's",
+          "x": 0.1,
+          "y": 0.5,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 4.95,
+          "endTime": 5.225,
+          "confidence": 98
+        },
+        {
+          "id": "word-16-19",
+          "text": "closer.",
+          "x": 0.23,
+          "y": 0.5,
+          "width": 0.125,
+          "height": 0.05,
+          "startTime": 5.225,
+          "endTime": 5.8,
+          "confidence": 99
+        }
+      ],
+      "totalWords": 20,
+      "audioDuration": 5.5,
+      "hasAudio": true
+    },
+    "19": {
+      "words": [
+        {
+          "id": "word-19-0",
+          "text": "There",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.2857142857142857,
+          "confidence": 95
+        },
+        {
+          "id": "word-19-1",
+          "text": "are",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.2857142857142857,
+          "endTime": 0.5714285714285714,
+          "confidence": 96
+        },
+        {
+          "id": "word-19-2",
+          "text": "many",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 0.5714285714285714,
+          "endTime": 0.8571428571428571,
+          "confidence": 97
+        },
+        {
+          "id": "word-19-3",
+          "text": "other",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 0.8571428571428571,
+          "endTime": 1.1428571428571428,
+          "confidence": 98
+        },
+        {
+          "id": "word-19-4",
+          "text": "stars",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 1.1428571428571428,
+          "endTime": 1.4285714285714286,
+          "confidence": 99
+        },
+        {
+          "id": "word-19-5",
+          "text": "in",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 1.4285714285714286,
+          "endTime": 1.7142857142857142,
+          "confidence": 95
+        },
+        {
+          "id": "word-19-6",
+          "text": "the",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.7142857142857142,
+          "endTime": 2.0,
+          "confidence": 96
+        },
+        {
+          "id": "word-19-7",
+          "text": "sky.",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.0,
+          "endTime": 2.5857142857142854,
+          "confidence": 97
+        },
+        {
+          "id": "word-19-8",
+          "text": "They",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.2857142857142856,
+          "endTime": 2.5714285714285716,
+          "confidence": 98
+        },
+        {
+          "id": "word-19-9",
+          "text": "are",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.5714285714285716,
+          "endTime": 2.857142857142857,
+          "confidence": 99
+        },
+        {
+          "id": "word-19-10",
+          "text": "all",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.857142857142857,
+          "endTime": 3.142857142857143,
+          "confidence": 95
+        },
+        {
+          "id": "word-19-11",
+          "text": "very",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 3.142857142857143,
+          "endTime": 3.4285714285714284,
+          "confidence": 96
+        },
+        {
+          "id": "word-19-12",
+          "text": "far",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.4285714285714284,
+          "endTime": 3.7142857142857144,
+          "confidence": 97
+        },
+        {
+          "id": "word-19-13",
+          "text": "away.",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.7142857142857144,
+          "endTime": 4.3,
+          "confidence": 98
+        }
+      ],
+      "totalWords": 14,
+      "audioDuration": 4.0,
+      "hasAudio": true
+    },
+    "20": {
+      "words": [
+        {
+          "id": "word-20-0",
+          "text": "Some",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.3181818181818182,
+          "confidence": 95
+        },
+        {
+          "id": "word-20-1",
+          "text": "stars",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 0.3181818181818182,
+          "endTime": 0.6363636363636364,
+          "confidence": 96
+        },
+        {
+          "id": "word-20-2",
+          "text": "are",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.6363636363636364,
+          "endTime": 0.9545454545454545,
+          "confidence": 97
+        },
+        {
+          "id": "word-20-3",
+          "text": "bigger",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 0.9545454545454545,
+          "endTime": 1.2727272727272727,
+          "confidence": 98
+        },
+        {
+          "id": "word-20-4",
+          "text": "than",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.2727272727272727,
+          "endTime": 1.5909090909090908,
+          "confidence": 99
+        },
+        {
+          "id": "word-20-5",
+          "text": "our",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.5909090909090908,
+          "endTime": 1.909090909090909,
+          "confidence": 95
+        },
+        {
+          "id": "word-20-6",
+          "text": "Sun.",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.909090909090909,
+          "endTime": 2.527272727272727,
+          "confidence": 96
+        },
+        {
+          "id": "word-20-7",
+          "text": "Some",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.227272727272727,
+          "endTime": 2.5454545454545454,
+          "confidence": 97
+        },
+        {
+          "id": "word-20-8",
+          "text": "stars",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 2.5454545454545454,
+          "endTime": 2.8636363636363638,
+          "confidence": 98
+        },
+        {
+          "id": "word-20-9",
+          "text": "are",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 2.8636363636363638,
+          "endTime": 3.1818181818181817,
+          "confidence": 99
+        },
+        {
+          "id": "word-20-10",
+          "text": "smaller.",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.13999999999999999,
+          "height": 0.05,
+          "startTime": 3.1818181818181817,
+          "endTime": 3.8,
+          "confidence": 95
+        }
+      ],
+      "totalWords": 11,
+      "audioDuration": 3.5,
+      "hasAudio": true
+    },
+    "21": {
+      "words": [
+        {
+          "id": "word-21-0",
+          "text": "Our",
+          "x": 0.1,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.0,
+          "endTime": 0.2631578947368421,
+          "confidence": 95
+        },
+        {
+          "id": "word-21-1",
+          "text": "Sun",
+          "x": 0.23,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.2631578947368421,
+          "endTime": 0.5263157894736842,
+          "confidence": 96
+        },
+        {
+          "id": "word-21-2",
+          "text": "is",
+          "x": 0.36,
+          "y": 0.2,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 0.5263157894736842,
+          "endTime": 0.7894736842105263,
+          "confidence": 97
+        },
+        {
+          "id": "word-21-3",
+          "text": "the",
+          "x": 0.49,
+          "y": 0.2,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 0.7894736842105263,
+          "endTime": 1.0526315789473684,
+          "confidence": 98
+        },
+        {
+          "id": "word-21-4",
+          "text": "perfect",
+          "x": 0.62,
+          "y": 0.2,
+          "width": 0.125,
+          "height": 0.05,
+          "startTime": 1.0526315789473684,
+          "endTime": 1.3157894736842104,
+          "confidence": 99
+        },
+        {
+          "id": "word-21-5",
+          "text": "star",
+          "x": 0.75,
+          "y": 0.2,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 1.3157894736842104,
+          "endTime": 1.5789473684210527,
+          "confidence": 95
+        },
+        {
+          "id": "word-21-6",
+          "text": "for",
+          "x": 0.1,
+          "y": 0.30000000000000004,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 1.5789473684210527,
+          "endTime": 1.8421052631578947,
+          "confidence": 96
+        },
+        {
+          "id": "word-21-7",
+          "text": "Earth.",
+          "x": 0.23,
+          "y": 0.30000000000000004,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 1.8421052631578947,
+          "endTime": 2.4052631578947365,
+          "confidence": 97
+        },
+        {
+          "id": "word-21-8",
+          "text": "It",
+          "x": 0.36,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.1052631578947367,
+          "endTime": 2.3684210526315788,
+          "confidence": 98
+        },
+        {
+          "id": "word-21-9",
+          "text": "gives",
+          "x": 0.49,
+          "y": 0.30000000000000004,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 2.3684210526315788,
+          "endTime": 2.631578947368421,
+          "confidence": 99
+        },
+        {
+          "id": "word-21-10",
+          "text": "us",
+          "x": 0.62,
+          "y": 0.30000000000000004,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 2.631578947368421,
+          "endTime": 2.8947368421052633,
+          "confidence": 95
+        },
+        {
+          "id": "word-21-11",
+          "text": "just",
+          "x": 0.75,
+          "y": 0.30000000000000004,
+          "width": 0.08,
+          "height": 0.05,
+          "startTime": 2.8947368421052633,
+          "endTime": 3.1578947368421053,
+          "confidence": 96
+        },
+        {
+          "id": "word-21-12",
+          "text": "the",
+          "x": 0.1,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 3.1578947368421053,
+          "endTime": 3.4210526315789473,
+          "confidence": 97
+        },
+        {
+          "id": "word-21-13",
+          "text": "right",
+          "x": 0.23,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 3.4210526315789473,
+          "endTime": 3.6842105263157894,
+          "confidence": 98
+        },
+        {
+          "id": "word-21-14",
+          "text": "amount",
+          "x": 0.36,
+          "y": 0.4,
+          "width": 0.11,
+          "height": 0.05,
+          "startTime": 3.6842105263157894,
+          "endTime": 3.947368421052632,
+          "confidence": 99
+        },
+        {
+          "id": "word-21-15",
+          "text": "of",
+          "x": 0.49,
+          "y": 0.4,
+          "width": 0.05,
+          "height": 0.05,
+          "startTime": 3.947368421052632,
+          "endTime": 4.2105263157894735,
+          "confidence": 95
+        },
+        {
+          "id": "word-21-16",
+          "text": "light",
+          "x": 0.62,
+          "y": 0.4,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 4.2105263157894735,
+          "endTime": 4.473684210526316,
+          "confidence": 96
+        },
+        {
+          "id": "word-21-17",
+          "text": "and",
+          "x": 0.75,
+          "y": 0.4,
+          "width": 0.065,
+          "height": 0.05,
+          "startTime": 4.473684210526316,
+          "endTime": 4.7368421052631575,
+          "confidence": 97
+        },
+        {
+          "id": "word-21-18",
+          "text": "heat.",
+          "x": 0.1,
+          "y": 0.5,
+          "width": 0.095,
+          "height": 0.05,
+          "startTime": 4.7368421052631575,
+          "endTime": 5.3,
+          "confidence": 98
+        }
+      ],
+      "totalWords": 19,
+      "audioDuration": 5.0,
+      "hasAudio": true
+    }
+  }
+}
