@@ -164,6 +164,97 @@ Output file: manifest_A_Safe_Cake.json
 python test_manifest_processing.py
 ```
 
+### Script 4: `audio_page_matcher.py` - OCR + Audio Integration
+
+**What it does:** Uses OCR to extract text from page images and matches MP3 files to pages based on filenames and content.
+
+**Requirements:**
+```bash
+pip install pytesseract pillow opencv-python
+# Also install Tesseract OCR: https://github.com/tesseract-ocr/tesseract
+```
+
+**Usage:**
+```bash
+python audio_page_matcher.py "/path/to/book/folder"
+```
+
+**Sample Run:**
+```bash
+$ python audio_page_matcher.py "/Users/john/Books/A Safe Cake"
+
+📁 Scanning folder: /Users/john/Books/A Safe Cake
+🎵 Found 12 audio files
+🖼️  Found 23 page images
+🔍 Extracting text from page images...
+   Processing page 1 (1/23)
+      Text preview: A Safe Cake by Maria Rodriguez. Today we're going to learn...
+   Processing page 2 (2/23)
+      Text preview: First, we need to gather our ingredients. We will need...
+
+🎵 Creating audio-to-page mappings...
+
+📄 intro title.mp3
+   Type: intro
+   Mapped pages: [1]
+
+📄 page 2.mp3
+   Type: single_page
+   Mapped pages: [2]
+
+📄 page4-5.mp3
+   Type: page_range
+   Mapped pages: [4, 5]
+
+✅ Audio manifest saved to: audio_manifest_A_Safe_Cake.json
+```
+
+### Script 5: `quick_audio_test.py` - Simple Audio Testing (No OCR)
+
+**What it does:** Tests audio-page matching based on filename patterns only (no OCR installation required).
+
+**Usage:**
+```bash
+python quick_audio_test.py "/path/to/book/folder"
+```
+
+**Sample Run:**
+```bash
+$ python quick_audio_test.py "/Users/john/Books/A Safe Cake"
+
+📁 Testing: A Safe Cake
+==================================================
+🎵 Audio files found: 12
+   - intro title.mp3
+   - page 2.mp3
+   - page 4-5.mp3
+   - page 6.mp3
+   - page 8-9.mp3
+
+🖼️  Page images found: 23
+   - crop-1.png (page 1)
+   - crop-2.png (page 2)
+   - crop-3.png (page 3)
+   - crop-4.png (page 4)
+   - crop-5.png (page 5)
+   ... and 18 more
+
+🔗 Audio-Page Mappings:
+   intro title.mp3 → Pages 1 (intro)
+   page 2.mp3 → Pages 2 (single_page)
+   page 4-5.mp3 → Pages 4, 5 (page_range)
+   page 6.mp3 → Pages 6 (single_page)
+   page 8-9.mp3 → Pages 8, 9 (page_range)
+
+📊 Coverage Analysis:
+   Total pages: 23
+   Mapped pages: 12
+   Coverage: 52.2%
+   ⚠️  Unmapped pages: [3, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+
+✅ Test results saved to: audio_test_A_Safe_Cake.json
+```
+
 **Sample Run:**
 ```bash
 $ python test_manifest_processing.py
@@ -197,6 +288,62 @@ Sample paths:
 | `rclone_uploader.py` | Upload new books from your computer | Adding a new book collection |
 | `quick_manifest.py` | Create manifest for books already in Supabase | Import existing uploaded books |
 | `test_manifest_processing.py` | Debug why books aren't showing up | Troubleshoot manifest issues |
+| `audio_page_matcher.py` | Match MP3s to pages with OCR | Books with audio files |
+| `quick_audio_test.py` | Test audio matching without OCR | Quick audio analysis |
+
+## 🎵 Audio Integration Workflow
+
+### Understanding Audio File Patterns
+
+Your MP3 files should follow these naming patterns:
+
+| Filename Pattern | Maps To | Example |
+|------------------|---------|---------|
+| `page 2.mp3` | Single page | Page 2 |
+| `page4-5.mp3` | Page range | Pages 4 and 5 |
+| `page 10-11.mp3` | Page range | Pages 10 and 11 |
+| `intro title.mp3` | First page | Page 1 (intro) |
+| `outro.mp3` | Last page | Final page |
+
+### Step-by-Step Audio Integration
+
+1. **Test Your Audio Files:**
+   ```bash
+   python quick_audio_test.py "/path/to/your/book"
+   ```
+   This shows you which pages have audio and which don't.
+
+2. **Extract Text with OCR (Optional but Recommended):**
+   ```bash
+   # Install OCR libraries first
+   pip install pytesseract pillow opencv-python
+   
+   # Run full analysis
+   python audio_page_matcher.py "/path/to/your/book"
+   ```
+
+3. **Upload Audio-Enhanced Manifest:**
+   - Use the generated `audio_manifest_*.json` file
+   - Upload via "Rclone + Supabase" method in book admin
+   - Books will have audio playback functionality
+
+### Audio File Structure
+
+Your book folder should look like this:
+```
+A Safe Cake/
+├── cover.jpg
+├── description.txt
+├── intro title.mp3          # Intro audio
+├── page 2.mp3               # Page 2 audio
+├── page 4-5.mp3             # Pages 4-5 audio
+├── page 6.mp3               # Page 6 audio
+├── resized/
+│   ├── crop-1.png           # Page 1 image
+│   ├── crop-2.png           # Page 2 image
+│   ├── crop-3.png           # Page 3 image
+│   └── ...
+```
 
 ## 🛠 Simple Batch Scripts (Alternative)
 
