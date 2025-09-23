@@ -247,12 +247,37 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     if (isPlaying) {
       pauseAudio();
     } else {
-      const audioUrl = getAudioUrl(currentPage);
+      // For double-page spreads, try both pages
+      const pagesToTry = [currentPage];
+      if (currentPage % 2 === 0) {
+        pagesToTry.push(currentPage + 1);
+      } else {
+        pagesToTry.unshift(currentPage - 1);
+      }
+      
+      // Find first available audio
+      let audioUrl = null;
+      let audioPage = null;
+      
+      for (const pageNum of pagesToTry) {
+        if (pageNum > 0 && pageNum <= totalPages) {
+          const url = getAudioUrl(pageNum);
+          if (url && audioFiles[pageNum]) {
+            audioUrl = url;
+            audioPage = pageNum;
+            break;
+          }
+        }
+      }
+      
       if (audioUrl) {
-        playAudio(audioUrl);
+        console.log(`🎵 Playing audio for page ${audioPage}`);
+        playAudio(audioUrl, audioPage);
+      } else {
+        console.log(`🎵 No audio available for pages ${pagesToTry.join(', ')}`);
       }
     }
-  }, [isPlaying, currentPage, pauseAudio, playAudio, getAudioUrl]);
+  }, [isPlaying, currentPage, totalPages, audioFiles, pauseAudio, playAudio, getAudioUrl]);
 
   const toggleMute = useCallback(() => {
     setIsMuted(!isMuted);
@@ -697,58 +722,30 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     }
   }, [book, pages, extractAudioFiles]);
 
-  // Handle page changes for audio with double-page spread support
+  // Handle page changes for audio - MANUAL ONLY (no autoplay)
   useEffect(() => {
-    // Prevent multiple simultaneous audio attempts
-    if (isLoadingAudio) return;
-    
     // Stop current audio when page changes
     if (audioRef.current && isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
     }
     
-    // For double-page spreads, try both current page and next page
+    // Just log what audio is available, don't auto-play
     const pagesToTry = [currentPage];
     if (currentPage % 2 === 0) {
-      // Even page (left side), also try next page (right side)
       pagesToTry.push(currentPage + 1);
     } else {
-      // Odd page (right side), also try previous page (left side)  
       pagesToTry.unshift(currentPage - 1);
     }
     
-    console.log(`🎵 Checking audio for pages: ${pagesToTry.join(', ')}`);
-    
-    // Find the first page that has audio
-    let audioUrl = null;
-    let audioPage = null;
-    
+    // Find available audio but don't play it
     for (const pageNum of pagesToTry) {
-      if (pageNum > 0 && pageNum <= totalPages) {
-        const url = getAudioUrl(pageNum);
-        if (url && audioFiles[pageNum]) {
-          audioUrl = url;
-          audioPage = pageNum;
-          break;
-        }
+      if (pageNum > 0 && pageNum <= totalPages && audioFiles[pageNum]) {
+        console.log(`🎵 Audio available for page ${pageNum} (click play button to hear)`);
+        break;
       }
     }
-    
-    if (audioUrl && audioPage) {
-      console.log(`🎵 Found audio for page ${audioPage}:`, audioUrl);
-      
-      // Auto-play the audio with a delay and loading flag
-      setIsLoadingAudio(true);
-      setTimeout(() => {
-        playAudio(audioUrl, audioPage);
-        setIsLoadingAudio(false);
-      }, 1000);
-    } else {
-      console.log(`🎵 No audio available for pages ${pagesToTry.join(', ')}`);
-      setIsLoadingAudio(false);
-    }
-  }, [currentPage, totalPages, audioFiles, getAudioUrl, playAudio, isPlaying, isLoadingAudio]);
+  }, [currentPage, totalPages, audioFiles, isPlaying]);
 
   // Initialize Turn.js when ready
   useEffect(() => {
@@ -999,55 +996,79 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
 
               {/* Audio Controls */}
               <div className="enhanced-nav-audio">
-                {getAudioUrl(currentPage) && (
-                  <div className="audio-controls">
-                    <button 
-                      onClick={toggleAudio} 
-                      className="nav-btn audio-play-btn" 
-                      title={isPlaying ? "Pause Audio" : "Play Audio"}
-                    >
-                      {isPlaying ? <Pause size={20} /> : <Play size={20} />}
-                    </button>
-                    
-                    <button 
-                      onClick={toggleMute} 
-                      className="nav-btn audio-mute-btn" 
-                      title={isMuted ? "Unmute" : "Mute"}
-                    >
-                      {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-                    </button>
-                    
-                    <div className="audio-progress-container">
-                      <div className="audio-progress-bar">
-                        <div 
-                          className="audio-progress-fill" 
-                          style={{ 
-                            width: audioDuration > 0 ? `${(audioProgress / audioDuration) * 100}%` : '0%' 
-                          }}
-                        />
+                {(() => {
+                  // Check for audio on current page or adjacent page in spread
+                  const pagesToTry = [currentPage];
+                  if (currentPage % 2 === 0) {
+                    pagesToTry.push(currentPage + 1);
+                  } else {
+                    pagesToTry.unshift(currentPage - 1);
+                  }
+                  
+                  let hasAudio = false;
+                  let audioPage = null;
+                  
+                  for (const pageNum of pagesToTry) {
+                    if (pageNum > 0 && pageNum <= totalPages && audioFiles[pageNum]) {
+                      hasAudio = true;
+                      audioPage = pageNum;
+                      break;
+                    }
+                  }
+                  
+                  return hasAudio ? (
+                    <div className="audio-controls">
+                      <button 
+                        onClick={toggleAudio} 
+                        className="nav-btn audio-play-btn" 
+                        title={isPlaying ? "Pause Audio" : `Play Audio (Page ${audioPage})`}
+                      >
+                        {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+                      </button>
+                      
+                      <button 
+                        onClick={toggleMute} 
+                        className="nav-btn audio-mute-btn" 
+                        title={isMuted ? "Unmute" : "Mute"}
+                      >
+                        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                      </button>
+                      
+                      <div className="audio-progress-container">
+                        <div className="audio-progress-bar">
+                          <div 
+                            className="audio-progress-fill" 
+                            style={{ 
+                              width: audioDuration > 0 ? `${(audioProgress / audioDuration) * 100}%` : '0%' 
+                            }}
+                          />
+                        </div>
+                        <div className="audio-time">
+                          {Math.floor(audioProgress)}s / {Math.floor(audioDuration)}s
+                        </div>
                       </div>
-                      <div className="audio-time">
-                        {Math.floor(audioProgress)}s / {Math.floor(audioDuration)}s
+                      
+                      <input
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.1"
+                        value={volume}
+                        onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
+                        className="volume-slider"
+                        title="Volume"
+                      />
+                      
+                      <div className="audio-page-indicator">
+                        Page {audioPage}
                       </div>
                     </div>
-                    
-                    <input
-                      type="range"
-                      min="0"
-                      max="1"
-                      step="0.1"
-                      value={volume}
-                      onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
-                      className="volume-slider"
-                      title="Volume"
-                    />
-                  </div>
-                )}
-                {!getAudioUrl(currentPage) && (
-                  <div className="no-audio-indicator">
-                    <span className="text-gray-400">No audio for this page</span>
-                  </div>
-                )}
+                  ) : (
+                    <div className="no-audio-indicator">
+                      <span className="text-gray-400">No audio for this spread</span>
+                    </div>
+                  );
+                })()}
               </div>
 
               <div className="enhanced-nav-right">
