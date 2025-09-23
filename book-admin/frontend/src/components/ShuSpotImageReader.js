@@ -19,7 +19,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [audioFiles, setAudioFiles] = useState({});
   const [currentAudio, setCurrentAudio] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(false); // Start unmuted
   const [volume, setVolume] = useState(0.8);
   const [audioProgress, setAudioProgress] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
@@ -306,16 +306,25 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   }, [isPlaying, currentPage, totalPages, audioFiles, pauseAudio, playAudio, getAudioUrl]);
 
   const toggleMute = useCallback(() => {
-    setIsMuted(!isMuted);
+    const newMutedState = !isMuted;
+    setIsMuted(newMutedState);
+    
+    console.log(`🎵 🔇 Toggling mute: ${isMuted} → ${newMutedState}`);
+    
     if (audioRef.current) {
-      audioRef.current.volume = isMuted ? volume : 0;
+      const newVolume = newMutedState ? 0 : volume;
+      audioRef.current.volume = newVolume;
+      console.log(`🎵 Audio volume changed to: ${newVolume}`);
     }
   }, [isMuted, volume]);
 
   const handleVolumeChange = useCallback((newVolume) => {
+    console.log(`🎵 🔊 Volume slider changed to: ${newVolume}`);
     setVolume(newVolume);
+    
     if (audioRef.current && !isMuted) {
       audioRef.current.volume = newVolume;
+      console.log(`🎵 Audio element volume updated to: ${newVolume}`);
     }
   }, [isMuted]);
 
