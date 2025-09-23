@@ -315,14 +315,33 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         // Turn to next page
         setTimeout(() => {
           if (currentPage < totalPages) {
-            const nextPage = currentPage + 2; // Turn by spread (2 pages)
-            if (nextPage <= totalPages) {
-              console.log(`🎵 📖 Turning to page ${nextPage}`);
+            // For double-page spreads, advance by 2, but ensure we don't exceed total pages
+            let nextPage;
+            if (currentPage % 2 === 0) {
+              // Currently on even page (right side), go to next spread
+              nextPage = currentPage + 2;
+            } else {
+              // Currently on odd page (left side), go to next spread  
+              nextPage = currentPage + 1;
+            }
+            
+            // Ensure we don't go beyond the book
+            if (nextPage > totalPages) {
+              nextPage = totalPages;
+            }
+            
+            if (nextPage > currentPage && nextPage <= totalPages) {
+              console.log(`🎵 📖 Auto-turning from page ${currentPage} to page ${nextPage}`);
               goToPage(nextPage);
             } else {
-              console.log('🎵 📖 Reached end of book');
+              console.log('🎵 📖 Reached end of book, disabling auto-turn');
               setAutoTurnEnabled(false);
+              setAutoPlayEnabled(false);
             }
+          } else {
+            console.log('🎵 📖 Already at end of book');
+            setAutoTurnEnabled(false);
+            setAutoPlayEnabled(false);
           }
         }, 1000); // 1 second delay before turning page
       } else {
@@ -1282,183 +1301,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                 </div>
               </div>
 
-              {/* Audio Controls */}
-              <div className="enhanced-nav-audio">
-                {(() => {
-                  // Check for audio on current page or adjacent page in spread
-                  const pagesToTry = [currentPage];
-                  if (currentPage % 2 === 0) {
-                    pagesToTry.push(currentPage + 1);
-                  } else {
-                    pagesToTry.unshift(currentPage - 1);
-                  }
-                  
-                  let hasAudio = false;
-                  let audioPage = null;
-                  
-                  for (const pageNum of pagesToTry) {
-                    if (pageNum > 0 && pageNum <= totalPages && audioFiles[pageNum]) {
-                      hasAudio = true;
-                      audioPage = pageNum;
-                      break;
-                    }
-                  }
-                  
-                  return hasAudio ? (
-                    <div className="audio-controls">
-                      {audioPlaylist.length > 1 && (
-                        <button 
-                          onClick={() => {
-                            if (currentPlaylistIndex > 0) {
-                              const prevIndex = currentPlaylistIndex - 1;
-                              const prevAudio = audioPlaylist[prevIndex];
-                              console.log(`🎵 ⏮️ Skipping to previous: ${prevAudio.title}`);
-                              setCurrentPlaylistIndex(prevIndex);
-                              playAudio(prevAudio.url, prevAudio.pageNumber);
-                            }
-                          }}
-                          className="nav-btn audio-prev-btn"
-                          title="Previous Audio"
-                          disabled={currentPlaylistIndex === 0}
-                          style={{ opacity: currentPlaylistIndex === 0 ? 0.5 : 1 }}
-                        >
-                          ⏮️
-                        </button>
-                      )}
-                      
-                      <button 
-                        onClick={toggleAudio} 
-                        className="nav-btn audio-play-btn" 
-                        title={isPlaying ? "Pause Audio" : `Play Audio (Page ${audioPage})`}
-                      >
-                        {isPlaying ? <Pause size={20} /> : <Play size={20} />}
-                      </button>
-                      
-                      {audioPlaylist.length > 1 && (
-                        <button 
-                          onClick={() => {
-                            if (currentPlaylistIndex < audioPlaylist.length - 1) {
-                              const nextIndex = currentPlaylistIndex + 1;
-                              const nextAudio = audioPlaylist[nextIndex];
-                              console.log(`🎵 ⏭️ Skipping to next: ${nextAudio.title}`);
-                              setCurrentPlaylistIndex(nextIndex);
-                              playAudio(nextAudio.url, nextAudio.pageNumber);
-                            }
-                          }}
-                          className="nav-btn audio-next-btn"
-                          title="Next Audio"
-                          disabled={currentPlaylistIndex === audioPlaylist.length - 1}
-                          style={{ opacity: currentPlaylistIndex === audioPlaylist.length - 1 ? 0.5 : 1 }}
-                        >
-                          ⏭️
-                        </button>
-                      )}
-                      
-                      <button 
-                        onClick={toggleMute} 
-                        className="nav-btn audio-mute-btn" 
-                        title={isMuted ? "Unmute" : "Mute"}
-                      >
-                        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-                      </button>
-                      
-                      <div className="audio-progress-container">
-                        <div className="audio-progress-bar">
-                          <div 
-                            className="audio-progress-fill" 
-                            style={{ 
-                              width: audioDuration > 0 ? `${(audioProgress / audioDuration) * 100}%` : '0%' 
-                            }}
-                          />
-                        </div>
-                        <div className="audio-time">
-                          {Math.floor(audioProgress)}s / {Math.floor(audioDuration)}s
-                        </div>
-                      </div>
-                      
-                      <input
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.1"
-                        value={volume}
-                        onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
-                        className="volume-slider"
-                        title="Volume"
-                      />
-                      
-                      <button 
-                        onClick={() => setAutoPlayEnabled(!autoPlayEnabled)}
-                        className={`nav-btn audio-autoplay-btn ${autoPlayEnabled ? 'active' : ''}`}
-                        title={autoPlayEnabled ? "Disable Auto-play" : "Enable Auto-play"}
-                        style={{ 
-                          fontSize: '12px', 
-                          padding: '4px 8px',
-                          backgroundColor: autoPlayEnabled ? '#4CAF50' : '#666',
-                          color: 'white'
-                        }}
-                      >
-                        Auto▶️
-                      </button>
-                      
-                      <button 
-                        onClick={() => {
-                          setAutoTurnEnabled(!autoTurnEnabled);
-                          if (!autoTurnEnabled) {
-                            setAutoPlayEnabled(true); // Auto-turn requires auto-play
-                          }
-                        }}
-                        className={`nav-btn audio-autoturn-btn ${autoTurnEnabled ? 'active' : ''}`}
-                        title={autoTurnEnabled ? "Disable Auto-turn Pages" : "Enable Auto-turn Pages"}
-                        style={{ 
-                          fontSize: '12px', 
-                          padding: '4px 8px',
-                          backgroundColor: autoTurnEnabled ? '#FF9800' : '#666',
-                          color: 'white'
-                        }}
-                      >
-                        Auto📖
-                      </button>
-                      
-                      <button 
-                        onClick={() => {
-                          const audioUrl = getAudioUrl(audioPage);
-                          if (audioUrl) {
-                            console.log('🎵 🧪 Testing direct audio playback...');
-                            const testAudio = new Audio(audioUrl);
-                            testAudio.volume = 0.8;
-                            testAudio.play()
-                              .then(() => console.log('🎵 ✅ Direct test successful'))
-                              .catch(e => console.error('🎵 ❌ Direct test failed:', e));
-                          }
-                        }}
-                        className="nav-btn audio-test-btn"
-                        title="Test Direct Audio"
-                        style={{ fontSize: '12px', padding: '4px 8px' }}
-                      >
-                        Test
-                      </button>
-                      
-                      <div className="audio-page-indicator">
-                        {audioPlaylist.length > 1 ? (
-                          <div>
-                            <div>Page {audioPage}</div>
-                            <div style={{ fontSize: '11px', color: '#888' }}>
-                              {currentPlaylistIndex + 1}/{audioPlaylist.length} in sequence
-                            </div>
-                          </div>
-                        ) : (
-                          <div>Page {audioPage}</div>
-                        )}
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="no-audio-indicator">
-                      <span className="text-gray-400">No audio for this spread</span>
-                    </div>
-                  );
-                })()}
-              </div>
+
 
               <div className="enhanced-nav-right">
                 <button onClick={() => setShowNavigation(!showNavigation)} className="nav-btn" title="Hide UI">
@@ -1650,8 +1493,131 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
             )}
           </div>
 
-          {/* Bottom Progress Bar */}
+          {/* Bottom Progress Bar with Audio Controls */}
           <div className={`enhanced-progress-bar ${showNavigation ? 'visible' : 'hidden'}`}>
+            {/* Audio Controls Section */}
+            <div className="kid-friendly-audio-controls">
+              {(() => {
+                // Check for audio on current page or adjacent page in spread
+                const pagesToTry = [currentPage];
+                if (currentPage % 2 === 0) {
+                  pagesToTry.push(currentPage + 1);
+                } else {
+                  pagesToTry.unshift(currentPage - 1);
+                }
+                
+                let hasAudio = false;
+                let audioPage = null;
+                
+                for (const pageNum of pagesToTry) {
+                  if (pageNum > 0 && pageNum <= totalPages && audioFiles[pageNum]) {
+                    hasAudio = true;
+                    audioPage = pageNum;
+                    break;
+                  }
+                }
+                
+                return hasAudio ? (
+                  <div className="audio-control-group">
+                    {/* Main Play/Pause Button */}
+                    <button 
+                      onClick={toggleAudio} 
+                      className={`kid-audio-btn main-play-btn ${isPlaying ? 'playing' : ''}`}
+                      title={isPlaying ? "Pause Story" : "Play Story"}
+                    >
+                      {isPlaying ? (
+                        <span className="btn-content">
+                          <Pause size={24} />
+                          <span className="btn-text">Pause</span>
+                        </span>
+                      ) : (
+                        <span className="btn-content">
+                          <Play size={24} />
+                          <span className="btn-text">Play Story</span>
+                        </span>
+                      )}
+                    </button>
+
+                    {/* Auto-Play Toggle */}
+                    <button 
+                      onClick={() => setAutoPlayEnabled(!autoPlayEnabled)}
+                      className={`kid-audio-btn auto-btn ${autoPlayEnabled ? 'active' : ''}`}
+                      title={autoPlayEnabled ? "Turn off Auto-Play" : "Turn on Auto-Play"}
+                    >
+                      <span className="btn-content">
+                        <span className="emoji">🚀</span>
+                        <span className="btn-text">Auto-Play</span>
+                      </span>
+                    </button>
+
+                    {/* Auto-Turn Toggle */}
+                    <button 
+                      onClick={() => {
+                        setAutoTurnEnabled(!autoTurnEnabled);
+                        if (!autoTurnEnabled) {
+                          setAutoPlayEnabled(true);
+                        }
+                      }}
+                      className={`kid-audio-btn auto-turn-btn ${autoTurnEnabled ? 'active' : ''}`}
+                      title={autoTurnEnabled ? "Turn off Auto-Turn Pages" : "Turn on Auto-Turn Pages"}
+                    >
+                      <span className="btn-content">
+                        <span className="emoji">📖</span>
+                        <span className="btn-text">Auto-Turn</span>
+                      </span>
+                    </button>
+
+                    {/* Volume Control */}
+                    <div className="volume-control-group">
+                      <button 
+                        onClick={toggleMute} 
+                        className={`kid-audio-btn volume-btn ${isMuted ? 'muted' : ''}`}
+                        title={isMuted ? "Unmute" : "Mute"}
+                      >
+                        <span className="btn-content">
+                          {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                          <span className="btn-text">{isMuted ? 'Muted' : 'Volume'}</span>
+                        </span>
+                      </button>
+                      <input
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.1"
+                        value={volume}
+                        onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
+                        className="kid-volume-slider"
+                        title="Volume"
+                      />
+                    </div>
+
+                    {/* Audio Progress */}
+                    {isPlaying && (
+                      <div className="audio-progress-display">
+                        <div className="audio-wave">🎵</div>
+                        <div className="audio-info">
+                          {audioPlaylist.length > 1 ? (
+                            <span>Playing {currentPlaylistIndex + 1} of {audioPlaylist.length}</span>
+                          ) : (
+                            <span>Playing Page {audioPage}</span>
+                          )}
+                        </div>
+                        <div className="audio-time-display">
+                          {Math.floor(audioProgress)}s / {Math.floor(audioDuration)}s
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="no-audio-message">
+                    <span className="emoji">📚</span>
+                    <span>No audio for this page</span>
+                  </div>
+                );
+              })()}
+            </div>
+
+            {/* Reading Progress */}
             <div className="progress-track">
               <div 
                 className="progress-fill"
@@ -1662,6 +1628,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
             </div>
             <div className="progress-info">
               <span>{readingTime}m read</span>
+              <span>Page {currentPage} of {totalPages}</span>
               <span>{Math.round((currentPage / totalPages) * 100)}% complete</span>
             </div>
           </div>
