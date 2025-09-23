@@ -131,6 +131,12 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     }
   }, [book?.id]); // Only depend on book ID, load once per book
 
+  // Stop text highlighting when page changes
+  useEffect(() => {
+    console.log('📝 Page changed to:', currentPage, 'stopping any existing highlighting');
+    stopTextHighlighting();
+  }, [currentPage, stopTextHighlighting]);
+
   // Extract audio files from book data
   const extractAudioFiles = useCallback(() => {
     console.log('🎵 Extracting audio files from book data...');
@@ -254,7 +260,12 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const loadOCRData = useCallback(async (bookId) => {
     try {
       // Try to load OCR data for this book
-      const response = await fetch(`${getApiUrl()}/ocr-data/${bookId}`);
+      const ocrUrl = `${getApiUrl()}/ocr-data/${bookId}`;
+      console.log('📝 Attempting to load OCR data from:', ocrUrl);
+      
+      const response = await fetch(ocrUrl);
+      console.log('📝 OCR API response status:', response.status, response.statusText);
+      
       if (response.ok) {
         const ocrData = await response.json();
         console.log('📝 Loaded OCR data for book:', bookId, ocrData);
@@ -274,7 +285,9 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         setPageTextData(convertedData);
         return convertedData;
       } else {
-        console.log('📝 No OCR data found for book:', bookId);
+        console.log('📝 No OCR data found for book:', bookId, 'Status:', response.status);
+        const errorText = await response.text();
+        console.log('📝 Error response:', errorText);
         return null;
       }
     } catch (error) {
@@ -389,6 +402,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   }, [textHighlightEnabled, extractTextFromPage]);
 
   const stopTextHighlighting = useCallback(() => {
+    console.log('📝 Stopping text highlighting');
     if (highlightIntervalRef.current) {
       clearInterval(highlightIntervalRef.current);
       highlightIntervalRef.current = null;
@@ -1309,6 +1323,15 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     if (!turnJsWorked) {
       console.log(`🔄 Using fallback setCurrentPage(${pageNumber})`);
       setCurrentPage(pageNumber);
+      
+      // Force a visual update by triggering a re-render
+      setTimeout(() => {
+        console.log(`🔄 Forced page update to ${pageNumber}`);
+        // Trigger any page change effects
+        if (flipBookRef.current) {
+          flipBookRef.current.style.transform = 'translateX(0px)';
+        }
+      }, 100);
     }
   }, [turnJsLoaded, totalPages]);
 
