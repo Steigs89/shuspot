@@ -9,7 +9,8 @@ import {
   FileText,
   CheckCircle,
   AlertTriangle,
-  Loader
+  Loader,
+  BarChart3
 } from 'lucide-react';
 
 const BookDataProcessor = () => {
