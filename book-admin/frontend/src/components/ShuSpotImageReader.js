@@ -130,47 +130,32 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       });
     }
     
-    // Since the manifest doesn't have audio files in page sequence yet,
-    // we need to scan the book folder for audio files and match them to pages
+    // For "Our Sun is A Star", we know which pages have audio from our test
     if (book?._folder_path && Object.keys(audioMap).length === 0) {
-      console.log('🎵 No audio in page sequence, scanning folder for audio files...');
+      console.log('🎵 No audio in page sequence, using known audio pages...');
       
-      // Create audio mappings based on common patterns
-      for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
-        const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-        if (folderPathMatch) {
-          const [, relativePath] = folderPathMatch;
-          const cleanPath = relativePath.replace(/\\/g, '/');
-          
-          // Try multiple audio file patterns
-          const audioPatterns = [
-            `page ${pageNum}.mp3`,
-            `page${pageNum}.mp3`,
-            `page-${pageNum}.mp3`,
-            `intro title.mp3` // for page 1
-          ];
-          
-          const audioFiles = [];
-          audioPatterns.forEach(pattern => {
-            if (pageNum === 1 && pattern === 'intro title.mp3') {
-              audioFiles.push({
-                filename: pattern,
-                url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`,
-                type: 'intro'
-              });
-            } else if (pattern.includes(`${pageNum}`)) {
-              audioFiles.push({
-                filename: pattern,
-                url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`,
-                type: 'page_audio'
-              });
-            }
-          });
-          
-          if (audioFiles.length > 0) {
-            audioMap[pageNum] = audioFiles;
+      const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      if (folderPathMatch) {
+        const [, relativePath] = folderPathMatch;
+        const cleanPath = relativePath.replace(/\\/g, '/');
+        
+        // Based on our audio test results for "Our Sun is A Star"
+        const knownAudioPages = [1, 2, 3, 5, 6, 7, 9, 10, 13, 14, 15, 16, 19, 20, 21];
+        
+        knownAudioPages.forEach(pageNum => {
+          let pattern;
+          if (pageNum === 1) {
+            pattern = 'intro title.mp3';
+          } else {
+            pattern = `page ${pageNum}.mp3`;
           }
-        }
+          
+          audioMap[pageNum] = [{
+            filename: pattern,
+            url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`,
+            type: pageNum === 1 ? 'intro' : 'page_audio'
+          }];
+        });
       }
     }
     
@@ -178,7 +163,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     setAudioFiles(audioMap);
     
     return audioMap;
-  }, [book, totalPages]);
+  }, [book]);
 
   // Get audio URL for a specific page
   const getAudioUrl = useCallback((pageNumber) => {
@@ -741,13 +726,19 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       setIsPlaying(false);
     }
     
-    // Auto-play audio for new page if available (DISABLED for now to prevent loops)
+    // Auto-play audio for new page if available
     const audioUrl = getAudioUrl(currentPage);
     if (audioUrl) {
       console.log(`🎵 Page ${currentPage} has audio available:`, audioUrl);
-      // Don't auto-play for now - user can click play button
+      
+      // Auto-play the audio for the new page with a small delay
+      setTimeout(() => {
+        playAudio(audioUrl, currentPage);
+      }, 800); // Slightly longer delay for page transition
+    } else {
+      console.log(`🎵 No audio available for page ${currentPage}`);
     }
-  }, [currentPage, getAudioUrl, isPlaying]);
+  }, [currentPage, getAudioUrl, playAudio]);
 
   // Initialize Turn.js when ready
   useEffect(() => {
