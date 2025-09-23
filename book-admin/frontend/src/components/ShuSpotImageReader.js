@@ -135,7 +135,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   useEffect(() => {
     console.log('📝 Page changed to:', currentPage, 'stopping any existing highlighting');
     stopTextHighlighting();
-  }, [currentPage, stopTextHighlighting]);
+  }, [currentPage]); // Removed stopTextHighlighting to prevent circular dependency
 
   // Extract audio files from book data
   const extractAudioFiles = useCallback(() => {
