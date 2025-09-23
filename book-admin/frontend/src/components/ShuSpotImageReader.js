@@ -177,62 +177,78 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     return null; // Only use pre-mapped audio files to prevent loops
   }, [audioFiles]);
 
-  // Audio control functions with fallback URL attempts
+  // Audio control functions - simplified and debugged
   const playAudio = useCallback((audioUrl, pageNumber = currentPage) => {
-    if (!audioUrl) return;
-    
-    console.log('🎵 Playing audio:', audioUrl);
-    
-    // Stop any existing audio
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.removeEventListener('error', () => {});
-      audioRef.current.removeEventListener('ended', () => {});
-      audioRef.current.removeEventListener('timeupdate', () => {});
-      audioRef.current.removeEventListener('loadedmetadata', () => {});
+    if (!audioUrl) {
+      console.log('🎵 No audio URL provided');
+      return;
     }
     
-    // Simple single URL attempt for now to prevent loops
+    console.log('🎵 Playing audio:', audioUrl);
+    console.log('🎵 Current volume:', volume, 'Muted:', isMuted);
+    
+    // Stop and cleanup any existing audio
+    if (audioRef.current) {
+      console.log('🎵 Stopping existing audio');
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+    
+    // Create new audio element
     const audio = new Audio(audioUrl);
     audioRef.current = audio;
     
+    // Set volume immediately
     audio.volume = isMuted ? 0 : volume;
+    console.log('🎵 Audio element volume set to:', audio.volume);
     
-    const handleLoadedMetadata = () => {
+    // Add event listeners
+    audio.addEventListener('loadedmetadata', () => {
       setAudioDuration(audio.duration);
-      console.log('🎵 Audio loaded successfully:', audioUrl);
-    };
+      console.log('🎵 Audio metadata loaded. Duration:', audio.duration);
+    });
     
-    const handleTimeUpdate = () => {
+    audio.addEventListener('timeupdate', () => {
       setAudioProgress(audio.currentTime);
-    };
+    });
     
-    const handleEnded = () => {
+    audio.addEventListener('ended', () => {
+      console.log('🎵 Audio ended');
       setIsPlaying(false);
       setAudioProgress(0);
-    };
+    });
     
-    const handleError = (e) => {
+    audio.addEventListener('error', (e) => {
       console.error('🎵 Audio error:', e);
       setIsPlaying(false);
-      // Don't retry automatically to prevent loops
-    };
+    });
     
-    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
-    audio.addEventListener('timeupdate', handleTimeUpdate);
-    audio.addEventListener('ended', handleEnded);
-    audio.addEventListener('error', handleError);
-    
+    // Attempt to play
+    console.log('🎵 Attempting to play audio...');
     audio.play()
       .then(() => {
         setCurrentAudio(audioUrl);
         setIsPlaying(true);
-        console.log('🎵 Audio playing successfully:', audioUrl);
+        console.log('🎵 ✅ Audio is now playing! Volume:', audio.volume);
+        
+        // Double-check audio is actually playing
+        setTimeout(() => {
+          if (audio.currentTime > 0) {
+            console.log('🎵 ✅ Confirmed: Audio is playing at', audio.currentTime, 'seconds');
+          } else {
+            console.log('🎵 ⚠️ Warning: Audio may not be playing (currentTime is 0)');
+          }
+        }, 1000);
       })
       .catch(error => {
-        console.error('🎵 Audio play error:', error);
+        console.error('🎵 ❌ Audio play failed:', error);
         setIsPlaying(false);
-        // Don't retry automatically to prevent loops
+        
+        // Try to give user feedback about why it failed
+        if (error.name === 'NotAllowedError') {
+          console.log('🎵 Browser blocked autoplay. User interaction required.');
+        }
       });
   }, [isMuted, volume, currentPage]);
 
@@ -244,9 +260,14 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   }, []);
 
   const toggleAudio = useCallback(() => {
+    console.log('🎵 🔘 PLAY BUTTON CLICKED! Current state - isPlaying:', isPlaying);
+    
     if (isPlaying) {
+      console.log('🎵 Pausing audio...');
       pauseAudio();
     } else {
+      console.log('🎵 Starting audio...');
+      
       // For double-page spreads, try both pages
       const pagesToTry = [currentPage];
       if (currentPage % 2 === 0) {
@@ -255,6 +276,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         pagesToTry.unshift(currentPage - 1);
       }
       
+      console.log('🎵 Checking pages for audio:', pagesToTry);
+      
       // Find first available audio
       let audioUrl = null;
       let audioPage = null;
@@ -262,6 +285,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       for (const pageNum of pagesToTry) {
         if (pageNum > 0 && pageNum <= totalPages) {
           const url = getAudioUrl(pageNum);
+          console.log(`🎵 Page ${pageNum} - URL: ${url}, Has audio files:`, !!audioFiles[pageNum]);
+          
           if (url && audioFiles[pageNum]) {
             audioUrl = url;
             audioPage = pageNum;
@@ -271,10 +296,11 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       }
       
       if (audioUrl) {
-        console.log(`🎵 Playing audio for page ${audioPage}`);
+        console.log(`🎵 🎯 Found audio for page ${audioPage}:`, audioUrl);
         playAudio(audioUrl, audioPage);
       } else {
-        console.log(`🎵 No audio available for pages ${pagesToTry.join(', ')}`);
+        console.log(`🎵 ❌ No audio available for pages ${pagesToTry.join(', ')}`);
+        console.log('🎵 Available audio files:', Object.keys(audioFiles));
       }
     }
   }, [isPlaying, currentPage, totalPages, audioFiles, pauseAudio, playAudio, getAudioUrl]);
