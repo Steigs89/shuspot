@@ -1,0 +1,5922 @@
+[
+  {
+    "Path": "'Twas the Night Before Christmas/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 38351,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/description.txt",
+    "Name": "description.txt",
+    "Size": 316,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 145968,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 467280,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 108432,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 123576,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 226513,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 225697,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 270001,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 248352,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 249433,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 231457,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 266209,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 262801,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 109632,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 111744,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 212688,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 215424,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 7939316,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 8334774,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 8634606,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 7234888,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7716821,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 7719148,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7562455,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 7571957,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 9425628,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7918802,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 7289887,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 7416810,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 8434091,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 7925223,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 7715492,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 9131015,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 8829243,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 7892689,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 7095530,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 7650759,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7269276,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7631579,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7698834,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7328706,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8028134,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7569025,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8286562,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 5477846,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 9557171,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 10202824,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 10454827,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 10377241,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 9033537,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 8952940,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 9167067,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 9807726,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 9750453,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 10632214,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 9449922,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 9760097,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 10916118,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": ".DS_Store",
+    "Name": ".DS_Store",
+    "Size": 10244,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.513027763-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-01.mp3",
+    "Name": "9781625815484_fullreading-01.mp3",
+    "Size": 156729,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-02.mp3",
+    "Name": "9781625815484_fullreading-02.mp3",
+    "Size": 205711,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-03.mp3",
+    "Name": "9781625815484_fullreading-03.mp3",
+    "Size": 350534,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-04.mp3",
+    "Name": "9781625815484_fullreading-04.mp3",
+    "Size": 255672,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-05.mp3",
+    "Name": "9781625815484_fullreading-05.mp3",
+    "Size": 192852,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-06.mp3",
+    "Name": "9781625815484_fullreading-06.mp3",
+    "Size": 148531,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-07.mp3",
+    "Name": "9781625815484_fullreading-07.mp3",
+    "Size": 259358,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-08.mp3",
+    "Name": "9781625815484_fullreading-08.mp3",
+    "Size": 197415,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-09.mp3",
+    "Name": "9781625815484_fullreading-09.mp3",
+    "Size": 339496,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-10.mp3",
+    "Name": "9781625815484_fullreading-10.mp3",
+    "Size": 376809,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-11.mp3",
+    "Name": "9781625815484_fullreading-11.mp3",
+    "Size": 338628,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-12.mp3",
+    "Name": "9781625815484_fullreading-12.mp3",
+    "Size": 203175,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-13.mp3",
+    "Name": "9781625815484_fullreading-13.mp3",
+    "Size": 153671,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-14.mp3",
+    "Name": "9781625815484_fullreading-14.mp3",
+    "Size": 239822,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-15.mp3",
+    "Name": "9781625815484_fullreading-15.mp3",
+    "Size": 395880,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-16.mp3",
+    "Name": "9781625815484_fullreading-16.mp3",
+    "Size": 195832,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-17.mp3",
+    "Name": "9781625815484_fullreading-17.mp3",
+    "Size": 312054,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-18.mp3",
+    "Name": "9781625815484_fullreading-18.mp3",
+    "Size": 349514,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-19.mp3",
+    "Name": "9781625815484_fullreading-19.mp3",
+    "Size": 320843,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-20.mp3",
+    "Name": "9781625815484_fullreading-20.mp3",
+    "Size": 317109,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-21.mp3",
+    "Name": "9781625815484_fullreading-21.mp3",
+    "Size": 190478,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-22.mp3",
+    "Name": "9781625815484_fullreading-22.mp3",
+    "Size": 290179,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-23.mp3",
+    "Name": "9781625815484_fullreading-23.mp3",
+    "Size": 232195,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/9781625815484_fullreading-24.mp3",
+    "Name": "9781625815484_fullreading-24.mp3",
+    "Size": 287611,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 48233,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/description.txt",
+    "Name": "description.txt",
+    "Size": 273,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 1660931,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 7706611,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7876233,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 8181773,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 8596501,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 8503673,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 9047018,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 9183752,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 9537893,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 8815863,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 8629103,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 8663762,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 8050059,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 7965667,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 8409453,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 8843593,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 7265707,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 8204657,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7803771,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 8232407,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 8942920,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8852228,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 8705402,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8970251,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1146687,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 11204012,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 9943175,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 10844830,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 4311277,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 10616030,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 10125627,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 11167616,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 11015174,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 9700165,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 10388189,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 11206730,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Child's Garden of Verses/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 11668306,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 32345,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/description.txt",
+    "Name": "description.txt",
+    "Size": 329,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 404967,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 143721,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 227263,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 116838,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 200322,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 150708,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 138568,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 592987,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 22-23.mp3",
+    "Name": "page 22-23.mp3",
+    "Size": 2246236,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 24-25.mp3",
+    "Name": "page 24-25.mp3",
+    "Size": 2586554,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 219228,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 118564,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 210156,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2021905,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 580043,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3835120,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3635960,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3718593,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 794177,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 2568618,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4232210,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3522671,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 556367,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 2954437,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 581085,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 2996727,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4204457,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 587634,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 3291714,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 542775,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 2780118,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2760241,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3098023,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4353284,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 1056867,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 3148299,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 2492836,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3217729,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1309965,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 2010579,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 4109443,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2284509,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 1982699,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 1977599,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 4234642,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 2547228,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 3347502,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 2619688,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4202682,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 1985344,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Treasure in My Garden/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 4425019,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 25134,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/description.txt",
+    "Name": "description.txt",
+    "Size": 250,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 60464,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 119960,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 123095,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 135006,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 102406,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 119333,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 107421,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 207731,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 122468,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 116825,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 119333,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 139395,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 116825,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 119333,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 141276,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 142530,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2435173,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4806897,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6037658,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4439602,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3366174,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4019310,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 5575956,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 5180704,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 912839,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5037391,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 3572423,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 4687429,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4943431,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5027758,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4517593,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 5473434,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5031914,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1389145,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 3579908,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 4074851,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 4497754,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 5319226,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 5617230,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3777774,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 4653170,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Rhymes/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 2783272,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 32767,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/description.txt",
+    "Name": "description.txt",
+    "Size": 241,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 123714,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 717217,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 737697,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 1638817,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 1242591,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 1500054,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 912821,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 675839,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 850963,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 810003,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 830483,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 387447,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 619414,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 552123,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 29.mp3",
+    "Name": "page 29.mp3",
+    "Size": 454320,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 2797817,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 30.mp3",
+    "Name": "page 30.mp3",
+    "Size": 722232,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 31.mp3",
+    "Name": "page 31.mp3",
+    "Size": 407927,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 33.mp3",
+    "Name": "page 33.mp3",
+    "Size": 1453661,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 35.mp3",
+    "Name": "page 35.mp3",
+    "Size": 691303,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 37.mp3",
+    "Name": "page 37.mp3",
+    "Size": 619414,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 38.mp3",
+    "Name": "page 38.mp3",
+    "Size": 1937657,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 39.mp3",
+    "Name": "page 39.mp3",
+    "Size": 2025429,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 948766,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 41.mp3",
+    "Name": "page 41.mp3",
+    "Size": 1005608,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 42.mp3",
+    "Name": "page 42.mp3",
+    "Size": 799554,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 43.mp3",
+    "Name": "page 43.mp3",
+    "Size": 758177,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 45.mp3",
+    "Name": "page 45.mp3",
+    "Size": 681272,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 47.mp3",
+    "Name": "page 47.mp3",
+    "Size": 701752,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 49.mp3",
+    "Name": "page 49.mp3",
+    "Size": 1031104,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 985128,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 51.mp3",
+    "Name": "page 51.mp3",
+    "Size": 985128,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 1278536,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 1170284,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 933301,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 7350025,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5694956,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6233061,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 7249673,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 8079273,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6910631,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7170480,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 7774091,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 7128490,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7082785,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 7411382,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6070511,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 6284940,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 7360835,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 7475660,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 7536171,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 7057536,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 6770461,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 7005780,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 7180645,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 6642793,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 7175097,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6788980,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 7188068,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 7297123,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-32.png",
+    "Name": "crop-32.png",
+    "Size": 6183407,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-33.png",
+    "Name": "crop-33.png",
+    "Size": 6934558,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-34.png",
+    "Name": "crop-34.png",
+    "Size": 6059006,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-35.png",
+    "Name": "crop-35.png",
+    "Size": 6397007,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-36.png",
+    "Name": "crop-36.png",
+    "Size": 6778050,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-37.png",
+    "Name": "crop-37.png",
+    "Size": 6454898,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-38.png",
+    "Name": "crop-38.png",
+    "Size": 7484655,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-39.png",
+    "Name": "crop-39.png",
+    "Size": 7787903,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7246482,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-40.png",
+    "Name": "crop-40.png",
+    "Size": 6859015,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-41.png",
+    "Name": "crop-41.png",
+    "Size": 7840482,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-42.png",
+    "Name": "crop-42.png",
+    "Size": 6171334,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-43.png",
+    "Name": "crop-43.png",
+    "Size": 6832531,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-44.png",
+    "Name": "crop-44.png",
+    "Size": 7394676,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-45.png",
+    "Name": "crop-45.png",
+    "Size": 7796587,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-46.png",
+    "Name": "crop-46.png",
+    "Size": 6794842,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-47.png",
+    "Name": "crop-47.png",
+    "Size": 7074242,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-48.png",
+    "Name": "crop-48.png",
+    "Size": 6541936,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-49.png",
+    "Name": "crop-49.png",
+    "Size": 7179644,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7445646,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-50.png",
+    "Name": "crop-50.png",
+    "Size": 7137917,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-51.png",
+    "Name": "crop-51.png",
+    "Size": 7109048,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 6776937,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7465433,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6623229,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6567075,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 3997337,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 8222231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 6977491,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 7710406,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 13.png",
+    "Name": "screenshot - 13.png",
+    "Size": 7846204,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 14.png",
+    "Name": "screenshot - 14.png",
+    "Size": 7217652,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 15.png",
+    "Name": "screenshot - 15.png",
+    "Size": 7785786,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 16.png",
+    "Name": "screenshot - 16.png",
+    "Size": 7372290,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 17.png",
+    "Name": "screenshot - 17.png",
+    "Size": 6876626,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 18.png",
+    "Name": "screenshot - 18.png",
+    "Size": 6529833,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 19.png",
+    "Name": "screenshot - 19.png",
+    "Size": 7370872,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 6816823,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 20.png",
+    "Name": "screenshot - 20.png",
+    "Size": 7978965,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 21.png",
+    "Name": "screenshot - 21.png",
+    "Size": 8610424,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 22.png",
+    "Name": "screenshot - 22.png",
+    "Size": 6778714,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 23.png",
+    "Name": "screenshot - 23.png",
+    "Size": 8664549,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 24.png",
+    "Name": "screenshot - 24.png",
+    "Size": 8271037,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 25.png",
+    "Name": "screenshot - 25.png",
+    "Size": 7608780,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 26.png",
+    "Name": "screenshot - 26.png",
+    "Size": 7916339,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 7480258,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 7961976,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 6836210,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 6411107,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 7980125,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 7171512,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bedtime Songs/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 7667290,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28358,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/description.txt",
+    "Name": "description.txt",
+    "Size": 312,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 449539,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 433266,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 272384,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 114006,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 701195,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 362382,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 625299,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 385691,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 951610,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 471309,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 443760,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 511373,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 417949,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 657226,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 306189,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 29.mp3",
+    "Name": "page 29.mp3",
+    "Size": 254857,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 727488,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 30.mp3",
+    "Name": "page 30.mp3",
+    "Size": 697330,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 31.mp3",
+    "Name": "page 31.mp3",
+    "Size": 663520,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 320586,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 244214,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 443282,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 563475,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 169094,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3013559,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3408369,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3656054,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5097785,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 1559173,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 2548421,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 3222393,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 1432728,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 4037882,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 2391815,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4644471,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3902653,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4407778,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 516437,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 1026651,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4292470,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2847039,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 5909916,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 3258503,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 2131083,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 3272080,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 2942425,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2649749,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 3023844,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 2786744,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3763086,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4138860,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 1970820,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4271334,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3182664,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5100267,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1810092,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 4030360,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 2705280,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 3040001,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 4422522,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 14.png",
+    "Name": "screenshoot 14.png",
+    "Size": 2668656,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 15.png",
+    "Name": "screenshoot 15.png",
+    "Size": 3261381,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 16.png",
+    "Name": "screenshoot 16.png",
+    "Size": 2760046,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 2979446,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 3955059,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 3463389,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 4061279,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 3653848,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3572734,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 3080212,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 2990835,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 1.mp3",
+    "Name": "audio 1.mp3",
+    "Size": 137238,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 10.mp3",
+    "Name": "audio 10.mp3",
+    "Size": 328130,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 11.mp3",
+    "Name": "audio 11.mp3",
+    "Size": 467459,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 12.mp3",
+    "Name": "audio 12.mp3",
+    "Size": 473625,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 13.mp3",
+    "Name": "audio 13.mp3",
+    "Size": 375065,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 14.mp3",
+    "Name": "audio 14.mp3",
+    "Size": 332844,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 15.mp3",
+    "Name": "audio 15.mp3",
+    "Size": 492268,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 2.mp3",
+    "Name": "audio 2.mp3",
+    "Size": 149718,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 3.mp3",
+    "Name": "audio 3.mp3",
+    "Size": 321414,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 4.mp3",
+    "Name": "audio 4.mp3",
+    "Size": 321311,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 5.mp3",
+    "Name": "audio 5.mp3",
+    "Size": 375394,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 6.mp3",
+    "Name": "audio 6.mp3",
+    "Size": 399925,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 7.mp3",
+    "Name": "audio 7.mp3",
+    "Size": 438828,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 8.mp3",
+    "Name": "audio 8.mp3",
+    "Size": 400129,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/audio 9.mp3",
+    "Name": "audio 9.mp3",
+    "Size": 274919,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 31731,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/description.txt",
+    "Name": "description.txt",
+    "Size": 320,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 8301190,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 7072271,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6985963,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6938986,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7264346,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6552856,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7017005,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6400497,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6461583,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6021858,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6385141,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6289488,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 6283883,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6608729,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 6400865,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 6269090,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 6688082,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 6095764,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 6184371,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 6923380,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 5717465,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 6388186,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7208639,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6110721,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6842585,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7164022,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6741309,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6613533,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7090214,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 3387547,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 4888214,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 5341021,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 5141712,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 5335947,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 5593142,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 15.png",
+    "Name": "screenshot 15.png",
+    "Size": 4942456,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 5643992,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 5148443,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 5709997,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 5582111,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 5819269,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 5844020,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 5589124,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Buttercup's Lovely Day/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 5176144,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 26248,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/description.txt",
+    "Name": "description.txt",
+    "Size": 187,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 1.mp3",
+    "Name": "page 1.mp3",
+    "Size": 234373,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 184845,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 198011,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 251928,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 269482,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 415559,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 464460,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 143467,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 206161,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 588594,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 194876,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 494553,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 515242,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 265720,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 354119,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 416185,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 441890,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 231239,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 391108,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 747209,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 277005,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 517123,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3893946,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3292817,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3727171,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3975603,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4360172,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6321553,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 3496053,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 5590950,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6098535,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4013391,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 3359155,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3726237,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3589974,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 7475427,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 7403879,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4591576,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2950542,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 2646520,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 4289332,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 3769858,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 734428,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 4823093,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3826727,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4217791,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3353927,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8121437,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7146393,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3967343,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 2343378,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 4223013,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 5932313,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 6576952,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 3088857,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 4505191,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 15.png",
+    "Name": "screenshot 15.png",
+    "Size": 512397,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 5032440,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 4659088,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 6432020,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 5889917,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 3894932,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 4739512,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 5559375,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Cat And Mouse/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 6282612,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 34445,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/description.txt",
+    "Name": "description.txt",
+    "Size": 341,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 245240,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 40628,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 22237,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 118995,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 26626,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 97679,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 17849,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 92037,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 59645,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 82006,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 2-3.mp3",
+    "Name": "page 2-3.mp3",
+    "Size": 155774,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 126100,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 33313,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 25372,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 122966,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 30179,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 36657,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 33522,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 37702,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 36866,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 42507,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 113351,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 21400,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 29133,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 88065,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 122129,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 5016171,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6369267,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6559239,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 2287010,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 5761191,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 2583007,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 5729467,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 2506373,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6530132,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5962614,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6289275,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 2760014,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 2385900,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5688905,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 3060561,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 5664980,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2282770,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 6711475,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 5537073,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 6068415,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 4881258,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6281003,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5536291,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6192361,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 1664327,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5432040,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6691109,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6787404,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 2775675,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 6330579,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 3999390,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 4381236,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 4519769,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 6029698,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 15.png",
+    "Name": "screenshot 15.png",
+    "Size": 2549674,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 4457323,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 5847227,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3438679,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 6679007,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 6725464,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 3971974,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 3971810,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 4420155,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/.DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.512080093-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 42814,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/description.txt",
+    "Name": "description.txt",
+    "Size": 267,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 77739,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 53497,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 50154,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 50154,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 43884,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 43048,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 57259,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 35107,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 33017,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 54333,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 35943,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 43884,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 8564502,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 2773300,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 5052137,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5358572,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 4455701,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 3594444,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 4332491,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 2832107,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 2710231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4451576,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 2584798,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 4647982,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 3719699,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2934975,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3112646,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3097468,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3128629,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 3302040,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "You're a Grand Old Flag/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2413560,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "'Twas the Night Before Christmas",
+    "Name": "'Twas the Night Before Christmas",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "'Twas the Night Before Christmas/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "A Child's Garden of Verses",
+    "Name": "A Child's Garden of Verses",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "A Child's Garden of Verses/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "A Treasure in My Garden",
+    "Name": "A Treasure in My Garden",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "A Treasure in My Garden/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Animal Rhymes",
+    "Name": "Animal Rhymes",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Animal Rhymes/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Bedtime Songs",
+    "Name": "Bedtime Songs",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Bedtime Songs/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Bo and the Poetry Lesson",
+    "Name": "Bo and the Poetry Lesson",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Bo and the Poetry Lesson/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Buttercup's Lovely Day",
+    "Name": "Buttercup's Lovely Day",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Buttercup's Lovely Day/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Cat And Mouse",
+    "Name": "Cat And Mouse",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Cat And Mouse/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes",
+    "Name": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Moses Supposed His Toses Are Roses And 7 Other Silly Old Rhymes/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "You're a Grand Old Flag",
+    "Name": "You're a Grand Old Flag",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "You're a Grand Old Flag/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:15:50.017507000-04:00",
+    "IsDir": true
+  }
+]

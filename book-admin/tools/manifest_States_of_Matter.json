@@ -1,0 +1,5074 @@
+[
+  {
+    "Path": ".DS_Store",
+    "Name": ".DS_Store",
+    "Size": 12292,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.502210933-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 23359,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/description.txt",
+    "Name": "description.txt",
+    "Size": 248,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 47920,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 67565,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 37084,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 87455,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 42390,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 101945,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 43900,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 44060,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 473094,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 411393,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 71207,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 109935,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 39215,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 69320,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 38615,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 94042,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 7542540,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3492497,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 1856994,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3632899,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4193888,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 5898792,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7388719,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 3956090,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 4672667,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7682984,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 8261907,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 10126769,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4191422,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 3631041,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 3364704,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 3461667,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 427853,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 9870681,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3372480,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 2120214,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 8819064,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7509032,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3807622,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3140760,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 3007098,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 6986462,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 3312727,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 2534012,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 13.png",
+    "Name": "screenshot - 13.png",
+    "Size": 303146,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 8196219,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 2118212,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 6550646,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 2623202,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 2110451,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 1863923,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 4437201,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 3253144,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 29780,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/description.txt",
+    "Name": "description.txt",
+    "Size": 381,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 229662,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 111184,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 154879,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 324870,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 81540,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 122867,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 75172,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 191324,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 109727,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 110659,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 92085,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2665650,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 2327791,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 2572170,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3175748,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 3458008,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3227448,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 2864665,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3501949,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 3015159,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 2467915,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 2390398,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1567066,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 3157671,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 2988061,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 3235761,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 2305393,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kindness Matters/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 2384600,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_10.mp3",
+    "Name": "9781950825073_10.mp3",
+    "Size": 94158,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_11.mp3",
+    "Name": "9781950825073_11.mp3",
+    "Size": 103950,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_12.mp3",
+    "Name": "9781950825073_12.mp3",
+    "Size": 102222,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_13.mp3",
+    "Name": "9781950825073_13.mp3",
+    "Size": 94158,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_14.mp3",
+    "Name": "9781950825073_14.mp3",
+    "Size": 94158,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_15.mp3",
+    "Name": "9781950825073_15.mp3",
+    "Size": 175950,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_16.mp3",
+    "Name": "9781950825073_16.mp3",
+    "Size": 33102,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_17.mp3",
+    "Name": "9781950825073_17.mp3",
+    "Size": 60174,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_18.mp3",
+    "Name": "9781950825073_18.mp3",
+    "Size": 96462,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_19.mp3",
+    "Name": "9781950825073_19.mp3",
+    "Size": 65358,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_2.mp3",
+    "Name": "9781950825073_2.mp3",
+    "Size": 78030,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_20.mp3",
+    "Name": "9781950825073_20.mp3",
+    "Size": 84942,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_22.mp3",
+    "Name": "9781950825073_22.mp3",
+    "Size": 75150,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_24.mp3",
+    "Name": "9781950825073_24.mp3",
+    "Size": 2034702,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_25.mp3",
+    "Name": "9781950825073_25.mp3",
+    "Size": 1579662,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_4.mp3",
+    "Name": "9781950825073_4.mp3",
+    "Size": 84942,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/9781950825073_6.mp3",
+    "Name": "9781950825073_6.mp3",
+    "Size": 84942,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 27181,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/description.txt",
+    "Name": "description.txt",
+    "Size": 234,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 108558,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6141675,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 417973,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 2659861,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 524554,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 8273580,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 370382,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 11417488,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 327562,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3996571,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 464504,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5225147,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 393466,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 404124,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5624584,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 343809,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 6147719,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2955930,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 2258979,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 1773327,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 9296720,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 371468,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6139459,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 405870,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 2185247,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 306304,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 4945478,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2330456,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 2562554,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 1821820,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2341348,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 1963765,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 14.png",
+    "Name": "screenshoot 14.png",
+    "Size": 776180,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 4395901,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 2443987,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 981794,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 1965474,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 1120312,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3804531,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5162050,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Matter Words/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 1864339,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 33114,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/description.txt",
+    "Name": "description.txt",
+    "Size": 246,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 365305,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 362663,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 237055,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 205304,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 553453,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 188988,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 550517,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 1331983,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 347208,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 287108,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 438202,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 346107,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 288829,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2882417,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 9151064,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 4943211,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6433711,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 11266750,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 7035660,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 13859972,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 9797450,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 8439027,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 9958749,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5124358,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 4456518,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5111163,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 3314797,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2268977,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 10062935,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7743017,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5532019,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5484828,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8390065,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4307046,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8779788,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1568631,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 7766063,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 3946551,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1171739,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 7974632,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 7500869,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 7544197,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 6878667,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 7854277,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 9698583,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 10832679,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore New England/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 9502814,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/.DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.498417878-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 29238,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/description.txt",
+    "Name": "description.txt",
+    "Size": 252,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 306249,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 280162,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 228412,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 501967,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 272029,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 237754,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 208132,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 568483,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 1319259,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 386746,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 403006,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 415162,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 502656,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2951011,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3197727,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7388527,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 9866861,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 5185723,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 7418674,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 9352286,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6539533,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6338980,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6063719,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 11087613,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5415149,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5234417,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 3294889,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2199030,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 8167740,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7263651,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5348250,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5114196,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 9914077,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6105286,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7297084,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1700376,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 8648531,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 4049165,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1172899,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 7562715,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 6165160,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 8009573,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 7551929,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 5316887,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 8283523,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 9079440,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 7438321,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 29468,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/description.txt",
+    "Name": "description.txt",
+    "Size": 242,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 212485,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 287151,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 477691,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 287835,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 176233,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 242928,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 362063,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 1113231,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 417041,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 286060,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 327220,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 272668,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 160992,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3003897,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4983500,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 9307024,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 9568527,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 5431328,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4836164,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 10690700,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 7635759,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6377478,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 10103287,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4000566,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 4843028,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5228378,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4544267,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 1951299,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 11215747,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 8988596,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7366878,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4528807,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 9942454,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7835921,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3605634,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1711789,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 7564023,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 4986442,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1070280,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 8352231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 8868278,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 7988197,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 6093051,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 7683922,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 8267447,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 8523716,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 6679144,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28810,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/description.txt",
+    "Name": "description.txt",
+    "Size": 230,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 285444,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 260883,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 361034,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 496653,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 321643,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 223172,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 295083,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 297065,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 1727922,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 343607,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 135672,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 405011,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 778516,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2728754,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 7979185,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 4473393,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5257425,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 10303476,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6490023,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 9198567,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 9659447,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 7743268,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 8650694,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4256545,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6383620,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5362702,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 3048767,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2073101,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 9614574,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7459819,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5832517,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4744939,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6733758,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4741554,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7884616,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1581186,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 6441941,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 3932790,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1090151,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 9116724,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 7266701,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 5584690,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 7031906,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 6342280,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 8570201,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 8707608,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the South/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 9581568,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 34430,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/description.txt",
+    "Name": "description.txt",
+    "Size": 246,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 384591,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 550067,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 203194,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 245788,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 352937,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 214805,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 539110,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 1583966,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 326356,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 275440,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 218356,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 362251,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 110578,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2848788,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 8977531,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 5514805,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6678674,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7361602,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 9685912,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 5645261,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 7661231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 5538625,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5315508,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 8848692,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5623187,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5153119,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4480383,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2058494,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 9972082,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 9209221,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6606066,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5338425,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 9939461,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4919612,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 11896447,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1566311,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 7350461,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 4674193,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1063436,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 8866625,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 8239478,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 8141306,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 9368706,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 8005915,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 6996625,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 7892863,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 6105370,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 30712,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/description.txt",
+    "Name": "description.txt",
+    "Size": 228,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 328781,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 230197,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 604472,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 222617,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 452945,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 144796,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 220597,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 785339,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 1362032,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 425179,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 360835,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 316166,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 722569,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3258065,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4797632,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 9126661,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 8794249,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4727624,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4986497,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 9217715,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 7845729,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6376618,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5489871,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 9152672,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 4678059,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5674218,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5574097,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2007005,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7193108,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 10882801,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5941073,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7130590,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4390645,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 5832793,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6939017,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1833002,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 8012632,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 5730890,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1089899,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 5956405,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 9181383,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 5747443,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 6819818,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 7564445,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 7409215,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 7922328,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Regions of the United States Explore the West/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 7219712,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 30948,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/description.txt",
+    "Name": "description.txt",
+    "Size": 283,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 191297,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 56147,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 76756,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 64417,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 67495,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 77770,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 293293,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 22-23.mp3",
+    "Name": "page 22-23.mp3",
+    "Size": 573668,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 34601,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 61389,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 66321,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 41202,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3771601,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 1188681,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6951113,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 1189113,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 5726376,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 1239163,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 3441124,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 1253107,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 5851870,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 1347038,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6212892,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5213382,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4059566,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5389104,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2924139,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 2588395,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 3456753,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 3086096,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 4391499,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 1151384,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6917677,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 1223182,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4094853,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 1078328,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5291350,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1385426,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 3449759,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 2942090,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2046110,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 2448280,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 3411086,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 3166482,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 2016480,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 1997402,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 2537927,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 2993875,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 1898819,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Solid or Liquid?/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 2927891,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 23632,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/description.txt",
+    "Name": "description.txt",
+    "Size": 260,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 193232,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 202706,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 427342,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 268788,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 272671,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 371746,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 658667,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 22-23.mp3",
+    "Name": "page 22-23.mp3",
+    "Size": 868592,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 3-toc.mp3",
+    "Name": "page 3-toc.mp3",
+    "Size": 238937,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 166317,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 387618,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 258006,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3798685,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3499381,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7018977,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5007738,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4423972,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4434010,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8410547,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4798396,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 4406579,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 3783208,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5288992,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 1108677,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3685975,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4445920,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 4862578,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 1840097,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2966529,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 3284629,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 4922848,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6125762,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3173751,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8071622,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4240680,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5304260,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1494562,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 3345322,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 2837497,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2142967,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 1369430,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 1532173,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 3615196,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 4138940,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 3441517,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 3967882,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3372633,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5091921,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Where Did The Water Go?/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 3429953,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Can Change Matter",
+    "Name": "I Can Change Matter",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "I Can Change Matter/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Kindness Matters",
+    "Name": "Kindness Matters",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Kindness Matters/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Matter Words",
+    "Name": "Matter Words",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Matter Words/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore New England",
+    "Name": "Regions of the United States Explore New England",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore New England/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic",
+    "Name": "Regions of the United States Explore the Mid-Atlantic",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the Mid-Atlantic/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest",
+    "Name": "Regions of the United States Explore the Midwest",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the Midwest/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the South",
+    "Name": "Regions of the United States Explore the South",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the South/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest",
+    "Name": "Regions of the United States Explore the Southwest",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the Southwest/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the West",
+    "Name": "Regions of the United States Explore the West",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Regions of the United States Explore the West/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Solid or Liquid?",
+    "Name": "Solid or Liquid?",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Solid or Liquid?/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Where Did The Water Go?",
+    "Name": "Where Did The Water Go?",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Where Did The Water Go?/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:17:37.036161000-04:00",
+    "IsDir": true
+  }
+]

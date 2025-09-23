@@ -18,6 +18,7 @@ from pathlib import Path
 import threading
 import time
 import re
+from urllib.parse import quote
 
 # Optional heavy dependencies
 try:
@@ -1823,7 +1824,8 @@ def _public_url_for(bucket: str, path: str) -> str:
         raise RuntimeError("SUPABASE_URL env not set; provide public_base_url in request")
     base = base.rstrip('/')
     # Supabase public object URL form
-    return f"{base}/storage/v1/object/public/{bucket}/{path.lstrip('/')}"
+    safe_path = quote(path.lstrip('/'), safe="/.-_~")
+    return f"{base}/storage/v1/object/public/{bucket}/{safe_path}"
 
 @app.post("/supabase/preview-manifest")
 async def supabase_preview_manifest(
@@ -1872,7 +1874,8 @@ async def supabase_preview_manifest(
             page_sequence = []
             for page_no, file_path in items:
                 if public_base_url:
-                    url = f"{public_base_url.rstrip('/')}/{file_path.lstrip('/')}"
+                    safe_path = quote(file_path.lstrip('/'), safe="/.-_~")
+                    url = f"{public_base_url.rstrip('/')}/{safe_path}"
                 else:
                     url = _public_url_for(bucket, file_path)
                 page_sequence.append({

@@ -1,0 +1,3237 @@
+[
+  {
+    "Path": ".DS_Store",
+    "Name": ".DS_Store",
+    "Size": 8196,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.515309605-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 27703,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/description.txt",
+    "Name": "description.txt",
+    "Size": 368,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 99772,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 84581,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 175429,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 111387,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 134946,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 191255,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 113886,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 183224,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 96244,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 124463,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 210083,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 7320731,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5986439,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3152739,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3626043,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7353382,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 7075631,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 3831119,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 2782527,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 5378208,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5415277,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4963370,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6374311,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 7687561,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6689113,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2696277,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4480022,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2217115,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6484849,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5602751,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5517778,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5340089,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 2121884,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6179586,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 3058013,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 3909674,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 5692280,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2094950,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 2671940,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 4336780,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 3751592,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 2946870,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 3324816,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3979939,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 4133132,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 2923829,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/.DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.496585080-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_CoverPage.mp3",
+    "Name": "9781617726323_CoverPage.mp3",
+    "Size": 156002,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p04.mp3",
+    "Name": "9781617726323_p04.mp3",
+    "Size": 407654,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p05.mp3",
+    "Name": "9781617726323_p05.mp3",
+    "Size": 250528,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p06.mp3",
+    "Name": "9781617726323_p06.mp3",
+    "Size": 640526,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p07.mp3",
+    "Name": "9781617726323_p07.mp3",
+    "Size": 74622,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p08.mp3",
+    "Name": "9781617726323_p08.mp3",
+    "Size": 494042,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p09.mp3",
+    "Name": "9781617726323_p09.mp3",
+    "Size": 117816,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p10.mp3",
+    "Name": "9781617726323_p10.mp3",
+    "Size": 416418,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p11.mp3",
+    "Name": "9781617726323_p11.mp3",
+    "Size": 407654,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p12.mp3",
+    "Name": "9781617726323_p12.mp3",
+    "Size": 423304,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p13.mp3",
+    "Name": "9781617726323_p13.mp3",
+    "Size": 424556,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p14.mp3",
+    "Name": "9781617726323_p14.mp3",
+    "Size": 590446,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p15.mp3",
+    "Name": "9781617726323_p15.mp3",
+    "Size": 150368,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p16.mp3",
+    "Name": "9781617726323_p16.mp3",
+    "Size": 680590,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p17.mp3",
+    "Name": "9781617726323_p17.mp3",
+    "Size": 266178,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p18.mp3",
+    "Name": "9781617726323_p18.mp3",
+    "Size": 852114,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p19.mp3",
+    "Name": "9781617726323_p19.mp3",
+    "Size": 138474,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p20.mp3",
+    "Name": "9781617726323_p20.mp3",
+    "Size": 605470,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/9781617726323_p21.mp3",
+    "Name": "9781617726323_p21.mp3",
+    "Size": 72118,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 38360,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/description.txt",
+    "Name": "description.txt",
+    "Size": 329,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6042554,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6806794,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7333744,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6807524,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7913693,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6336668,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8122895,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6815791,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 7213323,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6964830,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 7297755,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 7148596,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 6696262,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6675770,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6836762,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6683959,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 8000977,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7100017,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8335748,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7366260,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7724860,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2324385,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 7723646,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 6267506,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 7677718,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 7558881,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 8221976,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 8402171,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 7248641,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 8210009,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 7767387,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Sea Otter Pups/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 7401093,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2010.mp3",
+    "Name": "Page_2010.mp3",
+    "Size": 63891,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2011.mp3",
+    "Name": "Page_2011.mp3",
+    "Size": 50533,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2012.mp3",
+    "Name": "Page_2012.mp3",
+    "Size": 66151,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2013.mp3",
+    "Name": "Page_2013.mp3",
+    "Size": 77866,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2014.mp3",
+    "Name": "Page_2014.mp3",
+    "Size": 91692,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2015.mp3",
+    "Name": "Page_2015.mp3",
+    "Size": 47979,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2016.mp3",
+    "Name": "Page_2016.mp3",
+    "Size": 67073,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2017.mp3",
+    "Name": "Page_2017.mp3",
+    "Size": 86532,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2018.mp3",
+    "Name": "Page_2018.mp3",
+    "Size": 117356,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_2019.mp3",
+    "Name": "Page_2019.mp3",
+    "Size": 165580,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_204.mp3",
+    "Name": "Page_204.mp3",
+    "Size": 105592,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_205.mp3",
+    "Name": "Page_205.mp3",
+    "Size": 51680,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_206.mp3",
+    "Name": "Page_206.mp3",
+    "Size": 139408,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_207.mp3",
+    "Name": "Page_207.mp3",
+    "Size": 87431,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_208.mp3",
+    "Name": "Page_208.mp3",
+    "Size": 93850,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/Page_209.mp3",
+    "Name": "Page_209.mp3",
+    "Size": 38512,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 27737,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/description.txt",
+    "Name": "description.txt",
+    "Size": 277,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3348891,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3422748,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7183524,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 9989064,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3408986,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 3934153,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 5530937,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6709254,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3554885,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5252580,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 7335957,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 7680942,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5072716,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4050059,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2826278,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 4362942,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5666722,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7489901,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7348590,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8542681,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7799472,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3845973,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1352819,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 5044079,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 2806270,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 845104,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 5142099,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 5462028,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 6985459,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 4684599,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4455772,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 6176981,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 3906569,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water (no audio intro title)/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 4530016,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 36246,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/description.txt",
+    "Name": "description.txt",
+    "Size": 281,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 64185,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 112828,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 115621,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 204432,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/page 2-3.mp3",
+    "Name": "page 2-3.mp3",
+    "Size": 191398,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 88726,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 107740,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 94772,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 9275393,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6890024,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7550554,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 7696377,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7835714,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 8493062,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 9756061,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 2629521,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 2744626,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 1482037,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4196834,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6960033,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 3145311,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 2902627,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 9163908,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 9398246,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 9901579,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 8928303,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8977767,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 3960989,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 1821281,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 3127465,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 5254726,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 8801358,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 8459575,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 5194015,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 5976710,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 7831986,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water All Around/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 2273783,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 38774,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/description.txt",
+    "Name": "description.txt",
+    "Size": 252,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 54421,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 97889,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 451900,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 58185,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 341143,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 55677,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 614071,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 74903,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 417630,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 54423,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 493280,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 908732,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 444797,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 53585,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 410522,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 79499,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 532567,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 79081,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 516266,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3049398,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6995775,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 1643254,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6816679,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 2690812,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6790851,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 1961037,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 7547037,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 2465600,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5154012,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 3428054,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6520967,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 1817884,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 1802305,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 1639225,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 1719711,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7043184,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 2507990,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5552344,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 2086019,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6302985,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 1402098,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1329868,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 3117610,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 1587341,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 831130,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 3331172,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 3917652,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 2919274,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 3142951,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 3669697,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3641859,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 3576628,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water Parks/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 3898576,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 39688,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/description.txt",
+    "Name": "description.txt",
+    "Size": 312,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 189307,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 179169,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 272759,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 224968,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 264981,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 324414,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 224134,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 22-23.mp3",
+    "Name": "page 22-23.mp3",
+    "Size": 854419,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 202430,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 205052,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 189881,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 8038294,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6042121,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7627872,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6965265,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 11829691,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4940493,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 6871241,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6871496,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6240198,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6201145,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5648397,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5018487,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4197649,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 2897445,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 4080618,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6676501,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6034945,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5871000,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5442788,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7715193,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 5775646,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7193479,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 3472063,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 4673630,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 2869585,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1700303,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 4728031,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 3982368,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 5092884,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 5178898,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 5223357,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 7756496,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5027625,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Water World/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 5158516,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 43639,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/description.txt",
+    "Name": "description.txt",
+    "Size": 314,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 193337,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 372166,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 236654,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 146033,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 146579,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 295256,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 108396,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 22-23.mp3",
+    "Name": "page 22-23.mp3",
+    "Size": 1010894,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 3-toc.mp3",
+    "Name": "page 3-toc.mp3",
+    "Size": 223115,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 198775,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 177548,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 125791,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3764723,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5342597,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 5114023,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6569358,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6860908,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 5795456,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7304097,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6606331,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 4981754,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6105814,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6921160,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 45687,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 2612291,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6347185,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 5154546,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 2474593,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2617570,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 3329968,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 2725162,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7764097,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5280901,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6768604,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 2840654,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6958279,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1662864,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 4804096,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 3051649,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2535727,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 1203944,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 1371978,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 4093946,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 4475118,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 3853611,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 3843509,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 5031571,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5439519,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "What's The Weather Like Today?/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 4058706,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Saving Water",
+    "Name": "Saving Water",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Saving Water/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Sea Otter Pups",
+    "Name": "Sea Otter Pups",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Sea Otter Pups/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Water (no audio intro title)",
+    "Name": "Water (no audio intro title)",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Water (no audio intro title)/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Water All Around",
+    "Name": "Water All Around",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Water All Around/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Water Parks",
+    "Name": "Water Parks",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Water Parks/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Water World",
+    "Name": "Water World",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Water World/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "What's The Weather Like Today?",
+    "Name": "What's The Weather Like Today?",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "What's The Weather Like Today?/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:14.487054000-04:00",
+    "IsDir": true
+  }
+]

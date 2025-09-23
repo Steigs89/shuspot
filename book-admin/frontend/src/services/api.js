@@ -41,7 +41,7 @@ export const bookAPI = {
       if (key in bookData) formData.append(key, bookData[key] ?? '');
     });
 
-    const response = await api.post(`/books/${bookId}/update`, formData, {
+    const response = await api.put(`/books/${bookId}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },

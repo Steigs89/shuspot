@@ -1,0 +1,504 @@
+[
+  {
+    "Path": ".DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.501117304-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/.DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.516030482-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 34230,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/description.txt",
+    "Name": "description.txt",
+    "Size": 213,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 180994,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 213293,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 294040,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 245262,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 505678,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 269650,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 317129,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 22-23.mp3",
+    "Name": "page 22-23.mp3",
+    "Size": 746310,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 3_toc.mp3",
+    "Name": "page 3_toc.mp3",
+    "Size": 230076,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 323027,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 104718,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 248629,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 5194682,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4740286,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3949819,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 2349655,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4875636,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 3976866,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 4769018,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 8127349,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3654091,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4744180,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 3395215,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 45617,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 6419625,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 7409269,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2797447,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 2120805,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 3273780,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 4270741,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 996390,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 2799860,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7360622,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4559651,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4826013,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4199056,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 4985537,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 2183081,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 3259369,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 5550584,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 1961799,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 13.png",
+    "Name": "screenshot - 13.png",
+    "Size": 2780856,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 523709,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 4089863,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 3825563,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 3752010,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 3292946,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 2859471,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 3313973,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 4715013,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "How We Communicate",
+    "Name": "How We Communicate",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:19.982262000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "How We Communicate/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:18:19.982262000-04:00",
+    "IsDir": true
+  }
+]
