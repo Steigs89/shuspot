@@ -18,12 +18,13 @@ import FileUpload from './components/FileUpload';
 import BookGrid from './components/BookGrid';
 import GoogleSheetsSetup from './components/GoogleSheetsSetup';
 import GoogleSheetsManager from './components/GoogleSheetsManager';
-import TxtIngestion from './components/TxtIngestion';
+import BookDataProcessor from './components/BookDataProcessor';
 import ShuSpotBookLauncher from './components/ShuSpotBookLauncher';
 import StreamlinedUploader from './components/StreamlinedUploader';
 import { bookAPI } from './services/api';
 import ZipPreviewModal from './components/ZipPreviewModal';
 import './styles/StreamlinedUploader.css';
+import './styles/BookDataProcessor.css';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -810,10 +811,7 @@ function App() {
 
         {activeTab === 'ingestion' && (
           <div className="ingestion-tab">
-            <TxtIngestion 
-              isGoogleSheetsConnected={isGoogleSheetsConnected} 
-              onLaunchBook={handleLaunchBook}
-            />
+            <BookDataProcessor />
           </div>
         )}
       </div>
