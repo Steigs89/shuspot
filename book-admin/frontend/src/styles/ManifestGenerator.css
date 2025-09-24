@@ -1,0 +1,407 @@
+/* ManifestGenerator Styles */
+.manifest-generator {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.generator-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.generator-header h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.generator-header p {
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+.generator-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.local-tunnel-section {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f0f8ff;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.local-tunnel-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.connection-options {
+  margin-bottom: 15px;
+}
+
+.connection-option {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.connection-option input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.tunnel-config {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.tunnel-config label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.form-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-help {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #7f8c8d;
+  line-height: 1.4;
+}
+
+.generation-mode-section {
+  margin-bottom: 25px;
+}
+
+.generation-mode-section h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.mode-options {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.mode-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 250px;
+}
+
+.mode-option:hover {
+  border-color: #3498db;
+  background: #f0f9ff;
+}
+
+.mode-option.active {
+  border-color: #3498db;
+  background: #eff6ff;
+}
+
+.mode-option input[type="radio"] {
+  margin: 4px 0 0 0;
+}
+
+.mode-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mode-title {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.mode-content small {
+  color: #7f8c8d;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.metadata-section {
+  margin-bottom: 25px;
+}
+
+.metadata-section h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.metadata-help {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #ffc107;
+}
+
+.reading-level-group {
+  position: relative;
+}
+
+.reading-level-help {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #7f8c8d;
+  line-height: 1.4;
+}
+
+.script-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.script-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.script-help {
+  font-size: 13px;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.actions-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e2e8f0;
+  text-align: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #3498db;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+.btn-success {
+  background: #27ae60;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #229954;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+}
+
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+.error {
+  margin-top: 15px;
+  padding: 15px;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 6px;
+  color: #c33;
+  font-size: 14px;
+}
+
+.manifest-result {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #27ae60;
+}
+
+.manifest-result h3 {
+  color: #27ae60;
+  margin-bottom: 15px;
+}
+
+.manifest-summary {
+  margin-bottom: 20px;
+}
+
+.book-summary {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.book-summary p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.upload-actions {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.manifest-preview {
+  margin-top: 20px;
+}
+
+.manifest-preview summary {
+  cursor: pointer;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.manifest-json {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.4;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .manifest-generator {
+    padding: 10px;
+  }
+  
+  .generator-form {
+    padding: 20px;
+  }
+  
+  .mode-options {
+    flex-direction: column;
+  }
+  
+  .mode-option {
+    min-width: auto;
+  }
+}
