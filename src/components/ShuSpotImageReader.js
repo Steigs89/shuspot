@@ -144,7 +144,17 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     console.log('🎵 Book title:', book?.title);
     console.log('🎵 Book cover_image_url:', book?.cover_image_url);
     console.log('🎵 Book page_sequence length:', book?.page_sequence?.length);
-    console.log('🎵 Full book object:', book);
+    console.log('🎵 Full book object:', JSON.stringify(book, null, 2));
+    
+    // Debug: Check page sequence structure
+    if (book?.page_sequence) {
+      console.log('🎵 First page in sequence:', JSON.stringify(book.page_sequence[0], null, 2));
+      book.page_sequence.forEach((page, index) => {
+        if (page.audio_files && page.audio_files.length > 0) {
+          console.log(`🎵 Page ${index + 1} has audio:`, page.audio_files);
+        }
+      });
+    }
     
     const audioMap = {};
     
