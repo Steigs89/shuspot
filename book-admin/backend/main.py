@@ -2673,6 +2673,7 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
     """Import books from generated manifest to database"""
     try:
         print(f"🔵 Ingest-manifest endpoint called with data keys: {list(manifest_data.keys())}")
+        print(f"🔵 Full manifest_data structure: {json.dumps(manifest_data, indent=2)[:500]}...")
         manifest = manifest_data.get('manifest', {})
         books_data = manifest.get('books', [])
         
@@ -2682,11 +2683,21 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
             raise HTTPException(status_code=400, detail="No books found in manifest")
         
         imported_count = 0
+        skipped_count = 0
         
         for book_data in books_data:
             print(f"🔵 Processing book: {book_data.get('title', 'Unknown')}")
             print(f"🔵 Book genre: {book_data.get('genre', 'No genre')}")
             print(f"🔵 Book reading_level: {book_data.get('reading_level', 'No reading level')}")
+            
+            # Check if book already exists (avoid duplicates by file_path)
+            folder_path = book_data.get('folder_path', '')
+            existing_book = db.query(Book).filter(Book.file_path == folder_path).first()
+            
+            if existing_book:
+                print(f"🔵 Book already exists, skipping: {book_data.get('title')}")
+                skipped_count += 1
+                continue
             
             # Prepare ShuSpot-specific data for notes field
             shuspot_data = {
@@ -2719,12 +2730,13 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
             imported_count += 1
         
         db.commit()
-        print(f"🔵 Successfully imported {imported_count} books to database")
+        print(f"🔵 Successfully imported {imported_count} books, skipped {skipped_count} duplicates")
         
         return {
             "success": True,
-            "message": f"Successfully imported {imported_count} books from manifest",
-            "imported_count": imported_count
+            "message": f"Successfully imported {imported_count} new books from manifest (skipped {skipped_count} duplicates)",
+            "imported_count": imported_count,
+            "skipped_count": skipped_count
         }
         
     except HTTPException:
