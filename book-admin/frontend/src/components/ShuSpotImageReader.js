@@ -123,20 +123,19 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     return fallbackUrl;
   }, [book?.notes, book?.folder_path]);
 
-  // Load OCR data when book changes (only once per book)
-  useEffect(() => {
-    if (book?.id) {
-      console.log('📝 Loading OCR data for book ID:', book.id);
-      console.log('📝 Full book object:', book);
-      loadOCRData(book.id);
-    }
-  }, [book?.id]); // Removed loadOCRData to prevent circular dependency
+  // OCR functionality temporarily disabled for simplicity
+  // useEffect(() => {
+  //   if (book?.id) {
+  //     console.log('📝 Loading OCR data for book ID:', book.id);
+  //     loadOCRData(book.id);
+  //   }
+  // }, [book?.id]);
 
-  // Stop text highlighting when page changes
-  useEffect(() => {
-    console.log('📝 Page changed to:', currentPage, 'stopping any existing highlighting');
-    stopTextHighlighting();
-  }, [currentPage]); // Removed stopTextHighlighting to prevent circular dependency
+  // Text highlighting temporarily disabled
+  // useEffect(() => {
+  //   console.log('📝 Page changed to:', currentPage, 'stopping any existing highlighting');
+  //   stopTextHighlighting();
+  // }, [currentPage]);
 
   // Extract audio files from book data
   const extractAudioFiles = useCallback(() => {
@@ -490,44 +489,24 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
           playAudio(nextAudio.url, nextAudio.pageNumber, true);
         }, 200);
       } else if (autoTurnEnabledRef.current && currentPage < totalPages) {
-        // Auto-turn to next page and continue playing
-        console.log('🎵 📖 Auto-turning to next page and continuing audio');
+        // Auto-turn to next page by simulating right arrow click
+        console.log('🎵 📖 Auto-turning to next page by simulating click');
         setIsPlaying(false);
         setCurrentAudio(null);
         setCurrentPlaylistIndex(0);
         setAudioPlaylist([]);
         
-        // Turn to next page
+        // Simulate right arrow click after a short delay
         setTimeout(() => {
           if (currentPage < totalPages) {
-            // For double-page spreads, advance by 2, but ensure we don't exceed total pages
-            let nextPage;
-            if (currentPage % 2 === 0) {
-              // Currently on even page (right side), go to next spread
-              nextPage = currentPage + 2;
-            } else {
-              // Currently on odd page (left side), go to next spread  
-              nextPage = currentPage + 1;
-            }
-            
-            // Ensure we don't go beyond the book
-            if (nextPage > totalPages) {
-              nextPage = totalPages;
-            }
-            
-            if (nextPage > currentPage && nextPage <= totalPages) {
-              console.log(`🎵 📖 Auto-turning from page ${currentPage} to page ${nextPage}`);
-              try {
-                goToPage(nextPage);
-                console.log(`🎵 📖 ✅ Successfully called goToPage(${nextPage})`);
-              } catch (error) {
-                console.error(`🎵 📖 ❌ Error calling goToPage:`, error);
-                setAutoTurnEnabled(false);
-              }
-            } else {
-              console.log('🎵 📖 Reached end of book, disabling auto-turn');
+            console.log(`🎵 📖 Simulating right arrow click to turn from page ${currentPage}`);
+            try {
+              // Simulate the right arrow click that we know works
+              handleRightArrowClick();
+              console.log('🎵 📖 ✅ Successfully simulated page turn click');
+            } catch (error) {
+              console.error('🎵 📖 ❌ Error simulating page turn:', error);
               setAutoTurnEnabled(false);
-              setAutoPlayEnabled(false);
             }
           } else {
             console.log('🎵 📖 Already at end of book');
@@ -620,10 +599,10 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                 
                 if (audio.currentTime > 0 && !audio.paused) {
                   console.log('🎵 ✅ Audio is definitely playing!');
-                  // Start text highlighting
-                  if (attempt === 1) { // Only start on first successful verification
-                    startTextHighlighting(pageNumber, audio.duration);
-                  }
+                  // Text highlighting temporarily disabled
+                  // if (attempt === 1) { // Only start on first successful verification
+                  //   startTextHighlighting(pageNumber, audio.duration);
+                  // }
                 } else if (attempt < 3) {
                   console.log(`🎵 ⚠️ Audio not progressing, attempt ${attempt + 1}...`);
                   verifyPlayback(attempt + 1);
@@ -1623,78 +1602,14 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                     {/* Turn.js will populate this with pages */}
                   </div>
 
-                  {/* Text Highlighting Overlay */}
+                  {/* Text Highlighting Temporarily Disabled */}
+                  {/* 
                   {textHighlightEnabled && isPlaying && pageTextData[currentPage] && (
-                    <div className="text-highlight-overlay" style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      pointerEvents: 'none',
-                      zIndex: 1000
-                    }}>
-                      {pageTextData[currentPage].words?.map(word => {
-                        const isHighlighted = currentHighlightedWords.includes(word.id);
-                        const isDemo = word.id.startsWith('demo-word');
-                        
-                        if (isDemo) {
-                          // Demo text overlay (centered)
-                          return null; // Will be handled by demo overlay below
-                        } else {
-                          // Real OCR text overlay (positioned on image)
-                          return (
-                            <div
-                              key={word.id}
-                              className={`highlight-word ${isHighlighted ? 'active' : ''}`}
-                              style={{
-                                position: 'absolute',
-                                left: `${word.x * 100}%`,
-                                top: `${word.y * 100}%`,
-                                width: `${word.width * 100}%`,
-                                height: `${word.height * 100}%`,
-                                background: isHighlighted 
-                                  ? 'rgba(255, 255, 0, 0.4)' 
-                                  : 'transparent',
-                                border: isHighlighted 
-                                  ? '2px solid #FFD700' 
-                                  : '1px solid rgba(255, 255, 255, 0.3)',
-                                borderRadius: '4px',
-                                transition: 'all 0.2s ease',
-                                animation: isHighlighted 
-                                  ? 'highlight-pulse 0.5s ease-in-out' 
-                                  : 'none',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontSize: '12px',
-                                color: isHighlighted ? '#333' : 'transparent',
-                                fontWeight: 'bold',
-                                textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
-                              }}
-                              title={word.text}
-                            >
-                              {isHighlighted && word.text}
-                            </div>
-                          );
-                        }
-                      })}
+                    <div className="text-highlight-overlay">
+                      Text highlighting overlay content...
                     </div>
                   )}
-
-                  {/* Demo Text Overlay (for books without OCR data) */}
-                  {textHighlightEnabled && isPlaying && pageTextData[currentPage]?.words?.[0]?.id?.startsWith('demo-word') && (
-                    <div className="demo-text-overlay">
-                      {pageTextData[currentPage].words.map(word => (
-                        <span
-                          key={word.id}
-                          className={`demo-word ${currentHighlightedWords.includes(word.id) ? 'highlighted' : ''}`}
-                        >
-                          {word.text}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  */}
 
                   {/* External wide click zones overlayed ABOVE flipbook to avoid interfering with internal DOM */}
                   <div
