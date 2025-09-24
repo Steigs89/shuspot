@@ -21,6 +21,7 @@ import GoogleSheetsManager from './components/GoogleSheetsManager';
 import BookDataProcessor from './components/BookDataProcessor';
 import ShuSpotBookLauncher from './components/ShuSpotBookLauncher';
 import StreamlinedUploader from './components/StreamlinedUploader';
+import ManifestGenerator from './components/ManifestGenerator';
 import { bookAPI } from './services/api';
 import ZipPreviewModal from './components/ZipPreviewModal';
 import './styles/StreamlinedUploader.css';
@@ -35,7 +36,7 @@ function App() {
   const [showUpload, setShowUpload] = useState(false);
 
   // Navigation
-  const [activeTab, setActiveTab] = useState('local'); // 'local', 'sheets', 'ingestion'
+  const [activeTab, setActiveTab] = useState('local'); // 'local', 'sheets', 'ingestion', 'generator'
   const [isGoogleSheetsConnected, setIsGoogleSheetsConnected] = useState(false);
 
   // Filters
@@ -631,6 +632,13 @@ function App() {
           <FileText size={16} />
           TXT Ingestion
         </button>
+        <button
+          className={`nav-tab ${activeTab === 'generator' ? 'active' : ''}`}
+          onClick={() => setActiveTab('generator')}
+        >
+          <Settings size={16} />
+          Generate Manifest
+        </button>
       </div>
 
 
@@ -823,6 +831,12 @@ function App() {
         {activeTab === 'ingestion' && (
           <div className="ingestion-tab">
             <BookDataProcessor />
+          </div>
+        )}
+
+        {activeTab === 'generator' && (
+          <div className="generator-tab">
+            <ManifestGenerator />
           </div>
         )}
       </div>

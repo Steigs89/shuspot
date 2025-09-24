@@ -439,6 +439,45 @@ def get_ocr_data(book_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error loading OCR data: {str(e)}")
 
+@router.post("/generate-manifest")
+async def generate_manifest(request: dict):
+    """
+    Generate a manifest from a folder structure.
+    Expects: {"folder_path": "path/to/folder", "book_metadata": {...}}
+    """
+    try:
+        folder_path = request.get("folder_path")
+        book_metadata = request.get("book_metadata", {})
+        
+        if not folder_path:
+            raise HTTPException(status_code=400, detail="folder_path is required")
+        
+        # Import the manifest generator
+        sys.path.append(os.path.join(REPO_ROOT, "book-admin", "tools"))
+        from quick_manifest import ManifestGenerator
+        
+        generator = ManifestGenerator()
+        
+        # Generate manifest from folder
+        manifest_data = generator.generate_from_folder(
+            folder_path=folder_path,
+            title=book_metadata.get("title", "Unknown Title"),
+            author=book_metadata.get("author", "Unknown Author"),
+            genre=book_metadata.get("genre", "Unknown Genre"),
+            book_type=book_metadata.get("book_type", "Read to Me"),
+            reading_level=book_metadata.get("reading_level", "Elementary"),
+            description=book_metadata.get("description", "")
+        )
+        
+        return {
+            "success": True,
+            "manifest": manifest_data,
+            "message": f"Generated manifest for {len(manifest_data.get('books', []))} book(s)"
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error generating manifest: {str(e)}")
+
 @router.get("/export/csv")
 def export_csv():
     db = load_db()
