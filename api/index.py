@@ -361,29 +361,46 @@ async def update_book(book_id: int, request: Request):
 
 @router.put("/books/bulk-update")
 async def bulk_update_books(request: Request):
-    form = await request.form()
-    ids = [int(v) for k, v in form.multi_items() if k == "book_ids"]
-    field = form.get("field")
-    value = form.get("value")
-    if not field:
-        raise HTTPException(status_code=400, detail="Missing 'field'")
-    db = load_db()
-    count = 0
-    for b in db.get("books", []):
-        if b.get("id") in ids:
-            b[field] = value
-            count += 1
-            # Sync legacy for known fields
-            if field == "title":
-                b["Name"] = value
-            elif field == "author":
-                b["Author"] = value
-            elif field == "genre":
-                b["Category"] = value
-            elif field == "book_type":
-                b["Media"] = value
-    save_db(db)
-    return {"ok": True, "updated": count}
+    try:
+        form = await request.form()
+        print("📝 Bulk update form data:", dict(form))
+        
+        ids = [int(v) for k, v in form.multi_items() if k == "book_ids"]
+        field = form.get("field")
+        value = form.get("value")
+        
+        print(f"📝 Bulk update: ids={ids}, field={field}, value={value}")
+        
+        if not field:
+            raise HTTPException(status_code=400, detail="Missing 'field'")
+        if not ids:
+            raise HTTPException(status_code=400, detail="No book IDs provided")
+            
+        db = load_db()
+        count = 0
+        for b in db.get("books", []):
+            if b.get("id") in ids:
+                b[field] = value
+                count += 1
+                # Sync legacy for known fields
+                if field == "title":
+                    b["Name"] = value
+                elif field == "author":
+                    b["Author"] = value
+                elif field == "genre":
+                    b["Category"] = value
+                elif field == "book_type":
+                    b["Media"] = value
+                    
+        print(f"📝 Updated {count} books")
+        save_db(db)
+        return {"ok": True, "updated": count}
+        
+    except Exception as e:
+        print(f"❌ Bulk update error: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Bulk update failed: {str(e)}")
 
 @router.delete("/books/{book_id}")
 def delete_book(book_id: int):
