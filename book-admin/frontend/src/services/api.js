@@ -34,18 +34,25 @@ export const bookAPI = {
 
   // Update single book
   updateBook: async (bookId, bookData) => {
+    console.log(`🔄 Updating individual book ${bookId}:`, bookData);
+    
     const formData = new FormData();
     // Only send fields the backend expects
     const fields = ['title','author','genre','book_type','fiction_type','reading_level','cover_image_url','notes'];
     fields.forEach(key => {
-      if (key in bookData) formData.append(key, bookData[key] ?? '');
+      if (key in bookData) {
+        formData.append(key, bookData[key] ?? '');
+        console.log(`📝 Adding field: ${key} = ${bookData[key]}`);
+      }
     });
 
-    const response = await api.post(`/books/${bookId}/update`, formData, {
+    const response = await api.put(`/books/${bookId}`, formData, {
       headers: {
-        'Content-Type': 'multipart/form-data',
+        'Content-Type': undefined, // Let axios handle multipart boundary
       },
     });
+    
+    console.log(`✅ Individual book ${bookId} update response:`, response.data);
     return response.data;
   },
 

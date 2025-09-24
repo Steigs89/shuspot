@@ -169,14 +169,18 @@ function App() {
       const result = await bookAPI.bulkUpdateBooks(bookIds, bulkField, bulkValue);
       console.log('Bulk update result:', result);
 
-      toast.success(`Updated ${selectedBooks.length} books`);
+      toast.success(`Updated ${result.updated || selectedBooks.length} books`);
       setShowBulkEdit(false);
       setBulkValue('');
       setSelectedBooks([]);
       
-      // Force reload books and stats
-      await loadBooks();
-      await loadStats();
+      // Force reload books and stats with a small delay to ensure data is updated
+      console.log('🔄 Refreshing book list and stats...');
+      setTimeout(async () => {
+        await loadBooks();
+        await loadStats();
+        console.log('✅ Book list and stats refreshed');
+      }, 500);
       
       // Force a small delay to ensure backend has processed the updates
       setTimeout(() => {
