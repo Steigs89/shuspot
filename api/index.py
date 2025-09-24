@@ -644,6 +644,7 @@ async def generate_manifest(request: dict):
         folder_path = request.get("folder_path")
         generation_mode = request.get("generation_mode", "single")  # 'single' or 'multi'
         book_metadata = request.get("book_metadata", {})
+        processing_script = request.get("processing_script")
         
         if not folder_path:
             raise HTTPException(status_code=400, detail="folder_path is required")
@@ -658,7 +659,8 @@ async def generate_manifest(request: dict):
             # Multi-book mode: scan folder for multiple books
             manifest_data = generator.generate_multi_book_manifest(
                 base_folder=folder_path,
-                default_metadata=book_metadata
+                default_metadata=book_metadata,
+                processing_script=processing_script
             )
         else:
             # Single book/genre mode: treat folder as one book
@@ -669,7 +671,8 @@ async def generate_manifest(request: dict):
                 genre=book_metadata.get("genre", "Unknown Genre"),
                 book_type=book_metadata.get("book_type", "Read to Me"),
                 reading_level=book_metadata.get("reading_level", "Elementary"),
-                description=book_metadata.get("description", "")
+                description=book_metadata.get("description", ""),
+                processing_script=processing_script
             )
         
         return {

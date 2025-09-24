@@ -27,11 +27,24 @@ class ManifestGenerator:
     
     def generate_from_folder(self, folder_path, title="Unknown Title", author="Unknown Author", 
                            genre="Unknown Genre", book_type="Read to Me", 
-                           reading_level="Elementary", description=""):
+                           reading_level="Elementary", description="", processing_script=None):
         """Generate manifest for a single book from a folder"""
         
         if not os.path.exists(folder_path):
             raise FileNotFoundError(f"Folder not found: {folder_path}")
+        
+        # Process description.txt if it exists and we have a processing script
+        processed_metadata = {}
+        if processing_script:
+            processed_metadata = self._process_description_file(folder_path, processing_script)
+        
+        # Use processed metadata as defaults, but allow overrides
+        title = processed_metadata.get('title', title)
+        author = processed_metadata.get('author', author)
+        genre = processed_metadata.get('genre', genre)
+        book_type = processed_metadata.get('book_type', book_type)
+        reading_level = processed_metadata.get('reading_level', reading_level)
+        description = processed_metadata.get('description', description)
         
         # Scan for images and audio files
         images = []
@@ -105,7 +118,7 @@ class ManifestGenerator:
         
         return {'books': [book]}
     
-    def generate_multi_book_manifest(self, base_folder, default_metadata=None):
+    def generate_multi_book_manifest(self, base_folder, default_metadata=None, processing_script=None):
         """Generate manifest for multiple books in a folder structure"""
         
         if not os.path.exists(base_folder):
@@ -142,7 +155,8 @@ class ManifestGenerator:
                             genre=book_genre,
                             book_type=default_metadata.get('book_type', 'Read to Me'),
                             reading_level=default_metadata.get('reading_level', 'Elementary'),
-                            description=default_metadata.get('description', f'A book about {book_title}')
+                            description=default_metadata.get('description', f'A book about {book_title}'),
+                            processing_script=processing_script
                         )
                         
                         # Update book ID
@@ -156,6 +170,56 @@ class ManifestGenerator:
                         continue
         
         return {'books': books}
+    
+    def _process_description_file(self, folder_path, processing_script):
+        """Process description.txt file using the provided Python script"""
+        description_file = os.path.join(folder_path, 'description.txt')
+        
+        if not os.path.exists(description_file):
+            return {}
+        
+        try:
+            # Read description.txt content
+            with open(description_file, 'r', encoding='utf-8') as f:
+                description_text = f.read()
+            
+            # Create safe execution environment
+            exec_globals = {
+                '__builtins__': {
+                    'len': len,
+                    'str': str,
+                    'int': int,
+                    'float': float,
+                    'bool': bool,
+                    'list': list,
+                    'dict': dict,
+                    'any': any,
+                    'all': all,
+                    'enumerate': enumerate,
+                    'range': range,
+                    'zip': zip,
+                    're': __import__('re'),
+                }
+            }
+            
+            exec_locals = {
+                'description_text': description_text,
+                'folder_name': os.path.basename(folder_path)
+            }
+            
+            # Execute the processing script
+            exec(processing_script, exec_globals, exec_locals)
+            
+            # Look for process_metadata function and call it
+            if 'process_metadata' in exec_locals:
+                result = exec_locals['process_metadata'](description_text, os.path.basename(folder_path))
+                return result if isinstance(result, dict) else {}
+            
+            return {}
+            
+        except Exception as e:
+            print(f"Warning: Failed to process description.txt: {e}")
+            return {}
     
     def _extract_page_number(self, filename):
         """Extract page number from filename"""

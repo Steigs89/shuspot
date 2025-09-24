@@ -600,10 +600,10 @@ function App() {
             <strong>{stats.unique_genres || 0}</strong>
             <span>Genres</span>
           </div>
-          <div className="stat-item">
-            <span className={`connection-status ${isGoogleSheetsConnected ? 'connected' : 'disconnected'}`}>
-              <Cloud size={16} />
-              {isGoogleSheetsConnected ? 'Sheets Connected' : 'Sheets Disconnected'}
+          <div className="stat-item connection-status-item">
+            <span className={`connection-status-small ${isGoogleSheetsConnected ? 'connected' : 'disconnected'}`}>
+              <Cloud size={12} />
+              {isGoogleSheetsConnected ? 'Connected' : 'Disconnected'}
             </span>
           </div>
         </div>

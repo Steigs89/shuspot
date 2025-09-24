@@ -15,6 +15,7 @@ const ManifestGenerator = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedManifest, setGeneratedManifest] = useState(null);
   const [error, setError] = useState('');
+  const [processingScript, setProcessingScript] = useState('');
 
   const handleMetadataChange = (field, value) => {
     setBookMetadata(prev => ({
@@ -47,7 +48,8 @@ const ManifestGenerator = () => {
         body: JSON.stringify({
           folder_path: folderPath,
           generation_mode: generationMode,
-          book_metadata: bookMetadata
+          book_metadata: bookMetadata,
+          processing_script: processingScript.trim() || null
         })
       });
 
@@ -259,6 +261,60 @@ const ManifestGenerator = () => {
               rows="3"
             />
           </div>
+        </div>
+
+        {/* Python Script for Metadata Processing */}
+        <div className="script-section">
+          <h3>🐍 Metadata Processing Script (Optional)</h3>
+          <p className="script-help">
+            Add a Python script to process description.txt files and extract custom metadata like author, age range, etc.
+          </p>
+          <textarea
+            value={processingScript}
+            onChange={(e) => setProcessingScript(e.target.value)}
+            placeholder={`# Example: Extract metadata from description.txt
+def process_metadata(description_text, folder_name):
+    """
+    Process description.txt content to extract metadata
+    
+    Args:
+        description_text: Content of description.txt file
+        folder_name: Name of the book folder
+        
+    Returns:
+        dict with extracted metadata
+    """
+    metadata = {}
+    
+    # Extract author from "By: Author Name"
+    if "By:" in description_text:
+        author_line = [line for line in description_text.split('\\n') if 'By:' in line][0]
+        metadata['author'] = author_line.replace('By:', '').strip()
+    
+    # Extract age range from "8-12Age Range"
+    import re
+    age_match = re.search(r'(\\d+-\\d+)Age Range', description_text)
+    if age_match:
+        metadata['age_range'] = age_match.group(1)
+        # Convert age range to reading level
+        age_start = int(age_match.group(1).split('-')[0])
+        if age_start <= 6:
+            metadata['reading_level'] = 'Preschool'
+        elif age_start <= 10:
+            metadata['reading_level'] = 'Elementary'
+        else:
+            metadata['reading_level'] = 'Middle School'
+    
+    # Extract genre from keywords
+    if any(word in description_text.upper() for word in ['ASTRONOMY', 'PLANETS', 'SPACE']):
+        metadata['genre'] = 'Science'
+    elif any(word in description_text.upper() for word in ['MATH', 'NUMBERS']):
+        metadata['genre'] = 'Mathematics'
+    
+    return metadata`}
+            className="script-textarea"
+            rows={15}
+          />
         </div>
 
         {/* Error Display */}
@@ -489,6 +545,51 @@ const ManifestGenerator = () => {
           color: #7f8c8d;
           font-size: 12px;
           line-height: 1.4;
+        }
+
+        .script-section {
+          margin-top: 30px;
+          padding: 20px;
+          background: #f8f9fa;
+          border-radius: 8px;
+          border: 1px solid #e2e8f0;
+        }
+
+        .script-section h3 {
+          margin: 0 0 10px 0;
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: #2c3e50;
+        }
+
+        .script-help {
+          color: #7f8c8d;
+          font-size: 14px;
+          margin-bottom: 15px;
+          line-height: 1.4;
+        }
+
+        .script-textarea {
+          width: 100%;
+          padding: 12px;
+          border: 2px solid #ecf0f1;
+          border-radius: 8px;
+          font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+          font-size: 13px;
+          line-height: 1.4;
+          background: #2c3e50;
+          color: #ecf0f1;
+          resize: vertical;
+          min-height: 200px;
+        }
+
+        .script-textarea:focus {
+          outline: none;
+          border-color: #3498db;
+        }
+
+        .script-textarea::placeholder {
+          color: #95a5a6;
         }
 
         .error-message {
