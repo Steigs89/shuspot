@@ -130,7 +130,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       console.log('📝 Full book object:', book);
       loadOCRData(book.id);
     }
-  }, [book?.id, loadOCRData]); // Include loadOCRData but it should be stable
+  }, [book?.id]); // Removed loadOCRData to prevent circular dependency
 
   // Stop text highlighting when page changes
   useEffect(() => {
