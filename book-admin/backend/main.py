@@ -8,6 +8,7 @@ import os
 import shutil
 import asyncio
 from datetime import datetime
+import io
 from io import BytesIO
 import logging
 import json
@@ -18,6 +19,7 @@ from pathlib import Path
 import threading
 import time
 import re
+import sys
 from urllib.parse import quote
 
 # Optional heavy dependencies
