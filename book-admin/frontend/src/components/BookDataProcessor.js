@@ -16,6 +16,7 @@ import {
 const BookDataProcessor = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [dataSource, setDataSource] = useState('sqlite'); // 'json' or 'sqlite'
   const [pythonScript, setPythonScript] = useState(`# Book Data Processor
 # Modify how books are read and organized
 
@@ -34,19 +35,22 @@ def process_books(books):
     for book in books:
         # Example transformations:
         
-        # 1. Extract author from title
+        # 1. Change ALL reading levels to "G2"
+        book['reading_level'] = 'G2'
+        
+        # 2. Extract author from title
         if "'s " in book.get('title', ''):
             author = book['title'].split("'s ")[0]
             book['author'] = author
         
-        # 2. Set reading level based on category
-        category = book.get('genre', '').lower()
-        if any(word in category for word in ['solar', 'system', 'science']):
-            book['reading_level'] = 'Middle School'
-        elif any(word in category for word in ['baking', 'cycles']):
-            book['reading_level'] = 'Elementary'
-        else:
-            book['reading_level'] = 'Elementary'
+        # 3. Set reading level based on category (comment out to use G2 for all)
+        # category = book.get('genre', '').lower()
+        # if any(word in category for word in ['solar', 'system', 'science']):
+        #     book['reading_level'] = 'Middle School'
+        # elif any(word in category for word in ['baking', 'cycles']):
+        #     book['reading_level'] = 'Elementary'
+        # else:
+        #     book['reading_level'] = 'Elementary'
         
         # 3. Set fiction type
         if any(word in category for word in ['story', 'tale', 'adventure']):
@@ -75,11 +79,12 @@ result = process_books(books_data)
   const loadBooks = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/api/books');
+      const response = await fetch(`/api/books?source=${dataSource}`);
       if (response.ok) {
         const data = await response.json();
-        setBooks(data);
-        toast.success(`Loaded ${data.length} books for processing`);
+        const booksList = data.books || data; // Handle both formats
+        setBooks(booksList);
+        toast.success(`Loaded ${booksList.length} books from ${dataSource.toUpperCase()} database`);
       } else {
         throw new Error('Failed to load books');
       }
@@ -132,25 +137,56 @@ result = process_books(books_data)
     }
 
     const confirmed = window.confirm(
-      'This will modify all books in the database. Are you sure you want to proceed?'
+      `This will modify all books in the ${dataSource.toUpperCase()} database. Are you sure you want to proceed?`
     );
     
     if (!confirmed) return;
 
     setExecuting(true);
     try {
-      const response = await fetch('/api/shuspot-ingestion/execute-script', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          script: pythonScript,
-          books: books
-        })
-      });
+      let response;
+      
+      if (dataSource === 'sqlite') {
+        // First get the processed books from preview
+        const previewResponse = await fetch('/api/shuspot-ingestion/preview-script', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            script: pythonScript,
+            books: books
+          })
+        });
+        
+        if (!previewResponse.ok) {
+          throw new Error('Failed to process script');
+        }
+        
+        const previewResult = await previewResponse.json();
+        
+        // Apply to SQLite database
+        response = await fetch('/api/apply-script-to-sqlite', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            script: pythonScript,
+            processed_books: previewResult.processed_books || []
+          })
+        });
+      } else {
+        // Original JSON database execution
+        response = await fetch('/api/shuspot-ingestion/execute-script', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            script: pythonScript,
+            books: books
+          })
+        });
+      }
 
       if (response.ok) {
         const result = await response.json();
-        toast.success(`Successfully processed ${result.updated_count} books`);
+        toast.success(`Successfully processed ${result.updated_count || result.processed_books?.length || 0} books in ${dataSource.toUpperCase()} database`);
         // Reload books to show changes
         await loadBooks();
         setShowPreview(false);
@@ -175,6 +211,35 @@ result = process_books(books_data)
       <div className="processor-header">
         <h2>📝 Book Data Processor</h2>
         <p>Modify how uploaded books are read and organized using Python scripts</p>
+      </div>
+
+      {/* Data Source Selector */}
+      <div className="data-source-selector">
+        <h3>📊 Data Source</h3>
+        <div className="source-options">
+          <label className={`source-option ${dataSource === 'sqlite' ? 'active' : ''}`}>
+            <input
+              type="radio"
+              value="sqlite"
+              checked={dataSource === 'sqlite'}
+              onChange={(e) => setDataSource(e.target.value)}
+            />
+            <Database size={16} />
+            <span>SQLite Database (books.db)</span>
+            <small>Your local database with imported manifests</small>
+          </label>
+          <label className={`source-option ${dataSource === 'json' ? 'active' : ''}`}>
+            <input
+              type="radio"
+              value="json"
+              checked={dataSource === 'json'}
+              onChange={(e) => setDataSource(e.target.value)}
+            />
+            <FileText size={16} />
+            <span>JSON Database (books.json)</span>
+            <small>Temporary uploaded books</small>
+          </label>
+        </div>
       </div>
 
       {/* Current Books Status */}

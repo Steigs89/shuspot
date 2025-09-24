@@ -314,10 +314,48 @@ def get_books(
     author: Optional[str] = None,
     genre: Optional[str] = None,
     book_type: Optional[str] = None,
+    source: Optional[str] = Query("json", description="Data source: 'json' or 'sqlite'")
 ):
-    db = load_db()
-    raw = db.get("books", [])
-    books = [normalize_book(b) for b in raw]
+    if source == "sqlite":
+        # Load from SQLite database
+        try:
+            import sqlite3
+            import sys
+            sys.path.append(os.path.join(REPO_ROOT, "book-admin", "tools"))
+            
+            sqlite_path = os.path.join(REPO_ROOT, "book-admin", "tools", "books.db")
+            if os.path.exists(sqlite_path):
+                conn = sqlite3.connect(sqlite_path)
+                cursor = conn.cursor()
+                cursor.execute('SELECT id, title, author, genre, book_type, reading_level, description, cover_image_url, page_sequence, audio_files, notes FROM books')
+                rows = cursor.fetchall()
+                conn.close()
+                
+                books = []
+                for row in rows:
+                    book = {
+                        "id": row[0],
+                        "title": row[1] or "",
+                        "author": row[2] or "",
+                        "genre": row[3] or "",
+                        "book_type": row[4] or "",
+                        "reading_level": row[5] or "",
+                        "description": row[6] or "",
+                        "cover_image_url": row[7] or "",
+                        "page_sequence": json.loads(row[8] or "[]"),
+                        "audio_files": json.loads(row[9] or "[]"),
+                        "notes": row[10] or ""
+                    }
+                    books.append(normalize_book(book))
+            else:
+                books = []
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"SQLite error: {str(e)}")
+    else:
+        # Original JSON loading
+        db = load_db()
+        raw = db.get("books", [])
+        books = [normalize_book(b) for b in raw]
     # Derive book_type strictly from Media if missing
     for b in books:
         if not b.get("book_type"):
@@ -438,6 +476,66 @@ def get_ocr_data(book_id: str):
             }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error loading OCR data: {str(e)}")
+
+@router.post("/apply-script-to-sqlite")
+async def apply_script_to_sqlite(request: dict):
+    """
+    Apply Python script changes to SQLite database
+    """
+    try:
+        script = request.get("script", "")
+        processed_books = request.get("processed_books", [])
+        
+        if not processed_books:
+            raise HTTPException(status_code=400, detail="No processed books provided")
+        
+        # Connect to SQLite database
+        import sqlite3
+        sqlite_path = os.path.join(REPO_ROOT, "book-admin", "tools", "books.db")
+        
+        if not os.path.exists(sqlite_path):
+            raise HTTPException(status_code=404, detail="SQLite database not found")
+        
+        conn = sqlite3.connect(sqlite_path)
+        cursor = conn.cursor()
+        
+        updated_count = 0
+        for book in processed_books:
+            book_id = book.get("id")
+            if not book_id:
+                continue
+                
+            # Update the book in SQLite
+            cursor.execute('''
+                UPDATE books SET 
+                    title = ?, author = ?, genre = ?, book_type = ?, 
+                    reading_level = ?, description = ?, 
+                    updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?
+            ''', (
+                book.get('title', ''),
+                book.get('author', ''),
+                book.get('genre', ''),
+                book.get('book_type', ''),
+                book.get('reading_level', ''),
+                book.get('description', ''),
+                book_id
+            ))
+            
+            if cursor.rowcount > 0:
+                updated_count += 1
+        
+        conn.commit()
+        conn.close()
+        
+        return {
+            "success": True,
+            "updated_count": updated_count,
+            "message": f"Successfully updated {updated_count} books in SQLite database"
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error applying script to SQLite: {str(e)}")
 
 @router.post("/generate-manifest")
 async def generate_manifest(request: dict):
