@@ -157,32 +157,76 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       });
     }
     
-    // For "Our Sun is A Star", we know which pages have audio from our test
-    if (book?._folder_path && Object.keys(audioMap).length === 0) {
-      console.log('🎵 No audio in page sequence, using known audio pages...');
+    // Check multiple possible folder path locations
+    let folderPath = null;
+    if (book?._folder_path) {
+      folderPath = book._folder_path;
+    } else if (book?.folder_path) {
+      folderPath = book.folder_path;
+    } else if (book?.notes && typeof book.notes === 'string') {
+      try {
+        const parsedNotes = JSON.parse(book.notes);
+        folderPath = parsedNotes.folder_path;
+      } catch (e) {
+        console.log('Notes parsing failed:', e);
+      }
+    } else if (book?.notes?.folder_path) {
+      folderPath = book.notes.folder_path;
+    }
+    
+    console.log('🎵 Found folder path:', folderPath);
+    
+    // For books with known audio, add default audio mapping
+    if (folderPath && Object.keys(audioMap).length === 0) {
+      console.log('🎵 No audio in page sequence, checking for known audio books...');
       
-      const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      const folderPathMatch = folderPath.match(/.*CROP-ShuSpot[\/\\](.+)$/);
       if (folderPathMatch) {
         const [, relativePath] = folderPathMatch;
         const cleanPath = relativePath.replace(/\\/g, '/');
         
-        // Based on our audio test results for "Our Sun is A Star"
-        const knownAudioPages = [1, 2, 3, 5, 6, 7, 9, 10, 13, 14, 15, 16, 19, 20, 21];
+        console.log('🎵 Clean path for audio:', cleanPath);
         
-        knownAudioPages.forEach(pageNum => {
-          let pattern;
-          if (pageNum === 1) {
-            pattern = 'intro title.mp3';
-          } else {
-            pattern = `page ${pageNum}.mp3`;
-          }
+        // Check if this is "Our Sun is A Star" - the book we know has audio
+        if (cleanPath.includes('Our Sun is A Star') || book?.title?.includes('Our Sun is A Star')) {
+          console.log('🎵 Detected "Our Sun is A Star" book - adding known audio pages');
+          // Based on our audio test results for "Our Sun is A Star"
+          const knownAudioPages = [1, 2, 3, 5, 6, 7, 9, 10, 13, 14, 15, 16, 19, 20, 21];
           
-          audioMap[pageNum] = [{
-            filename: pattern,
-            url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`,
-            type: pageNum === 1 ? 'intro' : 'page_audio'
-          }];
-        });
+          knownAudioPages.forEach(pageNum => {
+            let pattern;
+            if (pageNum === 1) {
+              pattern = 'intro title.mp3';
+            } else {
+              pattern = `page ${pageNum}.mp3`;
+            }
+            
+            audioMap[pageNum] = [{
+              filename: pattern,
+              url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`,
+              type: pageNum === 1 ? 'intro' : 'page_audio'
+            }];
+          });
+        } else {
+          // For other books, try a general approach - check first few pages
+          console.log('🎵 Unknown book, trying general audio detection for first few pages');
+          const testPages = [1, 2, 3, 4, 5];
+          testPages.forEach(pageNum => {
+            let pattern;
+            if (pageNum === 1) {
+              pattern = 'intro title.mp3';
+            } else {
+              pattern = `page ${pageNum}.mp3`;
+            }
+            
+            // Add potential audio files - they'll be tested for accessibility later
+            audioMap[pageNum] = [{
+              filename: pattern,
+              url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`,
+              type: pageNum === 1 ? 'intro' : 'page_audio'
+            }];
+          });
+        }
       }
     }
     
@@ -1729,13 +1773,20 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                 let hasAudio = false;
                 let audioPage = null;
                 
+                console.log('🎵 UI: Checking for audio on pages:', pagesToTry);
+                console.log('🎵 UI: audioFiles object:', audioFiles);
+                console.log('🎵 UI: audioFiles keys:', Object.keys(audioFiles));
+                
                 for (const pageNum of pagesToTry) {
                   if (pageNum > 0 && pageNum <= totalPages && audioFiles[pageNum]) {
                     hasAudio = true;
                     audioPage = pageNum;
+                    console.log('🎵 UI: Found audio for page:', pageNum);
                     break;
                   }
                 }
+                
+                console.log('🎵 UI: hasAudio result:', hasAudio, 'audioPage:', audioPage);
                 
                 return hasAudio ? (
                   <div className="audio-control-group">
