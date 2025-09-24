@@ -16,6 +16,8 @@ const ManifestGenerator = () => {
   const [generatedManifest, setGeneratedManifest] = useState(null);
   const [error, setError] = useState('');
   const [processingScript, setProcessingScript] = useState('');
+  const [useLocalTunnel, setUseLocalTunnel] = useState(false);
+  const [localTunnelUrl, setLocalTunnelUrl] = useState('http://localhost:8000');
 
   const handleMetadataChange = (field, value) => {
     setBookMetadata(prev => ({
@@ -40,7 +42,8 @@ const ManifestGenerator = () => {
     setGeneratedManifest(null);
 
     try {
-      const response = await fetch(`${getApiUrl()}/generate-manifest`, {
+      const apiUrl = useLocalTunnel ? localTunnelUrl : getApiUrl();
+      const response = await fetch(`${apiUrl}/generate-manifest`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -119,6 +122,37 @@ const ManifestGenerator = () => {
       </div>
 
       <div className="generator-form">
+        {/* Local Tunnel Option */}
+        <div className="local-tunnel-section">
+          <h3>🌐 Connection Mode</h3>
+          <div className="connection-options">
+            <label className="connection-option">
+              <input
+                type="checkbox"
+                checked={useLocalTunnel}
+                onChange={(e) => setUseLocalTunnel(e.target.checked)}
+              />
+              <span>Use Local Tunnel (for accessing local files)</span>
+            </label>
+          </div>
+          {useLocalTunnel && (
+            <div className="tunnel-config">
+              <label htmlFor="tunnelUrl">Local Tunnel URL:</label>
+              <input
+                id="tunnelUrl"
+                type="text"
+                value={localTunnelUrl}
+                onChange={(e) => setLocalTunnelUrl(e.target.value)}
+                placeholder="http://localhost:8000 or https://abc123.ngrok.io"
+                className="form-input"
+              />
+              <small className="form-help">
+                💡 Use <code>ngrok http 8000</code> or similar to tunnel your local backend
+              </small>
+            </div>
+          )}
+        </div>
+
         {/* Generation Mode Selector */}
         <div className="generation-mode-section">
           <h3>🎯 Generation Mode</h3>
@@ -160,11 +194,22 @@ const ManifestGenerator = () => {
             type="text"
             value={folderPath}
             onChange={(e) => setFolderPath(e.target.value)}
-            placeholder="e.g., uploads/books or relative/path/to/books"
+            placeholder={useLocalTunnel ? 
+              "e.g., /Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Fractions" : 
+              "e.g., uploads/books or relative/path/to/books"
+            }
             className="form-input"
           />
           <small className="form-help">
-            ⚠️ <strong>Note:</strong> This tool can only access server-side paths. Local computer paths (like /Users/... or C:\...) won't work in the deployed version. Upload your files first or use relative server paths.
+            {useLocalTunnel ? (
+              <span>
+                ✅ <strong>Local mode:</strong> You can use full local computer paths like /Users/... or C:\...
+              </span>
+            ) : (
+              <span>
+                ⚠️ <strong>Note:</strong> This tool can only access server-side paths. Local computer paths (like /Users/... or C:\...) won't work in the deployed version. Upload your files first or use relative server paths.
+              </span>
+            )}
           </small>
         </div>
 
@@ -738,6 +783,41 @@ def process_metadata(description_text, folder_name):
 
         .btn-secondary:hover {
           background: #7f8c8d;
+        }
+
+        .local-tunnel-section {
+          margin-bottom: 25px;
+          padding: 20px;
+          background: #f0f8ff;
+          border-radius: 8px;
+          border-left: 4px solid #3498db;
+        }
+
+        .connection-options {
+          margin-bottom: 15px;
+        }
+
+        .connection-option {
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+          cursor: pointer;
+        }
+
+        .connection-option input[type="checkbox"] {
+          margin-right: 8px;
+        }
+
+        .tunnel-config {
+          margin-top: 15px;
+          padding-top: 15px;
+          border-top: 1px solid #e0e0e0;
+        }
+
+        .tunnel-config label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: 500;
         }
 
         .btn-success {

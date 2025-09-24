@@ -5,7 +5,6 @@ const API_BASE = isDev ? '/api' : (process.env.REACT_APP_API_URL || '/api');
 
 const api = axios.create({
   baseURL: API_BASE,
-  timeout: 60000, // 60 second timeout for Render cold starts
   headers: {
     'Content-Type': 'application/json',
   },
@@ -42,7 +41,7 @@ export const bookAPI = {
       if (key in bookData) formData.append(key, bookData[key] ?? '');
     });
 
-    const response = await api.put(`/books/${bookId}`, formData, {
+    const response = await api.post(`/books/${bookId}/update`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -50,28 +49,19 @@ export const bookAPI = {
     return response.data;
   },
 
-  // Bulk update books - using individual updates as workaround for routing issue
+  // Bulk update books
   bulkUpdateBooks: async (bookIds, field, value) => {
-    const results = [];
-    const errors = [];
+    const formData = new FormData();
+    bookIds.forEach(id => formData.append('book_ids', id));
+    formData.append('field', field);
+    formData.append('value', value);
     
-    // Update each book individually since bulk endpoint has routing conflicts
-    for (const bookId of bookIds) {
-      try {
-        const updateData = { [field]: value };
-        const result = await bookAPI.updateBook(bookId, updateData);
-        results.push(result);
-      } catch (error) {
-        console.error(`Failed to update book ${bookId}:`, error);
-        errors.push({ bookId, error: error.message });
-      }
-    }
-    
-    if (errors.length > 0) {
-      throw new Error(`Failed to update ${errors.length} books: ${errors.map(e => e.error).join(', ')}`);
-    }
-    
-    return { updated_count: results.length, results };
+    const response = await api.put('/books/bulk-update', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
   },
 
   // Delete book
