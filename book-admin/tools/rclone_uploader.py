@@ -120,9 +120,20 @@ class RcloneUploader:
             
             manifest_data = json.loads(result.stdout)
             
+            # Fix paths to include the remote_path prefix
+            if remote_path:
+                print(f"🔧 Fixing paths to include '{remote_path}/' prefix...")
+                for entry in manifest_data:
+                    if 'Path' in entry:
+                        # Ensure the path includes the remote_path
+                        if not entry['Path'].startswith(f"{remote_path}/"):
+                            entry['Path'] = f"{remote_path}/{entry['Path']}"
+                        print(f"   📁 Fixed path: {entry['Path']}")
+            
             if output_file is None:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                output_file = f"manifest_{timestamp}.json"
+                folder_name = remote_path.replace('/', '_') if remote_path else "manifest"
+                output_file = f"manifest_{folder_name}_{timestamp}.json"
             
             with open(output_file, 'w') as f:
                 json.dump(manifest_data, f, indent=2)

@@ -1,0 +1,6179 @@
+[
+  {
+    "Path": ".DS_Store",
+    "Name": ".DS_Store",
+    "Size": 10244,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-24T13:38:11.753111799-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/.DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.514170726-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 22624,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/description.txt",
+    "Name": "description.txt",
+    "Size": 356,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 143949,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 55693,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 105993,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 57572,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 95569,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 123870,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 76620,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 146435,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 78929,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 60938,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 67128,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 5419688,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5961208,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3664067,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5125915,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3777383,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4034461,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 4365535,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 5106678,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6506652,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4107002,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 3228280,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6536023,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3966159,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4241826,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2726353,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4210102,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2022660,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6181517,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5227407,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5290093,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6332900,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 5403577,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 2994071,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 2038481,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 2364657,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 2579411,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 1861496,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2646411,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3220696,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3614351,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 2862868,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2785005,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2859684,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 2665633,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 3369999,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28964,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/description.txt",
+    "Name": "description.txt",
+    "Size": 284,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/page10_11.mp3",
+    "Name": "page10_11.mp3",
+    "Size": 267643,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/page12_13.mp3",
+    "Name": "page12_13.mp3",
+    "Size": 151750,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/page14_15.mp3",
+    "Name": "page14_15.mp3",
+    "Size": 84999,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/page16.mp3",
+    "Name": "page16.mp3",
+    "Size": 530287,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/page4_5.mp3",
+    "Name": "page4_5.mp3",
+    "Size": 203819,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/page6_7.mp3",
+    "Name": "page6_7.mp3",
+    "Size": 286734,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/page8_9.mp3",
+    "Name": "page8_9.mp3",
+    "Size": 303713,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2419790,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 7964251,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7182523,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4734794,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7789948,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 2588170,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5162674,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7586036,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3949909,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6838958,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3930330,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6206917,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4152966,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6601795,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1035103,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 4609181,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3901030,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3683666,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3638013,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 5869576,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 4726511,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 1223517,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28303,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/description.txt",
+    "Name": "description.txt",
+    "Size": 257,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 45743,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 20667,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 13979,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 8546,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 15651,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 27772,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 17323,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 21085,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 18995,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 14397,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 11889,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 21084,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 21502,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 15651,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 18577,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 19831,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 22756,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 22756,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 15651,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 21919,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 33204,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 25263,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 29443,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 37384,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 27771,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 23591,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3735466,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 2946615,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 2291819,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3541201,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 2721411,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 2039984,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 3814560,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 2698109,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 1607157,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 3927356,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 2526253,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 2494151,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3578574,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4082194,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 3026887,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 3452791,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2015839,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 2431275,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 2876931,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2738666,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3552593,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 2443478,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 2236346,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 2551569,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3709469,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 2916430,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1803444,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 2672672,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 3325208,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 2673465,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 1845822,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 1420728,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2114363,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 2586451,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 2071849,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 2647358,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2042410,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2602702,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 2544109,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Breakfast/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 1708703,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 21870,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/description.txt",
+    "Name": "description.txt",
+    "Size": 163,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 69464,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 41986,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 27201,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 22532,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 27175,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 29623,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 29367,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 43240,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 32021,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 28374,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 19716,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 33249,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 46733,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 29157,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 28582,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 37106,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 53561,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 33331,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 30353,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 27694,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 24591,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 27696,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 28110,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 26289,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 23446,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 27432,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 23261,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 1768167,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3451509,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 2922602,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3580368,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 2154254,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 3395213,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 3612291,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 3312775,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 2420119,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 2818289,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 3894512,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3457072,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 2769025,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 1962563,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2939381,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 3295842,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2938593,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 3698025,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 3811299,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 2171599,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2584843,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 2316707,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 2857388,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 2153739,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 3133885,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 2449705,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 2735900,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 888182,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 3039236,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 2001656,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 2634509,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 2808694,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 2648886,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2758968,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 2149920,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 2227502,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 1986228,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2776149,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2436708,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 3259888,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Dessert/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 2566042,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/.DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.499985175-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 24599,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/description.txt",
+    "Name": "description.txt",
+    "Size": 253,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 87354,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 34212,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 25660,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 32071,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 26861,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 38433,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 30873,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 38177,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 40420,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 39641,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 47089,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 29156,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 35774,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 41881,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 40079,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 27850,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 47305,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 33584,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 39011,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 41095,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 37549,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 45342,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 30142,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2938609,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 2627691,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 2550636,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 2291194,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3403659,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 2863321,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 2501878,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 2230138,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3183877,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 2464700,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 2166202,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3698314,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 2437814,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 3055152,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 4093869,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 2615066,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2814892,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 2212444,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 2274394,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3636384,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 3215101,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3203822,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 2295513,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1413745,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 2146345,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 2556515,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 3092720,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2980758,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 1915939,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3102312,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 2271130,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2167259,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2617041,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 2359135,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Doughnuts/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 2341898,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 24890,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/description.txt",
+    "Name": "description.txt",
+    "Size": 276,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 1-2.mp3",
+    "Name": "page 1-2.mp3",
+    "Size": 2173464,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 11-12.mp3",
+    "Name": "page 11-12.mp3",
+    "Size": 1845440,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 13-14.mp3",
+    "Name": "page 13-14.mp3",
+    "Size": 1387208,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 15-16.mp3",
+    "Name": "page 15-16.mp3",
+    "Size": 1795360,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 17-18.mp3",
+    "Name": "page 17-18.mp3",
+    "Size": 2212902,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 19-20.mp3",
+    "Name": "page 19-20.mp3",
+    "Size": 2907136,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 21-22.mp3",
+    "Name": "page 21-22.mp3",
+    "Size": 1628844,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 23-24.mp3",
+    "Name": "page 23-24.mp3",
+    "Size": 3626410,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 25-26.mp3",
+    "Name": "page 25-26.mp3",
+    "Size": 3039222,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 27-28.mp3",
+    "Name": "page 27-28.mp3",
+    "Size": 3648946,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 3-4.mp3",
+    "Name": "page 3-4.mp3",
+    "Size": 1954364,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 5-6.mp3",
+    "Name": "page 5-6.mp3",
+    "Size": 2433254,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 7-8.mp3",
+    "Name": "page 7-8.mp3",
+    "Size": 1879244,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/page 9-10.mp3",
+    "Name": "page 9-10.mp3",
+    "Size": 1564992,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6979410,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 8070681,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7734895,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5990491,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6172094,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 5129971,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 5520707,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6604732,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6378240,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4293875,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4859292,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6906368,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 6503820,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6516016,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 5238031,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4725959,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 5247340,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 4088778,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 5861892,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 6249581,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 5880767,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 5143054,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6540368,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 6052301,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 6945761,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5237868,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4768450,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 6353657,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5552747,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6847873,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6693527,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 4145180,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 4577909,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 7549565,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 5462445,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 13.png",
+    "Name": "screenshot - 13.png",
+    "Size": 4747270,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 14.png",
+    "Name": "screenshot - 14.png",
+    "Size": 6194947,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 15.png",
+    "Name": "screenshot - 15.png",
+    "Size": 5599098,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 16.png",
+    "Name": "screenshot - 16.png",
+    "Size": 6809201,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 7153640,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 4888939,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 5048348,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 6887590,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 9674466,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 6491201,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 5153792,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 6226804,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 31787,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/description.txt",
+    "Name": "description.txt",
+    "Size": 312,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 555051,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/page10.mp3",
+    "Name": "page10.mp3",
+    "Size": 342519,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/page12.mp3",
+    "Name": "page12.mp3",
+    "Size": 355058,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/page14.mp3",
+    "Name": "page14.mp3",
+    "Size": 306575,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/page2.mp3",
+    "Name": "page2.mp3",
+    "Size": 182859,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/page4.mp3",
+    "Name": "page4.mp3",
+    "Size": 472086,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/page6.mp3",
+    "Name": "page6.mp3",
+    "Size": 306157,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/page8.mp3",
+    "Name": "page8.mp3",
+    "Size": 308246,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 8040858,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 417684,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 8733281,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 510070,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 8688453,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 417879,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8188445,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 262779,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7891741,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 620750,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7834008,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 447833,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8270788,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 426433,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8363773,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 3326333,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2917507,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3010731,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3523366,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3576310,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 3648784,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 3628231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Nia Bakes Cookies/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 3410418,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 26130,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/description.txt",
+    "Name": "description.txt",
+    "Size": 223,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 218978,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 139647,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 298093,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 250887,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 143307,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 38950,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 31749,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 1228716,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4313428,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 4066357,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5684231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 5586470,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5829418,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 5496239,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5487428,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4792090,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 2679439,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4820409,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4333769,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 2777495,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 851759,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 5304637,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 4634512,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3135746,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3038876,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 3322173,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Pat-A-Cake/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 5524161,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28037,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/description.txt",
+    "Name": "description.txt",
+    "Size": 257,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 81146,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 150681,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 101153,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 99899,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 136261,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 143785,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 94883,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 166354,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 129992,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 140650,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 183909,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 120588,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 108676,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 238452,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 117453,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 155696,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2115678,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 2887882,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 4355881,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4345841,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 2305535,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 3602767,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 2546826,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4617024,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 1237056,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3866322,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 3887286,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3983779,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 3748316,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3350922,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4142386,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4311138,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3193478,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1198381,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 3359570,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3739280,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 2923691,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3579640,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 3269532,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2925939,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 2646165,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Rainy Day Cake Bake/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 2705738,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/.DS_Store",
+    "Name": ".DS_Store",
+    "Size": 6148,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-23T08:51:48.704881298-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 45290,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/description.txt",
+    "Name": "description.txt",
+    "Size": 316,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 218864,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 216356,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 212595,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 127331,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 532961,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 264631,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 108523,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 112912,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 79684,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 190652,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 230149,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 148020,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 321055,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 378734,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 520422,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 382495,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 1095325,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 72161,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 218237,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 586877,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 442681,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 247076,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 135481,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 72788,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2746845,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 8342056,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 9384376,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4643629,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 9832946,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 10232939,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 5180540,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 10151599,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3083598,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 3702674,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 10233578,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 9483206,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 9563203,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5320968,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 9201987,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 5137773,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 10755182,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 10686117,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 4691944,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 9706776,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 11323958,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 10959057,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 10435712,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4895717,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7475494,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8687470,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1273218,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 5730283,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 5947646,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 5802215,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 8555765,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 1996435,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 7541971,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 8799897,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 6032977,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 6540047,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 7269805,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 5860682,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 5968113,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Babka Sisters/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 5233447,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 27133,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/description.txt",
+    "Name": "description.txt",
+    "Size": 310,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 1.mp3",
+    "Name": "page 1.mp3",
+    "Size": 153143,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 106453,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 149399,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 121403,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 138482,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 237815,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 188618,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 193289,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 123037,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 86307,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 183435,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 165295,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 147164,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 237267,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 185184,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 144393,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 99081,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 220275,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 208564,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 172798,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 70491,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 29.mp3",
+    "Name": "page 29.mp3",
+    "Size": 94321,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 137585,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 30.mp3",
+    "Name": "page 30.mp3",
+    "Size": 217972,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 31.mp3",
+    "Name": "page 31.mp3",
+    "Size": 181394,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 32.mp3",
+    "Name": "page 32.mp3",
+    "Size": 96891,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 193556,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 246725,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 244125,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 138785,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 149890,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 161185,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3958432,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3483374,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 2887696,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4276119,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3949053,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 5036408,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 4903021,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 3589118,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3324178,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5169446,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5638010,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5607957,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5312752,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5233402,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 5110904,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 5669032,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 4259047,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 3721399,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 5064562,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 3852552,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 3286704,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 4869896,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 4755811,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 5747605,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 5571729,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-32.png",
+    "Name": "crop-32.png",
+    "Size": 3550084,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5952369,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5121210,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5420107,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 2961530,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3029900,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 4117486,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1681931,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 3943792,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 3782706,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 4193281,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 2615543,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 3114410,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 15.png",
+    "Name": "screenshot 15.png",
+    "Size": 2811306,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 16.png",
+    "Name": "screenshot 16.png",
+    "Size": 4350925,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 17.png",
+    "Name": "screenshot 17.png",
+    "Size": 1366116,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 3625517,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3907466,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3049129,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 2759156,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2482168,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 3341335,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 3492134,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Stolen Smell/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 2395942,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 38231,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/description.txt",
+    "Name": "description.txt",
+    "Size": 299,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 121016,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 313779,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 225459,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 381747,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 171700,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 223924,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 256564,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 407092,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 312244,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 273459,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 293044,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 292660,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 844468,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 606388,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 437811,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 357171,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 389427,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 208563,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 8130559,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 7998108,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7722288,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 8468220,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 8080184,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 8028197,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8175108,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 8387701,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 7921856,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7500792,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 8253846,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 8522098,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 7923488,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 7606710,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 8017656,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 7748374,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 8441834,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 7840378,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 9008581,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 8385231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 8782709,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 8798216,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 8756435,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 9165844,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 8238807,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 8379854,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 8192154,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 9224856,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 8077298,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7661767,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 5222016,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 9331804,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 9191221,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 9446698,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 13.png",
+    "Name": "screenshot - 13.png",
+    "Size": 9607644,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 14.png",
+    "Name": "screenshot - 14.png",
+    "Size": 10083152,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 15.png",
+    "Name": "screenshot - 15.png",
+    "Size": 10457788,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 16.png",
+    "Name": "screenshot - 16.png",
+    "Size": 5528985,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 9889031,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 9882042,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 10280531,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 9379781,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 9211294,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 9912933,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 9551606,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Ziggy's Big Idea/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 9799201,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Safe Cake",
+    "Name": "A Safe Cake",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "A Safe Cake/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure",
+    "Name": "Brady Bakes a Cake A Measuring Adventure",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Brady Bakes a Cake A Measuring Adventure/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Breakfast",
+    "Name": "Breakfast",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Breakfast/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Dessert",
+    "Name": "Dessert",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Dessert/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Doughnuts",
+    "Name": "Doughnuts",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Doughnuts/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1",
+    "Name": "Easy-to-make Desserts from Around the World 1",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Easy-to-make Desserts from Around the World 1/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Nia Bakes Cookies",
+    "Name": "Nia Bakes Cookies",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Nia Bakes Cookies/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Pat-A-Cake",
+    "Name": "Pat-A-Cake",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Pat-A-Cake/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Rainy Day Cake Bake",
+    "Name": "Rainy Day Cake Bake",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Rainy Day Cake Bake/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "The Babka Sisters",
+    "Name": "The Babka Sisters",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "The Babka Sisters/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "The Stolen Smell",
+    "Name": "The Stolen Smell",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "The Stolen Smell/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Ziggy's Big Idea",
+    "Name": "Ziggy's Big Idea",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Ziggy's Big Idea/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-24T18:07:39.207775000-04:00",
+    "IsDir": true
+  }
+]

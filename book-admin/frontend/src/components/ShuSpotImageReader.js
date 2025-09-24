@@ -56,32 +56,78 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const title = book?.title || 'Unknown Book';
   const bookId = book?.id;
 
-  // Memoize the image URL function to prevent infinite re-renders
+  // Smart URL resolver that handles ANY folder structure automatically
   const getImageUrl = useCallback((pageData, pageNumber) => {
     // First, honor direct URL if provided (e.g., Supabase public URL)
     if (pageData?.url) {
       return pageData.url;
     }
-    // UPDATED VERSION - New timestamp: 2024-01-09 - If you see old URL patterns, clear browser cache completely
-    console.log('🔥 UPDATED getImageUrl VERSION - 2024-01-09 - If you see absolute paths, browser cache needs clearing');
     
-    // Don't encode path segments - let the browser handle URL encoding
-    const encodePath = (path) => {
-      return path; // Return path as-is, browser will encode when needed
-    };
-
+    console.log('🔥 SMART URL RESOLVER - VERSION 2024-09-24 - UNIVERSAL FOLDER SUPPORT 🔥');
     console.log('🖼️ getImageUrl called for page:', pageNumber);
     console.log('📁 pageData:', pageData);
-    console.log('📚 book folder_path:', book?.folder_path);
+    console.log('📚 book:', book);
 
+    // Smart URL generation that tries multiple patterns
+    if (book?.title) {
+      const bookTitle = book.title;
+      const pageNum = pageNumber;
+      
+      // Generate multiple URL patterns to try
+      const baseUrl = 'https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books';
+      
+      const patterns = [
+        // Pattern 1: Direct Supabase URL (if book has cover_image_url, extract pattern)
+        ...(book.cover_image_url ? [
+          book.cover_image_url.replace(/crop-\d+\.png$/, `crop-${pageNum}.png`)
+        ] : []),
+        
+        // Pattern 2: Common rclone upload patterns
+        `${baseUrl}/Baking/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        `${baseUrl}/Our%20Solar%20System/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        `${baseUrl}/Science/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        `${baseUrl}/Math/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        `${baseUrl}/Reading/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        
+        // Pattern 3: Genre-based patterns
+        ...(book.genre ? [
+          `${baseUrl}/${encodeURIComponent(book.genre)}/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+          `${baseUrl}/CROP-ShuSpot/${encodeURIComponent(book.genre)}/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`
+        ] : []),
+        
+        // Pattern 4: Direct book folder
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        `${baseUrl}/CROP-ShuSpot/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        
+        // Pattern 5: Alternative file naming
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/crop-${pageNum}.png`,
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/page-${pageNum}.png`,
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/${pageNum}.png`
+      ];
+      
+      // Remove duplicates and filter out undefined
+      const uniquePatterns = [...new Set(patterns.filter(Boolean))];
+      
+      console.log('🎯 Smart URL patterns generated:', uniquePatterns.length);
+      console.log('🔄 Primary URL:', uniquePatterns[0]);
+      
+      // Store all patterns globally for fallback handling
+      if (typeof window !== 'undefined') {
+        window.imageUrlFallbacks = window.imageUrlFallbacks || {};
+        window.imageUrlFallbacks[`${book.id}-${pageNumber}`] = uniquePatterns;
+      }
+      
+      return uniquePatterns[0] || null;
+    }
+
+    // Legacy fallback handling
     if (pageData?.file_path) {
       const cropMatch = pageData.file_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-      
       if (cropMatch) {
         const [, relativePath] = cropMatch;
         const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-        const url = `${getApiUrl()}/CROP-ShuSpot/${encodePath(cleanPath)}`;
-        console.log('🎯 Generated pageData URL:', url);
+        const url = `${getApiUrl()}/CROP-ShuSpot/${cleanPath}`;
+        console.log('🎯 Legacy pageData URL:', url);
         return url;
       }
     }
@@ -92,12 +138,11 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         const folderPath = parsedNotes.folder_path;
         if (folderPath) {
           const cropMatch = folderPath.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-          
           if (cropMatch) {
             const [, relativePath] = cropMatch;
             const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-            const url = `${getApiUrl()}/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
-            console.log('🎯 Generated book notes URL for page', pageNumber, ':', url);
+            const url = `${getApiUrl()}/CROP-ShuSpot/${cleanPath}/resized/crop-${pageNumber}.png`;
+            console.log('🎯 Legacy notes URL:', url);
             return url;
           }
         }
@@ -106,22 +151,9 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       }
     }
 
-    // Fallback: folder_path may have spaces
-    if (book?.folder_path) {
-      const cropMatch = book.folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-      if (cropMatch) {
-        const [, relativePath] = cropMatch;
-        const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-        const url = `${getApiUrl()}/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
-        console.log('🎯 Generated folder_path URL:', url);
-        return url;
-      }
-    }
-    
-    const fallbackUrl = `${getApiUrl()}/CROP-ShuSpot/page-${pageNumber}.png`;
-    console.log('🎯 Generated fallback URL:', fallbackUrl);
-    return fallbackUrl;
-  }, [book?.notes, book?.folder_path]);
+    console.log('❌ Could not generate URL for page', pageNumber);
+    return null;
+  }, [book, getApiUrl]);
 
   // OCR functionality temporarily disabled for simplicity
   // useEffect(() => {
@@ -959,8 +991,20 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         
         img.on('error', (e) => {
           console.error(`❌ Page ${pageNumber} failed to load:`, imgSrc);
-          // Add a placeholder for failed images
-          img.replaceWith(`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#f0f0f0;color:#666;">Page ${pageNumber}<br>Image failed to load</div>`);
+          
+          // Try fallback URLs automatically
+          const fallbacks = window.imageUrlFallbacks?.[`${book.id}-${pageNumber}`] || [];
+          const currentIndex = fallbacks.indexOf(imgSrc);
+          const nextUrl = fallbacks[currentIndex + 1];
+          
+          if (nextUrl) {
+            console.log(`🔄 Trying fallback URL ${currentIndex + 2}/${fallbacks.length}:`, nextUrl);
+            img.attr('src', nextUrl);
+          } else {
+            console.error(`❌ All ${fallbacks.length} URL patterns failed for page ${pageNumber}`);
+            // Add a placeholder for failed images
+            img.replaceWith(`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#f0f0f0;color:#666;">Page ${pageNumber}<br>Image not found<br><small>Tried ${fallbacks.length} patterns</small></div>`);
+          }
         });
         
         pageDiv.append(img);
@@ -1672,7 +1716,20 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                       draggable={false}
                       onLoad={() => console.log(`Page ${currentPage} loaded`)}
                       onError={(e) => {
-                        console.error(`Failed to load page ${currentPage}:`, images[currentPage - 1]?.url);
+                        const failedUrl = images[currentPage - 1]?.url;
+                        console.error(`Failed to load page ${currentPage}:`, failedUrl);
+                        
+                        // Try fallback URLs for simple reader too
+                        const fallbacks = window.imageUrlFallbacks?.[`${book.id}-${currentPage}`] || [];
+                        const currentIndex = fallbacks.indexOf(failedUrl);
+                        const nextUrl = fallbacks[currentIndex + 1];
+                        
+                        if (nextUrl) {
+                          console.log(`🔄 Simple reader trying fallback ${currentIndex + 2}/${fallbacks.length}:`, nextUrl);
+                          e.target.src = nextUrl;
+                        } else {
+                          console.error(`❌ Simple reader: All ${fallbacks.length} patterns failed for page ${currentPage}`);
+                        }
                       }}
                     />
                   </div>
