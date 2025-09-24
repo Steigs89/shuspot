@@ -2672,8 +2672,11 @@ async def api_generate_manifest(request: dict = Body(...)):
 async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends(get_db)):
     """Import books from generated manifest to database"""
     try:
+        print(f"🔵 Ingest-manifest endpoint called with data keys: {list(manifest_data.keys())}")
         manifest = manifest_data.get('manifest', {})
         books_data = manifest.get('books', [])
+        
+        print(f"🔵 Found {len(books_data)} books in manifest")
         
         if not books_data:
             raise HTTPException(status_code=400, detail="No books found in manifest")
@@ -2681,6 +2684,10 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
         imported_count = 0
         
         for book_data in books_data:
+            print(f"🔵 Processing book: {book_data.get('title', 'Unknown')}")
+            print(f"🔵 Book genre: {book_data.get('genre', 'No genre')}")
+            print(f"🔵 Book reading_level: {book_data.get('reading_level', 'No reading level')}")
+            
             # Prepare ShuSpot-specific data for notes field
             shuspot_data = {
                 'page_sequence': book_data.get('page_sequence', []),
@@ -2689,6 +2696,8 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
                 'cover_image_path': book_data.get('cover_image', ''),
                 'total_pages': book_data.get('total_pages', 0)
             }
+            
+            print(f"🔵 ShuSpot data: {json.dumps(shuspot_data, indent=2)[:200]}...")
             
             # Create book record using existing model structure
             book = Book(
@@ -2710,6 +2719,7 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
             imported_count += 1
         
         db.commit()
+        print(f"🔵 Successfully imported {imported_count} books to database")
         
         return {
             "success": True,
@@ -2722,6 +2732,7 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
     except Exception as e:
         db.rollback()
         logging.error(f"Manifest ingestion error: {str(e)}")
+        print(f"🔴 Manifest ingestion error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Failed to ingest manifest: {str(e)}")
 
 # API mirror for ingest-manifest

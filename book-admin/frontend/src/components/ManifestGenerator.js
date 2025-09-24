@@ -93,7 +93,8 @@ const ManifestGenerator = () => {
     if (!generatedManifest) return;
 
     try {
-      const response = await fetch(`${getApiUrl()}/shuspot-ingestion/ingest-manifest`, {
+      const apiUrl = useLocalTunnel ? localTunnelUrl : getApiUrl();
+      const response = await fetch(`${apiUrl}/shuspot-ingestion/ingest-manifest`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
