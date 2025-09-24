@@ -53,22 +53,65 @@ export const bookAPI = {
   bulkUpdateBooks: async (bookIds, field, value) => {
     console.log('🔄 Bulk updating books:', { bookIds, field, value });
     
-    const formData = new FormData();
-    bookIds.forEach(id => formData.append('book_ids', id));
-    formData.append('field', field);
-    formData.append('value', value);
-    
-    console.log('📝 FormData contents:');
-    for (let [key, value] of formData.entries()) {
-      console.log(`  ${key}: ${value}`);
+    try {
+      // Try the bulk update endpoint first
+      const formData = new FormData();
+      bookIds.forEach(id => formData.append('book_ids', id));
+      formData.append('field', field);
+      formData.append('value', value);
+      
+      console.log('📝 FormData contents:');
+      for (let [key, value] of formData.entries()) {
+        console.log(`  ${key}: ${value}`);
+      }
+      
+      const response = await api.put('/books/bulk-update', formData, {
+        headers: {
+          'Content-Type': undefined, // Let axios set the correct multipart boundary
+        },
+      });
+      return response.data;
+      
+    } catch (error) {
+      console.error('❌ Bulk update failed, trying individual updates:', error);
+      
+      // Fallback: Update each book individually
+      if (error.response?.status === 422 || error.response?.status === 500) {
+        console.log('🔄 Falling back to individual book updates...');
+        
+        let successCount = 0;
+        const errors = [];
+        
+        for (const bookId of bookIds) {
+          try {
+            // Create update data for individual book
+            const updateData = { [field]: value };
+            await bookAPI.updateBook(bookId, updateData);
+            successCount++;
+            console.log(`✅ Updated book ${bookId}: ${field} = ${value}`);
+          } catch (individualError) {
+            console.error(`❌ Failed to update book ${bookId}:`, individualError);
+            errors.push(`Book ${bookId}: ${individualError.message}`);
+          }
+        }
+        
+        if (successCount > 0) {
+          console.log(`✅ Fallback successful: Updated ${successCount}/${bookIds.length} books`);
+          return { 
+            ok: true, 
+            updated: successCount, 
+            message: `Updated ${successCount} books using individual updates`,
+            fallback: true,
+            errors: errors.length > 0 ? errors : undefined
+          };
+        } else {
+          throw new Error(`All individual updates failed: ${errors.join(', ')}`);
+        }
+      }
+      
+      // For other errors, re-throw with more context
+      throw new Error(`Bulk update failed: ${error.message}`);
     }
-    
-    const response = await api.put('/books/bulk-update', formData, {
-      headers: {
-        'Content-Type': undefined, // Let axios set the correct multipart boundary
-      },
-    });
-    return response.data;
   },
 
   // Delete book
