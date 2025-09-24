@@ -477,6 +477,103 @@ def get_ocr_data(book_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error loading OCR data: {str(e)}")
 
+@router.post("/shuspot-ingestion/preview-script")
+async def preview_script(request: dict):
+    """
+    Preview Python script changes without applying them
+    """
+    try:
+        script = request.get("script", "")
+        books = request.get("books", [])
+        
+        if not script.strip():
+            raise HTTPException(status_code=400, detail="No script provided")
+        
+        if not books:
+            raise HTTPException(status_code=400, detail="No books provided")
+        
+        # Execute the Python script safely
+        import copy
+        books_copy = copy.deepcopy(books)
+        
+        # Create a safe execution environment
+        exec_globals = {
+            '__builtins__': {
+                'len': len,
+                'str': str,
+                'int': int,
+                'float': float,
+                'bool': bool,
+                'list': list,
+                'dict': dict,
+                'any': any,
+                'all': all,
+                'enumerate': enumerate,
+                'range': range,
+                'zip': zip,
+            }
+        }
+        
+        exec_locals = {
+            'books': books_copy,
+            'books_data': books_copy
+        }
+        
+        # Execute the script
+        exec(script, exec_globals, exec_locals)
+        
+        # Get the result
+        if 'result' in exec_locals:
+            processed_books = exec_locals['result']
+        elif 'processed_books' in exec_locals:
+            processed_books = exec_locals['processed_books']
+        else:
+            # Try to find process_books function and call it
+            if 'process_books' in exec_locals:
+                processed_books = exec_locals['process_books'](books_copy)
+            else:
+                processed_books = books_copy
+        
+        return {
+            "success": True,
+            "processed_books": processed_books,
+            "original_count": len(books),
+            "processed_count": len(processed_books)
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Script execution error: {str(e)}")
+
+@router.post("/shuspot-ingestion/execute-script")
+async def execute_script(request: dict):
+    """
+    Execute Python script and apply changes to JSON database
+    """
+    try:
+        script = request.get("script", "")
+        books = request.get("books", [])
+        
+        if not script.strip():
+            raise HTTPException(status_code=400, detail="No script provided")
+        
+        # First preview the changes
+        preview_result = await preview_script(request)
+        processed_books = preview_result["processed_books"]
+        
+        # Apply changes to JSON database
+        db = load_db()
+        db["books"] = processed_books
+        save_db(db)
+        
+        return {
+            "success": True,
+            "updated_count": len(processed_books),
+            "message": f"Successfully updated {len(processed_books)} books in JSON database"
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Script execution error: {str(e)}")
+
 @router.post("/apply-script-to-sqlite")
 async def apply_script_to_sqlite(request: dict):
     """
