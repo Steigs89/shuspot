@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, PlainTextResponse
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any, Tuple
-import os, json
+import os, json, re
 from datetime import datetime
 
 """
@@ -471,7 +471,6 @@ async def generate_manifest(request: Request):
                 pages = list(folder.glob("**/*.png"))
             
             # Sort pages by numeric order (crop-1, crop-2, crop-10, etc.)
-            import re
             def extract_number(filename):
                 match = re.search(r'crop-(\d+)', filename.name)
                 return int(match.group(1)) if match else 0
@@ -505,7 +504,6 @@ async def generate_manifest(request: Request):
                     pages = list(subfolder.glob("**/*.png"))
                 
                 # Sort pages by numeric order (crop-1, crop-2, crop-10, etc.)
-                import re
                 def extract_number(filename):
                     match = re.search(r'crop-(\d+)', filename.name)
                     return int(match.group(1)) if match else 0
