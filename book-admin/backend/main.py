@@ -2543,6 +2543,121 @@ print(f"✅ Found {len(results)} books across grade levels")'''
     
     return samples
 
+# ========================= Manifest Generation Endpoint =========================
+
+@app.post("/generate-manifest")
+async def generate_manifest(request: dict):
+    """Generate manifest from local folder"""
+    try:
+        folder_path = request.get('folder_path', '')
+        generation_mode = request.get('generation_mode', 'multi')
+        book_metadata = request.get('book_metadata', {})
+        
+        if not folder_path:
+            raise HTTPException(status_code=400, detail="folder_path is required")
+        
+        folder = Path(folder_path)
+        if not folder.exists():
+            raise HTTPException(status_code=400, detail=f"Folder not found: {folder_path}")
+        
+        books = []
+        
+        if generation_mode == "single":
+            # Single book mode - treat entire folder as one book
+            pages = list(folder.glob("**/resized/crop-*.png"))
+            if not pages:
+                pages = list(folder.glob("**/*.png"))
+            pages = sorted(pages, key=lambda x: x.name)
+            
+            # Look for audio files
+            audio_files = list(folder.glob("**/*.mp3")) + list(folder.glob("**/*.wav")) + list(folder.glob("**/*.m4a"))
+            
+            book = {
+                "title": book_metadata.get('title', folder.name),
+                "author": book_metadata.get('author', 'Unknown'),
+                "genre": book_metadata.get('genre', 'Unknown'),
+                "reading_level": book_metadata.get('reading_level', 'Elementary'),
+                "book_type": book_metadata.get('book_type', 'Read to Me'),
+                "description": book_metadata.get('description', ''),
+                "folder_path": str(folder),
+                "page_sequence": [{"page_number": i+1, "file_path": str(p)} for i, p in enumerate(pages)],
+                "audio_files": [{"file_path": str(a), "file_name": a.name} for a in audio_files],
+                "total_pages": len(pages)
+            }
+            books.append(book)
+            
+        else:
+            # Multi-book mode - each subfolder is a book
+            for subfolder in folder.iterdir():
+                if not subfolder.is_dir():
+                    continue
+                    
+                pages = list(subfolder.glob("**/resized/crop-*.png"))
+                if not pages:
+                    pages = list(subfolder.glob("**/*.png"))
+                pages = sorted(pages, key=lambda x: x.name)
+                
+                # Look for audio files
+                audio_files = list(subfolder.glob("**/*.mp3")) + list(subfolder.glob("**/*.wav")) + list(subfolder.glob("**/*.m4a"))
+                
+                # Try to read description.txt
+                desc_file = subfolder / "description.txt"
+                book_title = book_metadata.get('title') or subfolder.name
+                book_description = book_metadata.get('description', '')
+                book_author = book_metadata.get('author', 'Unknown')
+                
+                if desc_file.exists():
+                    try:
+                        desc_content = desc_file.read_text(encoding="utf-8", errors="ignore")
+                        
+                        # Extract metadata from description.txt
+                        for line in desc_content.splitlines():
+                            line = line.strip()
+                            if line.lower().startswith("title -"):
+                                book_title = line.split("-", 1)[1].strip()
+                            elif line.lower().startswith("by:"):
+                                book_author = line.replace("By:", "").replace("by:", "").strip()
+                        
+                        if not book_metadata.get('description'):
+                            book_description = desc_content
+                    except Exception as e:
+                        logging.warning(f"Could not read description.txt in {subfolder}: {e}")
+                
+                book = {
+                    "title": book_title,
+                    "author": book_author,
+                    "genre": book_metadata.get('genre', 'Unknown'),
+                    "reading_level": book_metadata.get('reading_level', 'Elementary'),
+                    "book_type": book_metadata.get('book_type', 'Read to Me'),
+                    "description": book_description,
+                    "folder_path": str(subfolder),
+                    "page_sequence": [{"page_number": i+1, "file_path": str(p)} for i, p in enumerate(pages)],
+                    "audio_files": [{"file_path": str(a), "file_name": a.name} for a in audio_files],
+                    "total_pages": len(pages)
+                }
+                books.append(book)
+        
+        manifest = {
+            "books": books,
+            "generated_at": datetime.now().isoformat(),
+            "folder_path": folder_path,
+            "generation_mode": generation_mode,
+            "total_books": len(books)
+        }
+        
+        return {"manifest": manifest}
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logging.error(f"Manifest generation error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to generate manifest: {str(e)}")
+
+# API mirror for Netlify proxy
+@app.post("/api/generate-manifest")
+async def api_generate_manifest(request: dict):
+    return await generate_manifest(request)
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
