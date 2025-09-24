@@ -638,10 +638,11 @@ async def apply_script_to_sqlite(request: dict):
 async def generate_manifest(request: dict):
     """
     Generate a manifest from a folder structure.
-    Expects: {"folder_path": "path/to/folder", "book_metadata": {...}}
+    Supports both single book/genre and multi-book generation modes.
     """
     try:
         folder_path = request.get("folder_path")
+        generation_mode = request.get("generation_mode", "single")  # 'single' or 'multi'
         book_metadata = request.get("book_metadata", {})
         
         if not folder_path:
@@ -653,21 +654,29 @@ async def generate_manifest(request: dict):
         
         generator = ManifestGenerator()
         
-        # Generate manifest from folder
-        manifest_data = generator.generate_from_folder(
-            folder_path=folder_path,
-            title=book_metadata.get("title", "Unknown Title"),
-            author=book_metadata.get("author", "Unknown Author"),
-            genre=book_metadata.get("genre", "Unknown Genre"),
-            book_type=book_metadata.get("book_type", "Read to Me"),
-            reading_level=book_metadata.get("reading_level", "Elementary"),
-            description=book_metadata.get("description", "")
-        )
+        if generation_mode == "multi":
+            # Multi-book mode: scan folder for multiple books
+            manifest_data = generator.generate_multi_book_manifest(
+                base_folder=folder_path,
+                default_metadata=book_metadata
+            )
+        else:
+            # Single book/genre mode: treat folder as one book
+            manifest_data = generator.generate_from_folder(
+                folder_path=folder_path,
+                title=book_metadata.get("title", "Unknown Title"),
+                author=book_metadata.get("author", "Unknown Author"),
+                genre=book_metadata.get("genre", "Unknown Genre"),
+                book_type=book_metadata.get("book_type", "Read to Me"),
+                reading_level=book_metadata.get("reading_level", "Elementary"),
+                description=book_metadata.get("description", "")
+            )
         
         return {
             "success": True,
             "manifest": manifest_data,
-            "message": f"Generated manifest for {len(manifest_data.get('books', []))} book(s)"
+            "generation_mode": generation_mode,
+            "message": f"Generated manifest for {len(manifest_data.get('books', []))} book(s) in {generation_mode} mode"
         }
         
     except Exception as e:

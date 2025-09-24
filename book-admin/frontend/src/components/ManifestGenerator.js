@@ -3,6 +3,7 @@ import { getApiUrl } from '../utils/api';
 
 const ManifestGenerator = () => {
   const [folderPath, setFolderPath] = useState('');
+  const [generationMode, setGenerationMode] = useState('single'); // 'single' or 'multi'
   const [bookMetadata, setBookMetadata] = useState({
     title: '',
     author: '',
@@ -28,8 +29,8 @@ const ManifestGenerator = () => {
       return;
     }
 
-    if (!bookMetadata.title.trim()) {
-      setError('Please enter a book title');
+    if (generationMode === 'single' && !bookMetadata.title.trim()) {
+      setError('Please enter a book title for single book mode');
       return;
     }
 
@@ -45,6 +46,7 @@ const ManifestGenerator = () => {
         },
         body: JSON.stringify({
           folder_path: folderPath,
+          generation_mode: generationMode,
           book_metadata: bookMetadata
         })
       });
@@ -115,6 +117,37 @@ const ManifestGenerator = () => {
       </div>
 
       <div className="generator-form">
+        {/* Generation Mode Selector */}
+        <div className="generation-mode-section">
+          <h3>🎯 Generation Mode</h3>
+          <div className="mode-options">
+            <label className={`mode-option ${generationMode === 'single' ? 'active' : ''}`}>
+              <input
+                type="radio"
+                value="single"
+                checked={generationMode === 'single'}
+                onChange={(e) => setGenerationMode(e.target.value)}
+              />
+              <div className="mode-content">
+                <span className="mode-title">📖 Single Book/Genre</span>
+                <small>Generate manifest for one book or all books of one genre in a folder</small>
+              </div>
+            </label>
+            <label className={`mode-option ${generationMode === 'multi' ? 'active' : ''}`}>
+              <input
+                type="radio"
+                value="multi"
+                checked={generationMode === 'multi'}
+                onChange={(e) => setGenerationMode(e.target.value)}
+              />
+              <div className="mode-content">
+                <span className="mode-title">📚 Multiple Books</span>
+                <small>Generate manifest for entire folder with multiple books/genres</small>
+              </div>
+            </label>
+          </div>
+        </div>
+
         {/* Folder Path */}
         <div className="form-group">
           <label htmlFor="folderPath">
@@ -135,7 +168,12 @@ const ManifestGenerator = () => {
 
         {/* Book Metadata */}
         <div className="metadata-section">
-          <h3>📖 Book Information</h3>
+          <h3>📖 {generationMode === 'single' ? 'Book Information' : 'Default Book Settings'}</h3>
+          {generationMode === 'multi' && (
+            <p className="metadata-help">
+              These settings will be used as defaults for books that don't have metadata detected from folder structure.
+            </p>
+          )}
           
           <div className="form-row">
             <div className="form-group">
@@ -377,6 +415,80 @@ const ManifestGenerator = () => {
         .metadata-section h3 {
           color: #2c3e50;
           margin-bottom: 20px;
+        }
+
+        .metadata-help {
+          color: #7f8c8d;
+          font-size: 14px;
+          margin-bottom: 20px;
+          font-style: italic;
+        }
+
+        .generation-mode-section {
+          margin-bottom: 30px;
+          padding: 20px;
+          background: #f8f9fa;
+          border-radius: 8px;
+          border: 1px solid #e2e8f0;
+        }
+
+        .generation-mode-section h3 {
+          margin: 0 0 16px 0;
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: #2c3e50;
+        }
+
+        .mode-options {
+          display: flex;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        .mode-option {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          padding: 16px;
+          background: white;
+          border: 2px solid #e2e8f0;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          flex: 1;
+          min-width: 250px;
+        }
+
+        .mode-option:hover {
+          border-color: #3498db;
+          background: #f0f9ff;
+        }
+
+        .mode-option.active {
+          border-color: #3498db;
+          background: #eff6ff;
+        }
+
+        .mode-option input[type="radio"] {
+          margin: 4px 0 0 0;
+        }
+
+        .mode-content {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .mode-title {
+          font-weight: 600;
+          color: #2c3e50;
+          font-size: 14px;
+        }
+
+        .mode-content small {
+          color: #7f8c8d;
+          font-size: 12px;
+          line-height: 1.4;
         }
 
         .error-message {
