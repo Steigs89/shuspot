@@ -1,0 +1,554 @@
+/* Audio Controls Styles */
+.enhanced-nav-audio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 20px;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 8px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.audio-play-btn {
+  background: #3b82f6 !important;
+  color: white !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.audio-play-btn:hover {
+  background: #2563eb !important;
+  transform: scale(1.05);
+}
+
+.audio-mute-btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.audio-mute-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.audio-progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 120px;
+}
+
+.audio-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.audio-progress-fill {
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 2px;
+  transition: width 0.1s ease;
+}
+
+.audio-time {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.volume-slider {
+  width: 60px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #3b82f6;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #3b82f6;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.no-audio-indicator {
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.no-audio-indicator .text-gray-400 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .enhanced-nav-audio {
+    margin: 0 10px;
+  }
+  
+  .audio-controls {
+    gap: 6px;
+    padding: 6px 10px;
+  }
+  
+  .audio-progress-container {
+    min-width: 80px;
+  }
+  
+  .volume-slider {
+    width: 40px;
+  }
+  
+  .audio-time {
+    font-size: 9px;
+  }
+}
+
+/* Audio controls animation */
+.audio-controls {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Playing state indicator */
+.audio-play-btn.playing {
+  background: #ef4444 !important;
+}
+
+.audio-play-btn.playing:hover {
+  background: #dc2626 !important;
+}
+
+/* Audio loading state */
+.audio-controls.loading {
+  opacity: 0.7;
+}
+
+.audio-controls.loading .audio-play-btn {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Kid-Friendly Audio Controls */
+.kid-friendly-audio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 25px;
+  margin: 0 20px 10px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.audio-control-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.kid-audio-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 80px;
+}
+
+.kid-audio-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 1);
+}
+
+.kid-audio-btn.active {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  animation: glow 2s infinite alternate;
+}
+
+.kid-audio-btn.auto-turn-btn.active {
+  background: linear-gradient(135deg, #FF9800, #F57C00);
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  to {
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+  }
+}
+
+.main-play-btn {
+  background: linear-gradient(135deg, #FF6B6B, #FF5252) !important;
+  color: white !important;
+  min-width: 120px !important;
+  font-size: 16px !important;
+  padding: 15px 20px !important;
+}
+
+.main-play-btn.playing {
+  background: linear-gradient(135deg, #FFA726, #FF9800) !important;
+  animation: pulse-play 1.5s infinite;
+}
+
+@keyframes pulse-play {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-text {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.emoji {
+  font-size: 18px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+.volume-control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 15px;
+}
+
+.kid-volume-slider {
+  width: 80px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.kid-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #FF6B6B, #FF5252);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.kid-volume-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #FF6B6B, #FF5252);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.audio-progress-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 15px;
+  color: white;
+}
+
+.audio-wave {
+  font-size: 20px;
+  animation: wave 1s infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.audio-info {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.audio-time-display {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+.no-audio-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.no-audio-message .emoji {
+  font-size: 20px;
+  animation: none;
+}
+
+/* Responsive design for kid-friendly controls */
+@media (max-width: 768px) {
+  .kid-friendly-audio-controls {
+    margin: 0 10px 10px 10px;
+    padding: 10px 15px;
+  }
+  
+  .audio-control-group {
+    gap: 10px;
+  }
+  
+  .kid-audio-btn {
+    padding: 10px 12px;
+    font-size: 12px;
+    min-width: 70px;
+  }
+  
+  .main-play-btn {
+    min-width: 100px !important;
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+  }
+  
+  .btn-text {
+    font-size: 11px;
+  }
+  
+  .emoji {
+    font-size: 16px;
+  }
+  
+  .kid-volume-slider {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .audio-control-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .volume-control-group {
+    order: -1;
+  }
+}
+
+/* Enhanced progress bar adjustments */
+.enhanced-progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+/* 
+Text Highlighting Styles */
+.text-highlight-overlay {
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.highlight-word {
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.highlight-word.active {
+  background: rgba(255, 255, 0, 0.4) !important;
+  border: 2px solid #FFD700 !important;
+  animation: highlight-pulse 0.5s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes highlight-pulse {
+  0% {
+    transform: scale(1);
+    background: rgba(255, 255, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    background: rgba(255, 255, 0, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    background: rgba(255, 255, 0, 0.4);
+  }
+}
+
+/* Highlight button styling */
+.kid-audio-btn.highlight-btn.active {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+  }
+}
+
+/* Demo text overlay for testing */
+.demo-text-overlay {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  pointer-events: none;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.demo-word {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.demo-word.highlighted {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
