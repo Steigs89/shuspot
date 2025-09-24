@@ -180,18 +180,22 @@ const ManifestGenerator = () => {
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="title">
-                Title <span className="required">*</span>
+                Title {generationMode === 'single' && <span className="required">*</span>}
               </label>
               <input
                 id="title"
                 type="text"
                 value={bookMetadata.title}
                 onChange={(e) => handleMetadataChange('title', e.target.value)}
-                placeholder="Book Title"
+                placeholder={generationMode === 'single' ? "Book Title" : "Default title (optional - extracted from description.txt)"}
                 className="form-input"
               />
+              {generationMode === 'multi' && (
+                <small className="form-help">
+                  Leave empty to extract titles from description.txt files in each subfolder
+                </small>
+              )}
             </div>
-            
             <div className="form-group">
               <label htmlFor="author">Author</label>
               <input
@@ -242,11 +246,107 @@ const ManifestGenerator = () => {
                 onChange={(e) => handleMetadataChange('reading_level', e.target.value)}
                 className="form-select"
               >
-                <option value="Preschool">Preschool</option>
-                <option value="Elementary">Elementary</option>
-                <option value="Middle School">Middle School</option>
-                <option value="High School">High School</option>
+                <optgroup label="US Grade Level">
+                  <option value="Pre-K">Pre-K</option>
+                  <option value="Kindergarten">Kindergarten</option>
+                  <option value="Grade 1">Grade 1</option>
+                  <option value="Grade 2">Grade 2</option>
+                  <option value="Grade 3">Grade 3</option>
+                  <option value="Grade 4">Grade 4</option>
+                  <option value="Grade 5">Grade 5</option>
+                  <option value="Grade 6">Grade 6</option>
+                  <option value="Grade 7">Grade 7</option>
+                  <option value="Grade 8">Grade 8</option>
+                  <option value="Grade 9">Grade 9</option>
+                  <option value="Grade 10">Grade 10</option>
+                  <option value="Grade 11">Grade 11</option>
+                  <option value="Grade 12">Grade 12</option>
+                </optgroup>
+                <optgroup label="RAZ Level">
+                  <option value="RAZ A">RAZ A</option>
+                  <option value="RAZ B">RAZ B</option>
+                  <option value="RAZ C">RAZ C</option>
+                  <option value="RAZ D">RAZ D</option>
+                  <option value="RAZ E">RAZ E</option>
+                  <option value="RAZ F">RAZ F</option>
+                  <option value="RAZ G">RAZ G</option>
+                  <option value="RAZ H">RAZ H</option>
+                  <option value="RAZ I">RAZ I</option>
+                  <option value="RAZ J">RAZ J</option>
+                  <option value="RAZ K">RAZ K</option>
+                  <option value="RAZ L">RAZ L</option>
+                  <option value="RAZ M">RAZ M</option>
+                  <option value="RAZ N">RAZ N</option>
+                  <option value="RAZ O">RAZ O</option>
+                  <option value="RAZ P">RAZ P</option>
+                  <option value="RAZ Q">RAZ Q</option>
+                  <option value="RAZ R">RAZ R</option>
+                  <option value="RAZ S">RAZ S</option>
+                  <option value="RAZ T">RAZ T</option>
+                  <option value="RAZ U">RAZ U</option>
+                  <option value="RAZ V">RAZ V</option>
+                  <option value="RAZ W">RAZ W</option>
+                  <option value="RAZ X">RAZ X</option>
+                  <option value="RAZ Y">RAZ Y</option>
+                  <option value="RAZ Z">RAZ Z</option>
+                </optgroup>
+                <optgroup label="Lexile Level">
+                  <option value="BR (Beginning Reader)">BR (Beginning Reader)</option>
+                  <option value="200L-400L">200L-400L</option>
+                  <option value="400L-600L">400L-600L</option>
+                  <option value="600L-800L">600L-800L</option>
+                  <option value="800L-1000L">800L-1000L</option>
+                  <option value="1000L-1200L">1000L-1200L</option>
+                  <option value="1200L+">1200L+</option>
+                </optgroup>
+                <optgroup label="ORT Level">
+                  <option value="ORT 1">ORT 1</option>
+                  <option value="ORT 2">ORT 2</option>
+                  <option value="ORT 3">ORT 3</option>
+                  <option value="ORT 4">ORT 4</option>
+                  <option value="ORT 5">ORT 5</option>
+                  <option value="ORT 6">ORT 6</option>
+                </optgroup>
+                <optgroup label="GRL Level">
+                  <option value="GRL A">GRL A</option>
+                  <option value="GRL B">GRL B</option>
+                  <option value="GRL C">GRL C</option>
+                  <option value="GRL D">GRL D</option>
+                  <option value="GRL E">GRL E</option>
+                  <option value="GRL F">GRL F</option>
+                  <option value="GRL G">GRL G</option>
+                  <option value="GRL H">GRL H</option>
+                  <option value="GRL I">GRL I</option>
+                  <option value="GRL J">GRL J</option>
+                  <option value="GRL K">GRL K</option>
+                  <option value="GRL L">GRL L</option>
+                  <option value="GRL M">GRL M</option>
+                  <option value="GRL N">GRL N</option>
+                  <option value="GRL O">GRL O</option>
+                  <option value="GRL P">GRL P</option>
+                  <option value="GRL Q">GRL Q</option>
+                  <option value="GRL R">GRL R</option>
+                  <option value="GRL S">GRL S</option>
+                  <option value="GRL T">GRL T</option>
+                  <option value="GRL U">GRL U</option>
+                  <option value="GRL V">GRL V</option>
+                  <option value="GRL W">GRL W</option>
+                  <option value="GRL X">GRL X</option>
+                  <option value="GRL Y">GRL Y</option>
+                  <option value="GRL Z">GRL Z</option>
+                </optgroup>
+                <optgroup label="CEFR Level">
+                  <option value="CEFR A1">CEFR A1</option>
+                  <option value="CEFR A2">CEFR A2</option>
+                  <option value="CEFR B1">CEFR B1</option>
+                  <option value="CEFR B2">CEFR B2</option>
+                  <option value="CEFR C1">CEFR C1</option>
+                  <option value="CEFR C2">CEFR C2</option>
+                </optgroup>
               </select>
+              <small className="form-help">
+                Choose the reading level system that matches your books. For multi-book mode, this is the default if not detected from description.txt.
+              </small>
             </div>
           </div>
 
