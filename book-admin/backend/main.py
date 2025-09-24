@@ -2548,12 +2548,13 @@ print(f"✅ Found {len(results)} books across grade levels")'''
 # ========================= Manifest Generation Endpoint =========================
 
 @app.post("/generate-manifest")
-async def generate_manifest(request: dict):
+async def generate_manifest(request: dict = Body(...)):
     """Generate manifest from local folder"""
     try:
         folder_path = request.get('folder_path', '')
         generation_mode = request.get('generation_mode', 'multi')
         book_metadata = request.get('book_metadata', {})
+        processing_script = request.get('processing_script')  # Optional field
         
         if not folder_path:
             raise HTTPException(status_code=400, detail="folder_path is required")
@@ -2644,7 +2645,8 @@ async def generate_manifest(request: dict):
             "generated_at": datetime.now().isoformat(),
             "folder_path": folder_path,
             "generation_mode": generation_mode,
-            "total_books": len(books)
+            "total_books": len(books),
+            "processing_script_included": bool(processing_script)
         }
         
         return {"manifest": manifest}
@@ -2657,7 +2659,7 @@ async def generate_manifest(request: dict):
 
 # API mirror for Netlify proxy
 @app.post("/api/generate-manifest")
-async def api_generate_manifest(request: dict):
+async def api_generate_manifest(request: dict = Body(...)):
     return await generate_manifest(request)
 
 if __name__ == "__main__":
