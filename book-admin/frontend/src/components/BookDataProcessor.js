@@ -240,6 +240,63 @@ result = process_books(books_data)
             <small>Temporary uploaded books</small>
           </label>
         </div>
+        
+        {/* Quick Action Scripts */}
+        <div className="quick-actions">
+          <h4>⚡ Quick Actions</h4>
+          <div className="quick-action-buttons">
+            <button 
+              onClick={() => setPythonScript(`# Set all reading levels to G2
+for book in books_data:
+    book['reading_level'] = 'G2'
+result = books_data`)}
+              className="quick-action-btn"
+            >
+              📚 Set All to G2
+            </button>
+            
+            <button 
+              onClick={() => setPythonScript(`# Set reading levels by category
+for book in books_data:
+    category = book.get('genre', '').lower()
+    if 'solar' in category or 'science' in category:
+        book['reading_level'] = 'Middle School'
+    else:
+        book['reading_level'] = 'Elementary'
+result = books_data`)}
+              className="quick-action-btn"
+            >
+              🔬 Science = Middle School
+            </button>
+            
+            <button 
+              onClick={() => setPythonScript(`# Extract authors from titles
+for book in books_data:
+    title = book.get('title', '')
+    if "'s " in title:
+        author = title.split("'s ")[0]
+        book['author'] = author
+result = books_data`)}
+              className="quick-action-btn"
+            >
+              👤 Extract Authors
+            </button>
+            
+            <button 
+              onClick={() => setPythonScript(`# Clean up titles
+for book in books_data:
+    title = book.get('title', '')
+    # Remove common prefixes
+    title = title.replace('A Shipmate\\'s Guide to ', '')
+    title = title.replace('The ', '')
+    book['title'] = title.strip()
+result = books_data`)}
+              className="quick-action-btn"
+            >
+              🧹 Clean Titles
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Current Books Status */}

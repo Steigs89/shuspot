@@ -91,6 +91,47 @@
   margin-top: 4px;
 }
 
+/* Quick Actions */
+.quick-actions {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.quick-actions h4 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.quick-action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quick-action-btn {
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-action-btn:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.quick-action-btn:active {
+  background: #d1d5db;
+}
+
 /* Books Status */
 .books-status {
   margin-bottom: 32px;
