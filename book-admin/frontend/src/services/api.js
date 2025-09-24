@@ -51,14 +51,21 @@ export const bookAPI = {
 
   // Bulk update books
   bulkUpdateBooks: async (bookIds, field, value) => {
+    console.log('🔄 Bulk updating books:', { bookIds, field, value });
+    
     const formData = new FormData();
     bookIds.forEach(id => formData.append('book_ids', id));
     formData.append('field', field);
     formData.append('value', value);
     
+    console.log('📝 FormData contents:');
+    for (let [key, value] of formData.entries()) {
+      console.log(`  ${key}: ${value}`);
+    }
+    
     const response = await api.put('/books/bulk-update', formData, {
       headers: {
-        'Content-Type': 'multipart/form-data',
+        'Content-Type': undefined, // Let axios set the correct multipart boundary
       },
     });
     return response.data;
