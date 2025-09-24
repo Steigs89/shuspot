@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, BookOpen, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { getApiUrl } from '../utils/api';
+import '../styles/AudioControls.css';
 
 const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,6 +14,29 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const [startTime] = useState(Date.now());
   const [totalPages, setTotalPages] = useState(0);
   const [error, setError] = useState(null);
+  
+  // Audio state
+  const [audioFiles, setAudioFiles] = useState({});
+  const [currentAudio, setCurrentAudio] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false); // Start unmuted
+  const [volume, setVolume] = useState(0.8);
+  const [audioProgress, setAudioProgress] = useState(0);
+  const [audioDuration, setAudioDuration] = useState(0);
+  const [isLoadingAudio, setIsLoadingAudio] = useState(false);
+  const [audioPlaylist, setAudioPlaylist] = useState([]);
+  const [currentPlaylistIndex, setCurrentPlaylistIndex] = useState(0);
+  const [autoPlayEnabled, setAutoPlayEnabled] = useState(false);
+  const [autoTurnEnabled, setAutoTurnEnabled] = useState(false);
+  const [textHighlightEnabled, setTextHighlightEnabled] = useState(true);
+  const [currentHighlightedWords, setCurrentHighlightedWords] = useState([]);
+  const [pageTextData, setPageTextData] = useState({});
+  const audioRef = useRef(null);
+  const playlistRef = useRef([]);
+  const playlistIndexRef = useRef(0);
+  const highlightIntervalRef = useRef(null);
+  const highlightStartedRef = useRef(false);
+  const autoTurnEnabledRef = useRef(false);
   // Dynamic flipbook height (based on single page aspect ratio, not full spread)
   const BOOK_WIDTH = 1400; // full spread width - balanced size for good visibility
   const SINGLE_PAGE_WIDTH = BOOK_WIDTH / 2;
@@ -98,6 +122,603 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     console.log('🎯 Generated fallback URL:', fallbackUrl);
     return fallbackUrl;
   }, [book?.notes, book?.folder_path]);
+
+  // OCR functionality temporarily disabled for simplicity
+  // useEffect(() => {
+  //   if (book?.id) {
+  //     console.log('📝 Loading OCR data for book ID:', book.id);
+  //     loadOCRData(book.id);
+  //   }
+  // }, [book?.id]);
+
+  // Text highlighting temporarily disabled
+  // useEffect(() => {
+  //   console.log('📝 Page changed to:', currentPage, 'stopping any existing highlighting');
+  //   stopTextHighlighting();
+  // }, [currentPage]);
+
+  // Extract audio files from book data
+  const extractAudioFiles = useCallback(() => {
+    console.log('🎵 Extracting audio files from book data...');
+    console.log('🎵 Book object:', book);
+    const audioMap = {};
+    
+    // Check if book has page sequence with audio files
+    if (book?._page_sequence) {
+      book._page_sequence.forEach((page, index) => {
+        const pageNumber = page.page_number || index + 1;
+        if (page.audio_files && page.audio_files.length > 0) {
+          audioMap[pageNumber] = page.audio_files.map(audio => ({
+            filename: audio.filename,
+            url: audio.url,
+            type: audio.type || 'page_audio'
+          }));
+        }
+      });
+    }
+    
+    // For "Our Sun is A Star", we know which pages have audio from our test
+    if (book?._folder_path && Object.keys(audioMap).length === 0) {
+      console.log('🎵 No audio in page sequence, using known audio pages...');
+      
+      const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      if (folderPathMatch) {
+        const [, relativePath] = folderPathMatch;
+        const cleanPath = relativePath.replace(/\\/g, '/');
+        
+        // Based on our audio test results for "Our Sun is A Star"
+        const knownAudioPages = [1, 2, 3, 5, 6, 7, 9, 10, 13, 14, 15, 16, 19, 20, 21];
+        
+        knownAudioPages.forEach(pageNum => {
+          let pattern;
+          if (pageNum === 1) {
+            pattern = 'intro title.mp3';
+          } else {
+            pattern = `page ${pageNum}.mp3`;
+          }
+          
+          audioMap[pageNum] = [{
+            filename: pattern,
+            url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`,
+            type: pageNum === 1 ? 'intro' : 'page_audio'
+          }];
+        });
+      }
+    }
+    
+    console.log('🎵 Audio files extracted:', audioMap);
+    setAudioFiles(audioMap);
+    
+    return audioMap;
+  }, [book]);
+
+  // Get audio URL for a specific page (simplified to prevent loops)
+  const getAudioUrl = useCallback((pageNumber) => {
+    const pageAudio = audioFiles[pageNumber];
+    if (pageAudio && pageAudio.length > 0) {
+      // Return the first audio file for the page
+      return pageAudio[0].url;
+    }
+    
+    return null; // Only use pre-mapped audio files to prevent loops
+  }, [audioFiles]);
+
+  // Get sequential audio playlist for current spread
+  const getAudioPlaylist = useCallback(() => {
+    const pagesToTry = [currentPage];
+    if (currentPage % 2 === 0) {
+      pagesToTry.push(currentPage + 1);
+    } else {
+      pagesToTry.unshift(currentPage - 1);
+    }
+    
+    const playlist = [];
+    for (const pageNum of pagesToTry) {
+      if (pageNum > 0 && pageNum <= totalPages) {
+        const url = getAudioUrl(pageNum);
+        if (url && audioFiles[pageNum]) {
+          playlist.push({
+            pageNumber: pageNum,
+            url: url,
+            title: `Page ${pageNum}`
+          });
+        }
+      }
+    }
+    
+    console.log('🎵 📋 Audio playlist for spread:', playlist);
+    return playlist;
+  }, [currentPage, totalPages, audioFiles, getAudioUrl]);
+
+  // Update refs when state changes
+  useEffect(() => {
+    console.log('🎵 🔄 Updating playlist refs:', audioPlaylist, currentPlaylistIndex);
+    playlistRef.current = audioPlaylist;
+    playlistIndexRef.current = currentPlaylistIndex;
+  }, [audioPlaylist, currentPlaylistIndex]);
+
+  // Update auto-turn ref
+  useEffect(() => {
+    autoTurnEnabledRef.current = autoTurnEnabled;
+    console.log('🎵 🔄 Auto-turn enabled:', autoTurnEnabled);
+  }, [autoTurnEnabled]);
+
+  // Test if audio URL is accessible
+  const testAudioUrl = useCallback(async (url) => {
+    try {
+      console.log('🎵 Testing audio URL accessibility:', url);
+      const response = await fetch(url, { method: 'HEAD' });
+      console.log('🎵 Audio URL test response:', response.status, response.statusText);
+      return response.ok;
+    } catch (error) {
+      console.error('🎵 Audio URL test failed:', error);
+      return false;
+    }
+  }, []);
+
+  // Load OCR data for the book
+  const loadOCRData = useCallback(async (bookId) => {
+    try {
+      // Try to load OCR data for this book
+      const ocrUrl = `${getApiUrl()}/ocr-data/${bookId}`;
+      console.log('📝 Attempting to load OCR data from:', ocrUrl);
+      
+      const response = await fetch(ocrUrl);
+      console.log('📝 OCR API response status:', response.status, response.statusText);
+      
+      if (response.ok) {
+        const ocrData = await response.json();
+        console.log('📝 Loaded OCR data for book:', bookId, ocrData);
+        
+        // Convert OCR data to our format
+        const convertedData = {};
+        for (const [pageNum, pageData] of Object.entries(ocrData.pages || {})) {
+          convertedData[parseInt(pageNum)] = {
+            pageNumber: parseInt(pageNum),
+            words: pageData.words || [],
+            totalWords: pageData.totalWords || 0,
+            audioDuration: pageData.audioDuration || 0,
+            hasAudio: pageData.hasAudio || false
+          };
+        }
+        
+        setPageTextData(convertedData);
+        return convertedData;
+      } else {
+        console.log('📝 No OCR data found for book:', bookId, 'Status:', response.status);
+        const errorText = await response.text();
+        console.log('📝 Error response:', errorText);
+        return null;
+      }
+    } catch (error) {
+      console.error('📝 Error loading OCR data:', error);
+      return null;
+    }
+  }, []);
+
+  // Text highlighting functions
+  const extractTextFromPage = useCallback(async (pageNumber) => {
+    if (pageTextData[pageNumber]) {
+      return pageTextData[pageNumber];
+    }
+
+    // Try to load OCR data if not already loaded
+    if (Object.keys(pageTextData).length === 0 && book?.id) {
+      await loadOCRData(book.id);
+    }
+
+    // Check again after loading
+    if (pageTextData[pageNumber]) {
+      return pageTextData[pageNumber];
+    }
+
+    // Fallback to demo text if no OCR data available
+    const audioUrl = getAudioUrl(pageNumber);
+    if (!audioUrl) return null;
+
+    try {
+      console.log('📝 Using demo text for page', pageNumber, '(no OCR data available)');
+      const demoWords = `Our Sun is a star that gives us light and warmth every day!`.split(' ');
+      const mockText = {
+        pageNumber,
+        words: demoWords.map((word, i) => ({
+          id: `demo-word-${i}`,
+          text: word,
+          startTime: (audioDuration / demoWords.length) * i,
+          endTime: (audioDuration / demoWords.length) * (i + 1),
+          x: 0.1 + (i % 6) * 0.12, // Arrange in rows
+          y: 0.3 + Math.floor(i / 6) * 0.1,
+          width: 0.1,
+          height: 0.05
+        })),
+        totalWords: demoWords.length,
+        audioDuration: audioDuration,
+        hasAudio: true
+      };
+
+      setPageTextData(prev => ({ ...prev, [pageNumber]: mockText }));
+      return mockText;
+    } catch (error) {
+      console.error('📝 Text extraction failed:', error);
+      return null;
+    }
+  }, [pageTextData, getAudioUrl, audioDuration, book?.id]); // Removed loadOCRData to prevent circular dependency
+
+  const startTextHighlighting = useCallback(async (pageNumber, duration) => {
+    if (!textHighlightEnabled || highlightStartedRef.current) return;
+
+    console.log('📝 Starting text highlighting for page', pageNumber, 'duration:', duration);
+    highlightStartedRef.current = true;
+    
+    // Clear any existing highlighting
+    if (highlightIntervalRef.current) {
+      clearInterval(highlightIntervalRef.current);
+    }
+    setCurrentHighlightedWords([]);
+
+    // Get text data for the page
+    const textData = await extractTextFromPage(pageNumber);
+    if (!textData || !textData.words || textData.words.length === 0) {
+      console.log('📝 No text data available for highlighting');
+      return;
+    }
+
+    const words = textData.words;
+    const startTime = Date.now();
+    
+    console.log(`📝 Starting highlighting for ${words.length} words over ${duration}s`);
+    
+    highlightIntervalRef.current = setInterval(() => {
+      const elapsed = (Date.now() - startTime) / 1000; // seconds
+      
+      // Find words that should be highlighted at current time
+      const wordsToHighlight = words.filter(word => {
+        const wordStart = word.startTime || 0;
+        const wordEnd = word.endTime || duration;
+        return elapsed >= wordStart && elapsed <= wordEnd;
+      }).map(word => word.id);
+      
+      // Also highlight the next word for smoother transitions
+      const nextWords = words.filter(word => {
+        const wordStart = word.startTime || 0;
+        return elapsed >= (wordStart - 0.2) && elapsed < wordStart;
+      }).map(word => word.id);
+      
+      const allHighlighted = [...wordsToHighlight, ...nextWords];
+      
+      if (allHighlighted.length > 0) {
+        setCurrentHighlightedWords(allHighlighted);
+        console.log('📝 Highlighting words:', allHighlighted);
+      }
+      
+      // Stop when audio ends
+      if (elapsed >= duration) {
+        clearInterval(highlightIntervalRef.current);
+        setCurrentHighlightedWords([]);
+        highlightStartedRef.current = false;
+        console.log('📝 Text highlighting finished');
+      }
+    }, 100); // Update every 100ms for smooth highlighting
+  }, [textHighlightEnabled, extractTextFromPage]);
+
+  const stopTextHighlighting = useCallback(() => {
+    console.log('📝 Stopping text highlighting');
+    if (highlightIntervalRef.current) {
+      clearInterval(highlightIntervalRef.current);
+      highlightIntervalRef.current = null;
+    }
+    setCurrentHighlightedWords([]);
+    highlightStartedRef.current = false;
+  }, []);
+
+  // Audio control functions - fixed for reliable playback
+  const playAudio = useCallback(async (audioUrl, pageNumber = currentPage, isAutoContinue = false) => {
+    if (!audioUrl) {
+      console.log('🎵 No audio URL provided');
+      return;
+    }
+    
+    console.log('🎵 Playing audio:', audioUrl);
+    console.log('🎵 Current volume:', volume, 'Muted:', isMuted);
+    
+    // Test URL accessibility first
+    const isAccessible = await testAudioUrl(audioUrl);
+    if (!isAccessible) {
+      console.error('🎵 ❌ Audio URL is not accessible:', audioUrl);
+      setIsPlaying(false);
+      return;
+    }
+    
+    // Stop and cleanup any existing audio
+    if (audioRef.current) {
+      console.log('🎵 Stopping existing audio');
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      // Remove all event listeners to prevent memory leaks
+      audioRef.current.removeEventListener('loadedmetadata', () => {});
+      audioRef.current.removeEventListener('timeupdate', () => {});
+      audioRef.current.removeEventListener('ended', () => {});
+      audioRef.current.removeEventListener('error', () => {});
+      audioRef.current = null;
+    }
+    
+    // Create new audio element with better configuration
+    const audio = new Audio();
+    
+    // Set audio properties for better compatibility
+    audio.preload = 'auto';
+    audio.crossOrigin = 'anonymous';
+    
+    // Set volume immediately
+    audio.volume = isMuted ? 0 : volume;
+    console.log('🎵 Audio element volume set to:', audio.volume);
+    
+    // Add event listeners with proper cleanup
+    const handleLoadedMetadata = () => {
+      setAudioDuration(audio.duration);
+      console.log('🎵 Audio metadata loaded. Duration:', audio.duration);
+    };
+    
+    const handleTimeUpdate = () => {
+      setAudioProgress(audio.currentTime);
+    };
+    
+    const handleEnded = () => {
+      console.log('🎵 Audio ended');
+      setAudioProgress(0);
+      
+      // Stop text highlighting
+      stopTextHighlighting();
+      
+      // Use refs to get current values
+      const currentPlaylist = playlistRef.current;
+      const currentIndex = playlistIndexRef.current;
+      
+      console.log('🎵 Current playlist:', currentPlaylist);
+      console.log('🎵 Current index:', currentIndex);
+      
+      // Check if there's a next audio in the playlist
+      if (currentPlaylist.length > 0 && currentIndex < currentPlaylist.length - 1) {
+        const nextIndex = currentIndex + 1;
+        const nextAudio = currentPlaylist[nextIndex];
+        console.log(`🎵 🎬 Auto-playing next audio: ${nextAudio.title} (${nextIndex + 1}/${currentPlaylist.length})`);
+        
+        setCurrentPlaylistIndex(nextIndex);
+        // Small delay to ensure clean transition
+        setTimeout(() => {
+          playAudio(nextAudio.url, nextAudio.pageNumber, true);
+        }, 200);
+      } else if (autoTurnEnabledRef.current && currentPage < totalPages) {
+        // Auto-turn to next page by simulating right arrow click
+        console.log('🎵 📖 Auto-turning to next page by simulating click');
+        setIsPlaying(false);
+        setCurrentAudio(null);
+        setCurrentPlaylistIndex(0);
+        setAudioPlaylist([]);
+        
+        // Simulate right arrow click after a short delay
+        setTimeout(() => {
+          if (currentPage < totalPages) {
+            console.log(`🎵 📖 Simulating right arrow click to turn from page ${currentPage}`);
+            try {
+              // Simulate the right arrow click that we know works
+              handleRightArrowClick();
+              console.log('🎵 📖 ✅ Successfully simulated page turn click');
+            } catch (error) {
+              console.error('🎵 📖 ❌ Error simulating page turn:', error);
+              setAutoTurnEnabled(false);
+            }
+          } else {
+            console.log('🎵 📖 Already at end of book');
+            setAutoTurnEnabled(false);
+            setAutoPlayEnabled(false);
+          }
+        }, 1000); // 1 second delay before turning page
+      } else {
+        console.log('🎵 🏁 Playlist finished');
+        setIsPlaying(false);
+        setCurrentAudio(null);
+        setCurrentPlaylistIndex(0);
+        setAudioPlaylist([]);
+        
+        if (autoTurnEnabled) {
+          console.log('🎵 📖 Auto-turn disabled - reached end');
+          setAutoTurnEnabled(false);
+        }
+      }
+    };
+    
+    const handleError = (e) => {
+      console.error('🎵 Audio error:', e);
+      console.error('🎵 Audio error details:', audio.error);
+      setIsPlaying(false);
+      setCurrentAudio(null);
+    };
+    
+    const handleCanPlay = () => {
+      console.log('🎵 Audio can play - ready for playback');
+    };
+    
+    const handleLoadStart = () => {
+      console.log('🎵 Audio load started');
+    };
+    
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('error', handleError);
+    audio.addEventListener('canplay', handleCanPlay);
+    audio.addEventListener('loadstart', handleLoadStart);
+    
+    // Store reference
+    audioRef.current = audio;
+    
+    // Check browser audio capabilities
+    console.log('🎵 Browser audio capabilities:');
+    console.log('  - Audio constructor available:', typeof Audio !== 'undefined');
+    console.log('  - AudioContext available:', typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined');
+    
+    // Set source and load
+    audio.src = audioUrl;
+    audio.load();
+    
+    // Set playing state immediately to prevent multiple clicks
+    setIsPlaying(true);
+    setCurrentAudio(audioUrl);
+    
+    // Wait for audio to be ready, then play
+    const attemptPlay = () => {
+      console.log('🎵 Attempting to play audio...');
+      console.log('🎵 Audio ready state:', audio.readyState);
+      console.log('🎵 Audio network state:', audio.networkState);
+      console.log('🎵 Audio src:', audio.src);
+      console.log('🎵 Audio volume before play:', audio.volume);
+      console.log('🎵 Audio muted before play:', audio.muted);
+      
+      audio.play()
+        .then(() => {
+          console.log('🎵 ✅ Audio play() promise resolved! Volume:', audio.volume);
+          console.log('🎵 Audio element properties after play():');
+          console.log('  - paused:', audio.paused);
+          console.log('  - ended:', audio.ended);
+          console.log('  - currentTime:', audio.currentTime);
+          console.log('  - duration:', audio.duration);
+          console.log('  - volume:', audio.volume);
+          console.log('  - muted:', audio.muted);
+          console.log('  - readyState:', audio.readyState);
+          
+          // Multiple verification checks
+          const verifyPlayback = (attempt) => {
+            setTimeout(() => {
+              if (audio && audioRef.current === audio) {
+                console.log(`🎵 Verification attempt ${attempt}:`);
+                console.log('  - currentTime:', audio.currentTime);
+                console.log('  - paused:', audio.paused);
+                console.log('  - ended:', audio.ended);
+                console.log('  - volume:', audio.volume);
+                
+                if (audio.currentTime > 0 && !audio.paused) {
+                  console.log('🎵 ✅ Audio is definitely playing!');
+                  // Text highlighting temporarily disabled
+                  // if (attempt === 1) { // Only start on first successful verification
+                  //   startTextHighlighting(pageNumber, audio.duration);
+                  // }
+                } else if (attempt < 3) {
+                  console.log(`🎵 ⚠️ Audio not progressing, attempt ${attempt + 1}...`);
+                  verifyPlayback(attempt + 1);
+                } else {
+                  console.log('🎵 ❌ Audio failed to start after multiple attempts');
+                  // Try one more manual restart
+                  if (!audio.paused) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    audio.play().catch(e => console.log('🎵 Final restart failed:', e));
+                  }
+                }
+              }
+            }, attempt * 500);
+          };
+          
+          verifyPlayback(1);
+        })
+        .catch(error => {
+          console.error('🎵 ❌ Audio play failed:', error);
+          setIsPlaying(false);
+          setCurrentAudio(null);
+          
+          // Provide specific error feedback
+          if (error.name === 'NotAllowedError') {
+            console.log('🎵 Browser blocked autoplay. User interaction required.');
+          } else if (error.name === 'NotSupportedError') {
+            console.log('🎵 Audio format not supported by browser.');
+          } else {
+            console.log('🎵 Unknown audio error:', error.message);
+          }
+        });
+    };
+    
+    // Try to play immediately if ready, otherwise wait for canplay event
+    if (audio.readyState >= 3) { // HAVE_FUTURE_DATA
+      attemptPlay();
+    } else {
+      audio.addEventListener('canplay', attemptPlay, { once: true });
+    }
+  }, [isMuted, volume, currentPage, testAudioUrl]);
+
+  const pauseAudio = useCallback(() => {
+    if (audioRef.current) {
+      console.log('🎵 Pausing audio at time:', audioRef.current.currentTime);
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, []);
+
+  const toggleAudio = useCallback(() => {
+    console.log('🎵 🔘 PLAY BUTTON CLICKED! Current state - isPlaying:', isPlaying);
+    
+    if (isPlaying) {
+      console.log('🎵 Pausing audio...');
+      pauseAudio();
+    } else {
+      console.log('🎵 Starting sequential audio playback...');
+      
+      // Get the audio playlist for current spread
+      const playlist = getAudioPlaylist();
+      
+      console.log('🎵 🔍 Debug - Current page:', currentPage);
+      console.log('🎵 🔍 Debug - Audio files:', audioFiles);
+      console.log('🎵 🔍 Debug - Generated playlist:', playlist);
+      
+      if (playlist.length > 0) {
+        console.log(`🎵 📋 Starting playlist with ${playlist.length} audio files`);
+        setAudioPlaylist(playlist);
+        setCurrentPlaylistIndex(0);
+        
+        const firstAudio = playlist[0];
+        console.log(`🎵 🎯 Playing first audio: ${firstAudio.title} (1/${playlist.length})`);
+        playAudio(firstAudio.url, firstAudio.pageNumber);
+      } else {
+        console.log(`🎵 ❌ No audio available for current spread`);
+        console.log('🎵 Available audio files:', Object.keys(audioFiles));
+      }
+    }
+  }, [isPlaying, pauseAudio, playAudio, getAudioPlaylist]);
+
+  const toggleMute = useCallback(() => {
+    const newMutedState = !isMuted;
+    setIsMuted(newMutedState);
+    
+    console.log(`🎵 🔇 Toggling mute: ${isMuted} → ${newMutedState}`);
+    
+    if (audioRef.current) {
+      const newVolume = newMutedState ? 0 : volume;
+      audioRef.current.volume = newVolume;
+      console.log(`🎵 Audio volume changed to: ${newVolume}`);
+      console.log(`🎵 Audio muted property: ${audioRef.current.muted}`);
+      
+      // Also set the muted property for better browser compatibility
+      audioRef.current.muted = newMutedState;
+    }
+  }, [isMuted, volume]);
+
+  const handleVolumeChange = useCallback((newVolume) => {
+    console.log(`🎵 🔊 Volume slider changed to: ${newVolume}`);
+    setVolume(newVolume);
+    
+    if (audioRef.current) {
+      if (!isMuted) {
+        audioRef.current.volume = newVolume;
+        console.log(`🎵 Audio element volume updated to: ${newVolume}`);
+      }
+      // If volume is changed while muted, unmute automatically
+      if (isMuted && newVolume > 0) {
+        setIsMuted(false);
+        audioRef.current.muted = false;
+        audioRef.current.volume = newVolume;
+        console.log(`🎵 Auto-unmuted due to volume change`);
+      }
+    }
+  }, [isMuted]);
 
   // Load jQuery and Turn.js from the working files (book-effect style)
   useEffect(() => {
@@ -521,6 +1142,92 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     fetchBookData();
   }, [fetchBookData]);
 
+  // Extract audio files when book data is loaded
+  useEffect(() => {
+    if (book && pages.length > 0) {
+      extractAudioFiles();
+    }
+  }, [book, pages, extractAudioFiles]);
+
+  // Track previous page to detect actual page changes
+  const prevPageRef = useRef(currentPage);
+  
+  // Handle page changes for audio with optional auto-play
+  useEffect(() => {
+    // Only act on actual page changes
+    if (prevPageRef.current !== currentPage) {
+      console.log(`🎵 📄 Page changed from ${prevPageRef.current} to ${currentPage}`);
+      
+      // Stop current audio when page changes (unless auto-turn is active)
+      if (audioRef.current && isPlaying && !autoTurnEnabled) {
+        console.log('🎵 Stopping audio due to page change');
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+      
+      // Reset playlist when page changes (unless auto-turn is active)
+      if (audioPlaylist.length > 0 && !autoTurnEnabled) {
+        console.log('🎵 📄 Resetting audio playlist due to page change');
+        setAudioPlaylist([]);
+        setCurrentPlaylistIndex(0);
+      }
+      
+      // Update previous page reference
+      prevPageRef.current = currentPage;
+      
+      // Auto-play audio if enabled (works for both manual navigation and auto-turn)
+      if (autoPlayEnabled) {
+        console.log('🎵 🚀 Auto-play enabled, starting audio for new page');
+        setTimeout(() => {
+          const pagesToTry = [currentPage];
+          if (currentPage % 2 === 0) {
+            pagesToTry.push(currentPage + 1);
+          } else {
+            pagesToTry.unshift(currentPage - 1);
+          }
+          
+          const playlist = [];
+          for (const pageNum of pagesToTry) {
+            if (pageNum > 0 && pageNum <= totalPages) {
+              const url = getAudioUrl(pageNum);
+              if (url && audioFiles[pageNum]) {
+                playlist.push({
+                  pageNumber: pageNum,
+                  url: url,
+                  title: `Page ${pageNum}`
+                });
+              }
+            }
+          }
+          
+          if (playlist.length > 0) {
+            console.log(`🎵 🚀 Auto-starting playlist with ${playlist.length} audio files`);
+            setAudioPlaylist(playlist);
+            setCurrentPlaylistIndex(0);
+            playAudio(playlist[0].url, playlist[0].pageNumber);
+          }
+        }, 500); // Small delay to ensure page is fully loaded
+      }
+    }
+    
+    // Log what audio is available
+    const pagesToTry = [currentPage];
+    if (currentPage % 2 === 0) {
+      pagesToTry.push(currentPage + 1);
+    } else {
+      pagesToTry.unshift(currentPage - 1);
+    }
+    
+    // Find available audio
+    for (const pageNum of pagesToTry) {
+      if (pageNum > 0 && pageNum <= totalPages && audioFiles[pageNum]) {
+        const status = autoPlayEnabled ? "(auto-playing)" : "(click play button to hear)";
+        console.log(`🎵 Audio available for page ${pageNum} ${status}`);
+        break;
+      }
+    }
+  }, [currentPage, totalPages, audioFiles, autoPlayEnabled, autoTurnEnabled, getAudioUrl]);
+
   // Initialize Turn.js when ready
   useEffect(() => {
     if (turnJsLoaded && images.length > 0 && flipBookRef.current) {
@@ -566,20 +1273,56 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   }, [turnJsLoaded, currentPage]);
 
   const goToPage = useCallback((pageNumber) => {
+    console.log(`🔄 goToPage called with: ${pageNumber}, turnJsLoaded: ${turnJsLoaded}, totalPages: ${totalPages}`);
+    
+    if (pageNumber < 1 || pageNumber > totalPages) {
+      console.log(`🔄 Invalid page number: ${pageNumber} (valid range: 1-${totalPages})`);
+      return;
+    }
+
+    let turnJsWorked = false;
+    
     if (turnJsLoaded && flipBookRef.current && window.jQuery) {
       try {
         const $flipbook = window.jQuery(flipBookRef.current);
-        if ($flipbook.data('turn') && pageNumber >= 1 && pageNumber <= totalPages) {
+        if ($flipbook.data('turn')) {
+          console.log(`🔄 Using Turn.js to go to page ${pageNumber}`);
           $flipbook.turn('page', pageNumber);
+          turnJsWorked = true;
+        } else {
+          console.log('🔄 Turn.js not initialized on flipbook');
         }
       } catch (error) {
-        console.log('Turn.js goToPage error:', error);
-        if (pageNumber >= 1 && pageNumber <= totalPages) {
-          setCurrentPage(pageNumber);
-        }
+        console.log('🔄 Turn.js goToPage error:', error);
       }
-    } else if (pageNumber >= 1 && pageNumber <= totalPages) {
+    } else {
+      console.log('🔄 Turn.js not available, using fallback');
+    }
+    
+    // Always use fallback to ensure page changes
+    if (!turnJsWorked) {
+      console.log(`🔄 Using fallback setCurrentPage(${pageNumber})`);
       setCurrentPage(pageNumber);
+      
+      // Force a visual update by triggering a re-render
+      setTimeout(() => {
+        console.log(`🔄 Forced page update to ${pageNumber}`);
+        // Force a complete re-render by updating state
+        setCurrentPage(pageNumber);
+        
+        // Also try to trigger Turn.js if it becomes available
+        if (flipBookRef.current && window.jQuery) {
+          try {
+            const $flipbook = window.jQuery(flipBookRef.current);
+            if ($flipbook.data('turn')) {
+              console.log(`🔄 Retry: Turn.js now available, going to page ${pageNumber}`);
+              $flipbook.turn('page', pageNumber);
+            }
+          } catch (error) {
+            console.log('🔄 Retry Turn.js failed:', error);
+          }
+        }
+      }, 100);
     }
   }, [turnJsLoaded, totalPages]);
 
@@ -690,6 +1433,16 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     return () => clearInterval(interval);
   }, [startTime]);
 
+  // Cleanup audio on unmount
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
   if (loading) {
     return (
       <div className="reader-loading">
@@ -757,6 +1510,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                   Page {currentPage} of {totalPages}
                 </div>
               </div>
+
+
 
               <div className="enhanced-nav-right">
                 <button onClick={() => setShowNavigation(!showNavigation)} className="nav-btn" title="Hide UI">
@@ -846,6 +1601,16 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
                   <div ref={flipBookRef} className="flipbook">
                     {/* Turn.js will populate this with pages */}
                   </div>
+
+                  {/* Text Highlighting Temporarily Disabled */}
+                  {/* 
+                  {textHighlightEnabled && isPlaying && pageTextData[currentPage] && (
+                    <div className="text-highlight-overlay">
+                      Text highlighting overlay content...
+                    </div>
+                  )}
+                  */}
+
                   {/* External wide click zones overlayed ABOVE flipbook to avoid interfering with internal DOM */}
                   <div
                     onClick={(e) => { 
@@ -948,8 +1713,143 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
             )}
           </div>
 
-          {/* Bottom Progress Bar */}
+          {/* Bottom Progress Bar with Audio Controls */}
           <div className={`enhanced-progress-bar ${showNavigation ? 'visible' : 'hidden'}`}>
+            {/* Audio Controls Section */}
+            <div className="kid-friendly-audio-controls">
+              {(() => {
+                // Check for audio on current page or adjacent page in spread
+                const pagesToTry = [currentPage];
+                if (currentPage % 2 === 0) {
+                  pagesToTry.push(currentPage + 1);
+                } else {
+                  pagesToTry.unshift(currentPage - 1);
+                }
+                
+                let hasAudio = false;
+                let audioPage = null;
+                
+                for (const pageNum of pagesToTry) {
+                  if (pageNum > 0 && pageNum <= totalPages && audioFiles[pageNum]) {
+                    hasAudio = true;
+                    audioPage = pageNum;
+                    break;
+                  }
+                }
+                
+                return hasAudio ? (
+                  <div className="audio-control-group">
+                    {/* Main Play/Pause Button */}
+                    <button 
+                      onClick={toggleAudio} 
+                      className={`kid-audio-btn main-play-btn ${isPlaying ? 'playing' : ''}`}
+                      title={isPlaying ? "Pause Story" : "Play Story"}
+                    >
+                      {isPlaying ? (
+                        <span className="btn-content">
+                          <Pause size={24} />
+                          <span className="btn-text">Pause</span>
+                        </span>
+                      ) : (
+                        <span className="btn-content">
+                          <Play size={24} />
+                          <span className="btn-text">Play Story</span>
+                        </span>
+                      )}
+                    </button>
+
+                    {/* Auto-Play Toggle */}
+                    <button 
+                      onClick={() => setAutoPlayEnabled(!autoPlayEnabled)}
+                      className={`kid-audio-btn auto-btn ${autoPlayEnabled ? 'active' : ''}`}
+                      title={autoPlayEnabled ? "Turn off Auto-Play" : "Turn on Auto-Play"}
+                    >
+                      <span className="btn-content">
+                        <span className="emoji">🚀</span>
+                        <span className="btn-text">Auto-Play</span>
+                      </span>
+                    </button>
+
+                    {/* Auto-Turn Toggle */}
+                    <button 
+                      onClick={() => {
+                        setAutoTurnEnabled(!autoTurnEnabled);
+                        if (!autoTurnEnabled) {
+                          setAutoPlayEnabled(true);
+                        }
+                      }}
+                      className={`kid-audio-btn auto-turn-btn ${autoTurnEnabled ? 'active' : ''}`}
+                      title={autoTurnEnabled ? "Turn off Auto-Turn Pages" : "Turn on Auto-Turn Pages"}
+                    >
+                      <span className="btn-content">
+                        <span className="emoji">📖</span>
+                        <span className="btn-text">Auto-Turn</span>
+                      </span>
+                    </button>
+
+                    {/* Text Highlighting Toggle */}
+                    <button 
+                      onClick={() => setTextHighlightEnabled(!textHighlightEnabled)}
+                      className={`kid-audio-btn highlight-btn ${textHighlightEnabled ? 'active' : ''}`}
+                      title={textHighlightEnabled ? "Turn off Word Highlighting" : "Turn on Word Highlighting"}
+                    >
+                      <span className="btn-content">
+                        <span className="emoji">✨</span>
+                        <span className="btn-text">Highlight</span>
+                      </span>
+                    </button>
+
+                    {/* Volume Control */}
+                    <div className="volume-control-group">
+                      <button 
+                        onClick={toggleMute} 
+                        className={`kid-audio-btn volume-btn ${isMuted ? 'muted' : ''}`}
+                        title={isMuted ? "Unmute" : "Mute"}
+                      >
+                        <span className="btn-content">
+                          {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                          <span className="btn-text">{isMuted ? 'Muted' : 'Volume'}</span>
+                        </span>
+                      </button>
+                      <input
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.1"
+                        value={volume}
+                        onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
+                        className="kid-volume-slider"
+                        title="Volume"
+                      />
+                    </div>
+
+                    {/* Audio Progress */}
+                    {isPlaying && (
+                      <div className="audio-progress-display">
+                        <div className="audio-wave">🎵</div>
+                        <div className="audio-info">
+                          {audioPlaylist.length > 1 ? (
+                            <span>Playing {currentPlaylistIndex + 1} of {audioPlaylist.length}</span>
+                          ) : (
+                            <span>Playing Page {audioPage}</span>
+                          )}
+                        </div>
+                        <div className="audio-time-display">
+                          {Math.floor(audioProgress)}s / {Math.floor(audioDuration)}s
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="no-audio-message">
+                    <span className="emoji">📚</span>
+                    <span>No audio for this page</span>
+                  </div>
+                );
+              })()}
+            </div>
+
+            {/* Reading Progress */}
             <div className="progress-track">
               <div 
                 className="progress-fill"
@@ -960,6 +1860,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
             </div>
             <div className="progress-info">
               <span>{readingTime}m read</span>
+              <span>Page {currentPage} of {totalPages}</span>
               <span>{Math.round((currentPage / totalPages) * 100)}% complete</span>
             </div>
           </div>
