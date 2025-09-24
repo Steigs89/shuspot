@@ -99,7 +99,7 @@ const ManifestGenerator = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(generatedManifest)
+        body: JSON.stringify({ manifest: generatedManifest })
       });
 
       const data = await response.json();
