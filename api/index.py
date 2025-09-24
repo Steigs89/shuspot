@@ -445,7 +445,22 @@ async def generate_manifest(request: Request):
         
         folder = Path(folder_path)
         if not folder.exists():
-            raise HTTPException(status_code=400, detail=f"Folder not found: {folder_path}")
+            # Check if it looks like a local path being accessed from cloud deployment
+            if folder_path.startswith(("/Users/", "/home/", "C:\\", "D:\\")):
+                raise HTTPException(
+                    status_code=400, 
+                    detail=f"Local folder path '{folder_path}' cannot be accessed from cloud deployment. Please use a path relative to the server or upload your files first. Try checking if your files are in 'uploads/' or another server directory."
+                )
+            else:
+                # Suggest alternative paths if common patterns don't exist
+                suggestions = []
+                if Path("uploads").exists():
+                    suggestions.append("uploads/")
+                if Path("books").exists():
+                    suggestions.append("books/")
+                
+                suggestion_text = f" Suggestions: {', '.join(suggestions)}" if suggestions else ""
+                raise HTTPException(status_code=400, detail=f"Folder not found: {folder_path}.{suggestion_text}")
         
         books = []
         

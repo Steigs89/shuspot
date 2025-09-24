@@ -160,11 +160,11 @@ const ManifestGenerator = () => {
             type="text"
             value={folderPath}
             onChange={(e) => setFolderPath(e.target.value)}
-            placeholder="e.g., /path/to/book/folder or C:\\Books\\MyBook"
+            placeholder="e.g., uploads/books or relative/path/to/books"
             className="form-input"
           />
           <small className="form-help">
-            Path to the folder containing book images and audio files
+            ⚠️ <strong>Note:</strong> This tool can only access server-side paths. Local computer paths (like /Users/... or C:\...) won't work in the deployed version. Upload your files first or use relative server paths.
           </small>
         </div>
 
