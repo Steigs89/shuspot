@@ -469,7 +469,13 @@ async def generate_manifest(request: Request):
             pages = list(folder.glob("**/resized/crop-*.png"))
             if not pages:
                 pages = list(folder.glob("**/*.png"))
-            pages = sorted(pages, key=lambda x: x.name)
+            
+            # Sort pages by numeric order (crop-1, crop-2, crop-10, etc.)
+            import re
+            def extract_number(filename):
+                match = re.search(r'crop-(\d+)', filename.name)
+                return int(match.group(1)) if match else 0
+            pages = sorted(pages, key=extract_number)
             
             # Look for audio files
             audio_files = list(folder.glob("**/*.mp3")) + list(folder.glob("**/*.wav")) + list(folder.glob("**/*.m4a"))
@@ -497,7 +503,13 @@ async def generate_manifest(request: Request):
                 pages = list(subfolder.glob("**/resized/crop-*.png"))
                 if not pages:
                     pages = list(subfolder.glob("**/*.png"))
-                pages = sorted(pages, key=lambda x: x.name)
+                
+                # Sort pages by numeric order (crop-1, crop-2, crop-10, etc.)
+                import re
+                def extract_number(filename):
+                    match = re.search(r'crop-(\d+)', filename.name)
+                    return int(match.group(1)) if match else 0
+                pages = sorted(pages, key=extract_number)
                 
                 # Look for audio files
                 audio_files = list(subfolder.glob("**/*.mp3")) + list(subfolder.glob("**/*.wav")) + list(subfolder.glob("**/*.m4a"))
