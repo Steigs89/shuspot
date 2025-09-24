@@ -507,35 +507,110 @@ async def generate_manifest(request: Request):
                 book_title = book_metadata.get('title') or subfolder.name
                 book_description = book_metadata.get('description', '')
                 book_author = book_metadata.get('author', 'Unknown')
+                book_genre = book_metadata.get('genre', 'Unknown')
+                book_reading_level = book_metadata.get('reading_level', 'Elementary')
                 
                 if desc_file.exists():
                     try:
                         desc_content = desc_file.read_text(encoding="utf-8", errors="ignore")
+                        lines = desc_content.splitlines()
                         
-                        # Extract metadata from description.txt
-                        for line in desc_content.splitlines():
+                        # Parse structured format
+                        genres = []
+                        for i, line in enumerate(lines):
                             line = line.strip()
-                            if line.lower().startswith("title -"):
-                                book_title = line.split("-", 1)[1].strip()
+                            
+                            # Extract title (usually line 2, after URL)
+                            if i == 1 and line and not line.startswith("http"):
+                                book_title = line
+                            
+                            # Extract author
                             elif line.lower().startswith("by:"):
                                 book_author = line.replace("By:", "").replace("by:", "").strip()
+                            
+                            # Extract genre categories (all caps words, usually middle section)
+                            elif line.isupper() and len(line) > 2 and line.isalpha():
+                                genres.append(line)
+                            
+                            # Extract reading level (GR Level line)
+                            elif "GR Level" in lines and i < len(lines) - 1:
+                                next_line = lines[i + 1].strip()
+                                if next_line and len(next_line) <= 2:  # Single letter or short level
+                                    book_reading_level = next_line
+                            
+                            # Extract age range for additional context
+                            elif "Age Range" in lines and i < len(lines) - 1:
+                                age_range = lines[i + 1].strip()
+                                # Convert age range to reading level if no GR level found
+                                if book_reading_level == book_metadata.get('reading_level', 'Elementary'):
+                                    if "5-7" in age_range or "4-6" in age_range:
+                                        book_reading_level = "Elementary"
+                                    elif "8-10" in age_range or "7-9" in age_range:
+                                        book_reading_level = "Intermediate"
+                                    elif "11-13" in age_range or "10-12" in age_range:
+                                        book_reading_level = "Middle Grade"
                         
+                        # Set genre from parsed categories
+                        if genres:
+                            book_genre = ", ".join(genres[:3])  # Take first 3 categories
+                        
+                        # Use full description if not overridden by user
                         if not book_metadata.get('description'):
                             book_description = desc_content
+                            
                     except Exception as e:
                         # Use basic logging since logging module might not be configured
                         print(f"Could not read description.txt in {subfolder}: {e}")
                 
+                # Find cover image
+                cover_image = None
+                cover_candidates = ["cover.jpg", "cover.png", "cover.jpeg"]
+                for candidate in cover_candidates:
+                    cover_path = subfolder / candidate
+                    if cover_path.exists():
+                        # Convert absolute path to web-accessible URL
+                        # /Users/.../CROP-ShuSpot/Fractions/Half or Whole?/cover.jpg
+                        # becomes /CROP-ShuSpot/Fractions/Half or Whole?/cover.jpg
+                        relative_path = str(cover_path)
+                        if "CROP-ShuSpot" in relative_path:
+                            web_path = "/" + relative_path.split("CROP-ShuSpot", 1)[1]
+                            web_path = "/CROP-ShuSpot" + web_path
+                            cover_image = web_path
+                        else:
+                            cover_image = str(cover_path)
+                        break
+                
+                # Convert page paths to web-accessible URLs
+                web_pages = []
+                for i, page_path in enumerate(pages):
+                    web_url = str(page_path)
+                    if "CROP-ShuSpot" in web_url:
+                        web_path = "/" + web_url.split("CROP-ShuSpot", 1)[1]
+                        web_path = "/CROP-ShuSpot" + web_path
+                        web_url = web_path
+                    web_pages.append({"page_number": i+1, "file_path": web_url})
+                
+                # Convert audio paths to web-accessible URLs  
+                web_audio = []
+                for audio_path in audio_files:
+                    web_url = str(audio_path)
+                    if "CROP-ShuSpot" in web_url:
+                        web_path = "/" + web_url.split("CROP-ShuSpot", 1)[1]
+                        web_path = "/CROP-ShuSpot" + web_path
+                        web_url = web_path
+                    web_audio.append({"file_path": web_url, "file_name": audio_path.name})
+                
                 book = {
                     "title": book_title,
                     "author": book_author,
-                    "genre": book_metadata.get('genre', 'Unknown'),
-                    "reading_level": book_metadata.get('reading_level', 'Elementary'),
+                    "genre": book_genre,
+                    "reading_level": book_reading_level,
                     "book_type": book_metadata.get('book_type', 'Read to Me'),
                     "description": book_description,
                     "folder_path": str(subfolder),
-                    "page_sequence": [{"page_number": i+1, "file_path": str(p)} for i, p in enumerate(pages)],
-                    "audio_files": [{"file_path": str(a), "file_name": a.name} for a in audio_files],
+                    "cover_image": cover_image,
+                    "page_sequence": web_pages,
+                    "audio_files": web_audio,
                     "total_pages": len(pages)
                 }
                 books.append(book)

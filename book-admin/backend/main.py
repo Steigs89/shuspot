@@ -41,7 +41,13 @@ app = FastAPI(title="Book Admin API", version="1.0.0")
 # Enable CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002"],  # React dev servers
+    allow_origins=[
+        "http://localhost:3000", 
+        "http://localhost:3001", 
+        "http://localhost:3002",  # React dev servers
+        "https://stately-liger-845004.netlify.app",  # Deployed frontend
+        "*",  # Allow all origins for local tunnel access
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -2661,6 +2667,67 @@ async def generate_manifest(request: dict = Body(...)):
 @app.post("/api/generate-manifest")
 async def api_generate_manifest(request: dict = Body(...)):
     return await generate_manifest(request)
+
+@app.post("/shuspot-ingestion/ingest-manifest")
+async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends(get_db)):
+    """Import books from generated manifest to database"""
+    try:
+        manifest = manifest_data.get('manifest', {})
+        books_data = manifest.get('books', [])
+        
+        if not books_data:
+            raise HTTPException(status_code=400, detail="No books found in manifest")
+        
+        imported_count = 0
+        
+        for book_data in books_data:
+            # Prepare ShuSpot-specific data for notes field
+            shuspot_data = {
+                'page_sequence': book_data.get('page_sequence', []),
+                'audio_files': book_data.get('audio_files', []),
+                'folder_path': book_data.get('folder_path', ''),
+                'cover_image_path': book_data.get('cover_image', ''),
+                'total_pages': book_data.get('total_pages', 0)
+            }
+            
+            # Create book record using existing model structure
+            book = Book(
+                title=book_data.get('title', 'Unknown Title'),
+                author=book_data.get('author', 'Unknown Author'),
+                genre=book_data.get('genre', 'Unknown'),
+                reading_level=book_data.get('reading_level', 'Elementary'),
+                book_type=book_data.get('book_type', 'Read to Me'),
+                description=book_data.get('description', ''),
+                cover_image_url=book_data.get('cover_image', ''),
+                file_path=book_data.get('folder_path', ''),
+                file_name=os.path.basename(book_data.get('folder_path', '')),
+                file_type='shuspot_folder',
+                uploaded_at=datetime.utcnow(),
+                notes=json.dumps(shuspot_data)
+            )
+            
+            db.add(book)
+            imported_count += 1
+        
+        db.commit()
+        
+        return {
+            "success": True,
+            "message": f"Successfully imported {imported_count} books from manifest",
+            "imported_count": imported_count
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        db.rollback()
+        logging.error(f"Manifest ingestion error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to ingest manifest: {str(e)}")
+
+# API mirror for ingest-manifest
+@app.post("/api/shuspot-ingestion/ingest-manifest")
+async def api_ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends(get_db)):
+    return await ingest_manifest(manifest_data, db)
 
 if __name__ == "__main__":
     import uvicorn
