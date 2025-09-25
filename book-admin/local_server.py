@@ -113,7 +113,7 @@ def generate_manifest():
                     rclone_manifest = json.load(f)
                 
                 # Convert rclone manifest back to book format for frontend display
-                books = self._convert_rclone_to_books(rclone_manifest)
+                books = convert_rclone_to_books(rclone_manifest)
                 book_count = len(books)
                 logger.info(f"📋 Manifest contains {len(rclone_manifest)} files from {book_count} books")
                 
@@ -345,7 +345,7 @@ def proxy_api(endpoint):
     # This is a placeholder for API proxying if needed
     return jsonify({'error': 'API endpoint not implemented locally'}), 501
 
-    def _convert_rclone_to_books(self, rclone_manifest):
+def convert_rclone_to_books(rclone_manifest):
         """Convert rclone file list back to book format for frontend display"""
         books = {}
         

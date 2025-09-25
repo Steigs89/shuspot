@@ -101,8 +101,10 @@ const ManifestGenerator = () => {
         // Upload to live server (production) - send rclone array directly
         // Use direct live server URL when on Netlify, proxy when local
         const isNetlify = window.location.hostname.includes('netlify') || window.location.hostname.includes('shuspot');
-        apiUrl = isNetlify ? 'https://shuspot.com' : '/api';
-        endpoint = `${apiUrl}/api/shuspot-ingestion/ingest-manifest`;
+        
+        // Always use /api - Netlify redirects handle the proxy to live server
+        apiUrl = '/api';
+        endpoint = `${apiUrl}/shuspot-ingestion/ingest-manifest`;
         uploadData = generatedManifest.rclone_data || generatedManifest;
       } else {
         // Upload to local server - send book format
