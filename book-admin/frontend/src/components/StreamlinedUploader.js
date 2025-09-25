@@ -10,8 +10,7 @@ const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
 
 // Chunked Upload Class for Large Files
 class ChunkedUploader {
-  constructor(supabaseClient) {
-    this.supabase = supabaseClient;
+  constructor() {
     this.chunkSize = 50 * 1024 * 1024; // 50MB chunks
   }
 
@@ -22,30 +21,43 @@ class ChunkedUploader {
     console.log(`📦 Starting chunked upload: ${totalChunks} chunks of ${this.chunkSize / 1024 / 1024}MB each`);
 
     try {
-      // Upload each chunk to Supabase storage
+      // Upload each chunk to our backend API instead of directly to Supabase
       const chunks = [];
       for (let i = 0; i < totalChunks; i++) {
         const start = i * this.chunkSize;
         const end = Math.min(start + this.chunkSize, file.size);
         const chunk = file.slice(start, end);
         
-        const chunkName = `temp-chunks/${uploadId}/chunk-${i.toString().padStart(4, '0')}`;
+        const chunkName = `chunk-${i.toString().padStart(4, '0')}`;
         
         console.log(`📤 Uploading chunk ${i + 1}/${totalChunks} (${chunk.size} bytes)`);
         
-        const { data, error } = await this.supabase.storage
-          .from('books')
-          .upload(chunkName, chunk, { upsert: true });
-          
-        if (error) throw error;
+        // Create FormData for this chunk
+        const formData = new FormData();
+        formData.append('chunk', chunk);
+        formData.append('upload_id', uploadId);
+        formData.append('chunk_number', i.toString());
+        formData.append('total_chunks', totalChunks.toString());
+        formData.append('original_filename', file.name);
         
-        chunks.push(chunkName);
+        // Upload chunk to our backend API
+        const response = await fetch('/api/shuspot-ingestion/upload-chunk', {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Chunk ${i + 1} upload failed: ${response.statusText}`);
+        }
+        
+        const result = await response.json();
+        chunks.push(result.chunk_id || chunkName);
         onProgress({ chunk: i + 1, total: totalChunks, percent: ((i + 1) / totalChunks) * 90 });
       }
 
       // Notify API to reassemble and process the chunks
       onProgress({ chunk: totalChunks, total: totalChunks, percent: 95 });
-      console.log('🔧 Requesting server to reassemble chunks...');
+      console.log('🔧 Requesting server to reassemble and process chunks...');
       
       const response = await fetch('/api/shuspot-ingestion/process-chunked-upload', {
         method: 'POST',
@@ -264,7 +276,7 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       console.log('🚀 Starting chunked upload for:', zipFile.name, zipFile.size, zipFile.type);
       
       // Use chunked uploader for large files
-      const chunkedUploader = new ChunkedUploader(supabaseClient);
+      const chunkedUploader = new ChunkedUploader();
       
       // Set up progress tracking
       const onProgress = (progress) => {

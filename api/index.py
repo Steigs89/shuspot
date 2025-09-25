@@ -1245,6 +1245,45 @@ async def generate_manifest(request: Request):
 
 # ========================= Chunked Upload Processing =========================
 
+@router.post("/shuspot-ingestion/upload-chunk")
+async def upload_chunk(chunk: UploadFile = File(...), upload_id: str = Form(...), 
+                      chunk_number: str = Form(...), total_chunks: str = Form(...),
+                      original_filename: str = Form(...)):
+    """Upload a single chunk to temporary storage"""
+    import tempfile
+    import os
+    
+    try:
+        # Create temp directory for this upload if it doesn't exist
+        temp_dir = os.path.join(tempfile.gettempdir(), f"chunks_{upload_id}")
+        os.makedirs(temp_dir, exist_ok=True)
+        
+        # Save the chunk to temporary storage
+        chunk_filename = f"chunk_{chunk_number.zfill(4)}"
+        chunk_path = os.path.join(temp_dir, chunk_filename)
+        
+        print(f"💾 Saving chunk {int(chunk_number) + 1}/{total_chunks} to {chunk_path}")
+        
+        # Write chunk data to file
+        with open(chunk_path, "wb") as chunk_file:
+            content = await chunk.read()
+            chunk_file.write(content)
+        
+        print(f"✅ Chunk {int(chunk_number) + 1}/{total_chunks} saved ({len(content)} bytes)")
+        
+        return {
+            "success": True,
+            "chunk_id": chunk_filename,
+            "chunk_number": int(chunk_number),
+            "total_chunks": int(total_chunks),
+            "upload_id": upload_id,
+            "size": len(content)
+        }
+        
+    except Exception as e:
+        print(f"❌ Chunk upload error: {e}")
+        raise HTTPException(status_code=500, detail=f"Chunk upload failed: {str(e)}")
+
 @router.post("/shuspot-ingestion/process-chunked-upload")
 async def process_chunked_upload(request: Request):
     """Reassemble chunks uploaded to Supabase and process the complete ZIP file"""
@@ -1275,7 +1314,7 @@ async def process_chunked_upload(request: Request):
             try:
                 thread = threading.Thread(
                     target=_reassemble_and_process_chunks,
-                    args=(job_id, chunks, original_filename),
+                    args=(job_id, chunks, original_filename, upload_id),
                     daemon=True
                 )
                 thread.start()
@@ -1297,9 +1336,10 @@ async def process_chunked_upload(request: Request):
         print(f"❌ Chunked upload error: {e}")
         raise HTTPException(status_code=500, detail=f"Chunked upload processing failed: {str(e)}")
 
-def _reassemble_and_process_chunks(job_id: str, chunks: list, original_filename: str):
+def _reassemble_and_process_chunks(job_id: str, chunks: list, original_filename: str, upload_id: str = None):
     """Background function to reassemble chunks and process the complete ZIP"""
     temp_file_path = None
+    chunks_dir = None
     
     try:
         print(f"🔧 Job {job_id}: Starting chunk reassembly...")
@@ -1311,45 +1351,50 @@ def _reassemble_and_process_chunks(job_id: str, chunks: list, original_filename:
         temp_dir = tempfile.gettempdir()
         temp_file_path = os.path.join(temp_dir, f"{job_id}.zip")
         
-        # Initialize Supabase client
-        import supabase
-        from supabase import create_client, Client
+        # Extract upload_id from job_id if not provided
+        if not upload_id and job_id.startswith('chunked-'):
+            upload_id = job_id.replace('chunked-', '')
         
-        supabase_url = os.environ.get('SUPABASE_URL', 'https://xzwdtcczndgglqikmlwj.supabase.co')
-        supabase_key = os.environ.get('SUPABASE_SERVICE_KEY') or os.environ.get('SUPABASE_ANON_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6d2R0Y2N6bmRnZ2xxaWttbHdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyOTkyNzUsImV4cCI6MjA2ODg3NTI3NX0.05oCSZ1d3eJHr79B1UvCoQTIL-UBGAKdRBk4CUwe7wE')
+        # Local chunks directory
+        chunks_dir = os.path.join(temp_dir, f"chunks_{upload_id}")
         
-        client: Client = create_client(supabase_url, supabase_key)
+        print(f"📦 Job {job_id}: Reassembling {len(chunks)} chunks from {chunks_dir}...")
         
-        print(f"📦 Job {job_id}: Downloading and reassembling {len(chunks)} chunks...")
-        
-        # Reassemble chunks into single file
+        # Reassemble chunks into single file from local storage
         with open(temp_file_path, 'wb') as output_file:
-            for i, chunk_name in enumerate(sorted(chunks)):
+            # Sort chunks by chunk number (chunk_0000, chunk_0001, etc.)
+            sorted_chunks = sorted(chunks, key=lambda x: int(x.split('_')[1]) if '_' in x else 0)
+            
+            for i, chunk_name in enumerate(sorted_chunks):
                 try:
-                    print(f"⬇️ Job {job_id}: Downloading chunk {i + 1}/{len(chunks)}")
+                    chunk_path = os.path.join(chunks_dir, chunk_name)
+                    print(f"📖 Job {job_id}: Reading chunk {i + 1}/{len(chunks)} from {chunk_path}")
                     
-                    # Download chunk from Supabase
-                    result = client.storage.from_('books').download(chunk_name)
-                    
-                    if hasattr(result, 'data') and result.data:
-                        output_file.write(result.data)
-                    else:
-                        print(f"❌ Job {job_id}: Failed to download chunk {chunk_name}")
+                    if not os.path.exists(chunk_path):
+                        print(f"❌ Job {job_id}: Chunk file not found: {chunk_path}")
                         return
+                    
+                    # Read chunk from local storage
+                    with open(chunk_path, 'rb') as chunk_file:
+                        chunk_data = chunk_file.read()
+                        output_file.write(chunk_data)
+                        print(f"✅ Job {job_id}: Wrote chunk {i + 1} ({len(chunk_data)} bytes)")
                         
                 except Exception as e:
-                    print(f"❌ Job {job_id}: Error downloading chunk {chunk_name}: {e}")
+                    print(f"❌ Job {job_id}: Error reading chunk {chunk_name}: {e}")
                     return
         
         print(f"✅ Job {job_id}: Reassembly complete, file size: {os.path.getsize(temp_file_path)} bytes")
         
-        # Clean up chunks from Supabase
+        # Clean up local chunks
         print(f"🗑️ Job {job_id}: Cleaning up temporary chunks...")
-        for chunk_name in chunks:
-            try:
-                client.storage.from_('books').remove([chunk_name])
-            except Exception as e:
-                print(f"⚠️ Job {job_id}: Could not clean up chunk {chunk_name}: {e}")
+        try:
+            import shutil
+            if chunks_dir and os.path.exists(chunks_dir):
+                shutil.rmtree(chunks_dir)
+                print(f"✅ Job {job_id}: Chunks directory cleaned up")
+        except Exception as e:
+            print(f"⚠️ Job {job_id}: Could not clean up chunks directory: {e}")
         
         # Process the reassembled ZIP file
         print(f"⚡ Job {job_id}: Starting ZIP processing...")
@@ -1359,6 +1404,14 @@ def _reassemble_and_process_chunks(job_id: str, chunks: list, original_filename:
         print(f"💥 Job {job_id}: Critical error during chunk reassembly: {e}")
         import traceback
         traceback.print_exc()
+    finally:
+        # Clean up temp file
+        if temp_file_path and os.path.exists(temp_file_path):
+            try:
+                os.remove(temp_file_path)
+                print(f"🗑️ Job {job_id}: Temp ZIP file cleaned up")
+            except Exception as e:
+                print(f"⚠️ Job {job_id}: Could not clean up temp file: {e}")
         
         # Clean up temp file on error
         if temp_file_path and os.path.exists(temp_file_path):
