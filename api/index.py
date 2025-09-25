@@ -471,6 +471,13 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
             "estimated_time": "2-5 minutes"
         }
 
+    # Quick validation before processing
+    if not zip_file.filename:
+        raise HTTPException(status_code=400, detail="No file provided")
+
+    if not zip_file.filename.lower().endswith('.zip'):
+        raise HTTPException(status_code=400, detail="File must be a ZIP file")
+
     try:
         # Step 1: Extract ZIP to temporary directory
         print("📂 Step 1: Extracting ZIP...")
