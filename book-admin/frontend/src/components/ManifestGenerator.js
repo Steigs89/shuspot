@@ -105,7 +105,9 @@ const ManifestGenerator = () => {
         // Always use /api - Netlify redirects handle the proxy to live server
         apiUrl = '/api';
         endpoint = `${apiUrl}/shuspot-ingestion/ingest-manifest`;
-        uploadData = generatedManifest.rclone_data || generatedManifest;
+        // Live server expects {books: [...]} format
+        const rcloneData = generatedManifest.rclone_data || generatedManifest;
+        uploadData = { books: rcloneData };
       } else {
         // Upload to local server - send book format
         apiUrl = useLocalTunnel ? localTunnelUrl : 'http://localhost:8000';
