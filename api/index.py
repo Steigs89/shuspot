@@ -461,8 +461,11 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     import threading
     import time
 
-    print("🚀 Upload ZIP endpoint called")
+    print("🚀 Upload ZIP endpoint called - START")
     print(f"📦 ZIP file: {zip_file.filename}, size: {getattr(zip_file, 'size', 'unknown')}")
+
+    # Log that we got here
+    print("✅ Reached validation section")
 
     # Quick validation before processing
     if not zip_file.filename:
