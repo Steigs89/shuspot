@@ -75,12 +75,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       const baseUrl = 'https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books';
       
       const patterns = [
-        // Pattern 1: Direct Supabase URL (if book has cover_image_url, extract pattern)
-        ...(book.cover_image_url ? [
-          book.cover_image_url.replace(/crop-\d+\.png$/, `crop-${pageNum}.png`)
-        ] : []),
-        
-        // Pattern 2: Common rclone upload patterns (most likely for existing books)
+        // Pattern 1: Common rclone upload patterns (most likely for existing books)
         `${baseUrl}/Baking/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
         `${baseUrl}/Our%20Solar%20System/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
         `${baseUrl}/Science/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
@@ -112,7 +107,12 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         `${baseUrl}/${encodeURIComponent(bookTitle)}/resized/${pageNum}.png`,
         
         // Pattern 9: No resized folder
-        `${baseUrl}/${encodeURIComponent(bookTitle)}/crop-${pageNum}.png`
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/crop-${pageNum}.png`,
+        
+        // Pattern 10: Cover image URL pattern (as fallback only)
+        ...(book.cover_image_url ? [
+          book.cover_image_url.replace(/crop-\d+\.png$/, `crop-${pageNum}.png`)
+        ] : [])
       ];
       
       // Remove duplicates and filter out undefined
