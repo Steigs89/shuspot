@@ -446,6 +446,10 @@ def export_csv():
 
 # ========================= Supabase ZIP Upload Endpoint =========================
 
+@router.get("/test-upload-endpoint")
+def test_upload_endpoint():
+    return {"message": "Upload endpoint is reachable", "timestamp": datetime.now().isoformat()}
+
 @router.post("/shuspot-ingestion/upload-zip-to-supabase")
 async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     """Upload ZIP, extract, upload all files to Supabase, and create database entries with Supabase URLs."""
