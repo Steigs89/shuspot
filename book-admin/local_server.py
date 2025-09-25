@@ -112,14 +112,24 @@ def generate_manifest():
                 with open(manifest_file, 'r') as f:
                     rclone_manifest = json.load(f)
                 
-                # Convert rclone manifest to book format for frontend display
-                book_count = len(set(item['Path'].split('/')[2] for item in rclone_manifest if len(item['Path'].split('/')) > 2))
-                logger.info(f"📋 Manifest contains {len(rclone_manifest)} files from ~{book_count} books")
+                # Convert rclone manifest back to book format for frontend display
+                books = self._convert_rclone_to_books(rclone_manifest)
+                book_count = len(books)
+                logger.info(f"📋 Manifest contains {len(rclone_manifest)} files from {book_count} books")
                 
-                # Return rclone format (what live server expects)
+                # Return book format for frontend display, but store rclone format for upload
                 return jsonify({
                     'success': True,
-                    'manifest': rclone_manifest,  # This is now rclone-compatible
+                    'manifest': {
+                        'books': books,
+                        'rclone_data': rclone_manifest,  # Store rclone format for live server upload
+                        'metadata': {
+                            'generated_by': 'Local Manifest Generator',
+                            'total_books': book_count,
+                            'total_files': len(rclone_manifest),
+                            'created_at': datetime.now().isoformat()
+                        }
+                    },
                     'manifestPath': str(manifest_file),
                     'stdout': result.stdout,
                     'stderr': result.stderr
@@ -334,6 +344,46 @@ def proxy_api(endpoint):
     """Proxy API requests to the main backend"""
     # This is a placeholder for API proxying if needed
     return jsonify({'error': 'API endpoint not implemented locally'}), 501
+
+    def _convert_rclone_to_books(self, rclone_manifest):
+        """Convert rclone file list back to book format for frontend display"""
+        books = {}
+        
+        for item in rclone_manifest:
+            path_parts = item['Path'].split('/')
+            if len(path_parts) >= 3:
+                book_name = path_parts[2]  # CROP-ShuSpot/Baking/BookName/file.png
+                
+                if book_name not in books:
+                    books[book_name] = {
+                        'id': book_name.lower().replace(' ', '_'),
+                        'title': book_name,
+                        'author': 'Unknown Author',
+                        'genre': path_parts[1] if len(path_parts) > 1 else 'General',
+                        'reading_level': 'Elementary',
+                        'images': [],
+                        'audio_files': [],
+                        'total_pages': 0,
+                        'has_audio': False
+                    }
+                
+                # Add file to appropriate category
+                if item['MimeType'].startswith('image/'):
+                    books[book_name]['images'].append({
+                        'name': item['Name'],
+                        'size': item['Size'],
+                        'path': item['Path']
+                    })
+                    books[book_name]['total_pages'] += 1
+                elif item['MimeType'].startswith('audio/'):
+                    books[book_name]['audio_files'].append({
+                        'name': item['Name'],
+                        'size': item['Size'],
+                        'path': item['Path']
+                    })
+                    books[book_name]['has_audio'] = True
+        
+        return list(books.values())
 
 def main():
     """Main function to start the server"""

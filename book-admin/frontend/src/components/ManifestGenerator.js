@@ -95,25 +95,29 @@ const ManifestGenerator = () => {
     try {
       let apiUrl;
       let endpoint;
+      let uploadData;
       
       if (target === 'live') {
-        // Upload to live server (production)
+        // Upload to live server (production) - send rclone array directly
         apiUrl = '/api'; // Use Netlify proxy to live server
         endpoint = `${apiUrl}/shuspot-ingestion/ingest-manifest`;
+        uploadData = generatedManifest.rclone_data || generatedManifest;
       } else {
-        // Upload to local server
+        // Upload to local server - send book format
         apiUrl = useLocalTunnel ? localTunnelUrl : 'http://localhost:8000';
         endpoint = `${apiUrl}/shuspot-ingestion/ingest-manifest`;
+        uploadData = { manifest: generatedManifest };
       }
 
       console.log(`📤 Uploading to ${target} server:`, endpoint);
+      console.log(`📋 Upload data:`, Array.isArray(uploadData) ? `${uploadData.length} files` : 'book object');
       
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ manifest: generatedManifest })
+        body: JSON.stringify(uploadData)
       });
 
       const data = await response.json();
