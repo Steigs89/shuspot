@@ -48,29 +48,33 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
     console.log('🔥 UPDATED ShuSpotBookOverview getCoverImageUrl - VERSION 2024-01-09 🔥');
     console.log('Getting cover image for book:', title, book);
     
-    // First check if there's a direct cover_image_url
-    if (book.cover_image_url) {
+    // Apply smart URL resolver for cover images too
+    if (book.cover_image_url && book.title) {
       console.log('🚨 FOUND EXISTING cover_image_url:', book.cover_image_url);
       
-      // If it's already a working Supabase URL, use it directly
-      if (book.cover_image_url.startsWith('https://') && book.cover_image_url.includes('supabase.co')) {
-        console.log('✅ Using working Supabase URL directly:', book.cover_image_url);
-        return book.cover_image_url;
-      }
+      // Extract the page number from the cover URL (usually crop-1.png)
+      const pageMatch = book.cover_image_url.match(/crop-(\d+)\.png$/);
+      const pageNum = pageMatch ? pageMatch[1] : '1';
       
-      // Only convert if it's a local file path
-      if (book.cover_image_url.includes('CROP-ShuSpot') && !book.cover_image_url.startsWith('http')) {
-        const cropMatch = book.cover_image_url.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-        if (cropMatch) {
-          const [, relativePath] = cropMatch;
-          const cleanPath = relativePath.replace(/\\/g, '/');
-          const correctedUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}`;
-          console.log('🔧 CONVERTED local path to backend URL:', correctedUrl);
-          return correctedUrl;
-        }
-      }
+      // Generate smart URL patterns for cover image (same as page images)
+      const baseUrl = 'https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books';
+      const bookTitle = book.title;
       
-      return book.cover_image_url;
+      const coverPatterns = [
+        // Pattern 1: Baking folder (most likely for A Safe Cake)
+        `${baseUrl}/Baking/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        // Pattern 2: Other genre folders
+        `${baseUrl}/Our%20Solar%20System/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        `${baseUrl}/Science/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        `${baseUrl}/Math/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        `${baseUrl}/Reading/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        // Pattern 3: Direct path (original)
+        book.cover_image_url
+      ];
+      
+      console.log('🎯 Smart cover URL patterns:', coverPatterns);
+      console.log('✅ Using smart cover URL (Baking first):', coverPatterns[0]);
+      return coverPatterns[0]; // Return the Baking folder pattern first
     }
     
     // Check if book has notes with cover_image_path
