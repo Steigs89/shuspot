@@ -181,16 +181,26 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       setUploadProgress(30);
       setUploadStatus('Extracting and uploading files to Supabase...');
 
+      console.log('🚀 Making request to: /api/shuspot-ingestion/upload-zip-to-supabase');
+      console.log('📦 FormData contents:', formData);
+
       const response = await fetch('/api/shuspot-ingestion/upload-zip-to-supabase', {
         method: 'POST',
         body: formData,
       });
 
+      console.log('📡 Response received:', response.status, response.statusText);
+
       setUploadProgress(80);
       setUploadStatus('Creating database entries...');
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
+        console.log('❌ Response not OK, trying to read error...');
+        const errorData = await response.json().catch((e) => {
+          console.log('❌ Could not parse error JSON:', e);
+          return {};
+        });
+        console.log('❌ Error data:', errorData);
         throw new Error(errorData.detail || `Upload failed: ${response.statusText}`);
       }
 
