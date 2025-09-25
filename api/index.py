@@ -362,98 +362,45 @@ async def update_book(book_id: int, request: Request):
 @router.put("/books/bulk-update")
 async def bulk_update_books(request: Request):
     try:
-        # Get content type to handle different request formats
-        content_type = request.headers.get("content-type", "").lower()
-        print(f"📝 Bulk update request content-type: {content_type}")
-        
-        # Handle form data
         form = await request.form()
-        form_dict = dict(form)
-        print("📝 Bulk update form data:", form_dict)
+        print("📝 Bulk update form data:", dict(form))
         
-        # Extract book IDs - handle both single and multiple values
-        ids = []
-        for key, value in form.multi_items():
-            if key == "book_ids":
-                try:
-                    ids.append(int(value))
-                except (ValueError, TypeError):
-                    print(f"⚠️ Invalid book ID: {value}")
-        
+        ids = [int(v) for k, v in form.multi_items() if k == "book_ids"]
         field = form.get("field")
         value = form.get("value")
         
-        print(f"📝 Parsed bulk update: ids={ids}, field='{field}', value='{value}'")
+        print(f"📝 Bulk update: ids={ids}, field={field}, value={value}")
         
-        # Validation
         if not field:
-            raise HTTPException(status_code=422, detail="Missing 'field' parameter")
+            raise HTTPException(status_code=400, detail="Missing 'field'")
         if not ids:
-            raise HTTPException(status_code=422, detail="No valid book IDs provided")
-        if value is None or value == "":
-            raise HTTPException(status_code=422, detail="Missing or empty 'value' parameter")
+            raise HTTPException(status_code=400, detail="No book IDs provided")
             
-        # Load database
         db = load_db()
-        books = db.get("books", [])
-        
-        if not books:
-            raise HTTPException(status_code=404, detail="No books found in database")
-        
-        # Update books
         count = 0
-        updated_books = []
-        
-        for book in books:
-            book_id = book.get("id")
-            if book_id in ids:
-                # Update the field
-                old_value = book.get(field, "")
-                book[field] = value
+        for b in db.get("books", []):
+            if b.get("id") in ids:
+                b[field] = value
                 count += 1
-                updated_books.append(book_id)
-                
-                # Sync legacy fields for backward compatibility
+                # Sync legacy for known fields
                 if field == "title":
-                    book["Name"] = value
+                    b["Name"] = value
                 elif field == "author":
-                    book["Author"] = value
+                    b["Author"] = value
                 elif field == "genre":
-                    book["Category"] = value
+                    b["Category"] = value
                 elif field == "book_type":
-                    book["Media"] = value
-                
-                print(f"📝 Updated book {book_id}: {field} '{old_value}' → '{value}'")
-        
-        if count == 0:
-            available_ids = [b.get("id") for b in books if b.get("id")]
-            raise HTTPException(
-                status_code=404, 
-                detail=f"No matching books found. Requested IDs: {ids}, Available IDs: {available_ids}"
-            )
-            
-        # Save changes
+                    b["Media"] = value
+                    
+        print(f"📝 Updated {count} books")
         save_db(db)
+        return {"ok": True, "updated": count}
         
-        result = {
-            "ok": True, 
-            "updated": count, 
-            "updated_books": updated_books,
-            "field": field,
-            "value": value,
-            "message": f"Successfully updated {count} books"
-        }
-        
-        print(f"✅ Bulk update successful: {result}")
-        return result
-        
-    except HTTPException:
-        raise
     except Exception as e:
         print(f"❌ Bulk update error: {e}")
         import traceback
         traceback.print_exc()
-        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Bulk update failed: {str(e)}")
 
 @router.delete("/books/{book_id}")
 def delete_book(book_id: int):

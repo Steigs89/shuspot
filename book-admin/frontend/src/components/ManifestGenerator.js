@@ -89,50 +89,26 @@ const ManifestGenerator = () => {
     URL.revokeObjectURL(url);
   };
 
-  const uploadManifest = async (target = 'live') => {
+  const uploadManifest = async () => {
     if (!generatedManifest) return;
 
     try {
-      let apiUrl;
-      let endpoint;
-      let uploadData;
-      
-      if (target === 'live') {
-        // Upload to live server (production) - send rclone array directly
-        // Use direct live server URL when on Netlify, proxy when local
-        const isNetlify = window.location.hostname.includes('netlify') || window.location.hostname.includes('shuspot');
-        
-        // Always use /api - Netlify redirects handle the proxy to live server
-        apiUrl = '/api';
-        endpoint = `${apiUrl}/shuspot-ingestion/ingest-manifest`;
-        // Live server expects rclone array format directly as 'books'
-        const rcloneData = generatedManifest.rclone_data || [];
-        uploadData = { books: rcloneData };
-      } else {
-        // Upload to local server - send book format
-        apiUrl = useLocalTunnel ? localTunnelUrl : 'http://localhost:8000';
-        endpoint = `${apiUrl}/shuspot-ingestion/ingest-manifest`;
-        uploadData = { manifest: generatedManifest };
-      }
-
-      console.log(`📤 Uploading to ${target} server:`, endpoint);
-      console.log(`📋 Upload data:`, Array.isArray(uploadData) ? `${uploadData.length} files` : 'book object');
-      
-      const response = await fetch(endpoint, {
+      const apiUrl = useLocalTunnel ? localTunnelUrl : getApiUrl();
+      const response = await fetch(`${apiUrl}/shuspot-ingestion/ingest-manifest`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(uploadData)
+        body: JSON.stringify({ manifest: generatedManifest })
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        alert(`✅ Manifest uploaded successfully to ${target} server!`);
+        alert('✅ Manifest uploaded successfully!');
         console.log('✅ Upload result:', data);
       } else {
-        alert(`❌ Upload failed: ${data.detail || data.error || 'Unknown error'}`);
+        alert(`❌ Upload failed: ${data.detail || 'Unknown error'}`);
       }
     } catch (err) {
       alert(`❌ Upload error: ${err.message}`);
@@ -541,18 +517,10 @@ def process_metadata(description_text, folder_name):
                 💾 Download Manifest
               </button>
               <button
-                onClick={() => uploadManifest('live')}
+                onClick={uploadManifest}
                 className="btn btn-success"
-                title="Upload to live server for production use"
               >
-                🚀 Upload to Live Server
-              </button>
-              <button
-                onClick={() => uploadManifest('local')}
-                className="btn btn-secondary"
-                title="Upload to local database for testing"
-              >
-                💻 Upload to Local Database
+                📤 Upload to Database
               </button>
             </div>
 
