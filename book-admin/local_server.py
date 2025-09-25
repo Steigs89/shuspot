@@ -110,13 +110,16 @@ def generate_manifest():
                 manifest_file = manifest_files[0]
                 logger.info(f"📄 Found manifest file: {manifest_file}")
                 with open(manifest_file, 'r') as f:
-                    manifest_data = json.load(f)
+                    rclone_manifest = json.load(f)
                 
-                logger.info(f"📋 Manifest contains {len(manifest_data.get('books', []))} books")
+                # Convert rclone manifest to book format for frontend display
+                book_count = len(set(item['Path'].split('/')[2] for item in rclone_manifest if len(item['Path'].split('/')) > 2))
+                logger.info(f"📋 Manifest contains {len(rclone_manifest)} files from ~{book_count} books")
                 
+                # Return rclone format (what live server expects)
                 return jsonify({
                     'success': True,
-                    'manifest': manifest_data,
+                    'manifest': rclone_manifest,  # This is now rclone-compatible
                     'manifestPath': str(manifest_file),
                     'stdout': result.stdout,
                     'stderr': result.stderr

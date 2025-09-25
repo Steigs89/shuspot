@@ -1,2459 +1,3458 @@
-{
-  "books": [
-    {
-      "id": "ziggy's_big_idea",
-      "title": "Ziggy's Big Idea",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/45675\nZiggy's Big Idea\nZiggy's father sells buns for Moishe the Baker, but Mrs. Schwartz always complains that the buns are undercooked at the center.\nBAKING\nFOOD\nFUNNY STORIES\nAbout This Book\nBy: Ilana Long\nIllustrated by: Rasa Joni\n5-9\nAge Range\n-\nGR Level\n-\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/cover.jpg",
-          "size": 38231,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 1.png",
-          "size": 5222016,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 10.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 10.png",
-          "size": 9331804,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 11.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 11.png",
-          "size": 9191221,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 12.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 12.png",
-          "size": 9446698,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 13.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 13.png",
-          "size": 9607644,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 14.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 14.png",
-          "size": 10083152,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 15.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 15.png",
-          "size": 10457788,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 16.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 16.png",
-          "size": 5528985,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 2.png",
-          "size": 9889031,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 3.png",
-          "size": 9882042,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 4.png",
-          "size": 10280531,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 5.png",
-          "size": 9379781,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 6.png",
-          "size": 9211294,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 7.png",
-          "size": 9912933,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 8.png",
-          "size": 9551606,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 9.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/screenshot - 9.png",
-          "size": 9799201,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "intro title.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/intro title.mp3",
-          "size": 121016,
-          "type": "audio"
-        },
-        {
-          "name": "page 10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 10.mp3",
-          "size": 313779,
-          "type": "audio"
-        },
-        {
-          "name": "page 11.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 11.mp3",
-          "size": 225459,
-          "type": "audio"
-        },
-        {
-          "name": "page 12.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 12.mp3",
-          "size": 381747,
-          "type": "audio"
-        },
-        {
-          "name": "page 13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 13.mp3",
-          "size": 171700,
-          "type": "audio"
-        },
-        {
-          "name": "page 14.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 14.mp3",
-          "size": 223924,
-          "type": "audio"
-        },
-        {
-          "name": "page 15.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 15.mp3",
-          "size": 256564,
-          "type": "audio"
-        },
-        {
-          "name": "page 16.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 16.mp3",
-          "size": 407092,
-          "type": "audio"
-        },
-        {
-          "name": "page 19.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 19.mp3",
-          "size": 312244,
-          "type": "audio"
-        },
-        {
-          "name": "page 2.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 2.mp3",
-          "size": 273459,
-          "type": "audio"
-        },
-        {
-          "name": "page 20.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 20.mp3",
-          "size": 293044,
-          "type": "audio"
-        },
-        {
-          "name": "page 23.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 23.mp3",
-          "size": 292660,
-          "type": "audio"
-        },
-        {
-          "name": "page 24.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 24.mp3",
-          "size": 844468,
-          "type": "audio"
-        },
-        {
-          "name": "page 26.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 26.mp3",
-          "size": 606388,
-          "type": "audio"
-        },
-        {
-          "name": "page 4.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 4.mp3",
-          "size": 437811,
-          "type": "audio"
-        },
-        {
-          "name": "page 7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 7.mp3",
-          "size": 357171,
-          "type": "audio"
-        },
-        {
-          "name": "page 8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 8.mp3",
-          "size": 389427,
-          "type": "audio"
-        },
-        {
-          "name": "page 9.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/page 9.mp3",
-          "size": 208563,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 17,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.612945"
-    },
-    {
-      "id": "doughnuts",
-      "title": "Doughnuts",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/6379\nDoughnuts\nDoughnuts make the world go 'round. A doughnut may not be a life essential but a maple bar sure makes for a delicious morning treat.\nFOOD\nAbout This Book\nBy: Xist Publishing\n0-3\nAge Range\n-\nGR Level\n-\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/cover.jpg",
-          "size": 24599,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 1.png",
-          "size": 1413745,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 10.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 10.png",
-          "size": 2146345,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 11.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 11.png",
-          "size": 2556515,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 12.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 12.png",
-          "size": 3092720,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 2.png",
-          "size": 2980758,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 3.png",
-          "size": 1915939,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 4.png",
-          "size": 3102312,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 5.png",
-          "size": 2271130,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 6.png",
-          "size": 2167259,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 7.png",
-          "size": 2617041,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 8.png",
-          "size": 2359135,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 9.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/screenshot 9.png",
-          "size": 2341898,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "intro title.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/intro title.mp3",
-          "size": 87354,
-          "type": "audio"
-        },
-        {
-          "name": "page 10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 10.mp3",
-          "size": 34212,
-          "type": "audio"
-        },
-        {
-          "name": "page 11.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 11.mp3",
-          "size": 25660,
-          "type": "audio"
-        },
-        {
-          "name": "page 12.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 12.mp3",
-          "size": 32071,
-          "type": "audio"
-        },
-        {
-          "name": "page 13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 13.mp3",
-          "size": 26861,
-          "type": "audio"
-        },
-        {
-          "name": "page 14.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 14.mp3",
-          "size": 38433,
-          "type": "audio"
-        },
-        {
-          "name": "page 15.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 15.mp3",
-          "size": 30873,
-          "type": "audio"
-        },
-        {
-          "name": "page 16.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 16.mp3",
-          "size": 38177,
-          "type": "audio"
-        },
-        {
-          "name": "page 17.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 17.mp3",
-          "size": 40420,
-          "type": "audio"
-        },
-        {
-          "name": "page 18.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 18.mp3",
-          "size": 39641,
-          "type": "audio"
-        },
-        {
-          "name": "page 19.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 19.mp3",
-          "size": 47089,
-          "type": "audio"
-        },
-        {
-          "name": "page 2.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 2.mp3",
-          "size": 29156,
-          "type": "audio"
-        },
-        {
-          "name": "page 20.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 20.mp3",
-          "size": 35774,
-          "type": "audio"
-        },
-        {
-          "name": "page 21.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 21.mp3",
-          "size": 41881,
-          "type": "audio"
-        },
-        {
-          "name": "page 22.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 22.mp3",
-          "size": 40079,
-          "type": "audio"
-        },
-        {
-          "name": "page 23.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 23.mp3",
-          "size": 27850,
-          "type": "audio"
-        },
-        {
-          "name": "page 3.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 3.mp3",
-          "size": 47305,
-          "type": "audio"
-        },
-        {
-          "name": "page 4.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 4.mp3",
-          "size": 33584,
-          "type": "audio"
-        },
-        {
-          "name": "page 5.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 5.mp3",
-          "size": 39011,
-          "type": "audio"
-        },
-        {
-          "name": "page 6.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 6.mp3",
-          "size": 41095,
-          "type": "audio"
-        },
-        {
-          "name": "page 7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 7.mp3",
-          "size": 37549,
-          "type": "audio"
-        },
-        {
-          "name": "page 8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 8.mp3",
-          "size": 45342,
-          "type": "audio"
-        },
-        {
-          "name": "page 9.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/page 9.mp3",
-          "size": 30142,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 13,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.614187"
-    },
-    {
-      "id": "nia_bakes_cookies",
-      "title": "Nia Bakes Cookies",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/65003\nNia Bakes Cookies\nNia and her friends want to make cookies. What kind will they bake?\nBAKING\nCOOKING\nFRIENDSHIP\nFind These Spotlight Words\nbake\nmess\ndough\npatient\nfrosting\nAbout This Book\nBy: Sara E. Hoffmann\nIllustrated by: Katie Strange\n5-7\nAge Range\nI\nGR Level\nYes\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/cover.jpg",
-          "size": 31787,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/screenshot 1.png",
-          "size": 3326333,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/screenshot 2.png",
-          "size": 2917507,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/screenshot 3.png",
-          "size": 3010731,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/screenshot 4.png",
-          "size": 3523366,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/screenshot 5.png",
-          "size": 3576310,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/screenshot 6.png",
-          "size": 3648784,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/screenshot 7.png",
-          "size": 3628231,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/screenshot 8.png",
-          "size": 3410418,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "intro title.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/intro title.mp3",
-          "size": 555051,
-          "type": "audio"
-        },
-        {
-          "name": "page10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/page10.mp3",
-          "size": 342519,
-          "type": "audio"
-        },
-        {
-          "name": "page12.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/page12.mp3",
-          "size": 355058,
-          "type": "audio"
-        },
-        {
-          "name": "page14.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/page14.mp3",
-          "size": 306575,
-          "type": "audio"
-        },
-        {
-          "name": "page2.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/page2.mp3",
-          "size": 182859,
-          "type": "audio"
-        },
-        {
-          "name": "page4.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/page4.mp3",
-          "size": 472086,
-          "type": "audio"
-        },
-        {
-          "name": "page6.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/page6.mp3",
-          "size": 306157,
-          "type": "audio"
-        },
-        {
-          "name": "page8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/page8.mp3",
-          "size": 308246,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 9,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.615048"
-    },
-    {
-      "id": "the_babka_sisters",
-      "title": "The Babka Sisters",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/82492\nThe Babka Sisters\nEsther and Hester’s new neighbor, Sylvester, will gladly be their babka tester, and decide which sister’s Babka is the best.\nBAKING\nSISTERS\nSIBLINGS\nAbout This Book\nBy: Lesléa Newman\nIllustrated by: Tika and Tata Bobokhidze\n3-8\nAge Range\nK *\nLevel\n-\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/cover.jpg",
-          "size": 45290,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 1.png",
-          "size": 1273218,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 10.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 10.png",
-          "size": 5730283,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 11.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 11.png",
-          "size": 5947646,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 12.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 12.png",
-          "size": 5802215,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 13.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 13.png",
-          "size": 8555765,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 14.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 14.png",
-          "size": 1996435,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 2.png",
-          "size": 7541971,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 3.png",
-          "size": 8799897,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 4.png",
-          "size": 6032977,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 5.png",
-          "size": 6540047,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 6.png",
-          "size": 7269805,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 7.png",
-          "size": 5860682,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 8.png",
-          "size": 5968113,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 9.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/screenshot 9.png",
-          "size": 5233447,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "intro title .mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/intro title .mp3",
-          "size": 218864,
-          "type": "audio"
-        },
-        {
-          "name": "page 10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 10.mp3",
-          "size": 216356,
-          "type": "audio"
-        },
-        {
-          "name": "page 11.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 11.mp3",
-          "size": 212595,
-          "type": "audio"
-        },
-        {
-          "name": "page 12.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 12.mp3",
-          "size": 127331,
-          "type": "audio"
-        },
-        {
-          "name": "page 13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 13.mp3",
-          "size": 532961,
-          "type": "audio"
-        },
-        {
-          "name": "page 14.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 14.mp3",
-          "size": 264631,
-          "type": "audio"
-        },
-        {
-          "name": "page 15.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 15.mp3",
-          "size": 108523,
-          "type": "audio"
-        },
-        {
-          "name": "page 16.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 16.mp3",
-          "size": 112912,
-          "type": "audio"
-        },
-        {
-          "name": "page 17.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 17.mp3",
-          "size": 79684,
-          "type": "audio"
-        },
-        {
-          "name": "page 18.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 18.mp3",
-          "size": 190652,
-          "type": "audio"
-        },
-        {
-          "name": "page 19.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 19.mp3",
-          "size": 230149,
-          "type": "audio"
-        },
-        {
-          "name": "page 2.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 2.mp3",
-          "size": 148020,
-          "type": "audio"
-        },
-        {
-          "name": "page 20.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 20.mp3",
-          "size": 321055,
-          "type": "audio"
-        },
-        {
-          "name": "page 21.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 21.mp3",
-          "size": 378734,
-          "type": "audio"
-        },
-        {
-          "name": "page 22.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 22.mp3",
-          "size": 520422,
-          "type": "audio"
-        },
-        {
-          "name": "page 23.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 23.mp3",
-          "size": 382495,
-          "type": "audio"
-        },
-        {
-          "name": "page 24.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 24.mp3",
-          "size": 1095325,
-          "type": "audio"
-        },
-        {
-          "name": "page 26.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 26.mp3",
-          "size": 72161,
-          "type": "audio"
-        },
-        {
-          "name": "page 3.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 3.mp3",
-          "size": 218237,
-          "type": "audio"
-        },
-        {
-          "name": "page 5.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 5.mp3",
-          "size": 586877,
-          "type": "audio"
-        },
-        {
-          "name": "page 6.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 6.mp3",
-          "size": 442681,
-          "type": "audio"
-        },
-        {
-          "name": "page 7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 7.mp3",
-          "size": 247076,
-          "type": "audio"
-        },
-        {
-          "name": "page 8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 8.mp3",
-          "size": 135481,
-          "type": "audio"
-        },
-        {
-          "name": "page 9.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/page 9.mp3",
-          "size": 72788,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 15,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.616075"
-    },
-    {
-      "id": "a_safe_cake",
-      "title": "A Safe Cake",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/66205\nA Safe Cake\nMia wants to bake her teacher a cake, but Miss Rose has food allergies. Find out how Mia makes the perfect gift for her teacher.\nBAKING\nBIRTHDAYS\nFind These Spotlight Words\ngift\nyummy\nflour\nallergy\npicture\nAbout This Book\nBy: J.L. Anderson\nIllustrated by: Nadia Ronquillo\n5-6\nAge Range\nG\nGR Level\nYes\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/cover.jpg",
-          "size": 22624,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 1.png",
-          "size": 2038481,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 10.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 10.png",
-          "size": 2364657,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 11.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 11.png",
-          "size": 2579411,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 12.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 12.png",
-          "size": 1861496,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 2.png",
-          "size": 2646411,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 3.png",
-          "size": 3220696,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 4.png",
-          "size": 3614351,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 5.png",
-          "size": 2862868,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 6.png",
-          "size": 2785005,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 7.png",
-          "size": 2859684,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 8.png",
-          "size": 2665633,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 9.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/screenshot 9.png",
-          "size": 3369999,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "intro title .mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/intro title .mp3",
-          "size": 143949,
-          "type": "audio"
-        },
-        {
-          "name": "page 10-11.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 10-11.mp3",
-          "size": 55693,
-          "type": "audio"
-        },
-        {
-          "name": "page 12-13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 12-13.mp3",
-          "size": 105993,
-          "type": "audio"
-        },
-        {
-          "name": "page 14-15.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 14-15.mp3",
-          "size": 57572,
-          "type": "audio"
-        },
-        {
-          "name": "page 16-17.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 16-17.mp3",
-          "size": 95569,
-          "type": "audio"
-        },
-        {
-          "name": "page 18-19.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 18-19.mp3",
-          "size": 123870,
-          "type": "audio"
-        },
-        {
-          "name": "page 20-21.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 20-21.mp3",
-          "size": 76620,
-          "type": "audio"
-        },
-        {
-          "name": "page 3.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 3.mp3",
-          "size": 146435,
-          "type": "audio"
-        },
-        {
-          "name": "page 4-5.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 4-5.mp3",
-          "size": 78929,
-          "type": "audio"
-        },
-        {
-          "name": "page 6-7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 6-7.mp3",
-          "size": 60938,
-          "type": "audio"
-        },
-        {
-          "name": "page 8-9.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/page 8-9.mp3",
-          "size": 67128,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 13,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.616991"
-    },
-    {
-      "id": "the_stolen_smell",
-      "title": "The Stolen Smell",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/10990\nThe Stolen Smell\nMeet a baker who is so stingy that he wants to charge people just for smelling his baked goods!\nBAKING\nFOOD\nFUNNY STORIES\nFOLKTALES\nTHE 5 SENSES\nAbout This Book\nBy: Martha Hamilton, Mitch Weiss\nIllustrated by: Tom Wrenn\n3-7\nAge Range\nP\nGR Level\nYes\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/cover.jpg",
-          "size": 27133,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 1.png",
-          "size": 1681931,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 10.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 10.png",
-          "size": 3943792,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 11.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 11.png",
-          "size": 3782706,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 12.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 12.png",
-          "size": 4193281,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 13.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 13.png",
-          "size": 2615543,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 14.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 14.png",
-          "size": 3114410,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 15.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 15.png",
-          "size": 2811306,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 16.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 16.png",
-          "size": 4350925,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 17.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 17.png",
-          "size": 1366116,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 2.png",
-          "size": 3625517,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 3.png",
-          "size": 3907466,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 4.png",
-          "size": 3049129,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 5.png",
-          "size": 2759156,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 6.png",
-          "size": 2482168,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 7.png",
-          "size": 3341335,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 8.png",
-          "size": 3492134,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 9.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/screenshot 9.png",
-          "size": 2395942,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "page 1.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 1.mp3",
-          "size": 153143,
-          "type": "audio"
-        },
-        {
-          "name": "page 10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 10.mp3",
-          "size": 106453,
-          "type": "audio"
-        },
-        {
-          "name": "page 11.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 11.mp3",
-          "size": 149399,
-          "type": "audio"
-        },
-        {
-          "name": "page 12.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 12.mp3",
-          "size": 121403,
-          "type": "audio"
-        },
-        {
-          "name": "page 13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 13.mp3",
-          "size": 138482,
-          "type": "audio"
-        },
-        {
-          "name": "page 14.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 14.mp3",
-          "size": 237815,
-          "type": "audio"
-        },
-        {
-          "name": "page 15.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 15.mp3",
-          "size": 188618,
-          "type": "audio"
-        },
-        {
-          "name": "page 16.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 16.mp3",
-          "size": 193289,
-          "type": "audio"
-        },
-        {
-          "name": "page 17.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 17.mp3",
-          "size": 123037,
-          "type": "audio"
-        },
-        {
-          "name": "page 18.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 18.mp3",
-          "size": 86307,
-          "type": "audio"
-        },
-        {
-          "name": "page 19.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 19.mp3",
-          "size": 183435,
-          "type": "audio"
-        },
-        {
-          "name": "page 2.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 2.mp3",
-          "size": 165295,
-          "type": "audio"
-        },
-        {
-          "name": "page 20.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 20.mp3",
-          "size": 147164,
-          "type": "audio"
-        },
-        {
-          "name": "page 21.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 21.mp3",
-          "size": 237267,
-          "type": "audio"
-        },
-        {
-          "name": "page 22.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 22.mp3",
-          "size": 185184,
-          "type": "audio"
-        },
-        {
-          "name": "page 23.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 23.mp3",
-          "size": 144393,
-          "type": "audio"
-        },
-        {
-          "name": "page 24.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 24.mp3",
-          "size": 99081,
-          "type": "audio"
-        },
-        {
-          "name": "page 25.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 25.mp3",
-          "size": 220275,
-          "type": "audio"
-        },
-        {
-          "name": "page 26.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 26.mp3",
-          "size": 208564,
-          "type": "audio"
-        },
-        {
-          "name": "page 27.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 27.mp3",
-          "size": 172798,
-          "type": "audio"
-        },
-        {
-          "name": "page 28.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 28.mp3",
-          "size": 70491,
-          "type": "audio"
-        },
-        {
-          "name": "page 29.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 29.mp3",
-          "size": 94321,
-          "type": "audio"
-        },
-        {
-          "name": "page 3.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 3.mp3",
-          "size": 137585,
-          "type": "audio"
-        },
-        {
-          "name": "page 30.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 30.mp3",
-          "size": 217972,
-          "type": "audio"
-        },
-        {
-          "name": "page 31.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 31.mp3",
-          "size": 181394,
-          "type": "audio"
-        },
-        {
-          "name": "page 32.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 32.mp3",
-          "size": 96891,
-          "type": "audio"
-        },
-        {
-          "name": "page 4.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 4.mp3",
-          "size": 193556,
-          "type": "audio"
-        },
-        {
-          "name": "page 5.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 5.mp3",
-          "size": 246725,
-          "type": "audio"
-        },
-        {
-          "name": "page 6.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 6.mp3",
-          "size": 244125,
-          "type": "audio"
-        },
-        {
-          "name": "page 7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 7.mp3",
-          "size": 138785,
-          "type": "audio"
-        },
-        {
-          "name": "page 8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 8.mp3",
-          "size": 149890,
-          "type": "audio"
-        },
-        {
-          "name": "page 9.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/page 9.mp3",
-          "size": 161185,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 18,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.618068"
-    },
-    {
-      "id": "dessert",
-      "title": "Dessert",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/6375\nDessert\nWho needs an oasis when you have the desert?\nFOOD\nAbout This Book\nBy: Xist Publishing\n0-3\nAge Range\n-\nGR Level\n-\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/cover.jpg",
-          "size": 21870,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 1.png",
-          "size": 888182,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 10.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 10.png",
-          "size": 3039236,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 11.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 11.png",
-          "size": 2001656,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 12.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 12.png",
-          "size": 2634509,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 13.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 13.png",
-          "size": 2808694,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 14.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 14.png",
-          "size": 2648886,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 2.png",
-          "size": 2758968,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 3.png",
-          "size": 2149920,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 4.png",
-          "size": 2227502,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 5.png",
-          "size": 1986228,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 6.png",
-          "size": 2776149,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 7.png",
-          "size": 2436708,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 8.png",
-          "size": 3259888,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 9.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/screenshot 9.png",
-          "size": 2566042,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "intro title .mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/intro title .mp3",
-          "size": 69464,
-          "type": "audio"
-        },
-        {
-          "name": "page 10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 10.mp3",
-          "size": 41986,
-          "type": "audio"
-        },
-        {
-          "name": "page 11.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 11.mp3",
-          "size": 27201,
-          "type": "audio"
-        },
-        {
-          "name": "page 12.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 12.mp3",
-          "size": 22532,
-          "type": "audio"
-        },
-        {
-          "name": "page 13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 13.mp3",
-          "size": 27175,
-          "type": "audio"
-        },
-        {
-          "name": "page 14.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 14.mp3",
-          "size": 29623,
-          "type": "audio"
-        },
-        {
-          "name": "page 15.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 15.mp3",
-          "size": 29367,
-          "type": "audio"
-        },
-        {
-          "name": "page 16.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 16.mp3",
-          "size": 43240,
-          "type": "audio"
-        },
-        {
-          "name": "page 17.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 17.mp3",
-          "size": 32021,
-          "type": "audio"
-        },
-        {
-          "name": "page 18.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 18.mp3",
-          "size": 28374,
-          "type": "audio"
-        },
-        {
-          "name": "page 19.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 19.mp3",
-          "size": 19716,
-          "type": "audio"
-        },
-        {
-          "name": "page 2.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 2.mp3",
-          "size": 33249,
-          "type": "audio"
-        },
-        {
-          "name": "page 20.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 20.mp3",
-          "size": 46733,
-          "type": "audio"
-        },
-        {
-          "name": "page 21.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 21.mp3",
-          "size": 29157,
-          "type": "audio"
-        },
-        {
-          "name": "page 22.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 22.mp3",
-          "size": 28582,
-          "type": "audio"
-        },
-        {
-          "name": "page 23.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 23.mp3",
-          "size": 37106,
-          "type": "audio"
-        },
-        {
-          "name": "page 24.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 24.mp3",
-          "size": 53561,
-          "type": "audio"
-        },
-        {
-          "name": "page 25.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 25.mp3",
-          "size": 33331,
-          "type": "audio"
-        },
-        {
-          "name": "page 26.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 26.mp3",
-          "size": 30353,
-          "type": "audio"
-        },
-        {
-          "name": "page 27.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 27.mp3",
-          "size": 27694,
-          "type": "audio"
-        },
-        {
-          "name": "page 3.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 3.mp3",
-          "size": 24591,
-          "type": "audio"
-        },
-        {
-          "name": "page 4.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 4.mp3",
-          "size": 27696,
-          "type": "audio"
-        },
-        {
-          "name": "page 5.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 5.mp3",
-          "size": 28110,
-          "type": "audio"
-        },
-        {
-          "name": "page 6.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 6.mp3",
-          "size": 26289,
-          "type": "audio"
-        },
-        {
-          "name": "page 7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 7.mp3",
-          "size": 23446,
-          "type": "audio"
-        },
-        {
-          "name": "page 8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 8.mp3",
-          "size": 27432,
-          "type": "audio"
-        },
-        {
-          "name": "page 9.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/page 9.mp3",
-          "size": 23261,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 15,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.619192"
-    },
-    {
-      "id": "easy_to_make_desserts_from_around_the_world_1",
-      "title": "Easy-to-make Desserts from Around the World 1",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/72462\nEasy-to-make Desserts from Around the World 1\nMaking dessert can be a piece of cake - try these easy-to-make recipes of popular dishes from around the world!\nBAKING\nCOOKING\nAbout This Book\nBy: Candy Tang\n5-7\nAge Range\n-\nGR Level\nYes\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/cover.jpg",
-          "size": 24890,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 1.png",
-          "size": 4145180,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 10.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 10.png",
-          "size": 4577909,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 11.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 11.png",
-          "size": 7549565,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 12.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 12.png",
-          "size": 5462445,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 13.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 13.png",
-          "size": 4747270,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 14.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 14.png",
-          "size": 6194947,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 15.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 15.png",
-          "size": 5599098,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 16.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 16.png",
-          "size": 6809201,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 2.png",
-          "size": 7153640,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 3.png",
-          "size": 4888939,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 4.png",
-          "size": 5048348,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 5.png",
-          "size": 6887590,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 6.png",
-          "size": 9674466,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 7.png",
-          "size": 6491201,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 8.png",
-          "size": 5153792,
-          "type": "image"
-        },
-        {
-          "name": "screenshot - 9.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/screenshot - 9.png",
-          "size": 6226804,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "page 1-2.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 1-2.mp3",
-          "size": 2173464,
-          "type": "audio"
-        },
-        {
-          "name": "page 11-12.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 11-12.mp3",
-          "size": 1845440,
-          "type": "audio"
-        },
-        {
-          "name": "page 13-14.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 13-14.mp3",
-          "size": 1387208,
-          "type": "audio"
-        },
-        {
-          "name": "page 15-16.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 15-16.mp3",
-          "size": 1795360,
-          "type": "audio"
-        },
-        {
-          "name": "page 17-18.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 17-18.mp3",
-          "size": 2212902,
-          "type": "audio"
-        },
-        {
-          "name": "page 19-20.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 19-20.mp3",
-          "size": 2907136,
-          "type": "audio"
-        },
-        {
-          "name": "page 21-22.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 21-22.mp3",
-          "size": 1628844,
-          "type": "audio"
-        },
-        {
-          "name": "page 23-24.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 23-24.mp3",
-          "size": 3626410,
-          "type": "audio"
-        },
-        {
-          "name": "page 25-26.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 25-26.mp3",
-          "size": 3039222,
-          "type": "audio"
-        },
-        {
-          "name": "page 27-28.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 27-28.mp3",
-          "size": 3648946,
-          "type": "audio"
-        },
-        {
-          "name": "page 3-4.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 3-4.mp3",
-          "size": 1954364,
-          "type": "audio"
-        },
-        {
-          "name": "page 5-6.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 5-6.mp3",
-          "size": 2433254,
-          "type": "audio"
-        },
-        {
-          "name": "page 7-8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 7-8.mp3",
-          "size": 1879244,
-          "type": "audio"
-        },
-        {
-          "name": "page 9-10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/page 9-10.mp3",
-          "size": 1564992,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 17,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.620241"
-    },
-    {
-      "id": "rainy_day_cake_bake",
-      "title": "Rainy Day Cake Bake",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/83707\nRainy Day Cake Bake\nThis book introduce students to sounds and letter forms that represent them in a controlled sequence to ensure early success with reading.\nAbout This Book\nBy: Hannah C\n4-5\nAge Range\nJ *\nLevel\n-\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/cover.jpg",
-          "size": 28037,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/screenshot 1.png",
-          "size": 1198381,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/screenshot 2.png",
-          "size": 3359570,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/screenshot 3.png",
-          "size": 3739280,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/screenshot 4.png",
-          "size": 2923691,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/screenshot 5.png",
-          "size": 3579640,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/screenshot 6.png",
-          "size": 3269532,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/screenshot 7.png",
-          "size": 2925939,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/screenshot 8.png",
-          "size": 2646165,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 9.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/screenshot 9.png",
-          "size": 2705738,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "intro title.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/intro title.mp3",
-          "size": 81146,
-          "type": "audio"
-        },
-        {
-          "name": "page 10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 10.mp3",
-          "size": 150681,
-          "type": "audio"
-        },
-        {
-          "name": "page 11.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 11.mp3",
-          "size": 101153,
-          "type": "audio"
-        },
-        {
-          "name": "page 12.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 12.mp3",
-          "size": 99899,
-          "type": "audio"
-        },
-        {
-          "name": "page 13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 13.mp3",
-          "size": 136261,
-          "type": "audio"
-        },
-        {
-          "name": "page 14.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 14.mp3",
-          "size": 143785,
-          "type": "audio"
-        },
-        {
-          "name": "page 15.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 15.mp3",
-          "size": 94883,
-          "type": "audio"
-        },
-        {
-          "name": "page 16.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 16.mp3",
-          "size": 166354,
-          "type": "audio"
-        },
-        {
-          "name": "page 2.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 2.mp3",
-          "size": 129992,
-          "type": "audio"
-        },
-        {
-          "name": "page 3.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 3.mp3",
-          "size": 140650,
-          "type": "audio"
-        },
-        {
-          "name": "page 4.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 4.mp3",
-          "size": 183909,
-          "type": "audio"
-        },
-        {
-          "name": "page 5.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 5.mp3",
-          "size": 120588,
-          "type": "audio"
-        },
-        {
-          "name": "page 6.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 6.mp3",
-          "size": 108676,
-          "type": "audio"
-        },
-        {
-          "name": "page 7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 7.mp3",
-          "size": 238452,
-          "type": "audio"
-        },
-        {
-          "name": "page 8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 8.mp3",
-          "size": 117453,
-          "type": "audio"
-        },
-        {
-          "name": "page 9.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/page 9.mp3",
-          "size": 155696,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 10,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.621137"
-    },
-    {
-      "id": "brady_bakes_a_cake_a_measuring_adventure",
-      "title": "Brady Bakes a Cake A Measuring Adventure",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/79537\nBrady Bakes a Cake: A Measuring Adventure\nBeginning readers learn about the many real-world uses of measuring in a fun baking story.\nBAKING\nMATH\nCOUNTING\nAbout This Book\nBy: Megan Atwood\nIllustrated by: Amy Zhing\n4-7\nAge Range\nD\nGR Level\n-\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/cover.jpg",
-          "size": 28964,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/screenshot 1.png",
-          "size": 1035103,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/screenshot 2.png",
-          "size": 4609181,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/screenshot 3.png",
-          "size": 3901030,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/screenshot 4.png",
-          "size": 3683666,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/screenshot 5.png",
-          "size": 3638013,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/screenshot 6.png",
-          "size": 5869576,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/screenshot 7.png",
-          "size": 4726511,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/screenshot 8.png",
-          "size": 1223517,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "page10_11.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/page10_11.mp3",
-          "size": 267643,
-          "type": "audio"
-        },
-        {
-          "name": "page12_13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/page12_13.mp3",
-          "size": 151750,
-          "type": "audio"
-        },
-        {
-          "name": "page14_15.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/page14_15.mp3",
-          "size": 84999,
-          "type": "audio"
-        },
-        {
-          "name": "page16.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/page16.mp3",
-          "size": 530287,
-          "type": "audio"
-        },
-        {
-          "name": "page4_5.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/page4_5.mp3",
-          "size": 203819,
-          "type": "audio"
-        },
-        {
-          "name": "page6_7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/page6_7.mp3",
-          "size": 286734,
-          "type": "audio"
-        },
-        {
-          "name": "page8_9.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/page8_9.mp3",
-          "size": 303713,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 9,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.621933"
-    },
-    {
-      "id": "pat_a_cake",
-      "title": "Pat-A-Cake",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/67308\nPat-A-Cake\nSing along with the classic nursery rhyme Pat-a-Cake!\nAbout This Book\nBy: Kim Mitzo Thompson, Karen Mitzo Hilderbrand\nIllustrated by: Ivy Dad\n0-4\nAge Range\nH\nGR Level\n-\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/cover.jpg",
-          "size": 26130,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/screenshot 1.png",
-          "size": 851759,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/screenshot 2.png",
-          "size": 5304637,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/screenshot 3.png",
-          "size": 4634512,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/screenshot 4.png",
-          "size": 3135746,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/screenshot 5.png",
-          "size": 3038876,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/screenshot 6.png",
-          "size": 3322173,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/screenshot 7.png",
-          "size": 5524161,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "intro title .mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/intro title .mp3",
-          "size": 218978,
-          "type": "audio"
-        },
-        {
-          "name": "page 10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/page 10.mp3",
-          "size": 139647,
-          "type": "audio"
-        },
-        {
-          "name": "page 13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/page 13.mp3",
-          "size": 298093,
-          "type": "audio"
-        },
-        {
-          "name": "page 3.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/page 3.mp3",
-          "size": 250887,
-          "type": "audio"
-        },
-        {
-          "name": "page 4.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/page 4.mp3",
-          "size": 143307,
-          "type": "audio"
-        },
-        {
-          "name": "page 7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/page 7.mp3",
-          "size": 38950,
-          "type": "audio"
-        },
-        {
-          "name": "page 8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/page 8.mp3",
-          "size": 31749,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 8,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.622903"
-    },
-    {
-      "id": "breakfast",
-      "title": "Breakfast",
-      "author": "Unknown Author",
-      "genre": "Baking",
-      "reading_level": "Elementary",
-      "book_type": "Read to Me",
-      "description": "https://www.getepic.com/app/read/6360\nBreakfast\nPhotos of pancakes, bacon and eggs make this picture book a treat for children who wonder why can't we always have breakfast for dinner.\nFOOD\nAbout This Book\nBy: Xist Publishing\n0-3\nAge Range\n-\nGR Level\n-\nQuiz",
-      "folder_path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast",
-      "images": [
-        {
-          "name": "cover.jpg",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/cover.jpg",
-          "size": 28303,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 1.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 1.png",
-          "size": 1803444,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 10.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 10.png",
-          "size": 2672672,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 11.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 11.png",
-          "size": 3325208,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 12.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 12.png",
-          "size": 2673465,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 13.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 13.png",
-          "size": 1845822,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 14.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 14.png",
-          "size": 1420728,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 2.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 2.png",
-          "size": 2114363,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 3.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 3.png",
-          "size": 2586451,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 4.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 4.png",
-          "size": 2071849,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 5.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 5.png",
-          "size": 2647358,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 6.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 6.png",
-          "size": 2042410,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 7.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 7.png",
-          "size": 2602702,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 8.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 8.png",
-          "size": 2544109,
-          "type": "image"
-        },
-        {
-          "name": "screenshot 9.png",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/screenshot 9.png",
-          "size": 1708703,
-          "type": "image"
-        }
-      ],
-      "audio_files": [
-        {
-          "name": "intro title .mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/intro title .mp3",
-          "size": 45743,
-          "type": "audio"
-        },
-        {
-          "name": "page 10.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 10.mp3",
-          "size": 20667,
-          "type": "audio"
-        },
-        {
-          "name": "page 11.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 11.mp3",
-          "size": 13979,
-          "type": "audio"
-        },
-        {
-          "name": "page 12.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 12.mp3",
-          "size": 8546,
-          "type": "audio"
-        },
-        {
-          "name": "page 13.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 13.mp3",
-          "size": 15651,
-          "type": "audio"
-        },
-        {
-          "name": "page 14.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 14.mp3",
-          "size": 27772,
-          "type": "audio"
-        },
-        {
-          "name": "page 15.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 15.mp3",
-          "size": 17323,
-          "type": "audio"
-        },
-        {
-          "name": "page 16.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 16.mp3",
-          "size": 21085,
-          "type": "audio"
-        },
-        {
-          "name": "page 17.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 17.mp3",
-          "size": 18995,
-          "type": "audio"
-        },
-        {
-          "name": "page 18.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 18.mp3",
-          "size": 14397,
-          "type": "audio"
-        },
-        {
-          "name": "page 19.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 19.mp3",
-          "size": 11889,
-          "type": "audio"
-        },
-        {
-          "name": "page 2.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 2.mp3",
-          "size": 21084,
-          "type": "audio"
-        },
-        {
-          "name": "page 20.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 20.mp3",
-          "size": 21502,
-          "type": "audio"
-        },
-        {
-          "name": "page 21.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 21.mp3",
-          "size": 15651,
-          "type": "audio"
-        },
-        {
-          "name": "page 22.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 22.mp3",
-          "size": 18577,
-          "type": "audio"
-        },
-        {
-          "name": "page 23.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 23.mp3",
-          "size": 19831,
-          "type": "audio"
-        },
-        {
-          "name": "page 24.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 24.mp3",
-          "size": 22756,
-          "type": "audio"
-        },
-        {
-          "name": "page 25.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 25.mp3",
-          "size": 22756,
-          "type": "audio"
-        },
-        {
-          "name": "page 26.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 26.mp3",
-          "size": 15651,
-          "type": "audio"
-        },
-        {
-          "name": "page 3.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 3.mp3",
-          "size": 21919,
-          "type": "audio"
-        },
-        {
-          "name": "page 4.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 4.mp3",
-          "size": 33204,
-          "type": "audio"
-        },
-        {
-          "name": "page 5.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 5.mp3",
-          "size": 25263,
-          "type": "audio"
-        },
-        {
-          "name": "page 6.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 6.mp3",
-          "size": 29443,
-          "type": "audio"
-        },
-        {
-          "name": "page 7.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 7.mp3",
-          "size": 37384,
-          "type": "audio"
-        },
-        {
-          "name": "page 8.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 8.mp3",
-          "size": 27771,
-          "type": "audio"
-        },
-        {
-          "name": "page 9.mp3",
-          "path": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/page 9.mp3",
-          "size": 23591,
-          "type": "audio"
-        }
-      ],
-      "total_pages": 15,
-      "has_audio": true,
-      "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/cover.jpg",
-      "created_at": "2025-09-25T07:59:21.623813"
-    }
-  ],
-  "metadata": {
-    "generated_by": "Local Manifest Generator",
-    "source_folder": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking",
-    "total_books": 12,
-    "created_at": "2025-09-25T07:59:21.623824",
-    "generator_version": "1.0"
+[
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 38231,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.245547",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 5222016,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245550",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 9331804,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245552",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 9191221,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245554",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 9446698,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245556",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 13.png",
+    "Name": "screenshot - 13.png",
+    "Size": 9607644,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245557",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 14.png",
+    "Name": "screenshot - 14.png",
+    "Size": 10083152,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245559",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 15.png",
+    "Name": "screenshot - 15.png",
+    "Size": 10457788,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245561",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 16.png",
+    "Name": "screenshot - 16.png",
+    "Size": 5528985,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245562",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 9889031,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245564",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 9882042,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245566",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 10280531,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245568",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 9379781,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245569",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 9211294,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245571",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 9912933,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245572",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 9551606,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245574",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 9799201,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245576",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 121016,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245578",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 313779,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245579",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 225459,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245581",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 381747,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245582",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 171700,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245584",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 223924,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245586",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 256564,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245587",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 407092,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245589",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 312244,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245590",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 273459,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245592",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 293044,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245593",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 292660,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245595",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 844468,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245597",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 606388,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245598",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 437811,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245600",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 357171,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245601",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 389427,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245603",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 208563,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245604",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Ziggy's Big Idea/description.txt",
+    "Name": "description.txt",
+    "Size": 299,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.245613",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 24599,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.245616",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1413745,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245617",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 2146345,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245619",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 2556515,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245621",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 3092720,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245622",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2980758,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245624",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 1915939,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245625",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3102312,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245627",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 2271130,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245628",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2167259,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245630",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2617041,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245632",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 2359135,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245633",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 2341898,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245635",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 87354,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245636",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 34212,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245638",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 25660,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245639",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 32071,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245641",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 26861,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245643",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 38433,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245644",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 30873,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245646",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 38177,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245647",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 40420,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245649",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 39641,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245650",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 47089,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245652",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 29156,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245653",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 35774,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245655",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 41881,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245656",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 40079,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245658",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 27850,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245660",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 47305,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245661",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 33584,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245663",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 39011,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245664",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 41095,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245666",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 37549,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245667",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 45342,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245669",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 30142,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245672",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Doughnuts/description.txt",
+    "Name": "description.txt",
+    "Size": 253,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.245679",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 31787,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.245681",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 3326333,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245685",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2917507,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245687",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3010731,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245688",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3523366,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245690",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3576310,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245692",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 3648784,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245693",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 3628231,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245695",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 3410418,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245696",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 555051,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245698",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/page10.mp3",
+    "Name": "page10.mp3",
+    "Size": 342519,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245700",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/page12.mp3",
+    "Name": "page12.mp3",
+    "Size": 355058,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245701",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/page14.mp3",
+    "Name": "page14.mp3",
+    "Size": 306575,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245703",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/page2.mp3",
+    "Name": "page2.mp3",
+    "Size": 182859,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245705",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/page4.mp3",
+    "Name": "page4.mp3",
+    "Size": 472086,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245706",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/page6.mp3",
+    "Name": "page6.mp3",
+    "Size": 306157,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245708",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/page8.mp3",
+    "Name": "page8.mp3",
+    "Size": 308246,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245709",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Nia Bakes Cookies/description.txt",
+    "Name": "description.txt",
+    "Size": 312,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.245715",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 45290,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.245717",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1273218,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245719",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 5730283,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245721",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 5947646,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245722",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 5802215,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245724",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 8555765,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245725",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 1996435,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245727",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 7541971,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245728",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 8799897,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245730",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 6032977,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245732",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 6540047,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245734",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 7269805,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245736",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 5860682,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245737",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 5968113,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245739",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 5233447,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245740",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 218864,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245742",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 216356,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245743",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 212595,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245745",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 127331,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245747",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 532961,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245750",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 264631,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245752",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 108523,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245753",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 112912,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245755",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 79684,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245756",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 190652,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245758",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 230149,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245759",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 148020,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245761",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 321055,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245762",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 378734,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245764",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 520422,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245765",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 382495,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245767",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 1095325,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245768",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 72161,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245770",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 218237,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245771",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 586877,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245773",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 442681,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245775",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 247076,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245776",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 135481,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245778",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 72788,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245780",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Babka Sisters/description.txt",
+    "Name": "description.txt",
+    "Size": 316,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.245786",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 22624,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.245788",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 2038481,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245790",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 2364657,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245791",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 2579411,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245793",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 1861496,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245794",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2646411,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245797",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3220696,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245799",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3614351,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245800",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 2862868,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245802",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2785005,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245803",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2859684,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245805",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 2665633,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245806",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 3369999,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245808",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 143949,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245809",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 55693,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245811",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 105993,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245812",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 57572,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245814",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 95569,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245815",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 123870,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245820",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 76620,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245822",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 146435,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245824",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 78929,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245825",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 60938,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245827",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 67128,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245828",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/A Safe Cake/description.txt",
+    "Name": "description.txt",
+    "Size": 356,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.245834",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 27133,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.245837",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1681931,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245839",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 3943792,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245841",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 3782706,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245842",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 4193281,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245844",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 2615543,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245846",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 3114410,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245848",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 15.png",
+    "Name": "screenshot 15.png",
+    "Size": 2811306,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245850",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 16.png",
+    "Name": "screenshot 16.png",
+    "Size": 4350925,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245852",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 17.png",
+    "Name": "screenshot 17.png",
+    "Size": 1366116,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245854",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 3625517,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245856",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3907466,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245857",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3049129,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245859",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 2759156,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245860",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2482168,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245862",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 3341335,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245863",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 3492134,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245865",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 2395942,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245867",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 1.mp3",
+    "Name": "page 1.mp3",
+    "Size": 153143,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245869",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 106453,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245873",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 149399,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245875",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 121403,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245876",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 138482,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245878",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 237815,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245879",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 188618,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245881",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 193289,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245882",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 123037,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245884",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 86307,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245885",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 183435,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245887",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 165295,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245888",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 147164,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245890",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 237267,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245891",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 185184,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245893",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 144393,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245894",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 99081,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245896",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 220275,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245898",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 208564,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245899",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 172798,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245902",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 70491,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245903",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 29.mp3",
+    "Name": "page 29.mp3",
+    "Size": 94321,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245905",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 137585,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245906",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 30.mp3",
+    "Name": "page 30.mp3",
+    "Size": 217972,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245908",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 31.mp3",
+    "Name": "page 31.mp3",
+    "Size": 181394,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245909",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 32.mp3",
+    "Name": "page 32.mp3",
+    "Size": 96891,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245911",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 193556,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245912",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 246725,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245914",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 244125,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245915",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 138785,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245917",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 149890,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245918",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 161185,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245920",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/The Stolen Smell/description.txt",
+    "Name": "description.txt",
+    "Size": 310,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.245929",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 21870,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.245931",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 888182,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245933",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 3039236,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245934",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 2001656,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245936",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 2634509,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245937",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 2808694,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245939",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 2648886,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245940",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2758968,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245942",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 2149920,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245944",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 2227502,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245945",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 1986228,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245946",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2776149,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245948",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2436708,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245950",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 3259888,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245951",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 2566042,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.245952",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 69464,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245954",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 41986,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245956",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 27201,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245957",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 22532,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245959",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 27175,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245960",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 29623,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245963",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 29367,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245964",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 43240,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245966",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 32021,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245967",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 28374,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245969",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 19716,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245970",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 33249,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245972",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 46733,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245974",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 29157,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245975",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 28582,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245977",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 37106,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245978",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 53561,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245980",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 33331,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245981",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 30353,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245983",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 27694,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245984",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 24591,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245986",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 27696,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245987",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 28110,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245989",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 26289,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245990",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 23446,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245992",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 27432,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245993",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 23261,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.245995",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Dessert/description.txt",
+    "Name": "description.txt",
+    "Size": 163,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.246001",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 24890,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.246003",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 4145180,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246005",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 4577909,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246006",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 7549565,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246008",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 5462445,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246011",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 13.png",
+    "Name": "screenshot - 13.png",
+    "Size": 4747270,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246012",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 14.png",
+    "Name": "screenshot - 14.png",
+    "Size": 6194947,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246014",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 15.png",
+    "Name": "screenshot - 15.png",
+    "Size": 5599098,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246015",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 16.png",
+    "Name": "screenshot - 16.png",
+    "Size": 6809201,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246017",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 7153640,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246018",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 4888939,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246020",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 5048348,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246021",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 6887590,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246023",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 9674466,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246024",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 6491201,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246026",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 5153792,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246027",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 6226804,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246029",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 1-2.mp3",
+    "Name": "page 1-2.mp3",
+    "Size": 2173464,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246031",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 11-12.mp3",
+    "Name": "page 11-12.mp3",
+    "Size": 1845440,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246033",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 13-14.mp3",
+    "Name": "page 13-14.mp3",
+    "Size": 1387208,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246034",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 15-16.mp3",
+    "Name": "page 15-16.mp3",
+    "Size": 1795360,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246036",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 17-18.mp3",
+    "Name": "page 17-18.mp3",
+    "Size": 2212902,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246037",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 19-20.mp3",
+    "Name": "page 19-20.mp3",
+    "Size": 2907136,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246039",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 21-22.mp3",
+    "Name": "page 21-22.mp3",
+    "Size": 1628844,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246040",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 23-24.mp3",
+    "Name": "page 23-24.mp3",
+    "Size": 3626410,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246042",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 25-26.mp3",
+    "Name": "page 25-26.mp3",
+    "Size": 3039222,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246043",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 27-28.mp3",
+    "Name": "page 27-28.mp3",
+    "Size": 3648946,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246045",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 3-4.mp3",
+    "Name": "page 3-4.mp3",
+    "Size": 1954364,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246047",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 5-6.mp3",
+    "Name": "page 5-6.mp3",
+    "Size": 2433254,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246048",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 7-8.mp3",
+    "Name": "page 7-8.mp3",
+    "Size": 1879244,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246050",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/page 9-10.mp3",
+    "Name": "page 9-10.mp3",
+    "Size": 1564992,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246051",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Easy-to-make Desserts from Around the World 1/description.txt",
+    "Name": "description.txt",
+    "Size": 276,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.246057",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28037,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.246059",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1198381,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246061",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 3359570,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246063",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3739280,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246064",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 2923691,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246067",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3579640,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246069",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 3269532,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246070",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2925939,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246072",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 2646165,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246073",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 2705738,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246075",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 81146,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246076",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 150681,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246078",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 101153,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246080",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 99899,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246081",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 136261,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246083",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 143785,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246084",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 94883,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246086",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 166354,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246087",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 129992,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246089",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 140650,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246090",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 183909,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246092",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 120588,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246094",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 108676,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246095",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 238452,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246097",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 117453,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246098",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 155696,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246100",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Rainy Day Cake Bake/description.txt",
+    "Name": "description.txt",
+    "Size": 257,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.246105",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28964,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.246108",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1035103,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246109",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 4609181,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246111",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3901030,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246113",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3683666,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246114",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3638013,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246116",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 5869576,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246117",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 4726511,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246119",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 1223517,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246120",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/page10_11.mp3",
+    "Name": "page10_11.mp3",
+    "Size": 267643,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246123",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/page12_13.mp3",
+    "Name": "page12_13.mp3",
+    "Size": 151750,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246125",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/page14_15.mp3",
+    "Name": "page14_15.mp3",
+    "Size": 84999,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246126",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/page16.mp3",
+    "Name": "page16.mp3",
+    "Size": 530287,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246128",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/page4_5.mp3",
+    "Name": "page4_5.mp3",
+    "Size": 203819,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246129",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/page6_7.mp3",
+    "Name": "page6_7.mp3",
+    "Size": 286734,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246131",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/page8_9.mp3",
+    "Name": "page8_9.mp3",
+    "Size": 303713,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246133",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Brady Bakes a Cake A Measuring Adventure/description.txt",
+    "Name": "description.txt",
+    "Size": 284,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.246138",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 26130,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.246140",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 851759,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246142",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 5304637,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246144",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 4634512,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246145",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3135746,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246147",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3038876,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246148",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 3322173,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246150",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 5524161,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246151",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 218978,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246153",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 139647,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246155",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 298093,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246156",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 250887,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246158",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 143307,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246159",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 38950,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246161",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 31749,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246162",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Pat-A-Cake/description.txt",
+    "Name": "description.txt",
+    "Size": 223,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.246168",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28303,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-09-25T08:11:39.246170",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1803444,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246171",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 2672672,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246174",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 3325208,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246185",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 2673465,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246187",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 1845822,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246188",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 1420728,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246190",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2114363,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246197",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 2586451,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246202",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 2071849,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246204",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 2647358,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246206",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2042410,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246208",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2602702,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246210",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 2544109,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246212",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 1708703,
+    "MimeType": "image/png",
+    "ModTime": "2025-09-25T08:11:39.246213",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 45743,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246215",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 20667,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246217",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 13979,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246219",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 8546,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246220",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 15651,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246222",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 27772,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246223",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 17323,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246225",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 21085,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246226",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 18995,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246228",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 14397,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246229",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 11889,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246231",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 21084,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246232",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 21502,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246234",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 15651,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246236",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 18577,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246237",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 19831,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246239",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 22756,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246240",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 22756,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246242",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 15651,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246243",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 21919,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246245",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 33204,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246246",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 25263,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246248",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 29443,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246251",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 37384,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246253",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 27771,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246254",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 23591,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-09-25T08:11:39.246256",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "CROP-ShuSpot/Breakfast/description.txt",
+    "Name": "description.txt",
+    "Size": 257,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-09-25T08:11:39.246265",
+    "IsDir": false,
+    "Tier": "STANDARD"
   }
-}
+]

@@ -165,7 +165,66 @@ class LocalManifestGenerator:
             folder_name = os.path.basename(folder_path.rstrip('/'))
             output_file = f"manifest_{folder_name}.json"
         
-        manifest = {
+        # Create rclone-compatible manifest (array of file objects)
+        rclone_manifest = []
+        
+        for book in books:
+            # Add all images for this book
+            for image in book.get('images', []):
+                # Convert local path to rclone-style path
+                relative_path = image['path'].replace(folder_path, '').lstrip('/')
+                rclone_path = f"CROP-ShuSpot/{relative_path}"
+                
+                rclone_manifest.append({
+                    "Path": rclone_path,
+                    "Name": image['name'],
+                    "Size": image['size'],
+                    "MimeType": self._get_mime_type(image['name']),
+                    "ModTime": datetime.now().isoformat(),
+                    "IsDir": False,
+                    "Tier": "STANDARD"
+                })
+            
+            # Add all audio files for this book
+            for audio in book.get('audio_files', []):
+                relative_path = audio['path'].replace(folder_path, '').lstrip('/')
+                rclone_path = f"CROP-ShuSpot/{relative_path}"
+                
+                rclone_manifest.append({
+                    "Path": rclone_path,
+                    "Name": audio['name'],
+                    "Size": audio['size'],
+                    "MimeType": self._get_mime_type(audio['name']),
+                    "ModTime": datetime.now().isoformat(),
+                    "IsDir": False,
+                    "Tier": "STANDARD"
+                })
+            
+            # Add description.txt if it exists
+            desc_file = os.path.join(book['folder_path'], 'description.txt')
+            if os.path.exists(desc_file):
+                relative_path = desc_file.replace(folder_path, '').lstrip('/')
+                rclone_path = f"CROP-ShuSpot/{relative_path}"
+                
+                rclone_manifest.append({
+                    "Path": rclone_path,
+                    "Name": "description.txt",
+                    "Size": os.path.getsize(desc_file),
+                    "MimeType": "text/plain; charset=utf-8",
+                    "ModTime": datetime.now().isoformat(),
+                    "IsDir": False,
+                    "Tier": "STANDARD"
+                })
+        
+        # Save rclone-compatible manifest
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(rclone_manifest, f, indent=2, ensure_ascii=False)
+        
+        print(f"✅ Created rclone-compatible manifest with {len(rclone_manifest)} files from {len(books)} books")
+        print(f"📁 Saved to: {output_file}")
+        
+        # Return both formats for compatibility
+        book_manifest = {
             'books': books,
             'metadata': {
                 'generated_by': 'Local Manifest Generator',
@@ -176,14 +235,24 @@ class LocalManifestGenerator:
             }
         }
         
-        # Save manifest
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(manifest, f, indent=2, ensure_ascii=False)
-        
-        print(f"✅ Created manifest with {len(books)} books")
-        print(f"📁 Saved to: {output_file}")
-        
-        return output_file, manifest
+        return output_file, rclone_manifest, book_manifest
+    
+    def _get_mime_type(self, filename):
+        """Get MIME type for file"""
+        ext = filename.lower().split('.')[-1]
+        mime_types = {
+            'png': 'image/png',
+            'jpg': 'image/jpeg',
+            'jpeg': 'image/jpeg',
+            'gif': 'image/gif',
+            'webp': 'image/webp',
+            'mp3': 'audio/mpeg',
+            'wav': 'audio/wav',
+            'm4a': 'audio/mp4',
+            'ogg': 'audio/ogg',
+            'txt': 'text/plain; charset=utf-8'
+        }
+        return mime_types.get(ext, 'application/octet-stream')
 
 def main():
     if len(sys.argv) < 2:
@@ -195,13 +264,14 @@ def main():
     generator = LocalManifestGenerator()
     
     try:
-        output_file, manifest = generator.create_manifest(folder_path)
+        output_file, rclone_manifest, book_manifest = generator.create_manifest(folder_path)
         
         print("\n🎉 Manifest created successfully!")
-        print(f"📊 Found {len(manifest['books'])} books")
+        print(f"📊 Found {len(book_manifest['books'])} books")
+        print(f"📁 Generated {len(rclone_manifest)} file entries")
         print("Next steps:")
         print("1. Use this manifest in your book admin interface")
-        print("2. Import to local database")
+        print("2. Import to local or live database")
         print(f"3. Manifest file: {output_file}")
         
     except Exception as e:
