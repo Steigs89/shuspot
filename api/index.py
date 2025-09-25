@@ -487,15 +487,25 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                     raise HTTPException(status_code=500, detail="Upload script not found")
 
                 # Run the Node.js upload script
-                result = subprocess.run([
-                    'node', script_path, crop_src
-                ], capture_output=True, text=True, timeout=600,  # 10 minute timeout
-                cwd=REPO_ROOT, env={**os.environ, **{
+                env_vars = {
                     'SUPABASE_URL': os.environ.get('SUPABASE_URL', ''),
                     'SUPABASE_SERVICE_KEY': os.environ.get('SUPABASE_SERVICE_KEY', ''),
                     'SUPABASE_BUCKET': 'books',
-                    'CONCURRENCY': '5'
-                }})
+                    'CONCURRENCY': '3'  # Reduced concurrency for server stability
+                }
+
+                print(f"🔧 Running Node.js upload script: node {script_path} {crop_src}")
+                print(f"🔧 Environment: SUPABASE_URL={'***' if env_vars['SUPABASE_URL'] else 'MISSING'}, SERVICE_KEY={'***' if env_vars['SUPABASE_SERVICE_KEY'] else 'MISSING'}")
+
+                result = subprocess.run([
+                    'node', script_path, crop_src
+                ], capture_output=True, text=True, timeout=900,  # 15 minute timeout
+                cwd=REPO_ROOT, env={**os.environ, **env_vars})
+
+                print(f"🔧 Node.js exit code: {result.returncode}")
+                print(f"🔧 Node.js stdout: {result.stdout[:500]}...")
+                if result.stderr:
+                    print(f"🔧 Node.js stderr: {result.stderr[:500]}...")
 
                 if result.returncode != 0:
                     raise HTTPException(status_code=500, detail=f"Node.js upload failed: {result.stderr}")

@@ -59,6 +59,9 @@ async function uploadFile(filePath, relativeKey, resumeState, progress) {
 // --- Main Function ---
 
 async function uploadFolder() {
+  console.log('🚀 Starting Node.js upload script...')
+  console.log(`📁 Target folder: ${localFolder}`)
+
   if (!localFolder) {
     console.error('❌ Usage: node upload-folder.js <folder-path>')
     process.exit(1)
@@ -66,8 +69,20 @@ async function uploadFolder() {
 
   if (!fs.existsSync(localFolder)) {
     console.error(`❌ Folder not found: ${localFolder}`)
+    console.error(`📂 Current directory: ${process.cwd()}`)
+    console.error(`📂 Directory contents:`, fs.readdirSync('.').slice(0, 10))
     process.exit(1)
   }
+
+  // Check environment variables
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_KEY) {
+    console.error('❌ Missing Supabase environment variables')
+    console.error(`SUPABASE_URL: ${process.env.SUPABASE_URL ? '***' : 'MISSING'}`)
+    console.error(`SUPABASE_SERVICE_KEY: ${process.env.SUPABASE_SERVICE_KEY ? '***' : 'MISSING'}`)
+    process.exit(1)
+  }
+
+  console.log('✅ Environment check passed')
 
   const files = []
   function readDirRecursive(dir, base = '') {
