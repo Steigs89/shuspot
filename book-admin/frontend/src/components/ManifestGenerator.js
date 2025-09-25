@@ -105,8 +105,10 @@ const ManifestGenerator = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert('✅ Manifest uploaded successfully!');
+        alert('✅ Manifest uploaded successfully! Refreshing data...');
         console.log('✅ Upload result:', data);
+        // Refresh the page to show updated data
+        window.location.reload();
       } else {
         alert(`❌ Upload failed: ${data.detail || 'Unknown error'}`);
       }
