@@ -58,15 +58,13 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
 
   // Smart URL resolver that handles ANY folder structure automatically
   const getImageUrl = useCallback((pageData, pageNumber) => {
-    // First, honor direct URL if provided (e.g., Supabase public URL)
-    if (pageData?.url) {
-      return pageData.url;
-    }
-    
     console.log('🔥 SMART URL RESOLVER - VERSION 2024-09-24 - UNIVERSAL FOLDER SUPPORT 🔥');
     console.log('🖼️ getImageUrl called for page:', pageNumber);
     console.log('📁 pageData:', pageData);
     console.log('📚 book:', book);
+    
+    // Always use smart URL resolver to handle any folder structure
+    // Skip pageData?.url check to force smart pattern matching
 
     // Smart URL generation that tries multiple patterns
     if (book?.title) {
