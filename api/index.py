@@ -456,8 +456,12 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     import os
     import json
 
+    print("🚀 Upload ZIP endpoint called")
+    print(f"📦 ZIP file: {zip_file.filename}, size: {zip_file.size if hasattr(zip_file, 'size') else 'unknown'}")
+
     try:
         # Step 1: Extract ZIP to temporary directory
+        print("📂 Step 1: Extracting ZIP...")
         with tempfile.TemporaryDirectory() as tmpdir:
             zip_path = os.path.join(tmpdir, zip_file.filename or "upload.zip")
             content = await zip_file.read()
@@ -470,20 +474,31 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                 zf.extractall(extract_dir)
 
             # Find CROP-ShuSpot folder
+            print(f"🔍 Looking for CROP-ShuSpot in: {extract_dir}")
             crop_src = None
             for root, dirs, files in os.walk(extract_dir):
+                print(f"📁 Checking dir: {root}, dirs: {dirs[:5]}...")
                 if 'CROP-ShuSpot' in dirs:
                     crop_src = os.path.join(root, 'CROP-ShuSpot')
+                    print(f"✅ Found CROP-ShuSpot at: {crop_src}")
                     break
 
             if not crop_src or not os.path.exists(crop_src):
+                print(f"❌ CROP-ShuSpot folder not found. Contents of {extract_dir}:")
+                for item in os.listdir(extract_dir)[:10]:  # Show first 10 items
+                    print(f"  - {item}")
                 raise HTTPException(status_code=400, detail="ZIP must contain a CROP-ShuSpot folder")
 
             # Step 2: Upload to Supabase using Node.js script
+            print("📤 Step 2: Starting Node.js upload...")
             try:
                 # Check if Node.js upload script exists
                 script_path = os.path.join(REPO_ROOT, 'upload-folder.js')
+                print(f"🔧 Script path: {script_path}")
+                print(f"🔧 Script exists: {os.path.exists(script_path)}")
+
                 if not os.path.exists(script_path):
+                    print(f"❌ Script not found at: {script_path}")
                     raise HTTPException(status_code=500, detail="Upload script not found")
 
                 # Run the Node.js upload script
