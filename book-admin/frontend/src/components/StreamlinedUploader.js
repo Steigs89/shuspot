@@ -264,7 +264,7 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       console.log('🚀 Starting chunked upload for:', zipFile.name, zipFile.size, zipFile.type);
       
       // Use chunked uploader for large files
-      const chunkedUploader = new ChunkedUploader(supabase);
+      const chunkedUploader = new ChunkedUploader(supabaseClient);
       
       // Set up progress tracking
       const onProgress = (progress) => {
