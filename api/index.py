@@ -543,8 +543,9 @@ def _do_zip_upload_background(job_id: str, zip_file: UploadFile):
                 import supabase
                 from supabase import create_client, Client
 
-                supabase_url = os.environ.get('SUPABASE_URL')
-                supabase_key = os.environ.get('SUPABASE_SERVICE_KEY')
+                # Use the same Supabase credentials as the frontend
+                supabase_url = os.environ.get('SUPABASE_URL', 'https://xzwdtcczndgglqikmlwj.supabase.co')
+                supabase_key = os.environ.get('SUPABASE_SERVICE_KEY') or os.environ.get('SUPABASE_ANON_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6d2R0Y2N6bmRnZ2xxaWttbHdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyOTkyNzUsImV4cCI6MjA2ODg3NTI3NX0.05oCSZ1d3eJHr79B1UvCoQTIL-UBGAKdRBk4CUwe7wE')
 
                 if not supabase_url or not supabase_key:
                     print(f"❌ Job {job_id}: Missing Supabase credentials")
@@ -665,66 +666,68 @@ def _do_zip_upload_background(job_id: str, zip_file: UploadFile):
                 print(f"⚠️ Job {job_id}: No books found in ZIP")
                 return
 
-            # Create database entries
-            from database import get_db, Book
-            db = next(get_db())
-
-            next_id = max([b.id for b in db.query(Book).all()] or [0]) + 1
-            imported_count = 0
-            updated_count = 0
-
-            for book_data in books:
-                title = book_data.get('Name', 'Unknown Title')
-                author = book_data.get('Author', 'Unknown Author')
-
-                existing_book = db.query(Book).filter(Book.title == title, Book.author == author).first()
-                if existing_book:
-                    existing_book.genre = book_data.get('Category', existing_book.genre)
-                    existing_book.book_type = book_data.get('Media', existing_book.book_type)
-                    existing_book.reading_level = book_data.get('Age', existing_book.reading_level)
-                    existing_book.cover_image_url = book_data.get('_cover_image_path', existing_book.cover_image_url)
-                    existing_book.description = book_data.get('Notes', existing_book.description)
-
-                    try:
-                        existing_notes = json.loads(existing_book.notes) if existing_book.notes else {}
-                    except Exception:
-                        existing_notes = {}
-                    merged_notes = {
-                        **existing_notes,
-                        'page_sequence': book_data.get('_page_sequence', existing_notes.get('page_sequence', [])),
-                        'total_pages': book_data.get('_total_pages', existing_notes.get('total_pages', 0)),
-                        'folder_path': book_data.get('_folder_path', existing_notes.get('folder_path')),
-                        'cover_image_path': book_data.get('_cover_image_path', existing_notes.get('cover_image_path')),
-                    }
-                    existing_book.notes = json.dumps(merged_notes)
-                    existing_book.file_path = book_data.get('_folder_path', existing_book.file_path)
-                    existing_book.file_name = f"{title}.shuspot"
-                    updated_count += 1
-                else:
-                    db.add(Book(
-                        title=title,
-                        author=author,
-                        genre=book_data.get('Category', 'Unknown'),
-                        book_type=book_data.get('Media', 'Book'),
-                        fiction_type=book_data.get('Fiction Type', 'Fiction'),
-                        reading_level=book_data.get('Age', ''),
-                        cover_image_url=book_data.get('_cover_image_path', ''),
-                        file_path=book_data.get('_folder_path', ''),
-                        file_name=f"{title}.shuspot",
-                        file_size=0,
-                        file_type='FOLDER',
-                        description=book_data.get('Notes', ''),
-                        notes=json.dumps({
-                            'page_sequence': book_data.get('_page_sequence', []),
-                            'total_pages': book_data.get('_total_pages', 0),
-                            'folder_path': book_data.get('_folder_path', ''),
-                            'cover_image_path': book_data.get('_cover_image_path', ''),
-                        })
-                    ))
-                    imported_count += 1
-
-            db.commit()
-            print(f"✅ Job {job_id}: Database update complete: {imported_count} imported, {updated_count} updated")
+            # Create database entries using local JSON database
+            print(f"🗄️ Job {job_id}: Adding books to local database...")
+            
+            try:
+                db_data = load_db()
+                existing_books = db_data.get("books", [])
+                
+                next_id = max([b.get("id", 0) for b in existing_books] or [0]) + 1
+                imported_count = 0
+                updated_count = 0
+                
+                for book_data in books:
+                    title = book_data.get('Name', 'Unknown Title')
+                    author = book_data.get('Author', 'Unknown Author')
+                    
+                    # Check if book already exists
+                    existing_book = None
+                    for i, book in enumerate(existing_books):
+                        if book.get('title') == title and book.get('author') == author:
+                            existing_book = book
+                            break
+                    
+                    if existing_book:
+                        # Update existing book
+                        existing_book['genre'] = book_data.get('Category', existing_book.get('genre', 'Unknown'))
+                        existing_book['book_type'] = book_data.get('Media', existing_book.get('book_type', 'Read to Me'))
+                        existing_book['reading_level'] = book_data.get('Age', existing_book.get('reading_level', ''))
+                        existing_book['cover_image_url'] = book_data.get('_cover_image_path', existing_book.get('cover_image_url', ''))
+                        existing_book['description'] = book_data.get('Notes', existing_book.get('description', ''))
+                        existing_book['_page_sequence'] = book_data.get('_page_sequence', existing_book.get('_page_sequence', []))
+                        existing_book['_total_pages'] = book_data.get('_total_pages', existing_book.get('_total_pages', 0))
+                        existing_book['_folder_path'] = book_data.get('_folder_path', existing_book.get('_folder_path', ''))
+                        updated_count += 1
+                    else:
+                        # Add new book
+                        new_book = {
+                            'id': next_id,
+                            'title': title,
+                            'author': author,
+                            'genre': book_data.get('Category', 'Unknown'),
+                            'book_type': book_data.get('Media', 'Read to Me'),
+                            'reading_level': book_data.get('Age', ''),
+                            'cover_image_url': book_data.get('_cover_image_path', ''),
+                            'description': book_data.get('Notes', ''),
+                            '_page_sequence': book_data.get('_page_sequence', []),
+                            '_total_pages': book_data.get('_total_pages', 0),
+                            '_folder_path': book_data.get('_folder_path', ''),
+                            'url': '',
+                            'notes': ''
+                        }
+                        existing_books.append(new_book)
+                        next_id += 1
+                        imported_count += 1
+                
+                # Save updated database
+                db_data['books'] = existing_books
+                save_db(db_data)
+                
+                print(f"✅ Job {job_id}: Database update complete: {imported_count} imported, {updated_count} updated")
+                
+            except Exception as e:
+                print(f"❌ Job {job_id}: Database update error: {e}")
 
         print(f"🎉 Job {job_id}: Processing complete!")
 
