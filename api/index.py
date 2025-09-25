@@ -1466,6 +1466,265 @@ def _reassemble_and_process_chunks(job_id: str, chunks: list, original_filename:
             except:
                 pass
 
+# ========================= TXT Ingestion Endpoints =========================
+
+@router.post("/txt-ingestion/execute-script")
+async def execute_txt_script(
+    script: str = Form(...),
+    preview_mode: bool = Form(True),
+    upload_to_database: bool = Form(False),
+    root_directory: str = Form("")
+):
+    """Execute custom Python script for TXT file ingestion with preview"""
+    try:
+        import sys
+        import io
+        import json
+        import re
+        import glob
+        from contextlib import redirect_stdout, redirect_stderr
+        import traceback
+        
+        # Use provided root directory or default tmp directory
+        script_root = root_directory if root_directory else TMP_DIR
+        
+        # Available variables for the script
+        script_globals = {
+            'root_directory': script_root,
+            'os': __import__('os'),
+            'json': json,
+            're': re,
+            'glob': glob,
+            'pathlib': __import__('pathlib'),
+            'results': [],  # To collect results
+            'preview_data': [],  # To collect preview data
+        }
+        
+        # Capture stdout and stderr
+        stdout_capture = io.StringIO()
+        stderr_capture = io.StringIO()
+        
+        execution_result = {
+            "success": False,
+            "output": "",
+            "error": "",
+            "preview_data": [],
+            "processed_count": 0,
+            "database_uploaded": False
+        }
+        
+        try:
+            with redirect_stdout(stdout_capture), redirect_stderr(stderr_capture):
+                # Execute the script
+                exec(script, script_globals)
+                
+                # Get results from script
+                preview_data = script_globals.get('preview_data', [])
+                results = script_globals.get('results', [])
+                
+                execution_result.update({
+                    "success": True,
+                    "output": stdout_capture.getvalue(),
+                    "preview_data": preview_data,
+                    "processed_count": len(results)
+                })
+                
+                print(f"📋 Script execution completed: {len(results)} items processed")
+                
+                # If not in preview mode and we have results, save to JSON database
+                if not preview_mode and results and upload_to_database:
+                    try:
+                        # Load existing books or create new list
+                        if os.path.exists(DB_PATH):
+                            with open(DB_PATH, 'r', encoding='utf-8') as f:
+                                existing_books = json.load(f)
+                        else:
+                            existing_books = []
+                        
+                        # Add new books to the list
+                        books_added = 0
+                        books_updated = 0
+                        
+                        for book_data in results:
+                            # Check if book already exists (by title and author)
+                            title = book_data.get('title', 'Unknown')
+                            author = book_data.get('author', 'Unknown')
+                            
+                            existing_book = None
+                            for i, existing in enumerate(existing_books):
+                                if (existing.get('title', '').lower() == title.lower() and 
+                                    existing.get('author', '').lower() == author.lower()):
+                                    existing_book = existing
+                                    existing_books[i] = book_data  # Update existing
+                                    books_updated += 1
+                                    break
+                            
+                            if not existing_book:
+                                existing_books.append(book_data)
+                                books_added += 1
+                        
+                        # Save updated books list
+                        with open(DB_PATH, 'w', encoding='utf-8') as f:
+                            json.dump(existing_books, f, indent=2, ensure_ascii=False)
+                        
+                        execution_result["database_uploaded"] = True
+                        execution_result["books_added"] = books_added
+                        execution_result["books_updated"] = books_updated
+                        
+                        print(f"💾 Database updated: {books_added} added, {books_updated} updated")
+                        
+                    except Exception as e:
+                        execution_result["error"] += f"Database update error: {str(e)}\n"
+                        print(f"❌ Database update failed: {e}")
+                
+        except Exception as e:
+            execution_result.update({
+                "success": False,
+                "error": f"Script execution error: {str(e)}\n{traceback.format_exc()}",
+                "output": stdout_capture.getvalue()
+            })
+        
+        # Always include any stderr output
+        stderr_output = stderr_capture.getvalue()
+        if stderr_output:
+            execution_result["error"] += f"Warnings: {stderr_output}"
+            
+        return execution_result
+        
+    except Exception as e:
+        print(f"❌ TXT ingestion error: {e}")
+        return {
+            "success": False,
+            "error": f"General error: {str(e)}",
+            "output": "",
+            "preview_data": [],
+            "processed_count": 0
+        }
+
+@router.get("/txt-ingestion/sample-scripts")
+async def get_sample_scripts():
+    """Get sample ChatGPT instruction scripts for TXT ingestion"""
+    return {
+        "basic_folder_parser": {
+            "name": "Basic Folder Parser",
+            "description": "Parse folders with PDF + metadata.txt files",
+            "script": """# Basic folder parser following ChatGPT instruction template
+import os
+import json
+
+print("🔥 Starting basic folder parser...")
+
+# Initialize results storage
+results = []
+preview_data = []
+
+def parse_metadata_file(metadata_path):
+    \"\"\"Parse a metadata.txt file\"\"\"
+    metadata = {}
+    try:
+        with open(metadata_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+            
+        # Parse key-value pairs
+        for line in content.split('\\n'):
+            if ':' in line:
+                key, value = line.split(':', 1)
+                metadata[key.strip().lower()] = value.strip()
+                
+    except Exception as e:
+        print(f"Error parsing {metadata_path}: {e}")
+    
+    return metadata
+
+# Scan root directory for folders with metadata.txt
+for item in os.listdir(root_directory):
+    folder_path = os.path.join(root_directory, item)
+    
+    if os.path.isdir(folder_path):
+        metadata_path = os.path.join(folder_path, 'metadata.txt')
+        pdf_files = [f for f in os.listdir(folder_path) if f.endswith('.pdf')]
+        
+        if os.path.exists(metadata_path) and pdf_files:
+            print(f"Processing folder: {item}")
+            
+            metadata = parse_metadata_file(metadata_path)
+            pdf_file = pdf_files[0]  # Use first PDF found
+            
+            book_data = {
+                "title": metadata.get('title', item),
+                "author": metadata.get('author', 'Unknown'),
+                "genre": metadata.get('genre', metadata.get('subject', 'Unknown')),
+                "reading_level": metadata.get('reading_level', metadata.get('grade', '')),
+                "file_name": pdf_file,
+                "file_path": os.path.join(folder_path, pdf_file),
+                "description": metadata.get('description', ''),
+                "series": metadata.get('series', ''),
+                "isbn": metadata.get('isbn', ''),
+                "publisher": metadata.get('publisher', ''),
+                "book_type": "Books",
+                "fiction_type": "Fiction"
+            }
+            
+            results.append(book_data)
+            preview_data.append(book_data)
+
+print(f"✅ Processed {len(results)} books")
+"""
+        },
+        "shuspot_structure_parser": {
+            "name": "ShuSpot Structure Parser", 
+            "description": "Parse ShuSpot folder structure with crop images",
+            "script": """# ShuSpot structure parser
+import os
+import json
+import re
+
+print("🔥 Starting ShuSpot structure parser...")
+
+results = []
+preview_data = []
+
+# Scan for ShuSpot folder structure
+for item in os.listdir(root_directory):
+    folder_path = os.path.join(root_directory, item)
+    
+    if os.path.isdir(folder_path):
+        print(f"Scanning folder: {item}")
+        
+        # Look for crop images
+        resized_folder = os.path.join(folder_path, 'resized')
+        crop_files = []
+        
+        if os.path.exists(resized_folder):
+            crop_files = [f for f in os.listdir(resized_folder) 
+                         if f.startswith('crop-') and f.endswith(('.png', '.jpg', '.jpeg'))]
+            crop_files.sort()
+        
+        if crop_files:
+            # Extract metadata from folder name and structure
+            title = item.replace('_', ' ').replace('-', ' ').title()
+            
+            book_data = {
+                "title": title,
+                "author": "Unknown", 
+                "genre": "Educational",
+                "reading_level": "",
+                "file_name": folder_path,
+                "file_path": folder_path,
+                "description": f"Interactive book with {len(crop_files)} pages",
+                "book_type": "Books",
+                "fiction_type": "Non-Fiction",
+                "crop_count": len(crop_files)
+            }
+            
+            results.append(book_data)
+            preview_data.append(book_data)
+
+print(f"✅ Found {len(results)} ShuSpot books")
+"""
+        }
+    }
+
 # Mount router at multiple prefixes to handle Vercel path forwarding
 app.include_router(router)  # '/'
 app.include_router(router, prefix="/index")  # '/index'
