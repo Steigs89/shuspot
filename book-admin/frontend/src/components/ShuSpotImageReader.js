@@ -56,17 +56,120 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
   const title = book?.title || 'Unknown Book';
   const bookId = book?.id;
 
-  // Smart URL resolver that handles ANY folder structure automatically
+  // Smart URL resolver that handles BOTH local and remote (Supabase) books
   const getImageUrl = useCallback((pageData, pageNumber) => {
-    console.log('🔥 SMART URL RESOLVER - VERSION 2024-09-24 - UNIVERSAL FOLDER SUPPORT 🔥');
+    console.log('🔥 SMART URL RESOLVER - VERSION 2024-09-25 - LOCAL + REMOTE SUPPORT 🔥');
     console.log('🖼️ getImageUrl called for page:', pageNumber);
     console.log('📁 pageData:', pageData);
     console.log('📚 book:', book);
     
-    // Always use smart URL resolver to handle any folder structure
-    // Skip pageData?.url check to force smart pattern matching
+    // PRIORITY 1: Check for local file paths (manifest-generated books)
+    if (pageData?.file_path) {
+      console.log('🎯 Found local file_path in pageData:', pageData.file_path);
 
-    // Smart URL generation that tries multiple patterns
+      // Check if it's already a full URL (remote book)
+      if (pageData.file_path.startsWith('http://') || pageData.file_path.startsWith('https://')) {
+        console.log('🌐 Remote URL detected, using as-is:', pageData.file_path);
+        return pageData.file_path;
+      }
+
+      // Local file path - construct backend-served URL
+      const cropMatch = pageData.file_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      if (cropMatch) {
+        const [, relativePath] = cropMatch;
+        const cleanPath = relativePath.replace(/[\\/]+/g, '/');
+        const url = `${getApiUrl()}/CROP-ShuSpot/${cleanPath}`;
+        console.log('🏠 Local CROP-ShuSpot URL:', url);
+        return url;
+      }
+
+      // Try other local path patterns
+      if (pageData.file_path.includes('resized') && pageData.file_path.includes('crop-')) {
+        // Already a proper path, just need to make it relative to backend
+        const filename = pageData.file_path.split('/').pop();
+        const url = `${getApiUrl()}/CROP-ShuSpot/${book.title}/resized/${filename}`;
+        console.log('🏠 Local resized URL:', url);
+        return url;
+      }
+    }
+
+    // PRIORITY 2: Check book notes for folder_path (ingested manifest books)
+    if (book?.notes) {
+      try {
+        const parsedNotes = JSON.parse(book.notes);
+        const folderPath = parsedNotes.folder_path;
+        if (folderPath) {
+          console.log('🎯 Found folder_path in notes:', folderPath);
+
+          // Check if it's a remote URL
+          if (folderPath.startsWith('http://') || folderPath.startsWith('https://')) {
+            const url = `${folderPath}/resized/crop-${pageNumber}.png`;
+            console.log('🌐 Remote folder URL:', url);
+            return url;
+          }
+
+          // Local folder path
+          const cropMatch = folderPath.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+          if (cropMatch) {
+            const [, relativePath] = cropMatch;
+            const cleanPath = relativePath.replace(/\\/g, '/');
+            const url = `${getApiUrl()}/CROP-ShuSpot/${cleanPath}/resized/crop-${pageNumber}.png`;
+            console.log('🏠 Local notes folder URL:', url);
+            return url;
+          }
+        }
+
+        // Check page_sequence in notes
+        if (parsedNotes.page_sequence && Array.isArray(parsedNotes.page_sequence)) {
+          const pageInfo = parsedNotes.page_sequence.find(p => p.page_number === pageNumber);
+          if (pageInfo?.file_path) {
+            console.log('🎯 Found page file_path in notes:', pageInfo.file_path);
+
+            if (pageInfo.file_path.startsWith('http://') || pageInfo.file_path.startsWith('https://')) {
+              console.log('🌐 Remote page URL from notes:', pageInfo.file_path);
+              return pageInfo.file_path;
+            }
+
+            // Local path
+            const cropMatch = pageInfo.file_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+            if (cropMatch) {
+              const [, relativePath] = cropMatch;
+              const cleanPath = relativePath.replace(/[\\/]+/g, '/');
+              const url = `${getApiUrl()}/CROP-ShuSpot/${cleanPath}`;
+              console.log('🏠 Local page URL from notes:', url);
+              return url;
+            }
+          }
+        }
+      } catch (e) {
+        console.error('Error parsing notes:', e);
+      }
+    }
+
+    // PRIORITY 3: Check book's file_path field
+    if (book?.file_path) {
+      console.log('🎯 Found file_path in book:', book.file_path);
+
+      if (book.file_path.startsWith('http://') || book.file_path.startsWith('https://')) {
+        const url = `${book.file_path}/resized/crop-${pageNumber}.png`;
+        console.log('🌐 Remote book file_path URL:', url);
+        return url;
+      }
+
+      // Local path
+      const cropMatch = book.file_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      if (cropMatch) {
+        const [, relativePath] = cropMatch;
+        const cleanPath = relativePath.replace(/\\/g, '/');
+        const url = `${getApiUrl()}/CROP-ShuSpot/${cleanPath}/resized/crop-${pageNumber}.png`;
+        console.log('🏠 Local book file_path URL:', url);
+        return url;
+      }
+    }
+
+    // PRIORITY 4: Fallback to Supabase URL generation (for legacy remote books)
+    console.log('🔄 No local paths found, trying Supabase patterns...');
+
     if (book?.title) {
       const bookTitle = book.title;
       const pageNum = pageNumber;

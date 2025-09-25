@@ -45,21 +45,117 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
   
   // Better cover image logic - check multiple possible sources
   const getCoverImageUrl = () => {
-    console.log('🔥 UPDATED ShuSpotBookOverview getCoverImageUrl - VERSION 2024-01-09 🔥');
+    console.log('🔥 UPDATED ShuSpotBookOverview getCoverImageUrl - VERSION 2024-09-25 - LOCAL + REMOTE SUPPORT 🔥');
     console.log('Getting cover image for book:', title, book);
-    
-    // Apply smart URL resolver for cover images too
-    if (book.cover_image_url && book.title) {
+
+    // PRIORITY 1: Check for local paths in book data
+    if (book.cover_image_url) {
       console.log('🚨 FOUND EXISTING cover_image_url:', book.cover_image_url);
-      
+
+      // Check if it's already a full URL (remote book)
+      if (book.cover_image_url.startsWith('http://') || book.cover_image_url.startsWith('https://')) {
+        console.log('🌐 Remote cover URL detected, using as-is:', book.cover_image_url);
+        return book.cover_image_url;
+      }
+
+      // Local path - construct backend-served URL
+      const cropMatch = book.cover_image_url.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      if (cropMatch) {
+        const [, relativePath] = cropMatch;
+        const cleanPath = relativePath.replace(/[\\/]+/g, '/');
+        const url = `${apiUrl}/CROP-ShuSpot/${cleanPath}`;
+        console.log('🏠 Local cover URL:', url);
+        return url;
+      }
+    }
+
+    // PRIORITY 2: Check notes for cover_image_path
+    if (book.notes) {
+      try {
+        const parsedNotes = typeof book.notes === 'string' ? JSON.parse(book.notes) : book.notes;
+        if (parsedNotes.cover_image_path) {
+          console.log('🎯 Found cover_image_path in notes:', parsedNotes.cover_image_path);
+
+          if (parsedNotes.cover_image_path.startsWith('http://') || parsedNotes.cover_image_path.startsWith('https://')) {
+            console.log('🌐 Remote cover URL from notes:', parsedNotes.cover_image_path);
+            return parsedNotes.cover_image_path;
+          }
+
+          // Local path
+          const cropMatch = parsedNotes.cover_image_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+          if (cropMatch) {
+            const [, relativePath] = cropMatch;
+            const cleanPath = relativePath.replace(/[\\/]+/g, '/');
+            const url = `${apiUrl}/CROP-ShuSpot/${cleanPath}`;
+            console.log('🏠 Local cover URL from notes:', url);
+            return url;
+          }
+        }
+      } catch (e) {
+        console.log('Error parsing notes for cover image:', e);
+      }
+    }
+
+    // PRIORITY 3: Use folder path to construct cover URL
+    if (book._folder_path) {
+      const folderPathMatch = book._folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+      if (folderPathMatch) {
+        const [, relativePath] = folderPathMatch;
+        const cleanPath = relativePath.replace(/\\/g, '/');
+        const coverUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}/cover.jpg`;
+        console.log('🏠 Using derived cover URL from _folder_path:', coverUrl);
+        return coverUrl;
+      }
+    }
+
+    // PRIORITY 4: Check notes for folder_path
+    if (book.notes) {
+      try {
+        const parsedNotes = typeof book.notes === 'string' ? JSON.parse(book.notes) : book.notes;
+        if (parsedNotes.folder_path) {
+          console.log('🏠 Using notes folder_path:', parsedNotes.folder_path);
+          const cropMatch = parsedNotes.folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+          if (cropMatch) {
+            const [, relativePath] = cropMatch;
+            const cleanPath = relativePath.replace(/\\/g, '/');
+            const coverUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}/cover.jpg`;
+            console.log('🏠 Generated cover URL from notes:', coverUrl);
+            return coverUrl;
+          }
+        }
+      } catch (e) {
+        console.log('Error parsing notes for folder path:', e);
+      }
+    }
+
+    // PRIORITY 5: Fallback to first page as cover
+    if (book._page_sequence && book._page_sequence.length > 0) {
+      const firstPage = book._page_sequence[0];
+      console.log('🏠 Using first page fallback:', firstPage);
+      if (firstPage.file_path) {
+        const cropMatch = firstPage.file_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
+        if (cropMatch) {
+          const [, relativePath] = cropMatch;
+          const cleanPath = relativePath.replace(/[\\/]+/g, '/');
+          const fallbackUrl = `${apiUrl}/CROP-ShuSpot/${cleanPath}`;
+          console.log('🏠 Generated fallback URL:', fallbackUrl);
+          return fallbackUrl;
+        }
+      }
+    }
+
+    // PRIORITY 6: Fallback to Supabase URL generation (for legacy remote books)
+    console.log('🔄 No local paths found, trying Supabase patterns...');
+
+    if (book.cover_image_url && book.title) {
       // Extract the page number from the cover URL (usually crop-1.png)
       const pageMatch = book.cover_image_url.match(/crop-(\d+)\.png$/);
       const pageNum = pageMatch ? pageMatch[1] : '1';
-      
+
       // Generate smart URL patterns for cover image (same as page images)
       const baseUrl = 'https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books';
       const bookTitle = book.title;
-      
+
       const coverPatterns = [
         // Pattern 1: Baking folder (most likely for A Safe Cake)
         `${baseUrl}/Baking/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
@@ -71,9 +167,9 @@ export default function ShuSpotBookOverview({ book, onBack, onStartReading, isSh
         // Pattern 3: Direct path (original)
         book.cover_image_url
       ];
-      
-      console.log('🎯 Smart cover URL patterns:', coverPatterns);
-      console.log('✅ Using smart cover URL (Baking first):', coverPatterns[0]);
+
+      console.log('🎯 Supabase cover URL patterns:', coverPatterns);
+      console.log('✅ Using Supabase cover URL (Baking first):', coverPatterns[0]);
       return coverPatterns[0]; // Return the Baking folder pattern first
     }
     
