@@ -2582,10 +2582,8 @@ async def generate_manifest(request: dict = Body(...)):
                     # For single book mode, genre is the name of the root folder (parent of book)
                     genre = root_folder.name
                 else:
-                    # For multi book mode, genre is the first part of the relative path from root to book
-                    rel_path = book_folder.relative_to(root_folder)
-                    parts = rel_path.parts
-                    genre = parts[0] if parts else root_folder.name
+                    # For multi book mode, genre is the name of the root folder being processed
+                    genre = root_folder.name
 
                 # Clean up genre name (remove spaces, special chars)
                 genre = genre.replace('_', ' ').replace('-', ' ').strip()
