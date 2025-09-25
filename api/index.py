@@ -453,27 +453,11 @@ def test_upload_endpoint():
 @router.post("/shuspot-ingestion/upload-zip-to-supabase")
 async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     """Upload ZIP, extract, upload all files to Supabase, and create database entries with Supabase URLs."""
-    import subprocess
-    import tempfile
-    import shutil
-    import zipfile
-    import os
-    import json
-    import asyncio
+    import threading
+    import time
 
     print("🚀 Upload ZIP endpoint called")
     print(f"📦 ZIP file: {zip_file.filename}, size: {getattr(zip_file, 'size', 'unknown')}")
-
-    # For large uploads, return immediately and process in background
-    # This prevents timeout issues
-    if getattr(zip_file, 'size', 0) > 10 * 1024 * 1024:  # > 10MB
-        print("📦 Large file detected, starting background processing...")
-        # TODO: Implement background job processing
-        return {
-            "message": "Large file upload started. This may take several minutes. Check logs for progress.",
-            "status": "processing",
-            "estimated_time": "2-5 minutes"
-        }
 
     # Quick validation before processing
     if not zip_file.filename:
@@ -482,12 +466,42 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     if not zip_file.filename.lower().endswith('.zip'):
         raise HTTPException(status_code=400, detail="File must be a ZIP file")
 
+    # For ALL uploads, process in background to avoid timeouts
+    # Return job ID immediately
+    job_id = f"upload-{int(time.time())}-{hash(zip_file.filename) % 10000}"
+
+    # Start background processing
+    def process_upload():
+        try:
+            print(f"🔄 Starting background processing for job {job_id}")
+            _do_zip_upload_background(job_id, zip_file)
+        except Exception as e:
+            print(f"❌ Background processing failed for job {job_id}: {e}")
+
+    thread = threading.Thread(target=process_upload, daemon=True)
+    thread.start()
+
+    return {
+        "message": "Upload started in background. Check status with the job ID.",
+        "job_id": job_id,
+        "status": "processing",
+        "estimated_time": "2-5 minutes"
+    }
+
+def _do_zip_upload_background(job_id: str, zip_file: UploadFile):
+    """Background processing function for ZIP uploads"""
     try:
+        print(f"📂 Job {job_id}: Starting ZIP extraction...")
+
         # Step 1: Extract ZIP to temporary directory
-        print("📂 Step 1: Extracting ZIP...")
+        import tempfile
+        import zipfile
+        import os
+        import json
+
         with tempfile.TemporaryDirectory() as tmpdir:
             zip_path = os.path.join(tmpdir, zip_file.filename or "upload.zip")
-            content = await zip_file.read()
+            content = zip_file.file.read()
             with open(zip_path, 'wb') as f:
                 f.write(content)
 
@@ -497,25 +511,21 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                 zf.extractall(extract_dir)
 
             # Find CROP-ShuSpot folder
-            print(f"🔍 Looking for CROP-ShuSpot in: {extract_dir}")
+            print(f"🔍 Job {job_id}: Looking for CROP-ShuSpot...")
             crop_src = None
             for root, dirs, files in os.walk(extract_dir):
-                print(f"📁 Checking dir: {root}, dirs: {dirs[:5]}...")
                 if 'CROP-ShuSpot' in dirs:
                     crop_src = os.path.join(root, 'CROP-ShuSpot')
-                    print(f"✅ Found CROP-ShuSpot at: {crop_src}")
+                    print(f"✅ Job {job_id}: Found CROP-ShuSpot at: {crop_src}")
                     break
 
             if not crop_src or not os.path.exists(crop_src):
-                print(f"❌ CROP-ShuSpot folder not found. Contents of {extract_dir}:")
-                for item in os.listdir(extract_dir)[:10]:  # Show first 10 items
-                    print(f"  - {item}")
-                raise HTTPException(status_code=400, detail="ZIP must contain a CROP-ShuSpot folder")
+                print(f"❌ Job {job_id}: CROP-ShuSpot folder not found")
+                return
 
-            # Step 2: Upload to Supabase using Python (direct)
-            print("📤 Step 2: Starting Python upload to Supabase...")
+            # Step 2: Upload to Supabase using Python
+            print(f"📤 Job {job_id}: Starting Supabase upload...")
             try:
-                # Use Python supabase client directly
                 import supabase
                 from supabase import create_client, Client
 
@@ -523,10 +533,10 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                 supabase_key = os.environ.get('SUPABASE_SERVICE_KEY')
 
                 if not supabase_url or not supabase_key:
-                    print("❌ Missing Supabase credentials")
-                    raise HTTPException(status_code=500, detail="Supabase credentials not configured")
+                    print(f"❌ Job {job_id}: Missing Supabase credentials")
+                    return
 
-                print("✅ Supabase credentials found")
+                print(f"✅ Job {job_id}: Supabase credentials found")
                 client: Client = create_client(supabase_url, supabase_key)
 
                 # Collect all files to upload
@@ -537,84 +547,63 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                         rel_path = os.path.relpath(full_path, crop_src)
                         files_to_upload.append((full_path, rel_path))
 
-                print(f"📁 Found {len(files_to_upload)} files to upload")
+                print(f"📁 Job {job_id}: Found {len(files_to_upload)} files to upload")
 
                 if not files_to_upload:
-                    raise HTTPException(status_code=400, detail="No files found to upload")
+                    print(f"❌ Job {job_id}: No files found to upload")
+                    return
 
                 uploaded_count = 0
                 failed_count = 0
 
-                # Upload files with progress updates
+                # Upload files
                 for i, (full_path, rel_path) in enumerate(files_to_upload):
                     try:
                         with open(full_path, 'rb') as f:
                             file_data = f.read()
 
-                        # Upload to Supabase storage
-                        try:
-                            result = client.storage.from_('books').upload(
-                                rel_path, file_data, {'upsert': 'true'}
-                            )
+                        result = client.storage.from_('books').upload(
+                            rel_path, file_data, {'upsert': 'true'}
+                        )
 
-                            # Check for successful upload
-                            if hasattr(result, 'status_code'):
-                                if result.status_code not in [200, 201]:
-                                    print(f"⚠️ Upload failed for {rel_path}: HTTP {result.status_code}")
-                                    if hasattr(result, 'json'):
-                                        try:
-                                            error_details = result.json()
-                                            print(f"   Error details: {error_details}")
-                                        except:
-                                            pass
-                                    failed_count += 1
-                                else:
-                                    uploaded_count += 1
-                            elif hasattr(result, 'get') and result.get('error'):
-                                print(f"⚠️ Upload failed for {rel_path}: {result.get('error')}")
-                                failed_count += 1
-                            else:
-                                # Assume success if no error indicators
-                                uploaded_count += 1
-
-                        except Exception as upload_error:
-                            print(f"❌ Exception uploading {rel_path}: {str(upload_error)}")
+                        if hasattr(result, 'status_code') and result.status_code not in [200, 201]:
+                            print(f"⚠️ Job {job_id}: Upload failed for {rel_path}: HTTP {result.status_code}")
                             failed_count += 1
+                        else:
+                            uploaded_count += 1
 
                         # Progress update every 10 files
                         if (i + 1) % 10 == 0:
-                            print(f"📤 Progress: {i + 1}/{len(files_to_upload)} files processed")
+                            print(f"📤 Job {job_id}: Progress: {i + 1}/{len(files_to_upload)} files processed")
 
                     except Exception as e:
-                        print(f"❌ Error uploading {rel_path}: {e}")
+                        print(f"❌ Job {job_id}: Exception uploading {rel_path}: {e}")
                         failed_count += 1
 
-                print(f"✅ Upload complete: {uploaded_count} successful, {failed_count} failed")
+                print(f"✅ Job {job_id}: Upload complete: {uploaded_count} successful, {failed_count} failed")
 
                 if uploaded_count == 0:
-                    raise HTTPException(status_code=500, detail="All file uploads failed")
+                    print(f"❌ Job {job_id}: All file uploads failed")
+                    return
 
-                print(f"✅ Python upload successful: {uploaded_count} files uploaded")
+                print(f"✅ Job {job_id}: Python upload successful: {uploaded_count} files uploaded")
 
-            except subprocess.TimeoutExpired:
-                raise HTTPException(status_code=500, detail="Upload timed out after 10 minutes")
-            except FileNotFoundError:
-                raise HTTPException(status_code=500, detail="Node.js not found. Please ensure Node.js is installed")
+            except Exception as e:
+                print(f"❌ Job {job_id}: Supabase upload error: {e}")
+                return
 
-            # Step 3: Parse the folder structure and create database entries
-            # Import the parser (this assumes it's available in the deployment)
+            # Step 3: Parse and create database entries
+            print(f"🗄️ Job {job_id}: Creating database entries...")
+
             try:
                 from shuspot_folder_parser import ShuSpotFolderParser
             except ImportError:
-                # Fallback if parser not available - create basic entries
-                print("⚠️ ShuSpotFolderParser not available, using basic parsing")
+                print(f"⚠️ Job {job_id}: ShuSpotFolderParser not available, using basic parsing")
                 ShuSpotFolderParser = None
 
-            # Use the uploaded Supabase paths
             supabase_base_url = "https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books"
 
             def convert_to_supabase_url(local_path):
-                """Convert local file path to Supabase URL"""
                 if crop_src in local_path:
                     rel_path = os.path.relpath(local_path, crop_src)
                     return f"{supabase_base_url}/{rel_path.replace(os.sep, '/')}"
@@ -624,18 +613,15 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                 parser = ShuSpotFolderParser(extract_dir)
                 books = parser.parse_all_books()
             else:
-                # Basic fallback parsing
                 books = []
                 for root, dirs, files in os.walk(extract_dir):
                     if 'CROP-ShuSpot' in root:
-                        # Find book folders (containing resized/crop-*.png files)
                         crop_files = [f for f in files if f.startswith('crop-') and f.endswith('.png')]
                         if crop_files:
                             folder_name = os.path.basename(root)
                             parent_name = os.path.basename(os.path.dirname(root))
                             cover_url = f"{supabase_base_url}/{parent_name}/{folder_name}/cover.jpg"
 
-                            # Sort crop files by number
                             def extract_number(filename):
                                 import re
                                 match = re.search(r'crop-(\d+)', filename)
@@ -662,24 +648,14 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                             })
 
             if not books:
-                return {"message": "No books found in ZIP", "uploaded_files": True, "books_created": 0}
+                print(f"⚠️ Job {job_id}: No books found in ZIP")
+                return
 
-            # Load current database
-            db = load_db()
-            existing = db.get("books", [])
+            # Create database entries
+            from database import get_db, Book
+            db = next(get_db())
 
-            # Build an index for upsert by (title, author) normalized
-            def key_of(x):
-                n = normalize_book(x)
-                t = (n.get("title") or "").strip().lower()
-                a = (n.get("author") or "").strip().lower()
-                return (t, a)
-
-            index = {}
-            for idx, rec in enumerate(existing):
-                index[key_of(rec)] = idx
-
-            next_id = max([b.get("id", 0) for b in existing] or [0]) + 1
+            next_id = max([b.id for b in db.query(Book).all()] or [0]) + 1
             imported_count = 0
             updated_count = 0
 
@@ -687,52 +663,61 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                 title = book_data.get('Name', 'Unknown Title')
                 author = book_data.get('Author', 'Unknown Author')
 
-                # Convert paths to Supabase URLs
-                if book_data.get('_folder_path'):
-                    book_data['_folder_path'] = convert_to_supabase_url(book_data['_folder_path'])
-                if book_data.get('_cover_image_path'):
-                    book_data['_cover_image_path'] = convert_to_supabase_url(book_data['_cover_image_path'])
-                if book_data.get('_page_sequence'):
-                    for pg in book_data['_page_sequence']:
-                        if isinstance(pg, dict) and pg.get('url'):
-                            pg['url'] = convert_to_supabase_url(pg['url'])
+                existing_book = db.query(Book).filter(Book.title == title, Book.author == author).first()
+                if existing_book:
+                    existing_book.genre = book_data.get('Category', existing_book.genre)
+                    existing_book.book_type = book_data.get('Media', existing_book.book_type)
+                    existing_book.reading_level = book_data.get('Age', existing_book.reading_level)
+                    existing_book.cover_image_url = book_data.get('_cover_image_path', existing_book.cover_image_url)
+                    existing_book.description = book_data.get('Notes', existing_book.description)
 
-                existing_key = key_of(book_data)
-                if existing_key in index:
-                    # Update existing book
-                    tgt_idx = index[existing_key]
-                    current = existing[tgt_idx]
-                    # Merge fields
-                    for field, value in book_data.items():
-                        if field == "id":
-                            continue
-                        if value is not None and (not isinstance(value, str) or value.strip() != ""):
-                            current[field] = value
-                    existing[tgt_idx] = current
+                    try:
+                        existing_notes = json.loads(existing_book.notes) if existing_book.notes else {}
+                    except Exception:
+                        existing_notes = {}
+                    merged_notes = {
+                        **existing_notes,
+                        'page_sequence': book_data.get('_page_sequence', existing_notes.get('page_sequence', [])),
+                        'total_pages': book_data.get('_total_pages', existing_notes.get('total_pages', 0)),
+                        'folder_path': book_data.get('_folder_path', existing_notes.get('folder_path')),
+                        'cover_image_path': book_data.get('_cover_image_path', existing_notes.get('cover_image_path')),
+                    }
+                    existing_book.notes = json.dumps(merged_notes)
+                    existing_book.file_path = book_data.get('_folder_path', existing_book.file_path)
+                    existing_book.file_name = f"{title}.shuspot"
                     updated_count += 1
                 else:
-                    # Create new book
-                    book_data["id"] = next_id
-                    next_id += 1
-                    existing.append(normalize_book(book_data))
+                    db.add(Book(
+                        title=title,
+                        author=author,
+                        genre=book_data.get('Category', 'Unknown'),
+                        book_type=book_data.get('Media', 'Book'),
+                        fiction_type=book_data.get('Fiction Type', 'Fiction'),
+                        reading_level=book_data.get('Age', ''),
+                        cover_image_url=book_data.get('_cover_image_path', ''),
+                        file_path=book_data.get('_folder_path', ''),
+                        file_name=f"{title}.shuspot",
+                        file_size=0,
+                        file_type='FOLDER',
+                        description=book_data.get('Notes', ''),
+                        notes=json.dumps({
+                            'page_sequence': book_data.get('_page_sequence', []),
+                            'total_pages': book_data.get('_total_pages', 0),
+                            'folder_path': book_data.get('_folder_path', ''),
+                            'cover_image_path': book_data.get('_cover_image_path', ''),
+                        })
+                    ))
                     imported_count += 1
 
-            db["books"] = existing
-            save_db(db)
+            db.commit()
+            print(f"✅ Job {job_id}: Database update complete: {imported_count} imported, {updated_count} updated")
 
-            return {
-                "message": f"ZIP uploaded to Supabase and {imported_count + updated_count} books created/updated in database",
-                "uploaded_files": True,
-                "books_created": imported_count,
-                "books_updated": updated_count,
-                "parsing_stats": {"total_parsed": len(books)},
-                "supabase_base_url": supabase_base_url
-            }
+        print(f"🎉 Job {job_id}: Processing complete!")
 
-    except HTTPException:
-        raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Upload to Supabase failed: {str(e)}")
+        print(f"💥 Job {job_id}: Critical error: {e}")
+        import traceback
+        traceback.print_exc()
 
 # ========================= Manifest Generation Endpoint =========================
 from pathlib import Path

@@ -192,7 +192,7 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       console.log('📡 Response received:', response.status, response.statusText);
 
       setUploadProgress(80);
-      setUploadStatus('Creating database entries...');
+      setUploadStatus('Starting background processing...');
 
       if (!response.ok) {
         console.log('❌ Response not OK, trying to read error...');
@@ -207,18 +207,21 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       const result = await response.json();
 
       setUploadProgress(100);
-      setUploadStatus('Upload complete!');
+      setUploadStatus('Upload started in background!');
 
-      toast.success(`Successfully uploaded ${result.books_created + result.books_updated} books to Supabase!`);
+      toast.success(`Upload started! Processing in background. Check logs for completion. Job ID: ${result.job_id}`);
 
       if (onUploadComplete) {
         onUploadComplete(result);
       }
 
-      // Force refresh the page to update stats
+      // Show completion message and refresh after a delay
       setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+        toast.info('Background processing may take 2-5 minutes. Refresh the page later to see new books.');
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      }, 2000);
 
     } catch (error) {
       console.error('Supabase ZIP upload error:', error);
