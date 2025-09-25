@@ -3,3 +3,4 @@ starlette==0.36.3
 uvicorn==0.29.0
 python-multipart==0.0.9
 python-dateutil==2.8.2
+supabase==2.3.0

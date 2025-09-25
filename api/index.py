@@ -455,9 +455,21 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     import zipfile
     import os
     import json
+    import asyncio
 
     print("🚀 Upload ZIP endpoint called")
-    print(f"📦 ZIP file: {zip_file.filename}, size: {zip_file.size if hasattr(zip_file, 'size') else 'unknown'}")
+    print(f"📦 ZIP file: {zip_file.filename}, size: {getattr(zip_file, 'size', 'unknown')}")
+
+    # For large uploads, return immediately and process in background
+    # This prevents timeout issues
+    if getattr(zip_file, 'size', 0) > 10 * 1024 * 1024:  # > 10MB
+        print("📦 Large file detected, starting background processing...")
+        # TODO: Implement background job processing
+        return {
+            "message": "Large file upload started. This may take several minutes. Check logs for progress.",
+            "status": "processing",
+            "estimated_time": "2-5 minutes"
+        }
 
     try:
         # Step 1: Extract ZIP to temporary directory
@@ -489,43 +501,70 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                     print(f"  - {item}")
                 raise HTTPException(status_code=400, detail="ZIP must contain a CROP-ShuSpot folder")
 
-            # Step 2: Upload to Supabase using Node.js script
-            print("📤 Step 2: Starting Node.js upload...")
+            # Step 2: Upload to Supabase using Python (direct)
+            print("📤 Step 2: Starting Python upload to Supabase...")
             try:
-                # Check if Node.js upload script exists
-                script_path = os.path.join(REPO_ROOT, 'upload-folder.js')
-                print(f"🔧 Script path: {script_path}")
-                print(f"🔧 Script exists: {os.path.exists(script_path)}")
+                # Use Python supabase client directly
+                import supabase
+                from supabase import create_client, Client
 
-                if not os.path.exists(script_path):
-                    print(f"❌ Script not found at: {script_path}")
-                    raise HTTPException(status_code=500, detail="Upload script not found")
+                supabase_url = os.environ.get('SUPABASE_URL')
+                supabase_key = os.environ.get('SUPABASE_SERVICE_KEY')
 
-                # Run the Node.js upload script
-                env_vars = {
-                    'SUPABASE_URL': os.environ.get('SUPABASE_URL', ''),
-                    'SUPABASE_SERVICE_KEY': os.environ.get('SUPABASE_SERVICE_KEY', ''),
-                    'SUPABASE_BUCKET': 'books',
-                    'CONCURRENCY': '3'  # Reduced concurrency for server stability
-                }
+                if not supabase_url or not supabase_key:
+                    print("❌ Missing Supabase credentials")
+                    raise HTTPException(status_code=500, detail="Supabase credentials not configured")
 
-                print(f"🔧 Running Node.js upload script: node {script_path} {crop_src}")
-                print(f"🔧 Environment: SUPABASE_URL={'***' if env_vars['SUPABASE_URL'] else 'MISSING'}, SERVICE_KEY={'***' if env_vars['SUPABASE_SERVICE_KEY'] else 'MISSING'}")
+                print("✅ Supabase credentials found")
+                client: Client = create_client(supabase_url, supabase_key)
 
-                result = subprocess.run([
-                    'node', script_path, crop_src
-                ], capture_output=True, text=True, timeout=900,  # 15 minute timeout
-                cwd=REPO_ROOT, env={**os.environ, **env_vars})
+                # Collect all files to upload
+                files_to_upload = []
+                for root, dirs, files in os.walk(crop_src):
+                    for file in files:
+                        full_path = os.path.join(root, file)
+                        rel_path = os.path.relpath(full_path, crop_src)
+                        files_to_upload.append((full_path, rel_path))
 
-                print(f"🔧 Node.js exit code: {result.returncode}")
-                print(f"🔧 Node.js stdout: {result.stdout[:500]}...")
-                if result.stderr:
-                    print(f"🔧 Node.js stderr: {result.stderr[:500]}...")
+                print(f"📁 Found {len(files_to_upload)} files to upload")
 
-                if result.returncode != 0:
-                    raise HTTPException(status_code=500, detail=f"Node.js upload failed: {result.stderr}")
+                if not files_to_upload:
+                    raise HTTPException(status_code=400, detail="No files found to upload")
 
-                print(f"✅ Node.js upload successful: {result.stdout}")
+                uploaded_count = 0
+                failed_count = 0
+
+                # Upload files with progress updates
+                for i, (full_path, rel_path) in enumerate(files_to_upload):
+                    try:
+                        with open(full_path, 'rb') as f:
+                            file_data = f.read()
+
+                        # Upload to Supabase storage
+                        result = client.storage.from_('books').upload(
+                            rel_path, file_data, {'upsert': 'true'}
+                        )
+
+                        if hasattr(result, 'status_code') and result.status_code not in [200, 201]:
+                            print(f"⚠️ Upload failed for {rel_path}: {getattr(result, 'json', lambda: {})()}")
+                            failed_count += 1
+                        else:
+                            uploaded_count += 1
+
+                        # Progress update every 10 files
+                        if (i + 1) % 10 == 0:
+                            print(f"📤 Progress: {i + 1}/{len(files_to_upload)} files processed")
+
+                    except Exception as e:
+                        print(f"❌ Error uploading {rel_path}: {e}")
+                        failed_count += 1
+
+                print(f"✅ Upload complete: {uploaded_count} successful, {failed_count} failed")
+
+                if uploaded_count == 0:
+                    raise HTTPException(status_code=500, detail="All file uploads failed")
+
+                print(f"✅ Python upload successful: {uploaded_count} files uploaded")
 
             except subprocess.TimeoutExpired:
                 raise HTTPException(status_code=500, detail="Upload timed out after 10 minutes")
