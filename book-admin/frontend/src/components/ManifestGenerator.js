@@ -89,12 +89,26 @@ const ManifestGenerator = () => {
     URL.revokeObjectURL(url);
   };
 
-  const uploadManifest = async () => {
+  const uploadManifest = async (target = 'live') => {
     if (!generatedManifest) return;
 
     try {
-      const apiUrl = useLocalTunnel ? localTunnelUrl : getApiUrl();
-      const response = await fetch(`${apiUrl}/shuspot-ingestion/ingest-manifest`, {
+      let apiUrl;
+      let endpoint;
+      
+      if (target === 'live') {
+        // Upload to live server (production)
+        apiUrl = '/api'; // Use Netlify proxy to live server
+        endpoint = `${apiUrl}/shuspot-ingestion/ingest-manifest`;
+      } else {
+        // Upload to local server
+        apiUrl = useLocalTunnel ? localTunnelUrl : 'http://localhost:8000';
+        endpoint = `${apiUrl}/shuspot-ingestion/ingest-manifest`;
+      }
+
+      console.log(`📤 Uploading to ${target} server:`, endpoint);
+      
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,10 +119,10 @@ const ManifestGenerator = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert('✅ Manifest uploaded successfully!');
+        alert(`✅ Manifest uploaded successfully to ${target} server!`);
         console.log('✅ Upload result:', data);
       } else {
-        alert(`❌ Upload failed: ${data.detail || 'Unknown error'}`);
+        alert(`❌ Upload failed: ${data.detail || data.error || 'Unknown error'}`);
       }
     } catch (err) {
       alert(`❌ Upload error: ${err.message}`);
@@ -517,10 +531,18 @@ def process_metadata(description_text, folder_name):
                 💾 Download Manifest
               </button>
               <button
-                onClick={uploadManifest}
+                onClick={() => uploadManifest('live')}
                 className="btn btn-success"
+                title="Upload to live server for production use"
               >
-                📤 Upload to Database
+                🚀 Upload to Live Server
+              </button>
+              <button
+                onClick={() => uploadManifest('local')}
+                className="btn btn-secondary"
+                title="Upload to local database for testing"
+              >
+                💻 Upload to Local Database
               </button>
             </div>
 

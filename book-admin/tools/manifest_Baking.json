@@ -226,7 +226,7 @@
       "total_pages": 17,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Ziggy's Big Idea/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.468187"
+      "created_at": "2025-09-25T07:59:21.612945"
     },
     {
       "id": "doughnuts",
@@ -460,7 +460,7 @@
       "total_pages": 13,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Doughnuts/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.469391"
+      "created_at": "2025-09-25T07:59:21.614187"
     },
     {
       "id": "nia_bakes_cookies",
@@ -580,7 +580,7 @@
       "total_pages": 9,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Nia Bakes Cookies/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.470130"
+      "created_at": "2025-09-25T07:59:21.615048"
     },
     {
       "id": "the_babka_sisters",
@@ -832,7 +832,7 @@
       "total_pages": 15,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Babka Sisters/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.470991"
+      "created_at": "2025-09-25T07:59:21.616075"
     },
     {
       "id": "a_safe_cake",
@@ -994,7 +994,7 @@
       "total_pages": 13,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/A Safe Cake/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.472212"
+      "created_at": "2025-09-25T07:59:21.616991"
     },
     {
       "id": "the_stolen_smell",
@@ -1312,7 +1312,7 @@
       "total_pages": 18,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/The Stolen Smell/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.473128"
+      "created_at": "2025-09-25T07:59:21.618068"
     },
     {
       "id": "dessert",
@@ -1582,7 +1582,7 @@
       "total_pages": 15,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Dessert/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.474005"
+      "created_at": "2025-09-25T07:59:21.619192"
     },
     {
       "id": "easy_to_make_desserts_from_around_the_world_1",
@@ -1786,7 +1786,7 @@
       "total_pages": 17,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Easy-to-make Desserts from Around the World 1/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.474830"
+      "created_at": "2025-09-25T07:59:21.620241"
     },
     {
       "id": "rainy_day_cake_bake",
@@ -1960,7 +1960,7 @@
       "total_pages": 10,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Rainy Day Cake Bake/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.475614"
+      "created_at": "2025-09-25T07:59:21.621137"
     },
     {
       "id": "brady_bakes_a_cake_a_measuring_adventure",
@@ -2074,7 +2074,7 @@
       "total_pages": 9,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Brady Bakes a Cake A Measuring Adventure/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.476312"
+      "created_at": "2025-09-25T07:59:21.621933"
     },
     {
       "id": "pat_a_cake",
@@ -2182,7 +2182,7 @@
       "total_pages": 8,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Pat-A-Cake/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.477246"
+      "created_at": "2025-09-25T07:59:21.622903"
     },
     {
       "id": "breakfast",
@@ -2446,14 +2446,14 @@
       "total_pages": 15,
       "has_audio": true,
       "cover_image": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking/Breakfast/cover.jpg",
-      "created_at": "2025-09-25T07:53:29.478095"
+      "created_at": "2025-09-25T07:59:21.623813"
     }
   ],
   "metadata": {
     "generated_by": "Local Manifest Generator",
     "source_folder": "/Users/ethan.steigerwald/Downloads/CROP-ShuSpot/Baking",
     "total_books": 12,
-    "created_at": "2025-09-25T07:53:29.478101",
+    "created_at": "2025-09-25T07:59:21.623824",
     "generator_version": "1.0"
   }
 }
