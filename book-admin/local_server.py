@@ -206,36 +206,66 @@ def ingest_manifest():
         # Use the database manipulator to import books
         try:
             from tools.database_manipulator import ShuSpotDatabaseManipulator
-            db = ShuSpotDatabaseManipulator("books.db")
+            # Use the main database with existing books
+            db_path = "../books.db" if os.path.exists("../books.db") else "books.db"
+            db = ShuSpotDatabaseManipulator(db_path)
             
+            # Load existing books first
+            books_list = db.load_books()
             imported_count = 0
             errors = []
             
             for book in books:
                 try:
-                    # Convert local manifest format to database format
+                    # Convert local manifest format to database format (match existing schema)
+                    # Generate a unique integer ID
+                    max_id = max([b.get('id', 0) for b in books_list] + [0])
                     db_book = {
-                        'id': book.get('id', book.get('title', '').lower().replace(' ', '_')),
+                        'id': max_id + 1,
                         'title': book.get('title', 'Unknown Title'),
                         'author': book.get('author', 'Unknown Author'),
                         'genre': book.get('genre', 'General'),
                         'reading_level': book.get('reading_level', 'Elementary'),
                         'book_type': book.get('book_type', 'Read to Me'),
-                        'description': book.get('description', ''),
-                        'total_pages': book.get('total_pages', len(book.get('images', []))),
-                        'has_audio': book.get('has_audio', False),
                         'cover_image_url': book.get('cover_image', ''),
+                        'file_path': book.get('folder_path', ''),
+                        'file_name': f"{book.get('title', 'Unknown')}_manifest",
+                        'file_size': int(book.get('total_pages', 0)),
+                        'file_type': 'local_manifest',
+                        'uploaded_at': datetime.now().isoformat(),
                         'notes': json.dumps({
                             'folder_path': book.get('folder_path', ''),
                             'local_manifest': True,
-                            'imported_at': datetime.now().isoformat()
+                            'imported_at': datetime.now().isoformat(),
+                            'total_pages': book.get('total_pages', len(book.get('images', []))),
+                            'has_audio': book.get('has_audio', False),
+                            'description': book.get('description', '')
                         })
                     }
                     
-                    # Add to database (this would need to be implemented in the database manipulator)
-                    # For now, just count as imported
-                    imported_count += 1
-                    logger.info(f"📚 Processed book: {db_book['title']}")
+                    # Actually save to database
+                    
+                    # Check if book already exists
+                    existing_book = None
+                    for existing in books_list:
+                        if existing.get('id') == db_book['id'] or existing.get('title') == db_book['title']:
+                            existing_book = existing
+                            break
+                    
+                    if existing_book:
+                        # Update existing book
+                        existing_book.update(db_book)
+                        logger.info(f"📚 Updated existing book: {db_book['title']}")
+                    else:
+                        # Add new book
+                        books_list.append(db_book)
+                        logger.info(f"📚 Added new book: {db_book['title']}")
+                    
+                    # Save back to database
+                    if db.save_books(books_list):
+                        imported_count += 1
+                    else:
+                        errors.append(f"Failed to save book: {db_book['title']}")
                     
                 except Exception as e:
                     error_msg = f"Failed to process book {book.get('title', 'Unknown')}: {str(e)}"
