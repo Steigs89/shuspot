@@ -72,6 +72,20 @@ class ChunkedUploader {
       throw error;
     }
   }
+
+  // Alias method for compatibility
+  async uploadFile(file, options = {}) {
+    const { onProgress, onChunkComplete } = options;
+    
+    const progressWrapper = (progress) => {
+      if (onProgress) onProgress(progress.percent);
+      if (onChunkComplete && progress.chunk) {
+        onChunkComplete(progress.chunk, progress.total);
+      }
+    };
+    
+    return await this.uploadLargeZip(file, progressWrapper);
+  }
 }
 
 const StreamlinedUploader = ({ onUploadComplete }) => {
@@ -250,7 +264,7 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       console.log('🚀 Starting chunked upload for:', zipFile.name, zipFile.size, zipFile.type);
       
       // Use chunked uploader for large files
-      const chunkedUploader = new ChunkedUploader();
+      const chunkedUploader = new ChunkedUploader(supabase);
       
       // Set up progress tracking
       const onProgress = (progress) => {
