@@ -82,39 +82,53 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
           book.cover_image_url.replace(/crop-\d+\.png$/, `crop-${pageNum}.png`)
         ] : []),
         
-        // Pattern 2: Common rclone upload patterns
+        // Pattern 2: Common rclone upload patterns (most likely for existing books)
         `${baseUrl}/Baking/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
         `${baseUrl}/Our%20Solar%20System/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
         `${baseUrl}/Science/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
         `${baseUrl}/Math/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
         `${baseUrl}/Reading/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
         
-        // Pattern 3: Genre-based patterns
+        // Pattern 3: Direct book folder (for newer uploads)
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        
+        // Pattern 4: Alternative page numbering (zero-padded)
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum.toString().padStart(2, '0')}.png`,
+        
+        // Pattern 5: Genre-based patterns
         ...(book.genre ? [
           `${baseUrl}/${encodeURIComponent(book.genre)}/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
           `${baseUrl}/CROP-ShuSpot/${encodeURIComponent(book.genre)}/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`
         ] : []),
         
-        // Pattern 4: Direct book folder
-        `${baseUrl}/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
+        // Pattern 6: CROP-ShuSpot folder variations
         `${baseUrl}/CROP-ShuSpot/${encodeURIComponent(bookTitle)}/resized/crop-${pageNum}.png`,
         
-        // Pattern 5: Alternative file naming
+        // Pattern 7: Alternative file naming and locations
         `${baseUrl}/${encodeURIComponent(bookTitle)}/crop-${pageNum}.png`,
         `${baseUrl}/${encodeURIComponent(bookTitle)}/page-${pageNum}.png`,
-        `${baseUrl}/${encodeURIComponent(bookTitle)}/${pageNum}.png`
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/${pageNum}.png`,
+        
+        // Pattern 8: Alternative numbering formats
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/resized/page-${pageNum}.png`,
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/resized/${pageNum}.png`,
+        
+        // Pattern 9: No resized folder
+        `${baseUrl}/${encodeURIComponent(bookTitle)}/crop-${pageNum}.png`
       ];
       
       // Remove duplicates and filter out undefined
       const uniquePatterns = [...new Set(patterns.filter(Boolean))];
       
-      console.log('🎯 Smart URL patterns generated:', uniquePatterns.length);
-      console.log('🔄 Primary URL:', uniquePatterns[0]);
+      console.log(`🎯 Smart URL patterns generated for page ${pageNumber}:`, uniquePatterns.length);
+      console.log(`🔄 Primary URL for page ${pageNumber}:`, uniquePatterns[0]);
+      console.log(`📋 All patterns for page ${pageNumber}:`, uniquePatterns);
       
       // Store all patterns globally for fallback handling
       if (typeof window !== 'undefined') {
         window.imageUrlFallbacks = window.imageUrlFallbacks || {};
         window.imageUrlFallbacks[`${book.id}-${pageNumber}`] = uniquePatterns;
+        console.log(`💾 Stored ${uniquePatterns.length} fallback patterns for ${book.id}-${pageNumber}`);
       }
       
       return uniquePatterns[0] || null;
@@ -997,11 +1011,19 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
           const currentIndex = fallbacks.indexOf(imgSrc);
           const nextUrl = fallbacks[currentIndex + 1];
           
+          console.log(`🔍 Fallback info for page ${pageNumber}:`, {
+            totalFallbacks: fallbacks.length,
+            currentIndex: currentIndex,
+            hasNextUrl: !!nextUrl,
+            failedUrl: imgSrc
+          });
+          
           if (nextUrl) {
-            console.log(`🔄 Trying fallback URL ${currentIndex + 2}/${fallbacks.length}:`, nextUrl);
+            console.log(`🔄 Trying fallback URL ${currentIndex + 2}/${fallbacks.length} for page ${pageNumber}:`, nextUrl);
             img.attr('src', nextUrl);
           } else {
             console.error(`❌ All ${fallbacks.length} URL patterns failed for page ${pageNumber}`);
+            console.log(`📋 Failed patterns for page ${pageNumber}:`, fallbacks);
             // Add a placeholder for failed images
             img.replaceWith(`<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#f0f0f0;color:#666;">Page ${pageNumber}<br>Image not found<br><small>Tried ${fallbacks.length} patterns</small></div>`);
           }
