@@ -464,9 +464,6 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     print("🚀 Upload ZIP endpoint called - START")
     print(f"📦 ZIP file: {zip_file.filename}, size: {getattr(zip_file, 'size', 'unknown')}")
 
-    # Log that we got here
-    print("✅ Reached validation section")
-
     # Quick validation before processing
     if not zip_file.filename:
         raise HTTPException(status_code=400, detail="No file provided")
@@ -474,21 +471,28 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     if not zip_file.filename.lower().endswith('.zip'):
         raise HTTPException(status_code=400, detail="File must be a ZIP file")
 
-    # For ALL uploads, process in background to avoid timeouts
-    # Return job ID immediately BEFORE any processing
+    # CRITICAL: Return response IMMEDIATELY before ANY file processing
+    # Don't even read the file or start threads yet
     job_id = f"upload-{int(time.time())}-{hash(zip_file.filename) % 10000}"
 
     print(f"📋 Generated job ID: {job_id}")
+    print("⚡ Returning response immediately - no processing yet")
 
-    # Start background processing in a separate thread
-    # Make sure we don't do ANY processing before returning the response
-    try:
-        thread = threading.Thread(target=_do_zip_upload_background, args=(job_id, zip_file), daemon=True)
-        thread.start()
-        print(f"✅ Background thread started for job {job_id}")
-    except Exception as e:
-        print(f"❌ Failed to start background thread: {e}")
-        # Don't fail the request, just log it
+    # Start background processing AFTER response is sent
+    # Use a timer to delay the start slightly to ensure response is sent
+    import asyncio
+
+    async def delayed_start():
+        await asyncio.sleep(0.1)  # Small delay to ensure response is sent
+        try:
+            thread = threading.Thread(target=_do_zip_upload_background, args=(job_id, zip_file), daemon=True)
+            thread.start()
+            print(f"✅ Background thread started for job {job_id}")
+        except Exception as e:
+            print(f"❌ Failed to start background thread: {e}")
+
+    # Start the delayed background task
+    asyncio.create_task(delayed_start())
 
     # Return response IMMEDIATELY
     return {
