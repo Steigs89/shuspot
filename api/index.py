@@ -84,6 +84,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Configure for large file uploads (up to 5GB)
+import starlette.requests
+from starlette.datastructures import UploadFile as StarletteUploadFile
+
+# Increase the maximum request size
+starlette.requests.Request.max_body_size = 5 * 1024 * 1024 * 1024  # 5GB
+# Increase upload file size limit  
+StarletteUploadFile.max_size = 5 * 1024 * 1024 * 1024  # 5GB
+
 @router.get("/")
 def root():
     return {"message": "Book Admin API is running", "timestamp": datetime.now().isoformat()}
@@ -460,6 +469,8 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     """Upload ZIP, extract, upload all files to Supabase, and create database entries with Supabase URLs."""
     import threading
     import time
+    import tempfile
+    import os
 
     print("🚀 Upload ZIP endpoint called - START")
     print(f"📦 ZIP file: {zip_file.filename}, size: {getattr(zip_file, 'size', 'unknown')}")
@@ -471,36 +482,317 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
     if not zip_file.filename.lower().endswith('.zip'):
         raise HTTPException(status_code=400, detail="File must be a ZIP file")
 
-    # CRITICAL: Return response IMMEDIATELY before ANY file processing
-    # Don't even read the file or start threads yet
+    # Generate job ID
     job_id = f"upload-{int(time.time())}-{hash(zip_file.filename) % 10000}"
-
     print(f"📋 Generated job ID: {job_id}")
-    print("⚡ Returning response immediately - no processing yet")
 
-    # Start background processing AFTER response is sent
-    # Use a timer to delay the start slightly to ensure response is sent
-    import asyncio
+    # CRITICAL: Save file to disk in chunks BEFORE returning response
+    # This prevents timeout during file reading
+    temp_dir = tempfile.gettempdir()
+    temp_file_path = os.path.join(temp_dir, f"{job_id}.zip")
+    
+    try:
+        print(f"💾 Streaming large file to disk: {temp_file_path}")
+        
+        # Stream file to disk in chunks to handle large files
+        with open(temp_file_path, "wb") as temp_file:
+            chunk_size = 8192 * 16  # 128KB chunks for faster streaming
+            while True:
+                chunk = await zip_file.read(chunk_size)
+                if not chunk:
+                    break
+                temp_file.write(chunk)
+        
+        print(f"✅ Large file saved successfully: {temp_file_path}")
+        
+        # Start background processing with the saved file path
+        import asyncio
 
-    async def delayed_start():
-        await asyncio.sleep(0.1)  # Small delay to ensure response is sent
+        async def delayed_start():
+            await asyncio.sleep(0.1)  # Small delay to ensure response is sent
+            try:
+                thread = threading.Thread(
+                    target=_do_zip_upload_background_from_file, 
+                    args=(job_id, temp_file_path, zip_file.filename), 
+                    daemon=True
+                )
+                thread.start()
+                print(f"✅ Background thread started for job {job_id}")
+            except Exception as e:
+                print(f"❌ Failed to start background thread: {e}")
+
+        # Start the delayed background task
+        asyncio.create_task(delayed_start())
+
+    except Exception as e:
+        print(f"❌ Error streaming large file: {e}")
+        # Clean up temp file if it was created
         try:
-            thread = threading.Thread(target=_do_zip_upload_background, args=(job_id, zip_file), daemon=True)
-            thread.start()
-            print(f"✅ Background thread started for job {job_id}")
-        except Exception as e:
-            print(f"❌ Failed to start background thread: {e}")
+            if os.path.exists(temp_file_path):
+                os.remove(temp_file_path)
+        except:
+            pass
+        raise HTTPException(status_code=500, detail=f"Failed to process large file: {str(e)}")
 
-    # Start the delayed background task
-    asyncio.create_task(delayed_start())
-
-    # Return response IMMEDIATELY
+    # Return response IMMEDIATELY after file is saved
     return {
-        "message": "Upload started in background. Check Render logs for completion.",
+        "message": "Large file upload completed. Processing started in background.",
         "job_id": job_id,
         "status": "processing",
         "estimated_time": "2-5 minutes"
     }
+
+def _do_zip_upload_background_from_file(job_id: str, temp_file_path: str, original_filename: str):
+    """Background processing function for ZIP uploads using a saved file"""
+    try:
+        print(f"📂 Job {job_id}: Starting ZIP processing from saved file...")
+
+        # Step 1: Extract ZIP to temporary directory
+        import tempfile
+        import zipfile
+        import os
+        import json
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            print(f"📁 Job {job_id}: Using temp directory: {tmpdir}")
+            
+            # Extract the ZIP file
+            extract_dir = os.path.join(tmpdir, 'extracted')
+            os.makedirs(extract_dir, exist_ok=True)
+            
+            try:
+                print(f"📦 Job {job_id}: Extracting ZIP from: {temp_file_path}")
+                with zipfile.ZipFile(temp_file_path, 'r') as zf:
+                    zf.extractall(extract_dir)
+                print(f"✅ Job {job_id}: ZIP extracted successfully")
+            except Exception as e:
+                print(f"❌ Job {job_id}: Failed to extract ZIP: {e}")
+                return
+            finally:
+                # Clean up the temporary ZIP file
+                try:
+                    os.remove(temp_file_path)
+                    print(f"🗑️ Job {job_id}: Cleaned up temp ZIP file")
+                except Exception as e:
+                    print(f"⚠️ Job {job_id}: Could not clean up temp ZIP file: {e}")
+
+            # Find CROP-ShuSpot folder
+            print(f"🔍 Job {job_id}: Looking for CROP-ShuSpot...")
+            crop_src = None
+            for root, dirs, files in os.walk(extract_dir):
+                if 'CROP-ShuSpot' in dirs:
+                    crop_src = os.path.join(root, 'CROP-ShuSpot')
+                    print(f"✅ Job {job_id}: Found CROP-ShuSpot at: {crop_src}")
+                    break
+
+            if not crop_src or not os.path.exists(crop_src):
+                print(f"❌ Job {job_id}: CROP-ShuSpot folder not found")
+                return
+
+            # Step 2: Upload to Supabase using Python
+            print(f"📤 Job {job_id}: Starting Supabase upload...")
+            try:
+                import supabase
+                from supabase import create_client, Client
+
+                # Use the same Supabase credentials as the frontend
+                supabase_url = os.environ.get('SUPABASE_URL', 'https://xzwdtcczndgglqikmlwj.supabase.co')
+                supabase_key = os.environ.get('SUPABASE_SERVICE_KEY') or os.environ.get('SUPABASE_ANON_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6d2R0Y2N6bmRnZ2xxaWttbHdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyOTkyNzUsImV4cCI6MjA2ODg3NTI3NX0.05oCSZ1d3eJHr79B1UvCoQTIL-UBGAKdRBk4CUwe7wE')
+
+                if not supabase_url or not supabase_key:
+                    print(f"❌ Job {job_id}: Missing Supabase credentials")
+                    return
+
+                print(f"✅ Job {job_id}: Supabase credentials found")
+                client: Client = create_client(supabase_url, supabase_key)
+
+                # Collect all files to upload
+                files_to_upload = []
+                for root, dirs, files in os.walk(crop_src):
+                    for file in files:
+                        full_path = os.path.join(root, file)
+                        rel_path = os.path.relpath(full_path, crop_src)
+                        files_to_upload.append((full_path, rel_path))
+
+                print(f"📁 Job {job_id}: Found {len(files_to_upload)} files to upload")
+
+                if not files_to_upload:
+                    print(f"❌ Job {job_id}: No files found to upload")
+                    return
+
+                uploaded_count = 0
+                failed_count = 0
+
+                # Upload files
+                for i, (full_path, rel_path) in enumerate(files_to_upload):
+                    try:
+                        with open(full_path, 'rb') as f:
+                            file_data = f.read()
+
+                        result = client.storage.from_('books').upload(
+                            rel_path, file_data, {'upsert': 'true'}
+                        )
+
+                        if hasattr(result, 'status_code') and result.status_code not in [200, 201]:
+                            print(f"⚠️ Job {job_id}: Upload failed for {rel_path}: HTTP {result.status_code}")
+                            failed_count += 1
+                        else:
+                            uploaded_count += 1
+
+                        # Progress update every 10 files
+                        if (i + 1) % 10 == 0:
+                            print(f"📤 Job {job_id}: Progress: {i + 1}/{len(files_to_upload)} files processed")
+
+                    except Exception as e:
+                        print(f"❌ Job {job_id}: Exception uploading {rel_path}: {e}")
+                        failed_count += 1
+
+                print(f"✅ Job {job_id}: Upload complete: {uploaded_count} successful, {failed_count} failed")
+
+                if uploaded_count == 0:
+                    print(f"❌ Job {job_id}: All file uploads failed")
+                    return
+
+                print(f"✅ Job {job_id}: Python upload successful: {uploaded_count} files uploaded")
+
+            except Exception as e:
+                print(f"❌ Job {job_id}: Supabase upload error: {e}")
+                return
+
+            # Step 3: Parse and create database entries
+            print(f"🗄️ Job {job_id}: Creating database entries...")
+
+            try:
+                from shuspot_folder_parser import ShuSpotFolderParser
+            except ImportError:
+                print(f"⚠️ Job {job_id}: ShuSpotFolderParser not available, using basic parsing")
+                ShuSpotFolderParser = None
+
+            supabase_base_url = "https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books"
+
+            def convert_to_supabase_url(local_path):
+                if crop_src in local_path:
+                    rel_path = os.path.relpath(local_path, crop_src)
+                    return f"{supabase_base_url}/{rel_path.replace(os.sep, '/')}"
+                return local_path
+
+            if ShuSpotFolderParser:
+                parser = ShuSpotFolderParser(extract_dir)
+                books = parser.parse_all_books()
+            else:
+                books = []
+                for root, dirs, files in os.walk(extract_dir):
+                    if 'CROP-ShuSpot' in root:
+                        crop_files = [f for f in files if f.startswith('crop-') and f.endswith('.png')]
+                        if crop_files:
+                            folder_name = os.path.basename(root)
+                            parent_name = os.path.basename(os.path.dirname(root))
+                            cover_url = f"{supabase_base_url}/{parent_name}/{folder_name}/cover.jpg"
+
+                            def extract_number(filename):
+                                import re
+                                match = re.search(r'crop-(\d+)', filename)
+                                return int(match.group(1)) if match else 0
+
+                            sorted_crop_files = sorted(crop_files, key=extract_number)
+                            page_sequence = []
+                            for i, crop_file in enumerate(sorted_crop_files):
+                                page_sequence.append({
+                                    "page_number": i + 1,
+                                    "url": f"{supabase_base_url}/{parent_name}/{folder_name}/resized/{crop_file}",
+                                    "display_name": f"Page {i + 1}"
+                                })
+
+                            books.append({
+                                "Name": folder_name,
+                                "Author": "Unknown",
+                                "Media": "Read to Me",
+                                "Category": parent_name,
+                                "_page_sequence": page_sequence,
+                                "_total_pages": len(page_sequence),
+                                "_folder_path": f"{parent_name}/{folder_name}",
+                                "_cover_image_path": cover_url,
+                            })
+
+            if not books:
+                print(f"⚠️ Job {job_id}: No books found in ZIP")
+                return
+
+            # Create database entries using local JSON database
+            print(f"🗄️ Job {job_id}: Adding books to local database...")
+            
+            try:
+                db_data = load_db()
+                existing_books = db_data.get("books", [])
+                
+                next_id = max([b.get("id", 0) for b in existing_books] or [0]) + 1
+                imported_count = 0
+                updated_count = 0
+                
+                for book_data in books:
+                    title = book_data.get('Name', 'Unknown Title')
+                    author = book_data.get('Author', 'Unknown Author')
+                    
+                    # Check if book already exists
+                    existing_book = None
+                    for i, book in enumerate(existing_books):
+                        if book.get('title') == title and book.get('author') == author:
+                            existing_book = book
+                            break
+                    
+                    if existing_book:
+                        # Update existing book
+                        existing_book['genre'] = book_data.get('Category', existing_book.get('genre', 'Unknown'))
+                        existing_book['book_type'] = book_data.get('Media', existing_book.get('book_type', 'Read to Me'))
+                        existing_book['reading_level'] = book_data.get('Age', existing_book.get('reading_level', ''))
+                        existing_book['cover_image_url'] = book_data.get('_cover_image_path', existing_book.get('cover_image_url', ''))
+                        existing_book['description'] = book_data.get('Notes', existing_book.get('description', ''))
+                        existing_book['_page_sequence'] = book_data.get('_page_sequence', existing_book.get('_page_sequence', []))
+                        existing_book['_total_pages'] = book_data.get('_total_pages', existing_book.get('_total_pages', 0))
+                        existing_book['_folder_path'] = book_data.get('_folder_path', existing_book.get('_folder_path', ''))
+                        updated_count += 1
+                    else:
+                        # Add new book
+                        new_book = {
+                            'id': next_id,
+                            'title': title,
+                            'author': author,
+                            'genre': book_data.get('Category', 'Unknown'),
+                            'book_type': book_data.get('Media', 'Read to Me'),
+                            'reading_level': book_data.get('Age', ''),
+                            'cover_image_url': book_data.get('_cover_image_path', ''),
+                            'description': book_data.get('Notes', ''),
+                            '_page_sequence': book_data.get('_page_sequence', []),
+                            '_total_pages': book_data.get('_total_pages', 0),
+                            '_folder_path': book_data.get('_folder_path', ''),
+                            'url': '',
+                            'notes': ''
+                        }
+                        existing_books.append(new_book)
+                        next_id += 1
+                        imported_count += 1
+                
+                # Save updated database
+                db_data['books'] = existing_books
+                save_db(db_data)
+                
+                print(f"✅ Job {job_id}: Database update complete: {imported_count} imported, {updated_count} updated")
+                
+            except Exception as e:
+                print(f"❌ Job {job_id}: Database update error: {e}")
+
+        print(f"🎉 Job {job_id}: Processing complete!")
+
+    except Exception as e:
+        print(f"💥 Job {job_id}: Critical error: {e}")
+        import traceback
+        traceback.print_exc()
+        # Clean up temp file on error
+        try:
+            if os.path.exists(temp_file_path):
+                os.remove(temp_file_path)
+        except:
+            pass
 
 def _do_zip_upload_background(job_id: str, zip_file: UploadFile):
     """Background processing function for ZIP uploads"""
