@@ -479,23 +479,33 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
             if not crop_src or not os.path.exists(crop_src):
                 raise HTTPException(status_code=400, detail="ZIP must contain a CROP-ShuSpot folder")
 
-            # Step 2: Upload to Supabase using rclone
+            # Step 2: Upload to Supabase using Node.js script
             try:
-                # Upload the entire CROP-ShuSpot folder to Supabase
+                # Check if Node.js upload script exists
+                script_path = os.path.join(REPO_ROOT, 'upload-folder.js')
+                if not os.path.exists(script_path):
+                    raise HTTPException(status_code=500, detail="Upload script not found")
+
+                # Run the Node.js upload script
                 result = subprocess.run([
-                    'rclone', 'copy', crop_src, 'supabase-remote:books',
-                    '--progress', '--stats=1s'
-                ], capture_output=True, text=True, timeout=300)  # 5 minute timeout
+                    'node', script_path, crop_src
+                ], capture_output=True, text=True, timeout=600,  # 10 minute timeout
+                cwd=REPO_ROOT, env={**os.environ, **{
+                    'SUPABASE_URL': os.environ.get('SUPABASE_URL', ''),
+                    'SUPABASE_SERVICE_KEY': os.environ.get('SUPABASE_SERVICE_KEY', ''),
+                    'SUPABASE_BUCKET': 'books',
+                    'CONCURRENCY': '5'
+                }})
 
                 if result.returncode != 0:
-                    raise HTTPException(status_code=500, detail=f"Rclone upload failed: {result.stderr}")
+                    raise HTTPException(status_code=500, detail=f"Node.js upload failed: {result.stderr}")
 
-                print(f"✅ Rclone upload successful: {result.stdout}")
+                print(f"✅ Node.js upload successful: {result.stdout}")
 
             except subprocess.TimeoutExpired:
-                raise HTTPException(status_code=500, detail="Upload timed out")
+                raise HTTPException(status_code=500, detail="Upload timed out after 10 minutes")
             except FileNotFoundError:
-                raise HTTPException(status_code=500, detail="rclone not found. Please ensure rclone is installed and configured with supabase-remote")
+                raise HTTPException(status_code=500, detail="Node.js not found. Please ensure Node.js is installed")
 
             # Step 3: Parse the folder structure and create database entries
             # Import the parser (this assumes it's available in the deployment)
