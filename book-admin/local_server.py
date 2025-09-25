@@ -296,6 +296,36 @@ def ingest_manifest():
             'errors': [str(e)]
         }), 500
 
+@app.route('/api/books', methods=['GET'])
+def get_books():
+    """Get books from local database"""
+    try:
+        source = request.args.get('source', 'sqlite')
+        logger.info(f"📚 Loading books from {source} database")
+        
+        # Use the database manipulator to load books
+        from tools.database_manipulator import ShuSpotDatabaseManipulator
+        db_path = "../books.db" if os.path.exists("../books.db") else "books.db"
+        db = ShuSpotDatabaseManipulator(db_path)
+        
+        books = db.load_books()
+        
+        logger.info(f"📊 Loaded {len(books)} books from database")
+        
+        return jsonify({
+            'books': books,
+            'total': len(books),
+            'source': source
+        })
+        
+    except Exception as e:
+        logger.error(f"Error loading books: {str(e)}")
+        return jsonify({
+            'error': f'Failed to load books: {str(e)}',
+            'books': [],
+            'total': 0
+        }), 500
+
 @app.route('/api/<path:endpoint>', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def proxy_api(endpoint):
     """Proxy API requests to the main backend"""
