@@ -3,7 +3,7 @@ import { Upload, FolderOpen, Cloud, CheckCircle, AlertCircle, Loader, HelpCircle
 import { toast } from 'react-toastify';
 
 const StreamlinedUploader = ({ onUploadComplete }) => {
-  const [uploadMethod, setUploadMethod] = useState('rclone'); // 'rclone', 'zip', 'folder'
+  const [uploadMethod, setUploadMethod] = useState('supabase-zip'); // 'rclone', 'zip', 'supabase-zip', 'folder'
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [uploadStatus, setUploadStatus] = useState('');
@@ -166,6 +166,63 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
     }
   }, [onUploadComplete]);
 
+  // Supabase ZIP Upload (All-in-one solution)
+  const handleSupabaseZipUpload = useCallback(async (zipFile) => {
+    if (!zipFile) return;
+
+    setIsUploading(true);
+    setUploadStatus('Uploading ZIP to Supabase...');
+    setUploadProgress(10);
+
+    try {
+      const formData = new FormData();
+      formData.append('zip_file', zipFile);
+
+      setUploadProgress(30);
+      setUploadStatus('Extracting and uploading files to Supabase...');
+
+      const response = await fetch('/api/shuspot-ingestion/upload-zip-to-supabase', {
+        method: 'POST',
+        body: formData,
+      });
+
+      setUploadProgress(80);
+      setUploadStatus('Creating database entries...');
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.detail || `Upload failed: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+
+      setUploadProgress(100);
+      setUploadStatus('Upload complete!');
+
+      toast.success(`Successfully uploaded ${result.books_created + result.books_updated} books to Supabase!`);
+
+      if (onUploadComplete) {
+        onUploadComplete(result);
+      }
+
+      // Force refresh the page to update stats
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+
+    } catch (error) {
+      console.error('Supabase ZIP upload error:', error);
+      toast.error(`Upload failed: ${error.message}`);
+      setUploadStatus('Upload failed');
+    } finally {
+      setTimeout(() => {
+        setIsUploading(false);
+        setUploadProgress(0);
+        setUploadStatus('');
+      }, 2000);
+    }
+  }, [onUploadComplete]);
+
   // ZIP Upload (Good for smaller collections)
   const handleZipUpload = useCallback(async (zipFile) => {
     if (!zipFile) return;
@@ -191,12 +248,12 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       }
 
       const result = await response.json();
-      
+
       setUploadProgress(100);
       setUploadStatus('Upload complete!');
-      
+
       toast.success(`Successfully uploaded ${result.imported_count} books from ZIP!`);
-      
+
       if (onUploadComplete) {
         onUploadComplete(result);
       }
@@ -224,6 +281,61 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       </div>
 
       <div className="upload-methods">
+        {/* Supabase ZIP Method - All-in-one solution */}
+        <div className={`upload-method ${uploadMethod === 'supabase-zip' ? 'active' : ''}`}>
+          <div className="method-header" onClick={() => setUploadMethod('supabase-zip')}>
+            <div className="method-icon">
+              <Cloud size={24} />
+            </div>
+            <div className="method-info">
+              <h4>🚀 Supabase ZIP Upload</h4>
+              <p>Upload ZIP file directly - automatically uploads to Supabase and creates database entries. Perfect for all-in-one workflow!</p>
+              <div className="method-badges">
+                <span className="badge recommended">Easiest</span>
+                <span className="badge all-in-one">All-in-One</span>
+              </div>
+            </div>
+          </div>
+
+          {uploadMethod === 'supabase-zip' && (
+            <div className="method-content">
+              <div className="supabase-zip-instructions">
+                <h5>✨ How it works:</h5>
+                <ol>
+                  <li>Upload your ZIP file containing CROP-ShuSpot folder</li>
+                  <li>System automatically extracts and uploads all images to Supabase</li>
+                  <li>Database entries are created with proper Supabase URLs</li>
+                  <li>Books are immediately ready to launch!</li>
+                </ol>
+                <div className="zip-requirements">
+                  <h6>📋 ZIP Structure Requirements:</h6>
+                  <ul>
+                    <li>Include <code>CROP-ShuSpot/</code> folder in your ZIP</li>
+                    <li>Each book folder should have: <code>cover.jpg</code>, <code>description.txt</code>, <code>resized/</code> folder</li>
+                    <li>Page images: <code>resized/crop-1.png</code>, <code>crop-2.png</code>, etc.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <label className={`upload-button primary ${isUploading ? 'disabled' : ''}`}>
+                <Cloud size={20} />
+                {isUploading ? `Processing... ${uploadProgress}%` : 'Upload ZIP to Supabase'}
+                <input
+                  type="file"
+                  accept=".zip,application/zip,application/x-zip-compressed"
+                  style={{ display: 'none' }}
+                  disabled={isUploading}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) handleSupabaseZipUpload(file);
+                    e.target.value = '';
+                  }}
+                />
+              </label>
+            </div>
+          )}
+        </div>
+
         {/* Rclone Method - Recommended for large folders */}
         <div className={`upload-method ${uploadMethod === 'rclone' ? 'active' : ''}`}>
           <div className="method-header" onClick={() => setUploadMethod('rclone')}>
@@ -505,6 +617,7 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       <div className="upload-tips">
         <h5>💡 Pro Tips:</h5>
         <ul>
+          <li><strong>🚀 Easiest method:</strong> Use "Supabase ZIP Upload" for all-in-one workflow</li>
           <li><strong>Large folders (20GB+):</strong> Use Rclone method for fastest uploads</li>
           <li><strong>Folder structure:</strong> Each book needs cover.jpg, description.txt, and resized/ folder</li>
           <li><strong>File naming:</strong> Use crop-1.png, crop-2.png, etc. in resized/ folder</li>
