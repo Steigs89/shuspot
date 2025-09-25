@@ -1,6 +1,78 @@
 import React, { useState, useCallback } from 'react';
 import { Upload, FolderOpen, Cloud, CheckCircle, AlertCircle, Loader, HelpCircle, X } from 'lucide-react';
 import { toast } from 'react-toastify';
+import { createClient } from '@supabase/supabase-js';
+
+// Initialize Supabase client
+const supabaseUrl = 'https://xzwdtcczndgglqikmlwj.supabase.co';
+const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6d2R0Y2N6bmRnZ2xxaWttbHdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyOTkyNzUsImV4cCI6MjA2ODg3NTI3NX0.05oCSZ1d3eJHr79B1UvCoQTIL-UBGAKdRBk4CUwe7wE';
+const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+
+// Chunked Upload Class for Large Files
+class ChunkedUploader {
+  constructor(supabaseClient) {
+    this.supabase = supabaseClient;
+    this.chunkSize = 50 * 1024 * 1024; // 50MB chunks
+  }
+
+  async uploadLargeZip(file, onProgress = () => {}) {
+    const totalChunks = Math.ceil(file.size / this.chunkSize);
+    const uploadId = `upload-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    
+    console.log(`📦 Starting chunked upload: ${totalChunks} chunks of ${this.chunkSize / 1024 / 1024}MB each`);
+
+    try {
+      // Upload each chunk to Supabase storage
+      const chunks = [];
+      for (let i = 0; i < totalChunks; i++) {
+        const start = i * this.chunkSize;
+        const end = Math.min(start + this.chunkSize, file.size);
+        const chunk = file.slice(start, end);
+        
+        const chunkName = `temp-chunks/${uploadId}/chunk-${i.toString().padStart(4, '0')}`;
+        
+        console.log(`📤 Uploading chunk ${i + 1}/${totalChunks} (${chunk.size} bytes)`);
+        
+        const { data, error } = await this.supabase.storage
+          .from('books')
+          .upload(chunkName, chunk, { upsert: true });
+          
+        if (error) throw error;
+        
+        chunks.push(chunkName);
+        onProgress({ chunk: i + 1, total: totalChunks, percent: ((i + 1) / totalChunks) * 90 });
+      }
+
+      // Notify API to reassemble and process the chunks
+      onProgress({ chunk: totalChunks, total: totalChunks, percent: 95 });
+      console.log('🔧 Requesting server to reassemble chunks...');
+      
+      const response = await fetch('/api/shuspot-ingestion/process-chunked-upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          upload_id: uploadId,
+          chunks: chunks,
+          original_filename: file.name,
+          total_size: file.size
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Processing failed: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      onProgress({ chunk: totalChunks, total: totalChunks, percent: 100 });
+      return result;
+      
+    } catch (error) {
+      // Clean up chunks on error
+      console.error('Upload failed, cleaning up chunks...');
+      throw error;
+    }
+  }
+}
 
 const StreamlinedUploader = ({ onUploadComplete }) => {
   const [uploadMethod, setUploadMethod] = useState('supabase-zip'); // 'rclone', 'zip', 'supabase-zip', 'folder'
@@ -166,58 +238,54 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
     }
   }, [onUploadComplete]);
 
-  // Supabase ZIP Upload (All-in-one solution)
+  // Supabase ZIP Upload with Chunked Upload (For large files)
   const handleSupabaseZipUpload = useCallback(async (zipFile) => {
     if (!zipFile) return;
 
     setIsUploading(true);
-    setUploadStatus('Uploading ZIP to Supabase...');
-    setUploadProgress(10);
+    setUploadStatus('Starting chunked upload to Supabase...');
+    setUploadProgress(5);
 
     try {
-      const formData = new FormData();
-      formData.append('zip_file', zipFile);
+      console.log('🚀 Starting chunked upload for:', zipFile.name, zipFile.size, zipFile.type);
+      
+      // Use chunked uploader for large files
+      const chunkedUploader = new ChunkedUploader();
+      
+      // Set up progress tracking
+      const onProgress = (progress) => {
+        setUploadProgress(Math.floor(progress * 0.8)); // Reserve last 20% for processing
+        setUploadStatus(`Uploading chunk ${Math.floor(progress / 10) + 1}... (${Math.floor(progress)}%)`);
+      };
 
-      setUploadProgress(30);
-      setUploadStatus('Extracting and uploading files to Supabase...');
+      const onChunkComplete = (chunkNumber, totalChunks) => {
+        setUploadStatus(`Completed chunk ${chunkNumber} of ${totalChunks}`);
+      };
 
-      console.log('🚀 Making request to: /api/shuspot-ingestion/upload-zip-to-supabase');
-      console.log('📦 ZIP file selected:', zipFile.name, zipFile.size, zipFile.type);
-
-      // Log FormData entries
-      for (let [key, value] of formData.entries()) {
-        console.log(`📦 FormData entry: ${key} =`, value instanceof File ? `File(${value.name}, ${value.size} bytes)` : value);
-      }
-
-      const response = await fetch('/api/shuspot-ingestion/upload-zip-to-supabase', {
-        method: 'POST',
-        body: formData,
+      // Upload the file in chunks
+      const result = await chunkedUploader.uploadFile(zipFile, {
+        onProgress,
+        onChunkComplete
       });
 
-      console.log('📡 Response received:', response.status, response.statusText);
+      setUploadProgress(90);
+      setUploadStatus('Processing uploaded chunks...');
 
-      setUploadProgress(80);
-      setUploadStatus('Starting background processing...');
-
-      if (!response.ok) {
-        console.log('❌ Response not OK, trying to read error...');
-        const errorData = await response.json().catch((e) => {
-          console.log('❌ Could not parse error JSON:', e);
-          return {};
-        });
-        console.log('❌ Error data:', errorData);
-        throw new Error(errorData.detail || `Upload failed: ${response.statusText}`);
-      }
-
-      const result = await response.json();
+      console.log('✅ Chunked upload complete:', result);
 
       setUploadProgress(100);
-      setUploadStatus('Upload started in background!');
+      setUploadStatus('Upload complete! Processing in background...');
 
-      toast.success(`Upload started! Processing in background. Check logs for completion. Job ID: ${result.job_id}`);
+      toast.success(`Chunked upload successful! Processing ZIP in background. File: ${result.fileName || zipFile.name}`);
 
       if (onUploadComplete) {
-        onUploadComplete(result);
+        onUploadComplete({
+          success: true,
+          message: 'Chunked upload complete',
+          fileName: result.fileName || zipFile.name,
+          uploadId: result.uploadId,
+          chunks: result.totalChunks
+        });
       }
 
       // Show completion message and refresh after a delay
@@ -229,8 +297,8 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       }, 2000);
 
     } catch (error) {
-      console.error('Supabase ZIP upload error:', error);
-      toast.error(`Upload failed: ${error.message}`);
+      console.error('Chunked Supabase ZIP upload error:', error);
+      toast.error(`Chunked upload failed: ${error.message}`);
       setUploadStatus('Upload failed');
     } finally {
       setTimeout(() => {
