@@ -243,7 +243,10 @@ async def ingest_manifest(
 ):
     try:
         payload = await request.json()
+        print(f"[DEBUG] Payload type: {type(payload)}")
+        print(f"[DEBUG] Payload keys: {list(payload.keys()) if isinstance(payload, dict) else 'Not a dict'}")
         books = payload.get("books", []) if isinstance(payload, dict) else (payload if isinstance(payload, list) else [])
+        print(f"[DEBUG] Books found: {len(books)}")
         if not books:
             if safe:
                 return {"success": False, "db_imported": 0, "errors": ["No books provided in manifest"]}

@@ -227,7 +227,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
           
           audioMap[pageNum] = [{
             filename: pattern,
-            url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`,
+            url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`,
             type: pageNum === 1 ? 'intro' : 'page_audio'
           }];
         });
@@ -255,7 +255,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
             // Add potential audio files - they'll be tested for accessibility later
             audioMap[pageNum] = [{
               filename: pattern,
-              url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${cleanPath}/${pattern}`,
+              url: `https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books/CROP-ShuSpot/${encodeURIComponent(cleanPath)}/${encodeURIComponent(pattern)}`,
               type: pageNum === 1 ? 'intro' : 'page_audio'
             }];
           });
