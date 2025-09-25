@@ -1,0 +1,13 @@
+# Render Configuration for Large Files
+# Add this to your Render service environment variables
+
+# Increase server timeouts
+RENDER_REQUEST_TIMEOUT=300
+RENDER_BODY_SIZE_LIMIT=5368709120
+
+# Uvicorn configuration for large files  
+UVICORN_TIMEOUT_KEEP_ALIVE=30
+UVICORN_LIMIT_MAX_REQUESTS=10000
+
+# Python configuration
+PYTHON_BUFFERED=0

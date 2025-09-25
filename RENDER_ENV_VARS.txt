@@ -1,0 +1,8 @@
+# Add these environment variables to your Render service dashboard:
+# Go to: Render Dashboard > Your API Service > Environment
+
+SUPABASE_URL=https://xzwdtcczndgglqikmlwj.supabase.co
+SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6d2R0Y2N6bmRnZ2xxaWttbHdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyOTkyNzUsImV4cCI6MjA2ODg3NTI3NX0.05oCSZ1d3eJHr79B1UvCoQTIL-UBGAKdRBk4CUwe7wE
+
+# Optional (for service key if you have it):
+# SUPABASE_SERVICE_KEY=your_service_key_here

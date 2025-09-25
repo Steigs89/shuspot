@@ -1243,6 +1243,130 @@ async def generate_manifest(request: Request):
         error_msg = f"Failed to generate manifest: {str(e)}"
         raise HTTPException(status_code=500, detail=error_msg)
 
+# ========================= Chunked Upload Processing =========================
+
+@router.post("/shuspot-ingestion/process-chunked-upload")
+async def process_chunked_upload(request: Request):
+    """Reassemble chunks uploaded to Supabase and process the complete ZIP file"""
+    import threading
+    import time
+    import tempfile
+    import os
+
+    try:
+        payload = await request.json()
+        upload_id = payload.get('upload_id')
+        chunks = payload.get('chunks', [])
+        original_filename = payload.get('original_filename')
+        total_size = payload.get('total_size', 0)
+
+        if not upload_id or not chunks or not original_filename:
+            raise HTTPException(status_code=400, detail="Missing required parameters")
+
+        job_id = f"chunked-{upload_id}"
+        print(f"🔧 Job {job_id}: Starting chunk reassembly for {original_filename}")
+        print(f"📊 Job {job_id}: {len(chunks)} chunks, total size: {total_size} bytes")
+
+        # Start background reassembly and processing
+        import asyncio
+
+        async def delayed_start():
+            await asyncio.sleep(0.1)
+            try:
+                thread = threading.Thread(
+                    target=_reassemble_and_process_chunks,
+                    args=(job_id, chunks, original_filename),
+                    daemon=True
+                )
+                thread.start()
+                print(f"✅ Background chunk processing started for job {job_id}")
+            except Exception as e:
+                print(f"❌ Failed to start chunk processing: {e}")
+
+        asyncio.create_task(delayed_start())
+
+        return {
+            "message": "Chunked upload reassembly started in background.",
+            "job_id": job_id,
+            "status": "reassembling",
+            "chunks_received": len(chunks),
+            "estimated_time": "3-7 minutes"
+        }
+
+    except Exception as e:
+        print(f"❌ Chunked upload error: {e}")
+        raise HTTPException(status_code=500, detail=f"Chunked upload processing failed: {str(e)}")
+
+def _reassemble_and_process_chunks(job_id: str, chunks: list, original_filename: str):
+    """Background function to reassemble chunks and process the complete ZIP"""
+    temp_file_path = None
+    
+    try:
+        print(f"🔧 Job {job_id}: Starting chunk reassembly...")
+        
+        # Create temporary file for reassembled ZIP
+        import tempfile
+        import os
+        
+        temp_dir = tempfile.gettempdir()
+        temp_file_path = os.path.join(temp_dir, f"{job_id}.zip")
+        
+        # Initialize Supabase client
+        import supabase
+        from supabase import create_client, Client
+        
+        supabase_url = os.environ.get('SUPABASE_URL', 'https://xzwdtcczndgglqikmlwj.supabase.co')
+        supabase_key = os.environ.get('SUPABASE_SERVICE_KEY') or os.environ.get('SUPABASE_ANON_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6d2R0Y2N6bmRnZ2xxaWttbHdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyOTkyNzUsImV4cCI6MjA2ODg3NTI3NX0.05oCSZ1d3eJHr79B1UvCoQTIL-UBGAKdRBk4CUwe7wE')
+        
+        client: Client = create_client(supabase_url, supabase_key)
+        
+        print(f"📦 Job {job_id}: Downloading and reassembling {len(chunks)} chunks...")
+        
+        # Reassemble chunks into single file
+        with open(temp_file_path, 'wb') as output_file:
+            for i, chunk_name in enumerate(sorted(chunks)):
+                try:
+                    print(f"⬇️ Job {job_id}: Downloading chunk {i + 1}/{len(chunks)}")
+                    
+                    # Download chunk from Supabase
+                    result = client.storage.from_('books').download(chunk_name)
+                    
+                    if hasattr(result, 'data') and result.data:
+                        output_file.write(result.data)
+                    else:
+                        print(f"❌ Job {job_id}: Failed to download chunk {chunk_name}")
+                        return
+                        
+                except Exception as e:
+                    print(f"❌ Job {job_id}: Error downloading chunk {chunk_name}: {e}")
+                    return
+        
+        print(f"✅ Job {job_id}: Reassembly complete, file size: {os.path.getsize(temp_file_path)} bytes")
+        
+        # Clean up chunks from Supabase
+        print(f"🗑️ Job {job_id}: Cleaning up temporary chunks...")
+        for chunk_name in chunks:
+            try:
+                client.storage.from_('books').remove([chunk_name])
+            except Exception as e:
+                print(f"⚠️ Job {job_id}: Could not clean up chunk {chunk_name}: {e}")
+        
+        # Process the reassembled ZIP file
+        print(f"⚡ Job {job_id}: Starting ZIP processing...")
+        _do_zip_upload_background_from_file(job_id, temp_file_path, original_filename)
+        
+    except Exception as e:
+        print(f"💥 Job {job_id}: Critical error during chunk reassembly: {e}")
+        import traceback
+        traceback.print_exc()
+        
+        # Clean up temp file on error
+        if temp_file_path and os.path.exists(temp_file_path):
+            try:
+                os.remove(temp_file_path)
+            except:
+                pass
+
 # Mount router at multiple prefixes to handle Vercel path forwarding
 app.include_router(router)  # '/'
 app.include_router(router, prefix="/index")  # '/index'
