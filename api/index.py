@@ -444,6 +444,192 @@ def export_csv():
         writer.writerow([n.get("id"), n.get("title"), n.get("author"), n.get("genre"), n.get("book_type")])
     return PlainTextResponse(buf.getvalue(), media_type="text/csv")
 
+# ========================= Supabase ZIP Upload Endpoint =========================
+
+@router.post("/shuspot-ingestion/upload-zip-to-supabase")
+async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
+    """Upload ZIP, extract, upload all files to Supabase, and create database entries with Supabase URLs."""
+    import subprocess
+    import tempfile
+    import shutil
+    import zipfile
+    import os
+    import json
+
+    try:
+        # Step 1: Extract ZIP to temporary directory
+        with tempfile.TemporaryDirectory() as tmpdir:
+            zip_path = os.path.join(tmpdir, zip_file.filename or "upload.zip")
+            content = await zip_file.read()
+            with open(zip_path, 'wb') as f:
+                f.write(content)
+
+            extract_dir = os.path.join(tmpdir, 'extracted')
+            os.makedirs(extract_dir, exist_ok=True)
+            with zipfile.ZipFile(zip_path, 'r') as zf:
+                zf.extractall(extract_dir)
+
+            # Find CROP-ShuSpot folder
+            crop_src = None
+            for root, dirs, files in os.walk(extract_dir):
+                if 'CROP-ShuSpot' in dirs:
+                    crop_src = os.path.join(root, 'CROP-ShuSpot')
+                    break
+
+            if not crop_src or not os.path.exists(crop_src):
+                raise HTTPException(status_code=400, detail="ZIP must contain a CROP-ShuSpot folder")
+
+            # Step 2: Upload to Supabase using rclone
+            try:
+                # Upload the entire CROP-ShuSpot folder to Supabase
+                result = subprocess.run([
+                    'rclone', 'copy', crop_src, 'supabase-remote:books',
+                    '--progress', '--stats=1s'
+                ], capture_output=True, text=True, timeout=300)  # 5 minute timeout
+
+                if result.returncode != 0:
+                    raise HTTPException(status_code=500, detail=f"Rclone upload failed: {result.stderr}")
+
+                print(f"✅ Rclone upload successful: {result.stdout}")
+
+            except subprocess.TimeoutExpired:
+                raise HTTPException(status_code=500, detail="Upload timed out")
+            except FileNotFoundError:
+                raise HTTPException(status_code=500, detail="rclone not found. Please ensure rclone is installed and configured with supabase-remote")
+
+            # Step 3: Parse the folder structure and create database entries
+            # Import the parser (this assumes it's available in the deployment)
+            try:
+                from shuspot_folder_parser import ShuSpotFolderParser
+            except ImportError:
+                # Fallback if parser not available - create basic entries
+                print("⚠️ ShuSpotFolderParser not available, using basic parsing")
+                ShuSpotFolderParser = None
+
+            # Use the uploaded Supabase paths
+            supabase_base_url = "https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books"
+
+            def convert_to_supabase_url(local_path):
+                """Convert local file path to Supabase URL"""
+                if crop_src in local_path:
+                    rel_path = os.path.relpath(local_path, crop_src)
+                    return f"{supabase_base_url}/{rel_path.replace(os.sep, '/')}"
+                return local_path
+
+            if ShuSpotFolderParser:
+                parser = ShuSpotFolderParser(extract_dir)
+                books = parser.parse_all_books()
+            else:
+                # Basic fallback parsing
+                books = []
+                for root, dirs, files in os.walk(extract_dir):
+                    if 'CROP-ShuSpot' in root:
+                        # Find book folders (containing resized/crop-*.png files)
+                        crop_files = [f for f in files if f.startswith('crop-') and f.endswith('.png')]
+                        if crop_files:
+                            folder_name = os.path.basename(root)
+                            parent_name = os.path.basename(os.path.dirname(root))
+                            cover_url = f"{supabase_base_url}/{parent_name}/{folder_name}/cover.jpg"
+
+                            # Sort crop files by number
+                            def extract_number(filename):
+                                import re
+                                match = re.search(r'crop-(\d+)', filename)
+                                return int(match.group(1)) if match else 0
+
+                            sorted_crop_files = sorted(crop_files, key=extract_number)
+                            page_sequence = []
+                            for i, crop_file in enumerate(sorted_crop_files):
+                                page_sequence.append({
+                                    "page_number": i + 1,
+                                    "url": f"{supabase_base_url}/{parent_name}/{folder_name}/resized/{crop_file}",
+                                    "display_name": f"Page {i + 1}"
+                                })
+
+                            books.append({
+                                "Name": folder_name,
+                                "Author": "Unknown",
+                                "Media": "Read to Me",
+                                "Category": parent_name,
+                                "_page_sequence": page_sequence,
+                                "_total_pages": len(page_sequence),
+                                "_folder_path": f"{parent_name}/{folder_name}",
+                                "_cover_image_path": cover_url,
+                            })
+
+            if not books:
+                return {"message": "No books found in ZIP", "uploaded_files": True, "books_created": 0}
+
+            # Load current database
+            db = load_db()
+            existing = db.get("books", [])
+
+            # Build an index for upsert by (title, author) normalized
+            def key_of(x):
+                n = normalize_book(x)
+                t = (n.get("title") or "").strip().lower()
+                a = (n.get("author") or "").strip().lower()
+                return (t, a)
+
+            index = {}
+            for idx, rec in enumerate(existing):
+                index[key_of(rec)] = idx
+
+            next_id = max([b.get("id", 0) for b in existing] or [0]) + 1
+            imported_count = 0
+            updated_count = 0
+
+            for book_data in books:
+                title = book_data.get('Name', 'Unknown Title')
+                author = book_data.get('Author', 'Unknown Author')
+
+                # Convert paths to Supabase URLs
+                if book_data.get('_folder_path'):
+                    book_data['_folder_path'] = convert_to_supabase_url(book_data['_folder_path'])
+                if book_data.get('_cover_image_path'):
+                    book_data['_cover_image_path'] = convert_to_supabase_url(book_data['_cover_image_path'])
+                if book_data.get('_page_sequence'):
+                    for pg in book_data['_page_sequence']:
+                        if isinstance(pg, dict) and pg.get('url'):
+                            pg['url'] = convert_to_supabase_url(pg['url'])
+
+                existing_key = key_of(book_data)
+                if existing_key in index:
+                    # Update existing book
+                    tgt_idx = index[existing_key]
+                    current = existing[tgt_idx]
+                    # Merge fields
+                    for field, value in book_data.items():
+                        if field == "id":
+                            continue
+                        if value is not None and (not isinstance(value, str) or value.strip() != ""):
+                            current[field] = value
+                    existing[tgt_idx] = current
+                    updated_count += 1
+                else:
+                    # Create new book
+                    book_data["id"] = next_id
+                    next_id += 1
+                    existing.append(normalize_book(book_data))
+                    imported_count += 1
+
+            db["books"] = existing
+            save_db(db)
+
+            return {
+                "message": f"ZIP uploaded to Supabase and {imported_count + updated_count} books created/updated in database",
+                "uploaded_files": True,
+                "books_created": imported_count,
+                "books_updated": updated_count,
+                "parsing_stats": {"total_parsed": len(books)},
+                "supabase_base_url": supabase_base_url
+            }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Upload to Supabase failed: {str(e)}")
+
 # ========================= Manifest Generation Endpoint =========================
 from pathlib import Path
 
