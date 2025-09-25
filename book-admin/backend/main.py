@@ -2561,30 +2561,56 @@ async def generate_manifest(request: dict = Body(...)):
         generation_mode = request.get('generation_mode', 'multi')
         book_metadata = request.get('book_metadata', {})
         processing_script = request.get('processing_script')  # Optional field
-        
+
         if not folder_path:
             raise HTTPException(status_code=400, detail="folder_path is required")
-        
+
         folder = Path(folder_path)
         if not folder.exists():
             raise HTTPException(status_code=400, detail=f"Folder not found: {folder_path}")
         
         books = []
-        
+
+        # Helper function to extract genre from folder path
+        def extract_genre_from_path(book_folder_path, root_folder_path, generation_mode):
+            """Extract genre from the parent folder of the book folder"""
+            try:
+                book_folder = Path(book_folder_path)
+                root_folder = Path(root_folder_path)
+
+                if generation_mode == "single":
+                    # For single book mode, genre is the name of the root folder (parent of book)
+                    genre = root_folder.name
+                else:
+                    # For multi book mode, genre is the first part of the relative path from root to book
+                    rel_path = book_folder.relative_to(root_folder)
+                    parts = rel_path.parts
+                    genre = parts[0] if parts else root_folder.name
+
+                # Clean up genre name (remove spaces, special chars)
+                genre = genre.replace('_', ' ').replace('-', ' ').strip()
+                return genre if genre else 'Unknown'
+            except Exception as e:
+                logging.warning(f"Could not extract genre from path {book_folder_path}: {e}")
+                return book_metadata.get('genre', 'Unknown')
+
         if generation_mode == "single":
             # Single book mode - treat entire folder as one book
             pages = list(folder.glob("**/resized/crop-*.png"))
             if not pages:
                 pages = list(folder.glob("**/*.png"))
             pages = sorted(pages, key=lambda x: x.name)
-            
+
             # Look for audio files
             audio_files = list(folder.glob("**/*.mp3")) + list(folder.glob("**/*.wav")) + list(folder.glob("**/*.m4a"))
-            
+
+            # Extract genre from parent folder
+            genre = extract_genre_from_path(str(folder), str(folder.parent), generation_mode)
+
             book = {
                 "title": book_metadata.get('title', folder.name),
                 "author": book_metadata.get('author', 'Unknown'),
-                "genre": book_metadata.get('genre', 'Unknown'),
+                "genre": genre,
                 "reading_level": book_metadata.get('reading_level', 'Elementary'),
                 "book_type": book_metadata.get('book_type', 'Read to Me'),
                 "description": book_metadata.get('description', ''),
@@ -2594,31 +2620,31 @@ async def generate_manifest(request: dict = Body(...)):
                 "total_pages": len(pages)
             }
             books.append(book)
-            
+
         else:
             # Multi-book mode - each subfolder is a book
             for subfolder in folder.iterdir():
                 if not subfolder.is_dir():
                     continue
-                    
+
                 pages = list(subfolder.glob("**/resized/crop-*.png"))
                 if not pages:
                     pages = list(subfolder.glob("**/*.png"))
                 pages = sorted(pages, key=lambda x: x.name)
-                
+
                 # Look for audio files
                 audio_files = list(subfolder.glob("**/*.mp3")) + list(subfolder.glob("**/*.wav")) + list(subfolder.glob("**/*.m4a"))
-                
+
                 # Try to read description.txt
                 desc_file = subfolder / "description.txt"
                 book_title = book_metadata.get('title') or subfolder.name
                 book_description = book_metadata.get('description', '')
                 book_author = book_metadata.get('author', 'Unknown')
-                
+
                 if desc_file.exists():
                     try:
                         desc_content = desc_file.read_text(encoding="utf-8", errors="ignore")
-                        
+
                         # Extract metadata from description.txt
                         for line in desc_content.splitlines():
                             line = line.strip()
@@ -2626,16 +2652,19 @@ async def generate_manifest(request: dict = Body(...)):
                                 book_title = line.split("-", 1)[1].strip()
                             elif line.lower().startswith("by:"):
                                 book_author = line.replace("By:", "").replace("by:", "").strip()
-                        
+
                         if not book_metadata.get('description'):
                             book_description = desc_content
                     except Exception as e:
                         logging.warning(f"Could not read description.txt in {subfolder}: {e}")
-                
+
+                # Extract genre from folder structure (parent folder of this book)
+                genre = extract_genre_from_path(str(subfolder), str(folder), generation_mode)
+
                 book = {
                     "title": book_title,
                     "author": book_author,
-                    "genre": book_metadata.get('genre', 'Unknown'),
+                    "genre": genre,
                     "reading_level": book_metadata.get('reading_level', 'Elementary'),
                     "book_type": book_metadata.get('book_type', 'Read to Me'),
                     "description": book_description,
@@ -2683,22 +2712,18 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
             raise HTTPException(status_code=400, detail="No books found in manifest")
         
         imported_count = 0
+        updated_count = 0
         skipped_count = 0
-        
+
         for book_data in books_data:
             print(f"🔵 Processing book: {book_data.get('title', 'Unknown')}")
             print(f"🔵 Book genre: {book_data.get('genre', 'No genre')}")
             print(f"🔵 Book reading_level: {book_data.get('reading_level', 'No reading level')}")
-            
-            # Check if book already exists (avoid duplicates by file_path)
+
+            # Check if book already exists (by file_path)
             folder_path = book_data.get('folder_path', '')
             existing_book = db.query(Book).filter(Book.file_path == folder_path).first()
-            
-            if existing_book:
-                print(f"🔵 Book already exists, skipping: {book_data.get('title')}")
-                skipped_count += 1
-                continue
-            
+
             # Prepare ShuSpot-specific data for notes field
             shuspot_data = {
                 'page_sequence': book_data.get('page_sequence', []),
@@ -2707,35 +2732,50 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
                 'cover_image_path': book_data.get('cover_image', ''),
                 'total_pages': book_data.get('total_pages', 0)
             }
-            
+
             print(f"🔵 ShuSpot data: {json.dumps(shuspot_data, indent=2)[:200]}...")
-            
-            # Create book record using existing model structure
-            book = Book(
-                title=book_data.get('title', 'Unknown Title'),
-                author=book_data.get('author', 'Unknown Author'),
-                genre=book_data.get('genre', 'Unknown'),
-                reading_level=book_data.get('reading_level', 'Elementary'),
-                book_type=book_data.get('book_type', 'Read to Me'),
-                description=book_data.get('description', ''),
-                cover_image_url=book_data.get('cover_image', ''),
-                file_path=book_data.get('folder_path', ''),
-                file_name=os.path.basename(book_data.get('folder_path', '')),
-                file_type='shuspot_folder',
-                uploaded_at=datetime.utcnow(),
-                notes=json.dumps(shuspot_data)
-            )
-            
-            db.add(book)
-            imported_count += 1
+
+            if existing_book:
+                print(f"🔵 Book already exists, updating: {book_data.get('title')}")
+                # Update existing book with new data
+                existing_book.title = book_data.get('title', existing_book.title)
+                existing_book.author = book_data.get('author', existing_book.author)
+                existing_book.genre = book_data.get('genre', existing_book.genre)
+                existing_book.reading_level = book_data.get('reading_level', existing_book.reading_level)
+                existing_book.book_type = book_data.get('book_type', existing_book.book_type)
+                existing_book.description = book_data.get('description', existing_book.description)
+                existing_book.cover_image_url = book_data.get('cover_image', existing_book.cover_image_url)
+                existing_book.notes = json.dumps(shuspot_data)
+                existing_book.updated_at = datetime.utcnow()
+                updated_count += 1
+            else:
+                print(f"🔵 Creating new book: {book_data.get('title')}")
+                # Create new book record
+                book = Book(
+                    title=book_data.get('title', 'Unknown Title'),
+                    author=book_data.get('author', 'Unknown Author'),
+                    genre=book_data.get('genre', 'Unknown'),
+                    reading_level=book_data.get('reading_level', 'Elementary'),
+                    book_type=book_data.get('book_type', 'Read to Me'),
+                    description=book_data.get('description', ''),
+                    cover_image_url=book_data.get('cover_image', ''),
+                    file_path=book_data.get('folder_path', ''),
+                    file_name=os.path.basename(book_data.get('folder_path', '')),
+                    file_type='shuspot_folder',
+                    uploaded_at=datetime.utcnow(),
+                    notes=json.dumps(shuspot_data)
+                )
+                db.add(book)
+                imported_count += 1
         
         db.commit()
-        print(f"🔵 Successfully imported {imported_count} books, skipped {skipped_count} duplicates")
-        
+        print(f"🔵 Successfully imported {imported_count} books, updated {updated_count} books, skipped {skipped_count} duplicates")
+
         return {
             "success": True,
-            "message": f"Successfully imported {imported_count} new books from manifest (skipped {skipped_count} duplicates)",
+            "message": f"Successfully imported {imported_count} new books, updated {updated_count} existing books from manifest (skipped {skipped_count} duplicates)",
             "imported_count": imported_count,
+            "updated_count": updated_count,
             "skipped_count": skipped_count
         }
         
