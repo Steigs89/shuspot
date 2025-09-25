@@ -467,22 +467,24 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="File must be a ZIP file")
 
     # For ALL uploads, process in background to avoid timeouts
-    # Return job ID immediately
+    # Return job ID immediately BEFORE any processing
     job_id = f"upload-{int(time.time())}-{hash(zip_file.filename) % 10000}"
 
-    # Start background processing
-    def process_upload():
-        try:
-            print(f"🔄 Starting background processing for job {job_id}")
-            _do_zip_upload_background(job_id, zip_file)
-        except Exception as e:
-            print(f"❌ Background processing failed for job {job_id}: {e}")
+    print(f"📋 Generated job ID: {job_id}")
 
-    thread = threading.Thread(target=process_upload, daemon=True)
-    thread.start()
+    # Start background processing in a separate thread
+    # Make sure we don't do ANY processing before returning the response
+    try:
+        thread = threading.Thread(target=_do_zip_upload_background, args=(job_id, zip_file), daemon=True)
+        thread.start()
+        print(f"✅ Background thread started for job {job_id}")
+    except Exception as e:
+        print(f"❌ Failed to start background thread: {e}")
+        # Don't fail the request, just log it
 
+    # Return response IMMEDIATELY
     return {
-        "message": "Upload started in background. Check status with the job ID.",
+        "message": "Upload started in background. Check Render logs for completion.",
         "job_id": job_id,
         "status": "processing",
         "estimated_time": "2-5 minutes"
