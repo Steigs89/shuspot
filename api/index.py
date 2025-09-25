@@ -541,15 +541,34 @@ async def upload_zip_to_supabase(zip_file: UploadFile = File(...)):
                             file_data = f.read()
 
                         # Upload to Supabase storage
-                        result = client.storage.from_('books').upload(
-                            rel_path, file_data, {'upsert': 'true'}
-                        )
+                        try:
+                            result = client.storage.from_('books').upload(
+                                rel_path, file_data, {'upsert': 'true'}
+                            )
 
-                        if hasattr(result, 'status_code') and result.status_code not in [200, 201]:
-                            print(f"⚠️ Upload failed for {rel_path}: {getattr(result, 'json', lambda: {})()}")
+                            # Check for successful upload
+                            if hasattr(result, 'status_code'):
+                                if result.status_code not in [200, 201]:
+                                    print(f"⚠️ Upload failed for {rel_path}: HTTP {result.status_code}")
+                                    if hasattr(result, 'json'):
+                                        try:
+                                            error_details = result.json()
+                                            print(f"   Error details: {error_details}")
+                                        except:
+                                            pass
+                                    failed_count += 1
+                                else:
+                                    uploaded_count += 1
+                            elif hasattr(result, 'get') and result.get('error'):
+                                print(f"⚠️ Upload failed for {rel_path}: {result.get('error')}")
+                                failed_count += 1
+                            else:
+                                # Assume success if no error indicators
+                                uploaded_count += 1
+
+                        except Exception as upload_error:
+                            print(f"❌ Exception uploading {rel_path}: {str(upload_error)}")
                             failed_count += 1
-                        else:
-                            uploaded_count += 1
 
                         # Progress update every 10 files
                         if (i + 1) % 10 == 0:
