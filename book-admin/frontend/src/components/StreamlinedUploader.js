@@ -182,7 +182,12 @@ const StreamlinedUploader = ({ onUploadComplete }) => {
       setUploadStatus('Extracting and uploading files to Supabase...');
 
       console.log('🚀 Making request to: /api/shuspot-ingestion/upload-zip-to-supabase');
-      console.log('📦 FormData contents:', formData);
+      console.log('📦 ZIP file selected:', zipFile.name, zipFile.size, zipFile.type);
+
+      // Log FormData entries
+      for (let [key, value] of formData.entries()) {
+        console.log(`📦 FormData entry: ${key} =`, value instanceof File ? `File(${value.name}, ${value.size} bytes)` : value);
+      }
 
       const response = await fetch('/api/shuspot-ingestion/upload-zip-to-supabase', {
         method: 'POST',
