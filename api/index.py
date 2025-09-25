@@ -1249,27 +1249,54 @@ async def generate_manifest(request: Request):
 async def upload_chunk(chunk: UploadFile = File(...), upload_id: str = Form(...), 
                       chunk_number: str = Form(...), total_chunks: str = Form(...),
                       original_filename: str = Form(...)):
-    """Upload a single chunk to temporary storage"""
+    """Upload a single chunk to temporary storage with improved error handling"""
     import tempfile
     import os
+    import shutil
     
+    chunk_path = None
     try:
+        # Check available disk space first
+        temp_base = tempfile.gettempdir()
+        free_space = shutil.disk_usage(temp_base).free
+        required_space = 100 * 1024 * 1024  # Require 100MB free space
+        
+        if free_space < required_space:
+            print(f"❌ Insufficient disk space: {free_space / (1024*1024):.1f}MB free, need {required_space / (1024*1024)}MB")
+            raise HTTPException(status_code=507, detail=f"Insufficient disk space. Available: {free_space / (1024*1024):.1f}MB")
+        
         # Create temp directory for this upload if it doesn't exist
-        temp_dir = os.path.join(tempfile.gettempdir(), f"chunks_{upload_id}")
+        temp_dir = os.path.join(temp_base, f"chunks_{upload_id}")
         os.makedirs(temp_dir, exist_ok=True)
         
         # Save the chunk to temporary storage
         chunk_filename = f"chunk_{chunk_number.zfill(4)}"
         chunk_path = os.path.join(temp_dir, chunk_filename)
         
-        print(f"💾 Saving chunk {int(chunk_number) + 1}/{total_chunks} to {chunk_path}")
+        chunk_num = int(chunk_number) + 1
+        print(f"💾 Saving chunk {chunk_num}/{total_chunks} to {chunk_path}")
+        print(f"📊 Free disk space: {free_space / (1024*1024):.1f}MB")
         
-        # Write chunk data to file
+        # Write chunk data to file in smaller increments to avoid memory issues
+        content_size = 0
         with open(chunk_path, "wb") as chunk_file:
-            content = await chunk.read()
-            chunk_file.write(content)
+            while True:
+                # Read in 1MB chunks to avoid loading entire file into memory
+                data = await chunk.read(1024 * 1024)  # 1MB at a time
+                if not data:
+                    break
+                chunk_file.write(data)
+                content_size += len(data)
         
-        print(f"✅ Chunk {int(chunk_number) + 1}/{total_chunks} saved ({len(content)} bytes)")
+        # Verify the file was written correctly
+        if not os.path.exists(chunk_path):
+            raise HTTPException(status_code=500, detail=f"Failed to save chunk {chunk_num}")
+            
+        actual_size = os.path.getsize(chunk_path)
+        if actual_size != content_size:
+            print(f"⚠️ Size mismatch: expected {content_size}, got {actual_size}")
+        
+        print(f"✅ Chunk {chunk_num}/{total_chunks} saved ({actual_size} bytes)")
         
         return {
             "success": True,
@@ -1277,12 +1304,31 @@ async def upload_chunk(chunk: UploadFile = File(...), upload_id: str = Form(...)
             "chunk_number": int(chunk_number),
             "total_chunks": int(total_chunks),
             "upload_id": upload_id,
-            "size": len(content)
+            "size": actual_size,
+            "free_space_mb": free_space // (1024 * 1024)
         }
         
+    except HTTPException:
+        # Re-raise HTTP exceptions
+        if chunk_path and os.path.exists(chunk_path):
+            try:
+                os.remove(chunk_path)
+                print(f"🗑️ Cleaned up failed chunk: {chunk_path}")
+            except Exception as cleanup_error:
+                print(f"⚠️ Could not clean up failed chunk: {cleanup_error}")
+        raise
     except Exception as e:
-        print(f"❌ Chunk upload error: {e}")
-        raise HTTPException(status_code=500, detail=f"Chunk upload failed: {str(e)}")
+        # Clean up on any other error
+        if chunk_path and os.path.exists(chunk_path):
+            try:
+                os.remove(chunk_path)
+                print(f"🗑️ Cleaned up failed chunk: {chunk_path}")
+            except Exception as cleanup_error:
+                print(f"⚠️ Could not clean up failed chunk: {cleanup_error}")
+        
+        error_msg = f"Chunk {int(chunk_number) + 1} upload failed: {str(e)}"
+        print(f"❌ {error_msg}")
+        raise HTTPException(status_code=500, detail=error_msg)
 
 @router.post("/shuspot-ingestion/process-chunked-upload")
 async def process_chunked_upload(request: Request):

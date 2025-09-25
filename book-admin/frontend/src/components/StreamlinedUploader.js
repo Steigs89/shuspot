@@ -21,7 +21,7 @@ class ChunkedUploader {
     console.log(`📦 Starting chunked upload: ${totalChunks} chunks of ${this.chunkSize / 1024 / 1024}MB each`);
 
     try {
-      // Upload each chunk to our backend API instead of directly to Supabase
+      // Upload each chunk to our backend API with retry logic
       const chunks = [];
       for (let i = 0; i < totalChunks; i++) {
         const start = i * this.chunkSize;
@@ -32,26 +32,56 @@ class ChunkedUploader {
         
         console.log(`📤 Uploading chunk ${i + 1}/${totalChunks} (${chunk.size} bytes)`);
         
-        // Create FormData for this chunk
-        const formData = new FormData();
-        formData.append('chunk', chunk);
-        formData.append('upload_id', uploadId);
-        formData.append('chunk_number', i.toString());
-        formData.append('total_chunks', totalChunks.toString());
-        formData.append('original_filename', file.name);
+        // Retry logic for failed chunks
+        let success = false;
+        let lastError = null;
+        const maxRetries = 3;
         
-        // Upload chunk to our backend API
-        const response = await fetch('/api/shuspot-ingestion/upload-chunk', {
-          method: 'POST',
-          body: formData
-        });
-        
-        if (!response.ok) {
-          throw new Error(`Chunk ${i + 1} upload failed: ${response.statusText}`);
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+          try {
+            // Create FormData for this chunk
+            const formData = new FormData();
+            formData.append('chunk', chunk);
+            formData.append('upload_id', uploadId);
+            formData.append('chunk_number', i.toString());
+            formData.append('total_chunks', totalChunks.toString());
+            formData.append('original_filename', file.name);
+            
+            // Upload chunk to our backend API
+            const response = await fetch('/api/shuspot-ingestion/upload-chunk', {
+              method: 'POST',
+              body: formData
+            });
+            
+            if (!response.ok) {
+              const errorText = await response.text();
+              throw new Error(`HTTP ${response.status}: ${errorText}`);
+            }
+            
+            const result = await response.json();
+            console.log(`✅ Chunk ${i + 1}/${totalChunks} uploaded (${result.size} bytes, ${result.free_space_mb}MB free)`);
+            
+            chunks.push(result.chunk_id || chunkName);
+            success = true;
+            break; // Success, exit retry loop
+            
+          } catch (error) {
+            lastError = error;
+            console.log(`❌ Chunk ${i + 1} attempt ${attempt}/${maxRetries} failed: ${error.message}`);
+            
+            if (attempt < maxRetries) {
+              // Wait before retry with exponential backoff
+              const waitTime = Math.pow(2, attempt) * 1000; // 2s, 4s, 8s
+              console.log(`⏳ Retrying chunk ${i + 1} in ${waitTime/1000}s...`);
+              await new Promise(resolve => setTimeout(resolve, waitTime));
+            }
+          }
         }
         
-        const result = await response.json();
-        chunks.push(result.chunk_id || chunkName);
+        if (!success) {
+          throw new Error(`Chunk ${i + 1} failed after ${maxRetries} attempts: ${lastError.message}`);
+        }
+
         onProgress({ chunk: i + 1, total: totalChunks, percent: ((i + 1) / totalChunks) * 90 });
       }
 
@@ -71,7 +101,8 @@ class ChunkedUploader {
       });
 
       if (!response.ok) {
-        throw new Error(`Processing failed: ${response.statusText}`);
+        const errorText = await response.text();
+        throw new Error(`Processing failed: ${response.status} ${errorText}`);
       }
 
       const result = await response.json();
