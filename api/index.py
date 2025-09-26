@@ -1529,11 +1529,18 @@ async def execute_txt_script(
         script_root = root_directory if root_directory else TMP_DIR
         
         # Load existing database (if present) so scripts can modify current records
+        # Normalize to a list[dict] regardless of storage shape {"books": [...]} vs [...]
         existing_books = []
         try:
             if os.path.exists(DB_PATH):
                 with open(DB_PATH, 'r', encoding='utf-8') as f:
-                    existing_books = json.load(f)
+                    raw_db = json.load(f)
+                if isinstance(raw_db, dict):
+                    existing_books = raw_db.get('books', []) or []
+                elif isinstance(raw_db, list):
+                    existing_books = raw_db
+                else:
+                    existing_books = []
         except Exception as e:
             print(f"⚠️ Could not read existing DB: {e}")
 
@@ -1581,11 +1588,18 @@ async def execute_txt_script(
                         results = existing_books_after
                         print("ℹ️ No explicit 'results' from script; using 'existing_books' as results for import.")
                 
+                # For preview, prefer preview_data; if empty but results exist, mirror results into preview
+                if preview_mode:
+                    if (not preview_data or len(preview_data) == 0) and results and len(results) > 0:
+                        preview_data = results
+                    processed_count = len(preview_data)
+                else:
+                    processed_count = len(results)
                 execution_result.update({
                     "success": True,
                     "output": stdout_capture.getvalue(),
                     "preview_data": preview_data,
-                    "processed_count": len(results)
+                    "processed_count": processed_count
                 })
                 
                 print(f"📋 Script execution completed: {len(results)} items processed")
@@ -1593,10 +1607,16 @@ async def execute_txt_script(
                 # If not in preview mode and we have results, save to JSON database
                 if not preview_mode and results and upload_to_database:
                     try:
-                        # Load existing books or create new list
+                        # Load existing books or create new list, normalized to list
                         if os.path.exists(DB_PATH):
                             with open(DB_PATH, 'r', encoding='utf-8') as f:
-                                existing_books = json.load(f)
+                                raw_db2 = json.load(f)
+                            if isinstance(raw_db2, dict):
+                                existing_books = raw_db2.get('books', []) or []
+                            elif isinstance(raw_db2, list):
+                                existing_books = raw_db2
+                            else:
+                                existing_books = []
                         else:
                             existing_books = []
                         
@@ -1623,8 +1643,9 @@ async def execute_txt_script(
                                 books_added += 1
                         
                         # Save updated books list
+                        # Persist back using the same shape as our broader API: {"books": [...]} for compatibility
                         with open(DB_PATH, 'w', encoding='utf-8') as f:
-                            json.dump(existing_books, f, indent=2, ensure_ascii=False)
+                            json.dump({"books": existing_books}, f, indent=2, ensure_ascii=False)
                         
                         execution_result["database_uploaded"] = True
                         execution_result["books_added"] = books_added

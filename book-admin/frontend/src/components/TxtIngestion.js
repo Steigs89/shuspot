@@ -132,11 +132,14 @@ const TxtIngestion = () => {
   const handleGenerateScript = () => generateFromPrompt(aiPrompt);
 
   const makeHeader = () => (
-    'Generate Python code only (no markdown). You run in an environment with:\n' +
-    '- existing_books: list[dict] (current local DB)\n' +
-    '- results: list[dict] to upsert on Import\n' +
-    '- preview_data: list[dict] for Plan (Preview)\n' +
-    'Follow this contract: modify records, append changed items to preview_data, and set results appropriately.'
+    'Generate Python code only (no markdown). Environment variables you MUST use:\n' +
+    '- existing_books: list[dict] — snapshot of the local database\n' +
+    '- results: list[dict] — records to upsert when Import runs (non-preview)\n' +
+    '- preview_data: list[dict] — items to show in Plan (Preview)\n' +
+    'Contract:\n' +
+    '1) Read/modify records via existing_books (safe checks).\n' +
+    '2) For preview: put changed items into preview_data.\n' +
+    '3) For import: put items to upsert into results (or leave results empty and update existing_books in-place — backend will use it on Import).'
   );
 
   const makeAuthorPrompt = (author) => (
@@ -257,11 +260,19 @@ results.extend(changed)
           className="code-editor"
           value={pyCode}
           onChange={(e) => setPyCode(e.target.value)}
-          placeholder="# Paste your GPT-generated Python here. Use variables: root_directory, results, preview_data."
+          placeholder="# Paste Python here. For DB edits, use: existing_books (read/modify), preview_data (preview), results (import)."
         />
         <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
           <button className="btn btn-outline" disabled={pyRunning} onClick={() => runPastedPython({})}>Plan (Preview)</button>
           <button className="btn btn-primary" disabled={pyRunning} onClick={() => runPastedPython({ toDb: true })}>Import (Upsert)</button>
+        </div>
+        <div className="tip" style={{ marginTop: 8 }}>
+          Quick Insert: Use Safe Templates to ensure changes target the local database. Then Plan to preview changes, or Import to apply.
+        </div>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <button className="btn btn-secondary" onClick={()=> setPyCode(buildAuthorUpdateCode(helperAuthor || 'Jane'))}>Insert: Set All Authors</button>
+          <button className="btn btn-secondary" onClick={()=> setPyCode(buildReplaceFieldCode(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Insert: Replace Field Text</button>
+          <button className="btn btn-success" disabled={pyRunning} onClick={() => runPastedPython({ toDb: true })}>One-Click Import</button>
         </div>
         {pyPreview?.length > 0 && (
           <div style={{ marginTop: 12 }}>
