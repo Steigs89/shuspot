@@ -266,14 +266,7 @@ results.extend(changed)
           <button className="btn btn-outline" disabled={pyRunning} onClick={() => runPastedPython({})}>Plan (Preview)</button>
           <button className="btn btn-primary" disabled={pyRunning} onClick={() => runPastedPython({ toDb: true })}>Import (Upsert)</button>
         </div>
-        <div className="tip" style={{ marginTop: 8 }}>
-          Quick Insert: Use Safe Templates to ensure changes target the local database. Then Plan to preview changes, or Import to apply.
-        </div>
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          <button className="btn btn-secondary" onClick={()=> setPyCode(buildAuthorUpdateCode(helperAuthor || 'Jane'))}>Insert: Set All Authors</button>
-          <button className="btn btn-secondary" onClick={()=> setPyCode(buildReplaceFieldCode(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Insert: Replace Field Text</button>
-          <button className="btn btn-success" disabled={pyRunning} onClick={() => runPastedPython({ toDb: true })}>One-Click Import</button>
-        </div>
+        {/* Simplified UI: keep core Plan/Import; optional helpers remain above */}
         {pyPreview?.length > 0 && (
           <div style={{ marginTop: 12 }}>
             <strong>Preview (first {pyPreview.length} rows)</strong>

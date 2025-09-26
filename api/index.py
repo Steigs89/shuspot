@@ -1620,29 +1620,52 @@ async def execute_txt_script(
                         else:
                             existing_books = []
                         
-                        # Add new books to the list
+                        # Build an index for idempotent upsert by (title, author) normalized
+                        def _key_of(x: dict) -> tuple:
+                            n = normalize_book(x)
+                            t = (n.get('title') or '').strip().lower()
+                            a = (n.get('author') or '').strip().lower()
+                            return (t, a)
+
+                        index = {}
+                        for idx, rec in enumerate(existing_books):
+                            index[_key_of(rec)] = idx
+
+                        # Determine next incremental id
+                        next_id = max([b.get('id', 0) for b in existing_books] or [0]) + 1
+
                         books_added = 0
                         books_updated = 0
-                        
-                        for book_data in results:
-                            # Check if book already exists (by title and author)
-                            title = book_data.get('title', 'Unknown')
-                            author = book_data.get('author', 'Unknown')
-                            
-                            existing_book = None
-                            for i, existing in enumerate(existing_books):
-                                if (existing.get('title', '').lower() == title.lower() and 
-                                    existing.get('author', '').lower() == author.lower()):
-                                    existing_book = existing
-                                    existing_books[i] = book_data  # Update existing
-                                    books_updated += 1
-                                    break
-                            
-                            if not existing_book:
-                                existing_books.append(book_data)
+
+                        for raw_item in results:
+                            # Normalize incoming item for consistent keying but merge original fields
+                            incoming = dict(raw_item)
+                            k = _key_of(incoming)
+                            if k in index:
+                                tgt_idx = index[k]
+                                current = existing_books[tgt_idx]
+                                preserved_id = current.get('id')
+                                # Merge fields: prefer non-empty incoming values; keep existing for empty/None
+                                for field, value in incoming.items():
+                                    if field == 'id':
+                                        continue
+                                    if value is None or (isinstance(value, str) and value.strip() == ''):
+                                        continue
+                                    current[field] = value
+                                if preserved_id is not None:
+                                    current['id'] = preserved_id
+                                existing_books[tgt_idx] = current
+                                books_updated += 1
+                            else:
+                                # New record; assign id and append
+                                incoming = normalize_book(incoming)
+                                if not incoming.get('id'):
+                                    incoming['id'] = next_id
+                                    next_id += 1
+                                existing_books.append(incoming)
+                                index[k] = len(existing_books) - 1
                                 books_added += 1
-                        
-                        # Save updated books list
+
                         # Persist back using the same shape as our broader API: {"books": [...]} for compatibility
                         with open(DB_PATH, 'w', encoding='utf-8') as f:
                             json.dump({"books": existing_books}, f, indent=2, ensure_ascii=False)
