@@ -605,18 +605,18 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
       </div>
 
       <div className="parse-results">
-        <h4>Generate Python Script with AI</h4>
+        <h4>🤖 Generate Python Script with AI</h4>
         <p className="help-text" style={{ marginBottom: '12px' }}>
           Describe the script you want to generate. The AI will create the Python code for you, which will appear in the editor below, ready to run.
         </p>
         <textarea
           value={aiPrompt}
           onChange={(e) => setAiPrompt(e.target.value)}
-          placeholder="e.g., Create a script that finds all files named 'cover.jpg' and renames them to 'front-cover.jpg'"
+          placeholder="e.g., A script to rename all 'cover.jpg' files to 'front-cover.jpg' in every book folder."
           style={{ width: '100%', minHeight: 80, fontFamily: 'monospace', padding: 8, marginBottom: 8 }}
         />
         <button className="btn btn-primary" disabled={isGeneratingScript} onClick={handleGenerateScript}>
-          {isGeneratingScript ? 'Generating...' : 'Generate Script'}
+          {isGeneratingScript ? 'Generating...' : '✨ Generate with AI'}
         </button>
       </div>
 
