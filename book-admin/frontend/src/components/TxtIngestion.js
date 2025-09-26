@@ -153,6 +153,44 @@ const TxtIngestion = () => {
     `- results.extend(changed_items)`
   );
 
+  // Direct, safe Python templates (no AI) inserted into editor
+  const buildAuthorUpdateCode = (author) => `# Safe template: set author to "${author}"
+updated = []
+for idx, b in enumerate(existing_books):
+    if isinstance(b, dict):
+        prev = b.get('author')
+        if prev != '${author}':
+            b['author'] = '${author}'
+            updated.append(b)
+    else:
+        print(f"Skipping non-dict at index {idx}: {type(b)}")
+
+# Preview the changed items
+preview_data.extend(updated)
+
+# Import: upsert only changed items (or use existing_books to upsert all)
+results.extend(updated)
+`;
+
+  const buildReplaceFieldCode = (field, fromVal, toVal) => `# Safe template: replace occurrences in field '${field}' from '${fromVal}' to '${toVal}'
+changed = []
+for idx, b in enumerate(existing_books):
+    if not isinstance(b, dict):
+        print(f"Skipping non-dict at {idx}: {type(b)}")
+        continue
+    if '${field}' in b and isinstance(b.get('${field}'), str):
+        val = b.get('${field}')
+        if val and '${fromVal}' in val:
+            b['${field}'] = val.replace('${fromVal}', '${toVal}')
+            changed.append(b)
+
+# Preview only changed items
+preview_data.extend(changed)
+
+# Import: upsert changed subset
+results.extend(changed)
+`;
+
   return (
     <div className="shuspot-ingestion">
       <div className="ingestion-header">
@@ -178,6 +216,7 @@ const TxtIngestion = () => {
             <div style={{ display:'flex', gap:8 }}>
               <button className="btn btn-outline" onClick={()=> setAiPrompt(makeAuthorPrompt(helperAuthor || 'Jane'))}>Fill Prompt</button>
               <button className="btn btn-primary" disabled={isGeneratingScript} onClick={()=> generateFromPrompt(makeAuthorPrompt(helperAuthor || 'Jane'))}>Fill + Generate</button>
+              <button className="btn btn-secondary" onClick={()=> setPyCode(buildAuthorUpdateCode(helperAuthor || 'Jane'))}>Insert Safe Template</button>
             </div>
           </div>
           <div className="helper-row">
@@ -188,6 +227,7 @@ const TxtIngestion = () => {
             <div style={{ display:'flex', gap:8 }}>
               <button className="btn btn-outline" onClick={()=> setAiPrompt(makeReplacePrompt(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Fill Prompt</button>
               <button className="btn btn-primary" disabled={isGeneratingScript} onClick={()=> generateFromPrompt(makeReplacePrompt(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Fill + Generate</button>
+              <button className="btn btn-secondary" onClick={()=> setPyCode(buildReplaceFieldCode(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Insert Safe Template</button>
             </div>
           </div>
         </div>
