@@ -23,3 +23,14 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# build output
+/build
+/public
+
+# temp files
+test_manifest.json
+current_books_manifest_fixed.json
+upload_manifest.py
+books.db
+.DS_Store

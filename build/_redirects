@@ -7,5 +7,5 @@
 # Image proxy to backend (optional, when using Netlify dev)
 /shuspot-images/*  http://localhost:8000/shuspot-images/:splat  200
 
-# Static js for reader
-/js/*   /book-admin/js/:splat   200
+# Static js served from public/js
+# No rewrite needed; files are in the publish folder

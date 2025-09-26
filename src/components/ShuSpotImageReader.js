@@ -65,9 +65,8 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     // UPDATED VERSION - New timestamp: 2024-01-09 - If you see old URL patterns, clear browser cache completely
     console.log('🔥 UPDATED getImageUrl VERSION - 2024-01-09 - If you see absolute paths, browser cache needs clearing');
     
-    // Don't encode path segments - let the browser handle URL encoding
     const encodePath = (path) => {
-      return path; // Return path as-is, browser will encode when needed
+      return path.split('/').map(encodeURIComponent).join('/');
     };
 
     console.log('🖼️ getImageUrl called for page:', pageNumber);
@@ -1958,7 +1957,7 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
           <h2>Classic Reader Mode</h2>
           <p>Classic reader not implemented in this version</p>
           <button onClick={() => setUseEnhancedReader(true)}>
-            Switch to Enhanced Reader
+           Switch to Enhanced Reader
           </button>
         </div>
       )}
