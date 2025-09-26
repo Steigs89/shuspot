@@ -62,8 +62,6 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     if (pageData?.url) {
       return pageData.url;
     }
-    // UPDATED VERSION - New timestamp: 2024-01-09 - If you see old URL patterns, clear browser cache completely
-    console.log('🔥 UPDATED getImageUrl VERSION - 2024-01-09 - If you see absolute paths, browser cache needs clearing');
     
     const encodePath = (path) => {
       return path.split('/').map(encodeURIComponent).join('/');
@@ -74,15 +72,9 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     console.log('📚 book folder_path:', book?.folder_path);
 
     if (pageData?.file_path) {
-      const cropMatch = pageData.file_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-      
-      if (cropMatch) {
-        const [, relativePath] = cropMatch;
-        const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-        const url = `${getApiUrl()}/CROP-ShuSpot/${encodePath(cleanPath)}`;
-        console.log('🎯 Generated pageData URL:', url);
-        return url;
-      }
+      const url = `${getApiUrl()}/${encodePath(pageData.file_path)}`;
+      console.log('🎯 Generated pageData URL:', url);
+      return url;
     }
 
     if (book?.notes) {
@@ -90,15 +82,9 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
         const parsedNotes = JSON.parse(book.notes);
         const folderPath = parsedNotes.folder_path;
         if (folderPath) {
-          const cropMatch = folderPath.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-          
-          if (cropMatch) {
-            const [, relativePath] = cropMatch;
-            const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-            const url = `${getApiUrl()}/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
-            console.log('🎯 Generated book notes URL for page', pageNumber, ':', url);
-            return url;
-          }
+          const url = `${getApiUrl()}/${encodePath(folderPath)}/resized/crop-${pageNumber}.png`;
+          console.log('🎯 Generated book notes URL for page', pageNumber, ':', url);
+          return url;
         }
       } catch (e) {
         console.error('Error parsing notes:', e);
@@ -107,14 +93,9 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
 
     // Fallback: folder_path may have spaces
     if (book?.folder_path) {
-      const cropMatch = book.folder_path.match(/.*CROP-ShuSpot[\/\\](.+)$/);
-      if (cropMatch) {
-        const [, relativePath] = cropMatch;
-        const cleanPath = relativePath.replace(/[\\/]+/g, '/');
-        const url = `${getApiUrl()}/CROP-ShuSpot/${encodePath(cleanPath)}/resized/crop-${pageNumber}.png`;
-        console.log('🎯 Generated folder_path URL:', url);
-        return url;
-      }
+      const url = `${getApiUrl()}/${encodePath(book.folder_path)}/resized/crop-${pageNumber}.png`;
+      console.log('🎯 Generated folder_path URL:', url);
+      return url;
     }
     
     const fallbackUrl = `${getApiUrl()}/CROP-ShuSpot/page-${pageNumber}.png`;
