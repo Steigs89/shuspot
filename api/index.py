@@ -124,6 +124,42 @@ def debug_state():
         "writable": writable,
         "time": datetime.now().isoformat(),
     }
+    
+@router.get("/admin/ai-status")
+def ai_status():
+    """
+    Lightweight readiness probe for the AI integration at top-level API.
+    Does NOT expose secrets. Returns booleans on env/deps.
+    """
+    key_present = bool(os.environ.get("OPENAI_API_KEY"))
+    try:
+        import openai  # type: ignore
+        pkg_ok = True
+        pkg_ver = getattr(openai, "__version__", None)
+    except Exception:
+        pkg_ok = False
+        pkg_ver = None
+    return {
+        "openai_api_key_present": key_present,
+        "openai_package_installed": pkg_ok,
+        "openai_package_version": pkg_ver,
+        "configured_model": os.environ.get("OPENAI_MODEL", "gpt-4"),
+    }
+
+class GenerateScriptRequest(BaseModel):
+    prompt: str
+
+from .generate_script import generate_python_script as _gen_script_top
+
+@router.post("/admin/generate-script")
+async def admin_generate_script(request: GenerateScriptRequest):
+    if not request.prompt:
+        raise HTTPException(status_code=400, detail="Prompt cannot be empty.")
+    try:
+        generated_code = _gen_script_top(request.prompt)
+        return {"script": generated_code}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to generate script: {e}")
 
 # --- Helpers ---
 def _clean_str(v: Any) -> Any:
