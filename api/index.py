@@ -1523,10 +1523,20 @@ async def execute_txt_script(
         import glob
         from contextlib import redirect_stdout, redirect_stderr
         import traceback
+        import os
         
         # Use provided root directory or default tmp directory
         script_root = root_directory if root_directory else TMP_DIR
         
+        # Load existing database (if present) so scripts can modify current records
+        existing_books = []
+        try:
+            if os.path.exists(DB_PATH):
+                with open(DB_PATH, 'r', encoding='utf-8') as f:
+                    existing_books = json.load(f)
+        except Exception as e:
+            print(f"⚠️ Could not read existing DB: {e}")
+
         # Available variables for the script
         script_globals = {
             'root_directory': script_root,
@@ -1537,6 +1547,8 @@ async def execute_txt_script(
             'pathlib': __import__('pathlib'),
             'results': [],  # To collect results
             'preview_data': [],  # To collect preview data
+            'existing_books': existing_books,  # Current DB snapshot for update scripts
+            'db_path': DB_PATH,  # Path to local DB (read/write if needed)
         }
         
         # Capture stdout and stderr
@@ -1560,6 +1572,14 @@ async def execute_txt_script(
                 # Get results from script
                 preview_data = script_globals.get('preview_data', [])
                 results = script_globals.get('results', [])
+
+                # If running an update-only script that modifies existing_books in-place,
+                # allow using it as the result set when importing.
+                if (not preview_mode and upload_to_database) and (not results or len(results) == 0):
+                    existing_books_after = script_globals.get('existing_books', [])
+                    if isinstance(existing_books_after, list) and len(existing_books_after) > 0:
+                        results = existing_books_after
+                        print("ℹ️ No explicit 'results' from script; using 'existing_books' as results for import.")
                 
                 execution_result.update({
                     "success": True,
