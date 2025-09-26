@@ -274,10 +274,12 @@ async def ingest_manifest(
 
         next_id = max([b.get("id", 0) for b in existing] or [0]) + 1
         imported = 0
+        updated = 0
+        skipped = 0
         for raw in books:
             b2 = normalize_book(dict(raw))
             k = key_of(b2)
-            if upsert and k in index:
+            if upsert and k in index and k != ("",""):
                 tgt_idx = index[k]
                 current = existing[tgt_idx]
                 preserved_id = current.get("id")
@@ -290,11 +292,17 @@ async def ingest_manifest(
                 if preserved_id is not None:
                     current["id"] = preserved_id
                 existing[tgt_idx] = current
+                updated += 1
             else:
-                b2["id"] = next_id
-                next_id += 1
-                existing.append(b2)
-                imported += 1
+                # Only insert if it looks like a full new book (avoid duplicates from partial updates)
+                important = any(b2.get(k) for k in ("_page_sequence","_folder_path","file_path","url","cover_image_url"))
+                if important and (b2.get("title") or "").strip():
+                    b2["id"] = next_id
+                    next_id += 1
+                    existing.append(b2)
+                    imported += 1
+                else:
+                    skipped += 1
         db["books"] = existing
         try:
             save_db(db)
@@ -302,7 +310,7 @@ async def ingest_manifest(
             if safe:
                 return {"success": False, "db_imported": 0, "errors": [f"Failed to save DB: {e}"]}
             raise
-        return {"message": f"Imported {imported} books (upserted {len(books) - imported})", "db_imported": imported, "success": True, "errors": []}
+        return {"message": f"Imported {imported}, updated {updated}, skipped {skipped}", "db_imported": imported, "success": True, "errors": []}
     except Exception as e:
         if safe:
             return {"success": False, "db_imported": 0, "errors": [str(e)]}

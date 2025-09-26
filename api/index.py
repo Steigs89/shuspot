@@ -1620,7 +1620,7 @@ async def execute_txt_script(
                         else:
                             existing_books = []
                         
-                        # Build an index for idempotent upsert by (title, author) normalized
+                        # Build indices for idempotent updates
                         def _key_of(x: dict) -> tuple:
                             n = normalize_book(x)
                             t = (n.get('title') or '').strip().lower()
@@ -1628,20 +1628,51 @@ async def execute_txt_script(
                             return (t, a)
 
                         index = {}
+                        index_by_id = {}
                         for idx, rec in enumerate(existing_books):
                             index[_key_of(rec)] = idx
+                            rid = rec.get('id')
+                            if isinstance(rid, int):
+                                index_by_id[rid] = idx
 
                         # Determine next incremental id
                         next_id = max([b.get('id', 0) for b in existing_books] or [0]) + 1
 
                         books_added = 0
                         books_updated = 0
+                        books_skipped_no_match = 0
+
+                        # Heuristic: only allow inserts for items that look like complete new records
+                        def _looks_like_new_book(d: dict) -> bool:
+                            important = any(d.get(k) for k in ("_page_sequence", "_folder_path", "file_path", "url", "cover_image_url"))
+                            # Must also have at least a title (post-normalization) to qualify
+                            n = normalize_book(d)
+                            return important and bool((n.get('title') or '').strip())
 
                         for raw_item in results:
                             # Normalize incoming item for consistent keying but merge original fields
                             incoming = dict(raw_item)
+                            # 1) Prefer update by id when available
+                            rid = incoming.get('id')
+                            if isinstance(rid, int) and rid in index_by_id:
+                                tgt_idx = index_by_id[rid]
+                                current = existing_books[tgt_idx]
+                                preserved_id = current.get('id')
+                                for field, value in incoming.items():
+                                    if field == 'id':
+                                        continue
+                                    if value is None or (isinstance(value, str) and value.strip() == ''):
+                                        continue
+                                    current[field] = value
+                                if preserved_id is not None:
+                                    current['id'] = preserved_id
+                                existing_books[tgt_idx] = current
+                                books_updated += 1
+                                continue
+
+                            # 2) Else update by (title, author)
                             k = _key_of(incoming)
-                            if k in index:
+                            if k in index and k != ('', ''):
                                 tgt_idx = index[k]
                                 current = existing_books[tgt_idx]
                                 preserved_id = current.get('id')
@@ -1657,14 +1688,20 @@ async def execute_txt_script(
                                 existing_books[tgt_idx] = current
                                 books_updated += 1
                             else:
-                                # New record; assign id and append
-                                incoming = normalize_book(incoming)
-                                if not incoming.get('id'):
-                                    incoming['id'] = next_id
-                                    next_id += 1
-                                existing_books.append(incoming)
-                                index[k] = len(existing_books) - 1
-                                books_added += 1
+                                # 3) Only insert if this truly looks like a new record. Otherwise skip to avoid duplicates
+                                if _looks_like_new_book(incoming):
+                                    incoming = normalize_book(incoming)
+                                    if not incoming.get('id'):
+                                        incoming['id'] = next_id
+                                        next_id += 1
+                                    existing_books.append(incoming)
+                                    index[_key_of(incoming)] = len(existing_books) - 1
+                                    rid2 = incoming.get('id')
+                                    if isinstance(rid2, int):
+                                        index_by_id[rid2] = len(existing_books) - 1
+                                    books_added += 1
+                                else:
+                                    books_skipped_no_match += 1
 
                         # Persist back using the same shape as our broader API: {"books": [...]} for compatibility
                         with open(DB_PATH, 'w', encoding='utf-8') as f:
@@ -1673,6 +1710,7 @@ async def execute_txt_script(
                         execution_result["database_uploaded"] = True
                         execution_result["books_added"] = books_added
                         execution_result["books_updated"] = books_updated
+                        execution_result["books_skipped_no_match"] = books_skipped_no_match
                         
                         print(f"💾 Database updated: {books_added} added, {books_updated} updated")
                         
