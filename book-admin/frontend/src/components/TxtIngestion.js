@@ -35,6 +35,7 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
   const [pyRunning, setPyRunning] = useState(false);
   const [aiPrompt, setAiPrompt] = useState('');
   const [isGeneratingScript, setIsGeneratingScript] = useState(false);
+  const [showAdvancedTools, setShowAdvancedTools] = useState(false);
 
   const checkFolderStats = async () => {
   if (!folderPath || !folderPath.trim()) {
@@ -304,17 +305,30 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
     }
     setIsGeneratingScript(true);
     try {
-      const response = await axios.post(getApiUrl('admin/generate-script'), {
-        prompt: aiPrompt,
-      });
-      if (response.data && response.data.script) {
-        setPyCode(response.data.script);
-        toast.success('Python script generated successfully!');
-      } else {
-        toast.error('Failed to get a valid script from the AI.');
+      const pathsToTry = ['admin/generate-script', 'index/admin/generate-script'];
+      let lastError = null;
+      for (const p of pathsToTry) {
+        try {
+          const response = await axios.post(getApiUrl(p), { prompt: aiPrompt });
+          const data = response?.data;
+          if (data && typeof data === 'object' && typeof data.script === 'string' && data.script.trim().length > 0) {
+            if (data.script.startsWith('# An error occurred')) {
+              toast.error(data.script);
+              return;
+            }
+            setPyCode(data.script);
+            toast.success('Python script generated successfully!');
+            return;
+          } else {
+            // Not a valid payload; log and continue to next path
+            console.warn('AI generate-script unexpected response:', data);
+            lastError = new Error('Unexpected response payload (no script field).');
+          }
+        } catch (e) {
+          lastError = e;
+        }
       }
-    } catch (error) {
-      const msg = error?.response?.data?.detail || error?.message || 'Failed to generate script.';
+      const msg = lastError?.response?.data?.detail || lastError?.message || 'Failed to generate script (no valid response).';
       toast.error(msg);
     } finally {
       setIsGeneratingScript(false);
@@ -624,30 +638,42 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
       </div>
 
       <div className="parse-results">
-        <h4>Run Python on Uploaded ZIP (TXT Ingestion)</h4>
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginBottom: 8 }}>
-          <input type="file" accept=".zip" onChange={(e) => e.target.files?.[0] && uploadScriptZip(e.target.files[0])} />
-          {pyRootDir && <span style={{ fontSize: 12, color: '#555' }}>Root: {pyRootDir}</span>}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <h4>Advanced Tools</h4>
+          <button className="btn btn-outline" onClick={() => setShowAdvancedTools(v => !v)}>
+            {showAdvancedTools ? 'Hide' : 'Show'} Advanced
+          </button>
         </div>
-        <textarea
-          value={pyCode}
-          onChange={(e) => setPyCode(e.target.value)}
-          placeholder="# Paste your GPT-generated Python here. Use variables: root_directory, results, preview_data."
-          style={{ width: '100%', minHeight: 140, fontFamily: 'monospace', padding: 8 }}
-        />
-        <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
-          <button className="btn btn-outline" disabled={pyRunning} onClick={() => runPastedPython({})}>Plan (Preview)</button>
-          <button className="btn btn-primary" disabled={pyRunning} onClick={() => runPastedPython({ toDb: true })}>Import (Upsert)</button>
-        </div>
-        {pyPreview?.length > 0 && (
-          <div style={{ marginTop: 12 }}>
-            <strong>Preview (first {pyPreview.length} rows)</strong>
-            <ul>
-              {pyPreview.map((p, i) => (
-                <li key={i}>{p.folder} — {p.title} — {p.author} — {p.file} — {p.status}</li>
-              ))}
-            </ul>
-          </div>
+        {showAdvancedTools ? (
+          <>
+            <h5 style={{ marginTop: 8 }}>Run Python on Uploaded ZIP (TXT Ingestion)</h5>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginBottom: 8 }}>
+              <input type="file" accept=".zip" onChange={(e) => e.target.files?.[0] && uploadScriptZip(e.target.files[0])} />
+              {pyRootDir && <span style={{ fontSize: 12, color: '#555' }}>Root: {pyRootDir}</span>}
+            </div>
+            <textarea
+              value={pyCode}
+              onChange={(e) => setPyCode(e.target.value)}
+              placeholder="# Paste your GPT-generated Python here. Use variables: root_directory, results, preview_data."
+              style={{ width: '100%', minHeight: 140, fontFamily: 'monospace', padding: 8 }}
+            />
+            <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+              <button className="btn btn-outline" disabled={pyRunning} onClick={() => runPastedPython({})}>Plan (Preview)</button>
+              <button className="btn btn-primary" disabled={pyRunning} onClick={() => runPastedPython({ toDb: true })}>Import (Upsert)</button>
+            </div>
+            {pyPreview?.length > 0 && (
+              <div style={{ marginTop: 12 }}>
+                <strong>Preview (first {pyPreview.length} rows)</strong>
+                <ul>
+                  {pyPreview.map((p, i) => (
+                    <li key={i}>{p.folder} — {p.title} — {p.author} — {p.file} — {p.status}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </>
+        ) : (
+          <p className="help-text">Hidden to declutter this view. Click "Show Advanced" to access ZIP runner and manual Python execution.</p>
         )}
       </div>
 

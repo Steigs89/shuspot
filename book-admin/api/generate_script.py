@@ -16,8 +16,9 @@ def generate_python_script(user_prompt: str) -> str:
     client = OpenAI(api_key=api_key)
     
     try:
+        model = os.environ.get("OPENAI_MODEL", "gpt-4")
         response = client.chat.completions.create(
-            model="gpt-4",  # Using gpt-4 as a reliable choice, you can change to gpt-5 if you have access
+            model=model,  # Allow override via env OPENAI_MODEL
             messages=[
                 {"role": "system", "content": "You are a Python code generator. Your purpose is to return only valid, runnable Python code based on the user's request. Do not include any explanatory text, markdown formatting, or anything other than the code itself."},
                 {"role": "user", "content": user_prompt}
@@ -36,8 +37,12 @@ def generate_python_script(user_prompt: str) -> str:
         return script_content
 
     except Exception as e:
+        # Avoid leaking full stack or API internals to client; return concise error
+        msg = str(e)
+        if "api_key" in msg.lower():
+            msg = "OpenAI API key missing or invalid"
         print(f"An error occurred while calling OpenAI API: {e}")
-        return f"# An error occurred: {e}"
+        return f"# An error occurred: {msg}"
 
 if __name__ == '__main__':
     # Example usage:
