@@ -67,41 +67,49 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
       return path.split('/').map(encodeURIComponent).join('/');
     };
 
-    console.log('🖼️ getImageUrl called for page:', pageNumber);
-    console.log('📁 pageData:', pageData);
-    console.log('📚 book folder_path:', book?.folder_path);
-
-    if (pageData?.file_path) {
-      const url = `${getApiUrl()}/${encodePath(pageData.file_path)}`;
-      console.log('🎯 Generated pageData URL:', url);
-      return url;
-    }
-
-    if (book?.notes) {
-      try {
-        const parsedNotes = JSON.parse(book.notes);
-        const folderPath = parsedNotes.folder_path;
-        if (folderPath) {
-          const url = `${getApiUrl()}/${encodePath(folderPath)}/resized/crop-${pageNumber}.png`;
-          console.log('🎯 Generated book notes URL for page', pageNumber, ':', url);
-          return url;
-        }
-      } catch (e) {
-        console.error('Error parsing notes:', e);
+    // This function will find the correct base path for the book's assets.
+    const getBookBasePath = () => {
+      // Priority 1: Use the folder_path from the book object itself.
+      if (book?.folder_path) {
+        return book.folder_path;
       }
-    }
+      // Priority 2: Try to parse the folder_path from the book's notes.
+      if (book?.notes) {
+        try {
+          const parsedNotes = JSON.parse(book.notes);
+          if (parsedNotes.folder_path) {
+            return parsedNotes.folder_path;
+          }
+        } catch (e) {
+          // Ignore parsing errors
+        }
+      }
+      // Priority 3: Infer from the cover image URL.
+      if (book?.cover_image_url) {
+        const match = book.cover_image_url.match(/books\/(.*)\/resized\/crop-1\.png/);
+        if (match && match[1]) {
+          return match[1]; // This gives us 'Category/Book Title'
+        }
+      }
+      return null;
+    };
 
-    // Fallback: folder_path may have spaces
-    if (book?.folder_path) {
-      const url = `${getApiUrl()}/${encodePath(book.folder_path)}/resized/crop-${pageNumber}.png`;
-      console.log('🎯 Generated folder_path URL:', url);
+    const basePath = getBookBasePath();
+
+    if (basePath) {
+      // If we have a base path, construct the URL from it.
+      // This is the most reliable method.
+      const url = `${getApiUrl()}/books/${encodePath(basePath)}/resized/crop-${pageNumber}.png`;
+      console.log('🎯 Generated URL from base path:', url);
       return url;
     }
-    
-    const fallbackUrl = `${getApiUrl()}/CROP-ShuSpot/page-${pageNumber}.png`;
+
+    // Fallback if no base path can be determined.
+    // This might happen for older or malformed book data.
+    const fallbackUrl = `${getApiUrl()}/books/CROP-ShuSpot/page-${pageNumber}.png`;
     console.log('🎯 Generated fallback URL:', fallbackUrl);
     return fallbackUrl;
-  }, [book?.notes, book?.folder_path]);
+  }, [book]);
 
   // OCR functionality temporarily disabled for simplicity
   // useEffect(() => {
