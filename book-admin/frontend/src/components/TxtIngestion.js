@@ -22,6 +22,17 @@ const TxtIngestion = () => {
     'Set genre to "Educational" when missing; preview changes and prepare results for import.',
   ];
 
+  const aiPromptPlaceholder = `Generate Python code only (no markdown). Environment variables you MUST use:
+- existing_books: list[dict] — snapshot of the local database
+- results: list[dict] — records to upsert when Import runs (non-preview)
+- preview_data: list[dict] — items to show in Plan (Preview)
+Contract:
+1) Read/modify records via existing_books (safe checks).
+2) For preview: put changed items into preview_data.
+3) For import: put items to upsert into results (or leave results empty and update existing_books in-place — backend will use it on Import).
+
+Task: Set `;
+
   // Extract Python code if the text contains Markdown fences or leading prose
   const extractPythonCode = (text) => {
     if (!text) return '';
@@ -169,9 +180,6 @@ const TxtIngestion = () => {
     <div className="shuspot-ingestion">
       <div className="ingestion-header">
         <h3>TXT Ingestion — AI</h3>
-        <span style={{ marginLeft: 'auto', fontSize: 12, color: '#6c757d' }} title="Build identifier">
-          Build: {process.env.REACT_APP_BUILD_ID || 'dev'}
-        </span>
       </div>
       <div className="parse-results ai-card">
         <div className="ai-hero">
@@ -211,7 +219,7 @@ const TxtIngestion = () => {
           className="textarea"
           value={aiPrompt}
           onChange={(e) => setAiPrompt(e.target.value)}
-          placeholder="e.g., Rename all 'cover.jpg' to 'front-cover.jpg' within each book folder under 'Books/'. Skip folders without images."
+          placeholder={aiPromptPlaceholder}
         />
         <div className="ai-actions">
           <button className={`btn btn-primary btn-large ${isGeneratingScript ? 'loading' : ''}`} disabled={isGeneratingScript} onClick={handleGenerateScript}>
