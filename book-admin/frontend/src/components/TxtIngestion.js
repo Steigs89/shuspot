@@ -11,6 +11,27 @@ const TxtIngestion = () => {
   const [aiPrompt, setAiPrompt] = useState('');
   const [isGeneratingScript, setIsGeneratingScript] = useState(false);
 
+  // Extract Python code if the text contains Markdown fences or leading prose
+  const extractPythonCode = (text) => {
+    if (!text) return '';
+    let t = String(text);
+    // Prefer fenced code blocks
+    const fenced = t.match(/```(?:python|py)?\n([\s\S]*?)```/i);
+    if (fenced && fenced[1]) {
+      return fenced[1].trim();
+    }
+    // Remove any stray triple backticks if present
+    t = t.replace(/```/g, '').trim();
+    // If there is leading explanation, drop lines until a pythonic line
+    const lines = t.split(/\r?\n/);
+    const looksPython = (l) => /^(\s*(import |from |def |class |for |while |if |elif |else:|try:|except |with |@|#|print\(|[A-Za-z_][A-Za-z0-9_]*\s*=|\"\"\"|\'\'\'))/.test(l);
+    const startIdx = lines.findIndex(looksPython);
+    if (startIdx > 0) {
+      return lines.slice(startIdx).join('\n').trim();
+    }
+    return t;
+  };
+
   const uploadScriptZip = async (file) => {
     try {
       const fd = new FormData();
@@ -33,10 +54,15 @@ const TxtIngestion = () => {
       toast.error('Paste a Python script first');
       return;
     }
+    // Sanitize any prose or markdown fences before sending to server
+    const cleaned = extractPythonCode(pyCode);
+    if (cleaned !== pyCode) {
+      setPyCode(cleaned);
+    }
     setPyRunning(true);
     try {
       const fd = new FormData();
-      fd.append('script', pyCode);
+      fd.append('script', cleaned);
       fd.append('preview_mode', (!toDb && !replace).toString());
       fd.append('upload_to_database', (!!toDb).toString());
       fd.append('root_directory', pyRootDir || '');
@@ -79,7 +105,8 @@ const TxtIngestion = () => {
               toast.error(data.script);
               return;
             }
-            setPyCode(data.script);
+            const cleaned = extractPythonCode(data.script);
+            setPyCode(cleaned);
             toast.success('Python script generated successfully!');
             return;
           } else {
