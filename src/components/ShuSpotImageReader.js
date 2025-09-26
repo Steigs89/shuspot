@@ -58,38 +58,39 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
 
   // Memoize the image URL function to prevent infinite re-renders
   const getImageUrl = useCallback((pageData, pageNumber) => {
-    // First, honor direct URL if provided (e.g., Supabase public URL)
-    if (pageData?.url) {
-      return pageData.url;
-    }
-    
     const encodePath = (path) => {
       return path.split('/').map(encodeURIComponent).join('/');
     };
 
     // This function will find the correct base path for the book's assets.
     const getBookBasePath = () => {
-      // Priority 1: Use the folder_path from the book object itself.
+      // The most reliable source for the path is the cover image URL.
+      // It contains the full "CROP-ShuSpot/Genre/Book Title" structure.
+      if (book?.cover_image_url) {
+        // Example: https://.../books/CROP-ShuSpot/Our%20Solar%20System/Our%20Sun%20is%20A%20Star/resized/crop-1.png
+        const match = book.cover_image_url.match(/books\/(CROP-ShuSpot\/.*?)\/resized\/crop-1\.png/);
+        if (match && match[1]) {
+          // We need to decode the path found in the URL to handle spaces and special characters correctly.
+          // match[1] will be "CROP-ShuSpot/Our%20Solar%20System/Our%20Sun%20is%20A%20Star"
+          try {
+            return decodeURIComponent(match[1]); // Returns "CROP-ShuSpot/Our Solar System/Our Sun is A Star"
+          } catch (e) {
+            console.error("Failed to decode URI component:", match[1], e);
+            return match[1]; // Fallback to the raw matched string
+          }
+        }
+      }
+      // Fallback to other properties if cover_image_url is not as expected
       if (book?.folder_path) {
         return book.folder_path;
       }
-      // Priority 2: Try to parse the folder_path from the book's notes.
       if (book?.notes) {
         try {
           const parsedNotes = JSON.parse(book.notes);
           if (parsedNotes.folder_path) {
             return parsedNotes.folder_path;
           }
-        } catch (e) {
-          // Ignore parsing errors
-        }
-      }
-      // Priority 3: Infer from the cover image URL.
-      if (book?.cover_image_url) {
-        const match = book.cover_image_url.match(/books\/(.*)\/resized\/crop-1\.png/);
-        if (match && match[1]) {
-          return match[1]; // This gives us 'Category/Book Title'
-        }
+        } catch (e) { /* Ignore */ }
       }
       return null;
     };
@@ -97,17 +98,18 @@ const ShuSpotImageReader = ({ book, onBack, onBookmarkPage }) => {
     const basePath = getBookBasePath();
 
     if (basePath) {
-      // If we have a base path, construct the URL from it.
-      // This is the most reliable method.
+      // The basePath now correctly includes "CROP-ShuSpot/Genre/Book Title"
       const url = `${getApiUrl()}/books/${encodePath(basePath)}/resized/crop-${pageNumber}.png`;
       console.log('🎯 Generated URL from base path:', url);
       return url;
     }
 
-    // Fallback if no base path can be determined.
-    // This might happen for older or malformed book data.
-    const fallbackUrl = `${getApiUrl()}/books/CROP-ShuSpot/page-${pageNumber}.png`;
-    console.log('🎯 Generated fallback URL:', fallbackUrl);
+    // The fallback should also be more intelligent, if possible.
+    // If we have a book title, we can make a guess, but it's unreliable without a genre.
+    // The user stated the folder structure is dynamic, so a generic fallback is difficult.
+    // Let's stick to a simple, clearly identifiable fallback for debugging.
+    const fallbackUrl = `${getApiUrl()}/books/fallback/page-${pageNumber}.png`;
+    console.warn('⚠️ Could not determine base path for book. Using fallback URL:', fallbackUrl);
     return fallbackUrl;
   }, [book]);
 
