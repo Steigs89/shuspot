@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 import os, json
 from datetime import datetime
+from .generate_script import generate_python_script
 
 """
 Storage notes:
@@ -77,6 +78,24 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+class GenerateScriptRequest(BaseModel):
+    prompt: str
+
+@router.post("/admin/generate-script")
+async def admin_generate_script(request: GenerateScriptRequest):
+    """
+    Receives a prompt from the frontend, sends it to OpenAI,
+    and returns the generated Python script.
+    """
+    if not request.prompt:
+        raise HTTPException(status_code=400, detail="Prompt cannot be empty.")
+    
+    try:
+        generated_code = generate_python_script(request.prompt)
+        return {"script": generated_code}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to generate script: {e}")
 
 @router.get("/")
 def root():

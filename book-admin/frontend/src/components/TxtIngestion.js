@@ -33,6 +33,8 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
   const [pyCode, setPyCode] = useState('');
   const [pyPreview, setPyPreview] = useState([]);
   const [pyRunning, setPyRunning] = useState(false);
+  const [aiPrompt, setAiPrompt] = useState('');
+  const [isGeneratingScript, setIsGeneratingScript] = useState(false);
 
   const checkFolderStats = async () => {
   if (!folderPath || !folderPath.trim()) {
@@ -292,6 +294,30 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
       toast.error(`Run error: ${e.message || e}`);
     } finally {
       setPyRunning(false);
+    }
+  };
+
+  const handleGenerateScript = async () => {
+    if (!aiPrompt.trim()) {
+      toast.error('Please enter a prompt for the AI.');
+      return;
+    }
+    setIsGeneratingScript(true);
+    try {
+      const response = await axios.post(getApiUrl('admin/generate-script'), {
+        prompt: aiPrompt,
+      });
+      if (response.data && response.data.script) {
+        setPyCode(response.data.script);
+        toast.success('Python script generated successfully!');
+      } else {
+        toast.error('Failed to get a valid script from the AI.');
+      }
+    } catch (error) {
+      const msg = error?.response?.data?.detail || error?.message || 'Failed to generate script.';
+      toast.error(msg);
+    } finally {
+      setIsGeneratingScript(false);
     }
   };
 
@@ -576,6 +602,22 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
             <li><strong>Epic URLs:</strong> Links to original Epic Books content</li>
           </ul>
         </div>
+      </div>
+
+      <div className="parse-results">
+        <h4>Generate Python Script with AI</h4>
+        <p className="help-text" style={{ marginBottom: '12px' }}>
+          Describe the script you want to generate. The AI will create the Python code for you, which will appear in the editor below, ready to run.
+        </p>
+        <textarea
+          value={aiPrompt}
+          onChange={(e) => setAiPrompt(e.target.value)}
+          placeholder="e.g., Create a script that finds all files named 'cover.jpg' and renames them to 'front-cover.jpg'"
+          style={{ width: '100%', minHeight: 80, fontFamily: 'monospace', padding: 8, marginBottom: 8 }}
+        />
+        <button className="btn btn-primary" disabled={isGeneratingScript} onClick={handleGenerateScript}>
+          {isGeneratingScript ? 'Generating...' : 'Generate Script'}
+        </button>
       </div>
 
       <div className="parse-results">
