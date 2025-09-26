@@ -1,251 +1,15 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import { 
-  FolderOpen, 
-  Upload, 
-  Database, 
-  Cloud, 
-  BarChart3,
-  CheckCircle,
-  AlertTriangle,
-  RefreshCw,
-  FileText,
-  Image,
-  Music,
-  Video,
-  Play
-} from 'lucide-react';
-import ScriptEditorSection from './ScriptEditorSection.tsx';
 import axios from 'axios';
 import { getApiUrl } from '../utils/api';
 
-const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
-  const [folderPath, setFolderPath] = useState('/Users/ethan.steigerwald/Downloads/MaterialsShuspotI');
-  const [isLoading, setIsLoading] = useState(false);
-  const [folderStats, setFolderStats] = useState(null);
-  const [parseResults, setParseResults] = useState(null);
-  const [showAdvanced, setShowAdvanced] = useState(false);
-  const [zipFile, setZipFile] = useState(null);
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [zipUrl, setZipUrl] = useState('');
-  const [pyZipToken, setPyZipToken] = useState(null);
+const TxtIngestion = () => {
   const [pyRootDir, setPyRootDir] = useState('');
   const [pyCode, setPyCode] = useState('');
   const [pyPreview, setPyPreview] = useState([]);
   const [pyRunning, setPyRunning] = useState(false);
   const [aiPrompt, setAiPrompt] = useState('');
   const [isGeneratingScript, setIsGeneratingScript] = useState(false);
-  const [showAdvancedTools, setShowAdvancedTools] = useState(false);
-
-  const checkFolderStats = async () => {
-  if (!folderPath || !folderPath.trim()) {
-      toast.error('Please enter a folder path');
-      return;
-    }
-
-    setIsLoading(true);
-    try {
-      const response = await fetch(`${getApiUrl()}/shuspot-ingestion/get-folder-stats?folder_path=${encodeURIComponent(folderPath)}`);
-      const data = await response.json();
-
-      if (response.ok) {
-        setFolderStats(data);
-        toast.success(`Found ${data.estimated_books} books in ${data.sections.length} sections`);
-      } else {
-        toast.error(data.detail || 'Failed to check folder');
-        setFolderStats(null);
-      }
-    } catch (error) {
-      console.error('Error checking folder:', error);
-      toast.error('Failed to check folder stats');
-      setFolderStats(null);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const parseFolder = async () => {
-  if (!folderPath || !folderPath.trim()) {
-      toast.error('Please enter a folder path');
-      return;
-    }
-
-    setIsLoading(true);
-    try {
-      const formData = new FormData();
-      formData.append('folder_path', folderPath);
-
-      const response = await fetch(`${getApiUrl()}/shuspot-ingestion/parse-folder`, {
-        method: 'POST',
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setParseResults(data);
-        toast.success(`Successfully parsed ${data.total_books} books!`);
-      } else {
-        toast.error(data.detail || 'Failed to parse folder');
-      }
-    } catch (error) {
-      console.error('Error parsing folder:', error);
-      toast.error('Failed to parse folder');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const parseZip = async () => {
-    if (!zipFile) {
-      toast.error('Please choose a ZIP file first');
-      return;
-    }
-
-    setIsLoading(true);
-    setUploadProgress(0);
-    try {
-      const formData = new FormData();
-      formData.append('zip_file', zipFile);
-
-      const response = await axios.post(
-        getApiUrl('shuspot-ingestion/parse-zip'),
-        formData,
-        {
-          headers: { 'Content-Type': 'multipart/form-data' },
-          onUploadProgress: (evt) => {
-            if (evt.total) {
-              const pct = Math.round((evt.loaded / evt.total) * 100);
-              setUploadProgress(pct);
-            }
-          }
-        }
-      );
-
-      const data = response.data;
-      setParseResults(data);
-      toast.success(data.message || `Parsed ${data.total_books} books from ZIP`);
-    } catch (error) {
-      console.error('Error parsing ZIP:', error);
-      if (error?.response?.status === 413) {
-        toast.error('ZIP too large for direct upload. Use "Parse from URL" or run locally to parse your folder.');
-      } else {
-        const msg = error?.response?.data?.detail || error?.message || 'Failed to parse ZIP';
-        toast.error(msg);
-      }
-    } finally {
-      setIsLoading(false);
-      // Let the bar linger at 100 briefly on success; reset on next upload start
-    }
-  };
-
-  const parseZipFromUrl = async () => {
-    if (!zipUrl) {
-      toast.error('Enter a ZIP URL');
-      return;
-    }
-    setIsLoading(true);
-    try {
-      const form = new FormData();
-      form.append('zip_url', zipUrl);
-      const res = await axios.post(getApiUrl('shuspot-ingestion/parse-zip-from-url'), form);
-      setParseResults(res.data);
-      toast.success(res.data.message || 'Parsed ZIP from URL');
-    } catch (error) {
-      const msg = error?.response?.data?.detail || error?.message || 'Failed to parse ZIP from URL';
-      toast.error(msg);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const uploadToSheets = async () => {
-    if (!isGoogleSheetsConnected) {
-      toast.error('Please connect to Google Sheets first');
-      return;
-    }
-
-  if (!folderPath || !folderPath.trim()) {
-      toast.error('Please enter a folder path');
-      return;
-    }
-
-    const confirmed = window.confirm(
-      'This will parse your ShuSpot folder structure and upload all books to Google Sheets. Continue?'
-    );
-    
-    if (!confirmed) return;
-
-    setIsLoading(true);
-    try {
-      const formData = new FormData();
-      formData.append('folder_path', folderPath);
-
-      const response = await fetch(`${getApiUrl()}/shuspot-ingestion/parse-and-upload-to-sheets`, {
-        method: 'POST',
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        toast.success(`Successfully uploaded ${data.upload_results.success} books to Google Sheets!`);
-        if (data.upload_results.duplicates > 0) {
-          toast.info(`Skipped ${data.upload_results.duplicates} duplicates`);
-        }
-        setParseResults(data);
-      } else {
-        toast.error(data.detail || 'Failed to upload to Google Sheets');
-      }
-    } catch (error) {
-      console.error('Error uploading to sheets:', error);
-      toast.error('Failed to upload to Google Sheets');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const importToLocalDB = async () => {
-    if (!folderPath.trim()) {
-      toast.error('Please enter a folder path');
-      return;
-    }
-
-    const confirmed = window.confirm(
-      'This will parse your ShuSpot folder structure and import all books to the local database. Continue?'
-    );
-    
-    if (!confirmed) return;
-
-    setIsLoading(true);
-    try {
-      const formData = new FormData();
-      formData.append('folder_path', folderPath);
-
-      const response = await fetch(`${getApiUrl()}/shuspot-ingestion/parse-and-import-to-db`, {
-        method: 'POST',
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        toast.success(`Successfully imported ${data.imported_count} books to local database!`);
-        if (data.errors.length > 0) {
-          console.log('Import errors:', data.errors);
-          toast.warning(`${data.errors.length} books had import errors (check console)`);
-        }
-        setParseResults(data);
-      } else {
-        toast.error(data.detail || 'Failed to import to local database');
-      }
-    } catch (error) {
-      console.error('Error importing to local DB:', error);
-      toast.error('Failed to import to local database');
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const uploadScriptZip = async (file) => {
     try {
@@ -254,7 +18,6 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
       const res = await fetch(getApiUrl('txt-ingestion/upload-zip'), { method: 'POST', body: fd });
       const data = await res.json();
       if (data.ok) {
-        setPyZipToken(data.token);
         setPyRootDir(data.root_directory);
         toast.success('ZIP uploaded. Root set for script running.');
       } else {
@@ -338,346 +101,63 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
   return (
     <div className="shuspot-ingestion">
       <div className="ingestion-header">
-        <FolderOpen size={24} />
-        <h3>ShuSpot Folder Structure Ingestion</h3>
+        <h3>TXT Ingestion — AI</h3>
         <span style={{ marginLeft: 'auto', fontSize: 12, color: '#6c757d' }} title="Build identifier">
           Build: {process.env.REACT_APP_BUILD_ID || 'dev'}
         </span>
       </div>
-
-      <div className="ingestion-description">
-        <p>
-          Parse your organized ShuSpot folder structure and automatically extract book metadata, 
-          cover images, and educational data (AR Level, Lexile, etc.) from your existing collection.
-        </p>
-      </div>
-
-      {/* Folder Path Input */}
-      <div className="folder-input-section">
-        <div className="form-group">
-          <label>ShuSpot Materials Folder Path:</label>
-          <div className="path-input-wrapper">
-            <input
-              type="text"
-              value={folderPath}
-              onChange={(e) => setFolderPath(e.target.value)}
-              placeholder="/path/to/your/shuspot/materials"
-              className="path-input"
-            />
-            <button
-              onClick={checkFolderStats}
-              disabled={isLoading}
-              className="btn btn-secondary"
-            >
-              <BarChart3 size={16} />
-              Check Folder
-            </button>
-          </div>
-          <small className="help-text">
-            Enter the path to your "MaterialsShuspotI" folder (renamed ShuSpot materials folder)
-          </small>
-        </div>
-      </div>
-
-      {/* Folder Stats */}
-      {folderStats && (
-        <div className="folder-stats">
-          <h4>Folder Analysis</h4>
-          <div className="stats-summary">
-            <div className="stat-item">
-              <strong>{folderStats.estimated_books}</strong>
-              <span>Total Books</span>
-            </div>
-            <div className="stat-item">
-              <strong>{folderStats.sections.length}</strong>
-              <span>Sections</span>
-            </div>
-          </div>
-
-          <div className="sections-breakdown">
-            <h5>Sections Found:</h5>
-            {folderStats.sections.map((section, index) => (
-              <div key={index} className="section-item">
-                <div className="section-info">
-                  <span className="section-name">{section.name}</span>
-                  <span className="section-count">{section.book_count} books</span>
-                </div>
-                <div className="section-icon">
-                  {section.name.includes('Video') && <Video size={16} />}
-                  {section.name.includes('Audio') && <Music size={16} />}
-                  {section.name.includes('Read to Me') && <FileText size={16} />}
-                  {section.name.includes('Books') && <Image size={16} />}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Action Buttons */}
-      <div className="action-buttons">
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
-          <input
-            type="file"
-            accept=".zip,application/zip"
-            onChange={(e) => setZipFile(e.target.files?.[0] || null)}
-          />
-          <button
-            onClick={parseZip}
-            disabled={isLoading || !zipFile}
-            className="btn btn-primary"
-          >
-            Upload ZIP & Parse
-          </button>
-          {isLoading && uploadProgress > 0 && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 220 }}>
-              <progress value={uploadProgress} max="100" style={{ width: 160 }} />
-              <span style={{ fontSize: 12 }}>{uploadProgress}%</span>
-            </div>
-          )}
-          <span style={{ margin: '0 8px' }}>or</span>
-          <input
-            type="url"
-            placeholder="https://.../your.zip"
-            value={zipUrl}
-            onChange={(e) => setZipUrl(e.target.value)}
-            style={{ minWidth: 260 }}
-          />
-          <button
-            onClick={parseZipFromUrl}
-            disabled={isLoading || !zipUrl}
-            className="btn btn-outline"
-          >
-            Parse from URL
-          </button>
-        </div>
-        <button
-          onClick={parseFolder}
-          disabled={isLoading}
-          className="btn btn-outline"
-        >
-          <RefreshCw size={16} style={{ marginRight: '8px' }} />
-          {isLoading ? 'Parsing...' : 'Parse & Preview'}
-        </button>
-
-        <button
-          onClick={uploadToSheets}
-          disabled={isLoading || !isGoogleSheetsConnected}
-          className="btn btn-primary"
-        >
-          <Cloud size={16} style={{ marginRight: '8px' }} />
-          {isLoading ? 'Uploading...' : 'Parse & Upload to Sheets'}
-        </button>
-
-        <button
-          onClick={importToLocalDB}
-          disabled={isLoading}
-          className="btn btn-success"
-        >
-          <Database size={16} style={{ marginRight: '8px' }} />
-          {isLoading ? 'Importing...' : 'Parse & Import to Local DB'}
-        </button>
-      </div>
-
-      {/* Parse Results */}
-      {parseResults && (
-        <div className="parse-results">
-          <h4>Parsing Results</h4>
-          
-          {parseResults.stats && (
-            <div className="results-stats">
-              <div className="stat-item">
-                <strong>{parseResults.stats.total_books}</strong>
-                <span>Books Parsed</span>
-              </div>
-              <div className="stat-item">
-                <strong>{parseResults.stats.with_cover_images}</strong>
-                <span>With Cover Images</span>
-              </div>
-              <div className="stat-item">
-                <strong>{parseResults.stats.with_ar_level}</strong>
-                <span>With AR Level</span>
-              </div>
-              <div className="stat-item">
-                <strong>{parseResults.stats.with_lexile}</strong>
-                <span>With Lexile</span>
-              </div>
-            </div>
-          )}
-
-          {parseResults.parsing_stats && (
-            <div className="media-breakdown">
-              <h5>By Media Type:</h5>
-              {Object.entries(parseResults.parsing_stats.by_media_type).map(([type, count]) => (
-                <div key={type} className="media-item">
-                  <span className="media-type">{type}</span>
-                  <span className="media-count">{count}</span>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {parseResults.sample_books && (
-            <div className="sample-books">
-              <h5>Sample Books:</h5>
-              {parseResults.sample_books.slice(0, 5).map((book, index) => {
-                const isShuSpotBook = book._page_sequence && book._page_sequence.length > 0;
-                
-                return (
-                  <div key={index} className="book-sample">
-                    <div className="book-content">
-                      <div className="book-info">
-                        <strong>{book.Name || 'Unknown Title'}</strong>
-                        <span>by {book.Author || 'Unknown Author'}</span>
-                      </div>
-                      <div className="book-metadata">
-                        <span className="metadata-tag">{book.Media}</span>
-                        <span className="metadata-tag">{book.Category}</span>
-                        {book['AR Level'] && <span className="metadata-tag">AR: {book['AR Level']}</span>}
-                        {book.Lexile && <span className="metadata-tag">Lexile: {book.Lexile}</span>}
-                        {book.Age && <span className="metadata-tag">Ages: {book.Age}</span>}
-                        {isShuSpotBook && (
-                          <span className="metadata-tag shuspot-tag">
-                            <Image size={12} style={{ marginRight: '4px' }} />
-                            {book._total_pages} pages
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    {onLaunchBook && (
-                      <div className="book-actions">
-                        <button
-                          onClick={() => onLaunchBook(book)}
-                          disabled={!isShuSpotBook}
-                          className={`btn-launch ${isShuSpotBook ? 'enabled' : 'disabled'}`}
-                          title={isShuSpotBook ? "Launch book in reader" : "Only ShuSpot image books supported"}
-                        >
-                          <Play size={14} />
-                          {isShuSpotBook ? 'Launch' : 'N/A'}
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          )}
-
-          {parseResults.upload_results && (
-            <div className="upload-summary">
-              <div className="upload-stat success">
-                <CheckCircle size={16} />
-                <span>{parseResults.upload_results.success} uploaded successfully</span>
-              </div>
-              {parseResults.upload_results.duplicates > 0 && (
-                <div className="upload-stat warning">
-                  <AlertTriangle size={16} />
-                  <span>{parseResults.upload_results.duplicates} duplicates skipped</span>
-                </div>
-              )}
-              {parseResults.upload_results.errors > 0 && (
-                <div className="upload-stat error">
-                  <AlertTriangle size={16} />
-                  <span>{parseResults.upload_results.errors} errors occurred</span>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Instructions */}
-      <div className="ingestion-instructions">
-        <h4>How Your Folder Structure Works:</h4>
-        <div className="structure-example">
-          <pre>{`MaterialsShuspotI/
-├── Read to Me Stories/
-│   ├── Art/
-│   │   ├── A Gift for Sophie/
-│   │   │   ├── description.txt (metadata)
-│   │   │   ├── cover.jpg
-│   │   │   ├── Screenshot (1).png
-│   │   │   └── page2.mp3
-│   └── Baby Animals/
-├── Video Books/
-│   ├── A Boy Like You/
-│   │   ├── A Boy Like You.mp4
-│   │   └── A Boy Like You.rtf
-├── Audiobooks/
-├── Books/
-└── Videos/`}</pre>
-        </div>
-
-        <div className="extraction-info">
-          <h5>What Gets Extracted:</h5>
-          <ul>
-            <li><strong>Metadata:</strong> Title, Author, AR Level, Lexile, Age Range</li>
-            <li><strong>Cover Images:</strong> Automatically detected and linked</li>
-            <li><strong>Page Counts:</strong> From Screenshot files and metadata</li>
-            <li><strong>Media Types:</strong> Read to Me, Video Books, Audiobooks, etc.</li>
-            <li><strong>Categories:</strong> Art, Baby Animals, Big Cats, etc.</li>
-            <li><strong>Epic URLs:</strong> Links to original Epic Books content</li>
-          </ul>
-        </div>
-      </div>
-
       <div className="parse-results">
-        <h4>🤖 Generate Python Script with AI</h4>
+        <div className="section-header">
+          <h4 className="title"><span>🤖</span><span className="gradient-text">Generate Python Script with AI</span></h4>
+          <span className="badge">Beta</span>
+        </div>
         <p className="help-text" style={{ marginBottom: '12px' }}>
-          Describe the script you want to generate. The AI will create the Python code for you, which will appear in the editor below, ready to run.
+          Describe the script you want to generate. The AI will create Python code tailored to your library and show it below.
         </p>
+        <div className="tip">Tip: Be specific. Include goals, constraints, and example folder names.</div>
         <textarea
+          className="textarea"
           value={aiPrompt}
           onChange={(e) => setAiPrompt(e.target.value)}
-          placeholder="e.g., A script to rename all 'cover.jpg' files to 'front-cover.jpg' in every book folder."
-          style={{ width: '100%', minHeight: 80, fontFamily: 'monospace', padding: 8, marginBottom: 8 }}
+          placeholder="e.g., Rename all 'cover.jpg' to 'front-cover.jpg' within each book folder under 'Books/'. Skip folders without images."
         />
-        <button className="btn btn-primary" disabled={isGeneratingScript} onClick={handleGenerateScript}>
-          {isGeneratingScript ? 'Generating...' : '✨ Generate with AI'}
-        </button>
+        <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+          <button className={`btn btn-primary ${isGeneratingScript ? 'loading' : ''}`} disabled={isGeneratingScript} onClick={handleGenerateScript}>
+            {isGeneratingScript ? 'Generating…' : '✨ Generate with AI'}
+          </button>
+        </div>
       </div>
 
       <div className="parse-results">
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <h4>Advanced Tools</h4>
-          <button className="btn btn-outline" onClick={() => setShowAdvancedTools(v => !v)}>
-            {showAdvancedTools ? 'Hide' : 'Show'} Advanced
-          </button>
+        <div className="section-header">
+          <h4 className="title">Advanced Tools</h4>
         </div>
-        {showAdvancedTools ? (
-          <>
-            <h5 style={{ marginTop: 8 }}>Run Python on Uploaded ZIP (TXT Ingestion)</h5>
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginBottom: 8 }}>
-              <input type="file" accept=".zip" onChange={(e) => e.target.files?.[0] && uploadScriptZip(e.target.files[0])} />
-              {pyRootDir && <span style={{ fontSize: 12, color: '#555' }}>Root: {pyRootDir}</span>}
-            </div>
-            <textarea
-              value={pyCode}
-              onChange={(e) => setPyCode(e.target.value)}
-              placeholder="# Paste your GPT-generated Python here. Use variables: root_directory, results, preview_data."
-              style={{ width: '100%', minHeight: 140, fontFamily: 'monospace', padding: 8 }}
-            />
-            <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
-              <button className="btn btn-outline" disabled={pyRunning} onClick={() => runPastedPython({})}>Plan (Preview)</button>
-              <button className="btn btn-primary" disabled={pyRunning} onClick={() => runPastedPython({ toDb: true })}>Import (Upsert)</button>
-            </div>
-            {pyPreview?.length > 0 && (
-              <div style={{ marginTop: 12 }}>
-                <strong>Preview (first {pyPreview.length} rows)</strong>
-                <ul>
-                  {pyPreview.map((p, i) => (
-                    <li key={i}>{p.folder} — {p.title} — {p.author} — {p.file} — {p.status}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </>
-        ) : (
-          <p className="help-text">Hidden to declutter this view. Click "Show Advanced" to access ZIP runner and manual Python execution.</p>
+        <h5 style={{ marginTop: 8, marginBottom: 8 }}>Run Python on Uploaded ZIP (TXT Ingestion)</h5>
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', marginBottom: 8 }}>
+          <input type="file" accept=".zip" onChange={(e) => e.target.files?.[0] && uploadScriptZip(e.target.files[0])} />
+          {pyRootDir && <span style={{ fontSize: 12, color: '#555' }}>Root: {pyRootDir}</span>}
+        </div>
+        <textarea
+          className="code-editor"
+          value={pyCode}
+          onChange={(e) => setPyCode(e.target.value)}
+          placeholder="# Paste your GPT-generated Python here. Use variables: root_directory, results, preview_data."
+        />
+        <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+          <button className="btn btn-outline" disabled={pyRunning} onClick={() => runPastedPython({})}>Plan (Preview)</button>
+          <button className="btn btn-primary" disabled={pyRunning} onClick={() => runPastedPython({ toDb: true })}>Import (Upsert)</button>
+        </div>
+        {pyPreview?.length > 0 && (
+          <div style={{ marginTop: 12 }}>
+            <strong>Preview (first {pyPreview.length} rows)</strong>
+            <ul>
+              {pyPreview.map((p, i) => (
+                <li key={i}>{p.folder} — {p.title} — {p.author} — {p.file} — {p.status}</li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
-
-      <ScriptEditorSection />
 
       <style jsx>{`
         .shuspot-ingestion {
@@ -693,80 +173,36 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
           margin-bottom: 16px;
         }
 
-        .path-input-wrapper {
+        .section-header {
           display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 8px;
+        }
+
+        .title {
+          display: flex;
+          align-items: center;
           gap: 8px;
-          align-items: center;
+          margin: 0;
         }
 
-        .path-input {
-          flex: 1;
-          padding: 8px 12px;
-          border: 1px solid #ced4da;
-          border-radius: 4px;
-          font-size: 14px;
-          font-family: monospace;
+        .badge {
+          font-size: 10px;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          background: linear-gradient(135deg, #fde68a, #fca5a5);
+          color: #6b4423;
+          padding: 4px 8px;
+          border-radius: 999px;
+          border: 1px solid rgba(0,0,0,0.06);
         }
 
-        .folder-stats {
-          background: white;
-          padding: 16px;
-          border-radius: 6px;
-          margin: 16px 0;
-          border: 1px solid #dee2e6;
-        }
-
-        .stats-summary {
-          display: flex;
-          gap: 20px;
-          margin: 16px 0;
-        }
-
-        .stat-item {
-          text-align: center;
-        }
-
-        .stat-item strong {
-          display: block;
-          font-size: 24px;
-          color: #007bff;
-        }
-
-        .stat-item span {
-          font-size: 12px;
-          color: #6c757d;
-        }
-
-        .section-item {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 8px 12px;
-          background: #f8f9fa;
-          border-radius: 4px;
-          margin: 4px 0;
-        }
-
-        .section-info {
-          display: flex;
-          justify-content: space-between;
-          flex: 1;
-        }
-
-        .section-name {
-          font-weight: 500;
-        }
-
-        .section-count {
-          color: #6c757d;
-          font-size: 14px;
-        }
-
-        .action-buttons {
-          display: flex;
-          gap: 12px;
-          margin: 20px 0;
-          flex-wrap: wrap;
+        .gradient-text {
+          background: linear-gradient(135deg, #0ea5e9, #6366f1);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
         }
 
         .btn {
@@ -777,7 +213,7 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
           border-radius: 4px;
           font-size: 14px;
           cursor: pointer;
-          transition: all 0.2s;
+          transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
         }
 
         .btn:disabled {
@@ -788,6 +224,17 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
         .btn-primary {
           background-color: #007bff;
           color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+          background-color: #0069d9;
+          transform: translateY(-1px);
+          box-shadow: 0 6px 14px rgba(0, 123, 255, 0.22);
+        }
+
+        .btn-outline:hover:not(:disabled) {
+          background-color: #f0f7ff;
+          border-color: #0069d9;
         }
 
         .btn-success {
@@ -807,151 +254,62 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
         }
 
         .parse-results {
-          background: white;
-          padding: 16px;
-          border-radius: 6px;
+          background: #ffffff;
+          padding: 16px 16px 20px;
+          border-radius: 10px;
           margin: 16px 0;
-          border: 1px solid #dee2e6;
-        }
-
-        .results-stats {
-          display: flex;
-          gap: 20px;
-          margin: 16px 0;
-          flex-wrap: wrap;
-        }
-
-        .media-item {
-          display: flex;
-          justify-content: space-between;
-          padding: 4px 8px;
-          background: #f8f9fa;
-          border-radius: 3px;
-          margin: 2px 0;
-        }
-
-        .book-sample {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 12px;
           border: 1px solid #e9ecef;
-          border-radius: 4px;
-          margin: 8px 0;
+          box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
         }
 
-        .book-content {
-          flex: 1;
+        .textarea {
+          width: 100%;
+          min-height: 96px;
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+          font-size: 13px;
+          padding: 10px 12px;
+          border-radius: 8px;
+          border: 1px solid #d0d5dd;
+          background: #f8fafc;
+          color: #0f172a;
+          outline: none;
+          transition: box-shadow 0.15s ease, border-color 0.15s ease;
         }
 
-        .book-info strong {
-          display: block;
-          margin-bottom: 4px;
+        .textarea:focus {
+          border-color: #93c5fd;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+          background: #ffffff;
         }
 
-        .book-info span {
-          color: #6c757d;
-          font-size: 14px;
+        .code-editor {
+          width: 100%;
+          min-height: 200px;
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+          font-size: 13px;
+          padding: 12px 14px;
+          border-radius: 8px;
+          border: 1px solid #d0d5dd;
+          background: #f8fafc;
+          color: #0f172a;
+          outline: none;
+          transition: box-shadow 0.15s ease, border-color 0.15s ease;
         }
 
-        .book-metadata {
-          margin-top: 8px;
+        .code-editor:focus {
+          border-color: #a78bfa;
+          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+          background: #ffffff;
         }
 
-        .metadata-tag {
-          display: inline-block;
-          background-color: #e9ecef;
-          padding: 2px 6px;
-          border-radius: 3px;
-          font-size: 11px;
-          margin-right: 4px;
-          margin-bottom: 4px;
-        }
-
-        .metadata-tag.shuspot-tag {
-          background-color: #d4edda;
-          color: #155724;
-          display: inline-flex;
-          align-items: center;
-        }
-
-        .book-actions {
-          margin-left: 12px;
-        }
-
-        .btn-launch {
-          display: flex;
-          align-items: center;
-          gap: 4px;
-          padding: 6px 12px;
-          border: none;
-          border-radius: 4px;
+        .tip {
+          background: #f1f5f9;
+          border-left: 3px solid #0ea5e9;
+          color: #334155;
           font-size: 12px;
-          cursor: pointer;
-          transition: all 0.2s;
-        }
-
-        .btn-launch.enabled {
-          background-color: #007bff;
-          color: white;
-        }
-
-        .btn-launch.enabled:hover {
-          background-color: #0056b3;
-        }
-
-        .btn-launch.disabled {
-          background-color: #e9ecef;
-          color: #6c757d;
-          cursor: not-allowed;
-        }
-
-        .upload-summary {
-          margin-top: 16px;
-        }
-
-        .upload-stat {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          margin: 4px 0;
-          padding: 4px 0;
-        }
-
-        .upload-stat.success {
-          color: #28a745;
-        }
-
-        .upload-stat.warning {
-          color: #ffc107;
-        }
-
-        .upload-stat.error {
-          color: #dc3545;
-        }
-
-        .structure-example {
-          background: #f8f9fa;
-          padding: 12px;
-          border-radius: 4px;
-          margin: 12px 0;
-          overflow-x: auto;
-        }
-
-        .structure-example pre {
-          margin: 0;
-          font-size: 12px;
-          line-height: 1.4;
-        }
-
-        .extraction-info ul {
-          margin: 12px 0;
-          padding-left: 20px;
-        }
-
-        .extraction-info li {
-          margin: 4px 0;
-          line-height: 1.4;
+          padding: 8px 10px;
+          border-radius: 6px;
+          margin: 8px 0 12px;
         }
 
         .help-text {
@@ -960,15 +318,6 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
           margin-top: 4px;
         }
 
-        .form-group {
-          margin-bottom: 16px;
-        }
-
-        .form-group label {
-          display: block;
-          margin-bottom: 4px;
-          font-weight: 500;
-        }
       `}</style>
     </div>
   );
