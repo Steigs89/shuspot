@@ -15,6 +15,13 @@ const TxtIngestion = () => {
   const [helperFrom, setHelperFrom] = useState('');
   const [helperTo, setHelperTo] = useState('');
 
+  // Quick prompt suggestions
+  const suggestions = [
+    'Update every book\'s author to Jane Doe and put changed items in preview_data and results.',
+    'Replace the word "kids" with "children" in description for all books; preview changed and upsert on import.',
+    'Set genre to "Educational" when missing; preview changes and prepare results for import.',
+  ];
+
   // Extract Python code if the text contains Markdown fences or leading prose
   const extractPythonCode = (text) => {
     if (!text) return '';
@@ -156,43 +163,7 @@ const TxtIngestion = () => {
     `- results.extend(changed_items)`
   );
 
-  // Direct, safe Python templates (no AI) inserted into editor
-  const buildAuthorUpdateCode = (author) => `# Safe template: set author to "${author}"
-updated = []
-for idx, b in enumerate(existing_books):
-    if isinstance(b, dict):
-        prev = b.get('author')
-        if prev != '${author}':
-            b['author'] = '${author}'
-            updated.append(b)
-    else:
-        print(f"Skipping non-dict at index {idx}: {type(b)}")
-
-# Preview the changed items
-preview_data.extend(updated)
-
-# Import: upsert only changed items (or use existing_books to upsert all)
-results.extend(updated)
-`;
-
-  const buildReplaceFieldCode = (field, fromVal, toVal) => `# Safe template: replace occurrences in field '${field}' from '${fromVal}' to '${toVal}'
-changed = []
-for idx, b in enumerate(existing_books):
-    if not isinstance(b, dict):
-        print(f"Skipping non-dict at {idx}: {type(b)}")
-        continue
-    if '${field}' in b and isinstance(b.get('${field}'), str):
-        val = b.get('${field}')
-        if val and '${fromVal}' in val:
-            b['${field}'] = val.replace('${fromVal}', '${toVal}')
-            changed.append(b)
-
-# Preview only changed items
-preview_data.extend(changed)
-
-# Import: upsert changed subset
-results.extend(changed)
-`;
+  // Removed safe-template code paths to keep the UI focused on AI + core actions
 
   return (
     <div className="shuspot-ingestion">
@@ -202,15 +173,19 @@ results.extend(changed)
           Build: {process.env.REACT_APP_BUILD_ID || 'dev'}
         </span>
       </div>
-      <div className="parse-results">
-        <div className="section-header">
-          <h4 className="title"><span>🤖</span><span className="gradient-text">Generate Python Script with AI</span></h4>
-          <span className="badge">Beta</span>
+      <div className="parse-results ai-card">
+        <div className="ai-hero">
+          <div className="ai-icon">🤖</div>
+          <h2 className="ai-title">Generate Python Script with AI</h2>
+          <div className="ai-subtitle">Describe what you want to change or parse — the AI will craft Python tailored to your library.</div>
+          <div className="badge">Beta</div>
         </div>
-        <p className="help-text" style={{ marginBottom: '12px' }}>
-          Describe the script you want to generate. The AI will create Python code tailored to your library and show it below.
-        </p>
-        <div className="tip">Tip: Be specific. Include goals, constraints, and example folder names.</div>
+        <div className="tip" style={{ textAlign: 'center' }}>Tip: Be specific. Include goals, constraints, and an example.</div>
+        <div className="chips">
+          {suggestions.map((s,i)=> (
+            <button key={i} className="chip" onClick={()=> setAiPrompt(s)}>{s}</button>
+          ))}
+        </div>
         <div className="db-helper">
           <div className="helper-title">DB Prompt Helper</div>
           <div className="helper-row">
@@ -219,7 +194,6 @@ results.extend(changed)
             <div style={{ display:'flex', gap:8 }}>
               <button className="btn btn-outline" onClick={()=> setAiPrompt(makeAuthorPrompt(helperAuthor || 'Jane'))}>Fill Prompt</button>
               <button className="btn btn-primary" disabled={isGeneratingScript} onClick={()=> generateFromPrompt(makeAuthorPrompt(helperAuthor || 'Jane'))}>Fill + Generate</button>
-              <button className="btn btn-secondary" onClick={()=> setPyCode(buildAuthorUpdateCode(helperAuthor || 'Jane'))}>Insert Safe Template</button>
             </div>
           </div>
           <div className="helper-row">
@@ -230,7 +204,6 @@ results.extend(changed)
             <div style={{ display:'flex', gap:8 }}>
               <button className="btn btn-outline" onClick={()=> setAiPrompt(makeReplacePrompt(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Fill Prompt</button>
               <button className="btn btn-primary" disabled={isGeneratingScript} onClick={()=> generateFromPrompt(makeReplacePrompt(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Fill + Generate</button>
-              <button className="btn btn-secondary" onClick={()=> setPyCode(buildReplaceFieldCode(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Insert Safe Template</button>
             </div>
           </div>
         </div>
@@ -240,8 +213,8 @@ results.extend(changed)
           onChange={(e) => setAiPrompt(e.target.value)}
           placeholder="e.g., Rename all 'cover.jpg' to 'front-cover.jpg' within each book folder under 'Books/'. Skip folders without images."
         />
-        <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
-          <button className={`btn btn-primary ${isGeneratingScript ? 'loading' : ''}`} disabled={isGeneratingScript} onClick={handleGenerateScript}>
+        <div className="ai-actions">
+          <button className={`btn btn-primary btn-large ${isGeneratingScript ? 'loading' : ''}`} disabled={isGeneratingScript} onClick={handleGenerateScript}>
             {isGeneratingScript ? 'Generating…' : '✨ Generate with AI'}
           </button>
         </div>
@@ -290,11 +263,22 @@ results.extend(changed)
         .btn:disabled { opacity: 0.6; cursor: not-allowed; }
         .btn-primary { background-color: #007bff; color: white; }
         .btn-primary:hover:not(:disabled) { background-color: #0069d9; transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0, 123, 255, 0.22); }
+        .btn-large { padding: 12px 22px; font-size: 16px; border-radius: 8px; }
         .btn-outline { background-color: white; color: #007bff; border: 1px solid #007bff; }
         .btn-outline:hover:not(:disabled) { background-color: #f0f7ff; border-color: #0069d9; }
         .btn-success { background-color: #28a745; color: white; }
         .btn-secondary { background-color: #6c757d; color: white; }
         .parse-results { background: #ffffff; padding: 16px 16px 20px; border-radius: 10px; margin: 16px 0; border: 1px solid #e9ecef; box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06); }
+        .ai-card { position: relative; overflow: hidden; }
+        .ai-card::before { content: ""; position: absolute; inset: -40% -10% auto -10%; height: 220px; background: radial-gradient(60% 60% at 50% 50%, rgba(99,102,241,0.18), rgba(14,165,233,0.12), transparent 70%); pointer-events: none; }
+        .ai-hero { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 8px 0 12px; }
+        .ai-icon { font-size: 28px; }
+        .ai-title { margin: 0; font-size: 24px; line-height: 1.2; background: linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; letter-spacing: -0.01em; }
+        .ai-subtitle { color: #475569; font-size: 13px; max-width: 720px; }
+        .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 8px 0 12px; }
+        .chip { border: 1px dashed #94a3b8; color: #334155; background: #f8fafc; border-radius: 999px; padding: 6px 10px; font-size: 12px; cursor: pointer; }
+        .chip:hover { background: #eef2ff; border-style: solid; }
+        .ai-actions { display: flex; justify-content: center; margin-top: 8px; }
         .textarea { width: 100%; min-height: 96px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 13px; padding: 10px 12px; border-radius: 8px; border: 1px solid #d0d5dd; background: #f8fafc; color: #0f172a; outline: none; transition: box-shadow 0.15s ease, border-color 0.15s ease; }
         .textarea:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); background: #ffffff; }
         .code-editor { width: 100%; min-height: 200px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 13px; padding: 12px 14px; border-radius: 8px; border: 1px solid #d0d5dd; background: #f8fafc; color: #0f172a; outline: none; transition: box-shadow 0.15s ease, border-color 0.15s ease; }
