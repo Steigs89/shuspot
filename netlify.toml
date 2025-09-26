@@ -2,6 +2,23 @@
   command = "cd book-admin/frontend && npm ci && npm run build"
   publish = "book-admin/frontend/build"
 
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
 [[redirects]]
   from = "/api/*"
   to = "https://shuspot.onrender.com/api/:splat"

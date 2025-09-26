@@ -326,6 +326,9 @@ const TxtIngestion = ({ isGoogleSheetsConnected, onLaunchBook }) => {
       <div className="ingestion-header">
         <FolderOpen size={24} />
         <h3>ShuSpot Folder Structure Ingestion</h3>
+        <span style={{ marginLeft: 'auto', fontSize: 12, color: '#6c757d' }} title="Build identifier">
+          Build: {process.env.REACT_APP_BUILD_ID || 'dev'}
+        </span>
       </div>
 
       <div className="ingestion-description">
