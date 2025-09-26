@@ -18,7 +18,8 @@ import FileUpload from './components/FileUpload';
 import BookGrid from './components/BookGrid';
 import GoogleSheetsSetup from './components/GoogleSheetsSetup';
 import GoogleSheetsManager from './components/GoogleSheetsManager';
-import BookDataProcessor from './components/BookDataProcessor';
+// import BookDataProcessor from './components/BookDataProcessor';
+import TxtIngestion from './components/TxtIngestion';
 import ShuSpotBookLauncher from './components/ShuSpotBookLauncher';
 import StreamlinedUploader from './components/StreamlinedUploader';
 import ManifestGenerator from './components/ManifestGenerator';
@@ -834,7 +835,10 @@ function App() {
 
         {activeTab === 'ingestion' && (
           <div className="ingestion-tab">
-            <BookDataProcessor />
+            <TxtIngestion 
+              isGoogleSheetsConnected={isGoogleSheetsConnected}
+              onLaunchBook={handleLaunchBook}
+            />
           </div>
         )}
 
