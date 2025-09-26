@@ -10,6 +10,10 @@ const TxtIngestion = () => {
   const [pyRunning, setPyRunning] = useState(false);
   const [aiPrompt, setAiPrompt] = useState('');
   const [isGeneratingScript, setIsGeneratingScript] = useState(false);
+  const [helperAuthor, setHelperAuthor] = useState('');
+  const [helperField, setHelperField] = useState('');
+  const [helperFrom, setHelperFrom] = useState('');
+  const [helperTo, setHelperTo] = useState('');
 
   // Extract Python code if the text contains Markdown fences or leading prose
   const extractPythonCode = (text) => {
@@ -87,8 +91,9 @@ const TxtIngestion = () => {
     }
   };
 
-  const handleGenerateScript = async () => {
-    if (!aiPrompt.trim()) {
+  const generateFromPrompt = async (prompt) => {
+    const promptText = (prompt || '').trim();
+    if (!promptText) {
       toast.error('Please enter a prompt for the AI.');
       return;
     }
@@ -98,7 +103,7 @@ const TxtIngestion = () => {
       let lastError = null;
       for (const p of pathsToTry) {
         try {
-          const response = await axios.post(getApiUrl(p), { prompt: aiPrompt });
+          const response = await axios.post(getApiUrl(p), { prompt: promptText });
           const data = response?.data;
           if (data && typeof data === 'object' && typeof data.script === 'string' && data.script.trim().length > 0) {
             if (data.script.startsWith('# An error occurred')) {
@@ -110,7 +115,6 @@ const TxtIngestion = () => {
             toast.success('Python script generated successfully!');
             return;
           } else {
-            // Not a valid payload; log and continue to next path
             console.warn('AI generate-script unexpected response:', data);
             lastError = new Error('Unexpected response payload (no script field).');
           }
@@ -124,6 +128,30 @@ const TxtIngestion = () => {
       setIsGeneratingScript(false);
     }
   };
+
+  const handleGenerateScript = () => generateFromPrompt(aiPrompt);
+
+  const makeHeader = () => (
+    'Generate Python code only (no markdown). You run in an environment with:\n' +
+    '- existing_books: list[dict] (current local DB)\n' +
+    '- results: list[dict] to upsert on Import\n' +
+    '- preview_data: list[dict] for Plan (Preview)\n' +
+    'Follow this contract: modify records, append changed items to preview_data, and set results appropriately.'
+  );
+
+  const makeAuthorPrompt = (author) => (
+    `${makeHeader()}\n\nTask: Set author for every book to "${author}".\nRequirements:\n` +
+    `- Update existing_books in-place (b['author'] = '${author}')\n` +
+    `- preview_data.extend(existing_books)\n` +
+    `- results.extend(existing_books)`
+  );
+
+  const makeReplacePrompt = (field, fromVal, toVal) => (
+    `${makeHeader()}\n\nTask: Replace all occurrences of "${fromVal}" with "${toVal}" in field "${field}" for every book (if field exists and is a string).\nRequirements:\n` +
+    `- Safely check field existence and type\n` +
+    `- Collect changed items into preview_data\n` +
+    `- results.extend(changed_items)`
+  );
 
   return (
     <div className="shuspot-ingestion">
@@ -142,6 +170,27 @@ const TxtIngestion = () => {
           Describe the script you want to generate. The AI will create Python code tailored to your library and show it below.
         </p>
         <div className="tip">Tip: Be specific. Include goals, constraints, and example folder names.</div>
+        <div className="db-helper">
+          <div className="helper-title">DB Prompt Helper</div>
+          <div className="helper-row">
+            <label>Set all authors to</label>
+            <input className="input" placeholder="e.g., Jane" value={helperAuthor} onChange={(e)=>setHelperAuthor(e.target.value)} />
+            <div style={{ display:'flex', gap:8 }}>
+              <button className="btn btn-outline" onClick={()=> setAiPrompt(makeAuthorPrompt(helperAuthor || 'Jane'))}>Fill Prompt</button>
+              <button className="btn btn-primary" disabled={isGeneratingScript} onClick={()=> generateFromPrompt(makeAuthorPrompt(helperAuthor || 'Jane'))}>Fill + Generate</button>
+            </div>
+          </div>
+          <div className="helper-row">
+            <label>Replace in field</label>
+            <input className="input" placeholder="field (e.g., description)" style={{ minWidth: 180 }} value={helperField} onChange={(e)=>setHelperField(e.target.value)} />
+            <input className="input" placeholder="from" value={helperFrom} onChange={(e)=>setHelperFrom(e.target.value)} />
+            <input className="input" placeholder="to" value={helperTo} onChange={(e)=>setHelperTo(e.target.value)} />
+            <div style={{ display:'flex', gap:8 }}>
+              <button className="btn btn-outline" onClick={()=> setAiPrompt(makeReplacePrompt(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Fill Prompt</button>
+              <button className="btn btn-primary" disabled={isGeneratingScript} onClick={()=> generateFromPrompt(makeReplacePrompt(helperField || 'description', helperFrom || 'foo', helperTo || 'bar'))}>Fill + Generate</button>
+            </div>
+          </div>
+        </div>
         <textarea
           className="textarea"
           value={aiPrompt}
@@ -187,164 +236,32 @@ const TxtIngestion = () => {
       </div>
 
       <style jsx>{`
-        .shuspot-ingestion {
-          padding: 20px;
-          background: #f8f9fa;
-          border-radius: 8px;
-        }
-
-        .ingestion-header {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          margin-bottom: 16px;
-        }
-
-        .section-header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 8px;
-        }
-
-        .title {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          margin: 0;
-        }
-
-        .badge {
-          font-size: 10px;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          background: linear-gradient(135deg, #fde68a, #fca5a5);
-          color: #6b4423;
-          padding: 4px 8px;
-          border-radius: 999px;
-          border: 1px solid rgba(0,0,0,0.06);
-        }
-
-        .gradient-text {
-          background: linear-gradient(135deg, #0ea5e9, #6366f1);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-        }
-
-        .btn {
-          display: flex;
-          align-items: center;
-          padding: 8px 16px;
-          border: none;
-          border-radius: 4px;
-          font-size: 14px;
-          cursor: pointer;
-          transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
-        }
-
-        .btn:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
-
-        .btn-primary {
-          background-color: #007bff;
-          color: white;
-        }
-
-        .btn-primary:hover:not(:disabled) {
-          background-color: #0069d9;
-          transform: translateY(-1px);
-          box-shadow: 0 6px 14px rgba(0, 123, 255, 0.22);
-        }
-
-        .btn-outline:hover:not(:disabled) {
-          background-color: #f0f7ff;
-          border-color: #0069d9;
-        }
-
-        .btn-success {
-          background-color: #28a745;
-          color: white;
-        }
-
-        .btn-outline {
-          background-color: white;
-          color: #007bff;
-          border: 1px solid #007bff;
-        }
-
-        .btn-secondary {
-          background-color: #6c757d;
-          color: white;
-        }
-
-        .parse-results {
-          background: #ffffff;
-          padding: 16px 16px 20px;
-          border-radius: 10px;
-          margin: 16px 0;
-          border: 1px solid #e9ecef;
-          box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
-        }
-
-        .textarea {
-          width: 100%;
-          min-height: 96px;
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-          font-size: 13px;
-          padding: 10px 12px;
-          border-radius: 8px;
-          border: 1px solid #d0d5dd;
-          background: #f8fafc;
-          color: #0f172a;
-          outline: none;
-          transition: box-shadow 0.15s ease, border-color 0.15s ease;
-        }
-
-        .textarea:focus {
-          border-color: #93c5fd;
-          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
-          background: #ffffff;
-        }
-
-        .code-editor {
-          width: 100%;
-          min-height: 200px;
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-          font-size: 13px;
-          padding: 12px 14px;
-          border-radius: 8px;
-          border: 1px solid #d0d5dd;
-          background: #f8fafc;
-          color: #0f172a;
-          outline: none;
-          transition: box-shadow 0.15s ease, border-color 0.15s ease;
-        }
-
-        .code-editor:focus {
-          border-color: #a78bfa;
-          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
-          background: #ffffff;
-        }
-
-        .tip {
-          background: #f1f5f9;
-          border-left: 3px solid #0ea5e9;
-          color: #334155;
-          font-size: 12px;
-          padding: 8px 10px;
-          border-radius: 6px;
-          margin: 8px 0 12px;
-        }
-
-        .help-text {
-          color: #6c757d;
-          font-size: 12px;
-          margin-top: 4px;
-        }
-
+        .shuspot-ingestion { padding: 20px; background: #f8f9fa; border-radius: 8px; }
+        .ingestion-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+        .title { display: flex; align-items: center; gap: 8px; margin: 0; }
+        .badge { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; background: linear-gradient(135deg, #fde68a, #fca5a5); color: #6b4423; padding: 4px 8px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.06); }
+        .gradient-text { background: linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .btn { display: flex; align-items: center; padding: 8px 16px; border: none; border-radius: 4px; font-size: 14px; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease; }
+        .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .btn-primary { background-color: #007bff; color: white; }
+        .btn-primary:hover:not(:disabled) { background-color: #0069d9; transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0, 123, 255, 0.22); }
+        .btn-outline { background-color: white; color: #007bff; border: 1px solid #007bff; }
+        .btn-outline:hover:not(:disabled) { background-color: #f0f7ff; border-color: #0069d9; }
+        .btn-success { background-color: #28a745; color: white; }
+        .btn-secondary { background-color: #6c757d; color: white; }
+        .parse-results { background: #ffffff; padding: 16px 16px 20px; border-radius: 10px; margin: 16px 0; border: 1px solid #e9ecef; box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06); }
+        .textarea { width: 100%; min-height: 96px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 13px; padding: 10px 12px; border-radius: 8px; border: 1px solid #d0d5dd; background: #f8fafc; color: #0f172a; outline: none; transition: box-shadow 0.15s ease, border-color 0.15s ease; }
+        .textarea:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); background: #ffffff; }
+        .code-editor { width: 100%; min-height: 200px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 13px; padding: 12px 14px; border-radius: 8px; border: 1px solid #d0d5dd; background: #f8fafc; color: #0f172a; outline: none; transition: box-shadow 0.15s ease, border-color 0.15s ease; }
+        .code-editor:focus { border-color: #a78bfa; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25); background: #ffffff; }
+        .tip { background: #f1f5f9; border-left: 3px solid #0ea5e9; color: #334155; font-size: 12px; padding: 8px 10px; border-radius: 6px; margin: 8px 0 12px; }
+        .help-text { color: #6c757d; font-size: 12px; margin-top: 4px; }
+        .db-helper { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px; margin: 10px 0 12px; }
+        .helper-title { font-size: 12px; color: #334155; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 8px; }
+        .helper-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+        .input { height: 32px; padding: 6px 10px; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; font-size: 13px; outline: none; }
+        .input:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18); }
       `}</style>
     </div>
   );
