@@ -1,6 +1,6 @@
 [build]
   command = "cd book-admin/frontend && npm ci && npm run build"
-  publish = "book-admin/build"
+  publish = "book-admin/frontend/build"
 
 [[redirects]]
   from = "/api/*"
