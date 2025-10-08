@@ -1617,12 +1617,10 @@ function AppContent() {
               </div>
             </div>
 
-
-
-        {/* Genre Categories - Horizontal Scroll */}
-        <div className="mb-8 w-full">
+        {/* Genre Categories - Full Width Horizontal Scroll */}
+        <div className="mb-8 w-full -mx-4 sm:-mx-6 bg-gradient-to-r from-blue-50 to-purple-50 py-8">
           <h3 className="text-2xl font-superclarendon-bold text-blue-800 mb-6 text-center">Genres</h3>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 px-4">
             {/* Left Arrow */}
             <button
               onClick={() => {
@@ -1811,13 +1809,13 @@ function AppContent() {
                           setSelectedCategory(genre.name);
                           updateFilters({ genre: genre.name });
                         }}
-                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-28 h-28 ${
+                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-36 h-36 ${
                           isSelected ? 'text-white shadow-2xl' : 'text-white hover:text-white'
                         }`}
                         style={shapeStyle}
                       >
-                        <span className="text-4xl mb-2 relative z-10 drop-shadow-lg filter">{genre.icon}</span>
-                        <span className="text-sm font-bold text-center leading-tight relative z-10 drop-shadow-md">{genre.name}</span>
+                        <span className="text-5xl mb-3 relative z-10 drop-shadow-lg filter">{genre.icon}</span>
+                        <span className="text-xs font-bold text-center leading-tight relative z-10 drop-shadow-md px-1">{genre.name}</span>
                         
                         {/* Floating bubbles decoration */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1848,7 +1846,7 @@ function AppContent() {
             </div>
           </div>
 
-            {/* Category Filter */}
+        {/* Category Filter */}
             <div className="mb-8">
               <div className="flex items-start space-x-4">
                 {/* All Button */}
