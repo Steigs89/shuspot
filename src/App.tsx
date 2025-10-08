@@ -1442,7 +1442,7 @@ function AppContent() {
       <TrialStatusBanner />
       {/* Header with transparency */}
       <div className="relative z-10 bg-white/80 backdrop-blur-md shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 rounded-full flex items-center justify-center shadow-lg">
@@ -1551,7 +1551,7 @@ function AppContent() {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         } : {}}>
-        <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="px-6 text-center">
           <div className="inline-block bg-white/95 backdrop-blur-md rounded-2xl px-8 py-6 shadow-lg border border-white/50">
             <div className="flex items-center justify-center space-x-3 mb-4">
               {typeof sectionInfo.icon === 'string' ? (
@@ -1566,7 +1566,7 @@ function AppContent() {
         </div>
       </div>
 
-      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-8">
+      <main className="relative z-10 px-4 sm:px-6 py-4 sm:py-8">
         {/* Remove the container box - make content full width */}
 
 
@@ -1814,8 +1814,8 @@ function AppContent() {
                         }`}
                         style={shapeStyle}
                       >
-                        <span className="text-5xl mb-3 relative z-10 drop-shadow-lg filter">{genre.icon}</span>
-                        <span className="text-xs font-bold text-center leading-tight relative z-10 drop-shadow-md px-1">{genre.name}</span>
+                        <span className="text-3xl mb-2 relative z-10 drop-shadow-lg filter">{genre.icon}</span>
+                        <span className="text-sm font-bold text-center leading-tight relative z-10 drop-shadow-md px-1">{genre.name}</span>
                         
                         {/* Floating bubbles decoration */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
