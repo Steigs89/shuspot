@@ -1567,20 +1567,9 @@ function AppContent() {
       </div>
 
       <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-8">
-        <div
-          className="relative rounded-2xl p-6 shadow-lg overflow-hidden"
-          style={{
-            backgroundImage: `url(${mainContentBg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/85 backdrop-blur-sm"></div>
-
-          {/* Content Container */}
-          <div className="relative z-10">
+        {/* Remove the container box - make content full width */}
+        <div className="relative">
+          {/* Content Container - Full Width */}
 
 
             {/* Content Type Tabs */}
@@ -1632,153 +1621,229 @@ function AppContent() {
 
 
 
-            {/* Genre Categories Slider */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-superclarendon-bold text-blue-800 mb-6 text-center">Genres</h3>
-              <div className="flex items-center space-x-4">
-                {/* Left Arrow */}
-                <button
-                  onClick={() => {
-                    const container = document.getElementById('genres-container');
-                    if (container) {
-                      container.scrollBy({ left: -200, behavior: 'smooth' });
-                    }
-                  }}
-                  className="flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
-                >
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
+          {/* Genre Categories Slider - Full Width with Fun Shapes */}
+          <div className="mb-8 px-4">
+            <h3 className="text-2xl font-superclarendon-bold text-blue-800 mb-6 text-center">Genres</h3>
+            <div className="flex items-center space-x-4">
+              {/* Left Arrow */}
+              <button
+                onClick={() => {
+                  const container = document.getElementById('genres-container');
+                  if (container) {
+                    container.scrollBy({ left: -200, behavior: 'smooth' });
+                  }
+                }}
+                className="flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
+              >
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
 
-                <div id="genres-container" className="flex-1 overflow-x-auto scrollbar-hide">
-                  <div className="flex space-x-3 pb-4 pt-2" style={{ width: 'max-content' }}>
-                    {[
-                      // Science & Nature
-                      { name: 'Animals & Their Habitats', icon: '🦁', color: 'bg-orange-100 border-orange-300 text-orange-700' },
-                      { name: 'Plants & Their Environments', icon: '🌱', color: 'bg-green-100 border-green-300 text-green-700' },
-                      { name: 'Weather', icon: '🌤️', color: 'bg-blue-100 border-blue-300 text-blue-700' },
-                      { name: 'Space', icon: '🚀', color: 'bg-indigo-100 border-indigo-300 text-indigo-700' },
-                      { name: 'Five Senses', icon: '👁️', color: 'bg-purple-100 border-purple-300 text-purple-700' },
+              <div id="genres-container" className="flex-1 overflow-x-auto scrollbar-hide">
+                <div className="flex space-x-3 pb-4 pt-2" style={{ width: 'max-content' }}>
+                  {[
+                    // Science & Nature
+                    { name: 'Animals & Their Habitats', icon: '🦁', shape: 'bubble' },
+                    { name: 'Plants & Their Environments', icon: '🌱', shape: 'leaf' },
+                    { name: 'Weather', icon: '🌤️', shape: 'cloud' },
+                    { name: 'Space', icon: '🚀', shape: 'star' },
+                    { name: 'Five Senses', icon: '👁️', shape: 'heart' },
 
-                      // Animals
-                      { name: 'Backyard Animals', icon: '🐿️', color: 'bg-amber-100 border-amber-300 text-amber-700' },
-                      { name: 'Baby Animals', icon: '🐣', color: 'bg-pink-100 border-pink-300 text-pink-700' },
-                      { name: 'Sharks', icon: '🦈', color: 'bg-cyan-100 border-cyan-300 text-cyan-700' },
-                      { name: 'Big Cats', icon: '🐅', color: 'bg-orange-100 border-orange-300 text-orange-700' },
-                      { name: 'Birds', icon: '🦅', color: 'bg-sky-100 border-sky-300 text-sky-700' },
-                      { name: 'Snakes', icon: '🐍', color: 'bg-green-100 border-green-300 text-green-700' },
-                      { name: 'Bugs', icon: '🐛', color: 'bg-lime-100 border-lime-300 text-lime-700' },
-                      { name: 'Cats', icon: '🐱', color: 'bg-gray-100 border-gray-300 text-gray-700' },
-                      { name: 'Dinosaurs', icon: '🦕', color: 'bg-emerald-100 border-emerald-300 text-emerald-700' },
-                      { name: 'Dogs', icon: '🐕', color: 'bg-yellow-100 border-yellow-300 text-yellow-700' },
-                      { name: 'Fish', icon: '🐠', color: 'bg-blue-100 border-blue-300 text-blue-700' },
-                      { name: 'Pets', icon: '🐾', color: 'bg-rose-100 border-rose-300 text-rose-700' },
-                      { name: 'Horses', icon: '🐎', color: 'bg-amber-100 border-amber-300 text-amber-700' },
-                      { name: 'Unicorns', icon: '🦄', color: 'bg-purple-100 border-purple-300 text-purple-700' },
+                    // Animals
+                    { name: 'Backyard Animals', icon: '🐿️', shape: 'bubble' },
+                    { name: 'Baby Animals', icon: '🐣', shape: 'heart' },
+                    { name: 'Sharks', icon: '🦈', shape: 'wave' },
+                    { name: 'Big Cats', icon: '🐅', shape: 'hexagon' },
+                    { name: 'Birds', icon: '🦅', shape: 'cloud' },
+                    { name: 'Snakes', icon: '🐍', shape: 'wave' },
+                    { name: 'Bugs', icon: '🐛', shape: 'leaf' },
+                    { name: 'Cats', icon: '🐱', shape: 'heart' },
+                    { name: 'Dinosaurs', icon: '🦕', shape: 'hexagon' },
+                    { name: 'Dogs', icon: '🐕', shape: 'bubble' },
+                    { name: 'Fish', icon: '🐠', shape: 'wave' },
+                    { name: 'Pets', icon: '🐾', shape: 'heart' },
+                    { name: 'Horses', icon: '🐎', shape: 'cloud' },
+                    { name: 'Unicorns', icon: '🦄', shape: 'star' },
 
-                      // Creative Arts
-                      { name: 'Art', icon: '🎨', color: 'bg-purple-100 border-purple-300 text-purple-700' },
-                      { name: 'Music', icon: '🎵', color: 'bg-pink-100 border-pink-300 text-pink-700' },
-                      { name: 'Makerspace', icon: '🔧', color: 'bg-orange-100 border-orange-300 text-orange-700' },
+                    // Creative Arts
+                    { name: 'Art', icon: '🎨', shape: 'star' },
+                    { name: 'Music', icon: '🎵', shape: 'heart' },
+                    { name: 'Makerspace', icon: '🔧', shape: 'hexagon' },
 
-                      // Health & Wellness
-                      { name: 'Bodies in Motion', icon: '🏃', color: 'bg-red-100 border-red-300 text-red-700' },
-                      { name: 'Healthy Habits', icon: '🥗', color: 'bg-green-100 border-green-300 text-green-700' },
-                      { name: 'Mindfulness', icon: '🧘', color: 'bg-indigo-100 border-indigo-300 text-indigo-700' },
+                    // Health & Wellness
+                    { name: 'Bodies in Motion', icon: '🏃', shape: 'bubble' },
+                    { name: 'Healthy Habits', icon: '🥗', shape: 'leaf' },
+                    { name: 'Mindfulness', icon: '🧘', shape: 'cloud' },
 
-                      // Sports & Activities
-                      { name: 'Soccer', icon: '⚽', color: 'bg-green-100 border-green-300 text-green-700' },
-                      { name: 'Sports', icon: '🏈', color: 'bg-red-100 border-red-300 text-red-700' },
+                    // Sports & Activities
+                    { name: 'Soccer', icon: '⚽', shape: 'bubble' },
+                    { name: 'Sports', icon: '🏈', shape: 'hexagon' },
 
-                      // Seasons & Holidays
-                      { name: 'Winter', icon: '❄️', color: 'bg-blue-100 border-blue-300 text-blue-700' },
-                      { name: 'Spring', icon: '🌸', color: 'bg-pink-100 border-pink-300 text-pink-700' },
+                    // Seasons & Holidays
+                    { name: 'Winter', icon: '❄️', shape: 'star' },
+                    { name: 'Spring', icon: '🌸', shape: 'heart' },
 
-                      // Fantasy & Imagination
-                      { name: 'Princesses', icon: '👸', color: 'bg-pink-100 border-pink-300 text-pink-700' },
-                      { name: 'Fairy Tales', icon: '🧚', color: 'bg-violet-100 border-violet-300 text-violet-700' },
-                      { name: 'Mythical Creatures', icon: '🐉', color: 'bg-emerald-100 border-emerald-300 text-emerald-700' },
-                      { name: 'Superheroes', icon: '🦸', color: 'bg-red-100 border-red-300 text-red-700' },
-                      { name: 'Comic Books', icon: '💥', color: 'bg-yellow-100 border-yellow-300 text-yellow-700' },
+                    // Fantasy & Imagination
+                    { name: 'Princesses', icon: '👸', shape: 'heart' },
+                    { name: 'Fairy Tales', icon: '🧚', shape: 'star' },
+                    { name: 'Mythical Creatures', icon: '🐉', shape: 'hexagon' },
+                    { name: 'Superheroes', icon: '🦸', shape: 'star' },
+                    { name: 'Comic Books', icon: '💥', shape: 'bubble' },
 
-                      // Math & Learning
-                      { name: 'Money', icon: '💰', color: 'bg-green-100 border-green-300 text-green-700' },
-                      { name: 'Telling Time', icon: '⏰', color: 'bg-blue-100 border-blue-300 text-blue-700' },
-                      { name: 'Addition & Subtraction', icon: '➕', color: 'bg-orange-100 border-orange-300 text-orange-700' },
-                      { name: 'Counting', icon: '🔢', color: 'bg-indigo-100 border-indigo-300 text-indigo-700' },
-                      { name: 'Measuring', icon: '📏', color: 'bg-purple-100 border-purple-300 text-purple-700' },
-                      { name: 'Shapes, Colors, Letters & Numbers', icon: '🔤', color: 'bg-cyan-100 border-cyan-300 text-cyan-700' },
+                    // Math & Learning
+                    { name: 'Money', icon: '💰', shape: 'hexagon' },
+                    { name: 'Telling Time', icon: '⏰', shape: 'bubble' },
+                    { name: 'Addition & Subtraction', icon: '➕', shape: 'star' },
+                    { name: 'Counting', icon: '🔢', shape: 'hexagon' },
+                    { name: 'Measuring', icon: '📏', shape: 'leaf' },
+                    { name: 'Shapes, Colors, Letters & Numbers', icon: '🔤', shape: 'star' },
 
-                      // History & Social Studies
-                      { name: 'American Symbols', icon: '🗽', color: 'bg-red-100 border-red-300 text-red-700' },
-                      { name: 'Biography', icon: '📖', color: 'bg-amber-100 border-amber-300 text-amber-700' },
-                      { name: 'Black History Month', icon: '✊', color: 'bg-gray-100 border-gray-300 text-gray-700' },
-                      { name: 'Economics: Goods & Services', icon: '🏪', color: 'bg-green-100 border-green-300 text-green-700' },
-                      { name: 'Explore Our Past & Present', icon: '🏛️', color: 'bg-stone-100 border-stone-300 text-stone-700' },
-                      { name: 'History', icon: '📜', color: 'bg-yellow-100 border-yellow-300 text-yellow-700' },
-                      { name: 'Native Americans', icon: '🪶', color: 'bg-orange-100 border-orange-300 text-orange-700' },
-                      { name: 'Our Neighborhood', icon: '🏘️', color: 'bg-blue-100 border-blue-300 text-blue-700' },
-                      { name: "Women's History Month", icon: '👩', color: 'bg-purple-100 border-purple-300 text-purple-700' },
+                    // History & Social Studies
+                    { name: 'American Symbols', icon: '🗽', shape: 'star' },
+                    { name: 'Biography', icon: '📖', shape: 'leaf' },
+                    { name: 'Black History Month', icon: '✊', shape: 'hexagon' },
+                    { name: 'Economics: Goods & Services', icon: '🏪', shape: 'bubble' },
+                    { name: 'Explore Our Past & Present', icon: '🏛️', shape: 'cloud' },
+                    { name: 'History', icon: '📜', shape: 'leaf' },
+                    { name: 'Native Americans', icon: '🪶', shape: 'wave' },
+                    { name: 'Our Neighborhood', icon: '🏘️', shape: 'bubble' },
+                    { name: "Women's History Month", icon: '👩', shape: 'heart' },
 
-                      // Transportation
-                      { name: 'Adventure', icon: '🗺️', color: 'bg-green-100 border-green-300 text-green-700' },
-                      { name: 'Airplanes', icon: '✈️', color: 'bg-sky-100 border-sky-300 text-sky-700' },
-                      { name: 'Boats & Ships', icon: '🚢', color: 'bg-blue-100 border-blue-300 text-blue-700' },
-                      { name: 'Cars & Trucks', icon: '🚗', color: 'bg-red-100 border-red-300 text-red-700' },
-                      { name: 'Cars, Trucks & Trains', icon: '🚛', color: 'bg-orange-100 border-orange-300 text-orange-700' },
-                      { name: 'Trains', icon: '🚂', color: 'bg-gray-100 border-gray-300 text-gray-700' },
+                    // Transportation
+                    { name: 'Adventure', icon: '🗺️', shape: 'star' },
+                    { name: 'Airplanes', icon: '✈️', shape: 'cloud' },
+                    { name: 'Boats & Ships', icon: '🚢', shape: 'wave' },
+                    { name: 'Cars & Trucks', icon: '🚗', shape: 'hexagon' },
+                    { name: 'Cars, Trucks & Trains', icon: '🚛', shape: 'bubble' },
+                    { name: 'Trains', icon: '🚂', shape: 'cloud' },
 
-                      // Social & Emotional Learning
-                      { name: 'Bravery', icon: '🦁', color: 'bg-yellow-100 border-yellow-300 text-yellow-700' },
-                      { name: 'Bullying', icon: '🛡️', color: 'bg-blue-100 border-blue-300 text-blue-700' },
-                      { name: 'Exploring My World', icon: '🌍', color: 'bg-green-100 border-green-300 text-green-700' },
-                      { name: 'Families', icon: '👨‍👩‍👧‍👦', color: 'bg-pink-100 border-pink-300 text-pink-700' },
-                      { name: 'Friendship', icon: '👫', color: 'bg-rose-100 border-rose-300 text-rose-700' },
-                      { name: 'Grief & Loss', icon: '💙', color: 'bg-blue-100 border-blue-300 text-blue-700' },
-                      { name: 'Growth Mindset', icon: '🌱', color: 'bg-green-100 border-green-300 text-green-700' },
-                      { name: 'Identifying Emotions', icon: '😊', color: 'bg-yellow-100 border-yellow-300 text-yellow-700' },
-                      { name: 'Jobs Around Town', icon: '👷', color: 'bg-orange-100 border-orange-300 text-orange-700' },
-                      { name: 'Kindness', icon: '💝', color: 'bg-pink-100 border-pink-300 text-pink-700' },
-                      { name: 'Laugh Out Loud', icon: '😂', color: 'bg-amber-100 border-amber-300 text-amber-700' },
-                      { name: 'Learning to Read', icon: '📚', color: 'bg-indigo-100 border-indigo-300 text-indigo-700' },
-                      { name: 'Narrative Nonfiction', icon: '📰', color: 'bg-gray-100 border-gray-300 text-gray-700' }
-                    ].map((genre) => (
+                    // Social & Emotional Learning
+                    { name: 'Bravery', icon: '🦁', shape: 'star' },
+                    { name: 'Bullying', icon: '🛡️', shape: 'hexagon' },
+                    { name: 'Exploring My World', icon: '🌍', shape: 'bubble' },
+                    { name: 'Families', icon: '👨‍👩‍👧‍👦', shape: 'heart' },
+                    { name: 'Friendship', icon: '👫', shape: 'heart' },
+                    { name: 'Grief & Loss', icon: '💙', shape: 'cloud' },
+                    { name: 'Growth Mindset', icon: '🌱', shape: 'leaf' },
+                    { name: 'Identifying Emotions', icon: '😊', shape: 'bubble' },
+                    { name: 'Jobs Around Town', icon: '👷', shape: 'hexagon' },
+                    { name: 'Kindness', icon: '💝', shape: 'heart' },
+                    { name: 'Laugh Out Loud', icon: '😂', shape: 'bubble' },
+                    { name: 'Learning to Read', icon: '📚', shape: 'leaf' },
+                    { name: 'Narrative Nonfiction', icon: '📰', shape: 'cloud' }
+                  ].map((genre, index) => {
+                    const getShapeStyles = (shape: string, isSelected: boolean) => {
+                      const baseColors = [
+                        '#ff6b9d', '#ffa726', '#66bb6a', '#42a5f5', '#ab47bc', '#ef5350'
+                      ];
+                      const color = baseColors[index % baseColors.length];
+                      
+                      const shapeStyles = {
+                        bubble: {
+                          borderRadius: '50%',
+                          background: isSelected 
+                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
+                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
+                          border: 'none',
+                          transform: 'scale(1)',
+                        },
+                        heart: {
+                          borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                          background: isSelected 
+                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
+                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
+                          border: 'none',
+                          position: 'relative',
+                        },
+                        star: {
+                          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+                          background: isSelected 
+                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
+                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
+                          border: 'none',
+                        },
+                        leaf: {
+                          borderRadius: '0 100% 0 100%',
+                          background: isSelected 
+                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
+                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
+                          border: 'none',
+                          transform: 'rotate(45deg)',
+                        },
+                        cloud: {
+                          borderRadius: '100px',
+                          background: isSelected 
+                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
+                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
+                          border: 'none',
+                          position: 'relative',
+                        },
+                        wave: {
+                          borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                          background: isSelected 
+                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
+                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
+                          border: 'none',
+                          transform: 'rotate(45deg)',
+                        },
+                        hexagon: {
+                          clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
+                          background: isSelected 
+                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
+                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
+                          border: 'none',
+                        }
+                      };
+                      return shapeStyles[shape] || shapeStyles.bubble;
+                    };
+
+                    const isSelected = selectedCategory === genre.name;
+                    const shapeStyle = getShapeStyles(genre.shape, isSelected);
+
+                    return (
                       <button
                         key={genre.name}
                         onClick={() => {
                           setSelectedCategory(genre.name);
-                          // Update the filter system when genre is selected
                           updateFilters({ genre: genre.name });
                         }}
-                        className={`p-4 rounded-lg border-2 transition-all duration-300 hover:scale-105 hover:shadow-md flex flex-col items-center justify-center flex-shrink-0 w-32 h-32 ${selectedCategory === genre.name
-                          ? 'bg-brand-pink border-brand-pink text-white shadow-lg'
-                          : genre.color
-                          }`}
+                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-32 h-32 ${
+                          isSelected ? 'text-white shadow-2xl' : 'text-white hover:text-white'
+                        }`}
+                        style={shapeStyle}
                       >
-                        <span className="text-4xl mb-2">{genre.icon}</span>
-                        <span className="text-sm font-medium text-center leading-tight">{genre.name}</span>
+                        <span className="text-4xl mb-2 relative z-10 drop-shadow-lg filter">{genre.icon}</span>
+                        <span className="text-sm font-bold text-center leading-tight relative z-10 drop-shadow-md">{genre.name}</span>
+                        
+                        {/* Floating bubbles decoration */}
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <div className="absolute top-2 right-3 w-2 h-2 bg-white/30 rounded-full animate-pulse"></div>
+                          <div className="absolute bottom-3 left-2 w-1.5 h-1.5 bg-white/20 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                          <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-white/25 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                        </div>
                       </button>
-                    ))}
-                  </div>
+                    );
+                  })}
                 </div>
-
-                {/* Right Arrow */}
-                <button
-                  onClick={() => {
-                    const container = document.getElementById('genres-container');
-                    if (container) {
-                      container.scrollBy({ left: 200, behavior: 'smooth' });
-                    }
-                  }}
-                  className="flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
-                >
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
               </div>
+
+              {/* Right Arrow */}
+              <button
+                onClick={() => {
+                  const container = document.getElementById('genres-container');
+                  if (container) {
+                    container.scrollBy({ left: 200, behavior: 'smooth' });
+                  }
+                }}
+                className="flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
+              >
+                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
+          </div>
 
             {/* Category Filter */}
             <div className="mb-8">
