@@ -1334,6 +1334,16 @@ Basic utility classes used in components */
   font-weight: 500;
 }
 
+/* Scrollbar hiding utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
 /* Enhanced ShuSpot Reader with Turn.js Integration */
 .enhanced-shuspot-reader {
   position: fixed;

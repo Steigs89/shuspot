@@ -1619,27 +1619,32 @@ function AppContent() {
 
 
 
-          {/* Genre Categories Slider - Full Width with Fun Shapes */}
-          <div className="mb-8 px-4">
-            <h3 className="text-2xl font-superclarendon-bold text-blue-800 mb-6 text-center">Genres</h3>
-            <div className="flex items-center space-x-4">
-              {/* Left Arrow */}
-              <button
-                onClick={() => {
-                  const container = document.getElementById('genres-container');
-                  if (container) {
-                    container.scrollBy({ left: -200, behavior: 'smooth' });
-                  }
-                }}
-                className="flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
-              >
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
+        {/* Genre Categories - Horizontal Scroll */}
+        <div className="mb-8 w-full">
+          <h3 className="text-2xl font-superclarendon-bold text-blue-800 mb-6 text-center">Genres</h3>
+          <div className="flex items-center space-x-4">
+            {/* Left Arrow */}
+            <button
+              onClick={() => {
+                const container = document.getElementById('genres-container');
+                if (container) {
+                  container.scrollBy({ left: -200, behavior: 'smooth' });
+                }
+              }}
+              className="flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
+            >
+              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
 
-              <div id="genres-container" className="flex-1 overflow-x-auto scrollbar-hide">
-                <div className="flex space-x-3 pb-4 pt-2" style={{ width: 'max-content' }}>
+            {/* Scrollable Container */}
+            <div 
+              id="genres-container"
+              className="flex-1 overflow-x-auto scrollbar-hide"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <div className="flex space-x-4 pb-2" style={{ width: 'max-content' }}>
                   {[
                     // Science & Nature
                     { name: 'Animals & Their Habitats', icon: '🦁', shape: 'bubble' },
@@ -1806,7 +1811,7 @@ function AppContent() {
                           setSelectedCategory(genre.name);
                           updateFilters({ genre: genre.name });
                         }}
-                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-32 h-32 ${
+                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-28 h-28 ${
                           isSelected ? 'text-white shadow-2xl' : 'text-white hover:text-white'
                         }`}
                         style={shapeStyle}
@@ -2852,8 +2857,6 @@ function AppContent() {
               </div>
             )}
       </main>
-
-
     </div>
   );
 }
