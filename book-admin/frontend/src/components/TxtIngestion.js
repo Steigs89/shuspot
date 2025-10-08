@@ -8,7 +8,17 @@ const TxtIngestion = () => {
   const [pyCode, setPyCode] = useState('');
   const [pyPreview, setPyPreview] = useState([]);
   const [pyRunning, setPyRunning] = useState(false);
-  const [aiPrompt, setAiPrompt] = useState('');
+  const aiPromptDefault = `Generate Python code only (no markdown). Environment variables you MUST use:
+- existing_books: list[dict] — snapshot of the local database
+- results: list[dict] — records to upsert when Import runs (non-preview)
+- preview_data: list[dict] — items to show in Plan (Preview)
+Contract:
+1) Read/modify records via existing_books (safe checks).
+2) For preview: put changed items into preview_data.
+3) For import: put items to upsert into results (or leave results empty and update existing_books in-place — backend will use it on Import).
+
+Task: `;
+  const [aiPrompt, setAiPrompt] = useState(aiPromptDefault);
   const [isGeneratingScript, setIsGeneratingScript] = useState(false);
   const [helperAuthor, setHelperAuthor] = useState('');
   const [helperField, setHelperField] = useState('');
@@ -22,16 +32,7 @@ const TxtIngestion = () => {
     'Set genre to "Educational" when missing; preview changes and prepare results for import.',
   ];
 
-  const aiPromptPlaceholder = `Generate Python code only (no markdown). Environment variables you MUST use:
-- existing_books: list[dict] — snapshot of the local database
-- results: list[dict] — records to upsert when Import runs (non-preview)
-- preview_data: list[dict] — items to show in Plan (Preview)
-Contract:
-1) Read/modify records via existing_books (safe checks).
-2) For preview: put changed items into preview_data.
-3) For import: put items to upsert into results (or leave results empty and update existing_books in-place — backend will use it on Import).
-
-Task: Set `;
+  const aiPromptPlaceholder = '';
 
   // Extract Python code if the text contains Markdown fences or leading prose
   const extractPythonCode = (text) => {
@@ -215,6 +216,7 @@ Task: Set `;
             </div>
           </div>
         </div>
+        <div className="task-hint"><strong>Task:</strong> Describe the change you want after the contract starter below.</div>
         <textarea
           className="textarea"
           value={aiPrompt}
@@ -298,6 +300,7 @@ Task: Set `;
         .helper-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
         .input { height: 32px; padding: 6px 10px; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; font-size: 13px; outline: none; }
         .input:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18); }
+        .task-hint { font-size: 12px; color: #475569; margin: 6px 2px 0; }
       `}</style>
     </div>
   );

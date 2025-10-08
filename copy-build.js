@@ -5,15 +5,15 @@ console.log('Starting copy process...');
 console.log('Current directory:', process.cwd());
 console.log('Directory contents:', fs.readdirSync('.'));
 
-// Check if build directory exists
-if (!fs.existsSync('build')) {
-  console.error('Build directory not found!');
+// Check if dist directory exists
+if (!fs.existsSync('dist')) {
+  console.error('Dist directory not found!');
   console.log('Available directories:', fs.readdirSync('.').filter(item => fs.statSync(item).isDirectory()));
   process.exit(1);
 }
 
-console.log('Build directory found!');
-console.log('Build contents:', fs.readdirSync('build'));
+console.log('Dist directory found!');
+console.log('Dist contents:', fs.readdirSync('dist'));
 
 // Remove public if it exists
 if (fs.existsSync('public')) {
@@ -24,7 +24,7 @@ if (fs.existsSync('public')) {
 // Try to create a symlink first, fallback to copy
 try {
   console.log('Trying to create symlink...');
-  fs.symlinkSync('build', 'public', 'dir');
+  fs.symlinkSync('dist', 'public', 'dir');
   console.log('Symlink created successfully!');
 } catch (err) {
   console.log('Symlink failed, copying files instead...');
@@ -48,7 +48,7 @@ try {
     }
   }
   
-  copyDir('build', 'public');
+  copyDir('dist', 'public');
   console.log('Files copied successfully!');
 }
 

@@ -1568,8 +1568,6 @@ function AppContent() {
 
       <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-8">
         {/* Remove the container box - make content full width */}
-        <div className="relative">
-          {/* Content Container - Full Width */}
 
 
             {/* Content Type Tabs */}
@@ -2853,8 +2851,6 @@ function AppContent() {
                 </div>
               </div>
             )}
-          </div>
-        </div>
       </main>
 
 
