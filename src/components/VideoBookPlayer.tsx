@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react';
-import { ArrowLeft, Play, Pause, Volume2, VolumeX, Maximize, Heart, X } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { ArrowLeft, Play, Pause, Volume2, VolumeX, Maximize, Heart, X, RotateCcw, SkipForward, Sparkles, Star } from 'lucide-react';
 
 interface VideoBookPlayerProps {
   onBack: () => void;
@@ -29,9 +29,42 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(uploadedVideo ? uploadedVideo.duration : 245); // Use uploaded video duration or default
+  const [duration, setDuration] = useState(uploadedVideo ? uploadedVideo.duration : 245);
   const [hasTrackedCompletion, setHasTrackedCompletion] = useState(false);
+  const [showRewardStars, setShowRewardStars] = useState(false);
+  const [showMascot, setShowMascot] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showControls, setShowControls] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Auto-hide controls after 3 seconds of inactivity
+  useEffect(() => {
+    if (isPlaying) {
+      if (controlsTimeoutRef.current) {
+        clearTimeout(controlsTimeoutRef.current);
+      }
+      controlsTimeoutRef.current = setTimeout(() => {
+        setShowControls(false);
+      }, 3000);
+    } else {
+      setShowControls(true);
+    }
+    return () => {
+      if (controlsTimeoutRef.current) {
+        clearTimeout(controlsTimeoutRef.current);
+      }
+    };
+  }, [isPlaying]);
+
+  // Show mascot when video pauses
+  useEffect(() => {
+    if (!isPlaying && currentTime > 0 && currentTime < duration - 1) {
+      setShowMascot(true);
+      const timer = setTimeout(() => setShowMascot(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isPlaying, currentTime, duration]);
 
   const watchNextVideos: WatchNextVideo[] = [
     {
@@ -78,6 +111,42 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
     }
   };
 
+  const handleReplay = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      setCurrentTime(0);
+      setHasTrackedCompletion(false);
+      setIsPlaying(true);
+      videoRef.current.play();
+    }
+  };
+
+  const handleSkipForward = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = Math.min(currentTime + 10, duration);
+    }
+  };
+
+  const handleFullscreen = () => {
+    if (videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen();
+      }
+    }
+  };
+
+  const handleMouseMove = () => {
+    setShowControls(true);
+    if (controlsTimeoutRef.current) {
+      clearTimeout(controlsTimeoutRef.current);
+    }
+    if (isPlaying) {
+      controlsTimeoutRef.current = setTimeout(() => {
+        setShowControls(false);
+      }, 3000);
+    }
+  };
+
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
@@ -87,40 +156,88 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
   const progressPercentage = (currentTime / duration) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500">
+    <div className="min-h-screen bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 relative overflow-hidden">
+      {/* Animated Background Bubbles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-yellow-300/10 rounded-full animate-float-delayed"></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-pink-300/10 rounded-full animate-float-slow"></div>
+        <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-blue-300/10 rounded-full animate-float"></div>
+      </div>
+
+      {/* Reward Stars Animation */}
+      {showRewardStars && (
+        <div className="fixed inset-0 z-50 pointer-events-none flex items-center justify-center">
+          <div className="relative">
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute animate-star-burst"
+                style={{
+                  animationDelay: `${i * 0.1}s`,
+                  transform: `rotate(${i * 30}deg) translateY(-100px)`,
+                }}
+              >
+                <Star className="w-8 h-8 text-yellow-400 fill-yellow-400" />
+              </div>
+            ))}
+            <div className="text-6xl animate-bounce-big">🎉</div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
-      <div className="flex items-center justify-between p-4 bg-black/20 backdrop-blur-sm">
+      <div className="relative z-10 flex items-center justify-between p-4 sm:p-6 bg-gradient-to-b from-black/30 to-transparent backdrop-blur-sm">
         <button
           onClick={onBack}
-          className="flex items-center space-x-2 text-white hover:text-blue-200 transition-colors"
+          className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/90 hover:bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
         >
-          <ArrowLeft className="w-6 h-6" />
+          <ArrowLeft className="w-6 h-6 sm:w-7 sm:h-7 text-purple-600 group-hover:text-purple-700" />
         </button>
 
-        <h1 className="text-2xl font-superclarendon-bold text-white text-center flex-1">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-superclarendon-bold text-white text-center flex-1 px-4 drop-shadow-lg">
           {bookTitle}
         </h1>
 
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-3">
           <button
             onClick={onToggleFavorite}
-            className={`transition-colors ${isFavorited ? 'text-red-400' : 'text-white hover:text-red-400'}`}
+            className={`flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 ${
+              isFavorited 
+                ? 'bg-red-400 hover:bg-red-500' 
+                : 'bg-white/90 hover:bg-white'
+            }`}
           >
-            <Heart className={`w-6 h-6 ${isFavorited ? 'fill-current' : ''}`} />
-          </button>
-          <button
-            onClick={onBack}
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            <X className="w-6 h-6" />
+            <Heart className={`w-6 h-6 sm:w-7 sm:h-7 ${isFavorited ? 'fill-white text-white' : 'text-red-400'}`} />
           </button>
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-6 p-6">
+      <div className="relative z-10 flex flex-col lg:flex-row gap-4 sm:gap-6 p-4 sm:p-6">
         {/* Main Video Player */}
         <div className="flex-1">
-          <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl">
+          <div 
+            className="relative bg-black rounded-3xl overflow-hidden shadow-2xl"
+            onMouseMove={handleMouseMove}
+            onTouchStart={() => setShowControls(true)}
+          >
+            {/* Loading Animation */}
+            {isLoading && (
+              <div className="absolute inset-0 z-30 bg-gradient-to-br from-purple-400 via-pink-400 to-yellow-400 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="relative">
+                    <div className="w-24 h-24 border-8 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <div className="absolute inset-0 flex items-center justify-center text-5xl animate-bounce">
+                      🎬
+                    </div>
+                  </div>
+                  <p className="mt-6 text-2xl font-superclarendon-bold text-white animate-pulse">
+                    Loading your video...
+                  </p>
+                </div>
+              </div>
+            )}
+
             {/* Video Container */}
             <div className="relative aspect-video bg-black flex items-center justify-center">
               {uploadedVideo ? (
@@ -139,30 +256,33 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
                         const progressPercent = (newTime / duration) * 100;
                         if (progressPercent >= 90) {
                           setHasTrackedCompletion(true);
-                          onProgressUpdate(uploadedVideo.id, 1, Math.round(duration / 60)); // 1 "page" for video completion, duration in minutes
+                          onProgressUpdate(uploadedVideo.id, 1, Math.round(duration / 60));
                           console.log('Video completion tracked:', uploadedVideo.title);
                           
-                          // Show completion message
-                          setTimeout(() => {
-                            alert(`🎉 Congratulations! You've watched "${uploadedVideo.title}"! Great job!`);
-                          }, 1000);
+                          // Show reward stars animation
+                          setShowRewardStars(true);
+                          setTimeout(() => setShowRewardStars(false), 3000);
                         }
                       }
                     }}
-                    onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+                    onLoadedMetadata={(e) => {
+                      setDuration(e.currentTarget.duration);
+                      setIsLoading(false);
+                    }}
+                    onLoadStart={() => setIsLoading(true)}
+                    onCanPlay={() => setIsLoading(false)}
                     onEnded={() => {
                       setIsPlaying(false);
                       
                       // Track completion when video ends (if not already tracked)
                       if (!hasTrackedCompletion && uploadedVideo && onProgressUpdate) {
                         setHasTrackedCompletion(true);
-                        onProgressUpdate(uploadedVideo.id, 1, Math.round(duration / 60)); // 1 "page" for video completion
+                        onProgressUpdate(uploadedVideo.id, 1, Math.round(duration / 60));
                         console.log('Video completion tracked on end:', uploadedVideo.title);
                         
-                        // Show completion message
-                        setTimeout(() => {
-                          alert(`🎉 Congratulations! You've watched "${uploadedVideo.title}"! Great job!`);
-                        }, 500);
+                        // Show reward stars animation
+                        setShowRewardStars(true);
+                        setTimeout(() => setShowRewardStars(false), 3000);
                       }
                     }}
                     onClick={togglePlay}
@@ -170,15 +290,30 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
                   />
 
                   {/* Play Button Overlay */}
-                  {!isPlaying && (
+                  {!isPlaying && !isLoading && (
                     <button
                       onClick={togglePlay}
-                      className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors group"
+                      className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-black/20 to-black/40 hover:from-black/30 hover:to-black/50 transition-all duration-300 group z-10"
                     >
-                      <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                        <Play className="w-8 h-8 text-gray-800 ml-1" />
+                      <div className="relative">
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl animate-pulse-slow">
+                          <Play className="w-10 h-10 sm:w-12 sm:h-12 text-white ml-2" />
+                        </div>
+                        <div className="absolute -inset-2 bg-white/20 rounded-full animate-ping"></div>
                       </div>
                     </button>
+                  )}
+
+                  {/* Mascot Animation when paused */}
+                  {showMascot && !isLoading && (
+                    <div className="absolute top-4 right-4 z-20 animate-bounce-in">
+                      <div className="bg-white/95 rounded-3xl p-4 shadow-2xl">
+                        <div className="text-5xl animate-wave">👋</div>
+                        <div className="mt-2 text-sm font-bold text-purple-600">
+                          Take a break!
+                        </div>
+                      </div>
+                    </div>
                   )}
                 </>
               ) : (
@@ -196,13 +331,16 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
                   </div>
 
                   {/* Play Button Overlay */}
-                  {!isPlaying && (
+                  {!isPlaying && !isLoading && (
                     <button
                       onClick={togglePlay}
-                      className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors group"
+                      className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-black/20 to-black/40 hover:from-black/30 hover:to-black/50 transition-all duration-300 group z-10"
                     >
-                      <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                        <Play className="w-8 h-8 text-gray-800 ml-1" />
+                      <div className="relative">
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl animate-pulse-slow">
+                          <Play className="w-10 h-10 sm:w-12 sm:h-12 text-white ml-2" />
+                        </div>
+                        <div className="absolute -inset-2 bg-white/20 rounded-full animate-ping"></div>
                       </div>
                     </button>
                   )}
@@ -210,55 +348,108 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
               )}
             </div>
 
-            {/* Video Controls */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-              {/* Progress Bar */}
-              <div className="mb-4">
-                <div
-                  className="w-full bg-white/30 rounded-full h-2 cursor-pointer"
-                  onClick={(e) => {
-                    if (videoRef.current) {
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      const clickX = e.clientX - rect.left;
-                      const percentage = clickX / rect.width;
-                      const newTime = percentage * duration;
-                      videoRef.current.currentTime = newTime;
-                      setCurrentTime(newTime);
-                    }
-                  }}
-                >
+            {/* Enhanced Video Controls */}
+            <div className={`absolute bottom-0 left-0 right-0 transition-all duration-300 ${showControls ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+              <div className="bg-gradient-to-t from-black/90 via-black/70 to-transparent p-4 sm:p-6">
+                {/* Fun Animated Progress Bar */}
+                <div className="mb-6">
                   <div
-                    className="bg-gradient-to-r from-pink-400 to-purple-500 h-2 rounded-full transition-all duration-300"
-                    style={{ width: `${progressPercentage}%` }}
-                  ></div>
+                    className="w-full bg-white/20 rounded-full h-3 sm:h-4 cursor-pointer relative overflow-hidden shadow-lg"
+                    onClick={(e) => {
+                      if (videoRef.current) {
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const clickX = e.clientX - rect.left;
+                        const percentage = clickX / rect.width;
+                        const newTime = percentage * duration;
+                        videoRef.current.currentTime = newTime;
+                        setCurrentTime(newTime);
+                      }
+                    }}
+                  >
+                    {/* Animated background shimmer */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+                    
+                    {/* Progress fill with gradient */}
+                    <div
+                      className="relative h-full rounded-full transition-all duration-300 bg-gradient-to-r from-blue-400 via-pink-400 to-yellow-400 shadow-lg"
+                      style={{ width: `${progressPercentage}%` }}
+                    >
+                      {/* Sparkle effect at the end */}
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2">
+                        <Sparkles className="w-4 h-4 text-white animate-pulse" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Time display */}
+                  <div className="flex justify-between mt-2 px-1">
+                    <span className="text-white text-xs sm:text-sm font-bold drop-shadow-lg">
+                      {formatTime(currentTime)}
+                    </span>
+                    <span className="text-white text-xs sm:text-sm font-bold drop-shadow-lg">
+                      {formatTime(duration)}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Control Buttons */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-4">
+                {/* Large Kid-Friendly Control Buttons */}
+                <div className="flex items-center justify-center gap-3 sm:gap-4">
+                  {/* Replay Button */}
+                  <button
+                    onClick={handleReplay}
+                    className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+                    title="Start Over"
+                  >
+                    <RotateCcw className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:rotate-180 transition-transform duration-500" />
+                  </button>
+
+                  {/* Play/Pause Button (Larger) */}
                   <button
                     onClick={togglePlay}
-                    className="text-white hover:text-pink-300 transition-colors"
+                    className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 group"
+                    title={isPlaying ? "Pause" : "Play"}
                   >
-                    {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
+                    {isPlaying ? (
+                      <Pause className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
+                    ) : (
+                      <Play className="w-10 h-10 sm:w-12 sm:h-12 text-white ml-1" />
+                    )}
                   </button>
 
+                  {/* Skip Forward Button */}
                   <button
-                    onClick={toggleMute}
-                    className="text-white hover:text-pink-300 transition-colors"
+                    onClick={handleSkipForward}
+                    className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+                    title="Skip 10 seconds"
                   >
-                    {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+                    <SkipForward className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:translate-x-1 transition-transform" />
                   </button>
-
-                  <span className="text-white text-sm font-medium">
-                    {formatTime(currentTime)} / {formatTime(duration)}
-                  </span>
                 </div>
 
-                <button className="text-white hover:text-pink-300 transition-colors">
-                  <Maximize className="w-6 h-6" />
-                </button>
+                {/* Secondary Controls Row */}
+                <div className="flex items-center justify-between mt-4 px-2">
+                  {/* Volume Control */}
+                  <button
+                    onClick={toggleMute}
+                    className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/20 hover:bg-white/30 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                    title={isMuted ? "Unmute" : "Mute"}
+                  >
+                    {isMuted ? (
+                      <VolumeX className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    ) : (
+                      <Volume2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    )}
+                  </button>
+
+                  {/* Fullscreen Button */}
+                  <button
+                    onClick={handleFullscreen}
+                    className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/20 hover:bg-white/30 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                    title="Fullscreen"
+                  >
+                    <Maximize className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
