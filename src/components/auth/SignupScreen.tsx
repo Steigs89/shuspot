@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useSubscription } from '../../contexts/SubscriptionContext';
+import foxImg from '../../assets/Fox.png';
+import deerImg from '../../assets/Deer.png';
 
 interface SignupScreenProps {
   onNext: (userData: { fullName: string; email: string; password: string }) => void;
@@ -23,22 +25,24 @@ export default function SignupScreen({ onNext, onSwitchToLogin }: SignupScreenPr
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4">
-      {/* Left Character */}
-      <div className="absolute left-8 bottom-8 hidden lg:block">
-        <div className="w-48 h-48 bg-orange-400 rounded-full relative">
-          <div className="absolute inset-0 flex items-center justify-center text-6xl">
-            🦊
-          </div>
-        </div>
+      {/* Left Character - Fox */}
+      <div className="absolute left-0 bottom-0 hidden lg:block">
+        <img 
+          src={foxImg} 
+          alt="Fox" 
+          className="w-64 h-auto transform -rotate-12 translate-x-[-10%] translate-y-[10%] drop-shadow-2xl"
+          style={{ transformOrigin: 'bottom left' }}
+        />
       </div>
 
-      {/* Right Character */}
-      <div className="absolute right-8 bottom-8 hidden lg:block">
-        <div className="w-48 h-48 bg-gray-200 rounded-full relative">
-          <div className="absolute inset-0 flex items-center justify-center text-6xl">
-            🐰
-          </div>
-        </div>
+      {/* Right Character - Deer */}
+      <div className="absolute right-0 bottom-0 hidden lg:block">
+        <img 
+          src={deerImg} 
+          alt="Deer" 
+          className="w-64 h-auto transform rotate-12 translate-x-[10%] translate-y-[10%] drop-shadow-2xl"
+          style={{ transformOrigin: 'bottom right' }}
+        />
       </div>
 
       {/* Signup Form */}

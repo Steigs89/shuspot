@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import hippoImg from '../../assets/Hippo.png';
+import foxImg from '../../assets/Fox.png';
 
 interface DifficultySelectionScreenProps {
   onComplete: (readingLevelSystem: string) => void;
@@ -23,22 +25,24 @@ export default function DifficultySelectionScreen({ onComplete }: DifficultySele
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4">
-      {/* Left Character */}
-      <div className="absolute left-8 bottom-8 hidden lg:block">
-        <div className="w-48 h-48 bg-yellow-400 rounded-full relative">
-          <div className="absolute inset-0 flex items-center justify-center text-6xl">
-            🦒
-          </div>
-        </div>
+      {/* Left Character - Hippo */}
+      <div className="absolute left-0 bottom-0 hidden lg:block">
+        <img 
+          src={hippoImg} 
+          alt="Hippo" 
+          className="w-64 h-auto transform -rotate-12 translate-x-[-10%] translate-y-[10%] drop-shadow-2xl"
+          style={{ transformOrigin: 'bottom left' }}
+        />
       </div>
 
-      {/* Right Character */}
-      <div className="absolute right-8 bottom-8 hidden lg:block">
-        <div className="w-48 h-48 bg-orange-300 rounded-full relative">
-          <div className="absolute inset-0 flex items-center justify-center text-6xl">
-            🐵
-          </div>
-        </div>
+      {/* Right Character - Fox */}
+      <div className="absolute right-0 bottom-0 hidden lg:block">
+        <img 
+          src={foxImg} 
+          alt="Fox" 
+          className="w-64 h-auto transform rotate-12 translate-x-[10%] translate-y-[10%] drop-shadow-2xl"
+          style={{ transformOrigin: 'bottom right' }}
+        />
       </div>
 
       {/* Difficulty Selection */}

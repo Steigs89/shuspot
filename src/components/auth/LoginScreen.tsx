@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSubscription } from '../../contexts/SubscriptionContext';
 import loginIllustration from '../../assets/image-from-rawpixel-id-6484055-png.png';
+import lionImg from '../../assets/Lion.png';
+import elephantImg from '../../assets/Elephant.png';
 
 interface LoginScreenProps {
   onLogin: () => void;
@@ -63,24 +65,24 @@ export default function LoginScreen({ onLogin, onSwitchToSignup }: LoginScreenPr
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4">
-      {/* Left Character */}
-      <div className="absolute left-8 bottom-8 hidden lg:block">
-        <div className="w-48 h-48 bg-orange-400 rounded-full relative">
-          {/* Fox character placeholder */}
-          <div className="absolute inset-0 flex items-center justify-center text-6xl">
-            🦊
-          </div>
-        </div>
+      {/* Left Character - Lion */}
+      <div className="absolute left-0 bottom-0 hidden lg:block">
+        <img 
+          src={lionImg} 
+          alt="Lion" 
+          className="w-64 h-auto transform -rotate-12 translate-x-[-10%] translate-y-[10%] drop-shadow-2xl"
+          style={{ transformOrigin: 'bottom left' }}
+        />
       </div>
 
-      {/* Right Character */}
-      <div className="absolute right-3 bottom-3 hidden lg:block">
-        <div className="w-48 h-48 bg-gray-500 rounded-full relative">
-          {/* Rabbit character placeholder */}
-          <div className="absolute inset-0 flex items-center justify-center text-6xl">
-         <img src={loginIllustration} alt="Login illustration" width="1200" />
-          </div>
-        </div>
+      {/* Right Character - Elephant */}
+      <div className="absolute right-0 bottom-0 hidden lg:block">
+        <img 
+          src={elephantImg} 
+          alt="Elephant" 
+          className="w-64 h-auto transform rotate-12 translate-x-[10%] translate-y-[10%] drop-shadow-2xl"
+          style={{ transformOrigin: 'bottom right' }}
+        />
       </div>
 
       {/* Login Form */}
