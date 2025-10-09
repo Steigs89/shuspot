@@ -1575,8 +1575,8 @@ function AppContent() {
 
 
             {/* Content Type Tabs */}
-            <div className="mb-8">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:justify-evenly items-center gap-3 sm:gap-4 lg:gap-2 py-6 px-2 sm:px-4">
+            <div className="mb-4">
+              <div className="grid grid-cols-3 sm:grid-cols-3 lg:flex lg:justify-evenly items-center gap-2 sm:gap-3 lg:gap-2 py-3 px-2 sm:px-4">
                 {contentTypes.map((type) => (
                   <button
                     key={type.id}
@@ -1584,7 +1584,7 @@ function AppContent() {
                       setSelectedContentType(type.name);
                       // Both Voice Coach and Read to Me content will show inline, no view change needed
                     }}
-                    className={`group w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 rounded-full transition-all duration-300 hover:scale-105 lg:hover:scale-110 hover:shadow-2xl flex flex-col items-center justify-center relative ${selectedContentType === type.name
+                    className={`group w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center justify-center relative ${selectedContentType === type.name
                       ? 'text-white shadow-2xl shadow-pink-500/30'
                       : 'text-blue-700 shadow-lg shadow-pink-200/50'
                       }`}
@@ -1593,23 +1593,23 @@ function AppContent() {
                         ? 'linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1)'
                         : 'linear-gradient(135deg, rgba(253, 242, 248, 0.7), rgba(252, 231, 243, 0.7), rgba(251, 207, 232, 0.7))',
                       boxShadow: selectedContentType === type.name
-                        ? '0 20px 40px rgba(251, 191, 36, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 0 4px #fbbf24, 0 0 0 8px #f59e0b'
-                        : '0 8px 25px rgba(236, 72, 153, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 0 3px #f9a8d4, 0 0 0 6px #f472b6'
+                        ? '0 15px 30px rgba(251, 191, 36, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 0 3px #fbbf24, 0 0 0 6px #f59e0b'
+                        : '0 6px 20px rgba(236, 72, 153, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 0 2px #f9a8d4, 0 0 0 4px #f472b6'
                     }}
                   >
                     {typeof type.icon === 'string' ? (
                       <img
                         src={type.icon}
                         alt={type.name}
-                        className="w-16 h-16 mx-auto mb-3 object-contain transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:drop-shadow-lg"
+                        className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-1 object-contain transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:drop-shadow-lg"
                       />
                     ) : (
                       React.createElement(type.icon as React.ComponentType<{ className?: string }>, {
-                        className: "w-14 h-14 mx-auto mb-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:drop-shadow-lg"
+                        className: "w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-1 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:drop-shadow-lg"
                       })
                     )}
                     <div
-                      className="text-base font-black text-yellow-600 tracking-wider"
+                      className="text-xs sm:text-sm font-black text-yellow-600 tracking-wide"
                       style={{
                         textShadow: '1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black, 0 2px 4px rgba(0, 0, 0, 0.1)'
                       }}
@@ -1622,8 +1622,8 @@ function AppContent() {
             </div>
 
         {/* Genre Categories - Full Width Horizontal Scroll */}
-        <div className="mb-8 w-full -mx-4 sm:-mx-6 bg-gradient-to-r from-blue-50 to-purple-50 py-8">
-          <h3 className="text-2xl font-superclarendon-bold text-blue-800 mb-6 text-center">Genres</h3>
+        <div className="mb-6 w-full -mx-4 sm:-mx-6 bg-gradient-to-r from-blue-50 to-purple-50 py-4">
+          <h3 className="text-xl font-superclarendon-bold text-blue-800 mb-4 text-center">Genres</h3>
           <div className="flex items-center space-x-4 px-4">
             {/* Left Arrow */}
             <button
