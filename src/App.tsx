@@ -1622,32 +1622,31 @@ function AppContent() {
             </div>
 
         {/* Genre Categories - Full Width Horizontal Scroll */}
-        <div className="mb-6 w-full -mx-4 sm:-mx-6 bg-gradient-to-r from-blue-50 to-purple-50 py-4">
+        <div className="mb-6 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-r from-blue-50 to-purple-50 py-4">
           <h3 className="text-xl font-superclarendon-bold text-blue-800 mb-4 text-center">Genres</h3>
-          <div className="relative px-4 sm:px-6">
-            <div className="flex items-center">
-              {/* Left Arrow */}
-              <button
-                onClick={() => {
-                  const container = document.getElementById('genres-container');
-                  if (container) {
-                    container.scrollBy({ left: -200, behavior: 'smooth' });
-                  }
-                }}
-                className="absolute left-2 z-10 flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
-              >
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
+          <div className="relative max-w-full px-4 sm:px-6">
+            {/* Left Arrow */}
+            <button
+              onClick={() => {
+                const container = document.getElementById('genres-container');
+                if (container) {
+                  container.scrollBy({ left: -200, behavior: 'smooth' });
+                }
+              }}
+              className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
+            >
+              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
 
-              {/* Scrollable Container */}
-              <div 
-                id="genres-container"
-                className="w-full overflow-x-auto scrollbar-hide px-12"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
-                <div className="flex space-x-4 pb-2" style={{ width: 'max-content' }}>
+            {/* Scrollable Container */}
+            <div 
+              id="genres-container"
+              className="overflow-x-auto scrollbar-hide px-14"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <div className="flex space-x-4 pb-2" style={{ width: 'max-content' }}>
                   {[
                     // Science & Nature
                     { name: 'Animals & Their Habitats', icon: '🦁', shape: 'bubble' },
@@ -1780,21 +1779,20 @@ function AppContent() {
                 </div>
               </div>
 
-              {/* Right Arrow */}
-              <button
-                onClick={() => {
-                  const container = document.getElementById('genres-container');
-                  if (container) {
-                    container.scrollBy({ left: 200, behavior: 'smooth' });
-                  }
-                }}
-                className="absolute right-2 z-10 flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
-              >
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
+            {/* Right Arrow */}
+            <button
+              onClick={() => {
+                const container = document.getElementById('genres-container');
+                if (container) {
+                  container.scrollBy({ left: 200, behavior: 'smooth' });
+                }
+              }}
+              className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
+            >
+              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
 
