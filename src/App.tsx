@@ -1584,8 +1584,8 @@ function AppContent() {
                       setSelectedContentType(type.name);
                       // Both Voice Coach and Read to Me content will show inline, no view change needed
                     }}
-                    className={`group w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center justify-center relative ${selectedContentType === type.name
-                      ? 'text-white shadow-2xl shadow-pink-500/30'
+                    className={`group w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl flex flex-col items-center justify-center relative ${selectedContentType === type.name
+                      ? 'text-white shadow-2xl shadow-pink-500/40 animate-pulse-slow'
                       : 'text-blue-700 shadow-lg shadow-pink-200/50'
                       }`}
                     style={{
@@ -1593,10 +1593,14 @@ function AppContent() {
                         ? 'linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1)'
                         : 'linear-gradient(135deg, rgba(253, 242, 248, 0.7), rgba(252, 231, 243, 0.7), rgba(251, 207, 232, 0.7))',
                       boxShadow: selectedContentType === type.name
-                        ? '0 15px 30px rgba(251, 191, 36, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 0 3px #fbbf24, 0 0 0 6px #f59e0b'
-                        : '0 6px 20px rgba(236, 72, 153, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 0 2px #f9a8d4, 0 0 0 4px #f472b6'
+                        ? '0 20px 40px rgba(251, 191, 36, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 0 4px #fbbf24, 0 0 0 8px #f59e0b, 0 0 20px rgba(251, 191, 36, 0.5)'
+                        : '0 8px 25px rgba(236, 72, 153, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 0 3px #f9a8d4, 0 0 0 6px #f472b6, 0 0 15px rgba(236, 72, 153, 0.2)'
                     }}
                   >
+                    {/* Animated ring effect for selected state */}
+                    {selectedContentType === type.name && (
+                      <div className="absolute inset-0 rounded-full border-4 border-yellow-400 animate-ping opacity-75"></div>
+                    )}
                     {typeof type.icon === 'string' ? (
                       <img
                         src={type.icon}
