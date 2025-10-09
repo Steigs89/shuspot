@@ -87,7 +87,7 @@ export default function LoginScreen({ onLogin, onSwitchToSignup }: LoginScreenPr
           className="h-auto drop-shadow-2xl"
           style={{ 
             width: '450px',
-            transform: 'rotate(-12deg) scaleX(-1) translateX(8%) translateY(-10%)',
+            transform: 'rotate(-12deg) scaleX(-1) translateX(88%) translateY(-10%)',
             transformOrigin: 'bottom right'
           }}
         />
