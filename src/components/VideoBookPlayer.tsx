@@ -350,9 +350,9 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
 
             {/* Enhanced Video Controls */}
             <div className={`absolute bottom-0 left-0 right-0 transition-all duration-300 ${showControls ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-              <div className="bg-gradient-to-t from-black/90 via-black/70 to-transparent p-4 sm:p-6">
+              <div className="bg-gradient-to-t from-black/95 via-black/80 to-transparent pt-8 pb-3 px-3 sm:px-4">
                 {/* Fun Animated Progress Bar */}
-                <div className="mb-6">
+                <div className="mb-3">
                   <div
                     className="w-full bg-white/20 rounded-full h-3 sm:h-4 cursor-pointer relative overflow-hidden shadow-lg"
                     onClick={(e) => {
@@ -382,73 +382,76 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
                   </div>
                   
                   {/* Time display */}
-                  <div className="flex justify-between mt-2 px-1">
-                    <span className="text-white text-xs sm:text-sm font-bold drop-shadow-lg">
+                  <div className="flex justify-between mt-1 px-1">
+                    <span className="text-white text-xs font-bold drop-shadow-lg">
                       {formatTime(currentTime)}
                     </span>
-                    <span className="text-white text-xs sm:text-sm font-bold drop-shadow-lg">
+                    <span className="text-white text-xs font-bold drop-shadow-lg">
                       {formatTime(duration)}
                     </span>
                   </div>
                 </div>
 
-                {/* Large Kid-Friendly Control Buttons */}
-                <div className="flex items-center justify-center gap-3 sm:gap-4">
-                  {/* Replay Button */}
-                  <button
-                    onClick={handleReplay}
-                    className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
-                    title="Start Over"
-                  >
-                    <RotateCcw className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:rotate-180 transition-transform duration-500" />
-                  </button>
+                {/* Compact Control Buttons Row */}
+                <div className="flex items-center justify-between px-2">
+                  {/* Left side controls */}
+                  <div className="flex items-center gap-2">
+                    {/* Play/Pause Button */}
+                    <button
+                      onClick={togglePlay}
+                      className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                      title={isPlaying ? "Pause" : "Play"}
+                    >
+                      {isPlaying ? (
+                        <Pause className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                      ) : (
+                        <Play className="w-5 h-5 sm:w-6 sm:h-6 text-white ml-0.5" />
+                      )}
+                    </button>
 
-                  {/* Play/Pause Button (Larger) */}
-                  <button
-                    onClick={togglePlay}
-                    className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 group"
-                    title={isPlaying ? "Pause" : "Play"}
-                  >
-                    {isPlaying ? (
-                      <Pause className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
-                    ) : (
-                      <Play className="w-10 h-10 sm:w-12 sm:h-12 text-white ml-1" />
-                    )}
-                  </button>
+                    {/* Replay Button */}
+                    <button
+                      onClick={handleReplay}
+                      className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+                      title="Start Over"
+                    >
+                      <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:rotate-180 transition-transform duration-500" />
+                    </button>
 
-                  {/* Skip Forward Button */}
-                  <button
-                    onClick={handleSkipForward}
-                    className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
-                    title="Skip 10 seconds"
-                  >
-                    <SkipForward className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
+                    {/* Skip Forward Button */}
+                    <button
+                      onClick={handleSkipForward}
+                      className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+                      title="Skip 10 seconds"
+                    >
+                      <SkipForward className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:translate-x-1 transition-transform" />
+                    </button>
 
-                {/* Secondary Controls Row */}
-                <div className="flex items-center justify-between mt-4 px-2">
-                  {/* Volume Control */}
-                  <button
-                    onClick={toggleMute}
-                    className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/20 hover:bg-white/30 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                    title={isMuted ? "Unmute" : "Mute"}
-                  >
-                    {isMuted ? (
-                      <VolumeX className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                    ) : (
-                      <Volume2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                    )}
-                  </button>
+                    {/* Volume Control */}
+                    <button
+                      onClick={toggleMute}
+                      className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                      title={isMuted ? "Unmute" : "Mute"}
+                    >
+                      {isMuted ? (
+                        <VolumeX className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                      )}
+                    </button>
+                  </div>
 
-                  {/* Fullscreen Button */}
-                  <button
-                    onClick={handleFullscreen}
-                    className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/20 hover:bg-white/30 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                    title="Fullscreen"
-                  >
-                    <Maximize className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                  </button>
+                  {/* Right side controls */}
+                  <div className="flex items-center gap-2">
+                    {/* Fullscreen Button */}
+                    <button
+                      onClick={handleFullscreen}
+                      className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                      title="Fullscreen"
+                    >
+                      <Maximize className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
