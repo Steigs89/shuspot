@@ -41,6 +41,10 @@ import mainContentBg from './assets/5922295.jpg';
 import appLogo from './assets/SS Logo Final Black With Color Spots HR.png';
 import volcanoBookBg from './assets/vecteezy_book-with-scene-of-volcano-eruption_7092921.jpg';
 import hippoWaterBg from './assets/vecteezy_funny-cartoon-hippo-lying-in-water-vector_16265457.jpg';
+import genreBg1 from './assets/Asset 1@2x.png';
+import genreBg2 from './assets/Asset 2@2x.png';
+import genreBg3 from './assets/Asset 3@2x.png';
+import genreBg4 from './assets/Asset 4@2x.png';
 
 
 
@@ -1734,73 +1738,11 @@ function AppContent() {
                     { name: 'Learning to Read', icon: '📚', shape: 'leaf' },
                     { name: 'Narrative Nonfiction', icon: '📰', shape: 'cloud' }
                   ].map((genre, index) => {
-                    const getShapeStyles = (shape: string, isSelected: boolean) => {
-                      const baseColors = [
-                        '#ff6b9d', '#ffa726', '#66bb6a', '#42a5f5', '#ab47bc', '#ef5350'
-                      ];
-                      const color = baseColors[index % baseColors.length];
-                      
-                      const shapeStyles = {
-                        bubble: {
-                          borderRadius: '50%',
-                          background: isSelected 
-                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
-                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
-                          border: 'none',
-                          transform: 'scale(1)',
-                        },
-                        heart: {
-                          borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                          background: isSelected 
-                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
-                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
-                          border: 'none',
-                          position: 'relative',
-                        },
-                        star: {
-                          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-                          background: isSelected 
-                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
-                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
-                          border: 'none',
-                        },
-                        leaf: {
-                          borderRadius: '0 100% 0 100%',
-                          background: isSelected 
-                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
-                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
-                          border: 'none',
-                          transform: 'rotate(45deg)',
-                        },
-                        cloud: {
-                          borderRadius: '100px',
-                          background: isSelected 
-                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
-                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
-                          border: 'none',
-                          position: 'relative',
-                        },
-                        wave: {
-                          borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                          background: isSelected 
-                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
-                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
-                          border: 'none',
-                          transform: 'rotate(45deg)',
-                        },
-                        hexagon: {
-                          clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
-                          background: isSelected 
-                            ? 'linear-gradient(135deg, #ec4899, #be185d)' 
-                            : `linear-gradient(135deg, ${color}88, ${color}cc)`,
-                          border: 'none',
-                        }
-                      };
-                      return shapeStyles[shape] || shapeStyles.bubble;
-                    };
-
+                    // Cycle through the 4 background assets in a pattern that avoids repetition
+                    const backgroundAssets = [genreBg1, genreBg2, genreBg3, genreBg4];
+                    const backgroundImage = backgroundAssets[index % 4];
+                    
                     const isSelected = selectedCategory === genre.name;
-                    const shapeStyle = getShapeStyles(genre.shape, isSelected);
 
                     return (
                       <button
@@ -1809,20 +1751,33 @@ function AppContent() {
                           setSelectedCategory(genre.name);
                           updateFilters({ genre: genre.name });
                         }}
-                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-36 h-36 ${
-                          isSelected ? 'text-white shadow-2xl' : 'text-white hover:text-white'
+                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-36 h-36 rounded-3xl overflow-hidden ${
+                          isSelected ? 'ring-4 ring-white ring-offset-2 shadow-2xl' : 'hover:ring-2 hover:ring-white/50'
                         }`}
-                        style={shapeStyle}
+                        style={{
+                          backgroundImage: `url(${backgroundImage})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }}
                       >
-                        <span className="text-3xl mb-2 relative z-10 drop-shadow-lg filter">{genre.icon}</span>
-                        <span className="text-sm font-bold text-center leading-tight relative z-10 drop-shadow-md px-1">{genre.name}</span>
+                        {/* Overlay for better text readability */}
+                        <div className={`absolute inset-0 transition-all duration-300 ${
+                          isSelected 
+                            ? 'bg-gradient-to-br from-pink-500/40 to-purple-500/40' 
+                            : 'bg-black/20 hover:bg-black/30'
+                        }`}></div>
                         
-                        {/* Floating bubbles decoration */}
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <div className="absolute top-2 right-3 w-2 h-2 bg-white/30 rounded-full animate-pulse"></div>
-                          <div className="absolute bottom-3 left-2 w-1.5 h-1.5 bg-white/20 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                          <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-white/25 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                        </div>
+                        <span className="text-3xl mb-2 relative z-10 drop-shadow-lg filter">{genre.icon}</span>
+                        <span className="text-sm font-bold text-center leading-tight relative z-10 drop-shadow-md px-1 text-white">{genre.name}</span>
+                        
+                        {/* Sparkle decoration for selected state */}
+                        {isSelected && (
+                          <div className="absolute top-2 right-2 z-10">
+                            <svg className="w-6 h-6 text-yellow-300 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                          </div>
+                        )}
                       </button>
                     );
                   })}
