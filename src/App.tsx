@@ -1755,7 +1755,7 @@ function AppContent() {
                           setSelectedCategory(genre.name);
                           updateFilters({ genre: genre.name });
                         }}
-                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-36 h-36 ${
+                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-40 h-40 ${
                           isSelected ? 'ring-4 ring-white ring-offset-2 shadow-2xl' : 'hover:ring-2 hover:ring-white/50'
                         }`}
                         style={{
