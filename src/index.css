@@ -1464,6 +1464,34 @@ Basic utility classes used in components */
   animation: shimmer 2s linear infinite;
 }
 
+/* Custom Scrollbar Styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #d8b4fe;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #c084fc;
+}
+
+.scrollbar-track-gray-100 {
+  scrollbar-color: #d8b4fe #f1f5f9;
+}
+
+.scrollbar-thumb-purple-300 {
+  scrollbar-width: thin;
+}
+
 /* Enhanced ShuSpot Reader with Turn.js Integration */
 .enhanced-shuspot-reader {
   position: fixed;

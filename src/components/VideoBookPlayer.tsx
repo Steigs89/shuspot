@@ -458,60 +458,78 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
           </div>
         </div>
 
-        {/* Watch Next Sidebar */}
-        <div className="lg:w-80">
-          <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl">
-            <h3 className="text-xl font-superclarendon-black text-gray-800 mb-4">
-              Watch Next!
-            </h3>
+        {/* Watch Next Sidebar - Epic Kids Style */}
+        <div className="lg:w-96 flex flex-col">
+          <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden flex flex-col h-full lg:h-auto lg:max-h-[calc(100vh-8rem)]">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-4">
+              <h3 className="text-2xl font-superclarendon-black text-white">
+                Watch Next!
+              </h3>
+            </div>
 
-            <div className="space-y-4">
+            {/* Scrollable Video List */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-3 scrollbar-thin scrollbar-thumb-purple-300 scrollbar-track-gray-100">
               {watchNextVideos.map((video) => (
                 <div
                   key={video.id}
-                  className="flex space-x-3 p-3 rounded-xl hover:bg-purple-100 transition-colors cursor-pointer group"
+                  className="group cursor-pointer"
                 >
-                  <div className="relative flex-shrink-0">
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+                    {/* Thumbnail */}
                     <img
                       src={video.thumbnail}
                       alt={video.title}
-                      className="w-20 h-14 object-cover rounded-lg"
+                      className="w-full aspect-video object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/20 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Play className="w-4 h-4 text-white" />
+                    
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-xl">
+                        <Play className="w-7 h-7 text-purple-600 ml-1" />
+                      </div>
                     </div>
-                    <span className="absolute bottom-1 right-1 bg-black/70 text-white text-xs px-1 rounded">
+                    
+                    {/* Duration Badge */}
+                    <div className="absolute top-3 right-3 bg-black/80 text-white text-sm font-bold px-3 py-1 rounded-full">
                       {video.duration}
-                    </span>
-                  </div>
-
-                  <div className="flex-1 min-w-0">
-                    <h4 className="font-superclarendon-black text-gray-800 text-sm leading-tight mb-1 group-hover:text-purple-700 transition-colors">
-                      {video.title}
-                    </h4>
-                    <p className="text-xs text-gray-500">Educational Video</p>
+                    </div>
+                    
+                    {/* Title Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <h4 className="font-superclarendon-bold text-white text-base leading-tight drop-shadow-lg">
+                        {video.title}
+                      </h4>
+                      <p className="text-white/80 text-xs mt-1 font-medium">Educational Video</p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Fun Stats */}
-            <div className="mt-6 p-4 bg-gradient-to-r from-pink-100 to-purple-100 rounded-xl">
-              <h4 className="font-superclarendon-black text-gray-800 mb-2">
-                🌟 Fun Facts!
-              </h4>
-              <div className="space-y-2 text-sm text-gray-700">
-                <div className="flex justify-between">
-                  <span>Videos Watched:</span>
-                  <span className="font-semibold">12</span>
+            {/* Fun Stats Footer */}
+            <div className="border-t border-gray-200 p-4 bg-gradient-to-br from-yellow-50 to-pink-50">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-superclarendon-black text-gray-800 flex items-center gap-2">
+                  <span className="text-2xl">⭐</span>
+                  <span>Fun Facts!</span>
+                </h4>
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="text-center p-3 bg-white rounded-xl shadow-sm">
+                  <div className="text-2xl font-superclarendon-black text-purple-600">12</div>
+                  <div className="text-xs text-gray-600 font-medium mt-1">Videos</div>
                 </div>
-                <div className="flex justify-between">
-                  <span>Reading Level:</span>
-                  <span className="font-semibold">K2</span>
+                <div className="text-center p-3 bg-white rounded-xl shadow-sm">
+                  <div className="text-2xl font-superclarendon-black text-pink-600">K2</div>
+                  <div className="text-xs text-gray-600 font-medium mt-1">Level</div>
                 </div>
-                <div className="flex justify-between">
-                  <span>Favorite Genre:</span>
-                  <span className="font-semibold">Fantasy</span>
+                <div className="text-center p-3 bg-white rounded-xl shadow-sm">
+                  <div className="text-lg font-superclarendon-black text-blue-600">🦄</div>
+                  <div className="text-xs text-gray-600 font-medium mt-1">Fantasy</div>
                 </div>
               </div>
             </div>
