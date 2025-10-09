@@ -1751,21 +1751,16 @@ function AppContent() {
                           setSelectedCategory(genre.name);
                           updateFilters({ genre: genre.name });
                         }}
-                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-36 h-36 rounded-3xl overflow-hidden ${
+                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-36 h-36 ${
                           isSelected ? 'ring-4 ring-white ring-offset-2 shadow-2xl' : 'hover:ring-2 hover:ring-white/50'
                         }`}
                         style={{
                           backgroundImage: `url(${backgroundImage})`,
-                          backgroundSize: 'cover',
+                          backgroundSize: '100% 100%',
                           backgroundPosition: 'center',
+                          backgroundRepeat: 'no-repeat',
                         }}
                       >
-                        {/* Overlay for better text readability */}
-                        <div className={`absolute inset-0 transition-all duration-300 ${
-                          isSelected 
-                            ? 'bg-gradient-to-br from-pink-500/40 to-purple-500/40' 
-                            : 'bg-black/20 hover:bg-black/30'
-                        }`}></div>
                         
                         <span className="text-3xl mb-2 relative z-10 drop-shadow-lg filter">{genre.icon}</span>
                         <span className="text-sm font-bold text-center leading-tight relative z-10 drop-shadow-md px-1 text-white">{genre.name}</span>
