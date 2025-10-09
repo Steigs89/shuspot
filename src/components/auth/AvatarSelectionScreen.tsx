@@ -31,8 +31,12 @@ export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenP
         <img 
           src={giraffeImg} 
           alt="Giraffe" 
-          className="w-96 h-auto transform rotate-12 translate-x-[-10%] translate-y-[10%] drop-shadow-2xl"
-          style={{ transformOrigin: 'bottom left' }}
+          className="h-auto transform drop-shadow-2xl"
+          style={{ 
+            width: '600px',
+            transform: 'rotate(12deg) translateX(-5%) translateY(-20%)',
+            transformOrigin: 'bottom left'
+          }}
         />
       </div>
 
@@ -41,8 +45,12 @@ export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenP
         <img 
           src={pandaImg} 
           alt="Panda" 
-          className="w-96 h-auto transform -rotate-12 scale-x-[-1] translate-x-[10%] translate-y-[10%] drop-shadow-2xl"
-          style={{ transformOrigin: 'bottom right' }}
+          className="h-auto transform drop-shadow-2xl"
+          style={{ 
+            width: '600px',
+            transform: 'rotate(-12deg) scaleX(-1) translateX(-5%) translateY(-20%)',
+            transformOrigin: 'bottom right'
+          }}
         />
       </div>
 

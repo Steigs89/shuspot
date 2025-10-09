@@ -70,8 +70,12 @@ export default function LoginScreen({ onLogin, onSwitchToSignup }: LoginScreenPr
         <img 
           src={lionImg} 
           alt="Lion" 
-          className="w-96 h-auto transform rotate-12 translate-x-[-10%] translate-y-[10%] drop-shadow-2xl"
-          style={{ transformOrigin: 'bottom left' }}
+          className="h-auto transform rotate-12 drop-shadow-2xl"
+          style={{ 
+            width: '600px',
+            transform: 'rotate(12deg) translateX(-5%) translateY(-20%)',
+            transformOrigin: 'bottom left'
+          }}
         />
       </div>
 
@@ -80,8 +84,12 @@ export default function LoginScreen({ onLogin, onSwitchToSignup }: LoginScreenPr
         <img 
           src={elephantImg} 
           alt="Elephant" 
-          className="w-96 h-auto transform -rotate-12 scale-x-[-1] translate-x-[10%] translate-y-[10%] drop-shadow-2xl"
-          style={{ transformOrigin: 'bottom right' }}
+          className="h-auto transform drop-shadow-2xl"
+          style={{ 
+            width: '600px',
+            transform: 'rotate(-12deg) scaleX(-1) translateX(-5%) translateY(-20%)',
+            transformOrigin: 'bottom right'
+          }}
         />
       </div>
 
