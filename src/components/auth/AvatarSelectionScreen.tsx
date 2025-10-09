@@ -25,23 +25,23 @@ export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenP
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4 overflow-hidden relative">
       {/* Left Character - Giraffe */}
-      <div className="absolute left-0 bottom-0 hidden lg:block">
+      <div className="absolute left-0 bottom-0 hidden lg:block pointer-events-none">
         <img 
           src={giraffeImg} 
           alt="Giraffe" 
-          className="w-64 h-auto transform -rotate-12 translate-x-[-10%] translate-y-[10%] drop-shadow-2xl"
+          className="w-96 h-auto transform rotate-12 translate-x-[-10%] translate-y-[10%] drop-shadow-2xl"
           style={{ transformOrigin: 'bottom left' }}
         />
       </div>
 
       {/* Right Character - Panda */}
-      <div className="absolute right-0 bottom-0 hidden lg:block">
+      <div className="absolute right-0 bottom-0 hidden lg:block pointer-events-none">
         <img 
           src={pandaImg} 
           alt="Panda" 
-          className="w-64 h-auto transform rotate-12 translate-x-[10%] translate-y-[10%] drop-shadow-2xl"
+          className="w-96 h-auto transform -rotate-12 scale-x-[-1] translate-x-[10%] translate-y-[10%] drop-shadow-2xl"
           style={{ transformOrigin: 'bottom right' }}
         />
       </div>
