@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react';
-import { Upload, X, File, Image, FileText, Check, AlertCircle, Trash2, Edit3, Search, Filter, Plus } from 'lucide-react';
+import { Upload, X, File, Image, FileText, Check, AlertCircle, Trash2, Edit3, Search, Filter, Plus, Shield } from 'lucide-react';
 import * as pdfjs from 'pdfjs-dist';
+import { useAdmin } from '../contexts/AdminContext';
 
 // Unique ID generator to prevent duplicate keys
 let idCounter = 0;
@@ -167,8 +168,42 @@ const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
 const ACCEPTED_TYPES = ['image/png', 'image/jpeg', 'image/jpg', 'application/pdf', 'video/mp4', 'video/quicktime', 'video/x-msvideo', 'video/x-matroska'];
 
 export default function FileUploadDashboard({ onBack, onPdfUploadSuccess, onVideoUploadSuccess, existingPdfBooks = [] }: FileUploadDashboardProps) {
+  const { isAdmin, loading } = useAdmin();
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
   const [isDragOver, setIsDragOver] = useState(false);
+
+  // Show loading state while checking admin status
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">Checking permissions...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Show access denied if not admin
+  if (!isAdmin) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="max-w-md mx-auto text-center bg-white rounded-lg shadow-lg p-8">
+          <Shield className="w-16 h-16 text-red-500 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Access Restricted</h2>
+          <p className="text-gray-600 mb-6">
+            Only administrators can upload content. Please contact a super admin to request upload permissions.
+          </p>
+          <button
+            onClick={onBack}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition-colors"
+          >
+            Back to Dashboard
+          </button>
+        </div>
+      </div>
+    );
+  }
   const [selectedGradeLevel, setSelectedGradeLevel] = useState('');
   const [selectedMediaType, setSelectedMediaType] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('');

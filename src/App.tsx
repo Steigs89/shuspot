@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useMemo } from 'react';
 import { UserStatsProvider, useUserStats } from './contexts/UserStatsContext';
 import { SubscriptionProvider } from './contexts/SubscriptionContext';
+import { AdminProvider } from './contexts/AdminContext';
 import TrialStatusBanner from './components/TrialStatusBanner';
 import { supabase } from './lib/supabase';
 import Header from './components/Header';
@@ -23,6 +24,7 @@ import { READING_LEVELS, GENRES, MEDIA_TYPES, BookFilters as BookFiltersType, DE
 import AuthFlow from './components/auth/AuthFlow';
 import UserPortal from './components/UserPortal';
 import FileUploadDashboard from './components/FileUploadDashboard';
+import AdminUpload from './components/AdminUpload';
 import PdfBookOverview from './components/PdfBookOverview';
 import PdfViewer from './components/PdfViewer';
 import CategoryDropdown from './components/CategoryDropdown';
@@ -1571,6 +1573,9 @@ function AppContent() {
       </div>
 
       <main className="relative z-10 px-4 sm:px-6 py-4 sm:py-8">
+        {/* Admin Upload Panel */}
+        <AdminUpload />
+        
         {/* Remove the container box - make content full width */}
 
 
@@ -2816,9 +2821,11 @@ function AppContent() {
 function App() {
   return (
     <SubscriptionProvider>
-      <UserStatsProvider>
-        <AppContent />
-      </UserStatsProvider>
+      <AdminProvider>
+        <UserStatsProvider>
+          <AppContent />
+        </UserStatsProvider>
+      </AdminProvider>
     </SubscriptionProvider>
   );
 }
