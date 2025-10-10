@@ -1,0 +1,15 @@
+[Unit]
+Description=Shuspot API Service
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/shuspot
+Environment="PATH=/var/www/shuspot/venv/bin"
+ExecStart=/var/www/shuspot/venv/bin/uvicorn api:app --host 127.0.0.1 --port 8000 --workers 4
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
