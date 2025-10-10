@@ -204,8 +204,7 @@ function ImportTab() {
   };
 
   const openBookAdmin = () => {
-    // TODO: Replace with actual book-admin URL
-    window.open('/book-admin', '_blank');
+    window.open('https://shuspot.com/book-admin', '_blank');
   };
 
   return (
