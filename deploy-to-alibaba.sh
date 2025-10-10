@@ -32,15 +32,15 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 DEPLOY_PACKAGE="shuspot-deploy-${TIMESTAMP}.tar.gz"
 
 tar -czf "$DEPLOY_PACKAGE" \
+    --exclude='*.pyc' \
+    --exclude='__pycache__' \
+    --exclude='.venv' \
     dist/ \
     api/ \
     api.py \
     requirements.txt \
     books.db \
-    .env.production \
-    --exclude='*.pyc' \
-    --exclude='__pycache__' \
-    --exclude='.venv'
+    .env.production 2>/dev/null || tar -czf "$DEPLOY_PACKAGE" dist/ api/ api.py requirements.txt books.db .env.production
 
 echo -e "${GREEN}✅ Deployment package created: ${DEPLOY_PACKAGE}${NC}"
 
