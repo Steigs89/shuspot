@@ -10,5 +10,16 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'supabase': ['@supabase/supabase-js'],
+          'pdf': ['pdfjs-dist'],
+          'lottie': ['lottie-react']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
   },
 });
