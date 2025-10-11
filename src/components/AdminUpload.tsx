@@ -153,53 +153,65 @@ function ManageTab() {
 }
 
 function ImportTab() {
-  const [availableBooks, setAvailableBooks] = useState([]);
+  const [availableBooks, setAvailableBooks] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
+  const [importStatus, setImportStatus] = useState<Record<string, boolean>>({});
+  const [importingBooks, setImportingBooks] = useState<Set<string>>(new Set());
 
-  // Mock data for testing - replace with actual API call
-  const mockBooks = [
-    {
-      id: 'our_sun_is_a_star',
-      title: 'Our Sun is A Star',
-      type: 'PDF + Audio',
-      status: 'ready',
-      pages: 15,
-      hasOCR: true,
-      hasAudio: true
-    },
-    {
-      id: 'pirates_adventure',
-      title: 'Pirates Adventure',
-      type: 'Video',
-      status: 'ready',
-      duration: '12:30',
-      hasOCR: false,
-      hasAudio: true
-    },
-    {
-      id: 'states_of_matter',
-      title: 'States of Matter',
-      type: 'Interactive',
-      status: 'ready',
-      pages: 20,
-      hasOCR: true,
-      hasAudio: true
-    }
-  ];
-
-  const handleImportBook = async (bookId: string) => {
+  // Fetch available books from book-admin
+  const fetchBooks = async () => {
     setLoading(true);
     try {
-      // TODO: Implement actual import logic
-      console.log('Importing book:', bookId);
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      alert(`Book ${bookId} imported successfully!`);
+      const { fetchAvailableBooks, getImportStatus } = await import('../api/bookImport');
+      
+      const books = await fetchAvailableBooks();
+      setAvailableBooks(books);
+      
+      // Check import status for all books
+      const bookIds = books.map(book => book.id);
+      const status = await getImportStatus(bookIds);
+      setImportStatus(status);
+      
+    } catch (error) {
+      console.error('Error fetching books:', error);
+      alert('Failed to load books from Book Admin. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Load books on component mount
+  React.useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  const handleImportBook = async (bookId: string) => {
+    setImportingBooks(prev => new Set([...prev, bookId]));
+    
+    try {
+      const { importBookToMainApp } = await import('../api/bookImport');
+      
+      const result = await importBookToMainApp(bookId);
+      
+      if (result.success) {
+        // Update import status
+        setImportStatus(prev => ({ ...prev, [bookId]: true }));
+        alert('Book imported successfully!');
+        
+        // Refresh the book list to show updated status
+        await fetchBooks();
+      } else {
+        alert(`Import failed: ${result.error}`);
+      }
     } catch (error) {
       console.error('Import failed:', error);
       alert('Import failed. Please try again.');
     } finally {
-      setLoading(false);
+      setImportingBooks(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(bookId);
+        return newSet;
+      });
     }
   };
 
@@ -211,42 +223,119 @@ function ImportTab() {
     <div className="space-y-4">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-semibold">Import Books from Book Admin</h3>
-        <button
-          onClick={openBookAdmin}
-          className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors flex items-center space-x-2"
-        >
-          <BookOpen className="w-4 h-4" />
-          <span>Open Book Admin Tool</span>
-        </button>
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={fetchBooks}
+            disabled={loading}
+            className="bg-white/20 hover:bg-white/30 disabled:bg-white/10 px-3 py-2 rounded-lg transition-colors flex items-center space-x-2"
+          >
+            <span className={loading ? 'animate-spin' : ''}>🔄</span>
+            <span>Refresh</span>
+          </button>
+          <button
+            onClick={openBookAdmin}
+            className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors flex items-center space-x-2"
+          >
+            <BookOpen className="w-4 h-4" />
+            <span>Open Book Admin Tool</span>
+          </button>
+        </div>
       </div>
 
       <div className="bg-white/10 rounded-lg p-4">
-        <h4 className="font-semibold mb-3 flex items-center space-x-2">
-          <span className="w-3 h-3 bg-green-400 rounded-full"></span>
-          <span>Ready to Import ({mockBooks.length})</span>
-        </h4>
-        
-        <div className="space-y-3">
-          {mockBooks.map((book) => (
-            <div key={book.id} className="bg-white/5 rounded-lg p-4 flex items-center justify-between">
-              <div className="flex-1">
-                <div className="flex items-center space-x-3">
-                  <div className="text-lg">
-                    {book.type.includes('PDF') ? '📚' : 
-                     book.type.includes('Video') ? '🎥' : '🎮'}
-                  </div>
-                  <div>
-                    <h5 className="font-medium">{book.title}</h5>
-                    <div className="text-sm text-white/70 flex items-center space-x-4">
-                      <span>{book.type}</span>
-                      {book.pages && <span>{book.pages} pages</span>}
-                      {book.duration && <span>{book.duration}</span>}
-                      {book.hasOCR && <span className="text-green-300">✓ OCR</span>}
-                      {book.hasAudio && <span className="text-blue-300">♪ Audio</span>}
+        {loading ? (
+          <div className="text-center py-8">
+            <div className="animate-spin text-2xl mb-3">🔄</div>
+            <p className="text-white/70">Loading books from Book Admin Tool...</p>
+          </div>
+        ) : (
+          <>
+            <h4 className="font-semibold mb-3 flex items-center space-x-2">
+              <span className="w-3 h-3 bg-green-400 rounded-full"></span>
+              <span>Available Books ({availableBooks.length})</span>
+              {Object.values(importStatus).filter(Boolean).length > 0 && (
+                <span className="text-sm text-green-300">
+                  • {Object.values(importStatus).filter(Boolean).length} imported
+                </span>
+              )}
+            </h4>
+            
+            <div className="space-y-3">
+              {availableBooks.map((book) => {
+                const isImported = importStatus[book.id];
+                const isImporting = importingBooks.has(book.id);
+                
+                // Determine content type and icon
+                const hasPages = book.pages && book.pages.length > 0;
+                const hasAudio = book.audio_files && book.audio_files.length > 0;
+                const hasOCR = book.ocr_data && Object.keys(book.ocr_data).length > 0;
+                
+                let contentType = 'PDF';
+                let icon = '📚';
+                
+                if (hasPages && hasAudio) {
+                  contentType = 'Interactive';
+                  icon = '🎮';
+                } else if (hasAudio && !hasPages) {
+                  contentType = 'Audio';
+                  icon = '🎵';
+                } else if (hasPages) {
+                  contentType = 'PDF';
+                  icon = '📚';
+                }
+                
+                return (
+                  <div key={book.id} className={`bg-white/5 rounded-lg p-4 flex items-center justify-between ${
+                    isImported ? 'opacity-60' : ''
+                  }`}>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3">
+                        <div className="text-lg">{icon}</div>
+                        <div>
+                          <h5 className="font-medium">{book.title}</h5>
+                          <div className="text-sm text-white/70 flex items-center space-x-4">
+                            <span>{contentType}</span>
+                            {book.author && <span>by {book.author}</span>}
+                            {book.genre && <span>{book.genre}</span>}
+                            {hasPages && <span>{book.pages.length} pages</span>}
+                            {hasOCR && <span className="text-green-300">✓ OCR</span>}
+                            {hasAudio && <span className="text-blue-300">♪ Audio</span>}
+                            {book.reading_level && <span className="text-yellow-300">{book.reading_level}</span>}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-2">
+                      {isImported ? (
+                        <span className="bg-green-500/20 text-green-300 px-3 py-1 rounded-lg text-sm font-medium">
+                          ✓ Imported
+                        </span>
+                      ) : (
+                        <button
+                          onClick={() => handleImportBook(book.id)}
+                          disabled={isImporting}
+                          className="bg-green-500 hover:bg-green-600 disabled:bg-gray-500 px-4 py-2 rounded-lg font-medium transition-colors"
+                        >
+                          {isImporting ? 'Importing...' : 'Import'}
+                        </button>
+                      )}
                     </div>
                   </div>
-                </div>
+                );
+              })}
+            </div>
+
+            {availableBooks.length === 0 && (
+              <div className="text-center py-8 text-white/60">
+                <BookOpen className="w-12 h-12 mx-auto mb-3 opacity-50" />
+                <p>No books available for import</p>
+                <p className="text-sm">Use the Book Admin Tool to prepare books for import</p>
               </div>
+            )}
+          </>
+        )}
+      </div>
               
               <button
                 onClick={() => handleImportBook(book.id)}
