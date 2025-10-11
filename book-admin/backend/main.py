@@ -46,6 +46,8 @@ app.add_middleware(
         "http://localhost:3001", 
         "http://localhost:3002",  # React dev servers
         "https://stately-liger-845004.netlify.app",  # Deployed frontend
+        "https://shuspot.com",  # Main app domain
+        "https://www.shuspot.com",  # Main app domain with www
         "*",  # Allow all origins for local tunnel access
     ],
     allow_credentials=True,
@@ -279,6 +281,58 @@ async def get_books(
         "skip": skip,
         "limit": limit
     }
+
+@app.get("/books/{book_id}")
+async def get_book_by_id(book_id: int, db: Session = Depends(get_db)):
+    """Get a specific book by ID with full details"""
+    book = db.query(Book).filter(Book.id == book_id).first()
+    
+    if not book:
+        raise HTTPException(status_code=404, detail="Book not found")
+    
+    book_data = book.to_dict()
+    
+    # Parse notes to extract page data
+    if book.notes:
+        try:
+            notes_data = json.loads(book.notes)
+            if 'page_sequence' in notes_data:
+                book_data['pages'] = notes_data['page_sequence']
+                book_data['total_pages'] = notes_data.get('total_pages', 0)
+                book_data['folder_path'] = notes_data.get('folder_path', '')
+        except (json.JSONDecodeError, KeyError):
+            pass
+    
+    return book_data
+
+@app.get("/books/{book_id}/files")
+async def get_book_files(book_id: int, db: Session = Depends(get_db)):
+    """Get all file URLs for a specific book"""
+    book = db.query(Book).filter(Book.id == book_id).first()
+    
+    if not book:
+        raise HTTPException(status_code=404, detail="Book not found")
+    
+    files = {
+        "images": [],
+        "audio": [],
+        "cover": book.cover_image_url or ""
+    }
+    
+    # Parse notes to extract file paths
+    if book.notes:
+        try:
+            notes_data = json.loads(book.notes)
+            if 'page_sequence' in notes_data:
+                for page in notes_data['page_sequence']:
+                    if 'image_url' in page and page['image_url']:
+                        files['images'].append(page['image_url'])
+                    if 'audio_url' in page and page['audio_url']:
+                        files['audio'].append(page['audio_url'])
+        except (json.JSONDecodeError, KeyError):
+            pass
+    
+    return files
 
 @app.post("/books/{book_id}/update")
 async def update_book(
