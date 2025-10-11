@@ -336,26 +336,6 @@ function ImportTab() {
           </>
         )}
       </div>
-              
-              <button
-                onClick={() => handleImportBook(book.id)}
-                disabled={loading}
-                className="bg-green-500 hover:bg-green-600 disabled:bg-gray-500 px-4 py-2 rounded-lg font-medium transition-colors"
-              >
-                {loading ? 'Importing...' : 'Import'}
-              </button>
-            </div>
-          ))}
-        </div>
-
-        {mockBooks.length === 0 && (
-          <div className="text-center py-8 text-white/60">
-            <BookOpen className="w-12 h-12 mx-auto mb-3 opacity-50" />
-            <p>No books available for import</p>
-            <p className="text-sm">Use the Book Admin Tool to prepare books for import</p>
-          </div>
-        )}
-      </div>
     </div>
   );
 }
