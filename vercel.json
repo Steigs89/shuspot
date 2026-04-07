@@ -1,15 +1,22 @@
 {
-	"version": 2,
-	"buildCommand": "npm run build",
-	"outputDirectory": "dist",
-	"headers": [
-		{ "source": "/", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] },
-		{ "source": "/index.html", "headers": [ { "key": "Cache-Control", "value": "no-store" } ] }
-	],
-	"rewrites": [
-		{ "source": "/api", "destination": "/api" },
-		{ "source": "/api/(.*)", "destination": "/api/$1" },
-		{ "source": "/CROP-ShuSpot/(.*)", "destination": "/uploads/CROP-ShuSpot/$1" },
-		{ "source": "/(.*)", "destination": "/index.html" }
-	]
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*\\..*)", "destination": "/$1" },
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

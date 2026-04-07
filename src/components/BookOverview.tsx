@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Heart, MapPin, Play } from 'lucide-react';
+import { ArrowLeft, MapPin, Play } from 'lucide-react';
 import PageReadingInterface from './PageReadingInterface';
+import { FavouriteButton } from './FavouriteButton';
 
 interface BookOverviewProps {
   onBack: () => void;
+  userId?: string | null;
 }
 
 interface TableOfContentsItem {
@@ -12,9 +14,12 @@ interface TableOfContentsItem {
   page: number;
 }
 
-export default function BookOverview({ onBack }: BookOverviewProps) {
-  const [isFavorited, setIsFavorited] = useState(false);
+export default function BookOverview({ onBack, userId }: BookOverviewProps) {
   const [showReading, setShowReading] = useState(false);
+  
+  // For demo purposes, using a hardcoded book ID
+  // In production, this would come from props or route params
+  const bookId = 'nutcracker-book-id';
 
   const tableOfContents: TableOfContentsItem[] = [
     { id: 1, title: "Warming Up", page: 2 },
@@ -84,15 +89,10 @@ export default function BookOverview({ onBack }: BookOverviewProps) {
                 <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
                 <span className="font-medium">Quizzes</span>
               </button>
-              <button
-                onClick={() => setIsFavorited(!isFavorited)}
-                className={`p-2 rounded-full border transition-colors ${isFavorited
-                  ? 'bg-red-50 border-red-200 text-red-500'
-                  : 'bg-gray-50 border-gray-200 text-gray-400 hover:text-red-400'
-                  }`}
-              >
-                <Heart className={`w-5 h-5 ${isFavorited ? 'fill-current' : ''}`} />
-              </button>
+              <FavouriteButton 
+                bookId={bookId}
+                userId={userId}
+              />
               <button className="p-2 rounded-full bg-gray-50 border border-gray-200 text-gray-400 hover:text-gray-600 transition-colors">
                 <MapPin className="w-5 h-5" />
               </button>

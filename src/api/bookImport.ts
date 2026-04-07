@@ -29,7 +29,6 @@ interface MainAppBook {
   id?: string;
   title: string;
   author?: string;
-  genre?: string;
   reading_level?: string;
   content_type: 'pdf' | 'video' | 'audio' | 'interactive';
   content_url: string;
@@ -128,7 +127,7 @@ async function transferSingleFile(
 
     // Upload to Supabase storage
     const { data, error } = await supabase.storage
-      .from('book-content')
+      .from('books')
       .upload(storagePath, blob, {
         contentType: blob.type,
         upsert: true
@@ -140,7 +139,7 @@ async function transferSingleFile(
 
     // Get public URL
     const { data: { publicUrl } } = supabase.storage
-      .from('book-content')
+      .from('books')
       .getPublicUrl(storagePath);
 
     return publicUrl;
@@ -182,17 +181,28 @@ function getExtensionFromMimeType(mimeType: string): string {
  */
 export async function fetchAvailableBooks(): Promise<BookAdminBook[]> {
   try {
-    const response = await fetch('https://shuspot.com/book-admin/api/books');
+    const response = await fetch('https://shuspot.com/book-admin/api/books', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
     
     if (!response.ok) {
+      if (response.status === 404) {
+        console.warn('Book-admin API not found. Make sure the book-admin backend is running.');
+        return [];
+      }
       throw new Error(`Failed to fetch books: ${response.statusText}`);
     }
     
     const data = await response.json();
+    // Backend returns {books: [], total: N, skip: N, limit: N}
     return data.books || [];
   } catch (error) {
     console.error('Error fetching books from book-admin:', error);
-    throw error;
+    // Return empty array instead of throwing to prevent UI errors
+    return [];
   }
 }
 
@@ -223,19 +233,19 @@ export async function getImportStatus(bookIds: string[]): Promise<Record<string,
 }
 
 /**
- * Map reading level to section
+ * Map book type to section
  */
-function mapReadingLevelToSection(readingLevel?: string): string {
-  if (!readingLevel) return 'general';
+function mapBookTypeToSection(bookType?: string): string {
+  if (!bookType) return 'general';
   
-  const level = readingLevel.toLowerCase();
+  const type = bookType.toLowerCase();
   
   // Map to main app sections
-  if (level.includes('read to me') || level.includes('readtome')) {
+  if (type.includes('read to me') || type.includes('readtome')) {
     return 'read-to-me';
-  } else if (level.includes('read along') || level.includes('readalong')) {
+  } else if (type.includes('read along') || type.includes('readalong')) {
     return 'read-along';
-  } else if (level.includes('i can read') || level.includes('icanread')) {
+  } else if (type.includes('i can read') || type.includes('icanread')) {
     return 'i-can-read';
   }
   
@@ -263,20 +273,20 @@ function transformBookData(adminBook: BookAdminBook, newFileUrls: FileTransferRe
     audio_url: page.audio_url && newFileUrls.audio[index] ? newFileUrls.audio[index] : page.audio_url
   })) || [];
   
-  // Map reading level to section
-  const section = mapReadingLevelToSection(adminBook.reading_level);
+  // Map book type to section
+  const section = mapBookTypeToSection(adminBook.book_type);
   
   return {
     title: adminBook.title,
     author: adminBook.author || 'Unknown',
-    genre: adminBook.genre || 'General',
     reading_level: adminBook.reading_level || 'Elementary',
     content_type: contentType,
     content_url: newFileUrls.images[0] || '',
-    thumbnail_url: newFileUrls.cover || newFileUrls.images[0] || null,
+    thumbnail_url: newFileUrls.cover || newFileUrls.images[0] || undefined,
     description: `Imported from book-admin: ${adminBook.title}`,
     metadata: {
       original_id: adminBook.id,
+      genre: adminBook.genre || 'General',  // Store genre in metadata
       section: section,  // Add section for routing
       pages: updatedPages,
       audio_files: newFileUrls.audio,
@@ -316,12 +326,10 @@ export async function importBookToMainApp(bookId: string): Promise<{ success: bo
       throw new Error(`Error checking existing books: ${checkError.message}`);
     }
     
-    if (existingBooks && existingBooks.length > 0) {
-      return {
-        success: false,
-        error: 'Book already imported'
-      };
-    }
+    const existingBookId = existingBooks && existingBooks.length > 0 ? existingBooks[0].id : null;
+    const isUpdate = existingBookId !== null;
+    
+    console.log(isUpdate ? `Updating existing book ${existingBookId}` : 'Creating new book');
     
     // 3. Fetch file URLs from book-admin
     const filesResponse = await fetch(`https://shuspot.com/book-admin/api/books/${bookId}/files`);
@@ -332,31 +340,69 @@ export async function importBookToMainApp(bookId: string): Promise<{ success: bo
     const files = await filesResponse.json();
     console.log('Fetched file URLs:', files);
     
-    // 4. Transfer files to Supabase storage
-    console.log('Transferring files to Supabase...');
-    const newFileUrls = await transferFilesToSupabase(bookId, files);
-    console.log('Files transferred:', newFileUrls);
+    // 4. Check if files are already in Supabase storage (skip transfer if they are)
+    console.log('Checking file URLs...');
+    const filesAlreadyInSupabase = files.cover?.includes('supabase.co/storage') || 
+                                    files.images?.[0]?.includes('supabase.co/storage');
+    
+    let newFileUrls: FileTransferResult;
+    if (filesAlreadyInSupabase) {
+      console.log('Files already in Supabase storage, using direct URLs');
+      // Use the URLs directly without transferring
+      newFileUrls = {
+        cover: files.cover || '',
+        images: files.images || [],
+        audio: files.audio || []
+      };
+    } else {
+      console.log('Transferring files to Supabase...');
+      newFileUrls = await transferFilesToSupabase(bookId, files);
+    }
+    console.log('Files ready:', newFileUrls);
     
     // 5. Transform data for main app
     const transformedBook = transformBookData(adminBook, newFileUrls);
     console.log('Transformed book data:', transformedBook);
     
-    // 6. Insert into main app database
-    const { data: insertedBook, error: insertError } = await supabase
-      .from('books')
-      .insert([transformedBook])
-      .select()
-      .single();
-    
-    if (insertError) {
-      throw new Error(`Error inserting book: ${insertError.message}`);
+    // 6. Insert or update in main app database
+    let resultBook;
+    if (isUpdate && existingBookId) {
+      // Update existing book
+      const { data: updatedBook, error: updateError } = await supabase
+        .from('books')
+        .update({
+          ...transformedBook,
+          updated_at: new Date().toISOString()
+        })
+        .eq('id', existingBookId)
+        .select()
+        .single();
+      
+      if (updateError) {
+        throw new Error(`Error updating book: ${updateError.message}`);
+      }
+      
+      resultBook = updatedBook;
+      console.log('Book updated successfully:', updatedBook);
+    } else {
+      // Insert new book
+      const { data: insertedBook, error: insertError } = await supabase
+        .from('books')
+        .insert([transformedBook])
+        .select()
+        .single();
+      
+      if (insertError) {
+        throw new Error(`Error inserting book: ${insertError.message}`);
+      }
+      
+      resultBook = insertedBook;
+      console.log('Book imported successfully:', insertedBook);
     }
-    
-    console.log('Book imported successfully:', insertedBook);
     
     return {
       success: true,
-      bookId: insertedBook.id
+      bookId: resultBook.id
     };
     
   } catch (error) {

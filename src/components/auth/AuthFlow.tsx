@@ -1,29 +1,33 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupScreen';
+import CreateProfileScreen from './CreateProfileScreen';
 import AvatarSelectionScreen from './AvatarSelectionScreen';
-import PlanSelectionScreen from './PlanSelectionScreen';
 import DifficultySelectionScreen from './DifficultySelectionScreen';
-import { SubscriptionProvider, useSubscription } from '../../contexts/SubscriptionContext';
+import PlanSelectionScreen from './PlanSelectionScreen';
+
+import { SubscriptionProvider } from '../../contexts/SubscriptionContext';
 
 interface AuthFlowProps {
   onAuthComplete: () => void;
 }
 
-type AuthStep = 'login' | 'signup' | 'avatar' | 'plan' | 'difficulty';
+type AuthStep = 'login' | 'signup' | 'create-profile' | 'avatar' | 'difficulty' | 'plan';
 
 interface UserData {
   fullName: string;
   email: string;
   password: string;
+  childName?: string;
+  dateOfBirth?: string;
   readingLevelSystem?: string;
   avatar?: string;
+  selectedPlan?: string;
 }
 
 function AuthFlowContent({ onAuthComplete }: AuthFlowProps) {
   const [currentStep, setCurrentStep] = useState<AuthStep>('login');
   const [userData, setUserData] = useState<UserData | null>(null);
-  const { updateReadingLevelSystem } = useSubscription();
 
   const handleLogin = () => {
     onAuthComplete();
@@ -31,6 +35,17 @@ function AuthFlowContent({ onAuthComplete }: AuthFlowProps) {
 
   const handleSignupNext = (data: UserData) => {
     setUserData(data);
+    setCurrentStep('create-profile');
+  };
+
+  const handleCreateProfileNext = (childName: string, dateOfBirth: string) => {
+    if (userData) {
+      setUserData({
+        ...userData,
+        childName,
+        dateOfBirth
+      });
+    }
     setCurrentStep('avatar');
   };
 
@@ -42,38 +57,49 @@ function AuthFlowContent({ onAuthComplete }: AuthFlowProps) {
         avatar: selectedAvatar
       });
     }
-    setCurrentStep('plan');
-  };
-
-  const handlePlanNext = () => {
     setCurrentStep('difficulty');
   };
 
-  const handleDifficultyComplete = async (readingLevelSystem: string) => {
-    try {
-      // Update the user's reading level system in Supabase
-      const result = await updateReadingLevelSystem(readingLevelSystem);
-      
-      if (result.success) {
-        // Update userData with the selected reading level system
-        if (userData) {
-          setUserData({
-            ...userData,
-            readingLevelSystem
-          });
-        }
-        onAuthComplete();
-      } else {
-        console.error('Failed to update reading level system:', result.error);
-        // Still complete auth flow even if reading level system update fails
-        onAuthComplete();
-      }
-    } catch (error) {
-      console.error('Error updating reading level system:', error);
-      // Still complete auth flow even if there's an error
-      onAuthComplete();
+  const handleDifficultyNext = (readingLevelSystem: string) => {
+    if (userData) {
+      setUserData({
+        ...userData,
+        readingLevelSystem
+      });
     }
+    setCurrentStep('plan');
   };
+
+  const handlePlanNext = async (selectedPlan: string) => {
+    if (userData) {
+      setUserData({
+        ...userData,
+        selectedPlan
+      });
+    }
+    
+    // Redirect to Stripe payment link
+    console.log('💳 Redirecting to Stripe payment...');
+    window.location.href = 'https://buy.stripe.com/test_cNi00j5DVfD37Ef9Wc0kE00';
+  };
+
+  const handleBackToSignup = () => {
+    setCurrentStep('signup');
+  };
+
+  const handleBackToCreateProfile = () => {
+    setCurrentStep('create-profile');
+  };
+
+  const handleBackToAvatar = () => {
+    setCurrentStep('avatar');
+  };
+
+  const handleBackToDifficulty = () => {
+    setCurrentStep('difficulty');
+  };
+
+
 
   const handleSwitchToSignup = () => {
     setCurrentStep('signup');
@@ -98,23 +124,33 @@ function AuthFlowContent({ onAuthComplete }: AuthFlowProps) {
           onSwitchToLogin={handleSwitchToLogin}
         />
       );
+    case 'create-profile':
+      return (
+        <CreateProfileScreen
+          onNext={handleCreateProfileNext}
+          onBack={handleBackToSignup}
+        />
+      );
     case 'avatar':
       return (
         <AvatarSelectionScreen
           onNext={handleAvatarNext}
+          onBack={handleBackToCreateProfile}
+        />
+      );
+    case 'difficulty':
+      return (
+        <DifficultySelectionScreen
+          onNext={handleDifficultyNext}
+          onBack={handleBackToAvatar}
         />
       );
     case 'plan':
       return (
         <PlanSelectionScreen
           onNext={handlePlanNext}
+          onBack={handleBackToDifficulty}
           userData={userData!}
-        />
-      );
-    case 'difficulty':
-      return (
-        <DifficultySelectionScreen
-          onComplete={handleDifficultyComplete}
         />
       );
     default:

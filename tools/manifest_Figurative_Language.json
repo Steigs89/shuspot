@@ -1,0 +1,5568 @@
+[
+  {
+    "Path": ".DS_Store",
+    "Name": ".DS_Store",
+    "Size": 8196,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.509654084-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 34145,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/description.txt",
+    "Name": "description.txt",
+    "Size": 346,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 145546,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 550548,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 262784,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 648977,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 248364,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 280965,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 205732,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 749915,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 367482,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 349928,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 253379,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 228302,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 657128,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 582522,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 392560,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 265918,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 580641,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 322970,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 107302,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 80971,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 30.mp3",
+    "Name": "page 30.mp3",
+    "Size": 143665,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 101660,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 257141,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 174385,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 243975,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 436445,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 301654,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/page end.mp3",
+    "Name": "page end.mp3",
+    "Size": 501020,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2712493,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4221072,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3163946,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4474995,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 5275393,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6013947,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 6411203,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4786396,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3932411,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 3512774,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4518185,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 2693740,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 7806724,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6828477,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 7824010,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 8223282,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2714619,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 3349775,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 5771709,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 7534503,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 5340930,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 6586465,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 1076900,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 1497025,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 4178368,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5153990,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5662081,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 2218765,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 3251652,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7672024,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8419124,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1720614,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 4362327,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 7967777,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 9606095,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 3655427,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 7802614,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 15.png",
+    "Name": "screenshot 15.png",
+    "Size": 6711097,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 16.png",
+    "Name": "screenshot 16.png",
+    "Size": 3516997,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2340446,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 5915161,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3304909,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 9770137,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 4404356,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 5168248,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 6713619,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 4760627,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 26043,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/description.txt",
+    "Name": "description.txt",
+    "Size": 346,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 149901,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 105219,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 126311,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 109849,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 57025,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 168486,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 121984,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 162594,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 141039,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 95816,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 94356,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6260789,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6085424,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6943680,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5924721,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6330302,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 7496337,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 6457008,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6951059,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6534012,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4154939,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6750228,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 7260191,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 2964229,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6640549,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2691477,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4650525,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 2119176,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 8271271,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5276140,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 6215812,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5390340,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 5859228,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5751587,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 2195730,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 3978787,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 3470041,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 2169690,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 2638263,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 5237136,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 4070301,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 4071665,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 4583437,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 4661935,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 5388583,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Couch Potato/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 4978088,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 21707,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/description.txt",
+    "Name": "description.txt",
+    "Size": 254,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 152269,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 374624,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 259267,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 329484,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 394686,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 273478,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 357906,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 334082,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 129700,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 463649,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 301062,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 250908,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 116743,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 321125,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 286853,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 305661,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 291450,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 284345,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 210784,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 243803,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 29.mp3",
+    "Name": "page 29.mp3",
+    "Size": 216635,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 173585,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 30.mp3",
+    "Name": "page 30.mp3",
+    "Size": 33569,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 272223,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 341186,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 302316,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 222486,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 255923,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 350799,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3401011,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4933293,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 4705864,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3699496,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3762739,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4188980,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 3062884,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6941914,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6768145,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6353030,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5859471,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3861217,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5077888,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5387779,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 3447719,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 2904109,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 5346023,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 4721575,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 4835681,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 5420885,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 2929015,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 3257509,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 3265348,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 2850899,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 1085905,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3745229,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 3523946,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5283907,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5578894,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3805294,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3433118,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1868071,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 6618700,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 6470126,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 3801846,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 5622181,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 6026414,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 15.png",
+    "Name": "screenshot 15.png",
+    "Size": 3429034,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 16.png",
+    "Name": "screenshot 16.png",
+    "Size": 2130178,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 4213949,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 4108762,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 5302941,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 4147507,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 5303068,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 4246088,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 4145603,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 7611605,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 31975,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/description.txt",
+    "Name": "description.txt",
+    "Size": 255,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 29338,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 396750,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 272616,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 1158481,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 277005,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 576682,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 28737,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 649407,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 554739,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 445652,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 344088,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 235627,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 110239,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 30.mp3",
+    "Name": "page 30.mp3",
+    "Size": 191114,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 32.mp3",
+    "Name": "page 32.mp3",
+    "Size": 245031,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 34.mp3",
+    "Name": "page 34.mp3",
+    "Size": 308979,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 36.mp3",
+    "Name": "page 36.mp3",
+    "Size": 262585,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 38.mp3",
+    "Name": "page 38.mp3",
+    "Size": 399258,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 40.mp3",
+    "Name": "page 40.mp3",
+    "Size": 98954,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 42.mp3",
+    "Name": "page 42.mp3",
+    "Size": 397377,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 44.mp3",
+    "Name": "page 44.mp3",
+    "Size": 398004,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 46.mp3",
+    "Name": "page 46.mp3",
+    "Size": 391108,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 48.mp3",
+    "Name": "page 48.mp3",
+    "Size": 161648,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 718370,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 50.mp3",
+    "Name": "page 50.mp3",
+    "Size": 119016,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 52.mp3",
+    "Name": "page 52.mp3",
+    "Size": 174814,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 54.mp3",
+    "Name": "page 54.mp3",
+    "Size": 224342,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 56.mp3",
+    "Name": "page 56.mp3",
+    "Size": 241896,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 58.mp3",
+    "Name": "page 58.mp3",
+    "Size": 465714,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 628091,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 60.mp3",
+    "Name": "page 60.mp3",
+    "Size": 273243,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 62.mp3",
+    "Name": "page 62.mp3",
+    "Size": 305217,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 64.mp3",
+    "Name": "page 64.mp3",
+    "Size": 603640,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 66.mp3",
+    "Name": "page 66.mp3",
+    "Size": 322772,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 68.mp3",
+    "Name": "page 68.mp3",
+    "Size": 360388,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 85162,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 70.mp3",
+    "Name": "page 70.mp3",
+    "Size": 268228,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 72.mp3",
+    "Name": "page 72.mp3",
+    "Size": 161021,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 74.mp3",
+    "Name": "page 74.mp3",
+    "Size": 659438,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 76.mp3",
+    "Name": "page 76.mp3",
+    "Size": 680754,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 78.mp3",
+    "Name": "page 78.mp3",
+    "Size": 117136,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 431232,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 80.mp3",
+    "Name": "page 80.mp3",
+    "Size": 154125,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 82.mp3",
+    "Name": "page 82.mp3",
+    "Size": 117763,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 84.mp3",
+    "Name": "page 84.mp3",
+    "Size": 304590,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 86.mp3",
+    "Name": "page 86.mp3",
+    "Size": 246285,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 87.mp3",
+    "Name": "page 87.mp3",
+    "Size": 145975,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 88.mp3",
+    "Name": "page 88.mp3",
+    "Size": 85162,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 52561,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 835974,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 776328,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3713402,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 629971,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3867128,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 2122990,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 5358052,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 582561,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 4685336,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 1262378,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4480228,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 1471432,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 1459466,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6598657,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 1176605,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 9234929,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 995723,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 4599151,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 642376,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 5633977,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 564591,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 4565822,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 853329,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 529957,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 6420992,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-32.png",
+    "Name": "crop-32.png",
+    "Size": 2067890,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-33.png",
+    "Name": "crop-33.png",
+    "Size": 1802732,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-34.png",
+    "Name": "crop-34.png",
+    "Size": 645940,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-35.png",
+    "Name": "crop-35.png",
+    "Size": 7328881,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-36.png",
+    "Name": "crop-36.png",
+    "Size": 650887,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-37.png",
+    "Name": "crop-37.png",
+    "Size": 4693841,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-38.png",
+    "Name": "crop-38.png",
+    "Size": 827061,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-39.png",
+    "Name": "crop-39.png",
+    "Size": 5484112,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 4074228,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-40.png",
+    "Name": "crop-40.png",
+    "Size": 183522,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-41.png",
+    "Name": "crop-41.png",
+    "Size": 3063123,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-42.png",
+    "Name": "crop-42.png",
+    "Size": 922549,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-43.png",
+    "Name": "crop-43.png",
+    "Size": 6106184,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-44.png",
+    "Name": "crop-44.png",
+    "Size": 987323,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-45.png",
+    "Name": "crop-45.png",
+    "Size": 3670779,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-46.png",
+    "Name": "crop-46.png",
+    "Size": 967343,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-47.png",
+    "Name": "crop-47.png",
+    "Size": 7269359,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-48.png",
+    "Name": "crop-48.png",
+    "Size": 411030,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-49.png",
+    "Name": "crop-49.png",
+    "Size": 6531100,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 3178443,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-50.png",
+    "Name": "crop-50.png",
+    "Size": 280266,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-51.png",
+    "Name": "crop-51.png",
+    "Size": 5578011,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-52.png",
+    "Name": "crop-52.png",
+    "Size": 362151,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-53.png",
+    "Name": "crop-53.png",
+    "Size": 4741388,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-54.png",
+    "Name": "crop-54.png",
+    "Size": 519212,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-55.png",
+    "Name": "crop-55.png",
+    "Size": 5383530,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-56.png",
+    "Name": "crop-56.png",
+    "Size": 497724,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-57.png",
+    "Name": "crop-57.png",
+    "Size": 5502809,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-58.png",
+    "Name": "crop-58.png",
+    "Size": 1006612,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-59.png",
+    "Name": "crop-59.png",
+    "Size": 5569951,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 2673821,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-60.png",
+    "Name": "crop-60.png",
+    "Size": 632762,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-61.png",
+    "Name": "crop-61.png",
+    "Size": 4570307,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-62.png",
+    "Name": "crop-62.png",
+    "Size": 763019,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-63.png",
+    "Name": "crop-63.png",
+    "Size": 7016638,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-64.png",
+    "Name": "crop-64.png",
+    "Size": 1335300,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-65.png",
+    "Name": "crop-65.png",
+    "Size": 4519680,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-66.png",
+    "Name": "crop-66.png",
+    "Size": 747320,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-67.png",
+    "Name": "crop-67.png",
+    "Size": 5250293,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-68.png",
+    "Name": "crop-68.png",
+    "Size": 800364,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-69.png",
+    "Name": "crop-69.png",
+    "Size": 5661632,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 3747009,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-70.png",
+    "Name": "crop-70.png",
+    "Size": 672370,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-71.png",
+    "Name": "crop-71.png",
+    "Size": 3852788,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-72.png",
+    "Name": "crop-72.png",
+    "Size": 377346,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-73.png",
+    "Name": "crop-73.png",
+    "Size": 4465771,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-74.png",
+    "Name": "crop-74.png",
+    "Size": 1370380,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-75.png",
+    "Name": "crop-75.png",
+    "Size": 7656376,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-76.png",
+    "Name": "crop-76.png",
+    "Size": 1640795,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-77.png",
+    "Name": "crop-77.png",
+    "Size": 4150918,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-78.png",
+    "Name": "crop-78.png",
+    "Size": 269580,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-79.png",
+    "Name": "crop-79.png",
+    "Size": 3684244,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 801191,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-80.png",
+    "Name": "crop-80.png",
+    "Size": 350906,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-81.png",
+    "Name": "crop-81.png",
+    "Size": 7573159,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-82.png",
+    "Name": "crop-82.png",
+    "Size": 308017,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-83.png",
+    "Name": "crop-83.png",
+    "Size": 6627638,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-84.png",
+    "Name": "crop-84.png",
+    "Size": 1509732,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-85.png",
+    "Name": "crop-85.png",
+    "Size": 5494298,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-86.png",
+    "Name": "crop-86.png",
+    "Size": 2983488,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-87.png",
+    "Name": "crop-87.png",
+    "Size": 2545688,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-88.png",
+    "Name": "crop-88.png",
+    "Size": 2785257,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5936869,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 517166,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 2999339,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 4235325,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 6117354,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 2972070,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 3456231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 15.png",
+    "Name": "screenshot 15.png",
+    "Size": 2659371,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 16.png",
+    "Name": "screenshot 16.png",
+    "Size": 3804337,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 17.png",
+    "Name": "screenshot 17.png",
+    "Size": 1965390,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 18.png",
+    "Name": "screenshot 18.png",
+    "Size": 4535233,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 19.png",
+    "Name": "screenshot 19.png",
+    "Size": 2786359,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 1330667,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 20.png",
+    "Name": "screenshot 20.png",
+    "Size": 3505828,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 21.png",
+    "Name": "screenshot 21.png",
+    "Size": 1825489,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 22.png",
+    "Name": "screenshot 22.png",
+    "Size": 4003030,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 23.png",
+    "Name": "screenshot 23.png",
+    "Size": 2459791,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 24.png",
+    "Name": "screenshot 24.png",
+    "Size": 4777770,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 25.png",
+    "Name": "screenshot 25.png",
+    "Size": 3881040,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 26.png",
+    "Name": "screenshot 26.png",
+    "Size": 3206380,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 27.png",
+    "Name": "screenshot 27.png",
+    "Size": 2735934,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 28.png",
+    "Name": "screenshot 28.png",
+    "Size": 3200651,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 29.png",
+    "Name": "screenshot 29.png",
+    "Size": 3268355,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 3662146,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 30.png",
+    "Name": "screenshot 30.png",
+    "Size": 3699394,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 31.png",
+    "Name": "screenshot 31.png",
+    "Size": 2844723,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 32.png",
+    "Name": "screenshot 32.png",
+    "Size": 4387230,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 33.png",
+    "Name": "screenshot 33.png",
+    "Size": 3063384,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 34.png",
+    "Name": "screenshot 34.png",
+    "Size": 3246186,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 35.png",
+    "Name": "screenshot 35.png",
+    "Size": 3459225,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 36.png",
+    "Name": "screenshot 36.png",
+    "Size": 2591970,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 37.png",
+    "Name": "screenshot 37.png",
+    "Size": 2477172,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 38.png",
+    "Name": "screenshot 38.png",
+    "Size": 5161159,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 39.png",
+    "Name": "screenshot 39.png",
+    "Size": 3028766,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 3383824,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 40.png",
+    "Name": "screenshot 40.png",
+    "Size": 2033699,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 41.png",
+    "Name": "screenshot 41.png",
+    "Size": 4299152,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 42.png",
+    "Name": "screenshot 42.png",
+    "Size": 4011420,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 43.png",
+    "Name": "screenshot 43.png",
+    "Size": 3704277,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 44.png",
+    "Name": "screenshot 44.png",
+    "Size": 2930833,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 45.png",
+    "Name": "screenshot 45.png",
+    "Size": 1554708,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 3647728,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2232171,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 2367660,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 4078783,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Little Toot on the Thames/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 2819186,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 29159,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/description.txt",
+    "Name": "description.txt",
+    "Size": 330,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 439251,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 221913,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 249079,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 225674,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 414592,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 271650,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 451372,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 174265,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 94435,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 244482,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 159636,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 471852,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 104048,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 153785,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 262037,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 29.mp3",
+    "Name": "page 29.mp3",
+    "Size": 187221,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 94435,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 30.mp3",
+    "Name": "page 30.mp3",
+    "Size": 394112,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 31.mp3",
+    "Name": "page 31.mp3",
+    "Size": 178863,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 32.mp3",
+    "Name": "page 32.mp3",
+    "Size": 218150,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 181789,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 247408,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 343956,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 8074948,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4263760,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 1166540,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 8925043,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 8353025,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 7823767,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 2723309,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 3273182,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3532394,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7105162,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 2470839,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5475794,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 8523641,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 8363387,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 4010033,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 6253798,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 3043744,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 4854148,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 3358212,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 3900473,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 6251755,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 4650556,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 4978225,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 2330018,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 3819480,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-32.png",
+    "Name": "crop-32.png",
+    "Size": 9047571,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-33.png",
+    "Name": "crop-33.png",
+    "Size": 9375809,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-34.png",
+    "Name": "crop-34.png",
+    "Size": 4107760,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-35.png",
+    "Name": "crop-35.png",
+    "Size": 3771010,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-36.png",
+    "Name": "crop-36.png",
+    "Size": 2571805,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-37.png",
+    "Name": "crop-37.png",
+    "Size": 1827759,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-38.png",
+    "Name": "crop-38.png",
+    "Size": 5475044,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 2153285,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 2729358,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 8624294,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 9175402,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 2871454,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 9244610,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 4258146,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 5202407,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 8630830,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 5047059,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 4077178,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 14.png",
+    "Name": "screenshot 14.png",
+    "Size": 3719774,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 15.png",
+    "Name": "screenshot 15.png",
+    "Size": 5712132,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 16.png",
+    "Name": "screenshot 16.png",
+    "Size": 3215333,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 17.png",
+    "Name": "screenshot 17.png",
+    "Size": 9639015,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 18.png",
+    "Name": "screenshot 18.png",
+    "Size": 3729917,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 19.png",
+    "Name": "screenshot 19.png",
+    "Size": 2236009,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 5164403,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 20.png",
+    "Name": "screenshot 20.png",
+    "Size": 2884864,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 2542385,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 8968274,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 6370915,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 2944445,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 8872471,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 5289726,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 3421434,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 38578,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/description.txt",
+    "Name": "description.txt",
+    "Size": 321,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 240103,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 495317,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 397269,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 421785,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 448435,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 411517,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 461805,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 416223,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 404337,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 451595,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 471129,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 454954,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 441145,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 406823,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 495533,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 476404,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 474714,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 440586,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 444471,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 418026,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 466008,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 427070,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 456491,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 421493,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2980940,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4793512,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 5264390,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5068232,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4810812,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4695293,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 4952300,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4717875,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 4966739,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4463000,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4474580,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5199784,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4973521,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5602510,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 5029830,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 5390595,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 5592740,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 5640307,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5771604,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5274536,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5286351,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5282411,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4790028,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6365923,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 1.png",
+    "Name": "screenshot 1.png",
+    "Size": 1832070,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 10.png",
+    "Name": "screenshot 10.png",
+    "Size": 5224856,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 11.png",
+    "Name": "screenshot 11.png",
+    "Size": 6118501,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 12.png",
+    "Name": "screenshot 12.png",
+    "Size": 5967836,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 13.png",
+    "Name": "screenshot 13.png",
+    "Size": 3308025,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 2.png",
+    "Name": "screenshot 2.png",
+    "Size": 6328918,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 3.png",
+    "Name": "screenshot 3.png",
+    "Size": 6441719,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 4.png",
+    "Name": "screenshot 4.png",
+    "Size": 6139428,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 5.png",
+    "Name": "screenshot 5.png",
+    "Size": 6531265,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 6.png",
+    "Name": "screenshot 6.png",
+    "Size": 5793593,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 7.png",
+    "Name": "screenshot 7.png",
+    "Size": 5786185,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 8.png",
+    "Name": "screenshot 8.png",
+    "Size": 5668948,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "My First Picture Dictionary/screenshot 9.png",
+    "Name": "screenshot 9.png",
+    "Size": 5641665,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 46138,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/description.txt",
+    "Name": "description.txt",
+    "Size": 351,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 65718,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 1.mp3",
+    "Name": "page 1.mp3",
+    "Size": 58609,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 16815,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 88704,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 68642,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 77001,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 21412,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 46908,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 87032,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 104586,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 128828,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 38549,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 48578,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 39803,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 62790,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 101661,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 105840,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 78673,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 61537,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 33951,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 43980,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 110018,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 102913,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 79925,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 84522,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 41473,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 43981,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3060670,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4249807,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 5268665,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3940017,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4621977,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4811222,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 4799786,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6265906,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 4482717,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 3962973,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4052562,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 37366,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5184747,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 3788514,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 4974729,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 5689102,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 4680930,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 3748256,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 3810802,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 4198013,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 7647269,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 5041262,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 4454428,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 3766680,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3730095,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5731502,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3458827,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 4682478,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 1429541,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 3399807,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 3794932,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 4214104,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 13.png",
+    "Name": "screenshot - 13.png",
+    "Size": 3615779,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 14.png",
+    "Name": "screenshot - 14.png",
+    "Size": 3336682,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 15.png",
+    "Name": "screenshot - 15.png",
+    "Size": 3323184,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 2196270,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 3286903,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 3897642,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 3271429,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 3965391,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 3628237,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 4160192,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 4307321,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Angus All Aglow",
+    "Name": "Angus All Aglow",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Angus All Aglow/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Couch Potato",
+    "Name": "Couch Potato",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Couch Potato/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters",
+    "Name": "Lester's Dreadful Sweaters",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Lester's Dreadful Sweaters/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Little Toot on the Thames",
+    "Name": "Little Toot on the Thames",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Little Toot on the Thames/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament",
+    "Name": "Mr. Crum's Potato Predicament",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Mr. Crum's Potato Predicament/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "My First Picture Dictionary",
+    "Name": "My First Picture Dictionary",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "My First Picture Dictionary/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "The Tooth That's on the Loose!",
+    "Name": "The Tooth That's on the Loose!",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "The Tooth That's on the Loose!/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:08:53.249796000-04:00",
+    "IsDir": true
+  }
+]

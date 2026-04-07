@@ -36,25 +36,20 @@ export default function BookCardWithHover({
   return (
     <div
       className={`group cursor-pointer relative ${className}`}
+      style={{ zIndex: 1 }}
+      onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.zIndex = '20'}
+      onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.zIndex = '1'}
       onClick={onClick}
     >
       {/* Book Cover */}
-      <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 relative">
+      <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-200 group-hover:scale-110 relative">
         <img
           src={book.cover}
           alt={book.title}
           className="w-full h-full object-cover"
         />
         
-        {/* Category Badge */}
-        {category && (
-          <div className="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-            {category === 'books' ? 'PDF' : 
-             category === 'videoBooks' ? 'Video' :
-             category === 'voiceCoach' ? 'Voice' : 
-             category === 'readToMe' ? 'Audio' : category}
-          </div>
-        )}
+        {/* Category Badge - Removed per user request */}
 
         {/* Progress Bar */}
         {showProgress && book.pagesRead && book.totalPages && (

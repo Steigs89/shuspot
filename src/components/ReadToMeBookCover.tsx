@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Heart, Play, Star } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 interface PdfBookData {
   id: string;
@@ -24,7 +25,62 @@ interface ReadToMeBookCoverProps {
   onToggleFavorite?: () => void;
 }
 
+interface SupabaseBookData {
+  id: string;
+  title: string;
+  subtitle?: string;
+  author: string;
+  illustrator?: string;
+  thumbnail_url?: string;
+  reading_level?: string;
+  description?: string;
+  metadata?: {
+    pages?: Array<{
+      page_number: number;
+      image_url: string;
+      audio_url?: string;
+    }>;
+    genre?: string;
+  };
+}
+
 export default function ReadToMeBookCover({ onBack, onStartReading, bookId, pdfBook, isFavorited = false, onToggleFavorite }: ReadToMeBookCoverProps) {
+  const [supabaseBook, setSupabaseBook] = useState<SupabaseBookData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBookData = async () => {
+      // Skip fetching if it's a PDF book
+      if (pdfBook) {
+        setLoading(false);
+        return;
+      }
+
+      try {
+        console.log('📚 ReadToMeBookCover - Fetching book data for ID:', bookId);
+        const { data, error } = await supabase
+          .from('books')
+          .select('*')
+          .eq('id', bookId)
+          .single();
+
+        if (error) {
+          console.error('Error fetching book:', error);
+          setLoading(false);
+          return;
+        }
+
+        console.log('✅ ReadToMeBookCover - Book data loaded:', data);
+        setSupabaseBook(data);
+      } catch (err) {
+        console.error('Error loading book:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBookData();
+  }, [bookId, pdfBook]);
 
   // Dynamic book data based on bookId or pdfBook
   const getBookData = (id: string) => {
@@ -160,8 +216,25 @@ export default function ReadToMeBookCover({ onBack, onStartReading, bookId, pdfB
     return books[id as keyof typeof books] || books['read-to-me-dummy'];
   };
 
-  // Use PDF book data if provided, otherwise use dummy data
-  const bookData = pdfBook ? {
+  // Use Supabase book data if available, otherwise PDF book data, otherwise dummy data
+  const bookData = supabaseBook ? {
+    title: supabaseBook.title,
+    subtitle: supabaseBook.subtitle || supabaseBook.reading_level || '',
+    description: supabaseBook.description || 'Enjoy this wonderful story with our Read to Me feature.',
+    cover: supabaseBook.thumbnail_url || supabaseBook.metadata?.pages?.[0]?.image_url || 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&dpr=1',
+    writtenBy: [supabaseBook.author],
+    illustratedBy: supabaseBook.illustrator || 'Various Artists',
+    colorsBy: 'Digital',
+    ageRange: supabaseBook.reading_level || 'All Ages',
+    grLevel: supabaseBook.reading_level || '-',
+    hasQuiz: false,
+    categories: supabaseBook.metadata?.genre ? [supabaseBook.metadata.genre.toUpperCase()] : ['STORY'],
+    spotlightWords: ['reading', 'story', 'adventure'],
+    emoji: '📚',
+    gradientFrom: 'from-purple-500',
+    gradientVia: 'via-pink-600',
+    gradientTo: 'to-blue-500'
+  } : pdfBook ? {
     title: pdfBook.title,
     subtitle: `${pdfBook.genre} • ${pdfBook.gradeLevel}`,
     description: `Enjoy this wonderful ${pdfBook.genre.toLowerCase()} story with our Read to Me feature. The story will be read aloud with beautiful narration and highlighting.`,
@@ -182,6 +255,17 @@ export default function ReadToMeBookCover({ onBack, onStartReading, bookId, pdfB
     gradientVia: 'via-pink-600',
     gradientTo: 'to-blue-500'
   } : getBookData(bookId);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading book...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100">
@@ -205,18 +289,37 @@ export default function ReadToMeBookCover({ onBack, onStartReading, bookId, pdfB
             {/* Main Book Info Card */}
             <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 shadow-xl">
               <div className="flex items-start space-x-6 mb-6">
-                {/* Small Book Cover - Use actual PDF cover or generated cover */}
-                {pdfBook ? (
+                {/* Small Book Cover - Use actual cover image if available */}
+                {(pdfBook || bookData.cover) && !bookData.cover.includes('pexels.com') ? (
                   <div className="w-24 h-32 rounded-lg overflow-hidden flex-shrink-0 relative">
                     <img
-                      src={pdfBook.cover}
-                      alt={pdfBook.title}
+                      src={bookData.cover}
+                      alt={bookData.title}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback to gradient on image load error
+                        e.currentTarget.style.display = 'none';
+                        const parent = e.currentTarget.parentElement;
+                        if (parent) {
+                          parent.innerHTML = `
+                            <div class="w-full h-full bg-gradient-to-br ${bookData.gradientFrom} ${bookData.gradientVia} ${bookData.gradientTo} flex items-center justify-center p-2">
+                              <div class="text-center">
+                                <div class="text-lg mb-1">${bookData.emoji}</div>
+                                <div class="text-white text-xs font-superclarendon-bold leading-tight">
+                                  ${bookData.title.toUpperCase()}
+                                </div>
+                              </div>
+                            </div>
+                          `;
+                        }
+                      }}
                     />
-                    <div className="absolute bottom-1 right-1 bg-purple-500 text-white text-xs px-1 py-0.5 rounded flex items-center space-x-1">
-                      <Play className="w-2 h-2" />
-                      <span>{pdfBook.totalPages}</span>
-                    </div>
+                    {pdfBook && (
+                      <div className="absolute bottom-1 right-1 bg-purple-500 text-white text-xs px-1 py-0.5 rounded flex items-center space-x-1">
+                        <Play className="w-2 h-2" />
+                        <span>{pdfBook.totalPages}</span>
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <div className={`w-24 h-32 bg-gradient-to-br ${bookData.gradientFrom} ${bookData.gradientVia} ${bookData.gradientTo} rounded-lg overflow-hidden flex-shrink-0 relative`}>
@@ -337,20 +440,35 @@ export default function ReadToMeBookCover({ onBack, onStartReading, bookId, pdfB
           <div className="flex flex-col h-full">
             {/* Book Cover - Flex grow to take available space */}
             <div className="relative w-full max-w-lg mx-auto flex-1 flex items-center justify-center">
-              {/* Main Book Cover - Use actual PDF cover or generated cover */}
-              {pdfBook ? (
+              {/* Main Book Cover - Use actual cover image if available */}
+              {(pdfBook || bookData.cover) && !bookData.cover.includes('pexels.com') ? (
                 <div className="w-full h-[480px] rounded-2xl shadow-2xl overflow-hidden relative transform rotate-1 hover:rotate-0 transition-transform duration-300">
                   <img
-                    src={pdfBook.cover}
-                    alt={pdfBook.title}
+                    src={bookData.cover}
+                    alt={bookData.title}
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to gradient on image load error
+                      e.currentTarget.style.display = 'none';
+                      const parent = e.currentTarget.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `
+                          <div class="w-full h-full bg-gradient-to-br ${bookData.gradientFrom} ${bookData.gradientVia} ${bookData.gradientTo} flex flex-col items-center justify-center p-5 text-center">
+                            <div class="bg-yellow-400 text-black px-3 py-1 rounded-full text-base font-bold mb-4">epic!</div>
+                            <h2 class="text-white text-2xl font-superclarendon-bold mb-4 leading-tight px-3">${bookData.title.toUpperCase()}</h2>
+                            <div class="text-6xl mb-4">${bookData.emoji}</div>
+                            <div class="bg-black/60 px-3 py-2 rounded text-white text-base font-bold">"${bookData.subtitle}"</div>
+                          </div>
+                        `;
+                      }
+                    }}
                   />
                   {/* Overlay for Read to Me branding */}
                   <div className="absolute top-4 left-4 bg-purple-500/90 text-white px-3 py-1 rounded-full text-sm font-bold">
                     📖 Read to Me
                   </div>
                   {/* Progress indicator if available */}
-                  {pdfBook.pagesRead && pdfBook.pagesRead > 0 && (
+                  {pdfBook && pdfBook.pagesRead && pdfBook.pagesRead > 0 && (
                     <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {Math.round((pdfBook.pagesRead / pdfBook.totalPages) * 100)}% Complete
                     </div>

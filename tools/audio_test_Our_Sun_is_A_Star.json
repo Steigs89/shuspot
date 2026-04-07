@@ -1,0 +1,126 @@
+{
+  "book_name": "Our Sun is A Star",
+  "total_pages": 22,
+  "audio_mappings": {
+    "page 10.mp3": {
+      "type": "single_page",
+      "page": 10,
+      "pages": [
+        10
+      ],
+      "filename": "page 10.mp3"
+    },
+    "page 13.mp3": {
+      "type": "single_page",
+      "page": 13,
+      "pages": [
+        13
+      ],
+      "filename": "page 13.mp3"
+    },
+    "page 16.mp3": {
+      "type": "single_page",
+      "page": 16,
+      "pages": [
+        16
+      ],
+      "filename": "page 16.mp3"
+    },
+    "page 14.mp3": {
+      "type": "single_page",
+      "page": 14,
+      "pages": [
+        14
+      ],
+      "filename": "page 14.mp3"
+    },
+    "page 9.mp3": {
+      "type": "single_page",
+      "page": 9,
+      "pages": [
+        9
+      ],
+      "filename": "page 9.mp3"
+    },
+    "page 15.mp3": {
+      "type": "single_page",
+      "page": 15,
+      "pages": [
+        15
+      ],
+      "filename": "page 15.mp3"
+    },
+    "page 5.mp3": {
+      "type": "single_page",
+      "page": 5,
+      "pages": [
+        5
+      ],
+      "filename": "page 5.mp3"
+    },
+    "intro title.mp3": {
+      "type": "intro",
+      "pages": [
+        1
+      ],
+      "filename": "intro title.mp3"
+    },
+    "page 19.mp3": {
+      "type": "single_page",
+      "page": 19,
+      "pages": [
+        19
+      ],
+      "filename": "page 19.mp3"
+    },
+    "page 7.mp3": {
+      "type": "single_page",
+      "page": 7,
+      "pages": [
+        7
+      ],
+      "filename": "page 7.mp3"
+    },
+    "page 6.mp3": {
+      "type": "single_page",
+      "page": 6,
+      "pages": [
+        6
+      ],
+      "filename": "page 6.mp3"
+    },
+    "page 2.mp3": {
+      "type": "single_page",
+      "page": 2,
+      "pages": [
+        2
+      ],
+      "filename": "page 2.mp3"
+    },
+    "page 3.mp3": {
+      "type": "single_page",
+      "page": 3,
+      "pages": [
+        3
+      ],
+      "filename": "page 3.mp3"
+    },
+    "page 21.mp3": {
+      "type": "single_page",
+      "page": 21,
+      "pages": [
+        21
+      ],
+      "filename": "page 21.mp3"
+    },
+    "page 20.mp3": {
+      "type": "single_page",
+      "page": 20,
+      "pages": [
+        20
+      ],
+      "filename": "page 20.mp3"
+    }
+  },
+  "coverage_percent": 68.18181818181817
+}

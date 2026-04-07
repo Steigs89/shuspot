@@ -3,10 +3,11 @@ import hippoImg from '../../assets/Hippo.png';
 import foxImg from '../../assets/Fox.png';
 
 interface DifficultySelectionScreenProps {
-  onComplete: (readingLevelSystem: string) => void;
+  onNext: (readingLevelSystem: string) => void;
+  onBack: () => void;
 }
 
-export default function DifficultySelectionScreen({ onComplete }: DifficultySelectionScreenProps) {
+export default function DifficultySelectionScreen({ onNext, onBack }: DifficultySelectionScreenProps) {
   const [selectedDifficulty, setSelectedDifficulty] = useState<string | null>(null);
 
   const difficulties = [
@@ -19,12 +20,22 @@ export default function DifficultySelectionScreen({ onComplete }: DifficultySele
 
   const handleSubmit = () => {
     if (selectedDifficulty) {
-      onComplete(selectedDifficulty);
+      onNext(selectedDifficulty);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4 relative">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="absolute top-8 left-8 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-20"
+      >
+        <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
       {/* Left Character - Hippo */}
       <div className="absolute left-0 bottom-0 hidden lg:block">
         <img 

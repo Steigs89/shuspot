@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Heart, MapPin, Play, Clock, Star, BookOpen } from 'lucide-react';
+import { ArrowLeft, MapPin, Play, Clock, Star, BookOpen } from 'lucide-react';
+import { FavouriteButton } from './FavouriteButton';
 
 interface PdfBookData {
   id: string;
@@ -19,10 +20,10 @@ interface PdfBookOverviewProps {
   pdfBook: PdfBookData;
   onBack: () => void;
   onStartReading: () => void;
+  userId?: string | null;
 }
 
-export default function PdfBookOverview({ pdfBook, onBack, onStartReading }: PdfBookOverviewProps) {
-  const [isFavorited, setIsFavorited] = useState(false);
+export default function PdfBookOverview({ pdfBook, onBack, onStartReading, userId }: PdfBookOverviewProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -65,11 +66,6 @@ export default function PdfBookOverview({ pdfBook, onBack, onStartReading }: Pdf
                 </div>
               </div>
             </div>
-
-            {/* PDF Badge */}
-            <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-              PDF
-            </div>
           </div>
 
           {/* Content Panel */}
@@ -80,16 +76,10 @@ export default function PdfBookOverview({ pdfBook, onBack, onStartReading }: Pdf
                 <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
                 <span className="font-medium">PDF Reader</span>
               </button>
-              <button 
-                onClick={() => setIsFavorited(!isFavorited)}
-                className={`p-2 rounded-full border transition-colors ${
-                  isFavorited 
-                    ? 'bg-red-50 border-red-200 text-red-500' 
-                    : 'bg-gray-50 border-gray-200 text-gray-400 hover:text-red-400'
-                }`}
-              >
-                <Heart className={`w-5 h-5 ${isFavorited ? 'fill-current' : ''}`} />
-              </button>
+              <FavouriteButton 
+                bookId={pdfBook.id}
+                userId={userId}
+              />
               <button className="p-2 rounded-full bg-gray-50 border border-gray-200 text-gray-400 hover:text-gray-600 transition-colors">
                 <MapPin className="w-5 h-5" />
               </button>

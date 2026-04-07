@@ -1,0 +1,7005 @@
+[
+  {
+    "Path": ".DS_Store",
+    "Name": ".DS_Store",
+    "Size": 10244,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.517454529-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 24498,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/description.txt",
+    "Name": "description.txt",
+    "Size": 294,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 130466,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 161242,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 155482,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 166730,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 182587,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 223937,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 234284,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 269245,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 348207,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 318934,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 250558,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 270980,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 226372,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 217681,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 133369,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 176254,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 1177907,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6467520,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6203920,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5913277,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6563977,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 7138219,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7194896,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 1868221,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 941462,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 1159643,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5503152,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 5582984,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6052233,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6144614,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7692395,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7529139,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6997592,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7207449,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 825346,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 814056,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 6696175,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 7884631,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 10459444,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 9623992,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 8259569,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 8032851,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 9222825,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 1758524,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 30326,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/description.txt",
+    "Name": "description.txt",
+    "Size": 258,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 104184,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 97427,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 126266,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 111220,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 118743,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 159494,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 204007,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 232428,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 202126,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 128147,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 151762,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 180392,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 66289,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 129401,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 103069,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 131700,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 80709,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 119788,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 29.mp3",
+    "Name": "page 29.mp3",
+    "Size": 223860,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 130237,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 188333,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 148418,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 41003,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 49780,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 97009,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 243922,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6245098,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 8011849,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 8321727,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 8731671,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 8106750,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 9302968,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 6751173,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 8291804,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 8601290,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 8622677,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 8454344,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 8705415,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 8038153,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 8383937,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 8651349,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 8492174,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 8129471,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 8956398,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 8033545,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 8427046,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 8609484,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 5807569,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 8850008,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 2352910,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 4779606,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 8269589,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 8020429,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 8743224,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7648191,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 8656038,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 9089819,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2815453,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 7405140,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 6866533,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 7363972,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 7351116,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 14.png",
+    "Name": "screenshoot 14.png",
+    "Size": 7301088,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 15.png",
+    "Name": "screenshoot 15.png",
+    "Size": 6159127,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 16.png",
+    "Name": "screenshoot 16.png",
+    "Size": 2602029,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 7747427,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 6562908,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 7345342,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 7560506,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 7260606,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 7238809,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 6437616,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 7096180,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 39871,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/description.txt",
+    "Name": "description.txt",
+    "Size": 303,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 192844,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 539618,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 384859,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 555839,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 483708,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 430333,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 693390,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 22-23.mp3",
+    "Name": "page 22-23.mp3",
+    "Size": 928943,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 387674,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 872108,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 301394,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 7299822,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6360099,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7708388,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4772728,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 5591966,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 5417320,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7250024,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 3658231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 3840919,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5095368,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 7454928,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 4193473,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3562105,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 1514949,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2620318,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 5255339,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 4363669,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5445628,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4996045,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4794085,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4699826,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6112860,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 4375580,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 7152711,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 2960304,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1660377,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 5456136,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 5008375,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 5550312,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 6304132,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 8648369,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 5937253,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 6819093,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Butterflies and Moths/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 4231204,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 40056,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/description.txt",
+    "Name": "description.txt",
+    "Size": 282,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 194802,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 504506,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 516778,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 495524,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 271982,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 348581,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 544083,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 22-23.mp3",
+    "Name": "page 22-23.mp3",
+    "Size": 956354,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 507068,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 402156,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 396797,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 7433337,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 9220023,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3379839,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5765998,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4251151,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4753565,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 6891383,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4430552,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 5095420,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5995765,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6889342,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5321846,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3509383,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 1689219,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2724490,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7656346,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 11278105,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 8291399,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 6005930,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 3960281,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4858798,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6088044,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 4975860,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 7735420,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 3036239,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1727935,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 1728036,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 7569313,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 11443985,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 5180380,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 6515183,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 7826339,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 5815669,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 7278012,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Chickens/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 5170721,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_201.mp3",
+    "Name": "Page_201.mp3",
+    "Size": 42478,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2010.mp3",
+    "Name": "Page_2010.mp3",
+    "Size": 116469,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2011.mp3",
+    "Name": "Page_2011.mp3",
+    "Size": 92561,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2012.mp3",
+    "Name": "Page_2012.mp3",
+    "Size": 300673,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2013.mp3",
+    "Name": "Page_2013.mp3",
+    "Size": 255041,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2014.mp3",
+    "Name": "Page_2014.mp3",
+    "Size": 108121,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2016.mp3",
+    "Name": "Page_2016.mp3",
+    "Size": 158726,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2017.mp3",
+    "Name": "Page_2017.mp3",
+    "Size": 124202,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2018.mp3",
+    "Name": "Page_2018.mp3",
+    "Size": 295819,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2019.mp3",
+    "Name": "Page_2019.mp3",
+    "Size": 254199,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2020.mp3",
+    "Name": "Page_2020.mp3",
+    "Size": 363690,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2021.mp3",
+    "Name": "Page_2021.mp3",
+    "Size": 188700,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2022.mp3",
+    "Name": "Page_2022.mp3",
+    "Size": 61976,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2023.mp3",
+    "Name": "Page_2023.mp3",
+    "Size": 343838,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2024.mp3",
+    "Name": "Page_2024.mp3",
+    "Size": 114972,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2025.mp3",
+    "Name": "Page_2025.mp3",
+    "Size": 337846,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2026.mp3",
+    "Name": "Page_2026.mp3",
+    "Size": 403691,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2027.mp3",
+    "Name": "Page_2027.mp3",
+    "Size": 263480,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2028.mp3",
+    "Name": "Page_2028.mp3",
+    "Size": 512292,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_2029.mp3",
+    "Name": "Page_2029.mp3",
+    "Size": 1192804,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_204.mp3",
+    "Name": "Page_204.mp3",
+    "Size": 144336,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_205.mp3",
+    "Name": "Page_205.mp3",
+    "Size": 124213,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_206.mp3",
+    "Name": "Page_206.mp3",
+    "Size": 482840,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_207.mp3",
+    "Name": "Page_207.mp3",
+    "Size": 390124,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_208.mp3",
+    "Name": "Page_208.mp3",
+    "Size": 229534,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/Page_209.mp3",
+    "Name": "Page_209.mp3",
+    "Size": 109354,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28445,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/description.txt",
+    "Name": "description.txt",
+    "Size": 273,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 7876055,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 7053384,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7446476,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5149337,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6144335,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6976488,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7317477,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 8961776,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 8164881,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 9838812,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 11116496,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 7093892,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 8629225,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 9350206,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 4935783,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 6672702,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 2762812,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 6159231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 6131299,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 3133051,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 8818672,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5021169,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6309307,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 8748685,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8941499,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6723289,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7764194,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 3711103,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 9448040,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 8408006,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 4714609,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 3584097,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 14.png",
+    "Name": "screenshoot 14.png",
+    "Size": 3765961,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 5761476,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 4076362,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 7824363,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 5554314,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4912203,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 5071708,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5823844,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Creepy But Cool Birds/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 7550133,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 49069,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/description.txt",
+    "Name": "description.txt",
+    "Size": 224,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 74238,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 126901,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 108511,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 142993,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 80508,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 92628,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 80508,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 184580,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 88658,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 114153,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 128573,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 1605312,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3422282,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7751180,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 2894049,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7208119,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 3715540,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8195753,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 3874468,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 10173298,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4155323,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 11100675,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 1036085,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3486235,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 8971122,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 4222342,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 1622110,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 1269649,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 1048311,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3461738,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 8029286,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3506657,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8334488,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4009678,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 9196257,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 823098,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 6165770,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 5313514,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 2413932,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 13.png",
+    "Name": "screenshot - 13.png",
+    "Size": 604444,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 858327,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 5109801,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 5231278,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 5901178,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 5123000,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 4381096,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 4925047,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Daily Life/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 6243139,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 28315,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/description.txt",
+    "Name": "description.txt",
+    "Size": 205,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page10.mp3",
+    "Name": "page10.mp3",
+    "Size": 867098,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page11.mp3",
+    "Name": "page11.mp3",
+    "Size": 895130,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page12.mp3",
+    "Name": "page12.mp3",
+    "Size": 756122,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page13.mp3",
+    "Name": "page13.mp3",
+    "Size": 383258,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page14.mp3",
+    "Name": "page14.mp3",
+    "Size": 590234,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page15.mp3",
+    "Name": "page15.mp3",
+    "Size": 620570,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page16.mp3",
+    "Name": "page16.mp3",
+    "Size": 518426,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page17.mp3",
+    "Name": "page17.mp3",
+    "Size": 488090,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page18.mp3",
+    "Name": "page18.mp3",
+    "Size": 1154330,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page19.mp3",
+    "Name": "page19.mp3",
+    "Size": 652058,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page20.mp3",
+    "Name": "page20.mp3",
+    "Size": 588314,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page21.mp3",
+    "Name": "page21.mp3",
+    "Size": 571418,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page22.mp3",
+    "Name": "page22.mp3",
+    "Size": 680858,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page23.mp3",
+    "Name": "page23.mp3",
+    "Size": 846362,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page24.mp3",
+    "Name": "page24.mp3",
+    "Size": 619802,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page25.mp3",
+    "Name": "page25.mp3",
+    "Size": 675866,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page26.mp3",
+    "Name": "page26.mp3",
+    "Size": 604058,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page27.mp3",
+    "Name": "page27.mp3",
+    "Size": 587162,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page28.mp3",
+    "Name": "page28.mp3",
+    "Size": 799514,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page29.mp3",
+    "Name": "page29.mp3",
+    "Size": 779546,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page3.mp3",
+    "Name": "page3.mp3",
+    "Size": 508826,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page31.mp3",
+    "Name": "page31.mp3",
+    "Size": 499994,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page32.mp3",
+    "Name": "page32.mp3",
+    "Size": 785306,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page34.mp3",
+    "Name": "page34.mp3",
+    "Size": 886682,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page35.mp3",
+    "Name": "page35.mp3",
+    "Size": 925466,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page36.mp3",
+    "Name": "page36.mp3",
+    "Size": 743066,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page37.mp3",
+    "Name": "page37.mp3",
+    "Size": 1420298,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page4.mp3",
+    "Name": "page4.mp3",
+    "Size": 639002,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page5.mp3",
+    "Name": "page5.mp3",
+    "Size": 330122,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page6.mp3",
+    "Name": "page6.mp3",
+    "Size": 420506,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page7.mp3",
+    "Name": "page7.mp3",
+    "Size": 740378,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page8.mp3",
+    "Name": "page8.mp3",
+    "Size": 932762,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/page9.mp3",
+    "Name": "page9.mp3",
+    "Size": 777242,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 4280889,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5457994,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 4535517,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3449179,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3925739,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 2488564,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 2900317,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4800247,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 5222592,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5491791,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4129508,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5626759,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5713228,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5055417,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 5016900,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4769077,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 4819726,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 4733044,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 5355648,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 5550406,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 4526725,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 4395184,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 3524724,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 6021180,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 4637803,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-32.png",
+    "Name": "crop-32.png",
+    "Size": 4736898,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-33.png",
+    "Name": "crop-33.png",
+    "Size": 4921696,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-34.png",
+    "Name": "crop-34.png",
+    "Size": 4886156,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-35.png",
+    "Name": "crop-35.png",
+    "Size": 5561427,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-36.png",
+    "Name": "crop-36.png",
+    "Size": 4896617,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-37.png",
+    "Name": "crop-37.png",
+    "Size": 4176992,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-38.png",
+    "Name": "crop-38.png",
+    "Size": 4792363,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 4243630,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5308152,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4523458,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4711730,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3541994,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5050501,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1917317,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 5568616,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 5585188,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 5752800,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 5324444,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 14.png",
+    "Name": "screenshoot 14.png",
+    "Size": 5958170,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 15.png",
+    "Name": "screenshoot 15.png",
+    "Size": 4087642,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 16.png",
+    "Name": "screenshoot 16.png",
+    "Size": 5498520,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 17.png",
+    "Name": "screenshoot 17.png",
+    "Size": 4868779,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 18.png",
+    "Name": "screenshoot 18.png",
+    "Size": 5369490,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 19.png",
+    "Name": "screenshoot 19.png",
+    "Size": 4103363,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 4632552,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 20.png",
+    "Name": "screenshoot 20.png",
+    "Size": 2327057,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 5388547,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 5199248,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 4141156,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4952565,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3950726,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 2373662,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Investigating the Rock Cycle/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 5057653,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 27167,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/description.txt",
+    "Name": "description.txt",
+    "Size": 317,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 143233,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 134323,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 238995,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 282974,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 74370,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 172535,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 86635,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 304896,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 165193,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 807157,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 130462,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 136120,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 321998,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 165188,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 4065426,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 9266393,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 5690579,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 8275963,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6667684,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6344079,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8888703,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 5804783,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 8342511,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7607208,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4472399,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3669497,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5115145,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4007178,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2859830,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 10493108,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7768160,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6259109,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4160115,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5091655,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3654988,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7493490,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2463974,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 6820265,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 4862105,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1692498,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 7919052,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 8012243,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 4843760,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 6335500,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 8584481,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 7814807,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 8616959,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Chicken/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 8031388,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 27494,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/description.txt",
+    "Name": "description.txt",
+    "Size": 313,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 152751,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 162044,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 215936,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 205923,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 133046,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 144537,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 177874,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 72183,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 301981,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 608934,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 184355,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 157102,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 263289,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 393864,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3431020,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 7836868,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 4674845,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4459866,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 8026022,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 3157508,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 6740794,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6999027,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6572219,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7406740,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5386287,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 4126042,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4998785,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 4053027,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2840716,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 8194322,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7823521,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4482349,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5888034,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8173821,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 3235419,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7231014,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2054773,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 7010124,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 4738911,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1655759,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 6921362,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 7143723,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 7671547,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 5653371,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 7269881,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 6976835,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5054640,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Frog/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 6020599,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 30732,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/description.txt",
+    "Name": "description.txt",
+    "Size": 304,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 112501,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 115413,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 358197,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 152400,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 64655,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 166276,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 148883,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 205554,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 197069,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 370531,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 894184,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 118885,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 168597,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 332158,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 200588,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 4125273,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4026613,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 4296782,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5576541,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3613890,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4741222,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8634339,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 8012277,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6291513,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7437629,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5756944,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 4006186,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 6013416,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 3641849,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 3134398,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7950024,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5981436,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 8904071,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 9265902,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5506697,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 5395951,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5418735,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 2371760,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 6956219,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 11.png",
+    "Name": "screenshot - 11.png",
+    "Size": 4936726,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 12.png",
+    "Name": "screenshot - 12.png",
+    "Size": 1765695,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 6493620,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 8795691,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 8710863,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 6093139,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 3988451,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 4257552,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 7143171,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 6869636,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 29204,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/description.txt",
+    "Name": "description.txt",
+    "Size": 309,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 153092,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 84158,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 280933,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 144853,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 174911,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 98685,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 137123,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 82710,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 381481,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 640439,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 196070,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 147971,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 299624,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 242963,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3618557,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 4901557,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 8888857,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 10508616,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 4677224,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4305518,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8929896,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 8171038,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 8120539,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6246864,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 8881236,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3547684,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5689927,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 3960339,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 3050594,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 10258285,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7658218,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4971628,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4651025,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8281205,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7715696,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7942868,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2166547,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 8733965,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 4953695,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1748207,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 7588540,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 7363652,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 7403353,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 8777363,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 7627657,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 8632575,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 7709792,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 9541710,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 29100,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/description.txt",
+    "Name": "description.txt",
+    "Size": 293,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 220247,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 121381,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 168675,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 259064,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 213118,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 164867,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 212852,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 78756,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 135922,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 609671,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 182139,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 218546,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 306130,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 251602,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3535190,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6223889,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 3604680,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4887913,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 9264989,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4254468,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7177450,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 9650307,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 8312505,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7789747,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4105425,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 4139931,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4689612,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5516087,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 3005291,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 8806164,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 8344254,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4785023,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5008130,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 8592138,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4361175,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8575606,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2031938,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 6231026,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 5245523,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1647286,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 6869575,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 7136632,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 7492994,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 7163515,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 5049768,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 7590332,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5988013,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 10160274,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 33115,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/description.txt",
+    "Name": "description.txt",
+    "Size": 283,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 89036,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 153480,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 213684,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 231959,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 122245,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 248311,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 200114,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 128047,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 87350,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 172789,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 98949,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 268038,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 23.mp3",
+    "Name": "page 23.mp3",
+    "Size": 69216,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 164667,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 25.mp3",
+    "Name": "page 25.mp3",
+    "Size": 136661,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 296255,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 171984,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 93915,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 29.mp3",
+    "Name": "page 29.mp3",
+    "Size": 175259,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 30.mp3",
+    "Name": "page 30.mp3",
+    "Size": 206119,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 31.mp3",
+    "Name": "page 31.mp3",
+    "Size": 169722,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 111690,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 206240,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 217097,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 241063,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 151648,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 267874,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6497819,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 7683451,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6800683,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6274892,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6126401,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4757266,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 6856426,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 5770341,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6203042,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6574903,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 7241589,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6581997,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4747823,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6699713,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 6209203,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 5152476,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 5820209,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 6001541,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 4549050,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 5016813,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 6534053,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 6525375,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 5087630,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 5734917,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5802973,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5831885,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5335739,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5320636,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6838010,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3906309,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 3950620,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 8270902,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 7036187,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 6399932,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 6479014,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 14.png",
+    "Name": "screenshoot 14.png",
+    "Size": 5199780,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 15.png",
+    "Name": "screenshoot 15.png",
+    "Size": 6592150,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 16.png",
+    "Name": "screenshoot 16.png",
+    "Size": 3416385,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 6966984,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 6496024,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 6348114,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 6479302,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 8640296,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 7111414,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 6946196,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 6666854,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "A Frog's Life",
+    "Name": "A Frog's Life",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "A Frog's Life/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah",
+    "Name": "Bubbe's Belated Bat Mitzvah",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Bubbe's Belated Bat Mitzvah/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Butterflies and Moths",
+    "Name": "Butterflies and Moths",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Butterflies and Moths/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Chickens",
+    "Name": "Chickens",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Chickens/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Creepy But Cool Birds",
+    "Name": "Creepy But Cool Birds",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Creepy But Cool Birds/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Daily Life",
+    "Name": "Daily Life",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Daily Life/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Investigating the Rock Cycle",
+    "Name": "Investigating the Rock Cycle",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Investigating the Rock Cycle/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Chicken",
+    "Name": "Life Cycle of a Chicken",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Chicken/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Frog",
+    "Name": "Life Cycle of a Frog",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Frog/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish",
+    "Name": "Life Cycle of a Jellyfish",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Jellyfish/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo",
+    "Name": "Life Cycle of a Kangaroo",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Kangaroo/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Ladybug",
+    "Name": "Life Cycle of a Ladybug",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Life Cycle of a Ladybug/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "National Geographic Readers Frogs!",
+    "Name": "National Geographic Readers Frogs!",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "National Geographic Readers Frogs!/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:10:18.015873000-04:00",
+    "IsDir": true
+  }
+]

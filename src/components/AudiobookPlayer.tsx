@@ -1,64 +1,177 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, Heart, X, Volume2, RotateCcw, SkipForward, Play, Pause } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 interface AudiobookPlayerProps {
+  book: {
+    id: string;
+    title: string;
+    author: string;
+    illustrator?: string;
+    cover: string;
+    readingLevel: string;
+    audioFiles?: string[];
+    contentUrl?: string;
+    description?: string;
+    description_chinese?: string;
+    genre1?: string;
+    genre2?: string;
+    genre3?: string;
+    genre_primary?: string;
+    genre_secondary?: string;
+    genre_tertiary?: string;
+    fiction_type?: string;
+    publisher?: string;
+    year?: string;
+    publication_year?: number;
+    isbn?: string;
+    age_range?: string;
+    gr_level?: string;
+    ar_level?: string;
+    lexile_level?: string;
+    ort_level?: string;
+    raz_level?: string;
+  };
   onBack: () => void;
   isFavorited?: boolean;
   onToggleFavorite?: () => void;
   onProgressUpdate?: (bookId: string, pagesRead: number, timeSpent?: number) => void;
 }
 
-export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleFavorite, onProgressUpdate }: AudiobookPlayerProps) {
+export default function AudiobookPlayer({ book, onBack, isFavorited = false, onToggleFavorite, onProgressUpdate }: AudiobookPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(25); // 0:25 as shown in image
-  const [duration, setDuration] = useState(571); // 9:31 total duration
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const [activeTab, setActiveTab] = useState<'MISS NELSON' | 'MORE LIKE THIS'>('MISS NELSON');
   const [hasTrackedCompletion, setHasTrackedCompletion] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [showCarouselArrows, setShowCarouselArrows] = useState(false);
+  const [similarBooks, setSimilarBooks] = useState<any[]>([]);
+  const [isLoadingSimilar, setIsLoadingSimilar] = useState(true);
+  const [volume, setVolume] = useState(1);
+  const [showVolumeSlider, setShowVolumeSlider] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Mock data for Miss Nelson series
-  const missNelsonBooks = [
-    {
-      id: '1',
-      title: 'Miss Nelson is Missing',
-      cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=200&h=300&dpr=1',
-      status: 'available'
-    },
-    {
-      id: '2',
-      title: 'Miss Nelson is Back',
-      cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=200&h=300&dpr=1',
-      status: 'available'
-    },
-    {
-      id: '3',
-      title: 'Miss Nelson Has a Field Day',
-      cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=200&h=300&dpr=1',
-      status: 'now-playing'
-    }
-  ];
+  // Fetch similar audiobooks from Supabase
+  useEffect(() => {
+    const fetchSimilarAudiobooks = async () => {
+      try {
+        setIsLoadingSimilar(true);
+        
+        // Build query to find similar audiobooks
+        let query = supabase
+          .from('books')
+          .select('*')
+          .eq('audiobook', true)
+          .neq('id', book.id)
+          .limit(12);
 
-  const moreLikeThisBooks = [
-    {
-      id: '4',
-      title: 'Frog and Toad Adventures',
-      cover: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=200&h=300&dpr=1'
-    },
-    {
-      id: '5',
-      title: 'Arthur\'s Adventures',
-      cover: 'https://images.pexels.com/photos/1181276/pexels-photo-1181276.jpeg?auto=compress&cs=tinysrgb&w=200&h=300&dpr=1'
-    },
-    {
-      id: '6',
-      title: 'Curious George Stories',
-      cover: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=200&h=300&dpr=1'
-    }
-  ];
+        // Try to match by genre first
+        const primaryGenre = book.genre_primary || book.genre1;
+        if (primaryGenre) {
+          query = query.or(`genre_primary.eq.${primaryGenre},genre1.eq.${primaryGenre},genre_secondary.eq.${primaryGenre},genre2.eq.${primaryGenre}`);
+        }
+
+        const { data, error } = await query;
+
+        if (error) {
+          console.error('Error fetching similar audiobooks:', error);
+          // Fallback: fetch any audiobooks
+          const { data: fallbackData } = await supabase
+            .from('books')
+            .select('*')
+            .eq('audiobook', true)
+            .neq('id', book.id)
+            .limit(12);
+          
+          setSimilarBooks(fallbackData || []);
+        } else {
+          setSimilarBooks(data || []);
+        }
+      } catch (err) {
+        console.error('Error in fetchSimilarAudiobooks:', err);
+        setSimilarBooks([]);
+      } finally {
+        setIsLoadingSimilar(false);
+      }
+    };
+
+    fetchSimilarAudiobooks();
+  }, [book.id, book.genre_primary, book.genre1]);
+
+  // Get audio URL from book data
+  const audioUrl = book.audioFiles?.[0] || book.contentUrl || '';
+
+  // Initialize audio element
+  useEffect(() => {
+    if (!audioUrl) return;
+
+    const audio = new Audio(audioUrl);
+    audioRef.current = audio;
+
+    audio.addEventListener('loadedmetadata', () => {
+      setDuration(Math.floor(audio.duration));
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      setCurrentTime(Math.floor(audio.currentTime));
+    });
+
+    audio.addEventListener('ended', () => {
+      setIsPlaying(false);
+    });
+
+    return () => {
+      audio.pause();
+      audio.src = '';
+    };
+  }, [audioUrl]);
 
   const togglePlay = () => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
     setIsPlaying(!isPlaying);
+  };
+
+  const skipBackward = () => {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - 15);
+  };
+
+  const skipForward = () => {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime = Math.min(duration, audioRef.current.currentTime + 30);
+  };
+
+  const restart = () => {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime = 0;
+    if (!isPlaying) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const handleVolumeChange = (newVolume: number) => {
+    if (!audioRef.current) return;
+    setVolume(newVolume);
+    audioRef.current.volume = newVolume;
+  };
+
+  const toggleMute = () => {
+    if (!audioRef.current) return;
+    if (volume > 0) {
+      audioRef.current.volume = 0;
+      setVolume(0);
+    } else {
+      audioRef.current.volume = 1;
+      setVolume(1);
+    }
   };
 
   // Track progress when audiobook reaches completion
@@ -69,12 +182,12 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
       // Track completion when audiobook reaches 90% or more
       if (progressPercent >= 90) {
         setHasTrackedCompletion(true);
-        onProgressUpdate('miss-nelson-field-day', 1, Math.round(duration / 60)); // 1 "page" for audiobook completion, duration in minutes
-        console.log('Audiobook completion tracked: Miss Nelson Has a Field Day');
+        onProgressUpdate(book.id, 1, Math.round(duration / 60)); // 1 "page" for audiobook completion, duration in minutes
+        console.log('Audiobook completion tracked:', book.title);
         
         // Show completion message
         setTimeout(() => {
-          alert(`🎉 Congratulations! You've listened to "Miss Nelson Has a Field Day"! Great job!`);
+          alert(`🎉 Congratulations! You've listened to "${book.title}"! Great job!`);
         }, 1000);
       }
     }
@@ -89,20 +202,7 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
   const progressPercentage = (currentTime / duration) * 100;
 
   const booksPerPage = 6;
-  const totalBooks = [
-    { title: 'Creepy Carrots!', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'Dragons Love Tacos', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'Fiesta Fiasco', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'Three Wise Cats', cover: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'The Vast Wonder', cover: 'https://images.pexels.com/photos/1181276/pexels-photo-1181276.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'The Bossy Gallito', cover: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'Strega Nona', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'In the Red Canoe', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'Kitten\'s First', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'More Adventures', cover: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'Story Time', cover: 'https://images.pexels.com/photos/1181276/pexels-photo-1181276.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' },
-    { title: 'Fun Tales', cover: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=200&h=280&dpr=1' }
-  ];
+  const totalBooks = similarBooks;
 
   const handleCarouselNext = () => {
     setCarouselIndex(prev => Math.min(prev + booksPerPage, totalBooks.length - booksPerPage));
@@ -134,7 +234,7 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
           </div>
 
           <h1 className="text-xl font-superclarendon-bold text-center flex-1">
-            They All Saw a Cat
+            {book.title}
           </h1>
 
           <button 
@@ -154,12 +254,11 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
             {/* Left - Book Cover */}
             <div className="flex-shrink-0">
               <div className="w-64 h-80 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl shadow-lg overflow-hidden relative">
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                  <div className="text-6xl mb-4">🐱</div>
-                  <div className="text-gray-800 text-lg font-bold text-center leading-tight">
-                    THEY ALL SAW A CAT
-                  </div>
-                </div>
+                <img 
+                  src={book.cover} 
+                  alt={book.title}
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="bg-purple-600 text-white text-sm px-3 py-2 rounded-full font-medium flex items-center justify-center space-x-2">
                     <span>Audiobook</span>
@@ -171,29 +270,101 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
 
             {/* Right - Book Details */}
             <div className="flex-1 text-gray-800">
-              <div className="mb-6">
-                <p className="text-gray-600 text-base mb-2">
-                  <span className="font-medium">By</span> Brendan Wenzel
-                </p>
-                <p className="text-gray-600 text-base">
-                  <span className="font-medium">Narrated by</span> John Lithgow
+              {/* Top Row: Author/Publisher Info and Reading Levels */}
+              <div className="flex justify-between items-start mb-4">
+                {/* Left: Author/Publisher Info */}
+                <div className="flex-1">
+                  <p className="text-gray-600 text-base mb-2">
+                    <span className="font-medium">By</span> {book.author}
+                  </p>
+                  {book.illustrator && (
+                    <p className="text-gray-600 text-sm mb-2">
+                      <span className="font-medium">Illustrated by</span> {book.illustrator}
+                    </p>
+                  )}
+                  {(book.publisher || book.publication_year || book.year) && (
+                    <p className="text-gray-500 text-sm">
+                      {book.publisher}{(book.publication_year || book.year) && ` • ${book.publication_year || book.year}`}
+                    </p>
+                  )}
+                </div>
+
+                {/* Right: Reading Levels */}
+                {(book.gr_level || book.ar_level) && (
+                  <div className="bg-gray-50 rounded-lg px-4 py-2 border border-gray-200 ml-6 min-w-[280px]">
+                    <div className="flex items-center gap-6">
+                      <h4 className="text-sm font-semibold text-gray-700 whitespace-nowrap">Reading Levels</h4>
+                      <div className="flex items-center gap-4 text-sm">
+                        {book.gr_level && (
+                          <div className="flex items-center gap-2">
+                            <span className="text-gray-600">Guided Reading:</span>
+                            <span className="font-semibold text-gray-800">{book.gr_level}</span>
+                          </div>
+                        )}
+                        {book.ar_level && (
+                          <div className="flex items-center gap-2">
+                            <span className="text-gray-600">AR Level:</span>
+                            <span className="font-semibold text-gray-800">{book.ar_level}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Description */}
+              <div className="mb-4">
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {book.description || 'An exciting audiobook adventure awaits! Listen and enjoy this wonderful story.'}
                 </p>
               </div>
 
-              <p className="text-gray-700 text-base leading-relaxed mb-8 max-w-2xl">
-                In this celebration of observation, curiosity, and imagination, we see the many lives of one cat, and how perspective shapes what we see.
-              </p>
+              {/* Genres and Fiction Type */}
+              {(book.genre1 || book.genre2 || book.genre3 || book.genre_primary || book.genre_secondary || book.genre_tertiary || book.fiction_type) && (
+                <div className="mb-4">
+                  <div className="flex flex-wrap gap-2">
+                    {(book.genre_primary || book.genre1) && (
+                      <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                        {book.genre_primary || book.genre1}
+                      </span>
+                    )}
+                    {(book.genre_secondary || book.genre2) && (
+                      <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+                        {book.genre_secondary || book.genre2}
+                      </span>
+                    )}
+                    {(book.genre_tertiary || book.genre3) && (
+                      <span className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium">
+                        {book.genre_tertiary || book.genre3}
+                      </span>
+                    )}
+                    {book.fiction_type && (
+                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                        {book.fiction_type}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )}
 
-              {/* Age and Duration */}
-              <div className="flex space-x-12 mb-8">
-                <div>
-                  <div className="text-3xl font-bold text-gray-800">5 - 6</div>
-                  <div className="text-base text-gray-600">Age Range</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-gray-800">4m</div>
-                  <div className="text-base text-gray-600">Length</div>
-                </div>
+              {/* Grade Level and Duration */}
+              <div className="flex gap-8">
+                {/* Primary Reading Level */}
+                {book.readingLevel && (
+                  <div>
+                    <div className="text-3xl font-bold text-gray-800">{book.readingLevel}</div>
+                    <div className="text-base text-gray-600">Grade Level</div>
+                  </div>
+                )}
+                
+                {/* Duration */}
+                {duration > 0 && (
+                  <div>
+                    <div className="text-3xl font-bold text-gray-800">{Math.floor(duration / 60)}m</div>
+                    <div className="text-base text-gray-600">Length</div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -203,7 +374,7 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
         <div className="max-w-4xl mx-auto mb-12">
           <div className="text-center mb-6">
             <h3 className="font-medium text-gray-800 text-xl">
-              They All Saw a Cat
+              {book.title}
             </h3>
           </div>
           
@@ -225,20 +396,67 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
 
           {/* Audio Controls */}
           <div className="flex items-center justify-center space-x-8">
-            <button className="text-blue-500 hover:text-blue-600 transition-colors">
-              <Volume2 className="w-7 h-7" />
-            </button>
+            {/* Volume Control (Left) */}
+            <div className="relative">
+              <button 
+                onClick={toggleMute}
+                onMouseEnter={() => setShowVolumeSlider(true)}
+                onMouseLeave={() => setShowVolumeSlider(false)}
+                className="text-blue-500 hover:text-blue-600 transition-colors"
+              >
+                <Volume2 className="w-7 h-7" />
+              </button>
+              
+              {/* Volume Slider */}
+              {showVolumeSlider && (
+                <div 
+                  className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-white rounded-lg shadow-xl p-3"
+                  onMouseEnter={() => setShowVolumeSlider(true)}
+                  onMouseLeave={() => setShowVolumeSlider(false)}
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.1"
+                    value={volume}
+                    onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
+                    className="w-24 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    style={{
+                      background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${volume * 100}%, #e5e7eb ${volume * 100}%, #e5e7eb 100%)`
+                    }}
+                  />
+                  <div className="text-center text-xs text-gray-600 mt-1">{Math.round(volume * 100)}%</div>
+                </div>
+              )}
+            </div>
             
-            <button className="text-blue-500 hover:text-blue-600 transition-colors">
+            {/* Restart */}
+            <button 
+              onClick={restart}
+              className="text-blue-500 hover:text-blue-600 transition-colors"
+              title="Restart"
+            >
               <RotateCcw className="w-7 h-7" />
             </button>
 
-            <button className="text-blue-500 hover:text-blue-600 transition-colors">
-              <div className="w-12 h-12 border-2 border-blue-500 rounded-full flex items-center justify-center">
+            {/* Skip Backward 15s */}
+            <button 
+              onClick={skipBackward}
+              className="text-blue-500 hover:text-blue-600 transition-colors"
+              title="Skip backward 15 seconds"
+            >
+              <div className="w-12 h-12 border-2 border-blue-500 rounded-full flex items-center justify-center relative">
                 <span className="text-sm font-bold">15</span>
+                <div className="absolute -left-1 top-1/2 transform -translate-y-1/2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clipRule="evenodd" />
+                  </svg>
+                </div>
               </div>
             </button>
 
+            {/* Play/Pause */}
             <button
               onClick={togglePlay}
               className="w-20 h-20 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors shadow-xl"
@@ -250,19 +468,42 @@ export default function AudiobookPlayer({ onBack, isFavorited = false, onToggleF
               )}
             </button>
 
-            <button className="text-blue-500 hover:text-blue-600 transition-colors">
-              <div className="w-12 h-12 border-2 border-blue-500 rounded-full flex items-center justify-center">
+            {/* Skip Forward 30s */}
+            <button 
+              onClick={skipForward}
+              className="text-blue-500 hover:text-blue-600 transition-colors"
+              title="Skip forward 30 seconds"
+            >
+              <div className="w-12 h-12 border-2 border-blue-500 rounded-full flex items-center justify-center relative">
                 <span className="text-sm font-bold">30</span>
+                <div className="absolute -right-1 top-1/2 transform -translate-y-1/2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
               </div>
             </button>
 
-            <button className="text-blue-500 hover:text-blue-600 transition-colors">
+            {/* Next (placeholder for future multi-chapter support) */}
+            <button 
+              className="text-gray-400 cursor-not-allowed transition-colors"
+              title="Next chapter (coming soon)"
+              disabled
+            >
               <SkipForward className="w-7 h-7" />
             </button>
 
-            <button className="text-blue-500 hover:text-blue-600 transition-colors">
-              <Volume2 className="w-7 h-7" />
-            </button>
+            {/* Volume Control (Right) */}
+            <div className="relative">
+              <button 
+                onClick={toggleMute}
+                onMouseEnter={() => setShowVolumeSlider(true)}
+                onMouseLeave={() => setShowVolumeSlider(false)}
+                className="text-blue-500 hover:text-blue-600 transition-colors"
+              >
+                <Volume2 className="w-7 h-7" />
+              </button>
+            </div>
           </div>
         </div>
 

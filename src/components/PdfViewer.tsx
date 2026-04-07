@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ChevronLeft, ChevronRight, Minus, Plus, RotateCcw, Volume2 } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
 import { useUserStats } from '../contexts/UserStatsContext';
+import { useReadingHistoryTracking } from '../hooks/useReadingHistoryTracking';
+import { supabase } from '../lib/supabase';
 
 // This MUST be before you call pdfjsLib.getDocument()
 // Using version that matches react-pdf
@@ -40,12 +42,33 @@ export default function PdfViewer({ onBack, pdfBook, onProgressUpdate, isFavorit
   const [lastActivityTime, setLastActivityTime] = useState(Date.now());
   const [startTime] = useState(Date.now());
   const [isMobile, setIsMobile] = useState(false);
+  const [userId, setUserId] = useState<string | null>(null);
 
   const leftCanvasRef = useRef<HTMLCanvasElement>(null);
   const rightCanvasRef = useRef<HTMLCanvasElement>(null);
   const leftRenderTaskRef = useRef<any>(null);
   const rightRenderTaskRef = useRef<any>(null);
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Get current user ID
+  useEffect(() => {
+    const getCurrentUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUserId(user?.id || null);
+    };
+    getCurrentUser();
+  }, []);
+
+  // Initialize reading history tracking
+  const { trackPageRead, flushTracking } = useReadingHistoryTracking({
+    bookId: pdfBook.id,
+    bookTitle: pdfBook.title,
+    bookType: 'book',
+    userId: userId || '',
+    readingLevel: undefined,
+    genre: pdfBook.genre,
+    enabled: !!userId
+  });
 
   // Check for mobile screen size
   useEffect(() => {
@@ -130,6 +153,13 @@ export default function PdfViewer({ onBack, pdfBook, onProgressUpdate, isFavorit
       return () => clearTimeout(timeoutId);
     }
   }, [currentPage, pdfBook.id, pdfBook.totalPages]); // Remove onProgressUpdate from dependencies
+
+  // Track page read in reading history
+  useEffect(() => {
+    if (currentPage > 0) {
+      trackPageRead(currentPage);
+    }
+  }, [currentPage, trackPageRead]);
 
   // Navigation starts hidden
   useEffect(() => {

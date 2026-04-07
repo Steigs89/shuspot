@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSubscription } from '../../contexts/SubscriptionContext';
 import tigerImg from '../../assets/Tiger.png';
 import bearImg from '../../assets/Bear.png';
 
 interface PlanSelectionScreenProps {
-  onNext: () => void;
+  onNext: (selectedPlan: string) => void;
+  onBack: () => void;
   userData: { fullName: string; email: string; password: string; avatar?: string };
 }
 
-export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionScreenProps) {
-  const { pricingTiers, signUp, startFreeTrial, createStripeCheckout, isLoading } = useSubscription();
+export default function PlanSelectionScreen({ onNext, onBack, userData }: PlanSelectionScreenProps) {
+  const { pricingTiers, signUp, startFreeTrial } = useSubscription();
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [referralCode, setReferralCode] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
@@ -20,11 +21,17 @@ export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionS
     setIsProcessing(true);
 
     try {
-      console.log('🚀 Starting plan selection process...');
+      console.log('🚀 Creating account and redirecting to Stripe...');
       
-      // First, create the user account with avatar
+      // Create the user account with avatar
       console.log('🎭 Creating user account with avatar:', userData.avatar);
-      const signUpResult = await signUp(userData.email, userData.password, userData.fullName, undefined, userData.avatar);
+      const signUpResult = await signUp(
+        userData.email,
+        userData.password,
+        userData.fullName,
+        undefined,
+        userData.avatar
+      );
       
       if (!signUpResult.success) {
         alert(signUpResult.error || 'Failed to create account');
@@ -32,45 +39,42 @@ export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionS
         return;
       }
 
-      console.log('✅ User account created, waiting for auth session...');
+      console.log('✅ User account created');
       
-      // Wait a moment for the auth session to be established
+      // Wait for auth session to be established
       await new Promise(resolve => setTimeout(resolve, 1000));
 
-      // Find the selected pricing tier
-      const selectedTier = pricingTiers.find(tier => tier.id === selectedPlan);
-      if (!selectedTier) {
-        alert('Invalid plan selected');
-        setIsProcessing(false);
-        return;
-      }
-
+      // Start free trial
       console.log('🎯 Starting free trial for plan:', selectedPlan);
-      
-      // Start free trial first
       const trialResult = await startFreeTrial(selectedPlan);
       
       if (trialResult.success) {
-        console.log('✅ Trial started successfully, proceeding to next step');
-        // Trial started successfully, proceed to next step
-        onNext();
+        console.log('✅ Trial started successfully');
       } else {
-        console.log('❌ Trial failed:', trialResult.error);
-        // For now, skip Stripe and just proceed with the signup
-        // The user can still use the app without a subscription
-        console.log('⚠️ Skipping Stripe checkout, proceeding with free access');
-        onNext();
+        console.log('⚠️ Trial setup pending');
       }
+      
+      // Redirect to Stripe payment link
+      onNext(selectedPlan);
     } catch (error) {
       console.error('Error during signup process:', error);
       alert('An error occurred during signup. Please try again.');
-    } finally {
       setIsProcessing(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4 relative">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="absolute top-8 left-8 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-20"
+      >
+        <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
       {/* Left Character - Tiger */}
       <div className="absolute left-0 bottom-0 hidden lg:block">
         <img 
@@ -171,7 +175,7 @@ export default function PlanSelectionScreen({ onNext, userData }: PlanSelectionS
           {isProcessing ? (
             <div className="flex items-center justify-center space-x-2">
               <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-              <span>Starting Free Trial...</span>
+              <span>Creating Account...</span>
             </div>
           ) : (
             'Start 7-Day Free Trial'

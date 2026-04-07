@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, Play, Pause, Volume2, VolumeX, Maximize, Heart, X, RotateCcw, SkipForward, Sparkles, Star } from 'lucide-react';
+import { useReadingProgress } from '../hooks/useReadingProgress';
 
 interface VideoBookPlayerProps {
   onBack: () => void;
@@ -26,10 +27,19 @@ interface WatchNextVideo {
 }
 
 export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFavorited = false, onToggleFavorite, onProgressUpdate }: VideoBookPlayerProps) {
+  const videoDuration = uploadedVideo ? uploadedVideo.duration : 245;
+  
+  // Initialize reading progress tracking (using seconds as "pages" for video)
+  const { progress: readingProgress, updateProgress, markComplete } = useReadingProgress({
+    bookId: uploadedVideo?.id || 'default-video',
+    bookType: 'video',
+    totalDuration: videoDuration
+  });
+  
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(uploadedVideo ? uploadedVideo.duration : 245);
+  const [currentTime, setCurrentTime] = useState(readingProgress?.currentPage || 0);
+  const [duration, setDuration] = useState(videoDuration);
   const [hasTrackedCompletion, setHasTrackedCompletion] = useState(false);
   const [showRewardStars, setShowRewardStars] = useState(false);
   const [showMascot, setShowMascot] = useState(false);
@@ -251,12 +261,21 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
                       const newTime = e.currentTarget.currentTime;
                       setCurrentTime(newTime);
                       
+                      // Update reading progress (using seconds as progress)
+                      updateProgress(Math.floor(newTime)).catch(console.error);
+                      
                       // Track completion when video reaches 90% or more
-                      if (!hasTrackedCompletion && uploadedVideo && onProgressUpdate) {
+                      if (!hasTrackedCompletion && uploadedVideo) {
                         const progressPercent = (newTime / duration) * 100;
                         if (progressPercent >= 90) {
                           setHasTrackedCompletion(true);
-                          onProgressUpdate(uploadedVideo.id, 1, Math.round(duration / 60));
+                          
+                          // Mark complete in reading progress system
+                          markComplete().catch(console.error);
+                          
+                          if (onProgressUpdate) {
+                            onProgressUpdate(uploadedVideo.id, 1, Math.round(duration / 60));
+                          }
                           console.log('Video completion tracked:', uploadedVideo.title);
                           
                           // Show reward stars animation
@@ -275,9 +294,15 @@ export default function VideoBookPlayer({ onBack, bookTitle, uploadedVideo, isFa
                       setIsPlaying(false);
                       
                       // Track completion when video ends (if not already tracked)
-                      if (!hasTrackedCompletion && uploadedVideo && onProgressUpdate) {
+                      if (!hasTrackedCompletion && uploadedVideo) {
                         setHasTrackedCompletion(true);
-                        onProgressUpdate(uploadedVideo.id, 1, Math.round(duration / 60));
+                        
+                        // Mark complete in reading progress system
+                        markComplete().catch(console.error);
+                        
+                        if (onProgressUpdate) {
+                          onProgressUpdate(uploadedVideo.id, 1, Math.round(duration / 60));
+                        }
                         console.log('Video completion tracked on end:', uploadedVideo.title);
                         
                         // Show reward stars animation

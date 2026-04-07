@@ -1,5 +1,6 @@
 /* Import other styles */
 @import './styles/progressStyles.css';
+@import './styles/compiled-live.css';
 
 @tailwind base;
 @tailwind components;

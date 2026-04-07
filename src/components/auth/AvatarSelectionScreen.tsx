@@ -4,9 +4,10 @@ import pandaImg from '../../assets/Panda.png';
 
 interface AvatarSelectionScreenProps {
   onNext: (selectedAvatar: string) => void;
+  onBack: () => void;
 }
 
-export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenProps) {
+export default function AvatarSelectionScreen({ onNext, onBack }: AvatarSelectionScreenProps) {
   const [selectedAvatar, setSelectedAvatar] = useState<number | null>(null);
 
   const avatars = [
@@ -26,6 +27,16 @@ export default function AvatarSelectionScreen({ onNext }: AvatarSelectionScreenP
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-200 via-cyan-200 to-teal-200 flex items-center justify-center p-4 overflow-hidden relative">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="absolute top-8 left-8 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-20"
+      >
+        <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
       {/* Left Character - Giraffe */}
       <div className="absolute left-0 bottom-0 hidden lg:block pointer-events-none">
         <img 

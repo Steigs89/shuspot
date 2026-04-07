@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { ArrowLeft, BookOpen, Clock, Trophy, Star, Calendar, User, Heart, Settings, LogOut, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowLeft, BookOpen, Heart, Settings, LogOut, Shield } from 'lucide-react';
 import { useUserStats } from '../contexts/UserStatsContext';
+import { useReadingHistory } from '../hooks/useReadingHistory';
+import { TimePeriod } from '../api/readingHistory';
 import { supabase } from '../lib/supabase';
+import { ParentalControlsSettings } from './library/ParentalControlsSettings';
 import cuteAnimalsGroup from '../assets/cute-animals-group.png';
-import adorableCartoonDog from '../assets/adorable-cartoon-dog-face.png';
 import cuteAnimalsCircleBadge from '../assets/cartoon-safari-cartoon-group-of-animals-fzghABMD_t-removebg-preview.png';
 import adorableBabyAnimals from '../assets/adorable-baby-animals-cartoon-style_1308-179165-removebg-preview.png';
 
@@ -30,36 +32,42 @@ interface ProgressData {
   };
 }
 
-interface ActivityItem {
-  id: string;
-  title: string;
-  type: string;
-  metric: string;
-  value: string;
-  date: string;
-  progress: number;
-  isHighlighted?: boolean;
-}
-
-interface CourseItem {
-  id: string;
-  name: string;
-  metric1: string;
-  value1: string;
-  metric2: string;
-  value2: string;
-  completion: string;
-}
-
 export default function UserPortal({ onBack, onLogout, favorites, onOpenBook, currentUser, onAvatarChange }: UserPortalProps) {
-  const { userStats, getProgressBySection } = useUserStats();
-  const [currentView, setCurrentView] = useState<'progress' | 'activity' | 'favourites' | 'account'>('progress');
+  const { getProgressBySection } = useUserStats();
+  
+  // State declarations - must come before hooks that use them
+  const [currentView, setCurrentView] = useState<'progress' | 'history' | 'favourites' | 'account'>('progress');
   const [progressTab, setProgressTab] = useState<'weekly' | 'monthly'>('weekly');
-  const [activityTab, setActivityTab] = useState<'library' | 'school'>('library');
-  const [currentWeek, setCurrentWeek] = useState('15-21, Apr');
   const [selectedSection, setSelectedSection] = useState<string>('All');
+  const [historyPeriod, setHistoryPeriod] = useState<TimePeriod>('weekly');
+  const [historyDate, setHistoryDate] = useState<Date>(new Date());
   const [showAvatarSelector, setShowAvatarSelector] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState<string | null>(null);
+  const [showParentalControls, setShowParentalControls] = useState(false);
+
+  // Reading history for History table view
+  const {
+    history: historyTableData,
+    stats: historyTableStats,
+    loading: historyTableLoading,
+    setTimePeriod: setHistoryTablePeriod,
+    setCurrentDate: setHistoryTableDate
+  } = useReadingHistory({
+    userId: currentUser?.id || null,
+    timePeriod: historyPeriod,
+    currentDate: historyDate,
+    autoFetch: true
+  });
+
+  // Update history table period when historyPeriod changes
+  useEffect(() => {
+    setHistoryTablePeriod(historyPeriod);
+  }, [historyPeriod, setHistoryTablePeriod]);
+
+  // Update history table date when historyDate changes
+  useEffect(() => {
+    setHistoryTableDate(historyDate);
+  }, [historyDate, setHistoryTableDate]);
 
   // Avatar options
   const avatarOptions = [
@@ -125,62 +133,19 @@ export default function UserPortal({ onBack, onLogout, favorites, onOpenBook, cu
   // Available sections for progress tracking
   const availableSections = ['All', 'Voice Coach', 'Books', 'Video Books', 'Read to Me', 'Audiobooks'];
 
-  // Get current stats based on selected tab and section
-  const currentStats = getProgressBySection(selectedSection, progressTab);
-  
-  // Debug logging to see what data we're getting
-  console.log('🔍 UserPortal Debug:');
-  console.log('📊 Selected Section:', selectedSection);
-  console.log('📅 Progress Tab:', progressTab);
-  console.log('📈 Current Stats:', currentStats);
-  console.log('📚 User Stats:', userStats);
+  const renderProgressView = () => {
+    // Get current stats based on selected tab and section
+    const currentStats = getProgressBySection(selectedSection, progressTab);
+    
+    const progressData: ProgressData = {
+      library: {
+        completedBooks: currentStats.booksCompleted,
+        hoursSpent: formatTime(currentStats.timeSpent),
+        pagesRead: currentStats.pagesRead
+      }
+    };
 
-  const progressData: ProgressData = {
-    library: {
-      completedBooks: currentStats.booksCompleted,
-      hoursSpent: formatTime(currentStats.timeSpent),
-      pagesRead: currentStats.pagesRead
-    }
-  };
-
-  // Convert reading sessions to activity data
-  const activityData: ActivityItem[] = userStats.readingSessions
-    .slice(-10) // Show last 10 activities
-    .map((session, index) => ({
-      id: session.bookId + index,
-      title: session.bookTitle,
-      type: session.bookType === 'pdf' ? 'Books' : 
-            session.bookType === 'audiobook' ? 'Audiobooks' :
-            session.bookType === 'video' ? 'Video Book' :
-            session.bookType === 'readToMe' ? 'Read to Me' :
-            session.bookType === 'voiceCoach' ? 'Voice Coach' : 'Books',
-      metric: session.bookType === 'video' ? 'Watch time' : 'Pages read',
-      value: session.bookType === 'video' ? formatTime(session.timeSpent) : session.pagesRead.toString(),
-      date: new Date(session.completedAt).toLocaleDateString('en-US', { 
-        month: 'short', 
-        day: 'numeric', 
-        year: 'numeric' 
-      }),
-      progress: session.totalPages > 0 ? Math.round((session.pagesRead / session.totalPages) * 100) : 0,
-      isHighlighted: session.isCompleted
-    }))
-    .reverse(); // Show most recent first
-
-  // Convert quiz results to course data
-  const courseData: CourseItem[] = userStats.quizResults
-    .slice(-5) // Show last 5 quiz results
-    .map((quiz, index) => ({
-      id: quiz.bookId + index,
-      name: quiz.bookTitle.length > 15 ? quiz.bookTitle.substring(0, 15) + '...' : quiz.bookTitle,
-      metric1: 'Quiz Results',
-      value1: `${quiz.score}/${quiz.totalQuestions} Correct`,
-      metric2: 'Time Spent',
-      value2: formatTime(quiz.timeSpent),
-      completion: quiz.passed ? 'Yes' : 'No'
-    }))
-    .reverse(); // Show most recent first
-
-  const renderProgressView = () => (
+    return (
     <div className="space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
@@ -306,130 +271,367 @@ export default function UserPortal({ onBack, onLogout, favorites, onOpenBook, cu
       </div>
     </div>
   );
+  };
 
-  const renderActivityView = () => (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gray-700">Activity</h1>
-        <div className="flex items-center space-x-4">
-          <button
-            onClick={() => setActivityTab('library')}
-            className={`px-4 py-2 font-medium transition-colors ${activityTab === 'library'
-              ? 'text-gray-800 border-b-2 border-gray-800'
-              : 'text-gray-500 hover:text-gray-700'
-              }`}
-          >
-            Library
-          </button>
-          <button
-            onClick={() => setActivityTab('school')}
-            className={`px-4 py-2 font-medium transition-colors relative ${activityTab === 'school'
-              ? 'text-gray-800 border-b-2 border-gray-800'
-              : 'text-gray-500 hover:text-gray-700'
-              }`}
-          >
-            School
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></div>
-          </button>
+  const renderHistoryView = () => {
+    // Helper function to navigate time periods
+    const navigatePeriod = (direction: 'prev' | 'next') => {
+      const newDate = new Date(historyDate);
+      
+      switch (historyPeriod) {
+        case 'daily':
+          newDate.setDate(newDate.getDate() + (direction === 'next' ? 1 : -1));
+          break;
+        case 'weekly':
+          newDate.setDate(newDate.getDate() + (direction === 'next' ? 7 : -7));
+          break;
+        case 'monthly':
+          newDate.setMonth(newDate.getMonth() + (direction === 'next' ? 1 : -1));
+          break;
+        case 'all':
+          // No navigation for "all time"
+          return;
+      }
+      
+      setHistoryDate(newDate);
+    };
+
+    // Format date range display
+    const getDateRangeDisplay = () => {
+      const date = historyDate;
+      
+      switch (historyPeriod) {
+        case 'daily':
+          return date.toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          });
+        case 'weekly': {
+          const startOfWeek = new Date(date);
+          startOfWeek.setDate(date.getDate() - date.getDay());
+          const endOfWeek = new Date(startOfWeek);
+          endOfWeek.setDate(startOfWeek.getDate() + 6);
+          return `${startOfWeek.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${endOfWeek.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+        }
+        case 'monthly':
+          return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+        case 'all':
+          return 'All Time';
+        default:
+          return '';
+      }
+    };
+
+    // Use stats from history table hook
+    const periodStats = {
+      books: {
+        totalPages: historyTableStats?.books.totalPages || 0,
+        avgReadingLevel: historyTableStats?.books.avgReadingLevel || 0,
+        count: historyTableStats?.books.uniqueBooksRead || 0
+      },
+      readToMe: {
+        totalPages: historyTableStats?.readToMe.totalPages || 0,
+        avgReadingLevel: historyTableStats?.readToMe.avgReadingLevel || 0,
+        count: historyTableStats?.readToMe.uniqueBooksRead || 0
+      },
+      audiobooks: {
+        totalMinutes: historyTableStats?.audiobooks.totalMinutes || 0,
+        avgReadingLevel: historyTableStats?.audiobooks.avgReadingLevel || 0,
+        count: historyTableStats?.audiobooks.uniqueAudiobooksListened || 0
+      },
+      videos: {
+        totalMinutes: historyTableStats?.videos.totalMinutesWatched || 0,
+        count: historyTableStats?.videos.totalVideosWatched || 0
+      },
+      voiceCoach: {
+        totalMinutes: historyTableStats?.voiceCoach?.totalMinutes || 0,
+        avgScore: historyTableStats?.voiceCoach?.avgScore || 0,
+        count: historyTableStats?.voiceCoach?.sessionsCompleted || 0
+      }
+    };
+
+    return (
+      <div className="space-y-6">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-gray-700">Reading History</h1>
         </div>
-      </div>
 
-      {/* Activity List */}
-      <div className="space-y-4">
-        {activityTab === 'library' ? (
-          activityData.map((item) => (
-            <div
-              key={item.id}
-              className={`bg-white rounded-2xl shadow-sm border p-6 transition-all hover:shadow-md ${item.isHighlighted ? 'border-blue-400 ring-2 ring-blue-100' : 'border-gray-200'
-                }`}
+        {/* Time Period Selector */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Select Time Period</h3>
+          <div className="flex flex-wrap gap-3">
+            <button
+              onClick={() => {
+                setHistoryPeriod('daily');
+                setHistoryDate(new Date());
+              }}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                historyPeriod === 'daily'
+                  ? 'bg-gradient-to-r from-[#d75e9c] to-[#c54d8a] text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
             >
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-xs font-medium text-gray-600">D-E</span>
-                </div>
-                <div className="flex-1 grid grid-cols-4 gap-4">
-                  <div>
-                    <div className="font-semibold text-gray-800">{item.title}</div>
-                    <div className="text-sm text-gray-500">{item.type}</div>
-                    <div className="text-sm text-gray-500">Exercise</div>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-800">{item.value}</div>
-                    <div className="text-sm text-gray-500">{item.metric}</div>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-800">{item.date}</div>
-                    <div className="text-sm text-gray-500">Date</div>
-                  </div>
-                  <div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                      <div
-                        className="bg-blue-500 h-2 rounded-full transition-all duration-300"
-                        style={{ width: `${item.progress}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))
-        ) : (
-          <div className="space-y-6">
-            {/* Course Section */}
-            <div className="bg-white rounded-2xl shadow-sm border border-blue-400 ring-2 ring-blue-100 p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">1a - COURSE 02/25</h3>
-              <div className="space-y-4">
-                {courseData.map((course) => (
-                  <div key={course.id} className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gray-200 rounded-lg"></div>
-                    <div className="flex-1 grid grid-cols-3 gap-4">
-                      <div>
-                        <div className="font-semibold text-gray-800">{course.name}</div>
-                        <div className="text-sm text-gray-500">{course.metric1}</div>
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-800">{course.value1}</div>
-                        {course.value2 && (
-                          <div className="text-sm text-gray-500">{course.value2}</div>
-                        )}
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-800">{course.completion}</div>
-                        <div className="text-sm text-gray-500">Completion</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+              📅 Daily
+            </button>
+            <button
+              onClick={() => {
+                setHistoryPeriod('weekly');
+                setHistoryDate(new Date());
+              }}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                historyPeriod === 'weekly'
+                  ? 'bg-gradient-to-r from-[#d75e9c] to-[#c54d8a] text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              📊 Weekly
+            </button>
+            <button
+              onClick={() => {
+                setHistoryPeriod('monthly');
+                setHistoryDate(new Date());
+              }}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                historyPeriod === 'monthly'
+                  ? 'bg-gradient-to-r from-[#d75e9c] to-[#c54d8a] text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              📆 Monthly
+            </button>
+            <button
+              onClick={() => {
+                setHistoryPeriod('all');
+                setHistoryDate(new Date());
+              }}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                historyPeriod === 'all'
+                  ? 'bg-gradient-to-r from-[#d75e9c] to-[#c54d8a] text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              🌍 All Time
+            </button>
+          </div>
+        </div>
 
-            {/* Additional Course */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">1a - COURSE 01/25</h3>
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-lg"></div>
-                <div className="flex-1 grid grid-cols-3 gap-4">
-                  <div>
-                    <div className="font-semibold text-gray-800">OTR SLL</div>
-                    <div className="text-sm text-gray-500">Incorrect words</div>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-800">10</div>
-                    <div className="text-sm text-gray-500">9/10 Correct</div>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-800">Yes</div>
-                    <div className="text-sm text-gray-500">Completion</div>
-                  </div>
+        {/* Time Navigation */}
+        {historyPeriod !== 'all' && (
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4">
+            <div className="flex items-center justify-between">
+              <button
+                onClick={() => navigatePeriod('prev')}
+                className="px-4 py-2 bg-gradient-to-r from-[#a1ced2] to-[#8fc0c5] hover:from-[#8fc0c5] hover:to-[#7db0b5] text-white rounded-lg font-medium transition-colors shadow-md"
+              >
+                ← Previous
+              </button>
+              <div className="text-center">
+                <div className="text-lg font-semibold text-gray-800">{getDateRangeDisplay()}</div>
+                <div className="text-sm text-gray-500">
+                  {historyPeriod === 'daily' && 'Daily View'}
+                  {historyPeriod === 'weekly' && 'Weekly View'}
+                  {historyPeriod === 'monthly' && 'Monthly View'}
                 </div>
               </div>
+              <button
+                onClick={() => navigatePeriod('next')}
+                disabled={historyDate >= new Date()}
+                className={`px-4 py-2 rounded-lg font-medium transition-colors shadow-md ${
+                  historyDate >= new Date()
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-[#a1ced2] to-[#8fc0c5] hover:from-[#8fc0c5] hover:to-[#7db0b5] text-white'
+                }`}
+              >
+                Next →
+              </button>
             </div>
           </div>
         )}
+
+        {/* Period Summary Cards */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Period Summary</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {/* Books Summary */}
+            <div className="bg-gradient-to-br from-[#a1ced2]/20 to-[#8fc0c5]/30 rounded-xl p-5 border-2 border-[#a1ced2]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#a1ced2] to-[#8fc0c5] rounded-lg flex items-center justify-center text-white text-xl shadow-md">
+                  📚
+                </div>
+                <h4 className="font-bold text-gray-800">Books</h4>
+              </div>
+              <div className="space-y-1">
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{periodStats.books.totalPages}</span> pages read
+                </p>
+                <p className="text-sm text-gray-700">
+                  Average AR Level: <span className="font-semibold">{periodStats.books.avgReadingLevel.toFixed(1)}</span>
+                </p>
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{periodStats.books.count}</span> books
+                </p>
+              </div>
+            </div>
+
+            {/* Audiobooks Summary */}
+            <div className="bg-gradient-to-br from-[#d75e9c]/20 to-[#c54d8a]/30 rounded-xl p-5 border-2 border-[#d75e9c]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#d75e9c] to-[#c54d8a] rounded-lg flex items-center justify-center text-white text-xl shadow-md">
+                  🎧
+                </div>
+                <h4 className="font-bold text-gray-800">Audiobooks</h4>
+              </div>
+              <div className="space-y-1">
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{Math.floor(periodStats.audiobooks.totalMinutes / 60)}h {periodStats.audiobooks.totalMinutes % 60}m</span> listened
+                </p>
+                <p className="text-sm text-gray-700">
+                  Average AR Level: <span className="font-semibold">{periodStats.audiobooks.avgReadingLevel.toFixed(1)}</span>
+                </p>
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{periodStats.audiobooks.count}</span> audiobooks
+                </p>
+              </div>
+            </div>
+
+            {/* Read to Me Summary */}
+            <div className="bg-gradient-to-br from-[#d75e9c]/20 to-[#c54d8a]/30 rounded-xl p-5 border-2 border-[#d75e9c]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#d75e9c] to-[#c54d8a] rounded-lg flex items-center justify-center text-white text-xl shadow-md">
+                  📖
+                </div>
+                <h4 className="font-bold text-gray-800">Read to Me</h4>
+              </div>
+              <div className="space-y-1">
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{periodStats.readToMe.totalPages}</span> pages read
+                </p>
+                <p className="text-sm text-gray-700">
+                  Average AR Level: <span className="font-semibold">{periodStats.readToMe.avgReadingLevel.toFixed(1)}</span>
+                </p>
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{periodStats.readToMe.count}</span> books
+                </p>
+              </div>
+            </div>
+
+            {/* Videos Summary */}
+            <div className="bg-gradient-to-br from-yellow-50 to-orange-100 rounded-xl p-5 border-2 border-yellow-400">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-lg flex items-center justify-center text-white text-xl shadow-md">
+                  📹
+                </div>
+                <h4 className="font-bold text-gray-800">Videos</h4>
+              </div>
+              <div className="space-y-1">
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{periodStats.videos.count}</span> videos watched
+                </p>
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{Math.floor(periodStats.videos.totalMinutes / 60)}h {periodStats.videos.totalMinutes % 60}m</span> watched
+                </p>
+              </div>
+            </div>
+
+            {/* Voice Coach Summary */}
+            <div className="bg-gradient-to-br from-[#a1ced2]/20 to-[#8fc0c5]/30 rounded-xl p-5 border-2 border-[#a1ced2]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#a1ced2] to-[#8fc0c5] rounded-lg flex items-center justify-center text-white text-xl shadow-md">
+                  🎤
+                </div>
+                <h4 className="font-bold text-gray-800">Voice Coach</h4>
+              </div>
+              <div className="space-y-1">
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{periodStats.voiceCoach.count}</span> sessions
+                </p>
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{Math.floor(periodStats.voiceCoach.totalMinutes / 60)}h {periodStats.voiceCoach.totalMinutes % 60}m</span> practiced
+                </p>
+                {periodStats.voiceCoach.avgScore > 0 && (
+                  <p className="text-sm text-gray-700">
+                    Avg Score: <span className="font-semibold">{periodStats.voiceCoach.avgScore.toFixed(0)}%</span>
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* History Table */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="overflow-x-auto">
+            {historyTableLoading ? (
+              <div className="p-12 text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                  <BookOpen className="w-8 h-8 text-gray-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Loading history...</h3>
+                <p className="text-gray-500">Fetching your reading records</p>
+              </div>
+            ) : historyTableData.length > 0 ? (
+              <table className="w-full">
+                <thead className="bg-gray-50 border-b border-gray-200">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Date</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Reading Level (AR)</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Pages Read / Time Listened</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Genre</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Book / Video Name</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  {historyTableData.map((entry) => (
+                    <tr key={entry.id} className="hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {new Date(entry.timestamp).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric',
+                          year: 'numeric'
+                        })}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {entry.readingLevel ? entry.readingLevel.toFixed(1) : 'N/A'}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {entry.bookType === 'audiobook' || entry.bookType === 'video'
+                          ? `${Math.floor(entry.minutesListened / 60)}h ${entry.minutesListened % 60}m`
+                          : `${entry.pagesRead} pages`}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">
+                        {entry.genre || 'N/A'}
+                      </td>
+                      <td className="px-6 py-4 text-sm">
+                        <button
+                          onClick={() => onOpenBook?.(entry.bookId, entry.bookType === 'book' ? 'books' : entry.bookType === 'audiobook' ? 'audiobooks' : entry.bookType === 'read-to-me' ? 'readToMe' : 'videoBooks')}
+                          className="text-[#d75e9c] hover:text-[#c54d8a] hover:underline font-medium text-left"
+                        >
+                          {entry.bookTitle}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <div className="p-12 text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="w-8 h-8 text-gray-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">No history found</h3>
+                <p className="text-gray-500">
+                  No reading activity for this time period yet.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const renderFavouritesView = () => (
     <div className="space-y-6">
@@ -688,25 +890,12 @@ export default function UserPortal({ onBack, onLogout, favorites, onOpenBook, cu
               <span className="text-gray-700">English</span>
             </div>
           </div>
+        </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Subscription</label>
-            <div className="flex space-x-3">
-              <button className="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg font-medium">
-                Cancel subscription
-              </button>
-              <button className="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg font-medium">
-                Change subscription
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Delete Account</label>
-            <button className="px-6 py-3 bg-gray-400 text-white rounded-lg font-medium">
-              Delete
-            </button>
-          </div>
+        <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <p className="text-sm text-gray-700">
+            <span className="font-semibold">Note:</span> To manage your subscription or delete your account, please visit <span className="font-semibold">Parental Controls</span> in the sidebar.
+          </p>
         </div>
       </div>
     </div>
@@ -763,7 +952,7 @@ export default function UserPortal({ onBack, onLogout, favorites, onOpenBook, cu
           {/* Main Content */}
           <div className="lg:col-span-3">
             {currentView === 'progress' && renderProgressView()}
-            {currentView === 'activity' && renderActivityView()}
+            {currentView === 'history' && renderHistoryView()}
             {currentView === 'favourites' && renderFavouritesView()}
             {currentView === 'account' && renderAccountView()}
           </div>
@@ -815,16 +1004,15 @@ export default function UserPortal({ onBack, onLogout, favorites, onOpenBook, cu
                 </button>
 
                 <button
-                  onClick={() => setCurrentView('activity')}
-                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors relative ${currentView === 'activity'
+                  onClick={() => setCurrentView('history')}
+                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${currentView === 'history'
                     ? 'bg-gray-800 text-white'
                     : 'text-gray-600 hover:bg-gray-100'
                     }`}
                 >
-                  <div className={`w-3 h-3 rounded-full ${currentView === 'activity' ? 'bg-white' : 'bg-gray-400'
+                  <div className={`w-3 h-3 rounded-full ${currentView === 'history' ? 'bg-white' : 'bg-gray-400'
                     }`}></div>
-                  <span className="font-medium">Activity</span>
-                  <div className="absolute right-3 top-3 w-2 h-2 bg-red-500 rounded-full"></div>
+                  <span className="font-medium">History</span>
                 </button>
 
                 <button
@@ -849,6 +1037,14 @@ export default function UserPortal({ onBack, onLogout, favorites, onOpenBook, cu
                   <div className={`w-3 h-3 rounded-full ${currentView === 'account' ? 'bg-white' : 'bg-gray-400'
                     }`}></div>
                   <span className="font-medium">My Account</span>
+                </button>
+
+                <button
+                  onClick={() => setShowParentalControls(true)}
+                  className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors text-gray-600 hover:bg-gray-100"
+                >
+                  <Shield className="w-5 h-5" />
+                  <span className="font-medium">Parental Controls</span>
                 </button>
               </nav>
 
@@ -921,6 +1117,13 @@ export default function UserPortal({ onBack, onLogout, favorites, onOpenBook, cu
             </div>
           </div>
         </div>
+      )}
+
+      {/* Parental Controls Settings */}
+      {showParentalControls && (
+        <ParentalControlsSettings
+          onClose={() => setShowParentalControls(false)}
+        />
       )}
     </div>
   );

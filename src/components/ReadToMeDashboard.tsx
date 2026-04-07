@@ -1,88 +1,48 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Clock, Star, BookOpen, PlayCircle, Volume2 } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ArrowLeft, BookOpen, PlayCircle, Volume2, Loader2, AlertCircle } from 'lucide-react';
+import { useBooks } from '../hooks/useBooks';
+import ContinueReadingSection from './ContinueReadingSection';
+import { OptimizedImg } from '../hooks/useOptimizedImage';
 
 interface ReadToMeDashboardProps {
   onBack: () => void;
   onBookSelect: (bookId: string) => void;
 }
 
-interface Book {
-  id: string;
-  title: string;
-  author: string;
-  cover: string;
-  readingTime: number;
-  rating: number;
-  category: string;
-  progress?: number;
-  isNew?: boolean;
-}
-
 export default function ReadToMeDashboard({ onBack, onBookSelect }: ReadToMeDashboardProps) {
-  const [selectedLevel, setSelectedLevel] = useState('D - E');
+  const [selectedLevel, setSelectedLevel] = useState<string | undefined>(undefined);
+  const [selectedGenre, setSelectedGenre] = useState<string | undefined>(undefined);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const books: Book[] = [
-    {
-      id: '1',
-      title: 'The Magic Forest Adventure',
-      author: 'Sarah Mitchell',
-      cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 15,
-      rating: 4.8,
-      category: 'Fantasy',
-      isNew: true,
-      progress: 65
-    },
-    {
-      id: '2',
-      title: 'Space Explorers',
-      author: 'Mike Chen',
-      cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 12,
-      rating: 4.9,
-      category: 'Science Fiction',
-      progress: 30
-    },
-    {
-      id: '3',
-      title: 'Ocean Mysteries',
-      author: 'Lisa Waters',
-      cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 18,
-      rating: 4.7,
-      category: 'Adventure',
-      progress: 85
-    },
-    {
-      id: '4',
-      title: 'Dinosaur Discovery',
-      author: 'Tom Rex',
-      cover: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 10,
-      rating: 4.6,
-      category: 'Educational'
-    },
-    {
-      id: '5',
-      title: 'Princess Adventures',
-      author: 'Emma Royal',
-      cover: 'https://images.pexels.com/photos/1181276/pexels-photo-1181276.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 14,
-      rating: 4.8,
-      category: 'Fantasy'
-    },
-    {
-      id: '6',
-      title: 'Animal Friends',
-      author: 'Jake Wilson',
-      cover: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 8,
-      rating: 4.5,
-      category: 'Animals'
+  const { books, loading, error, hasMore, loadMore, refresh } = useBooks({
+    section: 'read-to-me',
+    readingLevel: selectedLevel,
+    genre: selectedGenre,
+    limit: 50
+  });
+
+  const readingLevels = ['Elementary', 'Middle School', 'High School'];
+  
+  // Get unique genres from books
+  const genres = Array.from(new Set(books.map(book => book.category).filter(Boolean)));
+
+  // Infinite scroll handler
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scrollContainerRef.current || loading || !hasMore) return;
+
+      const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
+      if (scrollTop + clientHeight >= scrollHeight - 100) {
+        loadMore();
+      }
+    };
+
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
     }
-  ];
-
-  const readingLevels = ['AA - A', 'B - C', 'D - E', 'F - G', 'H - I', 'J - K'];
+  }, [loading, hasMore, loadMore]);
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -99,45 +59,121 @@ export default function ReadToMeDashboard({ onBack, onBookSelect }: ReadToMeDash
         </div>
       </div>
 
-      {/* Hero Section */}
-     <div className="bg-gradient-to-br from-purple-100 via-pink-100 to-blue-100 py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-block bg-white/60 backdrop-blur-md rounded-2xl px-8 py-6 shadow-lg border border-white/50">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <Volume2 className="w-8 h-8 text-yellow-700 drop-shadow-sm" />
-              <h1 className="text-4xl font-light text-yellow-800 drop-shadow-sm">Read to Me</h1>
-            </div>
-            <p className="text-lg text-yellow-700 drop-shadow-sm">Listen to engaging stories with beautiful narration</p>
-          </div>
-        </div>
-      </div>
+      <main className="max-w-7xl mx-auto px-6 py-8" ref={scrollContainerRef}>
+        {/* Continue Reading Section */}
+        <ContinueReadingSection
+          bookType="read-to-me"
+          onBookClick={(bookId, currentPage) => {
+            console.log('📖 Continue reading:', bookId, 'at page:', currentPage);
+            onBookSelect(bookId);
+          }}
+        />
 
-      <main className="max-w-7xl mx-auto px-6 py-8">
-        {/* Reading Level Filter */}
-        <div className="mb-8">
-          <div className="flex items-center space-x-2 mb-4">
-            <span className="text-yellow-800 font-medium">Reading Level</span>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {readingLevels.map((level) => (
+        {/* Filters */}
+        <div className="mb-8 space-y-4">
+          {/* Reading Level Filter */}
+          <div>
+            <div className="flex items-center space-x-2 mb-4">
+              <span className="text-yellow-800 font-medium">Reading Level</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
               <button
-                key={level}
-                onClick={() => setSelectedLevel(level)}
+                onClick={() => setSelectedLevel(undefined)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  selectedLevel === level
+                  !selectedLevel
                     ? 'bg-brand-pink text-white shadow-lg'
                     : 'bg-yellow-100 text-yellow-800 hover:bg-yellow-200 border border-yellow-300'
                 }`}
               >
-                {level}
+                All Levels
               </button>
-            ))}
+              {readingLevels.map((level) => (
+                <button
+                  key={level}
+                  onClick={() => setSelectedLevel(level)}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    selectedLevel === level
+                      ? 'bg-brand-pink text-white shadow-lg'
+                      : 'bg-yellow-100 text-yellow-800 hover:bg-yellow-200 border border-yellow-300'
+                  }`}
+                >
+                  {level}
+                </button>
+              ))}
+            </div>
           </div>
+
+          {/* Genre Filter */}
+          {genres.length > 0 && (
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <span className="text-yellow-800 font-medium">Genre</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setSelectedGenre(undefined)}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    !selectedGenre
+                      ? 'bg-brand-pink text-white shadow-lg'
+                      : 'bg-yellow-100 text-yellow-800 hover:bg-yellow-200 border border-yellow-300'
+                  }`}
+                >
+                  All Genres
+                </button>
+                {genres.map((genre) => (
+                  <button
+                    key={genre}
+                    onClick={() => setSelectedGenre(genre)}
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                      selectedGenre === genre
+                        ? 'bg-brand-pink text-white shadow-lg'
+                        : 'bg-yellow-100 text-yellow-800 hover:bg-yellow-200 border border-yellow-300'
+                    }`}
+                  >
+                    {genre}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
+        {/* Loading State */}
+        {loading && books.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-20">
+            <Loader2 className="w-12 h-12 text-brand-pink animate-spin mb-4" />
+            <p className="text-gray-600">Loading books...</p>
+          </div>
+        )}
+
+        {/* Error State */}
+        {error && (
+          <div className="flex flex-col items-center justify-center py-20">
+            <AlertCircle className="w-12 h-12 text-red-500 mb-4" />
+            <p className="text-gray-900 font-medium mb-2">Failed to load books</p>
+            <p className="text-gray-600 mb-4">{error.message}</p>
+            <button
+              onClick={refresh}
+              className="px-6 py-2 bg-brand-pink text-white rounded-lg hover:bg-pink-600 transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
+        )}
+
+        {/* Empty State */}
+        {!loading && !error && books.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-20">
+            <BookOpen className="w-12 h-12 text-gray-400 mb-4" />
+            <p className="text-gray-900 font-medium mb-2">No books found</p>
+            <p className="text-gray-600">Try adjusting your filters or check back later for new books.</p>
+          </div>
+        )}
+
         {/* Books Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {books.map((book) => (
+        {!loading && !error && books.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {books.map((book) => (
             <div 
               key={book.id} 
               className="group cursor-pointer"
@@ -145,13 +181,19 @@ export default function ReadToMeDashboard({ onBack, onBookSelect }: ReadToMeDash
             >
               <div className="relative">
                 <div className="w-full aspect-[3/4] rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                  <img
+                  <OptimizedImg
                     src={book.cover}
                     alt={book.title}
+                    size="medium"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity flex items-center justify-center">
                     <PlayCircle className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  {/* Read to Me Badge */}
+                  <div className="absolute top-2 left-2 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-medium flex items-center space-x-1">
+                    <Volume2 className="w-3 h-3" />
+                    <span>Read to Me</span>
                   </div>
                   {book.isNew && (
                     <div className="absolute top-2 right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs px-2 py-1 rounded-full font-medium">
@@ -182,14 +224,7 @@ export default function ReadToMeDashboard({ onBack, onBookSelect }: ReadToMeDash
                 </h3>
                 <p className="text-xs text-gray-500">{book.author}</p>
                 <div className="flex items-center justify-between text-xs text-gray-500">
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-3 h-3" />
-                    <span>{book.readingTime} min</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Star className="w-3 h-3 fill-brand-yellow text-brand-yellow" />
-                    <span>{book.rating}</span>
-                  </div>
+                  <span className="text-xs text-gray-600">{book.readingLevel}</span>
                 </div>
                 <span className="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
                   {book.category}
@@ -197,7 +232,15 @@ export default function ReadToMeDashboard({ onBack, onBookSelect }: ReadToMeDash
               </div>
             </div>
           ))}
-        </div>
+          </div>
+        )}
+
+        {/* Loading More Indicator */}
+        {loading && books.length > 0 && (
+          <div className="flex justify-center py-8">
+            <Loader2 className="w-8 h-8 text-brand-pink animate-spin" />
+          </div>
+        )}
 
         {/* Reading Tips */}
         <div className="mt-12 bg-yellow-50 rounded-xl p-6 border border-yellow-200">

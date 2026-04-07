@@ -158,12 +158,14 @@ export const SubscriptionProvider: React.FC<SubscriptionProviderProps> = ({ chil
             .eq('id', authUser.id)
             .single();
 
-          // Get user subscription if exists
+          // Get user subscription if exists (suppress 406 errors for now)
           const { data: userSubscription } = await supabase
             .from('user_subscriptions')
             .select('*')
             .eq('user_id', authUser.id)
-            .single();
+            .single()
+            .then(res => res)
+            .catch(() => ({ data: null, error: null }));
 
           const user: User = {
             id: authUser.id,

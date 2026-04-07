@@ -6,6 +6,7 @@ import BookCompletionScreen from './BookCompletionScreen';
 import QuizModal from './QuizModal';
 import { QuizGenerator } from '../utils/quizGenerator';
 import { useUserStats } from '../contexts/UserStatsContext';
+import { useReadingProgress } from '../hooks/useReadingProgress';
 
 // Set up PDF.js worker - use version that matches react-pdf
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@5.3.31/build/pdf.worker.min.mjs';
@@ -35,7 +36,15 @@ interface PdfPage {
 
 export default function PdfReadAlongInterface({ onBack, pdfBook, onProgressUpdate }: PdfReadAlongInterfaceProps) {
   const { addReadingSession, updateReadingProgress, completeBook, addQuizResult } = useUserStats();
-  const [currentPage, setCurrentPage] = useState(0);
+  
+  // Initialize reading progress tracking
+  const { progress: readingProgress, updateProgress, markComplete } = useReadingProgress({
+    bookId: pdfBook.id,
+    bookType: 'uploaded',
+    totalPages: pdfBook.totalPages
+  });
+  
+  const [currentPage, setCurrentPage] = useState(readingProgress?.currentPage || 0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPageTurning, setIsPageTurning] = useState(false);
   const [turnDirection, setTurnDirection] = useState<'next' | 'prev'>('next');
@@ -705,9 +714,14 @@ export default function PdfReadAlongInterface({ onBack, pdfBook, onProgressUpdat
         setIsPageTurning(true);
         setTurnDirection('next');
         setTimeout(() => {
-          setCurrentPage(currentPage + 1);
+          const newPage = currentPage + 1;
+          setCurrentPage(newPage);
           setCurrentWordIndex(0);
           setProgress(0);
+          
+          // Update reading progress
+          updateProgress(newPage).catch(console.error);
+          
           setTimeout(() => {
             setIsPageTurning(false);
           }, 400);
@@ -742,6 +756,7 @@ export default function PdfReadAlongInterface({ onBack, pdfBook, onProgressUpdat
         (async () => {
           try {
             await completeBook(pdfBook.id, pdfBook.title, bookType, pdfBook.totalPages, readingTime);
+            await markComplete(); // Mark complete in reading progress system
             console.log('✅ PdfReadAlongInterface (nextPage) - Book completion saved successfully');
           } catch (error) {
             console.error('❌ PdfReadAlongInterface (nextPage) - Error saving book completion:', error);
@@ -767,9 +782,14 @@ export default function PdfReadAlongInterface({ onBack, pdfBook, onProgressUpdat
         setIsPageTurning(true);
         setTurnDirection('prev');
         setTimeout(() => {
-          setCurrentPage(currentPage - 1);
+          const newPage = currentPage - 1;
+          setCurrentPage(newPage);
           setCurrentWordIndex(0);
           setProgress(0);
+          
+          // Update reading progress
+          updateProgress(newPage).catch(console.error);
+          
           setTimeout(() => {
             setIsPageTurning(false);
           }, 400);

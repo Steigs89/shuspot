@@ -1,0 +1,6535 @@
+[
+  {
+    "Path": ".DS_Store",
+    "Name": ".DS_Store",
+    "Size": 14340,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-09-22T10:55:10.518320157-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 7608,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/description.txt",
+    "Name": "description.txt",
+    "Size": 263,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 106265,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 69569,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 83747,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 76658,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 95423,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 65816,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 65816,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 89168,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 96674,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/page end.mp3",
+    "Name": "page end.mp3",
+    "Size": 426104,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2909076,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6301238,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7095299,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6846621,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6472534,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6187468,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7703833,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 5818149,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6070906,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 1464608,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5960579,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6692762,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5967380,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7184951,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4659175,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7055076,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6444074,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6564893,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1259461,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 762240,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 4198744,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 4505268,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 4046819,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 4356404,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4870820,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4573250,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 4624648,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 4057338,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 9043,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/description.txt",
+    "Name": "description.txt",
+    "Size": 253,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 104530,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 69502,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 84514,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 66166,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 74923,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 71170,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 78676,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 84097,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 64915,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/page end.mp3",
+    "Name": "page end.mp3",
+    "Size": 413944,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 3010557,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6485942,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7796790,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6476996,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6281517,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 5756435,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7560575,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6835268,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 7158876,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 1439464,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6533230,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7100675,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5944474,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7104342,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 6356853,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7533391,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6070818,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6707127,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 1.png",
+    "Name": "screenshot - 1.png",
+    "Size": 1291082,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 10.png",
+    "Name": "screenshot - 10.png",
+    "Size": 752352,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 2.png",
+    "Name": "screenshot - 2.png",
+    "Size": 4779879,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 3.png",
+    "Name": "screenshot - 3.png",
+    "Size": 4464560,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 4.png",
+    "Name": "screenshot - 4.png",
+    "Size": 4578139,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 5.png",
+    "Name": "screenshot - 5.png",
+    "Size": 4389414,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 6.png",
+    "Name": "screenshot - 6.png",
+    "Size": 4862649,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 7.png",
+    "Name": "screenshot - 7.png",
+    "Size": 4338076,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 8.png",
+    "Name": "screenshot - 8.png",
+    "Size": 4782594,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/screenshot - 9.png",
+    "Name": "screenshot - 9.png",
+    "Size": 4977323,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 6878,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/description.txt",
+    "Name": "description.txt",
+    "Size": 253,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 106615,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 96607,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 94939,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 107032,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 92020,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 75340,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 80344,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 89518,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 86599,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/page end.mp3",
+    "Name": "page end.mp3",
+    "Size": 454393,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2704108,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6230160,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7280100,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6062733,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7021235,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6415628,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7284111,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6335753,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 7618160,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 1518772,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6833793,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7124051,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6514776,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6823593,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5958393,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6917910,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6283923,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7446684,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1159550,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 785101,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 5624668,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 5117504,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 4257691,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 5034512,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4656505,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4805328,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5313014,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 4861622,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-01.mp3",
+    "Name": "LightOfHarvestMoon-01.mp3",
+    "Size": 108177,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-02.mp3",
+    "Name": "LightOfHarvestMoon-02.mp3",
+    "Size": 51112,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-03.mp3",
+    "Name": "LightOfHarvestMoon-03.mp3",
+    "Size": 183406,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-04.mp3",
+    "Name": "LightOfHarvestMoon-04.mp3",
+    "Size": 199987,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-05.mp3",
+    "Name": "LightOfHarvestMoon-05.mp3",
+    "Size": 275454,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-06.mp3",
+    "Name": "LightOfHarvestMoon-06.mp3",
+    "Size": 319756,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-07.mp3",
+    "Name": "LightOfHarvestMoon-07.mp3",
+    "Size": 222142,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-08.mp3",
+    "Name": "LightOfHarvestMoon-08.mp3",
+    "Size": 242717,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-09.mp3",
+    "Name": "LightOfHarvestMoon-09.mp3",
+    "Size": 196742,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-10.mp3",
+    "Name": "LightOfHarvestMoon-10.mp3",
+    "Size": 215513,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-11.mp3",
+    "Name": "LightOfHarvestMoon-11.mp3",
+    "Size": 236953,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-12.mp3",
+    "Name": "LightOfHarvestMoon-12.mp3",
+    "Size": 177594,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-13.mp3",
+    "Name": "LightOfHarvestMoon-13.mp3",
+    "Size": 284148,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-14.mp3",
+    "Name": "LightOfHarvestMoon-14.mp3",
+    "Size": 263145,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-15.mp3",
+    "Name": "LightOfHarvestMoon-15.mp3",
+    "Size": 179182,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-16.mp3",
+    "Name": "LightOfHarvestMoon-16.mp3",
+    "Size": 311532,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/LightOfHarvestMoon-17.mp3",
+    "Name": "LightOfHarvestMoon-17.mp3",
+    "Size": 250137,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 31683,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/description.txt",
+    "Name": "description.txt",
+    "Size": 307,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 9342650,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5832343,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6709365,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 7575921,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7822653,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 7654252,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8061288,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6910319,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 7728650,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 7050708,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6972399,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6297211,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 7406422,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 7010608,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 7623178,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 8061318,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 7232047,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 6840179,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 7100378,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 7851448,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 7442916,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-29.png",
+    "Name": "crop-29.png",
+    "Size": 6953149,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6014856,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-30.png",
+    "Name": "crop-30.png",
+    "Size": 6281437,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-31.png",
+    "Name": "crop-31.png",
+    "Size": 7168375,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-32.png",
+    "Name": "crop-32.png",
+    "Size": 7199598,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-33.png",
+    "Name": "crop-33.png",
+    "Size": 7010762,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6592298,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6752570,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7085395,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6764736,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6151873,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6535249,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 4395927,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 6383389,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 6537392,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 7231657,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 6087681,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 14.png",
+    "Name": "screenshoot 14.png",
+    "Size": 6609231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 15.png",
+    "Name": "screenshoot 15.png",
+    "Size": 6350400,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 16.png",
+    "Name": "screenshoot 16.png",
+    "Size": 5204743,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 17.png",
+    "Name": "screenshoot 17.png",
+    "Size": 6415344,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 5156982,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 5489432,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 5820831,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 5289059,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4962686,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 7009106,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 6923319,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 6559244,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 32069,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/description.txt",
+    "Name": "description.txt",
+    "Size": 273,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 194590,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 0_word to know.mp3",
+    "Name": "page 0_word to know.mp3",
+    "Size": 280092,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 102832,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 100138,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 197470,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 120522,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 195413,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 303881,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 139049,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 99402,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 164803,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/page intro title.textClipping",
+    "Name": "page intro title.textClipping",
+    "Size": 231,
+    "MimeType": "application/octet-stream",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 7252411,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5909660,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7077831,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5705567,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6667426,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6680517,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7131460,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4769992,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6677406,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5771283,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 7260999,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5489153,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 6508383,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 8343670,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2408055,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 3457950,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 4090301,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 4140400,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7542666,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 4698382,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6214968,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4011569,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5913659,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7134660,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6094199,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2928089,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 4938883,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 6135250,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2318072,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 3080783,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 4909497,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 3799258,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 3261756,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 4583343,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4668529,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4307298,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5111230,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Flipper Island/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 4296832,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 25545,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/description.txt",
+    "Name": "description.txt",
+    "Size": 262,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 195733,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 0_words to know.mp3",
+    "Name": "page 0_words to know.mp3",
+    "Size": 254513,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 145087,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 127403,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 152768,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 143498,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 90978,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 328860,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 120831,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 176138,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 141307,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6370361,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6266146,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6161240,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5770429,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6539614,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 5158997,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 5903039,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4876836,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6118154,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 5096725,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6006725,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 3794660,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 4836763,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 7595308,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2562974,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 3429763,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 4241027,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 4211152,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6635813,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5455620,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6781342,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5479135,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 5522845,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 5615632,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5830464,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2576010,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 3848291,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 4069874,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2345795,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 3215931,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 3958288,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 4102340,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 3540584,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 3883068,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4372090,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4399097,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 3951887,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Glaciers!/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 3552028,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041cover.mp3",
+    "Name": "9781949354041cover.mp3",
+    "Size": 60750,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page10.mp3",
+    "Name": "9781949354041page10.mp3",
+    "Size": 379278,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page12.mp3",
+    "Name": "9781949354041page12.mp3",
+    "Size": 317646,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page13.mp3",
+    "Name": "9781949354041page13.mp3",
+    "Size": 125262,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page14.mp3",
+    "Name": "9781949354041page14.mp3",
+    "Size": 229518,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page15.mp3",
+    "Name": "9781949354041page15.mp3",
+    "Size": 1516302,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page16.mp3",
+    "Name": "9781949354041page16.mp3",
+    "Size": 793422,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page18.mp3",
+    "Name": "9781949354041page18.mp3",
+    "Size": 272142,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page19.mp3",
+    "Name": "9781949354041page19.mp3",
+    "Size": 272142,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page20.mp3",
+    "Name": "9781949354041page20.mp3",
+    "Size": 632142,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page21.mp3",
+    "Name": "9781949354041page21.mp3",
+    "Size": 997902,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page22.mp3",
+    "Name": "9781949354041page22.mp3",
+    "Size": 980046,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page23.mp3",
+    "Name": "9781949354041page23.mp3",
+    "Size": 1103310,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page4.mp3",
+    "Name": "9781949354041page4.mp3",
+    "Size": 204174,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page6.mp3",
+    "Name": "9781949354041page6.mp3",
+    "Size": 247950,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page7.mp3",
+    "Name": "9781949354041page7.mp3",
+    "Size": 256590,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page8.mp3",
+    "Name": "9781949354041page8.mp3",
+    "Size": 89550,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/9781949354041page9.mp3",
+    "Name": "9781949354041page9.mp3",
+    "Size": 791694,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 29256,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/description.txt",
+    "Name": "description.txt",
+    "Size": 229,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 8488384,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3033949,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 5053094,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4355932,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 8392170,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 5752099,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7370692,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4563948,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 5016051,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6791782,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 4860394,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 7475980,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5863696,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6198477,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 4142561,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 8964257,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 4886979,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7006177,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5564006,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7368540,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6986899,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8500459,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 3812610,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 4321406,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 4389166,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1614682,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 7079321,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 4287301,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 4713843,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 6309600,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 3091987,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4866709,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 4987693,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "I Hear Sound/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 3500643,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 30154,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/description.txt",
+    "Name": "description.txt",
+    "Size": 250,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 0_wtk.mp3",
+    "Name": "page 0_wtk.mp3",
+    "Size": 178345,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 190162,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 148915,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 111736,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 218610,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 168313,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 255483,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 193696,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 178897,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 145191,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 157377,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 4229158,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5768721,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 6483448,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4609120,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6610336,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4896105,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 6290917,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 6081315,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 6239597,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6107923,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6871193,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 45673,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 5467149,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6148789,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2818868,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 3257430,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 4183697,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 3150926,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 7213423,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7282050,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 7455754,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7266460,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7102150,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 7627788,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 7630367,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1741191,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 4245695,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 3615766,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2358952,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 2679066,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 2915920,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 5661546,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 5522113,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 6056967,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 3965369,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4150827,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 3448648,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Kangaroo Country/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 3978852,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 20458,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/description.txt",
+    "Name": "description.txt",
+    "Size": 249,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/intro title.mp3",
+    "Name": "intro title.mp3",
+    "Size": 49164,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 58905,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 11.mp3",
+    "Name": "page 11.mp3",
+    "Size": 61726,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 54696,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 13.mp3",
+    "Name": "page 13.mp3",
+    "Size": 58723,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 35698,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 33049,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 118555,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 2.mp3",
+    "Name": "page 2.mp3",
+    "Size": 96826,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 62459,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 68587,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 5.mp3",
+    "Name": "page 5.mp3",
+    "Size": 63424,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 66988,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 65513,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 66383,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 63518,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2652217,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6285165,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 5954897,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5177522,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3507435,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 6417571,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 6391701,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 2752159,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 5385442,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6151381,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5208845,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5498086,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7054697,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 9074841,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 2559607,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 2735487,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1575262,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 6348929,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 6357211,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 9964237,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 2445003,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 6858368,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4561628,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 7300485,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light and Dark/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 1538988,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981cover.mp3",
+    "Name": "9781947632981cover.mp3",
+    "Size": 149454,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page10.mp3",
+    "Name": "9781947632981page10.mp3",
+    "Size": 407502,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page13.mp3",
+    "Name": "9781947632981page13.mp3",
+    "Size": 90126,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page14.mp3",
+    "Name": "9781947632981page14.mp3",
+    "Size": 385038,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page16.mp3",
+    "Name": "9781947632981page16.mp3",
+    "Size": 163854,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page17.mp3",
+    "Name": "9781947632981page17.mp3",
+    "Size": 232974,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page18.mp3",
+    "Name": "9781947632981page18.mp3",
+    "Size": 137358,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page19.mp3",
+    "Name": "9781947632981page19.mp3",
+    "Size": 322254,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page20.mp3",
+    "Name": "9781947632981page20.mp3",
+    "Size": 205326,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page21.mp3",
+    "Name": "9781947632981page21.mp3",
+    "Size": 169038,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page22.mp3",
+    "Name": "9781947632981page22.mp3",
+    "Size": 1096974,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page23.mp3",
+    "Name": "9781947632981page23.mp3",
+    "Size": 853902,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page4.mp3",
+    "Name": "9781947632981page4.mp3",
+    "Size": 627534,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page5.mp3",
+    "Name": "9781947632981page5.mp3",
+    "Size": 128718,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page6.mp3",
+    "Name": "9781947632981page6.mp3",
+    "Size": 194382,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page7.mp3",
+    "Name": "9781947632981page7.mp3",
+    "Size": 117774,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/9781947632981page8.mp3",
+    "Name": "9781947632981page8.mp3",
+    "Size": 188046,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 25866,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/description.txt",
+    "Name": "description.txt",
+    "Size": 254,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 8024569,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 5505657,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7367734,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4485229,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 5456041,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 11269304,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 9742869,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 9999776,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 8965049,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 3644063,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 8112774,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6092686,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 6337714,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6520014,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 4826231,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6262876,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 3963807,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5837807,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 3234310,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4467406,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 9369007,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 10613925,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 3051152,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 4462353,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 3741367,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 1362182,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 3858816,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 2574471,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 1894967,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 8537202,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4391769,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3049426,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 9567129,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Light! It Helps Us See/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 7638837,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 25820,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/description.txt",
+    "Name": "description.txt",
+    "Size": 282,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 299996,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 213061,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 218076,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 15.mp3",
+    "Name": "page 15.mp3",
+    "Size": 145979,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 769365,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 1126094,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 373558,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 22.mp3",
+    "Name": "page 22.mp3",
+    "Size": 576895,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 24.mp3",
+    "Name": "page 24.mp3",
+    "Size": 165832,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 26.mp3",
+    "Name": "page 26.mp3",
+    "Size": 309610,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 27.mp3",
+    "Name": "page 27.mp3",
+    "Size": 105646,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 28.mp3",
+    "Name": "page 28.mp3",
+    "Size": 133649,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 292055,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 461746,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 657978,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 376483,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 277426,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6555645,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 7009096,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7134345,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 6432113,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7309065,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 9317100,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8971022,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 4891425,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 8012947,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 9741421,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 7627232,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6447242,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 7515843,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6662452,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 6931319,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 5888671,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 7530296,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 8291973,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-26.png",
+    "Name": "crop-26.png",
+    "Size": 6757666,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-27.png",
+    "Name": "crop-27.png",
+    "Size": 6640906,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-28.png",
+    "Name": "crop-28.png",
+    "Size": 8064921,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 6756975,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 7585319,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 6761738,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 7511696,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 7041798,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 8147768,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 8411530,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 4369072,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 8808311,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 8453882,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 7103091,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 9353471,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 14.png",
+    "Name": "screenshoot 14.png",
+    "Size": 7707579,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 15.png",
+    "Name": "screenshoot 15.png",
+    "Size": 5018068,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 7370636,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 8683178,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 8612177,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 9747079,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 8449563,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 8432505,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 10399946,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 7203872,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 29501,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/description.txt",
+    "Name": "description.txt",
+    "Size": 312,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/intro title .mp3",
+    "Name": "intro title .mp3",
+    "Size": 111022,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 10-11.mp3",
+    "Name": "page 10-11.mp3",
+    "Size": 78660,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 86091,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 104537,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 16-17.mp3",
+    "Name": "page 16-17.mp3",
+    "Size": 84264,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 18-19.mp3",
+    "Name": "page 18-19.mp3",
+    "Size": 90202,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 20-21.mp3",
+    "Name": "page 20-21.mp3",
+    "Size": 86285,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 3 - wtk.mp3",
+    "Name": "page 3 - wtk.mp3",
+    "Size": 160544,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 4-5.mp3",
+    "Name": "page 4-5.mp3",
+    "Size": 90943,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 6-7.mp3",
+    "Name": "page 6-7.mp3",
+    "Size": 109948,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/page 8-9.mp3",
+    "Name": "page 8-9.mp3",
+    "Size": 83041,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 6973542,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6281365,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7121256,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 4914653,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 3189737,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 7719301,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7805281,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 5602432,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 5804758,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 4860276,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5016606,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 6540872,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3778275,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 5448330,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 2769941,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 4556046,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 1839021,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 6938558,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 5813633,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5534480,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 4181468,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 6614067,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 3333024,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 2497995,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 3672873,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 3544525,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2242932,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 2543734,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 4223412,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 3514434,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 3417550,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4537523,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3010243,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 5332830,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Red Light, Green Light/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 3588229,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 36632,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/description.txt",
+    "Name": "description.txt",
+    "Size": 239,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/intro - wtk.mp3",
+    "Name": "intro - wtk.mp3",
+    "Size": 115425,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 24688,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/page 12-13.mp3",
+    "Name": "page 12-13.mp3",
+    "Size": 108126,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/page 14-15.mp3",
+    "Name": "page 14-15.mp3",
+    "Size": 65292,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/page 17.mp3",
+    "Name": "page 17.mp3",
+    "Size": 37971,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/page 19.mp3",
+    "Name": "page 19.mp3",
+    "Size": 25733,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/page 21.mp3",
+    "Name": "page 21.mp3",
+    "Size": 191208,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 41939,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/page 7.mp3",
+    "Name": "page 7.mp3",
+    "Size": 34427,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/page 9.mp3",
+    "Name": "page 9.mp3",
+    "Size": 25344,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2813687,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 6012890,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7003723,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 5108207,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 6532432,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 4783552,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 8293837,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 7357733,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 7449491,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 6342351,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 6695481,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 7332310,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 2897710,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 2323420,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 5954782,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 8114082,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5927375,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 4801854,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 5647784,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6671672,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 5502078,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 6291841,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 751831,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 4968165,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 1617398,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2260901,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 5475955,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 3377234,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 3931064,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 4114851,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4567236,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 4025558,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 4769206,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Shh! What's That Sound/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 5000922,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/cover.jpg",
+    "Name": "cover.jpg",
+    "Size": 37160,
+    "MimeType": "image/jpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/description.txt",
+    "Name": "description.txt",
+    "Size": 253,
+    "MimeType": "text/plain; charset=utf-8",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/intro - wtk.mp3",
+    "Name": "intro - wtk.mp3",
+    "Size": 196590,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 10.mp3",
+    "Name": "page 10.mp3",
+    "Size": 138772,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 12.mp3",
+    "Name": "page 12.mp3",
+    "Size": 159564,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 14.mp3",
+    "Name": "page 14.mp3",
+    "Size": 146126,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 16.mp3",
+    "Name": "page 16.mp3",
+    "Size": 133325,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 18.mp3",
+    "Name": "page 18.mp3",
+    "Size": 188287,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 20.mp3",
+    "Name": "page 20.mp3",
+    "Size": 210847,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 3.mp3",
+    "Name": "page 3.mp3",
+    "Size": 188767,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 4.mp3",
+    "Name": "page 4.mp3",
+    "Size": 54208,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 6.mp3",
+    "Name": "page 6.mp3",
+    "Size": 105621,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/page 8.mp3",
+    "Name": "page 8.mp3",
+    "Size": 94698,
+    "MimeType": "audio/mpeg",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-1.png",
+    "Name": "crop-1.png",
+    "Size": 2835350,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-10.png",
+    "Name": "crop-10.png",
+    "Size": 3824661,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-11.png",
+    "Name": "crop-11.png",
+    "Size": 7480716,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-12.png",
+    "Name": "crop-12.png",
+    "Size": 3449418,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-13.png",
+    "Name": "crop-13.png",
+    "Size": 7159144,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-14.png",
+    "Name": "crop-14.png",
+    "Size": 2621060,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-15.png",
+    "Name": "crop-15.png",
+    "Size": 7487808,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-16.png",
+    "Name": "crop-16.png",
+    "Size": 2091993,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-17.png",
+    "Name": "crop-17.png",
+    "Size": 8754244,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-18.png",
+    "Name": "crop-18.png",
+    "Size": 3294045,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-19.png",
+    "Name": "crop-19.png",
+    "Size": 5809236,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-2.png",
+    "Name": "crop-2.png",
+    "Size": 45617,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-20.png",
+    "Name": "crop-20.png",
+    "Size": 3099382,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-21.png",
+    "Name": "crop-21.png",
+    "Size": 6166929,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-22.png",
+    "Name": "crop-22.png",
+    "Size": 3367722,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-23.png",
+    "Name": "crop-23.png",
+    "Size": 3594567,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-24.png",
+    "Name": "crop-24.png",
+    "Size": 3873540,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-25.png",
+    "Name": "crop-25.png",
+    "Size": 2686716,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-3.png",
+    "Name": "crop-3.png",
+    "Size": 4139592,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-4.png",
+    "Name": "crop-4.png",
+    "Size": 5500251,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-5.png",
+    "Name": "crop-5.png",
+    "Size": 8507391,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-6.png",
+    "Name": "crop-6.png",
+    "Size": 4329385,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-7.png",
+    "Name": "crop-7.png",
+    "Size": 6884335,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-8.png",
+    "Name": "crop-8.png",
+    "Size": 4680844,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/resized/crop-9.png",
+    "Name": "crop-9.png",
+    "Size": 5018550,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 1.png",
+    "Name": "screenshoot 1.png",
+    "Size": 1326180,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 10.png",
+    "Name": "screenshoot 10.png",
+    "Size": 3496871,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 11.png",
+    "Name": "screenshoot 11.png",
+    "Size": 3588119,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 12.png",
+    "Name": "screenshoot 12.png",
+    "Size": 2689674,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 13.png",
+    "Name": "screenshoot 13.png",
+    "Size": 2423459,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 2.png",
+    "Name": "screenshoot 2.png",
+    "Size": 1772913,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 3.png",
+    "Name": "screenshoot 3.png",
+    "Size": 5353385,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 4.png",
+    "Name": "screenshoot 4.png",
+    "Size": 4110831,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 5.png",
+    "Name": "screenshoot 5.png",
+    "Size": 3652286,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 6.png",
+    "Name": "screenshoot 6.png",
+    "Size": 4426624,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 7.png",
+    "Name": "screenshoot 7.png",
+    "Size": 3990059,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 8.png",
+    "Name": "screenshoot 8.png",
+    "Size": 4012633,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Zoom to the Zoo/screenshoot 9.png",
+    "Name": "screenshoot 9.png",
+    "Size": 4330481,
+    "MimeType": "image/png",
+    "ModTime": "2025-08-14T05:14:57.000000000-04:00",
+    "IsDir": false,
+    "Tier": "STANDARD"
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds",
+    "Name": "Animal Sounds Farm Sounds",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Animal Sounds Farm Sounds/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds",
+    "Name": "Animal Sounds Forest Sounds",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Animal Sounds Forest Sounds/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds",
+    "Name": "Animal Sounds Jungle Sounds",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Animal Sounds Jungle Sounds/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "By the Light of the Harvest Moon",
+    "Name": "By the Light of the Harvest Moon",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "By the Light of the Harvest Moon/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Flipper Island",
+    "Name": "Flipper Island",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Flipper Island/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Glaciers!",
+    "Name": "Glaciers!",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Glaciers!/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "I Hear Sound",
+    "Name": "I Hear Sound",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "I Hear Sound/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Kangaroo Country",
+    "Name": "Kangaroo Country",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Kangaroo Country/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Light and Dark",
+    "Name": "Light and Dark",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Light and Dark/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Light! It Helps Us See",
+    "Name": "Light! It Helps Us See",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Light! It Helps Us See/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast",
+    "Name": "Raven's Light A Myth From the People of the Northwest Coast",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Raven's Light A Myth From the People of the Northwest Coast/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Red Light, Green Light",
+    "Name": "Red Light, Green Light",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Red Light, Green Light/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Shh! What's That Sound",
+    "Name": "Shh! What's That Sound",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Shh! What's That Sound/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Zoom to the Zoo",
+    "Name": "Zoom to the Zoo",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  },
+  {
+    "Path": "Zoom to the Zoo/resized",
+    "Name": "resized",
+    "Size": -1,
+    "MimeType": "inode/directory",
+    "ModTime": "2025-09-22T19:11:33.171016000-04:00",
+    "IsDir": true
+  }
+]

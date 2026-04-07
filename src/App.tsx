@@ -1,8 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useMemo } from 'react';
 import { UserStatsProvider, useUserStats } from './contexts/UserStatsContext';
 import { SubscriptionProvider } from './contexts/SubscriptionContext';
 import { AdminProvider } from './contexts/AdminContext';
+import { NavigationProvider, useNavigation } from './contexts/NavigationContext';
+import { LanguageProvider } from './contexts/LanguageContext';
+import { useTranslation } from './contexts/LanguageContext';
+import { ParentalControlsProvider, useParentalControlsContext } from './contexts/ParentalControlsContext';
+import LanguageSwitch, { LanguageSwitchMobile } from './components/LanguageSwitch';
+import LibraryPage from './pages/LibraryPage';
+import MyLibraryPage from './pages/MyLibraryPage';
+// import MyBuddyPage from './pages/MyBuddyPage'; // HIDDEN
 import TrialStatusBanner from './components/TrialStatusBanner';
 import { supabase } from './lib/supabase';
 import Header from './components/Header';
@@ -13,12 +21,16 @@ import VoiceCoachingDashboard from './components/VoiceCoachingDashboard';
 import VoiceCoachingPractice from './components/VoiceCoachingPractice';
 import ReadToMeDashboard from './components/ReadToMeDashboard';
 import ReadToMeBookOverview from './components/ReadToMeBookOverview';
+import { useBooks } from './hooks/useBooks';
 import ReadToMeBookCover from './components/ReadToMeBookCover';
 import ReadAlongInterface from './components/ReadAlongInterface';
 import VoiceCoachPracticeInterface from './components/VoiceCoachPracticeInterface';
 import AudiobookPlayer from './components/AudiobookPlayer';
 import PdfReadAlongInterface from './components/PdfReadAlongInterface';
-import { BookOpen, Video, Mic, Volume2, Book, User, Settings, LogOut, Upload, Clock, Star, PlayCircle, Play } from 'lucide-react';
+import ShuSpotImageReaderWrapper from './components/ShuSpotImageReaderWrapper';
+import { addFavourite, removeFavourite, getFavourites } from './api/favourites';
+import { mapSupabaseBookToUI } from './utils/bookMapping';
+import { BookOpen, Video, Mic, Volume2, Book, User, Settings, LogOut, Upload, Clock, Star, PlayCircle, Play, Eye, EyeOff, Heart } from 'lucide-react';
 import { userProfile, featuredBooks, recommendedBooks } from './data/mockData';
 import { READING_LEVELS, GENRES, MEDIA_TYPES, BookFilters as BookFiltersType, DEFAULT_FILTERS, matchesFilters, getUniqueValues } from './data/filterData';
 import AuthFlow from './components/auth/AuthFlow';
@@ -30,6 +42,12 @@ import PdfViewer from './components/PdfViewer';
 import CategoryDropdown from './components/CategoryDropdown';
 import VideoBookPlayer from './components/VideoBookPlayer';
 import BookFiltersComponent from './components/BookFilters';
+import ContinueReadingSection from './components/ContinueReadingSection';
+import VideoDiscoveryApp from './components/video/VideoDiscoveryApp';
+import NewThreeTierNavigation from './components/library/NewThreeTierNavigation';
+import EpicNavigationWrapper from './components/EpicNavigationWrapper';
+import { useRecentVideos } from './hooks/useVideos';
+import './styles/EpicNavigation.css';
 import bookOpenIcon from './assets/92df9bc81af05dba2bb22a47171f9837-removebg-preview.png';
 import bookAllIcon from './assets/video-education-3d-icon-download-in-png-blend-fbx-gltf-file-formats--online-learning-digital-pack-school-icons-7285452-removebg-preview.png';
 import bookVoiceIcon from './assets/audiobook-3d-icon-download-in-png-blend-fbx-gltf-file-formats--desk-science-highlighter-library-pack-school-education-icons-11333837-removebg-preview.png';
@@ -47,6 +65,7 @@ import genreBg1 from './assets/Asset 1@2x.png';
 import genreBg2 from './assets/Asset 2@2x.png';
 import genreBg3 from './assets/Asset 3@2x.png';
 import genreBg4 from './assets/Asset 4@2x.png';
+import shuDogIcon from './assets/Shu Dog.png';
 
 
 
@@ -229,16 +248,22 @@ interface StoredVideoBook {
 
 function AppContent() {
   const { addReadingSession, userStats } = useUserStats();
+  const navigation = useNavigation();
+  const { t } = useTranslation();
+  const { controls: parentalControls } = useParentalControlsContext();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState<{ id: string; name: string; email: string; readingLevelSystem?: string; avatar?: string } | null>(null);
 
 
 
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [showAdminPanel, setShowAdminPanel] = useState(true);
 
-  const [currentView, setCurrentView] = useState<'dashboard' | 'book' | 'voice-coaching' | 'voice-practice' | 'user-portal' | 'read-to-me-book' | 'pdf-overview' | 'pdf-viewer' | 'video-book' | 'read-along' | 'audiobook' | 'pdf-read-along'>('dashboard');
+  const [currentView, setCurrentView] = useState<'dashboard' | 'new-library' | 'book' | 'voice-coaching' | 'voice-practice' | 'user-portal' | 'read-to-me-book' | 'pdf-overview' | 'pdf-viewer' | 'video-book' | 'read-along' | 'audiobook' | 'pdf-read-along' | 'shuspot-reader' | 'my-library'>('dashboard');
   const [selectedBookId, setSelectedBookId] = useState<string | null>(null);
   const [selectedPdfBook, setSelectedPdfBook] = useState<PdfBookData | null>(null);
+  const [selectedSupabaseBook, setSelectedSupabaseBook] = useState<any | null>(null);
+  const [initialPage, setInitialPage] = useState<number | undefined>(undefined);
   const [selectedLevel, setSelectedLevel] = useState('D - E');
   const [selectedContentType, setSelectedContentType] = useState('Voice Coach');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -265,6 +290,32 @@ function AppContent() {
 
   // Track if we've loaded from localStorage to prevent overwriting on initial render
   const [hasLoadedFromStorage, setHasLoadedFromStorage] = useState(false);
+
+  // Sync NavigationContext with App.tsx's selectedContentType
+  useEffect(() => {
+    // Map NavigationContext media types to App.tsx content types
+    const mediaTypeMap: Record<string, string> = {
+      'books': 'All Book',
+      'read-to-me': 'Read to Me',
+      'audiobooks': 'Audiobooks',
+      'video-books': 'Video Books',
+      'videos': 'Video Books',
+      'ai-voice': 'Voice Coach',
+      'coach': 'Voice Coach',
+      'comics': 'Books',
+      'downloads': 'All Book'
+    };
+    
+    const contentType = mediaTypeMap[navigation.selectedMediaType] || 'All Book';
+    setSelectedContentType(contentType);
+
+    // Navigate to the dedicated Voice Coach practice view when AI Voice / Coach icon is clicked
+    if (navigation.selectedMediaType === 'ai-voice' || navigation.selectedMediaType === 'coach') {
+      setCurrentView('voice-coaching');
+    } else if (contentType !== 'Voice Coach') {
+      setCurrentView(prev => (prev === 'voice-coaching' || prev === 'voice-practice') ? 'dashboard' : prev);
+    }
+  }, [navigation.selectedMediaType]);
 
   // Function to refresh user data from Supabase
   const refreshUserData = async () => {
@@ -353,14 +404,14 @@ function AppContent() {
     return () => subscription.unsubscribe();
   }, []);
 
-  // Carousel state for each section
-  const [carouselIndices, setCarouselIndices] = useState({
-    books: 0,
-    videos: 0,
-    voiceCoach: 0,
-    readToMe: 0,
-    audiobooks: 0
-  });
+  // Carousel state for each section - REMOVED: Epic navigation handles scrolling internally
+  // const [carouselIndices, setCarouselIndices] = useState({
+  //   books: 0,
+  //   videos: 0,
+  //   voiceCoach: 0,
+  //   readToMe: 0,
+  //   audiobooks: 0
+  // });
 
   // Load uploaded books from IndexedDB on component mount
   useEffect(() => {
@@ -485,20 +536,40 @@ function AppContent() {
           setUploadedVideoBooks(restoredVideoBooks);
         }
 
-        // Load user-specific favorites from localStorage
+        // Load user-specific favorites from Supabase (persistent) with localStorage fallback
         const userFavoritesKey = `favorites_${currentUser.id}`;
-        const storedFavorites = localStorage.getItem(userFavoritesKey);
-        if (storedFavorites) {
-          setFavorites(JSON.parse(storedFavorites));
-        } else {
-          // Reset to default empty favorites for new user
-          setFavorites({
-            books: [],
-            videoBooks: [],
-            voiceCoach: [],
-            audiobooks: [],
-            readToMe: []
-          });
+        try {
+          const favResult = await getFavourites(currentUser.id);
+          if (favResult.success && favResult.data && favResult.data.length > 0) {
+            // Map Supabase favorites back into the category-based local state
+            const mapped: typeof favorites = { books: [], videoBooks: [], voiceCoach: [], audiobooks: [], readToMe: [] };
+            favResult.data.forEach(fav => {
+              const ct = (fav.contentType || '').toLowerCase();
+              const entry = { id: fav.bookId, title: fav.title, author: fav.author, cover: fav.thumbnailUrl, contentType: fav.contentType };
+              if (ct.includes('read to me') || ct.includes('read-to-me')) mapped.readToMe.push(entry);
+              else if (ct.includes('audiobook')) mapped.audiobooks.push(entry);
+              else if (ct.includes('voice')) mapped.voiceCoach.push(entry);
+              else if (ct.includes('video')) mapped.videoBooks.push(entry);
+              else mapped.books.push(entry);
+            });
+            setFavorites(mapped);
+          } else {
+            // Fallback: migrate from localStorage if Supabase has nothing yet
+            const storedFavorites = localStorage.getItem(userFavoritesKey);
+            if (storedFavorites) {
+              setFavorites(JSON.parse(storedFavorites));
+            } else {
+              setFavorites({ books: [], videoBooks: [], voiceCoach: [], audiobooks: [], readToMe: [] });
+            }
+          }
+        } catch {
+          // Fallback to localStorage if Supabase fails
+          const storedFavorites = localStorage.getItem(userFavoritesKey);
+          if (storedFavorites) {
+            setFavorites(JSON.parse(storedFavorites));
+          } else {
+            setFavorites({ books: [], videoBooks: [], voiceCoach: [], audiobooks: [], readToMe: [] });
+          }
         }
 
         // Mark that we've completed loading from storage
@@ -639,143 +710,35 @@ function AppContent() {
     }
   }, [uploadedVideoBooks, hasLoadedFromStorage, currentUser?.id]);
 
-  // Save favorites to localStorage whenever they change (user-specific)
-  useEffect(() => {
-    if (currentUser?.id) {
-      const userFavoritesKey = `favorites_${currentUser.id}`;
-      localStorage.setItem(userFavoritesKey, JSON.stringify(favorites));
-    }
-  }, [favorites, currentUser?.id]);
+  // Favorites are persisted to Supabase directly in addToFavorites/removeFromFavorites
 
-  // Voice Coach books data
-  const voiceCoachBooks = [
-    {
-      id: '1',
-      title: 'Ocean Adventures',
-      author: 'Sarah Waters',
-      cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 15,
-      difficulty: 'D - E',
-      practiceScore: 85,
-      completedSessions: 3,
-      totalSessions: 5
-    },
-    {
-      id: '2',
-      title: 'Space Explorers',
-      author: 'Mike Chen',
-      cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 12,
-      difficulty: 'D - E',
-      practiceScore: 92,
-      completedSessions: 5,
-      totalSessions: 5
-    },
-    {
-      id: '3',
-      title: 'Forest Friends',
-      author: 'Emma Green',
-      cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 18,
-      difficulty: 'D - E',
-      completedSessions: 1,
-      totalSessions: 6
-    },
-    {
-      id: '4',
-      title: 'Dinosaur Discovery',
-      author: 'Tom Rex',
-      cover: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 10,
-      difficulty: 'D - E',
-      practiceScore: 78,
-      completedSessions: 2,
-      totalSessions: 4
-    },
-    {
-      id: '5',
-      title: 'Magic Castle',
-      author: 'Luna Bright',
-      cover: 'https://images.pexels.com/photos/1181276/pexels-photo-1181276.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 20,
-      difficulty: 'D - E',
-      completedSessions: 0,
-      totalSessions: 7
-    },
-    {
-      id: '6',
-      title: 'Animal Friends',
-      author: 'Jake Wilson',
-      cover: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 8,
-      difficulty: 'D - E',
-      practiceScore: 88,
-      completedSessions: 4,
-      totalSessions: 4
-    }
-  ];
+  // Voice Coach books data - REMOVED hardcoded books, only use uploaded PDFs
+  const voiceCoachBooks: any[] = [];
 
-  // Read to Me books data
-  const readToMeBooks = [
-    {
-      id: '1',
-      title: 'The Magic Forest Adventure',
-      author: 'Sarah Mitchell',
-      cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 15,
-      rating: 4.8,
-      category: 'Fantasy',
-      isNew: true,
-      progress: 65
-    },
-    {
-      id: '2',
-      title: 'Space Explorers',
-      author: 'Mike Chen',
-      cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 12,
-      rating: 4.9,
-      category: 'Science Fiction',
-      progress: 30
-    },
-    {
-      id: '3',
-      title: 'Ocean Mysteries',
-      author: 'Lisa Waters',
-      cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 18,
-      rating: 4.7,
-      category: 'Adventure',
-      progress: 85
-    },
-    {
-      id: '4',
-      title: 'Dinosaur Discovery',
-      author: 'Tom Rex',
-      cover: 'https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 10,
-      rating: 4.6,
-      category: 'Educational'
-    },
-    {
-      id: '5',
-      title: 'Princess Adventures',
-      author: 'Emma Royal',
-      cover: 'https://images.pexels.com/photos/1181276/pexels-photo-1181276.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 14,
-      rating: 4.8,
-      category: 'Fantasy'
-    },
-    {
-      id: '6',
-      title: 'Animal Friends',
-      author: 'Jake Wilson',
-      cover: 'https://images.pexels.com/photos/1181394/pexels-photo-1181394.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1',
-      readingTime: 8,
-      rating: 4.5,
-      category: 'Animals'
-    }
-  ];
+  // Fetch Read to Me books from Supabase
+  const { books: supabaseReadToMeBooks } = useBooks({
+    section: 'read-to-me',
+    limit: 50
+  });
+
+  // Fetch ALL books from Supabase for "All Books" section
+  const { books: supabaseAllBooks } = useBooks({
+    section: 'all',
+    limit: 100
+  });
+
+  // Fetch audiobooks from Supabase
+  // Note: Using 'audiobook' (singular) as the standard content_type value
+  const { books: supabaseAudiobooks } = useBooks({
+    contentType: 'audiobook',
+    limit: 50
+  });
+
+  // Fetch recent videos from Supabase
+  const { videos: recentVideos, loading: recentVideosLoading } = useRecentVideos(10);
+
+  // Use only Supabase Read to Me books (no hardcoded books)
+  const readToMeBooks: any[] = [];
 
   const readingLevels = ['Pre-K', 'K1', 'K2', '1A', '1B', '2A', '2B', '3A', '3B', '4A', '4B', '5A', '5B', '6A', '6B'];
 
@@ -847,6 +810,10 @@ function AppContent() {
     setCurrentView('user-portal');
   };
 
+  const handleMyLibrary = () => {
+    setCurrentView('my-library');
+  };
+
   const handlePdfUploadSuccess = (pdfBook: PdfBookData) => {
     console.log('PDF upload success handler called:', pdfBook.title, 'Media Type:', pdfBook.mediaType);
     const updatedBooks = [...uploadedPdfBooks, pdfBook];
@@ -896,6 +863,19 @@ function AppContent() {
   const handlePdfReadAlongSelect = (pdfBook: PdfBookData) => {
     setSelectedPdfBook(pdfBook);
     setCurrentView('pdf-overview'); // First go to overview page
+  };
+
+  const handleBookSelect = async (book: any) => {
+    // Check if it's an uploaded PDF book (has a 'file' property)
+    if ('file' in book && book.file instanceof File) {
+      // It's an uploaded PDF
+      handlePdfBookSelect(book as PdfBookData);
+    } else {
+      // It's a Supabase book - open ReadToMeBookOverview
+      setSelectedBookId(book.id);
+      setSelectedSupabaseBook(book);
+      setCurrentView('read-to-me-book');
+    }
   };
 
   const handleProgressUpdate = (bookId: string, pagesRead: number, timeSpent?: number) => {
@@ -972,6 +952,10 @@ function AppContent() {
       ...prev,
       [category]: [...prev[category].filter(fav => fav.id !== item.id), item]
     }));
+    // Persist to Supabase
+    if (currentUser?.id && item.id) {
+      addFavourite(currentUser.id, item.id).catch(err => console.error('Failed to save favourite to Supabase:', err));
+    }
   };
 
   const removeFromFavorites = (itemId: string, category: 'books' | 'videoBooks' | 'voiceCoach' | 'audiobooks' | 'readToMe') => {
@@ -979,6 +963,10 @@ function AppContent() {
       ...prev,
       [category]: prev[category].filter(fav => fav.id !== itemId)
     }));
+    // Remove from Supabase
+    if (currentUser?.id && itemId) {
+      removeFavourite(currentUser.id, itemId).catch(err => console.error('Failed to remove favourite from Supabase:', err));
+    }
   };
 
   const isFavorited = (itemId: string, category: 'books' | 'videoBooks' | 'voiceCoach' | 'audiobooks' | 'readToMe') => {
@@ -993,50 +981,50 @@ function AppContent() {
     }
   };
 
-  // Carousel navigation functions
-  const getBooksPerPage = () => {
-    // Calculate how many books fit on screen based on book width (w-40 = 160px) + spacing
-    const bookWidth = 160 + 24; // w-40 + space-x-6
-    const containerWidth = window.innerWidth - 200; // Account for margins and padding
-    return Math.floor(containerWidth / bookWidth) || 1;
-  };
+  // Carousel navigation functions - REMOVED: Epic navigation handles scrolling internally
+  // const getBooksPerPage = () => {
+  //   // Calculate how many books fit on screen based on book width (w-40 = 160px) + spacing
+  //   const bookWidth = 160 + 24; // w-40 + space-x-6
+  //   const containerWidth = window.innerWidth - 200; // Account for margins and padding
+  //   return Math.floor(containerWidth / bookWidth) || 1;
+  // };
 
-  const handleCarouselNext = (section: keyof typeof carouselIndices) => {
-    const booksPerPage = getBooksPerPage();
-    let totalBooks = 0;
+  // const handleCarouselNext = (section: keyof typeof carouselIndices) => {
+  //   const booksPerPage = getBooksPerPage();
+  //   let totalBooks = 0;
 
-    switch (section) {
-      case 'books':
-        totalBooks = uploadedPdfBooks.length > 0 ? uploadedPdfBooks.length : filteredBooks.filter(book => book.category === 'books').length;
-        break;
-      case 'videos':
-        totalBooks = uploadedVideoBooks.length > 0 ? uploadedVideoBooks.length : 3; // Sample videos
-        break;
-      case 'voiceCoach':
-        totalBooks = voiceCoachBooks.length;
-        break;
-      case 'readToMe':
-        totalBooks = readToMeBooks.length;
-        break;
-      case 'audiobooks':
-        totalBooks = readToMeBooks.length; // Using same data for now
-        break;
-    }
+  //   switch (section) {
+  //     case 'books':
+  //       totalBooks = uploadedPdfBooks.length > 0 ? uploadedPdfBooks.length : filteredBooks.filter(book => book.category === 'books').length;
+  //       break;
+  //     case 'videos':
+  //       totalBooks = uploadedVideoBooks.length > 0 ? uploadedVideoBooks.length : 3; // Sample videos
+  //       break;
+  //     case 'voiceCoach':
+  //       totalBooks = voiceCoachBooks.length;
+  //       break;
+  //     case 'readToMe':
+  //       totalBooks = readToMeBooks.length;
+  //       break;
+  //     case 'audiobooks':
+  //       totalBooks = readToMeBooks.length; // Using same data for now
+  //       break;
+  //   }
 
-    setCarouselIndices(prev => ({
-      ...prev,
-      [section]: Math.min(prev[section] + booksPerPage, Math.max(0, totalBooks - booksPerPage))
-    }));
-  };
+  //   setCarouselIndices(prev => ({
+  //     ...prev,
+  //     [section]: Math.min(prev[section] + booksPerPage, Math.max(0, totalBooks - booksPerPage))
+  //   }));
+  // };
 
-  const handleCarouselPrev = (section: keyof typeof carouselIndices) => {
-    const booksPerPage = getBooksPerPage();
+  // const handleCarouselPrev = (section: keyof typeof carouselIndices) => {
+  //   const booksPerPage = getBooksPerPage();
 
-    setCarouselIndices(prev => ({
-      ...prev,
-      [section]: Math.max(0, prev[section] - booksPerPage)
-    }));
-  };
+  //   setCarouselIndices(prev => ({
+  //     ...prev,
+  //     [section]: Math.max(0, prev[section] - booksPerPage)
+  //   }));
+  // };
 
   // Filter functions
   const updateFilters = (newFilters: Partial<BookFiltersType>) => {
@@ -1064,7 +1052,15 @@ function AppContent() {
     return uploadedPdfBooks.filter(pdf => pdf.mediaType === mediaType);
   };
 
-  // Compute filtered books based on current filters
+  // Helper function to check if a media type is blocked by parental controls
+  const isMediaTypeBlocked = (mediaTypeId: string): boolean => {
+    if (!parentalControls || !parentalControls.blocked_media_types) {
+      return false;
+    }
+    return parentalControls.blocked_media_types.includes(mediaTypeId);
+  };
+
+  // Compute filtered books based on current filters AND three-tier navigation
   const filteredBooks = useMemo(() => {
     const allBooks = [
       // Map uploaded PDFs to their correct categories based on media type
@@ -1078,33 +1074,132 @@ function AppContent() {
                   'books' // Default fallback
       })),
       ...uploadedVideoBooks.map(book => ({ ...book, category: 'videoBooks' })),
-      ...voiceCoachBooks.map(book => ({ ...book, category: 'voiceCoach', gradeLevel: book.difficulty, genre: 'Education' })),
-      ...readToMeBooks.map(book => ({ ...book, category: 'readToMe', gradeLevel: 'D - E', genre: book.category }))
+      // Removed voiceCoachBooks from filteredBooks - they should only appear in their dedicated section
+      ...readToMeBooks.map(book => ({ ...book, category: 'readToMe', gradeLevel: 'D - E', genre: book.category })),
+      // Include Supabase books from the "All Books" section
+      ...supabaseAllBooks.map(book => ({
+        ...book,
+        category: book.contentType === 'video' ? 'videoBooks' :
+                  book.contentType === 'audio' ? 'audiobooks' :
+                  book.contentType === 'interactive' ? 'readToMe' :
+                  'books',
+        gradeLevel: book.readingLevel || 'Unknown',
+        genre: book.category || 'Unknown'
+      }))
     ];
 
-    return allBooks.filter(book => matchesFilters(book, bookFilters));
-  }, [uploadedPdfBooks, uploadedVideoBooks, voiceCoachBooks, readToMeBooks, bookFilters]);
+    // Apply existing filters first
+    let filtered = allBooks.filter(book => matchesFilters(book, bookFilters));
+
+    // Apply parental control filters (Requirement 5.4)
+    if (parentalControls) {
+      // Filter by restricted grade levels
+      if (parentalControls.restricted_grade_levels && parentalControls.restricted_grade_levels.length > 0) {
+        filtered = filtered.filter(book => {
+          const bookGrade = (book as any).readingLevel || (book as any).gradeLevel;
+          return !parentalControls.restricted_grade_levels!.includes(bookGrade);
+        });
+      }
+
+      // Filter by blocked media types
+      if (parentalControls.blocked_media_types && parentalControls.blocked_media_types.length > 0) {
+        filtered = filtered.filter(book => {
+          // Map book categories to media type IDs
+          const categoryToMediaType: Record<string, string> = {
+            'books': 'books',
+            'readToMe': 'read-to-me',
+            'audiobooks': 'audiobooks',
+            'videoBooks': 'video-books',
+            'videos': 'videos',
+            'voiceCoach': 'coach',
+            'comics': 'comics',
+            'downloads': 'downloads'
+          };
+          
+          const bookMediaType = categoryToMediaType[book.category] || book.category;
+          const bookContentType = (book as any).contentType;
+          
+          // Check if either the category-mapped media type or content type is blocked
+          return !parentalControls.blocked_media_types!.includes(bookMediaType) &&
+                 !parentalControls.blocked_media_types!.includes(bookContentType);
+        });
+      }
+
+      // Filter by blocked genres
+      if (parentalControls.blocked_genres && parentalControls.blocked_genres.length > 0) {
+        filtered = filtered.filter(book => {
+          const bookGenre = book.genre || (book as any).category;
+          return !parentalControls.blocked_genres!.includes(bookGenre);
+        });
+      }
+    }
+
+    // THREE-TIER NAVIGATION FILTERS - TEMPORARILY DISABLED
+    // TODO: Re-enable once we verify books are showing correctly
+    // The filters are working but may be too restrictive initially
+    
+    // Uncomment these when ready to test:
+    /*
+    // Filter by grade level (Tier 1)
+    if (navigation.selectedGrade && navigation.selectedGrade !== 'All' && navigation.selectedGrade !== '1') {
+      filtered = filtered.filter(book => {
+        const bookGrade = (book as any).readingLevel || (book as any).gradeLevel;
+        return bookGrade === navigation.selectedGrade;
+      });
+    }
+
+    // Filter by media type (Tier 2)
+    if (navigation.selectedMediaType && navigation.selectedMediaType !== 'books') {
+      filtered = filtered.filter(book => {
+        const mediaTypeMap: Record<string, string[]> = {
+          'read-to-me': ['readToMe', 'read-to-me'],
+          'audiobooks': ['audiobooks'],
+          'video-books': ['videoBooks', 'video-books'],
+          'videos': ['videoBooks', 'videos'],
+          'ai-voice-coach': ['voiceCoach'],
+          'comics': ['comics'],
+          'downloads': ['downloads']
+        };
+        
+        const validCategories = mediaTypeMap[navigation.selectedMediaType] || [];
+        return validCategories.includes(book.category) || 
+               ((book as any).contentType === 'video' && navigation.selectedMediaType === 'video-books') ||
+               ((book as any).contentType === 'audio' && navigation.selectedMediaType === 'audiobooks') ||
+               ((book as any).contentType === 'interactive' && navigation.selectedMediaType === 'read-to-me');
+      });
+    }
+
+    // Filter by genre (Tier 3)
+    if (navigation.selectedGenre && navigation.selectedGenre !== 'All') {
+      filtered = filtered.filter(book => {
+        return book.category === navigation.selectedGenre || (book as any).genre === navigation.selectedGenre;
+      });
+    }
+    */
+
+    return filtered;
+  }, [uploadedPdfBooks, uploadedVideoBooks, readToMeBooks, supabaseAllBooks, bookFilters, navigation.selectedGrade, navigation.selectedMediaType, navigation.selectedGenre, parentalControls]);
 
   // Get available filter options from current books
   const availableGenres = useMemo(() => {
     const allBooks = [
       ...uploadedPdfBooks,
       ...uploadedVideoBooks,
-      ...voiceCoachBooks.map(book => ({ ...book, genre: 'Education' })),
+      // Removed voiceCoachBooks from genre filters - they should only appear in their dedicated section
       ...readToMeBooks.map(book => ({ ...book, genre: book.category }))
     ];
     return ['All', ...getUniqueValues(allBooks, 'genre')];
-  }, [uploadedPdfBooks, uploadedVideoBooks, voiceCoachBooks, readToMeBooks]);
+  }, [uploadedPdfBooks, uploadedVideoBooks, readToMeBooks]);
 
   const availableReadingLevels = useMemo(() => {
     const allBooks = [
       ...uploadedPdfBooks,
       ...uploadedVideoBooks,
-      ...voiceCoachBooks.map(book => ({ ...book, gradeLevel: book.difficulty })),
+      // Removed voiceCoachBooks from reading level filters - they should only appear in their dedicated section
       ...readToMeBooks.map(book => ({ ...book, gradeLevel: 'D - E' }))
     ];
     return ['All', ...getUniqueValues(allBooks, 'gradeLevel')];
-  }, [uploadedPdfBooks, uploadedVideoBooks, voiceCoachBooks, readToMeBooks]);
+  }, [uploadedPdfBooks, uploadedVideoBooks, readToMeBooks]);
 
   const sectionInfo = useMemo(() => {
     const getCurrentSectionInfo = () => {
@@ -1214,6 +1309,10 @@ function AppContent() {
     return <AuthFlow onAuthComplete={handleAuthComplete} />;
   }
 
+  if (currentView === 'new-library') {
+    return <LibraryPage />;
+  }
+
   if (currentView === 'book') {
     return <BookOverview onBack={() => setCurrentView('dashboard')} />;
   }
@@ -1295,31 +1394,52 @@ function AppContent() {
         />
       );
     } else {
-      // Handle regular Read to Me book
-      const readToMeBook = readToMeBooks.find(book => book.id === selectedBookId) || readToMeBooks[0];
+      // Handle regular Read to Me book from Supabase
+      const readToMeBook = supabaseReadToMeBooks.find(book => book.id === selectedBookId) || supabaseReadToMeBooks[0];
       return (
         <ReadToMeBookCover
           onBack={() => setCurrentView('dashboard')}
-          onStartReading={() => {
-            // Navigate to the ReadAlongInterface for the reading experience
-            setCurrentView('read-along');
+          onStartReading={async () => {
+            // Fetch the full book data from Supabase for the ShuSpot reader
+            const { data: bookData, error } = await supabase
+              .from('books')
+              .select('*')
+              .eq('id', selectedBookId)
+              .single();
+            
+            if (bookData && !error) {
+              // Transform the raw Supabase data to UI format
+              const transformedBook = mapSupabaseBookToUI(bookData);
+              setSelectedSupabaseBook(transformedBook);
+              setCurrentView('shuspot-reader');
+            } else {
+              console.error('Error fetching book data:', error);
+              // Fallback to read-along interface if fetch fails
+              setCurrentView('read-along');
+            }
           }}
           bookId={selectedBookId}
-          isFavorited={isFavorited(readToMeBook.id, 'readToMe')}
-          onToggleFavorite={() => toggleFavorite(readToMeBook, 'readToMe')}
+          isFavorited={readToMeBook ? isFavorited(readToMeBook.id, 'readToMe') : false}
+          onToggleFavorite={() => readToMeBook && toggleFavorite(readToMeBook, 'readToMe')}
         />
       );
     }
   }
 
   if (currentView === 'voice-coaching') {
+    // Go straight to the practice interface — use first available Voice Coach PDF if any
+    const firstVoiceCoachPdf = uploadedPdfBooks.find(pdf => pdf.mediaType === 'Voice Coach');
     return (
-      <VoiceCoachingDashboard
-        onBack={() => setCurrentView('dashboard')}
-        onStartPractice={(bookId) => {
-          setSelectedBookId(bookId);
-          setCurrentView('voice-practice');
+      <VoiceCoachPracticeInterface
+        onBack={() => {
+          setCurrentView('dashboard');
+          navigation.setMediaType('books');
         }}
+        bookId={firstVoiceCoachPdf?.id || 'voice-coach-default'}
+        pdfBook={firstVoiceCoachPdf}
+        isFavorited={firstVoiceCoachPdf ? isFavorited(firstVoiceCoachPdf.id, 'voiceCoach') : false}
+        onToggleFavorite={() => firstVoiceCoachPdf && toggleFavorite(firstVoiceCoachPdf, 'voiceCoach')}
+        onProgressUpdate={handleProgressUpdate}
       />
     );
   }
@@ -1337,6 +1457,25 @@ function AppContent() {
         isFavorited={isFavorited(voiceCoachPdf?.id || voiceCoachBook.id, 'voiceCoach')}
         onToggleFavorite={() => toggleFavorite(voiceCoachPdf || voiceCoachBook, 'voiceCoach')}
         onProgressUpdate={handleProgressUpdate}
+      />
+    );
+  }
+
+  if (currentView === 'shuspot-reader' && selectedSupabaseBook) {
+    return (
+      <ShuSpotImageReaderWrapper
+        book={selectedSupabaseBook}
+        initialPage={initialPage}
+        onBack={() => {
+          setCurrentView('dashboard');
+          setSelectedSupabaseBook(null);
+          setSelectedBookId(null);
+          setInitialPage(undefined);
+        }}
+        onBookmarkPage={(pageNumber) => {
+          console.log('Bookmarked page:', pageNumber);
+          // Progress is now automatically tracked by the wrapper
+        }}
       />
     );
   }
@@ -1359,14 +1498,16 @@ function AppContent() {
     );
   }
 
-  if (currentView === 'audiobook') {
-    const audiobookData = { id: 'miss-nelson-field-day', title: 'Miss Nelson Has a Field Day', author: 'Harry Allard' };
-
+  if (currentView === 'audiobook' && selectedSupabaseBook) {
     return (
       <AudiobookPlayer
-        onBack={() => setCurrentView('dashboard')}
-        isFavorited={isFavorited(audiobookData.id, 'audiobooks')}
-        onToggleFavorite={() => toggleFavorite(audiobookData, 'audiobooks')}
+        book={selectedSupabaseBook}
+        onBack={() => {
+          setCurrentView('dashboard');
+          setSelectedSupabaseBook(null);
+        }}
+        isFavorited={isFavorited(selectedSupabaseBook.id, 'audiobooks')}
+        onToggleFavorite={() => toggleFavorite(selectedSupabaseBook, 'audiobooks')}
         onProgressUpdate={handleProgressUpdate}
       />
     );
@@ -1431,39 +1572,128 @@ function AppContent() {
     );
   }
 
+  if (currentView === 'my-library') {
+    return (
+      <div className="min-h-screen bg-white">
+        <TrialStatusBanner />
+        {/* Header with transparency */}
+        <div className="relative z-10 bg-white/80 backdrop-blur-md shadow-sm">
+          <div className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4">
+            <div className="flex items-center justify-between">
+              {/* App Logo - Click to go back */}
+              <div className="flex items-center cursor-pointer" onClick={() => setCurrentView('dashboard')}>
+                <img
+                  src={appLogo}
+                  alt="App Logo"
+                  className="h-8 sm:h-10 md:h-12 object-contain"
+                />
+              </div>
 
+              {/* Search Bar - Hidden on mobile */}
+              <div className="hidden md:flex flex-1 max-w-2xl mx-8 items-center space-x-3">
+                <div className="relative flex-1">
+                  <input
+                    type="text"
+                    placeholder={t('header.search.placeholder')}
+                    value={bookFilters.searchQuery}
+                    onChange={(e) => updateFilters({ searchQuery: e.target.value })}
+                    className="w-full px-4 py-2 bg-white/90 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
+                  />
+                  <button className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                    <Settings className="w-5 h-5 text-gray-400" />
+                  </button>
+                </div>
+                
+                {/* Language Switch next to search bar */}
+                <LanguageSwitch className="flex" />
+              </div>
+
+              {/* User Profile Section - Responsive */}
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                {/* My Library Button - Epic Style */}
+                <button 
+                  onClick={handleMyLibrary}
+                  className="hidden md:flex flex-col items-center px-3 py-2 text-[#a2cfd2] bg-gray-50 rounded-lg transition-colors min-w-[80px]"
+                >
+                  <Heart className="w-10 h-10 mb-1 fill-[#FF69B4]" fill="currentColor" />
+                  <span className="text-sm font-bold">My Library</span>
+                </button>
+                
+                {/* My Buddy Button - HIDDEN */}
+                {/* 
+                <button 
+                  onClick={() => {}}
+                  className="hidden md:flex flex-col items-center px-3 py-2 text-gray-600 hover:text-[#a2cfd2] hover:bg-gray-50 rounded-lg transition-colors min-w-[80px]"
+                >
+                  <img src={shuDogIcon} alt="My Buddy" className="w-10 h-10 mb-1 object-contain" />
+                  <span className="text-sm font-bold">My Buddy</span>
+                </button>
+                */}
+                
+                <button
+                  onClick={handleUserPortal}
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer"
+                >
+                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl">{currentUser?.avatar || '🐶'}</span>
+                </button>
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-1 sm:gap-2">
+                    <button
+                      onClick={handleUserPortal}
+                      className="text-sm sm:text-base md:text-lg lg:text-xl font-superclarendon-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
+                    >
+                      <span className="hidden sm:inline">{t('header.hello')} {currentUser?.name?.split(' ')[0] || 'User'}!</span>
+                      <span className="sm:hidden">{currentUser?.name?.split(' ')[0] || 'User'}</span>
+                      <span className="hidden sm:inline"> 🌟</span>
+                    </button>
+                  </div>
+                  {currentUser?.readingLevelSystem && (
+                    <div className="text-xs sm:text-sm text-gray-600 bg-white/80 backdrop-blur-sm rounded-md px-1.5 sm:px-2 py-0.5 sm:py-1 shadow-sm border border-white/30 mt-0.5">
+                      <span className="hidden sm:inline">Reading Level: </span>
+                      <span className="font-bold text-blue-700">{currentUser.readingLevelSystem}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <MyLibraryPage
+          onBack={() => setCurrentView('dashboard')}
+          userName={currentUser?.name?.split(' ')[0] || 'User'}
+        />
+      </div>
+    );
+  }
+
+  // My Buddy view - HIDDEN
+  // if (currentView === 'my-buddy') { ... }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-white">
       <TrialStatusBanner />
       {/* Header with transparency */}
       <div className="relative z-10 bg-white/80 backdrop-blur-md shadow-sm">
-        <div className="px-6 py-4">
+        <div className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-3xl">{currentUser?.avatar || '🐶'}</span>
-              </div>
-              <div className="flex flex-col">
-                <button
-                  onClick={handleUserPortal}
-                  className="text-xl font-superclarendon-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
-                >
-                  Hello {currentUser?.name?.split(' ')[0] || 'User'}! 🌟
-                </button>
-                {currentUser?.readingLevelSystem && (
-                  <div className="text-sm text-gray-600 bg-white/80 backdrop-blur-sm rounded-md px-2 py-1 shadow-sm border border-white/30">
-                    Reading Level: <span className="font-bold text-blue-700">{currentUser.readingLevelSystem}</span>
-                  </div>
-                )}
-              </div>
+            {/* App Logo - Click to reset to All Books view */}
+            <div className="flex items-center cursor-pointer" onClick={() => {
+              console.log('Logo clicked - resetting to All Book view');
+              setSelectedContentType('All Book');
+            }}>
+              <img
+                src={appLogo}
+                alt="App Logo"
+                className="h-8 sm:h-10 md:h-12 object-contain"
+              />
             </div>
 
-            <div className="flex-1 max-w-2xl mx-8 flex items-center space-x-3">
+            {/* Search Bar - Hidden on mobile */}
+            <div className="hidden md:flex flex-1 max-w-2xl mx-8 items-center space-x-3">
               <div className="relative flex-1">
                 <input
                   type="text"
-                  placeholder="Search books, authors, genres..."
+                  placeholder={t('header.search.placeholder')}
                   value={bookFilters.searchQuery}
                   onChange={(e) => updateFilters({ searchQuery: e.target.value })}
                   className="w-full px-4 py-2 bg-white/90 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
@@ -1472,946 +1702,524 @@ function AppContent() {
                   <Settings className="w-5 h-5 text-gray-400" />
                 </button>
               </div>
+              
+              {/* Language Switch next to search bar */}
+              <LanguageSwitch className="flex" />
+            </div>
 
-
-
-              {/* Library/School Toggle - Smaller version */}
-              <div className="flex bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                <button
-                  onClick={() => setCurrentMode('library')}
-                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-medium transition-colors ${currentMode === 'library'
-                    ? 'bg-brand-pink text-white'
-                    : 'text-gray-700 hover:bg-gray-50'
-                    }`}
-                >
-                  <BookOpen className="w-4 h-4" />
-                  <span>Library</span>
-                </button>
-                <button
-                  onClick={() => setCurrentMode('school')}
-                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-medium transition-colors ${currentMode === 'school'
-                    ? 'bg-brand-pink text-white'
-                    : 'text-gray-700 hover:bg-gray-50'
-                    }`}
-                >
-                  <Settings className="w-4 h-4" />
-                  <span>School</span>
-                </button>
+            {/* User Profile Section - Responsive */}
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              {/* Language Switch - Show on desktop and mobile */}
+              <div className="flex md:hidden">
+                <LanguageSwitchMobile />
+              </div>
+              
+              {/* My Library Button - Show on desktop and mobile */}
+              <button 
+                onClick={handleMyLibrary}
+                className="flex flex-col items-center px-2 sm:px-3 py-2 text-gray-600 hover:text-[#a2cfd2] hover:bg-gray-50 rounded-lg transition-colors min-w-[70px] sm:min-w-[80px]"
+              >
+                <Heart className="w-8 h-8 sm:w-10 sm:h-10 mb-1 fill-[#FF69B4]" fill="currentColor" />
+                <span className="text-xs sm:text-sm font-bold">My Library</span>
+              </button>
+              
+              {/* My Buddy Button - HIDDEN */}
+              {/* 
+              <button 
+                onClick={() => {}}
+                className="hidden md:flex flex-col items-center px-3 py-2 text-gray-600 hover:text-[#a2cfd2] hover:bg-gray-50 rounded-lg transition-colors min-w-[80px]"
+              >
+                <img src={shuDogIcon} alt="My Buddy" className="w-10 h-10 mb-1 object-contain" />
+                <span className="text-sm font-bold">My Buddy</span>
+              </button>
+              */}
+              
+              <button
+                onClick={handleUserPortal}
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer"
+              >
+                <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl">{currentUser?.avatar || '🐶'}</span>
+              </button>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <button
+                    onClick={handleUserPortal}
+                    className="text-sm sm:text-base md:text-lg lg:text-xl font-superclarendon-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
+                  >
+                    <span className="hidden sm:inline">{t('header.hello')} {currentUser?.name?.split(' ')[0] || 'User'}!</span>
+                    <span className="sm:hidden">{currentUser?.name?.split(' ')[0] || 'User'}</span>
+                    <span className="hidden sm:inline"> 🌟</span>
+                  </button>
+                  {currentUser?.email === 'ethan@shivasounds.com' && (
+                    <button
+                      onClick={() => {
+                        console.log('Toggling admin panel:', !showAdminPanel);
+                        setShowAdminPanel(!showAdminPanel);
+                      }}
+                      className="p-1 sm:p-1.5 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all shadow-md hover:shadow-lg transform hover:scale-105"
+                      title={showAdminPanel ? "Hide Admin Panel" : "Show Admin Panel"}
+                    >
+                      <Settings className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                    </button>
+                  )}
+                </div>
+                {currentUser?.readingLevelSystem && (
+                  <div className="text-xs sm:text-sm text-gray-600 bg-white/80 backdrop-blur-sm rounded-md px-1.5 sm:px-2 py-0.5 sm:py-1 shadow-sm border border-white/30 mt-0.5">
+                    <span className="hidden sm:inline">Reading Level: </span>
+                    <span className="font-bold text-blue-700">{currentUser.readingLevelSystem}</span>
+                  </div>
+                )}
               </div>
             </div>
-
-            {/* App Logo */}
-            <div className="flex items-center">
-              <img
-                src={appLogo}
-                alt="App Logo"
-                className="h-10 object-contain"
+          </div>
+          
+          {/* Mobile Search Bar */}
+          <div className="md:hidden mt-2">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder={t('header.search.mobile.placeholder')}
+                value={bookFilters.searchQuery}
+                onChange={(e) => updateFilters({ searchQuery: e.target.value })}
+                className="w-full px-3 py-2 text-sm bg-white/90 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm"
               />
+              <button className="absolute right-2 top-1/2 transform -translate-y-1/2">
+                <Settings className="w-4 h-4 text-gray-400" />
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Hero Section with Background that bleeds up into header */}
-      <div
-        className={`relative py-16 -mt-20 pt-36 bg-cover bg-center`}
-        style={selectedContentType === 'All Book' ? {
-          backgroundImage: `url(${volcanoBookBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        } : selectedContentType === 'Video Books' ? {
-          backgroundImage: `url(${stargazingBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        } : selectedContentType === 'Audiobooks' ? {
-          backgroundImage: `url(${cozyBedroomBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        } : selectedContentType === 'Books' ? {
-          backgroundImage: `url(${booksBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        } : (selectedContentType === 'Read to Me' || selectedContentType === 'Voice Coach') ? {
-          backgroundImage: `url(${hippoWaterBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        } : {}}>
-        <div className="px-6 text-center">
-          <div className="inline-block bg-white/95 backdrop-blur-md rounded-2xl px-8 py-6 shadow-lg border border-white/50">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              {typeof sectionInfo.icon === 'string' ? (
-                <img src={sectionInfo.icon} alt={sectionInfo.title} className="w-8 h-8 object-contain drop-shadow-sm" />
-              ) : (
-                <sectionInfo.icon className={`w-8 h-8 ${sectionInfo.iconColor} drop-shadow-sm`} />
-              )}
-              <h1 className="text-4xl font-superclarendon-bold drop-shadow-sm" style={{ color: '#9fcfd1' }}>{sectionInfo.title}</h1>
-            </div>
-            <p className="text-lg drop-shadow-sm" style={{ color: '#9fcfd1' }}>{sectionInfo.subtitle}</p>
-          </div>
-        </div>
-      </div>
+      {/* Three-Tier Navigation - Streamlined Filtering (hidden for Video Books) */}
+      {selectedContentType !== 'Video Books' && (
+        <NewThreeTierNavigation />
+      )}
 
       <main className="relative z-10 px-4 sm:px-6 py-4 sm:py-8">
         {/* Admin Upload Panel */}
-        <AdminUpload />
+        {showAdminPanel && <AdminUpload />}
         
         {/* Remove the container box - make content full width */}
 
 
-            {/* Content Type Tabs */}
-            <div className="mb-4">
-              <div className="grid grid-cols-3 sm:grid-cols-3 lg:flex lg:justify-evenly items-center gap-2 sm:gap-3 lg:gap-2 py-3 px-2 sm:px-4">
-                {contentTypes.map((type) => (
-                  <button
-                    key={type.id}
-                    onClick={() => {
-                      setSelectedContentType(type.name);
-                      // Both Voice Coach and Read to Me content will show inline, no view change needed
-                    }}
-                    className={`group w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl flex flex-col items-center justify-center relative ${selectedContentType === type.name
-                      ? 'text-white shadow-2xl shadow-pink-500/40 animate-pulse-slow'
-                      : 'text-blue-700 shadow-lg shadow-pink-200/50'
-                      }`}
-                    style={{
-                      background: selectedContentType === type.name
-                        ? 'linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1)'
-                        : 'linear-gradient(135deg, rgba(253, 242, 248, 0.7), rgba(252, 231, 243, 0.7), rgba(251, 207, 232, 0.7))',
-                      boxShadow: selectedContentType === type.name
-                        ? '0 20px 40px rgba(251, 191, 36, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 0 4px #fbbf24, 0 0 0 8px #f59e0b, 0 0 20px rgba(251, 191, 36, 0.5)'
-                        : '0 8px 25px rgba(236, 72, 153, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 0 3px #f9a8d4, 0 0 0 6px #f472b6, 0 0 15px rgba(236, 72, 153, 0.2)'
-                    }}
-                  >
-                    {/* Animated ring effect for selected state */}
-                    {selectedContentType === type.name && (
-                      <div className="absolute inset-0 rounded-full border-4 border-yellow-400 animate-ping opacity-75"></div>
-                    )}
-                    {typeof type.icon === 'string' ? (
-                      <img
-                        src={type.icon}
-                        alt={type.name}
-                        className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-1 object-contain transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:drop-shadow-lg"
-                      />
-                    ) : (
-                      React.createElement(type.icon as React.ComponentType<{ className?: string }>, {
-                        className: "w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-1 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:drop-shadow-lg"
-                      })
-                    )}
-                    <div
-                      className="text-xs sm:text-sm font-black text-yellow-600 tracking-wide"
-                      style={{
-                        textShadow: '1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black, 0 2px 4px rgba(0, 0, 0, 0.1)'
-                      }}
-                    >
-                      {type.name}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
+            {/* Old circular content type buttons removed - now using three-tier navigation */}
 
-        {/* Genre Categories - Full Width Horizontal Scroll */}
-        <div className="mb-6 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-r from-blue-50 to-purple-50 py-4">
-          <h3 className="text-xl font-superclarendon-bold text-blue-800 mb-4 text-center">Genres</h3>
-          <div className="relative max-w-full px-4 sm:px-6">
-            {/* Left Arrow */}
-            <button
-              onClick={() => {
-                const container = document.getElementById('genres-container');
-                if (container) {
-                  container.scrollBy({ left: -200, behavior: 'smooth' });
+        {/* Video Discovery Section - Show when Video Books is selected */}
+        {selectedContentType === 'Video Books' && (
+          <VideoDiscoveryApp />
+        )}
+
+        {/* Main content - Hidden when Video Books is selected */}
+        {selectedContentType !== 'Video Books' && (
+          <>
+
+            {/* Continue Reading Section - Supabase Books */}
+            {selectedContentType !== 'Video Books' && (
+            <ContinueReadingSection
+              bookType={
+                selectedContentType === 'Read to Me' ? 'read-to-me' :
+                selectedContentType === 'Voice Coach' ? 'voice-coach' :
+                selectedContentType === 'Books' ? 'books' :
+                selectedContentType === 'Video Books' ? 'videos' :
+                selectedContentType === 'Audiobooks' ? 'audiobooks' :
+                'all'
+              }
+              onBookClick={async (bookId, currentPage) => {
+                console.log('📖 Continue reading Supabase book:', bookId, 'at page:', currentPage);
+                
+                // Fetch the full book data from Supabase
+                const { data: bookData, error } = await supabase
+                  .from('books')
+                  .select('*')
+                  .eq('id', bookId)
+                  .single();
+
+                if (error) {
+                  console.error('Error fetching book:', error);
+                  return;
+                }
+
+                if (bookData) {
+                  // Transform the raw Supabase data to UI format
+                  const transformedBook = mapSupabaseBookToUI(bookData);
+                  setSelectedSupabaseBook(transformedBook);
+                  setSelectedBookId(bookId);
+                  setInitialPage(currentPage);
+                  setCurrentView('shuspot-reader');
                 }
               }}
-              className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
-            >
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            {/* Scrollable Container */}
-            <div 
-              id="genres-container"
-              className="overflow-x-auto scrollbar-hide px-14"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              <div className="flex space-x-4 pb-2" style={{ width: 'max-content' }}>
-                  {[
-                    // Science & Nature
-                    { name: 'Animals & Their Habitats', icon: '🦁', shape: 'bubble' },
-                    { name: 'Plants & Their Environments', icon: '🌱', shape: 'leaf' },
-                    { name: 'Weather', icon: '🌤️', shape: 'cloud' },
-                    { name: 'Space', icon: '🚀', shape: 'star' },
-                    { name: 'Five Senses', icon: '👁️', shape: 'heart' },
-
-                    // Animals
-                    { name: 'Backyard Animals', icon: '🐿️', shape: 'bubble' },
-                    { name: 'Baby Animals', icon: '🐣', shape: 'heart' },
-                    { name: 'Sharks', icon: '🦈', shape: 'wave' },
-                    { name: 'Big Cats', icon: '🐅', shape: 'hexagon' },
-                    { name: 'Birds', icon: '🦅', shape: 'cloud' },
-                    { name: 'Snakes', icon: '🐍', shape: 'wave' },
-                    { name: 'Bugs', icon: '🐛', shape: 'leaf' },
-                    { name: 'Cats', icon: '🐱', shape: 'heart' },
-                    { name: 'Dinosaurs', icon: '🦕', shape: 'hexagon' },
-                    { name: 'Dogs', icon: '🐕', shape: 'bubble' },
-                    { name: 'Fish', icon: '🐠', shape: 'wave' },
-                    { name: 'Pets', icon: '🐾', shape: 'heart' },
-                    { name: 'Horses', icon: '🐎', shape: 'cloud' },
-                    { name: 'Unicorns', icon: '🦄', shape: 'star' },
-
-                    // Creative Arts
-                    { name: 'Art', icon: '🎨', shape: 'star' },
-                    { name: 'Music', icon: '🎵', shape: 'heart' },
-                    { name: 'Makerspace', icon: '🔧', shape: 'hexagon' },
-
-                    // Health & Wellness
-                    { name: 'Bodies in Motion', icon: '🏃', shape: 'bubble' },
-                    { name: 'Healthy Habits', icon: '🥗', shape: 'leaf' },
-                    { name: 'Mindfulness', icon: '🧘', shape: 'cloud' },
-
-                    // Sports & Activities
-                    { name: 'Soccer', icon: '⚽', shape: 'bubble' },
-                    { name: 'Sports', icon: '🏈', shape: 'hexagon' },
-
-                    // Seasons & Holidays
-                    { name: 'Winter', icon: '❄️', shape: 'star' },
-                    { name: 'Spring', icon: '🌸', shape: 'heart' },
-
-                    // Fantasy & Imagination
-                    { name: 'Princesses', icon: '👸', shape: 'heart' },
-                    { name: 'Fairy Tales', icon: '🧚', shape: 'star' },
-                    { name: 'Mythical Creatures', icon: '🐉', shape: 'hexagon' },
-                    { name: 'Superheroes', icon: '🦸', shape: 'star' },
-                    { name: 'Comic Books', icon: '💥', shape: 'bubble' },
-
-                    // Math & Learning
-                    { name: 'Money', icon: '💰', shape: 'hexagon' },
-                    { name: 'Telling Time', icon: '⏰', shape: 'bubble' },
-                    { name: 'Addition & Subtraction', icon: '➕', shape: 'star' },
-                    { name: 'Counting', icon: '🔢', shape: 'hexagon' },
-                    { name: 'Measuring', icon: '📏', shape: 'leaf' },
-                    { name: 'Shapes, Colors, Letters & Numbers', icon: '🔤', shape: 'star' },
-
-                    // History & Social Studies
-                    { name: 'American Symbols', icon: '🗽', shape: 'star' },
-                    { name: 'Biography', icon: '📖', shape: 'leaf' },
-                    { name: 'Black History Month', icon: '✊', shape: 'hexagon' },
-                    { name: 'Economics: Goods & Services', icon: '🏪', shape: 'bubble' },
-                    { name: 'Explore Our Past & Present', icon: '🏛️', shape: 'cloud' },
-                    { name: 'History', icon: '📜', shape: 'leaf' },
-                    { name: 'Native Americans', icon: '🪶', shape: 'wave' },
-                    { name: 'Our Neighborhood', icon: '🏘️', shape: 'bubble' },
-                    { name: "Women's History Month", icon: '👩', shape: 'heart' },
-
-                    // Transportation
-                    { name: 'Adventure', icon: '🗺️', shape: 'star' },
-                    { name: 'Airplanes', icon: '✈️', shape: 'cloud' },
-                    { name: 'Boats & Ships', icon: '🚢', shape: 'wave' },
-                    { name: 'Cars & Trucks', icon: '🚗', shape: 'hexagon' },
-                    { name: 'Cars, Trucks & Trains', icon: '🚛', shape: 'bubble' },
-                    { name: 'Trains', icon: '🚂', shape: 'cloud' },
-
-                    // Social & Emotional Learning
-                    { name: 'Bravery', icon: '🦁', shape: 'star' },
-                    { name: 'Bullying', icon: '🛡️', shape: 'hexagon' },
-                    { name: 'Exploring My World', icon: '🌍', shape: 'bubble' },
-                    { name: 'Families', icon: '👨‍👩‍👧‍👦', shape: 'heart' },
-                    { name: 'Friendship', icon: '👫', shape: 'heart' },
-                    { name: 'Grief & Loss', icon: '💙', shape: 'cloud' },
-                    { name: 'Growth Mindset', icon: '🌱', shape: 'leaf' },
-                    { name: 'Identifying Emotions', icon: '😊', shape: 'bubble' },
-                    { name: 'Jobs Around Town', icon: '👷', shape: 'hexagon' },
-                    { name: 'Kindness', icon: '💝', shape: 'heart' },
-                    { name: 'Laugh Out Loud', icon: '😂', shape: 'bubble' },
-                    { name: 'Learning to Read', icon: '📚', shape: 'leaf' },
-                    { name: 'Narrative Nonfiction', icon: '📰', shape: 'cloud' }
-                  ].map((genre, index) => {
-                    // Cycle through the 4 background assets in a pattern that avoids repetition
-                    const backgroundAssets = [genreBg1, genreBg2, genreBg3, genreBg4];
-                    const backgroundImage = backgroundAssets[index % 4];
-                    
-                    const isSelected = selectedCategory === genre.name;
-
-                    return (
-                      <button
-                        key={genre.name}
-                        onClick={() => {
-                          setSelectedCategory(genre.name);
-                          updateFilters({ genre: genre.name });
-                        }}
-                        className={`relative p-4 transition-all duration-300 hover:scale-110 hover:shadow-xl flex flex-col items-center justify-center flex-shrink-0 w-40 h-40 ${
-                          isSelected ? 'ring-4 ring-white ring-offset-2 shadow-2xl' : 'hover:ring-2 hover:ring-white/50'
-                        }`}
-                        style={{
-                          backgroundImage: `url(${backgroundImage})`,
-                          backgroundSize: '100% 100%',
-                          backgroundPosition: 'center',
-                          backgroundRepeat: 'no-repeat',
-                        }}
-                      >
-                        
-                        <span className="text-3xl mb-2 relative z-10 drop-shadow-lg filter">{genre.icon}</span>
-                        <span className="text-sm font-bold text-center leading-tight relative z-10 drop-shadow-md px-1 text-white">{genre.name}</span>
-                        
-                        {/* Sparkle decoration for selected state */}
-                        {isSelected && (
-                          <div className="absolute top-2 right-2 z-10">
-                            <svg className="w-6 h-6 text-yellow-300 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                          </div>
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-            {/* Right Arrow */}
-            <button
-              onClick={() => {
-                const container = document.getElementById('genres-container');
-                if (container) {
-                  container.scrollBy({ left: 200, behavior: 'smooth' });
-                }
-              }}
-              className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 flex-shrink-0 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-200 shadow-sm"
-            >
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Category Filter */}
-            <div className="mb-8">
-              <div className="flex items-start space-x-4">
-                {/* All Button */}
-                <div className="flex flex-col">
-                  <span className="text-sm font-medium text-gray-700 mb-2">Books</span>
-                  <button
-                    onClick={() => {
-                      setSelectedCategory('All');
-                      // Clear genre filter when "All" is selected
-                      updateFilters({ genre: 'All' });
-                    }}
-                    className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${selectedCategory === 'All'
-                      ? 'bg-brand-pink text-white shadow-lg'
-                      : 'bg-white border border-blue-300 text-blue-700 hover:border-blue-400 hover:shadow-md hover:bg-blue-50'
-                      }`}
-                  >
-                    All
-                  </button>
-                </div>
-
-                {/* Reading Level Dropdown */}
-                <div className="flex flex-col">
-                  <span className="text-sm font-medium text-gray-700 mb-2">Reading Level</span>
-                  <select
-                    value={selectedLevel}
-                    onChange={(e) => {
-                      setSelectedLevel(e.target.value);
-                      // Update the filter system when reading level is selected
-                      updateFilters({ readingLevel: e.target.value });
-                    }}
-                    className="px-4 py-3 bg-white border border-blue-300 text-blue-700 rounded-lg font-medium hover:border-blue-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  >
-                    {readingLevels.map((level) => (
-                      <option key={level} value={level}>
-                        {level}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Category Dropdown */}
-                <div className="flex flex-col flex-1">
-                  <span className="text-sm font-medium text-gray-700 mb-2">Categories</span>
-                  <CategoryDropdown
-                    selectedCategory={selectedCategory}
-                    onCategorySelect={setSelectedCategory}
-                    isCompact={true}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Selected Category Display */}
-            {selectedCategory && selectedCategory !== 'All' && (
-              <div className="mb-8 p-4 bg-yellow-100 rounded-xl border border-yellow-300">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-brand-yellow rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm">📚</span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-yellow-900">Selected Category</h3>
-                      <p className="text-yellow-800">{selectedCategory}</p>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setSelectedCategory('All');
-                      // Clear all filters when clearing category
-                      clearFilters();
-                    }}
-                    className="px-4 py-2 bg-brand-pink text-white rounded-lg hover:bg-pink-800 transition-colors text-sm font-medium shadow-md"
-                  >
-                    Clear Filter
-                  </button>
-                </div>
-              </div>
+              className="mb-12"
+            />
             )}
 
-            {/* Continue Reading Section - Hide when Read to Me or Voice Coach is selected */}
-            {selectedContentType !== 'Read to Me' && selectedContentType !== 'Voice Coach' && (
-              <div className="mb-12">
-                <h3 className="text-2xl font-superclarendon-bold text-blue-800 mb-6">Continue Reading</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                  {/* Display recently uploaded PDF books that match current content type */}
-                  {uploadedPdfBooks.filter(book => {
-                    // Only show PDFs that match the current selected content type
-                    if (selectedContentType === 'All Book') return true; // Show all in All Book section
-                    if (selectedContentType === 'Books' && book.mediaType === 'Books') return true;
-                    if (selectedContentType === 'Video Books' && (book.mediaType === 'Video Books' || book.mediaType === 'Videos')) return true;
-                    if (selectedContentType === 'Audiobooks' && book.mediaType === 'Audiobooks') return true;
-                    return false; // Don't show PDFs that don't match current section
-                  }).slice(0, 3).map((book) => (
-                    <div
-                      key={`continue-${book.id}`}
-                      className="group cursor-pointer"
-                      onClick={() => {
-                        console.log('📖 Continue reading book clicked:', book.title);
-                        handlePdfBookSelect(book);
-                      }}
-                    >
-                      <div className="aspect-[3/4] bg-gray-200 rounded-lg mb-3 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300 border border-gray-300 overflow-hidden relative">
-                        <img
-                          src={book.cover}
-                          alt={book.title}
-                          className="w-full h-full object-cover"
-                        />
-                        {/* Progress indicator */}
-                        {book.pagesRead && book.totalPages && (
-                          <div className="absolute bottom-0 left-0 right-0 bg-black/70">
-                            <div className="h-1 bg-gray-600">
-                              <div
-                                className="h-full bg-blue-500 transition-all duration-300"
-                                style={{ width: `${(book.pagesRead / book.totalPages) * 100}%` }}
-                              />
-                            </div>
-                            <div className="text-white text-xs px-2 py-1">
-                              {Math.round((book.pagesRead / book.totalPages) * 100)}% complete
-                            </div>
-                          </div>
-                        )}
-                        {/* Dynamic book type indicator based on media type */}
-                        <div className={`absolute top-2 right-2 text-white text-xs px-2 py-1 rounded font-medium ${
-                          book.mediaType === 'Read to me' ? 'bg-purple-600/90' :
-                          book.mediaType === 'Voice Coach' ? 'bg-green-600/90' :
-                          book.mediaType === 'Video Books' || book.mediaType === 'Videos' ? 'bg-red-600/90' :
-                          book.mediaType === 'Audiobooks' ? 'bg-blue-600/90' :
-                          book.mediaType === 'Books' ? 'bg-gray-700/90' :
-                          'bg-black/70'
-                        }`}>
-                          {book.mediaType === 'Read to me' ? 'Read to Me' :
-                           book.mediaType === 'Voice Coach' ? 'Voice Coach' :
-                           book.mediaType === 'Video Books' ? 'Video Book' :
-                           book.mediaType === 'Videos' ? 'Video' :
-                           book.mediaType === 'Audiobooks' ? 'Audiobook' :
-                           book.mediaType === 'Books' ? 'Book' :
-                           'PDF'}
-                        </div>
-                      </div>
-                      <div className="text-sm font-superclarendon-bold text-blue-700 text-center mt-2 leading-tight">
-                        {book.title}
-                      </div>
-                      <div className="text-xs text-gray-600 text-center">
-                        {book.author}
-                      </div>
-                    </div>
-                  ))}
-                  {/* Display uploaded videos first - Only show when Video Books is selected */}
-                  {selectedContentType === 'Video Books' && uploadedVideoBooks.map((videoBook) => (
-                    <div
-                      key={videoBook.id}
-                      className="group cursor-pointer"
-                      onClick={() => {
-                        setSelectedBookId(videoBook.id);
-                        setCurrentView('video-book');
-                      }}
-                    >
-                      <div className="aspect-[3/4] bg-black rounded-lg mb-3 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300 border border-purple-300 overflow-hidden relative">
-                        <img
-                          src={videoBook.cover}
-                          alt={videoBook.title}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                          <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
-                            <Play className="w-6 h-6 text-gray-800 ml-0.5" />
-                          </div>
-                        </div>
-                        <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                          {Math.floor(videoBook.duration / 60)}:{(videoBook.duration % 60).toString().padStart(2, '0')}
-                        </div>
-                      </div>
-                      <div className="text-sm font-superclarendon-bold text-purple-700 text-center mt-2 leading-tight">
-                        {videoBook.title}
-                      </div>
-                    </div>
-                  ))}
 
-                  {/* Default Video Book - Only show when Video Books is selected and no uploaded videos */}
-                  {selectedContentType === 'Video Books' && uploadedVideoBooks.length === 0 && (
-                    <div
-                      className="group cursor-pointer"
-                      onClick={() => setCurrentView('video-book')}
-                    >
-                      <div className="aspect-[3/4] bg-gradient-to-br from-purple-400 via-pink-400 to-yellow-400 rounded-lg mb-3 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300 border border-purple-300 overflow-hidden relative">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="text-4xl mb-2">🦄</div>
-                            <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center mx-auto">
-                              <Play className="w-4 h-4 text-gray-800 ml-0.5" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="text-sm font-superclarendon-bold text-purple-700 text-center mt-2 leading-tight">
-                        Pretty Perfect Kitty-Corn
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Audiobook - Only show when Audiobooks is selected */}
-                  {selectedContentType === 'Audiobooks' && (
-                    <div
-                      className="group cursor-pointer"
-                      onClick={() => setCurrentView('audiobook')}
-                    >
-                      <div className="aspect-[3/4] bg-gradient-to-br from-teal-400 via-cyan-500 to-blue-500 rounded-lg mb-3 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300 border border-teal-300 overflow-hidden relative">
-                        <div className="absolute inset-0 flex flex-col items-center justify-center p-3">
-                          <div className="text-center">
-                            <div className="text-2xl mb-2">🏫📚</div>
-                            <div className="text-white text-xs font-superclarendon-bold leading-tight mb-2">
-                              MISS NELSON HAS A FIELD DAY
-                            </div>
-                            <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center mx-auto">
-                              <Volume2 className="w-4 h-4 text-gray-800" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="absolute bottom-2 right-2 bg-teal-600 text-white text-xs px-2 py-1 rounded-full font-medium">
-                          Audiobook 🔊
-                        </div>
-                      </div>
-                      <div className="text-sm font-superclarendon-bold text-purple-700 text-center mt-2 leading-tight">
-                        Miss Nelson Has a Field Day
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Display uploaded PDF books - Show PDFs that match current content type */}
-                  {(() => {
-                    // Don't show Featured Books section in All Book view - it has its own categorized sections
-                    if (selectedContentType === 'All Book') return [];
-
-                    // For specific content types, show only PDFs that match that type
-                    let mediaTypeToShow = '';
-                    if (selectedContentType === 'Books') mediaTypeToShow = 'Books';
-                    if (selectedContentType === 'Voice Coach') mediaTypeToShow = 'Voice Coach';
-                    if (selectedContentType === 'Read to Me') mediaTypeToShow = 'Read to me';
-                    if (selectedContentType === 'Video Books') mediaTypeToShow = 'Video Books';
-                    if (selectedContentType === 'Audiobooks') mediaTypeToShow = 'Audiobooks';
-
-                    return getPdfsByMediaType(mediaTypeToShow).slice(0, 3);
-                  })().map((pdfBook) => (
-                    <BookCardWithHover
-                      key={pdfBook.id}
-                      book={pdfBook}
-                      onClick={() => {
-                        if ((pdfBook as any).needsReupload) {
-                          alert('This PDF needs to be re-uploaded. Please go to Upload Files and upload it again.');
-                          return;
-                        }
-                        handlePdfBookSelect(pdfBook);
-                      }}
-                      onToggleFavorite={() => toggleFavorite(pdfBook, 'books')}
-                      isFavorited={isFavorited(pdfBook.id, 'books')}
-                      category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
-                               pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
-                               pdfBook.mediaType === 'Video Books' ? 'Video Book' :
-                               pdfBook.mediaType === 'Videos' ? 'Video' :
-                               pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
-                               pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
-                      showProgress={true}
-                    />
-                  ))}
-
-                  {/* Fill remaining slots with placeholder books */}
-                  {[...Array(Math.max(0, 6 - uploadedPdfBooks.length))].map((_, index) => (
-                    <div
-                      key={`placeholder-${index}`}
-                      className="group cursor-pointer"
-                      onClick={() => {
-                        // Add smooth transition
-                        setTimeout(() => {
-                          setCurrentView('book');
-                        }, 100);
-                      }}
-                    >
-                      <div className="aspect-[3/4] bg-blue-200 rounded-lg mb-3 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300 border border-blue-300"></div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Progress indicator */}
-                <div className="flex justify-center mt-6">
-                  <div className="flex space-x-2">
-                    <div className="w-8 h-1 bg-brand-pink rounded"></div>
-                    <div className="w-1 h-1 bg-blue-300 rounded"></div>
-                    <div className="w-1 h-1 bg-blue-300 rounded"></div>
-                  </div>
-                </div>
-              </div>
-            )}
 
             {/* All Books - Categorized Sections */}
             {selectedContentType === 'All Book' && (
               <div className="space-y-12">
                 {/* Books Section */}
-                {(filteredBooks.filter(book => book.category === 'books').length > 0 || uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books').length > 0) && (
+                {!isMediaTypeBlocked('books') && (filteredBooks.filter(book => book.category === 'books').length > 0 || uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books').length > 0) && (
                   <div className="mb-12">
                     <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-2xl font-superclarendon-bold text-blue-800">Book</h3>
-                      <div className="flex space-x-2">
-                        <button
-                          onClick={() => handleCarouselPrev('books')}
-                          className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                        >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                          </svg>
-                        </button>
-                        <button
-                          onClick={() => handleCarouselNext('books')}
-                          className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                        >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </button>
+                      <div className="flex items-center space-x-3">
+                        <Book className="w-6 h-6" style={{ color: '#e2d051' }} />
+                        <h3 className="font-superclarendon-bold font-bold text-black" style={{ fontSize: '1.3rem' }}>{t('media.books')}</h3>
                       </div>
                     </div>
-                    <div className="overflow-hidden">
-                      <div className="flex gap-6 transition-transform duration-300">
-                        {(uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books').length > 0 ? uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books') : filteredBooks.filter(book => book.category === 'books')).slice(carouselIndices.books, carouselIndices.books + getBooksPerPage()).map((book) => (
-                          <div key={`books-${book.id}`} className="flex-shrink-0 w-48">
-                            <BookCardWithHover
-                              book={book}
-                              onClick={() => handlePdfBookSelect(book as PdfBookData)}
-                              onToggleFavorite={() => toggleFavorite(book, 'books')}
-                              isFavorited={isFavorited(book.id, 'books')}
-                              category="books"
-                            />
-                          </div>
-                        ))}
+                    <EpicNavigationWrapper scrollContainerId="books-carousel">
+                      <div 
+                        id="books-carousel"
+                        className="overflow-x-auto epic-scroll-container"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                      >
+                        <div className="flex gap-6 pb-4">
+                          {(uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books').length > 0 ? uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Books') : filteredBooks.filter(book => book.category === 'books')).map((book) => (
+                            <div key={`books-${book.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
+                              <BookCardWithHover
+                                book={book}
+                                onClick={() => handleBookSelect(book)}
+                                onToggleFavorite={() => toggleFavorite(book, 'books')}
+                                isFavorited={isFavorited(book.id, 'books')}
+                                category="books"
+                              />
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    </EpicNavigationWrapper>
                   </div>
                 )}
 
                 {/* Video Books Section */}
+                {!isMediaTypeBlocked('video-books') && !isMediaTypeBlocked('videos') && (
                 <div className="mb-12">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-2xl font-superclarendon-bold text-blue-800">Videos</h3>
-                    <div className="flex space-x-2">
-                      <button
-                        onClick={() => handleCarouselPrev('videos')}
-                        className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                      >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
-                      </button>
-                      <button
-                        onClick={() => handleCarouselNext('videos')}
-                        className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                      >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
+                    <div className="flex items-center space-x-3">
+                      <Video className="w-6 h-6" style={{ color: '#e2d051' }} />
+                      <h3 className="font-superclarendon-bold font-bold text-black" style={{ fontSize: '1.3rem' }}>{t('library.videos')}</h3>
                     </div>
                   </div>
-                  <div className="overflow-hidden">
-                    <div className="flex gap-6 transition-transform duration-300">
-                      {/* Show uploaded videos with "Video Books" or "Videos" media type first */}
-                      {uploadedVideoBooks.filter(video => video.mediaType === 'Video Books' || video.mediaType === 'Videos').slice(carouselIndices.videos, carouselIndices.videos + getBooksPerPage()).map((videoBook) => (
-                        <div key={`video-uploaded-${videoBook.id}`} className="flex-shrink-0 w-48">
-                          <BookCardWithHover
-                            book={videoBook}
+                  <EpicNavigationWrapper scrollContainerId="videos-carousel">
+                    <div 
+                      id="videos-carousel"
+                      className="overflow-x-auto epic-scroll-container"
+                      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
+                      <div className="flex gap-6 pb-4">
+                        {/* Show recent videos from Supabase */}
+                        {!recentVideosLoading && recentVideos.length > 0 && recentVideos.map((video) => (
+                          <div 
+                            key={`recent-video-${video.id}`} 
+                            className="flex-shrink-0 w-56 sm:w-60 md:w-64 lg:w-72 xl:w-80 cursor-pointer group"
                             onClick={() => {
-                              setSelectedBookId(videoBook.id);
-                              setCurrentView('video-book');
+                              // Store the selected video ID and navigate to Video Books section
+                              sessionStorage.setItem('autoPlayVideoId', video.id);
+                              setSelectedContentType('Video Books');
                             }}
-                            onToggleFavorite={() => toggleFavorite(videoBook, 'videoBooks')}
-                            isFavorited={isFavorited(videoBook.id, 'videoBooks')}
-                            category="videoBooks"
-                          />
-                        </div>
-                      ))}
-                      {/* Show uploaded PDFs with "Video Books" or "Videos" media type */}
-                      {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Video Books' || pdf.mediaType === 'Videos').slice(carouselIndices.videos, carouselIndices.videos + getBooksPerPage()).map((pdfBook) => (
-                        <div key={`video-pdf-${pdfBook.id}`} className="flex-shrink-0 w-48">
-                          <BookCardWithHover
-                            book={pdfBook}
-                            onClick={() => handlePdfBookSelect(pdfBook)}
-                            onToggleFavorite={() => toggleFavorite(pdfBook, 'videoBooks')}
-                            isFavorited={isFavorited(pdfBook.id, 'videoBooks')}
-                            category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
-                                     pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
-                                     pdfBook.mediaType === 'Video Books' ? 'Video Book' :
-                                     pdfBook.mediaType === 'Videos' ? 'Video' :
-                                     pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
-                                     pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
-                          />
-                        </div>
-                      ))}
-                      {/* Then show sample videos if no uploaded content */}
-                      {(uploadedVideoBooks.filter(video => video.mediaType === 'Video Books' || video.mediaType === 'Videos').length === 0 &&
-                        uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Video Books' || pdf.mediaType === 'Videos').length === 0) &&
-                        [
-                          { id: 'v1', title: 'Sample Video Book 1', author: 'Video Creator', cover: 'https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1', totalPages: 0, gradeLevel: 'K1' },
-                          { id: 'v2', title: 'Sample Video Book 2', author: 'Video Creator', cover: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1', totalPages: 0, gradeLevel: 'K2' },
-                          { id: 'v3', title: 'Sample Video Book 3', author: 'Video Creator', cover: 'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=1', totalPages: 0, gradeLevel: '1A' }
-                        ].slice(carouselIndices.videos, carouselIndices.videos + getBooksPerPage()).map((book) => (
-                          <div key={`video-${book.id}`} className="flex-shrink-0 w-48">
+                          >
+                            <div className="relative aspect-video bg-black rounded-lg mb-3 overflow-hidden group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                              <img
+                                src={video.thumbnail_url}
+                                alt={video.title}
+                                className="w-full h-full object-cover"
+                              />
+                              {/* Play Button Overlay */}
+                              <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-colors">
+                                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                  <div className="w-0 h-0 border-l-[16px] border-l-black border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ml-1" />
+                                </div>
+                              </div>
+                              {/* Duration Badge */}
+                              {video.duration && (
+                                <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-1.5 py-0.5 rounded">
+                                  {Math.floor(video.duration / 60)}:{String(video.duration % 60).padStart(2, '0')}
+                                </div>
+                              )}
+                              {/* AR Level Badge */}
+                              {video.ar_level !== undefined && video.ar_level !== null && (
+                                <div className="absolute top-2 left-2 bg-[#24BFE6] text-white text-xs font-bold px-2 py-1 rounded">
+                                  AR {video.ar_level.toFixed(1)}
+                                </div>
+                              )}
+                            </div>
+                            <div className="text-sm font-superclarendon-bold text-purple-700 text-center mt-2 leading-tight line-clamp-2">
+                              {video.title}
+                            </div>
+                            {/* Genre Tags */}
+                            {(video.genre_1 || video.genre_2) && (
+                              <div className="flex flex-wrap gap-1 justify-center mt-1">
+                                {video.genre_1 && (
+                                  <span className="bg-purple-100 text-purple-700 text-xs px-2 py-0.5 rounded">
+                                    {video.genre_1}
+                                  </span>
+                                )}
+                                {video.genre_2 && (
+                                  <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded">
+                                    {video.genre_2}
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                        
+                        {/* Show uploaded videos with "Video Books" or "Videos" media type */}
+                        {uploadedVideoBooks.filter(video => video.mediaType === 'Video Books' || video.mediaType === 'Videos').map((videoBook) => (
+                          <div key={`video-uploaded-${videoBook.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
                             <BookCardWithHover
-                              book={book}
-                              onClick={() => setCurrentView('video-book')}
-                              onToggleFavorite={() => toggleFavorite(book, 'videoBooks')}
-                              isFavorited={isFavorited(book.id, 'videoBooks')}
+                              book={videoBook}
+                              onClick={() => {
+                                setSelectedBookId(videoBook.id);
+                                setCurrentView('video-book');
+                              }}
+                              onToggleFavorite={() => toggleFavorite(videoBook, 'videoBooks')}
+                              isFavorited={isFavorited(videoBook.id, 'videoBooks')}
                               category="videoBooks"
                             />
                           </div>
-                        ))
-                      }
-                    </div>
-                  </div>
-                </div>
-
-                {/* Voice Coach Books Section - Hide when Voice Coach is specifically selected */}
-                {selectedContentType !== 'Voice Coach' && (
-                  <div className="mb-12">
-                    <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-2xl font-superclarendon-bold text-blue-800">Voice Coach Books</h3>
-                      <div className="flex space-x-2">
-                        <button
-                          onClick={() => handleCarouselPrev('voiceCoach')}
-                          className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                        >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                          </svg>
-                        </button>
-                        <button
-                          onClick={() => handleCarouselNext('voiceCoach')}
-                          className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                        >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div className="overflow-hidden">
-                      <div className="flex gap-6 transition-transform duration-300">
-                        {/* Show uploaded PDFs with "Voice Coach" media type first */}
-                        {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Voice Coach').slice(carouselIndices.voiceCoach, carouselIndices.voiceCoach + getBooksPerPage()).map((pdfBook) => (
-                          <div key={`voice-pdf-${pdfBook.id}`} className="flex-shrink-0 w-48">
+                        ))}
+                        {/* Show uploaded PDFs with "Video Books" or "Videos" media type */}
+                        {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Video Books' || pdf.mediaType === 'Videos').map((pdfBook) => (
+                          <div key={`video-pdf-${pdfBook.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
                             <BookCardWithHover
                               book={pdfBook}
                               onClick={() => handlePdfBookSelect(pdfBook)}
-                              onToggleFavorite={() => toggleFavorite(pdfBook, 'voiceCoach')}
-                              isFavorited={isFavorited(pdfBook.id, 'voiceCoach')}
+                              onToggleFavorite={() => toggleFavorite(pdfBook, 'videoBooks')}
+                              isFavorited={isFavorited(pdfBook.id, 'videoBooks')}
                               category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
                                        pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
                                        pdfBook.mediaType === 'Video Books' ? 'Video Book' :
                                        pdfBook.mediaType === 'Videos' ? 'Video' :
                                        pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
                                        pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
-                              showProgress={true}
-                            />
-                          </div>
-                        ))}
-                        {/* Then show hardcoded Voice Coach books */}
-                        {voiceCoachBooks.slice(carouselIndices.voiceCoach, carouselIndices.voiceCoach + getBooksPerPage()).map((book) => (
-                          <div key={`voice-${book.id}`} className="flex-shrink-0 w-48">
-                            <BookCardWithHover
-                              book={{
-                                ...book,
-                                gradeLevel: book.difficulty,
-                                totalPages: book.totalSessions * 5 // Estimate pages based on sessions
-                              }}
-                              onClick={() => {
-                                setSelectedBookId(book.id);
-                                setCurrentView('voice-practice');
-                              }}
-                              onToggleFavorite={() => toggleFavorite(book, 'voiceCoach')}
-                              isFavorited={isFavorited(book.id, 'voiceCoach')}
-                              category="voiceCoach"
                             />
                           </div>
                         ))}
                       </div>
                     </div>
+                  </EpicNavigationWrapper>
+                </div>
+                )}
+
+                {/* Voice Coach Books Section - Hide when Voice Coach is specifically selected */}
+                {!isMediaTypeBlocked('coach') && !isMediaTypeBlocked('ai-voice') && selectedContentType !== 'Voice Coach' && (
+                  <div className="mb-12">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center space-x-3">
+                        <Mic className="w-6 h-6" style={{ color: '#e2d051' }} />
+                        <h3 className="font-superclarendon-bold font-bold text-black" style={{ fontSize: '1.3rem' }}>{t('media.voice.coach')} {t('media.books')}</h3>
+                      </div>
+                    </div>
+                    <EpicNavigationWrapper scrollContainerId="voice-coach-carousel">
+                      <div 
+                        id="voice-coach-carousel"
+                        className="overflow-x-auto epic-scroll-container"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                      >
+                        <div className="flex gap-6 pb-4">
+                          {/* Show uploaded PDFs with "Voice Coach" media type first */}
+                          {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Voice Coach').map((pdfBook) => (
+                            <div key={`voice-pdf-${pdfBook.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
+                              <BookCardWithHover
+                                book={pdfBook}
+                                onClick={() => handlePdfBookSelect(pdfBook)}
+                                onToggleFavorite={() => toggleFavorite(pdfBook, 'voiceCoach')}
+                                isFavorited={isFavorited(pdfBook.id, 'voiceCoach')}
+                                category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
+                                         pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
+                                         pdfBook.mediaType === 'Video Books' ? 'Video Book' :
+                                         pdfBook.mediaType === 'Videos' ? 'Video' :
+                                         pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
+                                         pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
+                                showProgress={true}
+                              />
+                            </div>
+                          ))}
+                          {/* Then show hardcoded Voice Coach books */}
+                          {voiceCoachBooks.map((book) => (
+                            <div key={`voice-${book.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
+                              <BookCardWithHover
+                                book={{
+                                  ...book,
+                                  gradeLevel: book.difficulty,
+                                  totalPages: book.totalSessions * 5 // Estimate pages based on sessions
+                                }}
+                                onClick={() => {
+                                  setSelectedBookId(book.id);
+                                  setCurrentView('voice-practice');
+                                }}
+                                onToggleFavorite={() => toggleFavorite(book, 'voiceCoach')}
+                                isFavorited={isFavorited(book.id, 'voiceCoach')}
+                                category="voiceCoach"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </EpicNavigationWrapper>
                   </div>
                 )}
 
                 {/* Read to Me Books Section */}
-                {(readToMeBooks.length > 0 || uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Read to me').length > 0) && (
+                {!isMediaTypeBlocked('read-to-me') && (readToMeBooks.length > 0 || uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Read to me').length > 0 || supabaseReadToMeBooks.length > 0) && (
                   <div className="mb-12">
                     <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-2xl font-superclarendon-bold text-blue-800">Read to Me</h3>
-                      <div className="flex space-x-2">
-                        <button
-                          onClick={() => handleCarouselPrev('readToMe')}
-                          className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                        >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                          </svg>
-                        </button>
-                        <button
-                          onClick={() => handleCarouselNext('readToMe')}
-                          className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                        >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </button>
+                      <div className="flex items-center space-x-3">
+                        <BookOpen className="w-6 h-6" style={{ color: '#e2d051' }} />
+                        <h3 className="font-superclarendon-bold font-bold text-black" style={{ fontSize: '1.3rem' }}>{t('media.read.to.me')}</h3>
                       </div>
                     </div>
-                    <div className="overflow-hidden">
-                      <div className="flex gap-6 transition-transform duration-300">
-                        {/* Show uploaded PDFs with "Read to me" media type first */}
-                        {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Read to me').slice(carouselIndices.readToMe, carouselIndices.readToMe + getBooksPerPage()).map((pdfBook) => (
-                          <div key={`readtome-pdf-${pdfBook.id}`} className="flex-shrink-0 w-48">
-                            <BookCardWithHover
-                              book={pdfBook}
-                              onClick={() => handlePdfReadAlongSelect(pdfBook)}
-                              onToggleFavorite={() => toggleFavorite(pdfBook, 'readToMe')}
-                              isFavorited={isFavorited(pdfBook.id, 'readToMe')}
-                              category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
-                                       pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
-                                       pdfBook.mediaType === 'Video Books' ? 'Video Book' :
-                                       pdfBook.mediaType === 'Videos' ? 'Video' :
-                                       pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
-                                       pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
-                              showProgress={true}
-                            />
-                          </div>
-                        ))}
-                        {/* Then show regular Read to Me books */}
-                        {readToMeBooks.slice(carouselIndices.readToMe, carouselIndices.readToMe + getBooksPerPage()).map((book) => (
-                          <div key={`readtome-${book.id}`} className="flex-shrink-0 w-48">
-                            <BookCardWithHover
-                              book={{
-                                ...book,
-                                gradeLevel: 'D - E',
-                                totalPages: book.readingTime * 2 // Estimate pages based on reading time
-                              }}
-                              onClick={() => {
-                                console.log('📚 Read to Me book selected:', book.title);
-                                setSelectedBookId(book.id);
-                                setCurrentView('read-to-me-book');
-                              }}
-                              onToggleFavorite={() => toggleFavorite(book, 'readToMe')}
-                              isFavorited={isFavorited(book.id, 'readToMe')}
-                              category="readToMe"
-                              showProgress={book.progress !== undefined}
-                            />
-                          </div>
-                        ))}
+                    <EpicNavigationWrapper scrollContainerId="read-to-me-carousel">
+                      <div 
+                        id="read-to-me-carousel"
+                        className="overflow-x-auto epic-scroll-container"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                      >
+                        <div className="flex gap-6 pb-4">
+                          {/* Show Supabase Read to Me books first */}
+                          {supabaseReadToMeBooks.map((book) => (
+                            <div key={`readtome-supabase-${book.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
+                              <BookCardWithHover
+                                book={book}
+                                onClick={() => {
+                                  setSelectedBookId(book.id);
+                                  setCurrentView('read-to-me-book');
+                                }}
+                                onToggleFavorite={() => toggleFavorite(book, 'readToMe')}
+                                isFavorited={isFavorited(book.id, 'readToMe')}
+                                category="readToMe"
+                              />
+                            </div>
+                          ))}
+                          {/* Show uploaded PDFs with "Read to me" media type */}
+                          {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Read to me').map((pdfBook) => (
+                            <div key={`readtome-pdf-${pdfBook.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
+                              <BookCardWithHover
+                                book={pdfBook}
+                                onClick={() => handlePdfReadAlongSelect(pdfBook)}
+                                onToggleFavorite={() => toggleFavorite(pdfBook, 'readToMe')}
+                                isFavorited={isFavorited(pdfBook.id, 'readToMe')}
+                                category="Read to Me"
+                                showProgress={true}
+                              />
+                            </div>
+                          ))}
+                          {/* Removed duplicate readToMeBooks - already showing supabaseReadToMeBooks above */}
+                        </div>
                       </div>
-                    </div>
+                    </EpicNavigationWrapper>
                   </div>
                 )}
 
                 {/* Audiobooks Section */}
+                {!isMediaTypeBlocked('audiobooks') && (
                 <div className="mb-12">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-2xl font-superclarendon-bold text-blue-800">Audiobooks</h3>
-                    <div className="flex space-x-2">
-                      <button
-                        onClick={() => handleCarouselPrev('audiobooks')}
-                        className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                      >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
-                      </button>
-                      <button
-                        onClick={() => handleCarouselNext('audiobooks')}
-                        className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                      >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
+                    <div className="flex items-center space-x-3">
+                      <Volume2 className="w-6 h-6" style={{ color: '#e2d051' }} />
+                      <h3 className="font-superclarendon-bold font-bold text-black" style={{ fontSize: '1.3rem' }}>{t('media.audiobooks')}</h3>
                     </div>
                   </div>
-                  <div className="overflow-hidden">
-                    <div className="flex gap-6 transition-transform duration-300">
-                      {/* Show uploaded PDFs with "Audiobooks" media type first */}
-                      {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Audiobooks').slice(carouselIndices.audiobooks, carouselIndices.audiobooks + getBooksPerPage()).map((pdfBook) => (
-                        <div key={`audiobook-pdf-${pdfBook.id}`} className="flex-shrink-0 w-48">
+                  <EpicNavigationWrapper scrollContainerId="audiobooks-carousel">
+                    <div 
+                      id="audiobooks-carousel"
+                      className="overflow-x-auto epic-scroll-container"
+                      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
+                      <div className="flex gap-6 pb-4">
+                        {/* Show Supabase audiobooks */}
+                        {supabaseAudiobooks.map((book) => (
+                          <div key={`audiobook-supabase-${book.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
+                            <BookCardWithHover
+                              book={book}
+                              onClick={() => {
+                                setSelectedSupabaseBook(book);
+                                setCurrentView('audiobook');
+                              }}
+                              onToggleFavorite={() => toggleFavorite(book, 'audiobooks')}
+                              isFavorited={isFavorited(book.id, 'audiobooks')}
+                              category="Audiobook"
+                            />
+                          </div>
+                        ))}
+                        {/* Show uploaded PDFs with "Audiobooks" media type */}
+                        {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Audiobooks').map((pdfBook) => (
+                          <div key={`audiobook-pdf-${pdfBook.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
+                            <BookCardWithHover
+                              book={pdfBook}
+                              onClick={() => handlePdfBookSelect(pdfBook)}
+                              onToggleFavorite={() => toggleFavorite(pdfBook, 'audiobooks')}
+                              isFavorited={isFavorited(pdfBook.id, 'audiobooks')}
+                              category="Audiobook"
+                              showProgress={true}
+                            />
+                          </div>
+                        ))}
+                        {/* Show placeholder if no audiobooks */}
+                        {supabaseAudiobooks.length === 0 && uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Audiobooks').length === 0 && (
+                          <div className="flex-shrink-0 w-48">
+                            <div className="text-center text-gray-500 p-8">
+                              <p>No audiobooks yet</p>
+                              <p className="text-sm mt-2">Upload audiobooks to get started</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </EpicNavigationWrapper>
+                </div>
+                )}
+              </div>
+            )}
+
+            {/* Read to Me Section - Show when Read to Me is selected */}
+            {selectedContentType === 'Read to Me' && (
+              <div className="mb-12">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center space-x-3">
+                    <BookOpen className="w-6 h-6" style={{ color: '#e2d051' }} />
+                    <h3 className="font-superclarendon-bold font-bold text-black" style={{ fontSize: '1.3rem' }}>{t('media.read.to.me')} {t('library.stories')}</h3>
+                  </div>
+                </div>
+                <EpicNavigationWrapper scrollContainerId="read-to-me-main-carousel">
+                  <div 
+                    id="read-to-me-main-carousel"
+                    className="overflow-x-auto epic-scroll-container"
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                  >
+                    <div className="flex gap-6 pb-4">
+                      {/* Show Supabase Read to Me books */}
+                      {supabaseReadToMeBooks.map((book) => (
+                        <div key={`readtome-main-${book.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
+                          <BookCardWithHover
+                            book={book}
+                            onClick={() => {
+                              setSelectedBookId(book.id);
+                              setCurrentView('read-to-me-book');
+                            }}
+                            onToggleFavorite={() => toggleFavorite(book, 'readToMe')}
+                            isFavorited={isFavorited(book.id, 'readToMe')}
+                            category="readToMe"
+                          />
+                        </div>
+                      ))}
+                      {/* Show uploaded PDFs with "Read to me" media type */}
+                      {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Read to me').map((pdfBook) => (
+                        <div key={`readtome-main-pdf-${pdfBook.id}`} className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52">
                           <BookCardWithHover
                             book={pdfBook}
-                            onClick={() => handlePdfBookSelect(pdfBook)}
-                            onToggleFavorite={() => toggleFavorite(pdfBook, 'audiobooks')}
-                            isFavorited={isFavorited(pdfBook.id, 'audiobooks')}
-                            category={pdfBook.mediaType === 'Read to me' ? 'Read to Me' :
-                                     pdfBook.mediaType === 'Voice Coach' ? 'Voice Coach' :
-                                     pdfBook.mediaType === 'Video Books' ? 'Video Book' :
-                                     pdfBook.mediaType === 'Videos' ? 'Video' :
-                                     pdfBook.mediaType === 'Audiobooks' ? 'Audiobook' :
-                                     pdfBook.mediaType === 'Books' ? 'Book' : 'PDF'}
+                            onClick={() => handlePdfReadAlongSelect(pdfBook)}
+                            onToggleFavorite={() => toggleFavorite(pdfBook, 'readToMe')}
+                            isFavorited={isFavorited(pdfBook.id, 'readToMe')}
+                            category="Read to Me"
                             showProgress={true}
                           />
                         </div>
                       ))}
-                      {/* Then show hardcoded audiobooks */}
-                      {readToMeBooks.slice(carouselIndices.audiobooks, carouselIndices.audiobooks + getBooksPerPage()).map((book) => (
-                        <div key={`audiobook-${book.id}`} className="flex-shrink-0 w-48">
-                          <BookCardWithHover
-                            book={{
-                              ...book,
-                              gradeLevel: 'D - E',
-                              totalPages: book.readingTime * 3 // Estimate pages based on reading time
-                            }}
-                            onClick={() => {
-                              setSelectedBookId(book.id);
-                              setCurrentView('audiobook');
-                            }}
-                            onToggleFavorite={() => toggleFavorite(book, 'audiobooks')}
-                            isFavorited={isFavorited(book.id, 'audiobooks')}
-                            category="audiobooks"
-                            showProgress={book.progress !== undefined}
-                          />
-                        </div>
-                      ))}
                     </div>
                   </div>
-                </div>
+                </EpicNavigationWrapper>
               </div>
             )}
 
@@ -2419,10 +2227,10 @@ function AppContent() {
             {selectedContentType !== 'All Book' && selectedContentType !== 'Read to Me' && selectedContentType !== 'Voice Coach' && (
               <div className="mb-12">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-2xl font-light text-blue-800">
+                  <h3 className="font-light text-blue-800" style={{ fontSize: '1.3rem' }}>
                     {bookFilters.genre !== 'All' || bookFilters.readingLevel !== 'All' || bookFilters.searchQuery
-                      ? 'Filtered Books'
-                      : 'Featured Books'
+                      ? t('library.filtered.books', 'Filtered Books')
+                      : t('library.featured.books', 'Featured Books')
                     }
                   </h3>
                   <div className="text-sm text-gray-600">
@@ -2463,7 +2271,8 @@ function AppContent() {
                   }
                   return booksToShow;
                 })().length > 0 ? (
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                  <div className="flex space-x-4 md:space-x-6 overflow-x-auto pb-4 scrollbar-hide"
+                       style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                     {(() => {
                       // Filter books to only show those that match the current content type
                       let booksToShow = filteredBooks;
@@ -2478,7 +2287,7 @@ function AppContent() {
                     })().map((book) => (
                       <div
                         key={`${book.category}-${book.id}`}
-                        className="group cursor-pointer"
+                        className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52 cursor-pointer group"
                         onClick={() => {
                           if (book.category === 'books') {
                             handlePdfBookSelect(book as PdfBookData);
@@ -2548,11 +2357,13 @@ function AppContent() {
 
                 {/* Read to Me Stories Section */}
                 <div className="mb-8">
-                  <h3 className="text-2xl font-light text-purple-800 mb-6">Read to Me Stories</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                  <h3 className="font-light text-purple-800 mb-6" style={{ fontSize: '1.3rem' }}>{t('media.read.to.me')} {t('library.stories')}</h3>
+                  <div className="flex space-x-4 md:space-x-6 overflow-x-auto pb-4 scrollbar-hide"
+                       style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                     {readToMeBooks.map((book) => (
                       <BookCardWithHover
                         key={book.id}
+                        className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52"
                         book={{
                           ...book,
                           gradeLevel: 'D - E',
@@ -2577,11 +2388,13 @@ function AppContent() {
                 {/* Books Section within Read to Me - for uploaded PDFs */}
                 {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Read to me').length > 0 && (
                   <div className="mb-8">
-                    <h3 className="text-2xl font-light text-purple-800 mb-6">Books</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    <h3 className="font-light text-purple-800 mb-6" style={{ fontSize: '1.3rem' }}>{t('media.books')}</h3>
+                    <div className="flex space-x-4 md:space-x-6 overflow-x-auto pb-4 scrollbar-hide"
+                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                       {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Read to me').map((pdfBook) => (
                         <BookCardWithHover
                           key={pdfBook.id}
+                          className="flex-shrink-0 w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52"
                           book={pdfBook}
                           onClick={() => handlePdfReadAlongSelect(pdfBook)}
                           onToggleFavorite={() => toggleFavorite(pdfBook, 'readToMe')}
@@ -2632,11 +2445,12 @@ function AppContent() {
               <div className="mb-12">
                 {/* Voice Coach Practice Section */}
                 <div className="mt-12 mb-8">
-                  <h3 className="text-2xl font-light text-green-800 mb-6">Voice Coach Practice</h3>
+                  <h3 className="font-light text-green-800 mb-6" style={{ fontSize: '1.3rem' }}>{t('media.voice.coach')} {t('mode.practice')}</h3>
                   {/* Debug info */}
                   {console.log('🎯 Voice Coach section - Total uploaded PDFs:', uploadedPdfBooks.length)}
                   {console.log('🎯 Voice Coach PDFs:', uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Voice Coach'))}
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                  <div className="flex space-x-4 md:space-x-6 overflow-x-auto pb-4 scrollbar-hide"
+                       style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                     {/* Show uploaded PDFs with "Voice Coach" media type first */}
                     {uploadedPdfBooks.filter(pdf => pdf.mediaType === 'Voice Coach').map((pdfBook) => (
                       <div key={`voice-pdf-${pdfBook.id}`} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
@@ -2797,6 +2611,8 @@ function AppContent() {
                 </div>
               </div>
             )}
+          </>
+        )}
       </main>
     </div>
   );
@@ -2804,13 +2620,19 @@ function AppContent() {
 
 function App() {
   return (
-    <SubscriptionProvider>
-      <AdminProvider>
-        <UserStatsProvider>
-          <AppContent />
-        </UserStatsProvider>
-      </AdminProvider>
-    </SubscriptionProvider>
+    <LanguageProvider>
+      <SubscriptionProvider>
+        <AdminProvider>
+          <UserStatsProvider>
+            <ParentalControlsProvider>
+              <NavigationProvider>
+                <AppContent />
+              </NavigationProvider>
+            </ParentalControlsProvider>
+          </UserStatsProvider>
+        </AdminProvider>
+      </SubscriptionProvider>
+    </LanguageProvider>
   );
 }
 

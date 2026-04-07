@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { supabase, supabaseHelpers } from '../lib/supabase';
+import { supabase } from '../lib/supabase';
 
 export interface QuizResult {
   bookId: string;
@@ -78,6 +78,7 @@ interface UserStatsContextType {
     timeSpent: number;
     quizzesCompleted: number;
   };
+  refreshStats: () => Promise<void>; // NEW - refresh stats from Supabase
   resetStats: () => void;
 }
 
@@ -122,7 +123,6 @@ interface UserStatsProviderProps {
 
 export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }) => {
   const [userStats, setUserStats] = useState<UserStats>(defaultStats);
-  const [isLoading, setIsLoading] = useState(true);
   const [currentUserId, setCurrentUserId] = useState<string | null>(null);
 
   // Debug: Log when provider initializes
@@ -157,13 +157,37 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
           console.log('🔍 UserStatsContext - Auth data:', { user, userError });
           setUserStats(defaultStats);
           setCurrentUserId(null);
-          setIsLoading(false);
           return;
         }
 
         console.log('✅ UserStatsContext - User found:', user.id);
         console.log('👤 UserStatsContext - User email:', user.email);
         setCurrentUserId(user.id);
+
+        // Load reading progress data (NEW - from user_reading_progress table)
+        console.log('📊 UserStatsContext - Loading reading progress...');
+        const { data: progressData, error: progressError } = await supabase
+          .from('user_reading_progress')
+          .select('*')
+          .eq('user_id', user.id)
+          .order('last_read_at', { ascending: false });
+
+        if (progressError) {
+          console.error('❌ UserStatsContext - Error loading progress:', progressError);
+        } else {
+          console.log('📈 UserStatsContext - Loaded progress records:', progressData?.length || 0);
+          
+          // Calculate stats from progress data
+          const completedBooks = progressData?.filter(p => p.is_completed).length || 0;
+          const totalPagesFromProgress = progressData?.reduce((sum, p) => sum + (p.current_page || 0), 0) || 0;
+          const totalTimeFromProgress = progressData?.reduce((sum, p) => sum + (p.time_spent_minutes || 0), 0) || 0;
+          
+          console.log('📊 UserStatsContext - Progress stats:', {
+            completedBooks,
+            totalPagesFromProgress,
+            totalTimeFromProgress
+          });
+        }
 
         // Load reading sessions
         console.log('📚 UserStatsContext - Loading reading sessions...');
@@ -244,6 +268,29 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
           readingSessions = backupSessions;
         }
 
+        // IMPORTANT: Also add completed books from user_reading_progress
+        if (progressData && progressData.length > 0) {
+          const sessionBookIds = new Set(readingSessions.map(s => s.bookId));
+          
+          for (const progress of progressData) {
+            // Only add if completed and not already in sessions
+            if (progress.is_completed && !sessionBookIds.has(progress.book_id)) {
+              readingSessions.push({
+                bookId: progress.book_id,
+                bookTitle: 'Completed Book', // We don't have title in progress table
+                bookType: 'readToMe', // Default type
+                pagesRead: progress.current_page || 0,
+                totalPages: progress.total_pages || progress.current_page || 0,
+                timeSpent: progress.time_spent_minutes || 0,
+                completedAt: progress.completed_at || progress.last_read_at,
+                isCompleted: true
+              });
+            }
+          }
+          
+          console.log('📊 UserStatsContext - Total sessions after adding progress:', readingSessions.length);
+        }
+
         const quizResults: QuizResult[] = quizAttempts?.map(attempt => ({
           bookId: attempt.book_id,
           bookTitle: attempt.answers?.bookTitle || 'Unknown Book',
@@ -281,8 +328,6 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
       } catch (error) {
         console.error('Error loading user stats from Supabase:', error);
         setUserStats(defaultStats);
-      } finally {
-        setIsLoading(false);
       }
     };
 
@@ -297,7 +342,18 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
       }
     });
 
-    return () => subscription.unsubscribe();
+    // Listen for book completion events from useReadingProgress hook
+    const handleBookCompleted = (event: CustomEvent) => {
+      console.log('🎉 UserStatsContext - Book completed event received:', event.detail);
+      refreshStats();
+    };
+
+    window.addEventListener('bookCompleted', handleBookCompleted as EventListener);
+
+    return () => {
+      subscription.unsubscribe();
+      window.removeEventListener('bookCompleted', handleBookCompleted as EventListener);
+    };
   }, []);
 
   const calculateWeeklyStats = (sessions: ReadingSession[], quizResults: QuizResult[]) => {
@@ -939,6 +995,84 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
     return result;
   };
 
+  // NEW METHOD: Refresh stats from Supabase (called after book completion)
+  const refreshStats = async () => {
+    if (!currentUserId) {
+      console.log('⚠️ UserStatsContext - Cannot refresh stats: No user ID');
+      return;
+    }
+
+    try {
+      console.log('🔄 UserStatsContext - Refreshing stats from Supabase...');
+      
+      // Fetch updated progress data
+      const { data: progressData, error: progressError } = await supabase
+        .from('user_reading_progress')
+        .select('*')
+        .eq('user_id', currentUserId)
+        .order('last_read_at', { ascending: false});
+
+      if (progressError) {
+        console.error('❌ UserStatsContext - Error refreshing progress:', progressError);
+        return;
+      }
+
+      // Fetch updated sessions
+      const { data: sessions, error: sessionsError } = await supabase
+        .from('reading_sessions')
+        .select('*')
+        .eq('user_id', currentUserId)
+        .order('start_time', { ascending: false });
+
+      if (sessionsError) {
+        console.error('❌ UserStatsContext - Error refreshing sessions:', sessionsError);
+        return;
+      }
+
+      // Transform sessions data
+      let readingSessions: ReadingSession[] = sessions?.map(session => ({
+        bookId: session.book_id,
+        bookTitle: session.metadata?.bookTitle || 'Unknown Book',
+        bookType: session.session_type as ReadingSession['bookType'],
+        pagesRead: session.pages_read,
+        totalPages: session.metadata?.totalPages || session.pages_read,
+        timeSpent: Math.round((session.duration_seconds || 0) / 60),
+        completedAt: session.start_time,
+        isCompleted: session.is_completed
+      })) || [];
+
+      // IMPORTANT: Also add completed books from user_reading_progress
+      if (progressData && progressData.length > 0) {
+        const sessionBookIds = new Set(readingSessions.map(s => s.bookId));
+        
+        for (const progress of progressData) {
+          // Only add if completed and not already in sessions
+          if (progress.is_completed && !sessionBookIds.has(progress.book_id)) {
+            readingSessions.push({
+              bookId: progress.book_id,
+              bookTitle: 'Completed Book',
+              bookType: 'readToMe',
+              pagesRead: progress.current_page || 0,
+              totalPages: progress.total_pages || progress.current_page || 0,
+              timeSpent: progress.time_spent_minutes || 0,
+              completedAt: progress.completed_at || progress.last_read_at,
+              isCompleted: true
+            });
+          }
+        }
+        
+        console.log('📊 UserStatsContext - Total sessions after adding progress:', readingSessions.length);
+      }
+
+      const calculatedStats = recalculateStats(readingSessions, userStats.quizResults, userStats.achievements);
+      setUserStats(calculatedStats);
+      
+      console.log('✅ UserStatsContext - Stats refreshed successfully');
+    } catch (error) {
+      console.error('❌ UserStatsContext - Error refreshing stats:', error);
+    }
+  };
+
   const contextValue: UserStatsContextType = {
     userStats,
     addReadingSession,
@@ -948,6 +1082,7 @@ export const UserStatsProvider: React.FC<UserStatsProviderProps> = ({ children }
     addAchievement,
     getBookProgress,
     getProgressBySection,
+    refreshStats, // NEW
     resetStats,
   };
 
