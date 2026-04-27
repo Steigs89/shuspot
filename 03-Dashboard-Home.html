@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShuSpot - Affiliate Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* TOP NAVIGATION */
+        .navbar {
+            background-color: #1e4f7c;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .navbar-logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .navbar-divider {
+            width: 1px;
+            height: 24px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .logout-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .logout-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            display: flex;
+            min-height: calc(100vh - 64px);
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 240px;
+            background-color: white;
+            padding: 2rem 0;
+            border-right: 1px solid #e0e0e0;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.mobile-hidden {
+            display: none;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin: 0;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            border-left: 4px solid transparent;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-nav a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar-nav a.active {
+            border-left-color: #2B6CB0;
+            background-color: #f0f7ff;
+            color: #2B6CB0;
+            font-weight: 600;
+        }
+
+        .sidebar-nav a span {
+            font-size: 1.2rem;
+        }
+
+        .sidebar-tier {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+            color: #555;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        /* WELCOME BANNER */
+        .welcome-banner {
+            background: linear-gradient(135deg, #2B6CB0, #1e4f7c);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-banner h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-banner p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .progress-bar {
+            flex: 1;
+            max-width: 300px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #FFD700;
+            width: 88%;
+            transition: width 0.3s ease;
+        }
+
+        /* STATS ROW */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1e4f7c;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-change {
+            font-size: 0.8rem;
+            color: #27ae60;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .stat-card.earnings .stat-value {
+            color: #FFD700;
+        }
+
+        /* REFERRAL LINK SECTION */
+        .referral-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        .referral-section h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #1e4f7c;
+        }
+
+        .referral-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .referral-link-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .referral-link-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #2B6CB0;
+            background-color: #f9f9f9;
+            border-right: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .copy-button {
+            padding: 0.75rem 1.5rem;
+            background-color: #2B6CB0;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .copy-button:hover {
+            background-color: #1e4f7c;
+        }
+
+        .copy-button:active {
+            transform: scale(0.98);
+        }
+
+        .copy-feedback {
+            font-size: 0.85rem;
+            color: #27ae60;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            background-color: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .download-qr-button {
+            padding: 0.6rem 1.2rem;
+            background-color: #FFD700;
+            color: #1e4f7c;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .download-qr-button:hover {
+            background-color: #ffc700;
+        }
+
+        .download-qr-button:active {
+            transform: scale(0.98);
+        }
+
+        /* CHART SECTION */
+        .chart-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        .chart-section h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #1e4f7c;
+        }
+
+        .chart-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 200px;
+            gap: 1rem;
+        }
+
+        .chart-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .chart-bar {
+            width: 100%;
+            max-width: 50px;
+            background: linear-gradient(135deg, #2B6CB0, #1e4f7c);
+            border-radius: 6px 6px 0 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .chart-bar:hover {
+            filter: brightness(1.15);
+        }
+
+        .chart-bar-label {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* ACTIVITY TABLE */
+        .activity-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+
+        .activity-section h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #1e4f7c;
+        }
+
+        .activity-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .activity-table thead {
+            background-color: #f5f5f5;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .activity-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1e4f7c;
+            font-size: 0.9rem;
+        }
+
+        .activity-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+        }
+
+        .activity-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-confirmed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-active {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status-expired {
+            background-color: #e2e3e5;
+            color: #383d41;
+        }
+
+        .earnings-positive {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .earnings-neutral {
+            color: #999;
+        }
+
+        /* QUICK LINKS */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .quick-link-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            text-decoration: none;
+            color: #1e4f7c;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+            border-color: #2B6CB0;
+        }
+
+        .quick-link-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .quick-link-card-text {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .navbar-left span:nth-child(2) {
+                display: none;
+            }
+
+            .navbar-divider {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                order: -1;
+            }
+
+            .container {
+                position: relative;
+            }
+
+            .sidebar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 240px;
+                height: 100vh;
+                z-index: 50;
+                transform: translateX(-100%);
+                box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+            }
+
+            .sidebar.mobile-open {
+                transform: translateX(0);
+                transition: transform 0.3s ease;
+            }
+
+            .main-content {
+                width: 100%;
+                padding: 1.5rem;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .referral-content {
+                grid-template-columns: 1fr;
+            }
+
+            .referral-link-group {
+                flex-direction: column;
+            }
+
+            .referral-link-input {
+                border-radius: 6px;
+            }
+
+            .copy-button {
+                border-radius: 6px;
+                width: 100%;
+            }
+
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-container {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-banner {
+                padding: 1.5rem;
+            }
+
+            .welcome-banner h1 {
+                font-size: 1.2rem;
+            }
+
+            .progress-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .progress-bar {
+                max-width: 100%;
+            }
+
+            .activity-table {
+                font-size: 0.85rem;
+            }
+
+            .activity-table th,
+            .activity-table td {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP NAVIGATION -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="navbar-logo">ShuSpot</div>
+            <div class="navbar-divider"></div>
+            <span>Affiliate Dashboard</span>
+        </div>
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <div class="navbar-right">
+            <div class="user-profile">
+                <div class="avatar">WL</div>
+                <span>Wei Lin</span>
+            </div>
+            <a href="#" class="logout-link" onclick="alert('Logout functionality'); return false;">Logout</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#" class="active" onclick="return false;">
+                        <span>📊</span>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="04-Earnings.html">
+                        <span>💰</span>
+                        Earnings & Payouts
+                    </a>
+                </li>
+                <li>
+                    <a href="05-Content-Library.html">
+                        <span>📁</span>
+                        Content Library
+                    </a>
+                </li>
+                <li>
+                    <a href="#referral-link-section">
+                        <span>🔗</span>
+                        My Link & QR Code
+                    </a>
+                </li>
+                <li>
+                    <a href="06-Settings.html">
+                        <span>⚙️</span>
+                        Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="06-Settings.html#compliance">
+                        <span>📋</span>
+                        Compliance Guide
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="alert('Support page coming soon'); return false;">
+                        <span>📞</span>
+                        Support
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-tier">
+                <div>Current Tier</div>
+                <div style="font-size: 1.1rem; color: #c0c0c0; font-weight: 900; margin-top: 0.25rem;">Silver</div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- WELCOME BANNER -->
+            <section class="welcome-banner">
+                <h1>Welcome back, Wei Lin!</h1>
+                <p>You're 3 conversions away from Gold tier.</p>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span>22 / 25 conversions</span>
+                </div>
+            </section>
+
+            <!-- STATS CARDS -->
+            <section class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-label">Clicks This Month</div>
+                    <div class="stat-value">847</div>
+                    <div class="stat-change">↑ +12%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Free Trial Signups</div>
+                    <div class="stat-value">63</div>
+                    <div class="stat-change">↑ +8%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Paid Conversions</div>
+                    <div class="stat-value">22</div>
+                    <div class="stat-change">↑ +15%</div>
+                </div>
+                <div class="stat-card earnings">
+                    <div class="stat-label">Earnings This Month</div>
+                    <div class="stat-value">¥2,590</div>
+                    <div class="stat-change">↑ +20%</div>
+                </div>
+            </section>
+
+            <!-- MY SHARING TOOLS SECTION -->
+            <section class="referral-section" id="referral-link-section">
+                <h2>My Sharing Tools</h2>
+                <p style="color: #666; margin-bottom: 1.25rem; font-size: 0.95rem;">You have 3 ways to share ShuSpot with your audience. Use whichever works best for each platform.</p>
+
+                <!-- DISCOUNT CODE -->
+                <div style="background: #FFFBEA; border: 2px solid #FFD700; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="font-size: 1.5rem;">🏷️</span>
+                        <div>
+                            <div style="font-weight: 700; color: #1e4f7c; font-size: 1rem;">Your Discount Code</div>
+                            <div style="font-size: 0.8rem; color: #888;">Best for: mentioning in videos, post captions, comments</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div style="background: white; border: 2px dashed #FFD700; border-radius: 8px; padding: 0.75rem 1.5rem; font-family: 'Courier New', monospace; font-size: 1.4rem; font-weight: 900; color: #1e4f7c; letter-spacing: 2px;">WEILIN88</div>
+                        <button class="copy-button" style="border-radius: 6px; padding: 0.6rem 1.2rem;" onclick="copyCode()">Copy Code</button>
+                        <div class="copy-feedback" id="codeFeedback"></div>
+                    </div>
+                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #888; line-height: 1.5;">
+                        Your followers type this code at shuspot.com during signup to get a discount. Codes are always <strong>English letters and numbers only</strong> — no Chinese characters. This is so it works correctly in the website's payment system.
+                    </div>
+                </div>
+
+                <!-- REFERRAL LINK + QR CODE -->
+                <div style="display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start;">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <span style="font-size: 1.3rem;">🔗</span>
+                            <div>
+                                <div style="font-weight: 700; color: #1e4f7c; font-size: 1rem;">Your Referral Link</div>
+                                <div style="font-size: 0.8rem; color: #888;">Best for: profile bios, WeChat articles, anywhere links work</div>
+                            </div>
+                        </div>
+                        <div class="referral-link-group">
+                            <input type="text" class="referral-link-input" value="https://shuspot.com/?ref=weilin2026" readonly>
+                            <button class="copy-button" id="copyButton" onclick="copyToClipboard()">Copy Link</button>
+                            <div class="copy-feedback" id="copyFeedback"></div>
+                        </div>
+                    </div>
+                    <div class="qr-container">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-size: 1.3rem;">📱</span>
+                            <div style="font-weight: 700; color: #1e4f7c; font-size: 0.95rem;">QR Code</div>
+                        </div>
+                        <div class="qr-code">QR Code</div>
+                        <button class="download-qr-button" onclick="downloadQRCode()">Download QR</button>
+                        <div style="font-size: 0.75rem; color: #888; text-align: center; margin-top: 0.25rem;">Best for: WeChat groups,<br>video thumbnails</div>
+                    </div>
+                </div>
+
+                <!-- PLATFORM TIPS -->
+                <div style="background: #f0f7ff; border-radius: 8px; padding: 1rem; margin-top: 1.25rem; font-size: 0.85rem; color: #555; line-height: 1.6;">
+                    <strong style="color: #1e4f7c;">Platform Tips:</strong><br>
+                    <strong>XHS / Douyin:</strong> External links are blocked — say your discount code in the video and put it in the caption. Put your referral link in your profile bio.<br>
+                    <strong>WeChat:</strong> Share the QR code in group chats or include your referral link in articles.<br>
+                    <strong>Bilibili:</strong> You can put your referral link in the video description. Mention the discount code verbally in the video.
+                </div>
+
+                <!-- DEV NOTE FOR ETHAN -->
+                <div style="background: #fff3cd; border: 2px dashed #ffc107; border-radius: 8px; padding: 1rem; margin-top: 1rem; font-size: 0.8rem;">
+                    <div style="font-weight: bold; color: #856404; margin-bottom: 0.35rem;">⚠️ DEVELOPER NOTE (Ethan — remove before production)</div>
+                    <div style="color: #856404; line-height: 1.5;">
+                        <strong>Three Sharing Tools:</strong> Each affiliate gets all three: a discount code (alphanumeric only, max 8 chars, e.g. WEILIN88), a referral link (shuspot.com/?ref=ID), and a QR code (which simply encodes the referral link URL).<br><br>
+                        <strong>Discount Code Rules:</strong> Uppercase A-Z (excluding O, I, L) + digits 0-9 (excluding 0) + optional hyphen. Max 8 characters. Affiliates choose during signup or one is auto-generated. Codes must be unique across all affiliates. These map to Stripe promotion_codes — see Technical Requirements doc for details.<br><br>
+                        <strong>QR Code Generation:</strong> Use a server-side QR library (e.g. qrcode npm package) to generate a QR image encoding the affiliate's referral link. Cache the image. The "Download QR" button should serve the cached PNG.<br><br>
+                        <strong>Attribution Priority:</strong> If a ShuSpot signup has BOTH a discount code AND a referral link cookie, the discount code wins. See "ShuSpot-Affiliate-Technical-Requirements.docx" Section 6 for the full priority rules.<br><br>
+                        <strong>Why English-only codes:</strong> Chinese users' phones default to Pinyin input (which outputs Chinese characters). They need to switch to English keyboard mode to type the code. This is normal — they do it for passwords and emails. But keep codes SHORT and avoid confusing chars (0/O, 1/I/L). The checkout field on shuspot.com should auto-uppercase and strip any non-alphanumeric input.
+                    </div>
+                </div>
+            </section>
+
+            <!-- PERFORMANCE CHART -->
+            <section class="chart-section">
+                <h2>Last 7 Days — Clicks</h2>
+                <div class="chart-container">
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 65%;"></div>
+                        <div class="chart-bar-label">Mon</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 78%;"></div>
+                        <div class="chart-bar-label">Tue</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 55%;"></div>
+                        <div class="chart-bar-label">Wed</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 92%;"></div>
+                        <div class="chart-bar-label">Thu</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 72%;"></div>
+                        <div class="chart-bar-label">Fri</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 48%;"></div>
+                        <div class="chart-bar-label">Sat</div>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 85%;"></div>
+                        <div class="chart-bar-label">Sun</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RECENT ACTIVITY TABLE -->
+            <section class="activity-section">
+                <h2>Recent Referrals</h2>
+                <table class="activity-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Event</th>
+                            <th>Status</th>
+                            <th>Earnings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Apr 8</td>
+                            <td>Free Trial Signup</td>
+                            <td><span class="status-badge status-active">Active Trial</span></td>
+                            <td class="earnings-positive">+¥5</td>
+                        </tr>
+                        <tr>
+                            <td>Apr 7</td>
+                            <td>3-Month Subscription</td>
+                            <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                            <td class="earnings-positive">+¥84</td>
+                        </tr>
+                        <tr>
+                            <td>Apr 7</td>
+                            <td>Free Trial Signup</td>
+                            <td><span class="status-badge status-active">Active Trial</span></td>
+                            <td class="earnings-positive">+¥5</td>
+                        </tr>
+                        <tr>
+                            <td>Apr 6</td>
+                            <td>Free Trial Signup</td>
+                            <td><span class="status-badge status-confirmed">Converted → 12-Month</span></td>
+                            <td class="earnings-positive">+¥168</td>
+                        </tr>
+                        <tr>
+                            <td>Apr 5</td>
+                            <td>Free Trial Signup</td>
+                            <td><span class="status-badge status-active">Active Trial</span></td>
+                            <td class="earnings-positive">+¥5</td>
+                        </tr>
+                        <tr>
+                            <td>Apr 4</td>
+                            <td>Free Trial Signup</td>
+                            <td><span class="status-badge status-expired">Trial Expired</span></td>
+                            <td class="earnings-neutral">—</td>
+                        </tr>
+                        <tr>
+                            <td>Apr 3</td>
+                            <td>3-Month Subscription</td>
+                            <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                            <td class="earnings-positive">+¥84</td>
+                        </tr>
+                        <tr>
+                            <td>Apr 2</td>
+                            <td>Free Trial Signup</td>
+                            <td><span class="status-badge status-active">Active Trial</span></td>
+                            <td class="earnings-positive">+¥5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- WECHAT NOTIFICATIONS SECTION -->
+            <section style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                    <div>
+                        <h3 style="margin: 0; color: #1e4f7c; font-size: 1.1rem;">💬 WeChat Notifications</h3>
+                        <p style="margin: 0.25rem 0 0 0; color: #888; font-size: 0.85rem;">Get instant updates when you earn commissions</p>
+                    </div>
+                    <span style="background: #fff3cd; color: #856404; padding: 0.3rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: bold;">Coming Soon</span>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 10px; padding: 1.25rem; border: 1px solid #e9ecef;">
+                    <p style="color: #555; font-size: 0.9rem; line-height: 1.6; margin: 0 0 1rem 0;">
+                        Soon you'll receive automatic WeChat messages whenever something happens on your account — no need to log in to check. Here's what you'll get:
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; background: white; padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid #e9ecef;">
+                            <span style="color: #38a169; font-size: 1.1rem;">✅</span>
+                            <span style="font-size: 0.82rem; color: #444;">New free trial signup</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; background: white; padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid #e9ecef;">
+                            <span style="color: #FFD700; font-size: 1.1rem;">💰</span>
+                            <span style="font-size: 0.82rem; color: #444;">Paid conversion earned</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; background: white; padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid #e9ecef;">
+                            <span style="color: #2B6CB0; font-size: 1.1rem;">📊</span>
+                            <span style="font-size: 0.82rem; color: #444;">Monthly earnings summary</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; background: white; padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid #e9ecef;">
+                            <span style="color: #38a169; font-size: 1.1rem;">🏦</span>
+                            <span style="font-size: 0.82rem; color: #444;">Payout sent confirmation</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <div style="display: inline-block; background: #e9ecef; color: #888; padding: 0.6rem 1.5rem; border-radius: 8px; font-size: 0.85rem; cursor: not-allowed;">
+                            🔗 Connect WeChat (Available Soon)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DEV NOTE FOR ETHAN -->
+                <div style="background: #fff3cd; border: 2px dashed #ffc107; border-radius: 8px; padding: 1rem; margin-top: 1rem; font-size: 0.8rem;">
+                    <div style="font-weight: bold; color: #856404; margin-bottom: 0.35rem;">⚠️ DEVELOPER NOTE (Ethan — remove before production)</div>
+                    <p style="color: #856404; margin: 0; line-height: 1.6;">
+                        <strong>WeChat Automated Notifications — build this AFTER the WeChat Service Account API is set up.</strong><br><br>
+                        This feature depends on having an approved WeChat Official Account (Service Account type) with template message API access. Do NOT build this until the Service Account is verified and we have API credentials.<br><br>
+                        <strong>How it works:</strong> When the tracking system detects a click/signup/conversion tied to an affiliate's referral link, it fires a WeChat template message to that affiliate's OpenID. The affiliate must follow the ShuSpot Official Account and authorize message receiving during onboarding (scan QR code → follow → authorize).<br><br>
+                        <strong>Template messages needed:</strong><br>
+                        1. New Free Trial Signup — "Someone used your link! +¥5 earned. Monthly total: ¥XXX"<br>
+                        2. Paid Conversion — "Your referral subscribed to [plan type]! +¥XX earned. Monthly total: ¥XXX"<br>
+                        3. Monthly Summary — "Month recap: XX signups, XX conversions, ¥XXX earned. Payout processing [date]."<br>
+                        4. Payout Sent — "¥XXX sent to your [Alipay/WeChat Pay/UnionPay]. Thank you!"<br>
+                        5. Tier Upgrade — "Congratulations! You reached [tier name]. Your new commission rates: ¥XX / ¥XX"<br><br>
+                        <strong>For now:</strong> Show "Coming Soon" badge and disabled connect button as in this mockup. Once the WeChat Service API is active, replace with a live QR code that links the affiliate's WeChat to their dashboard account via OAuth. Store the affiliate's WeChat OpenID in the database for sending template messages.<br><br>
+                        <strong>Fallback:</strong> Until WeChat notifications are live, the dashboard and email are the only ways affiliates see their activity. Consider adding email notifications as a temporary bridge.
+                    </p>
+                </div>
+            </section>
+
+            <!-- QUICK LINKS -->
+            <section class="quick-links">
+                <a href="05-Content-Library.html" class="quick-link-card">
+                    <div class="quick-link-card-icon">📥</div>
+                    <div class="quick-link-card-text">Download Marketing Assets</div>
+                </a>
+                <a href="04-Earnings.html" class="quick-link-card">
+                    <div class="quick-link-card-icon">💵</div>
+                    <div class="quick-link-card-text">View Earnings Details</div>
+                </a>
+                <a href="06-Settings.html#compliance" class="quick-link-card">
+                    <div class="quick-link-card-icon">✅</div>
+                    <div class="quick-link-card-text">Read Compliance Guide</div>
+                </a>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidebar = document.getElementById('sidebar');
+
+        hamburgerBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('mobile-open');
+        });
+
+        // Close sidebar when clicking on a nav link on mobile
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('mobile-open');
+                }
+            });
+        });
+
+        // Copy to clipboard functionality
+        function copyToClipboard() {
+            const referralLink = 'https://shuspot.com/?ref=weilin2026';
+            const copyButton = document.getElementById('copyButton');
+            const copyFeedback = document.getElementById('copyFeedback');
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(referralLink).then(() => {
+                    copyButton.textContent = 'Copied!';
+                    copyFeedback.textContent = '';
+                    copyButton.style.backgroundColor = '#27ae60';
+
+                    setTimeout(() => {
+                        copyButton.textContent = 'Copy Link';
+                        copyButton.style.backgroundColor = '#2B6CB0';
+                    }, 2000);
+                }).catch(err => {
+                    fallbackCopyToClipboard(referralLink, copyButton, copyFeedback);
+                });
+            } else {
+                fallbackCopyToClipboard(referralLink, copyButton, copyFeedback);
+            }
+        }
+
+        function fallbackCopyToClipboard(text, copyButton, copyFeedback) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                copyButton.textContent = 'Copied!';
+                copyFeedback.textContent = '';
+                copyButton.style.backgroundColor = '#27ae60';
+
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy Link';
+                    copyButton.style.backgroundColor = '#2B6CB0';
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Copy Discount Code
+        function copyCode() {
+            const code = 'WEILIN88';
+            const feedback = document.getElementById('codeFeedback');
+            navigator.clipboard.writeText(code).then(() => {
+                feedback.textContent = 'Copied!';
+                setTimeout(() => { feedback.textContent = ''; }, 2000);
+            }).catch(() => {
+                feedback.textContent = 'Copy failed';
+            });
+        }
+
+        // Download QR Code
+        function downloadQRCode() {
+            alert('QR Code download functionality would be implemented here. In a real app, this would generate and download an actual QR code image.');
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+                    sidebar.classList.remove('mobile-open');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

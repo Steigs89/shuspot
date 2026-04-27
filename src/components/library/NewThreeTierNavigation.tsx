@@ -206,10 +206,8 @@ export default function NewThreeTierNavigation() {
   }));
 
   // Filter media types based on parental controls (Requirement 5.1, 5.5)
-  const filteredFormats = formats.filter(format => {
-    if (!controls?.blocked_media_types) return true;
-    return !controls.blocked_media_types.includes(format.value);
-  });
+  // Note: nav buttons always show — parental controls only filter book content, not navigation
+  const filteredFormats = formats;
 
   // Map genres to the new format with images
   const topics = genres.map((genre, index) => ({
@@ -462,7 +460,10 @@ export default function NewThreeTierNavigation() {
                   icon={format.icon}
                   label={format.labelEn}
                   selected={selectedMediaType === format.value}
-                  onClick={() => setMediaType(format.value as MediaType)}
+                  onClick={() => {
+                    console.log('🖱️ Media type clicked:', format.value);
+                    setMediaType(format.value as MediaType);
+                  }}
                   gradient={format.color}
                   bgColor={format.bgColor}
                   borderColor={format.borderColor}

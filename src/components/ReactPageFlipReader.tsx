@@ -49,6 +49,8 @@ const ReactPageFlipReader: React.FC<ReactPageFlipReaderProps> = ({ book, onBack,
   const [audioError, setAudioError] = useState<string | null>(null);
   const { language, setLanguage } = useLanguage();
   const [translatedTitle, setTranslatedTitle] = useState<string | null>(null);
+  const [autoPlay, setAutoPlay] = useState(true);
+  const userInteractedRef = useRef(false);
 
   // Reader UI strings — fall back to English keys already in LanguageContext where possible
   const rt = useCallback((key: string): string => {
@@ -326,6 +328,75 @@ const ReactPageFlipReader: React.FC<ReactPageFlipReaderProps> = ({ book, onBack,
     if (userId && currentPage >= 0) trackPageRead(currentPage + 1);
   }, [userId, trackPageRead, currentPage]);
 
+  // Autoplay: slow first page turn, then auto-advance after audio ends
+  useEffect(() => {
+    if (!isReadToMeBook || !autoPlay || !images.length) return;
+    // First page turn after a gentle delay (let the cover show)
+    if (currentPage === 0) {
+      const timer = setTimeout(() => {
+        if (!userInteractedRef.current) goToNextPage();
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [isReadToMeBook, autoPlay, images.length, currentPage]);
+
+  // When spread audio finishes, auto-advance after a comfortable pause
+  const autoAdvanceTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (!isReadToMeBook || !autoPlay) {
+      // Clear any pending auto-advance when autoplay is off
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+        autoAdvanceTimerRef.current = null;
+      }
+      audioManager.onSpreadEnded.current = null;
+      return;
+    }
+    audioManager.onSpreadEnded.current = () => {
+      // Clear any existing timer
+      if (autoAdvanceTimerRef.current) clearTimeout(autoAdvanceTimerRef.current);
+      autoAdvanceTimerRef.current = setTimeout(() => {
+        if (autoPlay && currentPage < totalPages - 2) {
+          goToNextPage();
+        }
+        autoAdvanceTimerRef.current = null;
+      }, 2000);
+    };
+    return () => {
+      audioManager.onSpreadEnded.current = null;
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+        autoAdvanceTimerRef.current = null;
+      }
+    };
+  }, [isReadToMeBook, autoPlay, currentPage, totalPages, goToNextPage]);
+
+  // For pages with NO audio at all, auto-advance after a longer reading delay
+  // But only if audio isn't currently loading or playing
+  useEffect(() => {
+    if (!isReadToMeBook || !autoPlay || currentPage === 0) return;
+    // Wait a tick for audio to start loading before deciding there's no audio
+    const checkTimer = setTimeout(() => {
+      if (audioManager.state.isPlaying || audioManager.state.isLoading) return;
+      const leftPage = audioPages[currentPage];
+      const rightPage = audioPages[currentPage + 1];
+      const hasAudio = leftPage?.audioUrl || rightPage?.audioUrl;
+      if (!hasAudio && currentPage < totalPages - 2) {
+        const advanceTimer = setTimeout(() => goToNextPage(), 5000);
+        return () => clearTimeout(advanceTimer);
+      }
+    }, 1500); // Wait 1.5s to let audio load attempt happen first
+    return () => clearTimeout(checkTimer);
+  }, [isReadToMeBook, autoPlay, currentPage, audioPages, totalPages, goToNextPage, audioManager.state.isPlaying, audioManager.state.isLoading]);
+
+  // Pause autoplay when user manually interacts
+  const handleUserFlip = useCallback((e: any) => {
+    userInteractedRef.current = true;
+    setAutoPlay(false);
+    onFlip(e);
+  }, [onFlip]);
+
   const toggleNavigation = useCallback(() => setShowNavigation(!showNavigation), [showNavigation]);
   const toggleSettingsPopout = useCallback(() => setShowSettingsPopout(!showSettingsPopout), [showSettingsPopout]);
   const handleZoomIn = useCallback(() => setZoomLevel(prev => Math.min(prev + 10, 200)), []);
@@ -447,7 +518,7 @@ const ReactPageFlipReader: React.FC<ReactPageFlipReaderProps> = ({ book, onBack,
             className="large-flipbook"
             startPage={0}
             drawShadow={true}
-            flippingTime={600}
+            flippingTime={800}
             usePortrait={usePortraitMode}
             autoSize={false}
             clickEventForward={true}
@@ -488,7 +559,7 @@ const ReactPageFlipReader: React.FC<ReactPageFlipReaderProps> = ({ book, onBack,
 
       <button
         className="pageflip-nav-arrow prev"
-        onClick={goToPrevPage}
+        onClick={() => { userInteractedRef.current = true; setAutoPlay(false); goToPrevPage(); }}
         disabled={currentPage === 0}
         aria-label="Previous page"
       >
@@ -497,7 +568,7 @@ const ReactPageFlipReader: React.FC<ReactPageFlipReaderProps> = ({ book, onBack,
       
       <button
         className="pageflip-nav-arrow next"
-        onClick={goToNextPage}
+        onClick={() => { userInteractedRef.current = true; setAutoPlay(false); goToNextPage(); }}
         disabled={currentPage >= totalPages - 1}
         aria-label="Next page"
       >
@@ -511,7 +582,19 @@ const ReactPageFlipReader: React.FC<ReactPageFlipReaderProps> = ({ book, onBack,
               <div className="audio-controls-compact">
                 <button 
                   className={`epic-play-btn ${audioManager.state.isPlaying ? 'playing' : ''}`}
-                  onClick={audioManager.state.isPlaying ? audioManager.pause : audioManager.play}
+                  onClick={() => {
+                    if (audioManager.state.isPlaying) {
+                      audioManager.pause();
+                      setAutoPlay(false);
+                      if (autoAdvanceTimerRef.current) {
+                        clearTimeout(autoAdvanceTimerRef.current);
+                        autoAdvanceTimerRef.current = null;
+                      }
+                    } else {
+                      audioManager.play();
+                      setAutoPlay(true);
+                    }
+                  }}
                   disabled={audioManager.state.isLoading}
                 >
                   {audioManager.state.isPlaying ? <Pause size={20} /> : <Play size={20} />}

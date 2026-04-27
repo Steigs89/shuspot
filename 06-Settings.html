@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings & Compliance - ShuSpot Affiliate Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* TOP NAVIGATION */
+        .top-nav {
+            background-color: #1e4f7c;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #FFD700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1e4f7c;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            display: flex;
+            min-height: calc(100vh - 60px);
+        }
+
+        /* LEFT SIDEBAR */
+        .sidebar {
+            width: 200px;
+            background-color: white;
+            border-right: 1px solid #ddd;
+            padding: 2rem 0;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            padding: 0;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            border-left: 4px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .sidebar-menu a:hover {
+            background-color: #f5f5f5;
+            color: #2B6CB0;
+        }
+
+        .sidebar-menu a.active {
+            background-color: #f5f5f5;
+            color: #2B6CB0;
+            border-left-color: #2B6CB0;
+            font-weight: bold;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            color: #1e4f7c;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* TABS */
+        .tabs-container {
+            margin-bottom: 2rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 1rem;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .tab-button:hover {
+            color: #2B6CB0;
+        }
+
+        .tab-button.active {
+            color: #2B6CB0;
+            border-bottom-color: #2B6CB0;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* CARDS */
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1e4f7c;
+            margin-bottom: 1rem;
+        }
+
+        /* FORM ELEMENTS */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #2B6CB0;
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+        }
+
+        /* BUTTONS */
+        .button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .button-primary {
+            background-color: #2B6CB0;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background-color: #1e4f7c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(30, 79, 124, 0.3);
+        }
+
+        .button-secondary {
+            background-color: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .button-secondary:hover {
+            background-color: #e5e5e5;
+        }
+
+        /* RADIO BUTTONS */
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .radio-option input[type="radio"] {
+            cursor: pointer;
+        }
+
+        /* COMPLIANCE SECTION */
+        .compliance-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid #d32f2f;
+        }
+
+        .warning-icon {
+            font-size: 2rem;
+            color: #d32f2f;
+        }
+
+        .compliance-header-text h2 {
+            font-size: 1.5rem;
+            color: #1e4f7c;
+            margin-bottom: 0.25rem;
+        }
+
+        .compliance-header-text p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .rule-card {
+            border-left: 5px solid #1e4f7c;
+            margin-bottom: 1.5rem;
+        }
+
+        .rule-card.rule-critical {
+            border-left-color: #d32f2f;
+        }
+
+        .rule-card.rule-warning {
+            border-left-color: #f57c00;
+        }
+
+        .rule-card.rule-info {
+            border-left-color: #2B6CB0;
+        }
+
+        .rule-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #1e4f7c;
+            margin-bottom: 0.75rem;
+        }
+
+        .rule-body {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .do-section {
+            background-color: #f1f8f4;
+            border-left: 3px solid #4caf50;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+
+        .do-section-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .do-item {
+            color: #555;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .do-item:before {
+            content: "✓ ";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .dont-section {
+            background-color: #fef5f5;
+            border-left: 3px solid #d32f2f;
+            padding: 1rem;
+            margin-bottom: 0;
+            border-radius: 4px;
+        }
+
+        .dont-section-title {
+            font-weight: bold;
+            color: #c62828;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .dont-item {
+            color: #555;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .dont-item:before {
+            content: "✗ ";
+            color: #d32f2f;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .platform-rule {
+            margin-bottom: 1rem;
+        }
+
+        .platform-name {
+            font-weight: bold;
+            color: #2B6CB0;
+            margin-bottom: 0.25rem;
+        }
+
+        .platform-detail {
+            color: #666;
+            padding-left: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* ACCORDION */
+        .accordion {
+            margin-top: 1rem;
+        }
+
+        .accordion-item {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1e4f7c;
+            transition: background-color 0.3s;
+        }
+
+        .accordion-header:hover {
+            background-color: #f0f0f0;
+        }
+
+        .accordion-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .accordion-item.open .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .accordion-item.open .accordion-content {
+            display: block;
+        }
+
+        /* CONTACT SECTION */
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 4px;
+            border-left: 3px solid #2B6CB0;
+        }
+
+        .contact-label {
+            font-weight: bold;
+            color: #1e4f7c;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-value {
+            color: #555;
+            font-size: 0.95rem;
+            word-break: break-all;
+        }
+
+        .qr-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: #e0e0e0;
+            border: 2px dashed #2B6CB0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            color: #999;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .note {
+            background-color: #fff8f0;
+            border-left: 3px solid #FFD700;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .social-account-item {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border-left: 3px solid #2B6CB0;
+        }
+
+        .social-account-name {
+            font-weight: bold;
+            color: #1e4f7c;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .social-account-url {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            word-break: break-all;
+        }
+
+        .follower-count {
+            color: #2B6CB0;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP NAVIGATION -->
+    <div class="top-nav">
+        <div class="nav-left">
+            <div class="logo">ShuSpot Affiliate</div>
+            <ul class="nav-links">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Earnings</a></li>
+                <li><a href="#">Content Library</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <span>Wei Lin</span>
+                <div class="avatar">WL</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <!-- LEFT SIDEBAR -->
+        <div class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="03-Dashboard-Home.html">📊 Dashboard</a></li>
+                <li><a href="04-Earnings.html">💰 Earnings & Payouts</a></li>
+                <li><a href="05-Content-Library.html">📁 Content Library</a></li>
+                <li><a href="03-Dashboard-Home.html#referral-link">🔗 My Link & QR Code</a></li>
+                <li><a href="06-Settings.html" class="active">⚙️ Settings</a></li>
+                <li><a href="#compliance">📋 Compliance Guide</a></li>
+                <li><a href="#support">📞 Support</a></li>
+            </ul>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="page-header">
+                <h1>Settings & Compliance</h1>
+                <p>Manage your account and understand affiliate guidelines</p>
+            </div>
+
+            <!-- TABS -->
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="account">Account Settings</button>
+                    <button class="tab-button" data-tab="compliance">Compliance Guide</button>
+                    <button class="tab-button" data-tab="support">Contact & Support</button>
+                </div>
+
+                <!-- TAB 1: ACCOUNT SETTINGS -->
+                <div id="account" class="tab-content active">
+                    <!-- Profile Information -->
+                    <div class="card">
+                        <div class="card-title">Profile Information</div>
+                        <form>
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" value="Wei Lin">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" id="phone" value="+86 138****5678">
+                            </div>
+                            <div class="form-group">
+                                <label for="wechat">WeChat ID</label>
+                                <input type="text" id="wechat" value="weilin_edu">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="weilin@example.com">
+                            </div>
+                            <button type="button" class="button button-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- Payment Settings -->
+                    <div class="card">
+                        <div class="card-title">Payment Settings</div>
+                        <div style="background: linear-gradient(135deg, #e8f4fd, #f0f7ff); border: 1px solid #b3d4ec; border-radius: 8px; padding: 0.9rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem;">
+                            <span style="font-size: 1.1rem;">🔒</span>
+                            <div style="font-size: 0.82rem; color: #444; line-height: 1.5;">
+                                Payments are sent via <strong>Wise</strong> (international payment service) directly to your selected account. Your name must match your payment account exactly.
+                                <div style="display: flex; align-items: center; gap: 0.4rem; margin-top: 0.4rem;">
+                                    <span style="background: #2B6CB0; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">ShuSpot</span>
+                                    <span style="color: #ccc;">→</span>
+                                    <span style="background: #9FE870; color: #1a3a00; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">Wise</span>
+                                    <span style="color: #ccc;">→</span>
+                                    <span style="background: #FFD700; color: #1e4f7c; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">You</span>
+                                </div>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label>Current Payment Method</label>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="alipay" name="payment" value="alipay" checked>
+                                        <label for="alipay" style="margin: 0;">Alipay</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="wechatpay" name="payment" value="wechatpay">
+                                        <label for="wechatpay" style="margin: 0;">WeChat Pay</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="unionpay" name="payment" value="unionpay">
+                                        <label for="unionpay" style="margin: 0;">UnionPay</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="alipayid">Alipay ID</label>
+                                <input type="text" id="alipayid" value="138****5678">
+                            </div>
+                            <button type="button" class="button button-primary">Update Payment Method</button>
+                        </form>
+                        <div class="note">
+                            <strong>Note:</strong> Changes take effect on your next payout
+                        </div>
+                    </div>
+
+                    <!-- Social Media Accounts -->
+                    <div class="card">
+                        <div class="card-title">Social Media Accounts</div>
+
+                        <div class="social-account-item">
+                            <div class="social-account-name">Primary: XiaoHongShu</div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="text" value="https://xiaohongshu.com/user/weilin">
+                            </div>
+                        </div>
+
+                        <div class="social-account-item">
+                            <div class="social-account-name">Secondary: Douyin</div>
+                            <div class="social-account-url">https://douyin.com/user/weilin_edu</div>
+                            <div class="follower-count">Followers: 12,500</div>
+                        </div>
+
+                        <button type="button" class="button button-secondary" style="margin-top: 1rem;">Add Another Account</button>
+                    </div>
+
+                    <!-- WeChat Notification Preferences -->
+                    <div class="card">
+                        <div class="card-title" style="display: flex; align-items: center; justify-content: space-between;">
+                            <span>💬 WeChat Notification Preferences</span>
+                            <span style="background: #fff3cd; color: #856404; padding: 0.25rem 0.65rem; border-radius: 10px; font-size: 0.7rem; font-weight: bold;">Coming Soon</span>
+                        </div>
+                        <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Receive real-time notifications directly in WeChat when you earn commissions, reach new tiers, or receive payouts. No need to log in — updates come to you.
+                        </p>
+
+                        <div style="background: #f8f9fa; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                            <div style="font-weight: bold; color: #1e4f7c; margin-bottom: 0.75rem; font-size: 0.9rem;">Notifications you'll receive:</div>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #555; cursor: not-allowed;">
+                                    <input type="checkbox" checked disabled style="accent-color: #2B6CB0;"> New free trial signup (+¥5 earned)
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #555; cursor: not-allowed;">
+                                    <input type="checkbox" checked disabled style="accent-color: #2B6CB0;"> Paid subscription conversion (+¥70-224 earned)
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #555; cursor: not-allowed;">
+                                    <input type="checkbox" checked disabled style="accent-color: #2B6CB0;"> Monthly earnings summary
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #555; cursor: not-allowed;">
+                                    <input type="checkbox" checked disabled style="accent-color: #2B6CB0;"> Payout sent confirmation
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #555; cursor: not-allowed;">
+                                    <input type="checkbox" checked disabled style="accent-color: #2B6CB0;"> Tier upgrade congratulations
+                                </label>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; padding: 1rem; background: #f0f0f0; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="width: 120px; height: 120px; background: #e0e0e0; border-radius: 8px; margin: 0 auto 0.75rem; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8rem;">QR Code<br>Placeholder</div>
+                            <div style="color: #888; font-size: 0.82rem;">Scan to follow ShuSpot Official Account and enable notifications</div>
+                            <button type="button" style="margin-top: 0.75rem; background: #e0e0e0; color: #999; padding: 0.5rem 1.5rem; border: none; border-radius: 6px; font-size: 0.85rem; cursor: not-allowed;">Connect WeChat (Available Soon)</button>
+                        </div>
+
+                        <div class="note">
+                            <strong>How it works:</strong> Scan the QR code to follow our WeChat Official Account, then authorize notifications. You'll instantly start receiving updates whenever your referral link generates activity.
+                        </div>
+                    </div>
+
+                    <!-- DEVELOPER NOTE FOR ETHAN -->
+                    <div style="background: #fff3cd; border: 2px dashed #ffc107; border-radius: 8px; padding: 1rem; font-size: 0.8rem;">
+                        <div style="font-weight: bold; color: #856404; margin-bottom: 0.5rem;">⚠️ DEVELOPER NOTE (Ethan — remove before production)</div>
+                        <p style="color: #856404; margin: 0; line-height: 1.6;">
+                            <strong>WeChat Notification System — DO NOT BUILD until WeChat Service Account API is ready.</strong><br><br>
+                            <strong>Prerequisites before this feature can go live:</strong><br>
+                            1. Approved WeChat Official Account (Service Account type, not Subscription) — Service Accounts can send template messages; Subscription Accounts cannot.<br>
+                            2. Template message API access enabled on the Service Account.<br>
+                            3. WeChat Open Platform registration (for OAuth-based account linking).<br><br>
+                            <strong>Implementation flow:</strong><br>
+                            1. Affiliate clicks "Connect WeChat" → scans QR code → follows the ShuSpot Official Account → authorizes via OAuth → we capture their WeChat OpenID.<br>
+                            2. Store the OpenID in the affiliate database, linked to their account.<br>
+                            3. When the tracking system fires an event (signup, conversion, payout), call the WeChat template message API with the affiliate's OpenID and the appropriate template.<br>
+                            4. Allow affiliates to toggle individual notification types on/off (checkboxes above become functional).<br><br>
+                            <strong>Template message format example:</strong><br>
+                            Template: "Affiliate Earning Notification"<br>
+                            {{first.DATA}} = "New conversion!"<br>
+                            {{keyword1.DATA}} = "3-Month Subscription"<br>
+                            {{keyword2.DATA}} = "+¥84"<br>
+                            {{keyword3.DATA}} = "¥2,590 (April total)"<br>
+                            {{remark.DATA}} = "Keep up the great work! View details in your dashboard."<br><br>
+                            <strong>For now:</strong> Ship the dashboard without WeChat notifications. Show "Coming Soon" badge and disabled UI as mocked up here. All notification toggles are cosmetic placeholders. Replace with live functionality once the Service Account is verified and API credentials are available.<br><br>
+                            <strong>Estimated timeline:</strong> WeChat Service Account verification can take 2-6 weeks for overseas entities. Plan accordingly.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TAB 2: COMPLIANCE GUIDE -->
+                <div id="compliance" class="tab-content">
+                    <div class="compliance-header">
+                        <div class="warning-icon">⚠️</div>
+                        <div class="compliance-header-text">
+                            <h2>Affiliate Compliance Guidelines</h2>
+                            <p>You must follow these rules when promoting ShuSpot. Violations may result in account termination.</p>
+                        </div>
+                    </div>
+
+                    <!-- RULE 1 -->
+                    <div class="card rule-card rule-critical">
+                        <div class="rule-title">RULE 1: NEVER Call ShuSpot a Tutoring Service</div>
+                        <div class="rule-body">
+                            ShuSpot is a parent-supervised English reading and speaking platform. Due to China's regulatory environment, you must never describe ShuSpot as: a tutoring service, an English school, a cram school, an off-campus training program, or a replacement for tutoring.
+                        </div>
+                        <div class="do-section">
+                            <div class="do-section-title">✓ DO SAY:</div>
+                            <div class="do-item">ShuSpot is a reading platform for families</div>
+                            <div class="do-item">A parent-supervised English reading tool</div>
+                            <div class="do-item">An English reading and speaking practice library</div>
+                        </div>
+                        <div class="dont-section">
+                            <div class="dont-section-title">✗ DON'T SAY:</div>
+                            <div class="dont-item">ShuSpot replaces your English tutor</div>
+                            <div class="dont-item">Better than cram school</div>
+                            <div class="dont-item">Online English tutoring platform</div>
+                        </div>
+                    </div>
+
+                    <!-- RULE 2 -->
+                    <div class="card rule-card rule-critical">
+                        <div class="rule-title">RULE 2: NEVER Say 'ShuSpot.com' in Videos</div>
+                        <div class="rule-body">
+                            On all platforms, say "ShuSpot" or "Search ShuSpot" only. Showing .com URLs in video content gets flagged by platform algorithms and reduces your reach.
+                        </div>
+                    </div>
+
+                    <!-- RULE 3 -->
+                    <div class="card rule-card rule-warning">
+                        <div class="rule-title">RULE 3: No Guaranteed Learning Outcomes</div>
+                        <div class="rule-body">
+                            Do not promise specific results like "Your child will be fluent in 3 months" or "Guaranteed reading improvement." You can share personal experience and general benefits.
+                        </div>
+                    </div>
+
+                    <!-- RULE 4 -->
+                    <div class="card rule-card rule-warning">
+                        <div class="rule-title">RULE 4: Platform-Specific Link Rules</div>
+                        <div class="rule-body">
+                            Follow these guidelines for each platform:
+                        </div>
+                        <div class="platform-rule">
+                            <div class="platform-name">XiaoHongShu</div>
+                            <div class="platform-detail">No direct links in posts. Use keyword comments (e.g., "Comment READ for details") and respond via DM. Link in bio is OK.</div>
+                        </div>
+                        <div class="platform-rule">
+                            <div class="platform-name">Douyin</div>
+                            <div class="platform-detail">No external links in videos. Use profile link and keyword comments.</div>
+                        </div>
+                        <div class="platform-rule">
+                            <div class="platform-name">Bilibili</div>
+                            <div class="platform-detail">Link in video description is usually OK. Never in the video itself.</div>
+                        </div>
+                        <div class="platform-rule">
+                            <div class="platform-name">WeChat</div>
+                            <div class="platform-detail">Links work naturally in articles and menu buttons.</div>
+                        </div>
+                    </div>
+
+                    <!-- RULE 5 -->
+                    <div class="card rule-card rule-info">
+                        <div class="rule-title">RULE 5: Content Ratio Rule</div>
+                        <div class="rule-body">
+                            3 out of every 5 posts should be pure value (parenting tips, reading advice, challenges) with NO product push. Only 2 out of 5 should showcase ShuSpot. Flipping this ratio causes follower drops and algorithm punishment.
+                        </div>
+                    </div>
+
+                    <!-- RULE 6 -->
+                    <div class="card rule-card rule-info">
+                        <div class="rule-title">RULE 6: Honest Recommendations Only</div>
+                        <div class="rule-body">
+                            Only promote ShuSpot if you genuinely believe in the product. Your followers trust you. Dishonest promotion damages your credibility and ours. If you haven't tried ShuSpot with a child, do so before promoting it.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: CONTACT & SUPPORT -->
+                <div id="support" class="tab-content">
+                    <!-- Contact Info -->
+                    <div class="card">
+                        <div class="card-title">Contact Information</div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-label">WeChat Support ID</div>
+                                <div class="contact-value">ShuSpot_Affiliate</div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value">affiliates@shuspot.com</div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-label">Support Hours</div>
+                                <div class="contact-value">Monday-Friday, 9am-6pm CST</div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-label">Affiliate WeChat Group</div>
+                                <div class="qr-placeholder">QR Code</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div class="card">
+                        <div class="card-title">Frequently Asked Questions</div>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>When do I get paid?</span>
+                                    <span class="accordion-icon">▼</span>
+                                </div>
+                                <div class="accordion-content">
+                                    Payouts are processed monthly on the 1st for the previous month's earnings. Minimum threshold: ¥200.
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>How long does the tracking cookie last?</span>
+                                    <span class="accordion-icon">▼</span>
+                                </div>
+                                <div class="accordion-content">
+                                    90 days. If someone clicks your link and subscribes within 90 days, you get credit.
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>Can I promote on multiple platforms?</span>
+                                    <span class="accordion-icon">▼</span>
+                                </div>
+                                <div class="accordion-content">
+                                    Yes! We encourage it. Use the same referral link across all your platforms.
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>What if my follower wants a refund?</span>
+                                    <span class="accordion-icon">▼</span>
+                                </div>
+                                <div class="accordion-content">
+                                    If a subscription is refunded within 7 days, the commission is reversed. This is shown in your earnings breakdown.
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>How do I change my payment method?</span>
+                                    <span class="accordion-icon">▼</span>
+                                </div>
+                                <div class="accordion-content">
+                                    Go to Account Settings and update your payment preferences. Changes take effect on the next payout.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // TAB SWITCHING
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.getAttribute('data-tab');
+
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+            });
+        });
+
+        // ACCORDION
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+
+        // BUTTON INTERACTIONS
+        document.querySelectorAll('.button-primary').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Changes saved successfully!');
+            });
+        });
+
+        document.querySelectorAll('.button-secondary').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Action completed!');
+            });
+        });
+    </script>
+</body>
+</html>

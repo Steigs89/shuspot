@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Library - ShuSpot Affiliate Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* NAV STYLES */
+        .top-nav {
+            background-color: #1e4f7c;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* MAIN LAYOUT */
+        .container {
+            display: flex;
+            min-height: calc(100vh - 60px);
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            border-right: 1px solid #e0e0e0;
+            padding: 2rem 0;
+        }
+
+        .sidebar-item {
+            padding: 1rem 1.5rem;
+            color: #666;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-item:hover {
+            background-color: #f9f9f9;
+            color: #2B6CB0;
+        }
+
+        .sidebar-item.active {
+            background-color: #f0f7ff;
+            color: #2B6CB0;
+            border-left: 4px solid #2B6CB0;
+            padding-left: calc(1.5rem - 4px);
+            font-weight: 600;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            flex: 1;
+            padding: 3rem;
+            overflow-y: auto;
+        }
+
+        .page-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: #1e4f7c;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .page-subtitle {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* TAB BAR */
+        .tab-bar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab:hover {
+            color: #2B6CB0;
+        }
+
+        .tab.active {
+            color: #2B6CB0;
+            border-bottom-color: #2B6CB0;
+        }
+
+        /* SECTION HEADERS */
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            gap: 0.75rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: #1e4f7c;
+            font-weight: 600;
+        }
+
+        .section-count {
+            background-color: #e0e0e0;
+            color: #666;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* VIDEO CLIPS GRID */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1400px) {
+            .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #999;
+            position: relative;
+        }
+
+        .play-icon {
+            font-size: 3.5rem;
+            color: rgba(43, 108, 176, 0.7);
+            transition: color 0.3s;
+        }
+
+        .video-card:hover .play-icon {
+            color: #2B6CB0;
+        }
+
+        .video-info {
+            padding: 1rem;
+        }
+
+        .video-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+
+        .video-duration {
+            background-color: #f5f5f5;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .platform-tag {
+            display: inline-block;
+            background-color: #e8f1ff;
+            color: #2B6CB0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #2B6CB0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #1e4f7c;
+        }
+
+        .download-btn:active {
+            background-color: #153a5e;
+        }
+
+        /* MASCOT GRID */
+        .mascot-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1400px) {
+            .mascot-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .mascot-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .mascot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mascot-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .mascot-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .mascot-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0),
+                              linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ddd;
+        }
+
+        .mascot-info {
+            padding: 1rem;
+        }
+
+        .mascot-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .png-badge {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* SCRIPTS LIST */
+        .scripts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .script-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .script-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .script-icon {
+            font-size: 2rem;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .script-content {
+            flex: 1;
+        }
+
+        .script-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .script-platform {
+            display: inline-block;
+            background-color: #e8f1ff;
+            color: #2B6CB0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .script-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .view-copy-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: #2B6CB0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .view-copy-btn:hover {
+            background-color: #1e4f7c;
+        }
+
+        /* HASHTAGS */
+        .hashtags-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1400px) {
+            .hashtags-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hashtags-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hashtag-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hashtag-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .hashtag-platform {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e4f7c;
+            margin-bottom: 1rem;
+        }
+
+        .hashtag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .hashtag {
+            background-color: #f0f7ff;
+            color: #2B6CB0;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .copy-all-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #FFD700;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .copy-all-btn:hover {
+            background-color: #f0c200;
+        }
+
+        /* HOOKS */
+        .hooks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .hooks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hook-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #2B6CB0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hook-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .hook-number {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .hook-main {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e4f7c;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .hook-sub {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .copy-hook-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: #2B6CB0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .copy-hook-btn:hover {
+            background-color: #1e4f7c;
+        }
+
+        /* BRAND ASSETS */
+        .brand-assets {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .colors-section {
+            margin-bottom: 2rem;
+        }
+
+        .colors-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e4f7c;
+            margin-bottom: 1rem;
+        }
+
+        .color-swatches {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .color-swatches {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .color-box {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .color-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .color-code {
+            font-size: 0.85rem;
+            color: #999;
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .logos-section {
+            margin-bottom: 2rem;
+        }
+
+        .logos-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e4f7c;
+            margin-bottom: 1rem;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .logo-placeholder {
+            background-color: #f5f5f5;
+            border: 2px dashed #d0d0d0;
+            border-radius: 8px;
+            aspect-ratio: 2 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: #ccc;
+        }
+
+        .logo-label {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 500;
+        }
+
+        .font-section {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+        }
+
+        .font-section h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .font-details {
+            font-size: 0.9rem;
+            color: #999;
+            font-family: monospace;
+        }
+
+        .download-kit-btn {
+            padding: 1rem 2rem;
+            background-color: #FFD700;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .download-kit-btn:hover {
+            background-color: #f0c200;
+        }
+
+        /* TOAST NOTIFICATION */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #2B6CB0;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            animation: slideIn 0.3s ease, slideOut 0.3s ease 2.7s;
+            font-weight: 500;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+
+        /* HIDDEN CONTENT */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP NAV -->
+    <div class="top-nav">
+        <div class="nav-logo">ShuSpot</div>
+        <div class="nav-right">
+            <a href="#" class="nav-link">Dashboard</a>
+            <a href="#" class="nav-link">Reports</a>
+            <a href="#" class="nav-link">Account</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <a href="03-Dashboard-Home.html" class="sidebar-item">📊 Dashboard</a>
+            <a href="04-Earnings.html" class="sidebar-item">💰 Earnings & Payouts</a>
+            <a href="05-Content-Library.html" class="sidebar-item active">📁 Content Library</a>
+            <a href="03-Dashboard-Home.html#referral-link" class="sidebar-item">🔗 My Link & QR Code</a>
+            <a href="06-Settings.html" class="sidebar-item">⚙️ Settings</a>
+            <a href="06-Settings.html#compliance" class="sidebar-item">📋 Compliance Guide</a>
+            <a href="06-Settings.html#support" class="sidebar-item">📞 Support</a>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+                <h1 class="page-title">Content Library</h1>
+                <p class="page-subtitle">Ready-to-use assets to help you promote ShuSpot. Download, customize, and share.</p>
+            </div>
+
+            <!-- CATEGORY TABS -->
+            <div class="tab-bar">
+                <button class="tab active" data-tab="all">All</button>
+                <button class="tab" data-tab="videos">Video Clips</button>
+                <button class="tab" data-tab="mascot">Spot Mascot</button>
+                <button class="tab" data-tab="scripts">Scripts</button>
+                <button class="tab" data-tab="hashtags">Hashtags</button>
+                <button class="tab" data-tab="hooks">Hooks</button>
+                <button class="tab" data-tab="brand">Brand Assets</button>
+            </div>
+
+            <!-- VIDEO CLIPS SECTION -->
+            <div class="content-section active" id="all">
+                <div id="all-videos"></div>
+                <div id="all-mascot"></div>
+                <div id="all-scripts"></div>
+                <div id="all-hashtags"></div>
+                <div id="all-hooks"></div>
+                <div id="all-brand"></div>
+            </div>
+
+            <div class="content-section" id="videos">
+                <div class="section-header">
+                    <h2>Video Clips</h2>
+                    <span class="section-count">(12 clips)</span>
+                </div>
+                <div class="video-grid" id="videos-grid"></div>
+            </div>
+
+            <!-- MASCOT SECTION -->
+            <div class="content-section" id="mascot">
+                <div class="section-header">
+                    <h2>Spot Mascot Images</h2>
+                    <span class="section-count">(8 images)</span>
+                </div>
+                <div class="mascot-grid" id="mascot-grid"></div>
+            </div>
+
+            <!-- SCRIPTS SECTION -->
+            <div class="content-section" id="scripts">
+                <div class="section-header">
+                    <h2>Script Templates</h2>
+                    <span class="section-count">(6 scripts)</span>
+                </div>
+                <div class="scripts-list" id="scripts-list"></div>
+            </div>
+
+            <!-- HASHTAGS SECTION -->
+            <div class="content-section" id="hashtags">
+                <div class="section-header">
+                    <h2>Recommended Hashtags</h2>
+                    <span class="section-count">(4 platforms)</span>
+                </div>
+                <div class="hashtags-grid" id="hashtags-grid"></div>
+            </div>
+
+            <!-- HOOKS SECTION -->
+            <div class="content-section" id="hooks">
+                <div class="section-header">
+                    <h2>Pain-Point Hooks</h2>
+                    <span class="section-count">(8 hooks)</span>
+                </div>
+                <div class="hooks-grid" id="hooks-grid"></div>
+            </div>
+
+            <!-- BRAND ASSETS SECTION -->
+            <div class="content-section" id="brand">
+                <div class="section-header">
+                    <h2>Brand Assets</h2>
+                </div>
+                <div class="brand-assets">
+                    <div class="colors-section">
+                        <h3>Color Palette</h3>
+                        <div class="color-swatches" id="colors-grid"></div>
+                    </div>
+                    <div class="logos-section">
+                        <h3>Logos & Badges</h3>
+                        <div class="logo-grid" id="logo-grid"></div>
+                    </div>
+                    <div class="font-section">
+                        <h3>Typography</h3>
+                        <div class="font-details">Primary: Arial / Noto Sans CJK SC</div>
+                    </div>
+                    <button class="download-kit-btn" onclick="showToast('Brand Kit downloaded!')">Download Brand Kit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DATA
+        const videos = [
+            { title: "Read-to-Me Feature Demo", duration: "0:32", platform: "XHS/Douyin" },
+            { title: "Word-Tap Dictionary Reveal", duration: "0:28", platform: "Bilibili" },
+            { title: "AI Voice Coach in Action", duration: "0:45", platform: "All Platforms" },
+            { title: "Library Navigation Tour", duration: "1:12", platform: "XHS/Douyin" },
+            { title: "Reading Challenge Example", duration: "0:22", platform: "Bilibili" },
+            { title: "Animated Book Preview", duration: "0:38", platform: "All Platforms" },
+            { title: "Story Selection Interface", duration: "0:41", platform: "XHS/Douyin" },
+            { title: "Progress Tracking Feature", duration: "0:35", platform: "All Platforms" },
+            { title: "Parent Dashboard Overview", duration: "1:05", platform: "Douyin" },
+            { title: "Achievement Badges Showcase", duration: "0:29", platform: "XHS" },
+            { title: "Weekly Reading Report", duration: "0:52", platform: "WeChat" },
+            { title: "Premium Content Preview", duration: "0:46", platform: "Bilibili" }
+        ];
+
+        const mascots = [
+            "Spot Reading",
+            "Spot Waving",
+            "Spot Thumbs Up",
+            "Spot Thinking",
+            "Spot Celebrating",
+            "Spot Sleeping",
+            "Spot New Year",
+            "Spot with Book"
+        ];
+
+        const scripts = [
+            {
+                title: "Story Time Review Script",
+                platform: "XHS/Douyin",
+                description: "30-second script for reviewing a ShuSpot story with your child"
+            },
+            {
+                title: "Feature Discovery Script",
+                platform: "XHS",
+                description: "'Wait, you can tap any word?!' reaction script"
+            },
+            {
+                title: "7-Day Challenge Invite",
+                platform: "WeChat",
+                description: "Invite followers to join a reading challenge"
+            },
+            {
+                title: "Parent Tips + ShuSpot Mention",
+                platform: "All",
+                description: "Natural recommendation within parenting content"
+            },
+            {
+                title: "Before & After Progress",
+                platform: "Douyin",
+                description: "Show your child's improvement over time"
+            },
+            {
+                title: "Full Platform Review",
+                platform: "Bilibili",
+                description: "3-5 minute honest review of ShuSpot features"
+            }
+        ];
+
+        const hashtags = {
+            "XiaoHongShu": ["#英语启蒙", "#儿童英语", "#亲子阅读", "#绘本推荐", "#英语学习", "#分级阅读", "#ShuSpot", "#少儿英语"],
+            "Douyin": ["#儿童英语", "#英语启蒙", "#亲子教育", "#学习技巧", "#孩子成长", "#英语读物", "#ShuSpot", "#育儿"],
+            "Bilibili": ["#英语启蒙", "#儿童教育", "#教学资源", "#英文阅读", "#学习方法", "#亲子时光", "#ShuSpot", "#教育内容"],
+            "WeChat": ["#亲子英语", "#儿童教育", "#英语启蒙", "#家庭学习", "#育儿分享", "#教育资源", "#ShuSpot", "#读书推荐"]
+        };
+
+        const hooks = [
+            {
+                main: "You don't need to speak English to read to your child",
+                sub: "Press play. The book reads itself."
+            },
+            {
+                main: "What if English reading felt like watching a cartoon?",
+                sub: "Watch your child's eyes light up."
+            },
+            {
+                main: "10 minutes a day. That's all your child needs.",
+                sub: "Start tonight with this story."
+            },
+            {
+                main: "Your child can practice English reading — without a tutor",
+                sub: "Every word is spoken. Every word is highlighted."
+            },
+            {
+                main: "An English tutor charges 200 yuan per hour",
+                sub: "This 3-minute story is free practice."
+            },
+            {
+                main: "Is your child ready for this level of English reading?",
+                sub: "Watch this story and find out."
+            },
+            {
+                main: "The top students all do this one thing every day",
+                sub: "They read. Out loud. In English."
+            },
+            {
+                main: "Bedtime story in English — your child will ask for 'one more'",
+                sub: "Follow along with the highlighted words."
+            }
+        ];
+
+        const colors = [
+            { name: "Primary Blue", code: "#2B6CB0" },
+            { name: "Dark Navy", code: "#1e4f7c" },
+            { name: "Accent Gold", code: "#FFD700" },
+            { name: "Warm Cream", code: "#FFF8F0" }
+        ];
+
+        const logos = [
+            { name: "ShuSpot Logo", icon: "📘" },
+            { name: "Spot Mascot", icon: "🎯" },
+            { name: "Affiliate Partner Badge", icon: "🏆" }
+        ];
+
+        // RENDER FUNCTIONS
+        function renderVideos() {
+            const grid = document.getElementById("videos-grid");
+            grid.innerHTML = videos.map(video => `
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="play-icon">▶️</div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">${video.title}</div>
+                        <div class="video-meta">
+                            <span class="video-duration">${video.duration}</span>
+                        </div>
+                        <div class="platform-tag">${video.platform}</div>
+                        <button class="download-btn" onclick="showToast('Video downloaded!')">Download</button>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function renderMascots() {
+            const grid = document.getElementById("mascot-grid");
+            grid.innerHTML = mascots.map(mascot => `
+                <div class="mascot-card">
+                    <div class="mascot-image">🎨</div>
+                    <div class="mascot-info">
+                        <div class="mascot-title">${mascot}</div>
+                        <div class="png-badge">PNG • Transparent</div>
+                        <button class="download-btn" onclick="showToast('Image downloaded!')">Download</button>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function renderScripts() {
+            const list = document.getElementById("scripts-list");
+            list.innerHTML = scripts.map(script => `
+                <div class="script-card">
+                    <div class="script-icon">📄</div>
+                    <div class="script-content">
+                        <div class="script-title">${script.title}</div>
+                        <div class="script-platform">${script.platform}</div>
+                        <div class="script-description">${script.description}</div>
+                    </div>
+                    <button class="view-copy-btn" onclick="copyToClipboard('${script.title} — ${script.platform} — ${script.description}')">View & Copy</button>
+                </div>
+            `).join("");
+        }
+
+        function renderHashtags() {
+            const grid = document.getElementById("hashtags-grid");
+            grid.innerHTML = Object.entries(hashtags).map(([platform, tags]) => `
+                <div class="hashtag-card">
+                    <div class="hashtag-platform">${platform}</div>
+                    <div class="hashtag-list">
+                        ${tags.map(tag => `<span class="hashtag">${tag}</span>`).join("")}
+                    </div>
+                    <button class="copy-all-btn" onclick="copyToClipboard('${tags.join(' ')}')">Copy All</button>
+                </div>
+            `).join("");
+        }
+
+        function renderHooks() {
+            const grid = document.getElementById("hooks-grid");
+            grid.innerHTML = hooks.map((hook, index) => `
+                <div class="hook-card">
+                    <div class="hook-number">Hook ${index + 1}</div>
+                    <div class="hook-main">"${hook.main}"</div>
+                    <div class="hook-sub">"${hook.sub}"</div>
+                    <button class="copy-hook-btn" onclick="copyToClipboard('${hook.main}\\n${hook.sub}')">Copy Hook</button>
+                </div>
+            `).join("");
+        }
+
+        function renderColors() {
+            const grid = document.getElementById("colors-grid");
+            grid.innerHTML = colors.map(color => `
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: ${color.code};"></div>
+                    <div class="color-name">${color.name}</div>
+                    <div class="color-code">${color.code}</div>
+                </div>
+            `).join("");
+        }
+
+        function renderLogos() {
+            const grid = document.getElementById("logo-grid");
+            grid.innerHTML = logos.map(logo => `
+                <div class="logo-placeholder">
+                    <div class="logo-icon">${logo.icon}</div>
+                    <div class="logo-label">${logo.name}</div>
+                </div>
+            `).join("");
+        }
+
+        function renderAllContent() {
+            renderVideos();
+            renderMascots();
+            renderScripts();
+            renderHashtags();
+            renderHooks();
+
+            const allVideos = document.getElementById("all-videos");
+            allVideos.innerHTML = `
+                <div class="section-header">
+                    <h2>Video Clips</h2>
+                    <span class="section-count">(12 clips)</span>
+                </div>
+                <div class="video-grid" id="all-videos-grid"></div>
+            `;
+            document.getElementById("all-videos-grid").innerHTML = document.getElementById("videos-grid").innerHTML;
+
+            const allMascot = document.getElementById("all-mascot");
+            allMascot.innerHTML = `
+                <div class="section-header">
+                    <h2>Spot Mascot Images</h2>
+                    <span class="section-count">(8 images)</span>
+                </div>
+                <div class="mascot-grid" id="all-mascot-grid"></div>
+            `;
+            document.getElementById("all-mascot-grid").innerHTML = document.getElementById("mascot-grid").innerHTML;
+
+            const allScripts = document.getElementById("all-scripts");
+            allScripts.innerHTML = `
+                <div class="section-header">
+                    <h2>Script Templates</h2>
+                    <span class="section-count">(6 scripts)</span>
+                </div>
+                <div class="scripts-list" id="all-scripts-list"></div>
+            `;
+            document.getElementById("all-scripts-list").innerHTML = document.getElementById("scripts-list").innerHTML;
+
+            const allHashtags = document.getElementById("all-hashtags");
+            allHashtags.innerHTML = `
+                <div class="section-header">
+                    <h2>Recommended Hashtags</h2>
+                    <span class="section-count">(4 platforms)</span>
+                </div>
+                <div class="hashtags-grid" id="all-hashtags-grid"></div>
+            `;
+            document.getElementById("all-hashtags-grid").innerHTML = document.getElementById("hashtags-grid").innerHTML;
+
+            const allHooks = document.getElementById("all-hooks");
+            allHooks.innerHTML = `
+                <div class="section-header">
+                    <h2>Pain-Point Hooks</h2>
+                    <span class="section-count">(8 hooks)</span>
+                </div>
+                <div class="hooks-grid" id="all-hooks-grid"></div>
+            `;
+            document.getElementById("all-hooks-grid").innerHTML = document.getElementById("hooks-grid").innerHTML;
+
+            const allBrand = document.getElementById("all-brand");
+            allBrand.innerHTML = `
+                <div class="section-header">
+                    <h2>Brand Assets</h2>
+                </div>
+                <div class="brand-assets">
+                    <div class="colors-section">
+                        <h3>Color Palette</h3>
+                        <div class="color-swatches" id="all-colors-grid"></div>
+                    </div>
+                    <div class="logos-section">
+                        <h3>Logos & Badges</h3>
+                        <div class="logo-grid" id="all-logo-grid"></div>
+                    </div>
+                    <div class="font-section">
+                        <h3>Typography</h3>
+                        <div class="font-details">Primary: Arial / Noto Sans CJK SC</div>
+                    </div>
+                    <button class="download-kit-btn" onclick="showToast('Brand Kit downloaded!')">Download Brand Kit</button>
+                </div>
+            `;
+            document.getElementById("all-colors-grid").innerHTML = document.getElementById("colors-grid").innerHTML;
+            document.getElementById("all-logo-grid").innerHTML = document.getElementById("logo-grid").innerHTML;
+
+            renderColors();
+            renderLogos();
+        }
+
+        // TAB SWITCHING
+        document.querySelectorAll(".tab").forEach(tab => {
+            tab.addEventListener("click", function() {
+                document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+                document.querySelectorAll(".content-section").forEach(section => section.classList.remove("active"));
+
+                this.classList.add("active");
+                const tabId = this.getAttribute("data-tab");
+                document.getElementById(tabId).classList.add("active");
+            });
+        });
+
+        // COPY TO CLIPBOARD
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast("Copied to clipboard!");
+            }).catch(err => {
+                console.error("Copy failed:", err);
+            });
+        }
+
+        // TOAST NOTIFICATION
+        function showToast(message) {
+            const toast = document.createElement("div");
+            toast.className = "toast";
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // INITIALIZE
+        renderAllContent();
+    </script>
+</body>
+</html>

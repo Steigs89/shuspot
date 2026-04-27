@@ -2,6 +2,7 @@
   "name": "book-admin-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/book-admin",
   "scripts": {
     "start": "react-scripts start",
     "build": "REACT_APP_BUILD_ID=$(date +%Y%m%d-%H%M%S) react-scripts build",

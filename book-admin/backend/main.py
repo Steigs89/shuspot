@@ -2099,7 +2099,7 @@ async def upload_zip_to_supabase(
                 result = subprocess.run([
                     'rclone', 'copy', crop_src, 'supabase-remote:books',
                     '--progress', '--stats=1s'
-                ], capture_output=True, text=True, timeout=300)  # 5 minute timeout
+                ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, timeout=300)  # 5 minute timeout
 
                 if result.returncode != 0:
                     raise HTTPException(status_code=500, detail=f"Rclone upload failed: {result.stderr}")
@@ -3001,6 +3001,320 @@ async def ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends
 @app.post("/api/shuspot-ingestion/ingest-manifest")
 async def api_ingest_manifest(manifest_data: dict = Body(...), db: Session = Depends(get_db)):
     return await ingest_manifest(manifest_data, db)
+
+
+# ============================================================
+# ONE-CLICK BOOK UPLOAD — rclone + Supabase DB insert
+# ============================================================
+
+SUPABASE_URL = "https://xzwdtcczndgglqikmlwj.supabase.co"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6d2R0Y2N6bmRnZ2xxaWttbHdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMyOTkyNzUsImV4cCI6MjA2ODg3NTI3NX0.05oCSZ1d3eJHr79B1UvCoQTIL-UBGAKdRBk4CUwe7wE"
+SUPABASE_BUCKET_BASE = "https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books"
+
+def _parse_gpt_description(folder_path: str) -> dict:
+    """Parse a GPT_description.txt file for book metadata."""
+    import glob
+    desc_files = glob.glob(os.path.join(folder_path, "*description.txt")) + glob.glob(os.path.join(folder_path, "*GPT_description.txt"))
+    if not desc_files:
+        return {}
+    meta = {}
+    with open(desc_files[0], 'r', encoding='utf-8', errors='ignore') as f:
+        for line in f:
+            if ':' in line:
+                key, _, val = line.partition(':')
+                meta[key.strip()] = val.strip()
+    return meta
+
+@app.post("/api/quick-upload")
+async def quick_upload_book(request: dict = Body(...)):
+    """
+    One-click book upload: takes a local folder path, uploads via rclone, inserts into Supabase.
+    Body: { "folder_path": "/path/to/Bk=Book Title" }
+    """
+    import subprocess, glob, urllib.parse, requests as req
+
+    folder_path = request.get("folder_path", "").strip()
+    if not folder_path or not os.path.isdir(folder_path):
+        raise HTTPException(status_code=400, detail=f"Invalid folder path: {folder_path}")
+
+    folder_name = os.path.basename(folder_path)
+    # Strip Bk= prefix and page count suffix
+    title = folder_name
+    if title.startswith("Bk="):
+        title = title[3:]
+    import re
+    title = re.sub(r'\s*-\s*\d+pgs$', '', title)
+
+    # Find resized folder
+    resized_dir = None
+    for name in ["resized", "RESIZED"]:
+        candidate = os.path.join(folder_path, name)
+        if os.path.isdir(candidate):
+            resized_dir = name
+            break
+    if not resized_dir:
+        raise HTTPException(status_code=400, detail="No resized/ or RESIZED/ folder found")
+
+    # Count pages
+    pages = sorted(glob.glob(os.path.join(folder_path, resized_dir, "crop-*.png")))
+    page_count = len(pages)
+    if page_count == 0:
+        raise HTTPException(status_code=400, detail="No crop-*.png files found in resized folder")
+
+    # Parse GPT description
+    meta = _parse_gpt_description(folder_path)
+    author = meta.get("Author", "")
+    description = meta.get("Description", "")
+    ar_level = meta.get("AR Level", "")
+    lexile = meta.get("Lexile", "")
+    isbn = meta.get("ISBN", "")
+    fiction_type = meta.get("Fiction Type", "Fiction")
+    genre1 = meta.get("Genre 1", "")
+    genre2 = meta.get("Genre 2", "")
+    is_rtm = meta.get("Read-to-Me?", "no").lower() == "yes"
+    is_audio = meta.get("Audiobook?", "no").lower() == "yes"
+    content_type = "read-to-me" if is_rtm else "audiobook" if is_audio else "book"
+
+    # Determine remote path
+    if content_type == "read-to-me":
+        remote_path = f"CROP-ShuSpot/ReadToMe/{title}"
+    elif content_type == "audiobook":
+        remote_path = f"CROP-ShuSpot/Audiobooks/{title}"
+    else:
+        remote_path = f"CROP-ShuSpot/Books/{title}"
+
+    # Step 1: rclone upload
+    cmd = ["rclone", "copy", folder_path + "/", f"supa:books/{remote_path}/", "--exclude", ".DS_Store"]
+    try:
+        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, timeout=600)
+        if result.returncode != 0:
+            raise HTTPException(status_code=500, detail=f"Rclone upload failed: {result.stderr}")
+    except subprocess.TimeoutExpired:
+        raise HTTPException(status_code=500, detail="Upload timed out (>10 min)")
+    except FileNotFoundError:
+        raise HTTPException(status_code=500, detail="rclone not found — make sure it's installed and in PATH")
+
+    # Step 2: Build pages JSON
+    encoded_path = urllib.parse.quote(remote_path, safe="/")
+    pages_json = []
+    for i in range(1, page_count + 1):
+        page_entry = {
+            "page_number": i,
+            "image_url": f"{SUPABASE_BUCKET_BASE}/{encoded_path}/resized/crop-{i}.png"
+        }
+        # Check for audio file (read-to-me)
+        if content_type == "read-to-me" and os.path.isfile(os.path.join(folder_path, f"{i}.mp3")):
+            page_entry["audio_url"] = f"{SUPABASE_BUCKET_BASE}/{encoded_path}/{i}.mp3"
+        pages_json.append(page_entry)
+
+    # Detect cover
+    cover_ext = "webp"
+    if os.path.isfile(os.path.join(folder_path, "cover.jpg")):
+        cover_ext = "jpg"
+    elif os.path.isfile(os.path.join(folder_path, "cover.png")):
+        cover_ext = "png"
+    cover_url = f"{SUPABASE_BUCKET_BASE}/{encoded_path}/cover.{cover_ext}"
+
+    # Step 3: Insert into Supabase
+    book_data = {
+        "title": title,
+        "author": author,
+        "description": description,
+        "content_type": content_type,
+        "reading_level": ar_level,
+        "categories": [],
+        "tags": [],
+        "cover_image_url": cover_url,
+        "page_count": page_count,
+        "is_active": True,
+        "metadata": {
+            "pages": pages_json,
+            "total_pages": page_count,
+            "fiction_type": fiction_type,
+            "isbn": isbn,
+            "ar_level": ar_level,
+            "lexile": lexile,
+            "genre_1": genre1,
+            "genre_2": genre2,
+            "folder_path": f"books/{remote_path}"
+        }
+    }
+
+    headers = {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": f"Bearer {SUPABASE_ANON_KEY}",
+        "Content-Type": "application/json",
+        "Prefer": "return=representation"
+    }
+    resp = req.post(f"{SUPABASE_URL}/rest/v1/books", json=book_data, headers=headers)
+    if resp.status_code not in (200, 201):
+        raise HTTPException(status_code=500, detail=f"Supabase insert failed: {resp.text}")
+
+    result_data = resp.json()
+    book_id = result_data[0]["id"] if isinstance(result_data, list) else result_data.get("id", "unknown")
+
+    return {
+        "success": True,
+        "title": title,
+        "id": book_id,
+        "pages": page_count,
+        "content_type": content_type,
+        "author": author,
+        "cover_url": cover_url
+    }
+
+
+@app.post("/api/zip-upload")
+@app.post("/zip-upload")
+async def zip_upload_books(zip_file: UploadFile = File(...)):
+    """
+    Upload a ZIP of book folders. Extracts, uploads each book via rclone to Supabase,
+    and creates database entries. Supports single books, multiple books, or genre folders.
+    """
+    import subprocess, glob, urllib.parse, requests as req, zipfile, tempfile, re
+
+    if not zip_file.filename.endswith('.zip'):
+        raise HTTPException(status_code=400, detail="Please upload a .zip file")
+
+    # Save uploaded ZIP to temp
+    tmp_dir = tempfile.mkdtemp(prefix="shuspot_upload_")
+    zip_path = os.path.join(tmp_dir, zip_file.filename)
+    with open(zip_path, 'wb') as f:
+        content = await zip_file.read()
+        f.write(content)
+
+    # Extract
+    extract_dir = os.path.join(tmp_dir, "extracted")
+    try:
+        with zipfile.ZipFile(zip_path, 'r') as z:
+            z.extractall(extract_dir)
+    except zipfile.BadZipFile:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+        raise HTTPException(status_code=400, detail="Invalid ZIP file")
+
+    # Find all book folders (folders containing resized/ or RESIZED/ with crop-*.png)
+    book_folders = []
+    for root, dirs, files in os.walk(extract_dir):
+        for d in dirs:
+            candidate = os.path.join(root, d)
+            for resized_name in ['resized', 'RESIZED']:
+                resized_path = os.path.join(candidate, resized_name)
+                if os.path.isdir(resized_path):
+                    crops = glob.glob(os.path.join(resized_path, "crop-*.png"))
+                    if crops:
+                        book_folders.append((candidate, resized_name, len(crops)))
+                        break
+
+    if not book_folders:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+        raise HTTPException(status_code=400, detail="No book folders found. Each book needs a resized/ folder with crop-*.png files.")
+
+    results = []
+    errors = []
+
+    for folder_path, resized_dir, page_count in book_folders:
+        folder_name = os.path.basename(folder_path)
+        title = folder_name
+        if title.startswith("Bk="):
+            title = title[3:]
+        title = re.sub(r'\s*-\s*\d+pgs$', '', title)
+
+        # Parse GPT description
+        meta = {}
+        desc_files = glob.glob(os.path.join(folder_path, "*description.txt")) + glob.glob(os.path.join(folder_path, "*GPT_description.txt"))
+        if desc_files:
+            try:
+                with open(desc_files[0], 'r', encoding='utf-8', errors='ignore') as f:
+                    for line in f:
+                        if ':' in line:
+                            key, _, val = line.partition(':')
+                            meta[key.strip()] = val.strip()
+            except: pass
+
+        author = meta.get("Author", "")
+        description = meta.get("Description", "")
+        ar_level = meta.get("AR Level", "")
+        lexile = meta.get("Lexile", "")
+        isbn = meta.get("ISBN", "")
+        fiction_type = meta.get("Fiction Type", "Fiction")
+        genre1 = meta.get("Genre 1", "")
+        genre2 = meta.get("Genre 2", "")
+        is_rtm = meta.get("Read-to-Me?", "no").lower() == "yes"
+        is_audio = meta.get("Audiobook?", "no").lower() == "yes"
+        content_type = "read-to-me" if is_rtm else "audiobook" if is_audio else "book"
+
+        remote_path = f"CROP-ShuSpot/{'ReadToMe' if is_rtm else 'Audiobooks' if is_audio else 'Books'}/{title}"
+
+        # Rclone upload
+        try:
+            cmd = ["rclone", "copy", folder_path + "/", f"supa:books/{remote_path}/", "--exclude", ".DS_Store", "--exclude", "__MACOSX/**"]
+            result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, timeout=600)
+            if result.returncode != 0:
+                errors.append(f"{title}: rclone failed — {result.stderr[:200]}")
+                continue
+        except Exception as e:
+            errors.append(f"{title}: {str(e)}")
+            continue
+
+        # Build pages JSON
+        encoded_path = urllib.parse.quote(remote_path, safe="/")
+        bucket_base = "https://xzwdtcczndgglqikmlwj.supabase.co/storage/v1/object/public/books"
+        pages_json = []
+        for i in range(1, page_count + 1):
+            page_entry = {"page_number": i, "image_url": f"{bucket_base}/{encoded_path}/resized/crop-{i}.png"}
+            if content_type == "read-to-me" and os.path.isfile(os.path.join(folder_path, f"{i}.mp3")):
+                page_entry["audio_url"] = f"{bucket_base}/{encoded_path}/{i}.mp3"
+            pages_json.append(page_entry)
+
+        # Detect cover
+        cover_ext = "webp"
+        if os.path.isfile(os.path.join(folder_path, "cover.jpg")): cover_ext = "jpg"
+        elif os.path.isfile(os.path.join(folder_path, "cover.png")): cover_ext = "png"
+        cover_url = f"{bucket_base}/{encoded_path}/cover.{cover_ext}"
+
+        # Insert into Supabase
+        book_data = {
+            "title": title, "author": author, "description": description,
+            "content_type": content_type, "reading_level": ar_level,
+            "categories": [], "tags": [], "cover_image_url": cover_url,
+            "page_count": page_count, "is_active": True,
+            "metadata": {
+                "pages": pages_json, "total_pages": page_count,
+                "fiction_type": fiction_type, "isbn": isbn,
+                "ar_level": ar_level, "lexile": lexile,
+                "genre_1": genre1, "genre_2": genre2,
+                "folder_path": f"books/{remote_path}"
+            }
+        }
+
+        headers = {
+            "apikey": SUPABASE_ANON_KEY,
+            "Authorization": f"Bearer {SUPABASE_ANON_KEY}",
+            "Content-Type": "application/json",
+            "Prefer": "return=representation"
+        }
+        try:
+            resp = req.post(f"{SUPABASE_URL}/rest/v1/books", json=book_data, headers=headers)
+            if resp.status_code in (200, 201):
+                rd = resp.json()
+                book_id = rd[0]["id"] if isinstance(rd, list) else rd.get("id", "?")
+                results.append({"title": title, "id": book_id, "pages": page_count, "type": content_type})
+            else:
+                errors.append(f"{title}: Supabase insert failed — {resp.text[:200]}")
+        except Exception as e:
+            errors.append(f"{title}: DB insert error — {str(e)}")
+
+    # Cleanup
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    return {
+        "success": len(results) > 0,
+        "uploaded": len(results),
+        "failed": len(errors),
+        "books": results,
+        "errors": errors if errors else None,
+    }
+
 
 if __name__ == "__main__":
     import uvicorn

@@ -12,11 +12,11 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'supabase': ['@supabase/supabase-js'],
-          'pdf': ['pdfjs-dist'],
-          'lottie': ['lottie-react']
+        manualChunks: (id) => {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) return 'react-vendor';
+          if (id.includes('node_modules/@supabase')) return 'supabase';
+          if (id.includes('node_modules/pdfjs-dist')) return 'pdf';
+          if (id.includes('node_modules/lottie-react') || id.includes('node_modules/lottie-web')) return 'lottie';
         }
       }
     },

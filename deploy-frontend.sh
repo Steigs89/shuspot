@@ -7,12 +7,10 @@ set -e
 
 SERVER_IP="47.76.248.16"
 SERVER_USER="root"
-
 COMMIT_MSG="${1:-Deploy: $(date '+%Y-%m-%d %H:%M:%S')}"
 
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
-RED='\033[0;31m'
 NC='\033[0m'
 
 echo "🚀 Deploying frontend..."

@@ -27,6 +27,7 @@ export interface AudioManagerHook {
   replay: () => void;
   setVolume: (volume: number) => void;
   preloadNext: (pageNumber: number) => void;
+  onSpreadEnded: React.MutableRefObject<(() => void) | null>;
   state: AudioState;
 }
 
@@ -35,6 +36,7 @@ export function useAudioManager(pages: BookPage[]): AudioManagerHook {
   const preloadRef = useRef<HTMLAudioElement | null>(null);
   const currentPageRef = useRef<number>(0);
   const isLoadingRef = useRef<boolean>(false);
+  const onSpreadEnded = useRef<(() => void) | null>(null);
 
   const [state, setState] = useState<AudioState>({
     isPlaying: false,
@@ -132,6 +134,8 @@ export function useAudioManager(pages: BookPage[]): AudioManagerHook {
           isPlaying: false,
           currentTime: 0,
         }));
+        // Only fire onSpreadEnded if not in a sequential chain
+        // (sequential playback manages its own ended callback)
       };
 
       const handleError = () => {
@@ -296,22 +300,28 @@ export function useAudioManager(pages: BookPage[]): AudioManagerHook {
         isLoading: false,
         isPlaying: false,
       }));
+      // No audio at all — notify so autoplay can advance
+      onSpreadEnded.current?.();
       return;
     }
 
     console.log(`🎵 Playing ${pagesWithAudio.length} audio files sequentially:`, pagesWithAudio);
 
-    // Force load the first page by temporarily clearing currentPageRef
-    const previousPage = currentPageRef.current;
+    // Force load the first page
     currentPageRef.current = -1;
     await loadAndPlay(pagesWithAudio[0]);
     
-    // If only one page, we're done
+    // If only one page, fire onSpreadEnded when it ends
     if (pagesWithAudio.length === 1) {
+      if (audioRef.current) {
+        audioRef.current.addEventListener('ended', () => {
+          onSpreadEnded.current?.();
+        }, { once: true });
+      }
       return;
     }
 
-    // Set up sequential playback for remaining pages
+    // Set up sequential playback — only fire onSpreadEnded after the LAST one
     if (audioRef.current) {
       let currentIndex = 0;
       
@@ -319,13 +329,19 @@ export function useAudioManager(pages: BookPage[]): AudioManagerHook {
         currentIndex++;
         if (currentIndex < pagesWithAudio.length) {
           console.log(`🎵 Playing next audio: page ${pagesWithAudio[currentIndex]}`);
-          // Force load the next audio by temporarily clearing currentPageRef
           currentPageRef.current = -1;
           await loadAndPlay(pagesWithAudio[currentIndex]);
           
-          // Set up listener for the next audio if there are more pages
-          if (audioRef.current && currentIndex < pagesWithAudio.length - 1) {
-            audioRef.current.addEventListener('ended', playNext, { once: true });
+          if (audioRef.current) {
+            if (currentIndex < pagesWithAudio.length - 1) {
+              // More pages — chain to next
+              audioRef.current.addEventListener('ended', playNext, { once: true });
+            } else {
+              // Last page — fire onSpreadEnded when done
+              audioRef.current.addEventListener('ended', () => {
+                onSpreadEnded.current?.();
+              }, { once: true });
+            }
           }
         }
       };
@@ -342,6 +358,7 @@ export function useAudioManager(pages: BookPage[]): AudioManagerHook {
     replay,
     setVolume,
     preloadNext,
+    onSpreadEnded,
     state,
   };
 }

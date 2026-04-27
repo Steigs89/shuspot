@@ -23,6 +23,18 @@ import TxtIngestion from './components/TxtIngestion';
 import ShuSpotBookLauncher from './components/ShuSpotBookLauncher';
 import StreamlinedUploader from './components/StreamlinedUploader';
 import ManifestGenerator from './components/ManifestGenerator';
+import QuickUploader from './components/QuickUploader';
+import SupabaseBookAdmin from './components/SupabaseBookAdmin';
+
+function SupabaseBookAdminWrapper() {
+  const [refreshKey, setRefreshKey] = React.useState(0);
+  return (
+    <>
+      <QuickUploader onUploadComplete={() => setRefreshKey(k => k + 1)} />
+      <SupabaseBookAdmin key={refreshKey} />
+    </>
+  );
+}
 import { bookAPI } from './services/api';
 import ZipPreviewModal from './components/ZipPreviewModal';
 import './styles/StreamlinedUploader.css';
@@ -37,7 +49,7 @@ function App() {
   const [showUpload, setShowUpload] = useState(false);
 
   // Navigation
-  const [activeTab, setActiveTab] = useState('local'); // 'local', 'sheets', 'ingestion', 'generator'
+  const [activeTab, setActiveTab] = useState('supabase'); // 'supabase', 'local', 'sheets', 'ingestion', 'generator'
   const [isGoogleSheetsConnected, setIsGoogleSheetsConnected] = useState(false);
 
   // Filters
@@ -588,9 +600,9 @@ function App() {
       <ToastContainer position="top-right" autoClose={3000} />
 
       {/* Header */}
-      <div className="header">
-        <h1>Book Admin Tool</h1>
-        <p>Centralized book management with Google Sheets integration</p>
+      <div className="header" style={{ background: 'linear-gradient(135deg, #d85f9c, #a1cfd2)', color: 'white' }}>
+        <h1 style={{ color: 'white' }}>📚 ShuSpot Book Admin</h1>
+        <p style={{ color: 'rgba(255,255,255,0.85)' }}>Manage your book library</p>
 
         <div className="stats">
           <div className="stat-item">
@@ -605,11 +617,9 @@ function App() {
             <strong>{stats.unique_genres || 0}</strong>
             <span>Genres</span>
           </div>
-          <div className="stat-item connection-status-item">
-            <span className={`connection-status-small ${isGoogleSheetsConnected ? 'connected' : 'disconnected'}`}>
-              <Cloud size={12} />
-              {isGoogleSheetsConnected ? 'Connected' : 'Disconnected'}
-            </span>
+          <div className="stat-item">
+            <strong>{stats.book_types ? Object.keys(stats.book_types).length : '—'}</strong>
+            <span>Content Types</span>
           </div>
         </div>
       </div>
@@ -617,22 +627,17 @@ function App() {
       {/* Navigation Tabs */}
       <div className="nav-tabs">
         <button
-          className={`nav-tab ${activeTab === 'local' ? 'active' : ''}`}
-          onClick={() => setActiveTab('local')}
+          className={`nav-tab ${activeTab === 'supabase' ? 'active' : ''}`}
+          onClick={() => setActiveTab('supabase')}
+          style={activeTab === 'supabase' ? { borderBottomColor: '#d85f9c', color: '#d85f9c' } : {}}
         >
           <Database size={16} />
-          Local Database
-        </button>
-        <button
-          className={`nav-tab ${activeTab === 'sheets' ? 'active' : ''}`}
-          onClick={() => setActiveTab('sheets')}
-        >
-          <Cloud size={16} />
-          Google Sheets
+          📚 Books (Supabase)
         </button>
         <button
           className={`nav-tab ${activeTab === 'ingestion' ? 'active' : ''}`}
           onClick={() => setActiveTab('ingestion')}
+          style={activeTab === 'ingestion' ? { borderBottomColor: '#d85f9c', color: '#d85f9c' } : {}}
         >
           <FileText size={16} />
           TXT Ingestion
@@ -640,6 +645,7 @@ function App() {
         <button
           className={`nav-tab ${activeTab === 'generator' ? 'active' : ''}`}
           onClick={() => setActiveTab('generator')}
+          style={activeTab === 'generator' ? { borderBottomColor: '#d85f9c', color: '#d85f9c' } : {}}
         >
           <Settings size={16} />
           Generate Manifest
@@ -650,187 +656,8 @@ function App() {
 
       {/* Tab Content */}
       <div className="tab-content">
-        {activeTab === 'local' && (
-          <>
-            {/* Upload Section */}
-            {showUpload && (
-              <div className="controls">
-                <h3>Upload Books</h3>
-                <FileUpload onUpload={handleUpload} isUploading={isUploading} />
-              </div>
-            )}
-
-            {/* Streamlined Upload System */}
-            <StreamlinedUploader 
-              onUploadComplete={(result) => {
-                // Refresh the books list after successful upload
-                loadBooks();
-                toast.success(`Successfully processed ${result.imported_count || result.books?.length || 0} books!`);
-              }}
-            />
-
-            {/* Search and Filter Controls */}
-            <div className="controls">
-              <div className="controls-row">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Search size={16} />
-                  <input
-                    type="text"
-                    placeholder="Search books..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="search-input"
-                  />
-                </div>
-
-                <select
-                  value={genreFilter}
-                  onChange={(e) => setGenreFilter(e.target.value)}
-                  className="filter-select"
-                >
-                  <option value="All">All Genres</option>
-                  {stats.genres?.map(genre => (
-                    <option key={genre} value={genre}>{genre}</option>
-                  ))}
-                </select>
-
-                <select
-                  value={authorFilter}
-                  onChange={(e) => setAuthorFilter(e.target.value)}
-                  className="filter-select"
-                >
-                  <option value="All">All Authors</option>
-                  {stats.authors?.slice(0, 50).map(author => (
-                    <option key={author} value={author}>{author}</option>
-                  ))}
-                </select>
-
-                <select
-                  value={bookTypeFilter}
-                  onChange={(e) => setBookTypeFilter(e.target.value)}
-                  className="filter-select"
-                >
-                  <option value="All">All Book Types</option>
-                  <option value="Read to Me">Read to Me</option>
-                  <option value="Voice Coach">Voice Coach</option>
-                  <option value="Books">Books</option>
-                  <option value="Audiobooks">Audiobooks</option>
-                  <option value="Video Books">Video Books</option>
-                </select>
-
-                {/* Essential Actions Only */}
-                <button
-                  onClick={handleExportCSV}
-                  className="btn btn-secondary"
-                >
-                  <Download size={16} style={{ marginRight: '8px' }} />
-                  Export CSV
-                </button>
-
-                <button
-                  onClick={handleSyncFromSheets}
-                  className="btn btn-primary"
-                >
-                  <Cloud size={16} style={{ marginRight: '8px' }} />
-                  Sync from Sheets
-                </button>
-              </div>
-            </div>
-
-            {/* Bulk Edit Panel */}
-            {selectedBooks.length > 0 && (
-              <div className="bulk-edit-panel">
-                <h4>Bulk Edit ({selectedBooks.length} books selected)</h4>
-                <div className="bulk-edit-controls">
-                  <select
-                    value={bulkField}
-                    onChange={(e) => setBulkField(e.target.value)}
-                    className="filter-select"
-                  >
-                    <option value="genre">Genre</option>
-                    <option value="book_type">Book Type</option>
-                    <option value="fiction_type">Fiction Type</option>
-                    <option value="reading_level">Reading Level</option>
-                    <option value="author">Author</option>
-                    <option value="cover_image_url">Cover Image URL</option>
-                    <option value="notes">Notes</option>
-                  </select>
-
-                  {bulkField === 'fiction_type' ? (
-                    <select
-                      value={bulkValue}
-                      onChange={(e) => setBulkValue(e.target.value)}
-                      className="filter-select"
-                    >
-                      <option value="">Select Fiction Type...</option>
-                      <option value="Fiction">Fiction</option>
-                      <option value="Non-Fiction">Non-Fiction</option>
-                    </select>
-                  ) : bulkField === 'book_type' ? (
-                    <select
-                      value={bulkValue}
-                      onChange={(e) => setBulkValue(e.target.value)}
-                      className="filter-select"
-                    >
-                      <option value="">Select Book Type...</option>
-                      <option value="Books">Books</option>
-                      <option value="Read to Me">Read to Me</option>
-                      <option value="Voice Coach">Voice Coach</option>
-                      <option value="Audiobooks">Audiobooks</option>
-                      <option value="Video Books">Video Books</option>
-                    </select>
-                  ) : (
-                    <input
-                      type="text"
-                      placeholder={`New ${bulkField} value...`}
-                      value={bulkValue}
-                      onChange={(e) => setBulkValue(e.target.value)}
-                      className="search-input"
-                    />
-                  )}
-
-                  <button
-                    onClick={handleBulkUpdate}
-                    className="btn btn-success"
-                  >
-                    <Edit size={16} style={{ marginRight: '8px' }} />
-                    Update Selected
-                  </button>
-
-                  <button
-                    onClick={() => setSelectedBooks([])}
-                    className="btn btn-secondary"
-                  >
-                    Clear Selection
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* Books Grid */}
-            <div className="grid-container">
-              {loading ? (
-                <div className="loading">Loading books...</div>
-              ) : (
-                <BookGrid
-                  books={books}
-                  onUpdateBook={handleUpdateBook}
-                  onDeleteBook={handleDeleteBook}
-                  onBulkUpdate={handleBulkUpdate}
-                  selectedBooks={selectedBooks}
-                  setSelectedBooks={setSelectedBooks}
-                  onLaunchBook={handleLaunchBook}
-                />
-              )}
-            </div>
-          </>
-        )}
-
-        {activeTab === 'sheets' && (
-          <div className="sheets-tab">
-            <GoogleSheetsSetup onStatusChange={setIsGoogleSheetsConnected} />
-            <GoogleSheetsManager isConnected={isGoogleSheetsConnected} />
-          </div>
+        {activeTab === 'supabase' && (
+          <SupabaseBookAdminWrapper />
         )}
 
         {activeTab === 'ingestion' && (

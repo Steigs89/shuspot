@@ -30,7 +30,7 @@ export interface TTSOptions {
   volume?: number;
 }
 
-export async function speakWithIFlyTek(text: string, opts: TTSOptions): Promise<void> {
+export async function speakWithIFlyTek(text: string, opts: TTSOptions, signal?: AbortSignal): Promise<void> {
   const { appId, apiKey, apiSecret, voice = 'en_us_henry', speed = 45, pitch = 50, volume = 80 } = opts;
   const url = await buildTtsUrl(apiKey, apiSecret);
   console.log('🔊 TTS connecting...');
@@ -39,8 +39,9 @@ export async function speakWithIFlyTek(text: string, opts: TTSOptions): Promise<
     const ws = new WebSocket(url);
     const pcmChunks: Uint8Array[] = [];
 
+    if (signal) signal.addEventListener('abort', () => { ws.close(); resolve(); });
+
     ws.onopen = () => {
-      // Encode text as base64 UTF-8
       const textB64 = btoa(unescape(encodeURIComponent(text)));
       ws.send(JSON.stringify({
         common: { app_id: appId },
@@ -66,7 +67,7 @@ export async function speakWithIFlyTek(text: string, opts: TTSOptions): Promise<
         }
         if (msg.data?.status === 2) {
           ws.close();
-          playPcm(pcmChunks).then(resolve).catch(reject);
+          playPcm(pcmChunks, signal).then(resolve).catch(reject);
         }
       } catch (e) { reject(e); ws.close(); }
     };
@@ -76,7 +77,7 @@ export async function speakWithIFlyTek(text: string, opts: TTSOptions): Promise<
   });
 }
 
-async function playPcm(chunks: Uint8Array[]): Promise<void> {
+async function playPcm(chunks: Uint8Array[], signal?: AbortSignal): Promise<void> {
   if (!chunks.length) return;
   const total = chunks.reduce((s, c) => s + c.length, 0);
   const merged = new Uint8Array(total);
@@ -94,5 +95,9 @@ async function playPcm(chunks: Uint8Array[]): Promise<void> {
   const src = ctx.createBufferSource();
   src.buffer = buf;
   src.connect(ctx.destination);
-  return new Promise(res => { src.onended = () => { ctx.close(); res(); }; src.start(); });
+  return new Promise(res => {
+    src.onended = () => { ctx.close(); res(); };
+    if (signal) signal.addEventListener('abort', () => { src.stop(); ctx.close(); res(); });
+    src.start();
+  });
 }

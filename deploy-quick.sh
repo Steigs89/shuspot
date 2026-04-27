@@ -29,9 +29,12 @@ fi
 
 echo -e "${GREEN}✅ Build completed successfully${NC}"
 
-# Create deployment package
+# Create deployment package (exclude heavy image folders)
 echo -e "${BLUE}📦 Creating deployment package...${NC}"
-tar -czf dist-deploy.tar.gz dist/
+tar -czf dist-deploy.tar.gz \
+  --exclude='dist/Possible Genre Icons*' \
+  --exclude='dist/Possible Media Type Icons*' \
+  dist/
 
 # Upload to server
 echo -e "${BLUE}📤 Uploading to server...${NC}"
@@ -44,13 +47,10 @@ cd /tmp
 echo "Extracting deployment package..."
 tar -xzf dist-deploy.tar.gz
 
-echo "Backing up current deployment..."
-if [ -d "/var/www/shuspot/dist" ]; then
-    mv /var/www/shuspot/dist /var/www/shuspot/dist.backup.$(date +%Y%m%d_%H%M%S)
-fi
-
 echo "Installing new deployment..."
+rm -rf /var/www/shuspot/dist
 mv dist /var/www/shuspot/
+cp -r /var/www/shuspot/dist/* /var/www/shuspot/
 chown -R nginx:nginx /var/www/shuspot
 chmod -R 755 /var/www/shuspot
 

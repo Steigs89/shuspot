@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowLeft, ChevronUp, ChevronLeft, ChevronRight, CheckCircle, AlertCircle, Mic, Volume2, StopCircle } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, CheckCircle, AlertCircle, Mic, StopCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
-import Lottie from 'lottie-react';
-import happyDogAnimation from '../assets/Happy Dog.json';
-import dogCompanion from '../assets/cartoon-dog-cute-drawing-printable-free-style-volumetric-lighting_921860-112557-removebg-preview.png';import { assessPronunciation, ISEResult } from '../services/iflytek-ise';
+import { assessPronunciation, ISEResult } from '../services/iflytek-ise';
 import { speakWithIFlyTek } from '../services/iflytek-tts';
 
 // Configure PDF.js worker
@@ -57,9 +55,6 @@ export default function VoiceCoachPracticeInterface({ onBack, bookId, isFavorite
   const [speechSynthesis, setSpeechSynthesis] = useState<SpeechSynthesis | null>(null);
   const [availableVoices, setAvailableVoices] = useState<SpeechSynthesisVoice[]>([]);
   
-  // Dog Animation States
-  const [dogAnimating, setDogAnimating] = useState(false);
-  
   // Word Highlighting States
   const [highlightedWords, setHighlightedWords] = useState<Set<string>>(new Set());
   const [currentlyReading, setCurrentlyReading] = useState<string>('');
@@ -70,16 +65,15 @@ export default function VoiceCoachPracticeInterface({ onBack, bookId, isFavorite
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const recognizedTextRef = useRef<string>('');
+  const ttsAbortRef = useRef<AbortController | null>(null);
 
   // Language toggle — EN / ZH
   const [lang, setLang] = useState<'en' | 'zh'>('en');
   const [translations, setTranslations] = useState<Record<string, string>>({});
   const [isTranslating, setIsTranslating] = useState(false);
 
-  // Dog speech bubble
-  const [dogMessage, setDogMessage] = useState<string | null>(null);
-  const [dogVisible, setDogVisible] = useState(false);
-  const [dogSubText, setDogSubText] = useState<string | null>(null); // "what I heard" transcript
+  // "What I heard" toggle in bottom-right box
+  const [showTranscript, setShowTranscript] = useState(false);
 
   const UI_STRINGS = {
     textReading: 'Text reading',
@@ -166,6 +160,17 @@ By making small changes in their stances, surfers can alter how boards travel on
     const uniqueWords = [...new Set(words)];
     return uniqueWords.slice(0, 8);
   }
+
+  // Cleanup — stop mic and audio when component unmounts
+  useEffect(() => {
+    return () => {
+      if (ttsAbortRef.current) ttsAbortRef.current.abort();
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+        mediaRecorderRef.current.stop();
+      }
+    };
+  }, []);
 
   // Load PDF document if provided
   useEffect(() => {
@@ -419,56 +424,51 @@ By making small changes in their stances, surfers can alter how boards travel on
   };
 
   const toggleListening = () => {
-    if (!isListening) {
-      setDogAnimating(true);
-      const textToRead = pdfPageText || practiceText;
-      const appId = import.meta.env.VITE_IFLYTEK_APP_ID;
-      const apiKey = import.meta.env.VITE_IFLYTEK_API_KEY;
-      const apiSecret = import.meta.env.VITE_IFLYTEK_API_SECRET;
-
-      if (appId && apiKey && apiSecret) {
-        setIsListening(true);
-        speakWithIFlyTek(textToRead.slice(0, 300), { appId, apiKey, apiSecret, voice: 'en_us_henry', speed: 40 })
-          .then(() => { setIsListening(false); setDogAnimating(false); })
-          .catch((err) => {
-            console.error('iFlyTek TTS error, falling back to browser TTS:', err);
-            // Fallback to browser TTS
-            if (window.speechSynthesis) {
-              const utterance = new SpeechSynthesisUtterance(textToRead);
-              utterance.rate = 0.8;
-              utterance.onend = () => { setIsListening(false); setDogAnimating(false); };
-              window.speechSynthesis.speak(utterance);
-            } else {
-              setIsListening(false);
-              setDogAnimating(false);
-            }
-          });
-      } else {
-        // Browser TTS fallback (no iFlyTek keys)
-        setIsListening(true);
-        if (speechSynthesis) {
-          const utterance = new SpeechSynthesisUtterance(textToRead);
-          utterance.rate = 0.8;
-          utterance.pitch = 1.1;
-          const childVoice = availableVoices.find(v =>
-            v.name.toLowerCase().includes('samantha') ||
-            v.name.toLowerCase().includes('karen') ||
-            v.name.toLowerCase().includes('female')
-          );
-          if (childVoice) utterance.voice = childVoice;
-          utterance.onend = () => { setIsListening(false); setDogAnimating(false); };
-          speechSynthesis.speak(utterance);
-        } else {
-          setIsListening(false);
-          setDogAnimating(false);
-        }
-      }
-      if (isRecording) setIsRecording(false);
-    } else {
-      // Stop listening
-      if (speechSynthesis) speechSynthesis.cancel();
+    if (isListening) {
+      if (ttsAbortRef.current) ttsAbortRef.current.abort();
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
       setIsListening(false);
-      setDogAnimating(false);
+      return;
+    }
+    // Stop recording if active
+    if (isRecording) {
+      if (speechRecognition) speechRecognition.stop();
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') mediaRecorderRef.current.stop();
+      setIsRecording(false);
+    }
+    const textToRead = pdfPageText || practiceText;
+    const appId = import.meta.env.VITE_IFLYTEK_APP_ID;
+    const apiKey = import.meta.env.VITE_IFLYTEK_API_KEY;
+    const apiSecret = import.meta.env.VITE_IFLYTEK_API_SECRET;
+
+    const abort = new AbortController();
+    ttsAbortRef.current = abort;
+
+    if (appId && apiKey && apiSecret) {
+      setIsListening(true);
+      speakWithIFlyTek(textToRead.slice(0, 300), { appId, apiKey, apiSecret, voice: 'en_us_henry', speed: 40 }, abort.signal)
+        .then(() => setIsListening(false))
+        .catch(() => {
+          if (window.speechSynthesis) {
+            const utterance = new SpeechSynthesisUtterance(textToRead);
+            utterance.rate = 0.8;
+            utterance.onend = () => setIsListening(false);
+            window.speechSynthesis.speak(utterance);
+          } else setIsListening(false);
+        });
+    } else if (speechSynthesis) {
+      setIsListening(true);
+      const utterance = new SpeechSynthesisUtterance(textToRead);
+      utterance.rate = 0.8;
+      utterance.pitch = 1.1;
+      const childVoice = availableVoices.find(v =>
+        v.name.toLowerCase().includes('samantha') ||
+        v.name.toLowerCase().includes('karen') ||
+        v.name.toLowerCase().includes('female')
+      );
+      if (childVoice) utterance.voice = childVoice;
+      utterance.onend = () => setIsListening(false);
+      speechSynthesis.speak(utterance);
     }
   };
 
@@ -481,8 +481,7 @@ By making small changes in their stances, surfers can alter how boards travel on
       setShowFeedback(false);
       setHighlightedWords(new Set());
       setCurrentlyReading('');
-      setDogMessage(null);
-      setDogSubText(null);
+      setShowTranscript(false);
       audioChunksRef.current = [];
       recognizedTextRef.current = '';
 
@@ -519,7 +518,6 @@ By making small changes in their stances, surfers can alter how boards travel on
               });
               console.log('✅ iFlyTek ISE result:', result);
               setIseResult(result);
-              // Generate friendly feedback from scores
               const score = result.overallScore;
               const feedback = score >= 90
                 ? "Amazing! Your pronunciation is excellent! 🌟"
@@ -529,21 +527,6 @@ By making small changes in their stances, surfers can alter how boards travel on
                 ? "Good effort! Try reading a bit slower and clearer. 😊"
                 : "Keep going — practice makes perfect! Try again. 💪";
               setCoachingFeedback(feedback);
-              // Dog message based on score
-              const dogMsg = score >= 90
-                ? "Wow, you're amazing! 🌟"
-                : score >= 75
-                ? "Great job! Keep it up! 🐾"
-                : score >= 60
-                ? "Good try! Slow down a little 😊"
-                : "Don't give up! Try again 💪";
-              setDogMessage(dogMsg);
-              setDogVisible(true);
-              const transcript = recognizedTextRef.current || '(no transcript captured)';
-              setTimeout(() => {
-                setDogMessage(null);
-                setDogSubText(transcript);
-              }, 3000);
             } catch (err) {
               console.error('❌ iFlyTek ISE error:', err);
               generateFinalFeedback();
@@ -553,18 +536,10 @@ By making small changes in their stances, surfers can alter how boards travel on
           } else {
             console.warn('⚠️ No iFlyTek keys — using browser fallback');
             generateFinalFeedback();
-            setDogMessage("Nice reading! Keep it up! 🐾");
-            setDogVisible(true);
-            const transcript = recognizedTextRef.current || '(no transcript captured)';
-            setTimeout(() => {
-              setDogMessage(null);
-              setDogSubText(transcript);
-            }, 3000);
           }
         };
         recorder.start();
       }).catch(() => {
-        // Mic permission denied — still use speech recognition only
         if (speechRecognition) speechRecognition.start();
       });
 
@@ -624,21 +599,12 @@ By making small changes in their stances, surfers can alter how boards travel on
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
         <button
           onClick={() => {
-            // Stop all audio when going back
-            if (speechSynthesis) {
-              speechSynthesis.cancel();
-            }
-            if (speechRecognition && isRecording) {
-              speechRecognition.stop();
-            }
-            
-            // Reset states
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+            if (speechRecognition && isRecording) speechRecognition.stop();
+            if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') mediaRecorderRef.current.stop();
             setIsListening(false);
             setIsRecording(false);
-            setDogAnimating(false);
             setShowFeedback(false);
-            
-            // Call the original onBack
             onBack();
           }}
           className="w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white/90 transition-colors"
@@ -669,7 +635,7 @@ By making small changes in their stances, surfers can alter how boards travel on
 
       {/* Main Content - Mobile Optimized */}
       <div className={`${pdfBook ? 'pt-32' : 'pt-14'} pb-16 px-3 sm:px-6 min-h-screen flex items-center`}>
-        <div className="w-full max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-8 items-center">
+        <div className="w-full max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-8 items-start">
           {/* Left Side - Reading Content */}
           <div className="relative h-[650px]">
             {pdfBook ? (
@@ -796,76 +762,67 @@ By making small changes in their stances, surfers can alter how boards travel on
           </div>
 
           {/* Right Side - Practice Interface */}
-          <div className="space-y-4 lg:space-y-6 h-auto lg:h-[650px] flex flex-col w-full">            {/* Text Reading Section */}
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl flex-1">
+          <div className="space-y-4 lg:space-y-6 flex flex-col w-full">{/* Text Reading Section */}
+            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl">
               <h3 className="text-xl font-superclarendon-black text-gray-700 mb-4">
                 {t('textReading')}
               </h3>
-              <div className="flex-1 overflow-y-auto">
+              <div>
                 {isAssessing ? (
                   <div className="flex flex-col items-center justify-center h-full py-6 space-y-3">
                     <div className="w-8 h-8 border-4 border-blue-400 border-t-transparent rounded-full animate-spin" />
                     <p className="text-gray-500 text-sm">Analysing your reading...</p>                  </div>
                 ) : iseResult ? (
                   <div className="space-y-3">
-                    {/* What I heard — truncated to 2 lines */}
-                    {recognizedText && (
-                      <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2">
-                        <h4 className="text-xs font-medium text-green-700 mb-0.5 flex items-center gap-1">
-                          <CheckCircle className="w-3 h-3" /> {t('whatIHeard')}
-                        </h4>
-                        <p className="text-green-800 text-xs italic line-clamp-2">"{recognizedText.trim()}"</p>
-                      </div>
-                    )}
-                    {/* Score circle + 3 stats */}
-                    <div className="flex items-center gap-4">
-                      <div className="relative w-14 h-14 flex-shrink-0">
+                    {/* Score circle */}
+                    <div className="flex flex-col items-center pt-1">
+                      <div className="relative w-20 h-20">
                         <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
-                          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#e5e7eb" strokeWidth="3" />
+                          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f3e8f0" strokeWidth="3" />
                           <circle cx="18" cy="18" r="15.9" fill="none"
-                            stroke={iseResult.overallScore >= 80 ? '#22c55e' : iseResult.overallScore >= 60 ? '#f59e0b' : '#ef4444'}
+                            stroke={iseResult.overallScore >= 80 ? '#d85f9c' : iseResult.overallScore >= 60 ? '#e2d151' : '#a1cfd2'}
                             strokeWidth="3"
                             strokeDasharray={`${iseResult.overallScore} 100`}
                             strokeLinecap="round"
                           />
                         </svg>
                         <div className="absolute inset-0 flex flex-col items-center justify-center">
-                          <span className="text-base font-bold text-gray-800 leading-none">{iseResult.overallScore}</span>
-                          <span className="text-[8px] text-gray-400">/100</span>
+                          <span className="text-2xl font-bold text-gray-800 leading-none">{iseResult.overallScore}</span>
+                          <span className="text-[9px] text-gray-400">/100</span>
                         </div>
                       </div>
-                      <div className="flex-1 grid grid-cols-3 gap-1 text-center">
-                        {[
-                          { label: 'Accuracy', val: iseResult.accuracy },
-                          { label: 'Fluency', val: iseResult.fluency },
-                          { label: 'Complete', val: iseResult.completeness },
-                        ].map(({ label, val }) => (
-                          <div key={label}>
-                            <div className="text-sm font-bold text-gray-800">{val}</div>
-                            <div className="text-[9px] text-gray-400 uppercase tracking-wide">{label}</div>
-                            <div className="mt-0.5 h-1 bg-gray-200 rounded-full overflow-hidden">
-                              <div className="h-full bg-brand-blue rounded-full" style={{ width: `${val}%` }} />
-                            </div>
+                      <p className="text-xs font-semibold text-gray-500 mt-1">Overall Score</p>
+                    </div>
+                    {/* 3 stat bars */}
+                    <div className="space-y-2 px-1">
+                      {[
+                        { label: '🎯 Accuracy', val: iseResult.accuracy, color: 'bg-brand-pink' },
+                        { label: '🌊 Fluency', val: iseResult.fluency, color: 'bg-brand-blue' },
+                        { label: '✅ Complete', val: iseResult.completeness, color: 'bg-brand-yellow' },
+                      ].map(({ label, val, color }) => (
+                        <div key={label}>
+                          <div className="flex justify-between text-xs mb-0.5">
+                            <span className="font-medium text-gray-600">{label}</span>
+                            <span className="font-bold text-gray-800">{val}</span>
                           </div>
-                        ))}
-                      </div>
+                          <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div className={`h-full ${color} rounded-full transition-all duration-500`} style={{ width: `${val}%` }} />
+                          </div>
+                        </div>
+                      ))}
                     </div>
                     {/* Feedback */}
                     {coachingFeedback && (
-                      <p className="text-xs text-gray-600 bg-brand-blue/10 rounded-lg px-3 py-2 border border-brand-blue/20">
+                      <p className="text-xs text-center font-medium text-gray-700 bg-brand-pink/10 rounded-xl px-3 py-2 border border-brand-pink/20">
                         {coachingFeedback}
                       </p>
                     )}
                   </div>
                 ) : recognizedText ? (
-                  <div className="space-y-3">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                      <h4 className="text-sm font-medium text-green-800 mb-2 flex items-center">
-                        <CheckCircle className="w-4 h-4 mr-2" />
-                        What I heard you read:
-                      </h4>
-                      <p className="text-green-700 text-sm leading-relaxed">{recognizedText}</p>
-                    </div>
+                  <div className="flex-1 flex items-center justify-center">
+                    <p className="text-gray-500 text-center px-4 text-sm">
+                      {isRecording ? t('recordingPrompt') : '✅ Done! Check your results below.'}
+                    </p>
                   </div>
                 ) : (
                   <div className="flex-1 flex items-center justify-center">
@@ -878,10 +835,31 @@ By making small changes in their stances, surfers can alter how boards travel on
             </div>
 
             {/* Words to Practice Section */}
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl flex-1">
-              <h3 className="text-base font-superclarendon-black text-gray-700 mb-3">
-                {t('wordsToPractice')}
-              </h3>
+            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-base font-superclarendon-black text-gray-700">
+                  {t('wordsToPractice')}
+                </h3>
+                {recognizedText && (
+                  <button
+                    onClick={() => setShowTranscript(p => !p)}
+                    className="flex items-center gap-2 text-sm font-bold bg-gradient-to-r from-brand-pink to-brand-blue text-white px-4 py-2 rounded-full shadow-md active:scale-95 transition-transform"
+                  >
+                    👂 {showTranscript ? 'Hide it!' : 'What did I say? 🎉'}
+                  </button>
+                )}
+              </div>
+              {showTranscript && recognizedText && (
+                <div className="mb-3 rounded-2xl overflow-hidden shadow-md">
+                  <div className="bg-gradient-to-r from-brand-pink to-brand-blue px-4 py-2 flex items-center gap-2">
+                    <span className="text-xl">🎤</span>
+                    <p className="text-sm font-bold text-white">Here's what I heard you say!</p>
+                  </div>
+                  <div className="bg-white px-4 py-3">
+                    <p className="text-base text-gray-800 leading-relaxed font-medium">"{recognizedText.trim()}"</p>
+                  </div>
+                </div>
+              )}
 
               {iseResult ? (
                 iseResult.words.length > 0 ? (
@@ -906,8 +884,8 @@ By making small changes in their stances, surfers can alter how boards travel on
                       return (
                         <>
                           {/* Left: needs work */}
-                          <div className="w-[45%] min-w-0 flex-shrink-0">
-                            <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-2">{t('needsWork')}</p>
+                          <div className="w-[52%] min-w-0 flex-shrink-0">
+                            <p className="text-xs font-bold text-brand-pink uppercase tracking-wide mb-2">⚠️ {t('needsWork')}</p>
                             <div className="flex flex-wrap gap-1.5">
                               {needsWork.map((w, i) => (
                                 <div key={i} className={`rounded-md px-2 py-0.5 border text-center ${colors[w.status]}`}>
@@ -919,9 +897,9 @@ By making small changes in their stances, surfers can alter how boards travel on
                             </div>
                           </div>
                           <div className="w-px bg-gray-200 flex-shrink-0" />
-                          {/* Right: great — 3 columns */}
+                          {/* Right: great */}
                           <div className="flex-1 min-w-0">
-                            <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-2">{t('great')}</p>
+                            <p className="text-xs font-bold text-brand-blue uppercase tracking-wide mb-2">⭐ {t('great')}</p>
                             <ul className="grid grid-cols-3 gap-x-1 gap-y-0.5">
                               {great.map((w, i) => (
                                 <li key={i} className="flex items-center gap-1 text-xs text-green-700">
@@ -1049,33 +1027,6 @@ By making small changes in their stances, surfers can alter how boards travel on
       )}
 
       {/* Bottom Controls - Overlapping content for max space */}
-
-      {/* Dog companion — anchored to bottom, slides up on first result */}
-      <div
-        className={`fixed bottom-0 left-0 z-50 flex flex-col items-start transition-transform duration-700 ease-out ${
-          dogVisible ? 'translate-y-0' : 'translate-y-full'
-        }`}
-      >
-      {(dogMessage || dogSubText) && (
-          <div className="relative mb-1 ml-10 bg-white rounded-2xl rounded-bl-none px-4 py-3 shadow-lg border border-gray-100 w-80">
-            {dogMessage ? (
-              <p className="text-sm font-medium text-gray-700">{dogMessage}</p>
-            ) : (
-              <div>
-                <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">Here's what I heard 👂</p>
-                <p className="text-xs text-gray-700 italic">"{dogSubText}"</p>
-              </div>
-            )}
-            <div className="absolute -bottom-2 left-4 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white" />
-          </div>
-        )}
-        <Lottie
-          animationData={happyDogAnimation}
-          loop={true}
-          autoplay={true}
-          style={{ width: 220, height: 220, marginBottom: -24 }}
-        />
-      </div>
     </div>
   );
 }

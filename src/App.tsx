@@ -310,7 +310,8 @@ function AppContent() {
     setSelectedContentType(contentType);
 
     // Navigate to the dedicated Voice Coach practice view when AI Voice / Coach icon is clicked
-    if (navigation.selectedMediaType === 'ai-voice' || navigation.selectedMediaType === 'coach') {
+    if (navigation.selectedMediaType === 'ai-voice' || navigation.selectedMediaType === 'coach' || (navigation.selectedMediaType as string) === 'ai-voice-coach') {
+      console.log('🎤 Navigating to voice-coaching, mediaType:', navigation.selectedMediaType);
       setCurrentView('voice-coaching');
     } else if (contentType !== 'Voice Coach') {
       setCurrentView(prev => (prev === 'voice-coaching' || prev === 'voice-practice') ? 'dashboard' : prev);
@@ -2618,7 +2619,14 @@ function AppContent() {
   );
 }
 
+import AffiliateApp from './components/affiliate/AffiliateApp';
+
+// Check if we're on the /affiliate route
 function App() {
+  if (window.location.pathname.startsWith('/affiliate')) {
+    return <AffiliateApp />;
+  }
+
   return (
     <LanguageProvider>
       <SubscriptionProvider>
